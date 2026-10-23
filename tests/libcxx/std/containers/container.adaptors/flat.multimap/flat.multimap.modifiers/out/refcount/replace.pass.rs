@@ -744,7 +744,7 @@ pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___
     data_: (),
 }
 impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { pub fn new_1 ( il : ()  , ) -> Self { let il : Value<() >  = Rc::new(RefCell::new(il)) ;
- Self { data_ : std_vector_int__std_allocator_int__ :: new_1 ( { ((*il.borrow()) ).clone()  } , )   , }  } }
+ Self { data_ : unimplemented!()  , }  } }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(24)]
 pub struct MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__
@@ -754,7 +754,7 @@ pub struct MinSequenceContainer_double__three_way_random_access_iterator_double_
     data_: (),
 }
 impl MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ { pub fn new_1 ( il : ()  , ) -> Self { let il : Value<() >  = Rc::new(RefCell::new(il)) ;
- Self { data_ : std_vector_double__std_allocator_double__ :: new_1 ( { ((*il.borrow()) ).clone()  } , )   , }  } }
+ Self { data_ : unimplemented!()  , }  } }
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -1339,72 +1339,45 @@ const _: () = assert!(
     "!CanReplace<Map, const std::vector<int>&, const std::vector<int>&>"
 );
 pub fn test_44() {
-    let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__double__std_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { std_vector_int__std_allocator_int__ :: new_1 ( { unimplemented!()  } , )   } , { std_vector_double__std_allocator_double__ :: new_1 ( { unimplemented!()  } , )   } , None , )  )) ;
-    let new_keys: Value<()> = Rc::new(RefCell::new(std_vector_int__std_allocator_int__::new_1({
-        unimplemented!()
-    })));
-    let new_values: Value<()> = Rc::new(RefCell::new(
-        std_vector_double__std_allocator_double__::new_1({ unimplemented!() }),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        (*m.borrow()).replace(
-            (new_keys.as_pointer()).reinterpret_cast::<()>(),
-            (new_values.as_pointer()).reinterpret_cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_45() {
-    let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__double__std_less_int___std_deque_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { std_deque_int__std_allocator_int__ :: new_1 ( { unimplemented!()  } , )   } , { std_vector_double__std_allocator_double__ :: new_1 ( { unimplemented!()  } , )   } , None , )  )) ;
-    let new_keys: Value<()> = Rc::new(RefCell::new(std_deque_int__std_allocator_int__::new_1({
-        unimplemented!()
-    })));
-    let new_values: Value<()> = Rc::new(RefCell::new(
-        std_vector_double__std_allocator_double__::new_1({ unimplemented!() }),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        (*m.borrow()).replace(
-            (new_keys.as_pointer()).reinterpret_cast::<()>(),
-            (new_values.as_pointer()).reinterpret_cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_46() {
-    let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__double__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr___ :: new_1 ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!()  } , )   } , { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!()  } , )   } , None , )  )) ;
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let new_keys : Value<MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ > = Rc::new(RefCell::new(MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!()  } , )  )) ;
     let new_values : Value<MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ > = Rc::new(RefCell::new(MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!()  } , )  )) ;
     let expected_keys : Value<MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ > = Rc::new(RefCell::new(((*new_keys.borrow()) ).clone() )) ;
     let expected_values : Value<MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ > = Rc::new(RefCell::new(((*new_values.borrow()) ).clone() )) ;
-    ({ (*m.borrow()).replace(new_keys.as_pointer(), new_values.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_47() {
-    let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__double__std_less_int___std_vector_int__min_allocator_int____std_vector_double__min_allocator_double___ :: new_1 ( { std_vector_int__min_allocator_int__ :: new_1 ( { unimplemented!()  } , )   } , { std_vector_double__min_allocator_double__ :: new_1 ( { unimplemented!()  } , )   } , None , )  )) ;
-    let new_keys: Value<()> = Rc::new(RefCell::new(std_vector_int__min_allocator_int__::new_1({
-        unimplemented!()
-    })));
-    let new_values: Value<()> = Rc::new(RefCell::new(
-        std_vector_double__min_allocator_double__::new_1({ unimplemented!() }),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let new_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_keys: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected_values: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        (*m.borrow()).replace(
-            (new_keys.as_pointer()).reinterpret_cast::<()>(),
-            (new_values.as_pointer()).reinterpret_cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

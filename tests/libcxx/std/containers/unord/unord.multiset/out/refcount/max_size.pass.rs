@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn alloc_max_size_0(a: Ptr<()>) -> () {
-    return ({ std_allocator_traits_std_allocator_char__::max_size((a).clone()) });
+    return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
@@ -229,9 +229,7 @@ pub fn make_thread_unsafe_shared_5() -> detail_thread_unsafe_shared_ptr_limited_
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({
         ptr.as_pointer()
     });
@@ -246,9 +244,7 @@ pub fn make_thread_unsafe_shared_6()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::copy_from(
         { ptr.as_pointer() },
     );
@@ -492,9 +488,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
@@ -544,9 +538,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {

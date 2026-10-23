@@ -39,8 +39,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut v: NonConstCopyable = NonConstCopyable::new_1({ 42_() });
     let mut b: BlowsUpOnConstCopy_int_ = <BlowsUpOnConstCopy_int_>::default();
-    let mut t: () =
-        std_tuple_NonConstCopyable__BlowsUpOnConstCopy_int__::new({ &mut v }, { &mut b });
+    let mut t: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

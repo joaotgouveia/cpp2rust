@@ -258,43 +258,26 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            std_tuple_MoveOnly__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_3: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            let __tmp_4: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2_()) })));
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new(
-                { __tmp_2.as_pointer() },
-                { __tmp_3.as_pointer() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(<Empty>::default()));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         &(*t0.borrow_mut());
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(2_()));
-            std_tuple_A__A_::new({ __tmp_5.as_pointer() }, { __tmp_6.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t).id_ == 3");;
     }
     ({ test_sfinae_missing_elements_14() });

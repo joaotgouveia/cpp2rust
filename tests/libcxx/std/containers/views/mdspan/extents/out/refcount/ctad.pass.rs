@@ -142,87 +142,16 @@ pub fn test_13(e: (), expected: ()) {
 pub fn test_14() -> () {
     let mut D: () = dynamic_extent_15.with(|rc| *rc.borrow());
     ({ test_7(unimplemented!(), unimplemented!()) });
-    ({
-        test_8(
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
-    ({
-        test_9(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 1_() },
-                { 2_() },
-            ),
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 1_() },
-                { 2_() },
-            ),
-        )
-    });
-    ({
-        test_10 ( std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 1_()  } , { 2_()  } , { 3_()  } , { 4_()  } , { 5_()  } , { 6_()  } , { 7_()  } , { 8_()  } , { 9_()  } , )   , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 1_()  } , { 2_()  } , { 3_()  } , { 4_()  } , { 5_()  } , { 6_()  } , { 7_()  } , { 8_()  } , { 9_()  } , )   , )
-    });
-    ({
-        test_9(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_2(
-                { NoDefaultCtorIndex::new_1({ 1_() }) },
-                { NoDefaultCtorIndex::new_1({ 2_() }) },
-            ),
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_3(
-                { 1_() },
-                { 2_() },
-            ),
-        )
-    });
-    ({
-        test_11(
-            std_extents_unsigned_long__5_::new_1({ unimplemented!() }),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_12(
-            std_extents_unsigned_long__5__18446744073709551615_::new_1({ unimplemented!() }, {
-                6_()
-            }),
-            std_extents_unsigned_long__5__18446744073709551615_::new_2({ 6_() }),
-        )
-    });
-    ({
-        test_13(
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_1(
-                { unimplemented!() },
-                { 6_() },
-                { unimplemented!() },
-            ),
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_2({ 6_() }),
-        )
-    });
-    ({
-        test_11(
-            std_extents_unsigned_long__5_::new_2({ <()>::default() }),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_12(
-            std_extents_unsigned_long__5__18446744073709551615_::new_3({ <()>::default() }, {
-                6_()
-            }),
-            std_extents_unsigned_long__5__18446744073709551615_::new_2({ 6_() }),
-        )
-    });
-    ({
-        test_13(
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_3(
-                { unimplemented!() },
-                { 6_() },
-                { <()>::default() },
-            ),
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_2({ 6_() }),
-        )
-    });
+    ({ test_8(unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_9(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
     return true;
 }
 pub fn main() {

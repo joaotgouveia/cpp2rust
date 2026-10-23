@@ -783,15 +783,7 @@ const _: () = assert!(
 pub fn test_6() -> () {
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_MutableCopy___ConvertibleFrom_int__::new(
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-                { p.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -799,15 +791,7 @@ pub fn test_6() -> () {
     }
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ExplicitConstructibleFrom_MutableCopy___ExplicitConstructibleFrom_int__::new(
-                { unimplemented!() },
-                { __tmp_1.as_pointer() },
-                { p.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -815,15 +799,7 @@ pub fn test_6() -> () {
     }
     {
         let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_TracedCopyMove___TracedCopyMove_::new(
-                { unimplemented!() },
-                { __tmp_2.as_pointer() },
-                { p.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

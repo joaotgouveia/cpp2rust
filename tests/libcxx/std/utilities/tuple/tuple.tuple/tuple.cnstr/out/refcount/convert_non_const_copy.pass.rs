@@ -670,40 +670,24 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let t1: Value<()> = Rc::new(RefCell::new(1_()));
-        let t2: Value<()> = Rc::new(RefCell::new(std_tuple_ConvertibleFrom_MutableCopy__::new(
-            { t1.as_pointer() },
-        )));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            std_tuple_MutableCopy__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ConvertibleFrom_MutableCopy___int_::new({ t1.as_pointer() }),
-        ));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(1_()));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ExplicitConstructibleFrom_MutableCopy__::new({ t1.as_pointer() }),
-        ));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            std_tuple_MutableCopy__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ExplicitConstructibleFrom_MutableCopy___int_::new({ t1.as_pointer() }),
-        ));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -725,9 +709,7 @@ pub fn test_6() -> () {
     );;
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ConvertibleFrom_TracedCopyMove__::new({ t1.as_pointer() }),
-        ));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -737,23 +719,17 @@ pub fn test_6() -> () {
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_TracedCopyMove__TracedCopyMove_::new_1({ t1.as_pointer() }),
-        ));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ConvertibleFrom_CvtFromTupleRef__::new({ t1.as_pointer() }),
-        ));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new(
-            std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new({ t1.as_pointer() }),
-        ));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

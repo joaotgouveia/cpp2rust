@@ -582,24 +582,29 @@ pub fn test_14() {
         Rc::new(RefCell::new(Expected_1_::new({ S_1_::new({ 17_() }) })));
     unimplemented!();
     unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_1___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_1_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_1___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_1_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_15() {
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let expected: Value<Expected_2_> =
+        Rc::new(RefCell::new(Expected_2_::new({ S_2_::new({ 17_() }) })));
+    unimplemented!();
+    unimplemented!();
+    let mut r1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -607,28 +612,16 @@ pub fn test_14() {
 }
 pub fn test_16() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let expected: Value<Expected_2_> =
-        Rc::new(RefCell::new(Expected_2_::new({ S_2_::new({ 17_() }) })));
+    let expected: Value<Expected_3_> =
+        Rc::new(RefCell::new(Expected_3_::new({ S_3_::new({ 17_() }) })));
     unimplemented!();
     unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_2___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_2_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_2___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_2_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -636,28 +629,16 @@ pub fn test_16() {
 }
 pub fn test_17() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let expected: Value<Expected_3_> =
-        Rc::new(RefCell::new(Expected_3_::new({ S_3_::new({ 17_() }) })));
+    let expected: Value<Expected_4_> =
+        Rc::new(RefCell::new(Expected_4_::new({ S_4_::new({ 17_() }) })));
     unimplemented!();
     unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_3___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_3_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_3___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_3_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -665,28 +646,16 @@ pub fn test_17() {
 }
 pub fn test_18() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let expected: Value<Expected_4_> =
-        Rc::new(RefCell::new(Expected_4_::new({ S_4_::new({ 17_() }) })));
+    let expected: Value<Expected_5_> =
+        Rc::new(RefCell::new(Expected_5_::new({ S_5_::new({ 17_() }) })));
     unimplemented!();
     unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_4___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_4_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_4___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_4_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -694,57 +663,16 @@ pub fn test_18() {
 }
 pub fn test_19() {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let expected: Value<Expected_5_> =
-        Rc::new(RefCell::new(Expected_5_::new({ S_5_::new({ 17_() }) })));
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_5___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_5_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_5___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_5_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_20() {
-    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Expected_6_> =
         Rc::new(RefCell::new(Expected_6_::new({ S_6_::new({ 17_() }) })));
     unimplemented!();
     unimplemented!();
-    let mut r1: () = ({
-        ((*a.borrow()) as std___atomic_base_S_6___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_6_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = ({
-        ((*a.borrow()) as std___atomic_base_S_6___false_).compare_exchange_strong_18(
-            field_ptr!(expected.as_pointer(), s),
-            S_6_::new({ 18_() }),
-            memory_order_relaxed_15.with(|rc| *rc.borrow()),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -771,11 +699,11 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_14() });
+    ({ test_15() });
     ({ test_16() });
     ({ test_17() });
     ({ test_18() });
     ({ test_19() });
-    ({ test_20() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

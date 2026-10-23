@@ -718,223 +718,79 @@ pub fn operator_eq_20(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> Imp
 pub fn test_with_types_21() -> () {
     ({ AssertOrderReturn_7() });
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_2(
-                { (*in_place_index_23.with(Value::clone).borrow()).clone() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_2(
-                { (*in_place_index_23.with(Value::clone).borrow()).clone() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__double_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;
 }
-pub fn test_with_types_24() -> () {
+pub fn test_with_types_22() -> () {
     ({ AssertOrderReturn_8() });
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_12.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_13.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_14.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_15.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_16.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_23.with(Value::clone).borrow()).clone() },
-                { __tmp_17.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_23.with(Value::clone).borrow()).clone() },
-                { __tmp_18.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_22.with(Value::clone).borrow()).clone() },
-                { __tmp_19.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;
 }
-pub fn test_three_way_25() -> () {
+pub fn test_three_way_23() -> () {
     unimplemented!();
     unimplemented!();
     {
-        let nan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut nan: () = unimplemented!();
         {
-            let v1: Value<()> = Rc::new(RefCell::new({
-                let __tmp_20: Value<()> = Rc::new(RefCell::new(1_()));
-                std_variant_int__double_::new_3(
-                    { (*in_place_type_26.with(Value::clone).borrow()).clone() },
-                    { __tmp_20.as_pointer() },
-                )
-            }));
-            let v2: Value<()> = Rc::new(RefCell::new(std_variant_int__double_::new_4(
-                { (*in_place_type_27.with(Value::clone).borrow()).clone() },
-                { nan.as_pointer() },
-            )));
+            let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let v1: Value<()> = Rc::new(RefCell::new(std_variant_int__double_::new_4(
-                { (*in_place_type_27.with(Value::clone).borrow()).clone() },
-                { nan.as_pointer() },
-            )));
-            let v2: Value<()> = Rc::new(RefCell::new({
-                let __tmp_21: Value<()> = Rc::new(RefCell::new(2_()));
-                std_variant_int__double_::new_3(
-                    { (*in_place_type_26.with(Value::clone).borrow()).clone() },
-                    { __tmp_21.as_pointer() },
-                )
-            }));
+            let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let v1: Value<()> = Rc::new(RefCell::new(std_variant_int__double_::new_4(
-                { (*in_place_type_27.with(Value::clone).borrow()).clone() },
-                { nan.as_pointer() },
-            )));
-            let v2: Value<()> = Rc::new(RefCell::new(std_variant_int__double_::new_4(
-                { (*in_place_type_27.with(Value::clone).borrow()).clone() },
-                { nan.as_pointer() },
-            )));
+            let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
     }
@@ -996,7 +852,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_three_way_25() });
+    ({ test_three_way_23() });
     const _: () = assert!(true, "test_three_way()");;
     return 0_();
 }

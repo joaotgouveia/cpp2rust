@@ -375,32 +375,8 @@ pub unsafe fn test_swap_same_alternative_14() {
         let mut move_called: () = 0_();
         let mut move_assign_called: () = 0_();
         let mut swap_called: () = 0_();
-        let mut v1: () = {
-            let mut __tmp_0: () = 42_();
-            let mut __tmp_1: *mut () = (&mut move_called as *mut ());
-            let mut __tmp_2: *mut () = (&mut move_assign_called as *mut ());
-            let mut __tmp_3: *mut () = (&mut swap_called as *mut ());
-            std_variant_NothrowTypeImp_false__false__false__false__true__true___int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_15)).clone() },
-                { &mut __tmp_0 },
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-                { &mut __tmp_3 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_4: () = 100_();
-            let mut __tmp_5: *mut () = (&mut move_called as *mut ());
-            let mut __tmp_6: *mut () = (&mut move_assign_called as *mut ());
-            let mut __tmp_7: *mut () = (&mut swap_called as *mut ());
-            std_variant_NothrowTypeImp_false__false__false__false__true__true___int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_15)).clone() },
-                { &mut __tmp_4 },
-                { &mut __tmp_5 },
-                { &mut __tmp_6 },
-                { &mut __tmp_7 },
-            )
-        };
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         (unsafe { v1.swap(&mut v2) });
         unimplemented!();
         unimplemented!();
@@ -416,32 +392,8 @@ pub unsafe fn test_swap_same_alternative_14() {
         let mut move_called: () = 0_();
         let mut move_assign_called: () = 0_();
         let mut swap_called: () = 0_();
-        let mut v1: () = {
-            let mut __tmp_8: () = 42_();
-            let mut __tmp_9: *mut () = (&mut move_called as *mut ());
-            let mut __tmp_10: *mut () = (&mut move_assign_called as *mut ());
-            let mut __tmp_11: *mut () = (&mut swap_called as *mut ());
-            std_variant_NothrowTypeImp_false__true__false__true__false__false___int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_15)).clone() },
-                { &mut __tmp_8 },
-                { &mut __tmp_9 },
-                { &mut __tmp_10 },
-                { &mut __tmp_11 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_12: () = 100_();
-            let mut __tmp_13: *mut () = (&mut move_called as *mut ());
-            let mut __tmp_14: *mut () = (&mut move_assign_called as *mut ());
-            let mut __tmp_15: *mut () = (&mut swap_called as *mut ());
-            std_variant_NothrowTypeImp_false__true__false__true__false__false___int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_15)).clone() },
-                { &mut __tmp_12 },
-                { &mut __tmp_13 },
-                { &mut __tmp_14 },
-                { &mut __tmp_15 },
-            )
-        };
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         (unsafe { v1.swap(&mut v2) });
         unimplemented!();
         unimplemented!();
@@ -459,32 +411,14 @@ pub unsafe fn test_swap_same_alternative_14() {
         unimplemented!();
     }
 }
-pub unsafe fn test_swap_same_alternative_throws_16() {}
-pub unsafe fn test_swap_different_alternatives_17() {
+pub unsafe fn test_swap_same_alternative_throws_15() {}
+pub unsafe fn test_swap_different_alternatives_16() {
     {
         let mut move_called: () = 0_();
         let mut move_assign_called: () = 0_();
         let mut swap_called: () = 0_();
-        let mut v1: () = {
-            let mut __tmp_16: () = 42_();
-            let mut __tmp_17: *mut () = (&mut move_called as *mut ());
-            let mut __tmp_18: *mut () = (&mut move_assign_called as *mut ());
-            let mut __tmp_19: *mut () = (&mut swap_called as *mut ());
-            std_variant_NothrowTypeImp_false__true__false__false__false__true___int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_15)).clone() },
-                { &mut __tmp_16 },
-                { &mut __tmp_17 },
-                { &mut __tmp_18 },
-                { &mut __tmp_19 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_20: () = 100_();
-            std_variant_NothrowTypeImp_false__true__false__false__false__true___int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_20 },
-            )
-        };
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         (unsafe { v1.swap(&mut v2) });
         unimplemented!();
         unimplemented!();
@@ -504,7 +438,13 @@ pub unsafe fn test_swap_different_alternatives_17() {
         unimplemented!();
     }
 }
-pub unsafe fn test_swap_different_alternatives_throws_19() {}
+pub unsafe fn test_swap_different_alternatives_throws_17() {}
+pub unsafe fn has_swap_member_imp_18(mut _a0: ()) -> () {
+    return true;
+}
+pub unsafe fn has_swap_member_imp_19(mut _a0: ()) -> () {
+    return true;
+}
 pub unsafe fn has_swap_member_imp_20(mut _a0: ()) -> () {
     return true;
 }
@@ -515,10 +455,10 @@ pub unsafe fn has_swap_member_imp_22(mut _a0: ()) -> () {
     return true;
 }
 pub unsafe fn has_swap_member_imp_23(mut _a0: ()) -> () {
-    return true;
+    return false;
 }
 pub unsafe fn has_swap_member_imp_24(mut _a0: ()) -> () {
-    return true;
+    return false;
 }
 pub unsafe fn has_swap_member_imp_25(mut _a0: ()) -> () {
     return false;
@@ -526,11 +466,11 @@ pub unsafe fn has_swap_member_imp_25(mut _a0: ()) -> () {
 pub unsafe fn has_swap_member_imp_26(mut _a0: ()) -> () {
     return false;
 }
-pub unsafe fn has_swap_member_imp_27(mut _a0: ()) -> () {
-    return false;
+pub unsafe fn has_swap_member_27() -> () {
+    return (unsafe { has_swap_member_imp_23(0_()) });
 }
-pub unsafe fn has_swap_member_imp_28(mut _a0: ()) -> () {
-    return false;
+pub unsafe fn has_swap_member_28() -> () {
+    return (unsafe { has_swap_member_imp_24(0_()) });
 }
 pub unsafe fn has_swap_member_29() -> () {
     return (unsafe { has_swap_member_imp_25(0_()) });
@@ -539,10 +479,10 @@ pub unsafe fn has_swap_member_30() -> () {
     return (unsafe { has_swap_member_imp_26(0_()) });
 }
 pub unsafe fn has_swap_member_31() -> () {
-    return (unsafe { has_swap_member_imp_27(0_()) });
+    return (unsafe { has_swap_member_imp_18(0_()) });
 }
 pub unsafe fn has_swap_member_32() -> () {
-    return (unsafe { has_swap_member_imp_28(0_()) });
+    return (unsafe { has_swap_member_imp_19(0_()) });
 }
 pub unsafe fn has_swap_member_33() -> () {
     return (unsafe { has_swap_member_imp_20(0_()) });
@@ -553,13 +493,7 @@ pub unsafe fn has_swap_member_34() -> () {
 pub unsafe fn has_swap_member_35() -> () {
     return (unsafe { has_swap_member_imp_22(0_()) });
 }
-pub unsafe fn has_swap_member_36() -> () {
-    return (unsafe { has_swap_member_imp_23(0_()) });
-}
-pub unsafe fn has_swap_member_37() -> () {
-    return (unsafe { has_swap_member_imp_24(0_()) });
-}
-pub unsafe fn test_swap_sfinae_38() {
+pub unsafe fn test_swap_sfinae_36() {
     {
         const _: () = assert!(true, "!has_swap_member<V>()");;
         const _: () = assert!(true, "std::is_swappable_v<V>");;
@@ -577,7 +511,7 @@ pub unsafe fn test_swap_sfinae_38() {
         const _: () = assert!(true, "!std::is_swappable_v<V>");;
     }
 }
-pub unsafe fn test_swap_noexcept_39() {
+pub unsafe fn test_swap_noexcept_37() {
     {
         const _: () = assert!(true, "std::is_swappable_v<V> && has_swap_member<V>()");;
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
@@ -632,19 +566,19 @@ pub unsafe fn test_swap_noexcept_39() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { swap_40(&mut v1, &mut v2) });
+        (unsafe { swap_38(&mut v1, &mut v2) });
     }
 }
-pub unsafe fn non_constexpr_test_41() {
+pub unsafe fn non_constexpr_test_39() {
     (unsafe { test_swap_valueless_by_exception_13() });
-    (unsafe { test_swap_same_alternative_throws_16() });
-    (unsafe { test_swap_different_alternatives_throws_19() });
+    (unsafe { test_swap_same_alternative_throws_15() });
+    (unsafe { test_swap_different_alternatives_throws_17() });
 }
-pub unsafe fn test_42() -> () {
+pub unsafe fn test_40() -> () {
     (unsafe { test_swap_same_alternative_14() });
-    (unsafe { test_swap_different_alternatives_17() });
-    (unsafe { test_swap_sfinae_38() });
-    (unsafe { test_swap_noexcept_39() });
+    (unsafe { test_swap_different_alternatives_16() });
+    (unsafe { test_swap_sfinae_36() });
+    (unsafe { test_swap_noexcept_37() });
     return true;
 }
 pub fn main() {
@@ -663,8 +597,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { non_constexpr_test_41() });
-    (unsafe { test_42() });
+    (unsafe { non_constexpr_test_39() });
+    (unsafe { test_40() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

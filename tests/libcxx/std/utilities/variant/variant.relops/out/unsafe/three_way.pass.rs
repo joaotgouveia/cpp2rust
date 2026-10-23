@@ -671,223 +671,79 @@ pub unsafe fn operator_eq_20(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2)
 pub unsafe fn test_with_types_21() -> () {
     (unsafe { AssertOrderReturn_7() });
     {
-        let v1: () = {
-            let mut __tmp_0: () = 1_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_0 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_1: () = 1_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_1 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_2: () = 0_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_2 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_3: () = 1_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_3 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_4: () = 1_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_4 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_5: () = 0_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_5 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_6: () = 0_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_6 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_7: () = 0_();
-            std_variant_int__double_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_23)).clone() },
-                { &mut __tmp_7 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_8: () = 0_();
-            std_variant_int__double_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_23)).clone() },
-                { &mut __tmp_8 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_9: () = 0_();
-            std_variant_int__double_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_9 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     return true;
 }
-pub unsafe fn test_with_types_24() -> () {
+pub unsafe fn test_with_types_22() -> () {
     (unsafe { AssertOrderReturn_8() });
     {
-        let v1: () = {
-            let mut __tmp_10: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_10 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_11: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_11 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_12: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_12 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_13: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_13 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_14: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_14 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_15: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_15 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_16: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_16 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_17: () = 0_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_23)).clone() },
-                { &mut __tmp_17 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let v1: () = {
-            let mut __tmp_18: () = 0_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_23)).clone() },
-                { &mut __tmp_18 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_19: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_22)).clone() },
-                { &mut __tmp_19 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         unimplemented!();
     }
     return true;
 }
-pub unsafe fn test_three_way_25() -> () {
+pub unsafe fn test_three_way_23() -> () {
     unimplemented!();
     unimplemented!();
     {
         let nan: () = unimplemented!();
         {
-            let v1: () = {
-                let mut __tmp_20: () = 1_();
-                std_variant_int__double_::new_3(
-                    { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_26)).clone() },
-                    { &mut __tmp_20 },
-                )
-            };
-            let v2: () = std_variant_int__double_::new_4(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_27)).clone() },
-                { &nan },
-            );
+            let v1: () = unimplemented!();
+            let v2: () = unimplemented!();
             unimplemented!();
         }
         {
-            let v1: () = std_variant_int__double_::new_4(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_27)).clone() },
-                { &nan },
-            );
-            let v2: () = {
-                let mut __tmp_21: () = 2_();
-                std_variant_int__double_::new_3(
-                    { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_26)).clone() },
-                    { &mut __tmp_21 },
-                )
-            };
+            let v1: () = unimplemented!();
+            let v2: () = unimplemented!();
             unimplemented!();
         }
         {
-            let v1: () = std_variant_int__double_::new_4(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_27)).clone() },
-                { &nan },
-            );
-            let v2: () = std_variant_int__double_::new_4(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_27)).clone() },
-                { &nan },
-            );
+            let v1: () = unimplemented!();
+            let v2: () = unimplemented!();
             unimplemented!();
         }
     }
@@ -945,7 +801,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_three_way_25() });
+    (unsafe { test_three_way_23() });
     const _: () = assert!(true, "test_three_way()");;
     return 0_();
 }

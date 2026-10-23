@@ -40,12 +40,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_0(TriviallyCopyable::new({ 42_() })) });
-    (unsafe {
-        test_1({
-            let mut __tmp_0: () = 2_();
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({ &mut __tmp_0 })
-        })
-    });
+    (unsafe { test_1(unimplemented!()) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

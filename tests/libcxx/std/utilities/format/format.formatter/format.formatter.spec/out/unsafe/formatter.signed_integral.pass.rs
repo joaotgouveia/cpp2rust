@@ -188,7 +188,8 @@ pub unsafe fn test_14(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        (unsafe { (formatter as std___formatter_integer_char_).parse(&mut parse_ctx) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
@@ -290,7 +291,8 @@ pub unsafe fn test_26(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
+    let mut it: () =
+        (unsafe { (formatter as std___formatter_integer_wchar_t_).parse(&mut parse_ctx) });
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();

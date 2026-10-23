@@ -26,41 +26,27 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let t: () = 3_();
+        let t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let t: () = {
-            let mut __tmp_0: () = 5_();
-            std_tuple_std_string__int_::new({ &std::mem::transmute(*b"high\0") }, { &mut __tmp_0 })
-        };
+        let t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: () = {
-            let mut __tmp_1: () = 2.718_f64;
-            let mut __tmp_2: () = 5_();
-            std_tuple_double__int_::new({ &mut __tmp_1 }, { &mut __tmp_2 })
-        };
+        let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 2.718");;
         const _: () = assert!(true, "std::get<1>(t) == 5");;
     }
     {
-        let t: () = <Empty>::default();
+        let t: () = unimplemented!();
         let e: Empty = (*(unsafe { get_0(&t) }));
         (&(e));
     }
     {
         let mut d: () = 1.5_f64;
-        let t: () = {
-            let mut __tmp_3: () = 5_();
-            std_tuple_double_ref__std_string__int_::new(
-                { &mut d },
-                { &std::mem::transmute(*b"high\0") },
-                { &mut __tmp_3 },
-            )
-        };
+        let t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

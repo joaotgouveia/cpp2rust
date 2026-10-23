@@ -421,7 +421,12 @@ const _: () = assert!(!(false), "!std::ranges::random_access_range<BidiRange>");
 const _: () = assert!(!(false), "!CanSubscript<ElemIter<BidiRange>, int>");
 pub fn test_8() -> () {
     {
-        let mut ts: [(); 4] = [1_(), 2_(), 3_(), 4_()];
+        let mut ts: [(); 4] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
         let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

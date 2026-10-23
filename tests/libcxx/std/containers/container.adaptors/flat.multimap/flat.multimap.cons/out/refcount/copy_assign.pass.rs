@@ -222,6 +222,9 @@ pub struct test_allocator_int__rebind_int_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_const_int_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_int__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -355,6 +358,9 @@ pub struct test_allocator_long__rebind_long_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_long__rebind_const_long_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_long__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_long_ {
@@ -650,6 +656,29 @@ impl Default for test_allocator_const_long_ptr_ {
         }
     }
 }
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
 pub fn operator_eq_7(x: Ptr<other_allocator_int_>, y: Ptr<other_allocator_int_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
@@ -829,6 +858,22 @@ impl Default for other_allocator_const_long_ptr_ {
         }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
+#[byte_size(4)]
+pub struct other_allocator_unsigned_long_ {
+    #[offset(0)]
+    data_: (),
+}
+impl other_allocator_unsigned_long_ {}
+impl Default for other_allocator_unsigned_long_ {
+    fn default() -> Self {
+        {
+            other_allocator_unsigned_long_ {
+                data_: unimplemented!(),
+            }
+        }
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Ctor_Tag {}
@@ -850,19 +895,9 @@ pub fn test_11() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__long__test_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_0.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            let __tmp_2: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_2({ 2_() })));
-            std_flat_multimap_int__long__test_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_2 ( { unimplemented!()  } , { __tmp_1.as_pointer() } , { __tmp_2.as_pointer() } , )
-        }));
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -877,19 +912,9 @@ pub fn test_11() {
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__long__test_less_int___std_vector_int__other_allocator_int____std_vector_long__other_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_3.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            let __tmp_5: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2_() })));
-            std_flat_multimap_int__long__test_less_int___std_vector_int__other_allocator_int____std_vector_long__other_allocator_long___ :: new_2 ( { unimplemented!()  } , { __tmp_4.as_pointer() } , { __tmp_5.as_pointer() } , )
-        }));
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -902,27 +927,17 @@ pub fn test_11() {
         unimplemented!();
     }
     {
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(std_function_bool__int__int__::new_1({
-                unimplemented!()
-            })));
-            std_flat_multimap_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { __tmp_6.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(std_function_bool__int__int__::new_2({
-                unimplemented!()
-            })));
-            std_flat_multimap_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { __tmp_7.as_pointer() } , )
-        }));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        (*m.borrow_mut()) = { (*m.borrow()).clone() };
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -930,19 +945,9 @@ pub fn test_12() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__long__test_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_8.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            let __tmp_10: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(test_allocator_int_::new_2({ 2_() })));
-            std_flat_multimap_int__long__test_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_2 ( { unimplemented!()  } , { __tmp_9.as_pointer() } , { __tmp_10.as_pointer() } , )
-        }));
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -957,19 +962,9 @@ pub fn test_12() {
     {
         let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-            std_flat_multimap_int__long__test_less_int___std_deque_int__other_allocator_int____std_deque_long__other_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_11.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<test_less_int_> =
-                Rc::new(RefCell::new(test_less_int_::new_1({ 3_() })));
-            let __tmp_13: Value<other_allocator_int_> =
-                Rc::new(RefCell::new(other_allocator_int_::new_1({ 2_() })));
-            std_flat_multimap_int__long__test_less_int___std_deque_int__other_allocator_int____std_deque_long__other_allocator_long___ :: new_2 ( { unimplemented!()  } , { __tmp_12.as_pointer() } , { __tmp_13.as_pointer() } , )
-        }));
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -982,29 +977,17 @@ pub fn test_12() {
         unimplemented!();
     }
     {
-        let mo: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> =
-                Rc::new(RefCell::new(std_function_bool__int__int__::new_1({
-                    unimplemented!()
-                })));
-            std_flat_multimap_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { __tmp_14.as_pointer() } , )
-        }));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> =
-                Rc::new(RefCell::new(std_function_bool__int__int__::new_2({
-                    unimplemented!()
-                })));
-            std_flat_multimap_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { __tmp_15.as_pointer() } , )
-        }));
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        (*m.borrow_mut()) = (*mo.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        (*m.borrow_mut()) = { (*m.borrow()).clone() };
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -1152,6 +1135,21 @@ impl other_allocator_long_ptr_Impl for Ptr<other_allocator_long_ptr_> {
         unimplemented!();
     }
 }
+pub trait other_allocator_unsigned_long_Impl {
+    fn allocate(&self, mut n: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn select_on_container_copy_construction(&self) -> other_allocator_unsigned_long_ {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+}
+impl other_allocator_unsigned_long_Impl for Ptr<other_allocator_unsigned_long_> {}
 pub trait test_allocator_const_int_ptr_Impl {
     fn destructor(&self) {
         unimplemented!()
@@ -1622,6 +1620,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

@@ -195,23 +195,15 @@ pub fn test_14() -> () {
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-        let t1: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            std_tuple_MoveOnly__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2_()) })));
-            let __tmp_3: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3_()) })));
-            std_tuple_MoveOnly__MoveOnly_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -219,26 +211,8 @@ pub fn test_14() -> () {
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_5: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            let __tmp_6: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2_()) })));
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new(
-                { __tmp_4.as_pointer() },
-                { __tmp_5.as_pointer() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(3_()) })));
-            let __tmp_8: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(4_()) })));
-            let __tmp_9: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(5_()) })));
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new(
-                { __tmp_7.as_pointer() },
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

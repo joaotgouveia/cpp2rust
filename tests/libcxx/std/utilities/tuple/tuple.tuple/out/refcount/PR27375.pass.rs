@@ -27,10 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    {
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-        std_tuple_int_ref_::new({ __tmp_0.as_pointer() })
-    };
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

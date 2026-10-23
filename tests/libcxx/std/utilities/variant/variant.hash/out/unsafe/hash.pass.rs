@@ -908,21 +908,9 @@ pub struct Class {}
 pub struct TestHashEnabled {}
 pub unsafe fn test_hash_variant_195() {
     {
-        let v: () = {
-            let mut __tmp_0: () = 42_();
-            std_variant_int__long__int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_196)).clone() },
-                { &mut __tmp_0 },
-            )
-        };
+        let v: () = unimplemented!();
         let v_copy: () = unimplemented!();
-        let mut v2: () = {
-            let mut __tmp_1: () = 100_();
-            std_variant_int__long__int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_196)).clone() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut v2: () = unimplemented!();
         let h: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -961,7 +949,7 @@ pub unsafe fn test_hash_variant_195() {
         unimplemented!();
     }
 }
-pub unsafe fn test_hash_monostate_197() {
+pub unsafe fn test_hash_monostate_196() {
     let h: () = unimplemented!();
     let mut m1: () = unimplemented!();
     let m2: () = unimplemented!();
@@ -977,14 +965,10 @@ pub unsafe fn test_hash_monostate_197() {
         (unsafe { test_hash_enabled_188(None) });
     }
 }
-pub unsafe fn test_hash_variant_duplicate_elements_198() {
+pub unsafe fn test_hash_variant_duplicate_elements_197() {
     let mut h: () = unimplemented!();
-    let v1: () = std_variant_std_monostate__std_monostate_::new_1({
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_196)).clone()
-    });
-    let v2: () = std_variant_std_monostate__std_monostate_::new_2({
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_199)).clone()
-    });
+    let v1: () = unimplemented!();
+    let v2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -995,7 +979,7 @@ pub struct A {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct B {}
-pub unsafe fn test_hash_variant_enabled_200() {
+pub unsafe fn test_hash_variant_enabled_198() {
     {
         (unsafe { test_hash_enabled_189(None) });
         (unsafe { test_hash_enabled_190(None) });
@@ -1026,9 +1010,9 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_hash_variant_195() });
-    (unsafe { test_hash_variant_duplicate_elements_198() });
-    (unsafe { test_hash_monostate_197() });
-    (unsafe { test_hash_variant_enabled_200() });
+    (unsafe { test_hash_variant_duplicate_elements_197() });
+    (unsafe { test_hash_monostate_196() });
+    (unsafe { test_hash_variant_enabled_198() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

@@ -137,22 +137,12 @@ pub fn test_ctor_sfinae_12() {
 }
 pub fn test_ctor_basic_13() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_variant_InitList__InitListArg_::new_1(
-            { (*in_place_type_14.with(Value::clone).borrow()).clone() },
-            { unimplemented!() },
-        )));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v).size == 3");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_InitList__InitListArg_::new_2(
-                { (*in_place_type_15.with(Value::clone).borrow()).clone() },
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v).size == 4");;
         const _: () = assert!(true, "std::get<1>(v).value == 42");;

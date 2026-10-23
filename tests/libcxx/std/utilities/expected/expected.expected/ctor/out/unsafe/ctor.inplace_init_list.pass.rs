@@ -460,7 +460,7 @@ impl Data_MoveOnly_ {
     pub unsafe fn new(mut il: (), us: *mut MoveOnly) -> Self {
         let mut this = Self {
             vec__: unimplemented!(),
-            tuple_: (*us),
+            tuple_: unimplemented!(),
         };
         this
     }
@@ -489,7 +489,7 @@ impl Data_int_ref__int_refref__MoveOnly_ {
     pub unsafe fn new(mut il: (), us_1: *mut (), us_2: *mut (), us_3: *mut MoveOnly) -> Self {
         let mut this = Self {
             vec__: unimplemented!(),
-            tuple_: std_tuple_int_ref__int_refref__MoveOnly_::new({ us_1 }, { us_2 }, { us_3 }),
+            tuple_: unimplemented!(),
         };
         this
     }

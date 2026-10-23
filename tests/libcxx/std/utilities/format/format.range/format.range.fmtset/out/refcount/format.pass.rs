@@ -187,7 +187,9 @@ pub fn test_format_8(expected: (), arg: ()) {
             })
         }),
     ));
-    unimplemented!();
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
+    });
     unimplemented!();
 }
 pub fn test_format_10(expected: (), arg: ()) {
@@ -204,7 +206,9 @@ pub fn test_format_10(expected: (), arg: ()) {
             })
         }),
     ));
-    unimplemented!();
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
+    });
     unimplemented!();
 }
 pub fn test_assure_parse_is_called_12(fmt: ()) {
@@ -222,8 +226,12 @@ pub fn test_assure_parse_is_called_12(fmt: ()) {
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . parse ( ctx .as_pointer()  , )
+    });
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
+    });
 }
 pub fn test_assure_parse_is_called_14(fmt: ()) {
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
@@ -240,8 +248,12 @@ pub fn test_assure_parse_is_called_14(fmt: ()) {
     ));
     let formatter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ctx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . parse ( ctx .as_pointer()  , )
+    });
+    ({
+        ( (*formatter.borrow()) as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . format ( arg .as_pointer()  , format_ctx .as_pointer()  , )
+    });
 }
 pub fn test_assure_parse_is_called_16() {
     let arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));

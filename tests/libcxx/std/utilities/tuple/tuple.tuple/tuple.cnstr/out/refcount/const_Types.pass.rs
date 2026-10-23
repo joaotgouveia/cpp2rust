@@ -82,16 +82,16 @@ impl Clone for ImplicitCopy {
     }
 }
 pub fn testImplicitCopy1_1() -> () {
-    let i: Value<ImplicitCopy> = Rc::new(RefCell::new(ImplicitCopy::new({ 42_() })));
-    return std_tuple_ImplicitCopy_::new_1({ i.as_pointer() });
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    return unimplemented!();
 }
 pub fn testImplicitCopy2_2() -> () {
-    let i: Value<ImplicitCopy> = Rc::new(RefCell::new(ImplicitCopy::new({ 42_() })));
-    return std_tuple_ImplicitCopy_::new_2({ i.as_pointer() });
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    return unimplemented!();
 }
 pub fn testImplicitCopy3_3() -> () {
-    let i: Value<ImplicitCopy> = Rc::new(RefCell::new(ImplicitCopy::new({ 42_() })));
-    return (*i.borrow_mut()).clone();
+    let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -114,18 +114,15 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-            std_tuple_int_ptr_::new({ __tmp_0.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(2_()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(2_()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t) == 2");;
     }
     {
@@ -133,77 +130,35 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::get<0>(t) == 0");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_2: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-            std_tuple_int__char_ptr_::new_1({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(Default::default()));
-            std_tuple_int__char_ptr_::new_2({ __tmp_3.as_pointer() }, { __tmp_4.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t) == 2");;
         const _: () = assert!(true, "std::get<1>(t) == nullptr");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(Default::default()));
-            std_tuple_int__char_ptr_::new_2({ __tmp_5.as_pointer() }, { __tmp_6.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(Default::default()));
-            std_tuple_int__char_ptr__std_string_::new(
-                { __tmp_7.as_pointer() },
-                { __tmp_8.as_pointer() },
-                { Ptr::<()>::from_string_literal(b"text") },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_10: Value<NoValueCtor> = Rc::new(RefCell::new(NoValueCtor::new()));
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(3_()));
-            std_tuple_int__NoValueCtor__int__int_::new(
-                { __tmp_9.as_pointer() },
-                { __tmp_10.as_pointer() },
-                { __tmp_11.as_pointer() },
-                { __tmp_12.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_14: Value<NoValueCtorEmpty> = Rc::new(RefCell::new(NoValueCtorEmpty::new()));
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(3_()));
-            std_tuple_int__NoValueCtorEmpty__int__int_::new(
-                { __tmp_13.as_pointer() },
-                { __tmp_14.as_pointer() },
-                { __tmp_15.as_pointer() },
-                { __tmp_16.as_pointer() },
-            )
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

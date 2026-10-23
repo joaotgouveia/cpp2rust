@@ -139,135 +139,87 @@ pub unsafe fn test_copy_ctor_sfinae_0() {
 }
 pub unsafe fn test_copy_ctor_basic_1() {
     {
-        let mut v: () = {
-            let mut __tmp_0: () = 42_();
-            std_variant_int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2)).clone() },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = {
-            let mut __tmp_1: () = 42_();
-            std_variant_int__long_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone() },
-                { &mut __tmp_1 },
-            )
-        };
+        let mut v: () = unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = {
-            let mut __tmp_2: () = 42_();
-            std_variant_NonT_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2)).clone() },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = {
-            let mut __tmp_3: () = 42_();
-            std_variant_int__NonT_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone() },
-                { &mut __tmp_3 },
-            )
-        };
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut v2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: () = {
-            let mut __tmp_4: () = 42_();
-            std_variant_int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2)).clone() },
-                { &mut __tmp_4 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2) == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_5: () = 42_();
-            std_variant_int__long_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone() },
-                { &mut __tmp_5 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2) == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_6: () = 42_();
-            std_variant_TCopy_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2)).clone() },
-                { &mut __tmp_6 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2).value == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_7: () = 42_();
-            std_variant_int__TCopy_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone() },
-                { &mut __tmp_7 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2).value == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_8: () = 42_();
-            std_variant_TCopyNTMove_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2)).clone() },
-                { &mut __tmp_8 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2).value == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_9: () = 42_();
-            std_variant_int__TCopyNTMove_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone() },
-                { &mut __tmp_9 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         let v2: () = unimplemented!();
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2).value == 42");;
     }
 }
-pub unsafe fn test_copy_ctor_valueless_by_exception_4() {}
+pub unsafe fn test_copy_ctor_valueless_by_exception_2() {}
+pub unsafe fn test_constexpr_copy_ctor_imp_3(v: *const ()) {
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_copy_ctor_imp_4(v: *const ()) {
+    let mut v2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_constexpr_copy_ctor_imp_5(v: *const ()) {
     let mut v2: () = unimplemented!();
     unimplemented!();
@@ -292,35 +244,23 @@ pub unsafe fn test_constexpr_copy_ctor_imp_8(v: *const ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_constexpr_copy_ctor_imp_9(v: *const ()) {
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_copy_ctor_imp_10(v: *const ()) {
-    let mut v2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_copy_ctor_trivial_11() {
+pub unsafe fn test_constexpr_copy_ctor_trivial_9() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_constructible<V>::value");;
     (unsafe {
         let mut _v: () = 42_();
-        test_constexpr_copy_ctor_imp_5(&mut _v)
+        test_constexpr_copy_ctor_imp_3(&mut _v)
     });
     (unsafe {
         let mut _v: () = Default::default();
-        test_constexpr_copy_ctor_imp_6(&mut _v)
+        test_constexpr_copy_ctor_imp_4(&mut _v)
     });
     (unsafe {
         let mut _v: () = 101_();
-        test_constexpr_copy_ctor_imp_7(&mut _v)
+        test_constexpr_copy_ctor_imp_5(&mut _v)
     });
 }
-pub unsafe fn operator_eq_12(x: *const NonTrivialCopyCtor, y: *const NonTrivialCopyCtor) -> () {
+pub unsafe fn operator_eq_10(x: *const NonTrivialCopyCtor, y: *const NonTrivialCopyCtor) -> () {
     return (((*x).i) == ((*y).i));
 }
 #[repr(C)]
@@ -345,7 +285,7 @@ impl NonTrivialCopyCtor {
 impl std::cmp::PartialEq for NonTrivialCopyCtor {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_10(
                 self as *const NonTrivialCopyCtor,
                 other as *const NonTrivialCopyCtor,
             )
@@ -363,32 +303,32 @@ impl Default for NonTrivialCopyCtor {
         unsafe { NonTrivialCopyCtor { i: 0_() } }
     }
 }
-pub unsafe fn test_constexpr_copy_ctor_non_trivial_13() {
+pub unsafe fn test_constexpr_copy_ctor_non_trivial_11() {
     const _: () = assert!(true, "!std::is_trivially_copy_constructible<V>::value");;
     (unsafe {
         let mut _v: () = 42_();
-        test_constexpr_copy_ctor_imp_8(&mut _v)
+        test_constexpr_copy_ctor_imp_6(&mut _v)
     });
     (unsafe {
         let mut _v: () = NonTrivialCopyCtor::new({ 5_() });
-        test_constexpr_copy_ctor_imp_9(&mut _v)
+        test_constexpr_copy_ctor_imp_7(&mut _v)
     });
     (unsafe {
         let mut _v: () = Default::default();
-        test_constexpr_copy_ctor_imp_10(&mut _v)
+        test_constexpr_copy_ctor_imp_8(&mut _v)
     });
 }
-pub unsafe fn non_constexpr_test_14() {
-    (unsafe { test_copy_ctor_valueless_by_exception_4() });
+pub unsafe fn non_constexpr_test_12() {
+    (unsafe { test_copy_ctor_valueless_by_exception_2() });
 }
-pub unsafe fn cxx17_constexpr_test_15() -> () {
+pub unsafe fn cxx17_constexpr_test_13() -> () {
     (unsafe { test_copy_ctor_sfinae_0() });
-    (unsafe { test_constexpr_copy_ctor_trivial_11() });
+    (unsafe { test_constexpr_copy_ctor_trivial_9() });
     return true;
 }
-pub unsafe fn cxx20_constexpr_test_16() -> () {
+pub unsafe fn cxx20_constexpr_test_14() -> () {
     (unsafe { test_copy_ctor_basic_1() });
-    (unsafe { test_constexpr_copy_ctor_non_trivial_13() });
+    (unsafe { test_constexpr_copy_ctor_non_trivial_11() });
     return true;
 }
 pub fn main() {
@@ -407,9 +347,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { non_constexpr_test_14() });
-    (unsafe { cxx17_constexpr_test_15() });
-    (unsafe { cxx20_constexpr_test_16() });
+    (unsafe { non_constexpr_test_12() });
+    (unsafe { cxx17_constexpr_test_13() });
+    (unsafe { cxx20_constexpr_test_14() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0_();

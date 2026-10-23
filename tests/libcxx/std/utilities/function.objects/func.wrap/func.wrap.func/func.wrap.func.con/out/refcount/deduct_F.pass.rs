@@ -261,31 +261,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
-            <f1_0>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_1({
-            <f2_0>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_1({
-            <f3_0>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_1({
-            <f1_0>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_1({
-            <f2_0>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_1({
-            <f3_0>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -303,31 +291,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_2({
-            <f1_1>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_2({
-            <f2_1>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_2({
-            <f3_1>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_2({
-            <f1_1>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_2({
-            <f2_1>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_2({
-            <f3_1>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -345,31 +321,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_3({
-            <f1_2>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_3({
-            <f2_2>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_3({
-            <f3_2>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_3({
-            <f1_2>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_3({
-            <f2_2>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_3({
-            <f3_2>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -387,31 +351,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_4({
-            <f1_3>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_4({
-            <f2_3>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_4({
-            <f3_3>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_4({
-            <f1_3>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_4({
-            <f2_3>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_4({
-            <f3_3>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -429,31 +381,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_5({
-            <f1_4>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_5({
-            <f2_4>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_5({
-            <f3_4>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_5({
-            <f1_4>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_5({
-            <f2_4>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_5({
-            <f3_4>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -471,31 +411,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_6({
-            <f1_5>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_6({
-            <f2_5>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_6({
-            <f3_5>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_6({
-            <f1_5>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_6({
-            <f2_5>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_6({
-            <f3_5>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -513,31 +441,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_7({
-            <f1_6>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_7({
-            <f2_6>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_7({
-            <f3_6>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_7({
-            <f1_6>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_7({
-            <f2_6>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_7({
-            <f3_6>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -555,31 +471,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_8({
-            <f1_7>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_8({
-            <f2_7>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_8({
-            <f3_7>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_8({
-            <f1_7>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_8({
-            <f2_7>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_8({
-            <f3_7>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -597,31 +501,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_9({
-            <f1_8>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_9({
-            <f2_8>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_9({
-            <f3_8>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_9({
-            <f1_8>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_9({
-            <f2_8>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_9({
-            <f3_8>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -639,31 +531,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_10({
-            <f1_9>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_10({
-            <f2_9>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_10({
-            <f3_9>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_10({
-            <f1_9>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_10({
-            <f2_9>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_10({
-            <f3_9>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -681,31 +561,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_11({
-            <f1_10>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_11({
-            <f2_10>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_11({
-            <f3_10>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_11({
-            <f1_10>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_11({
-            <f2_10>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_11({
-            <f3_10>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -723,31 +591,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_12({
-            <f1_11>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_12({
-            <f2_11>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_12({
-            <f3_11>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_12({
-            <f1_11>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_12({
-            <f2_11>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_12({
-            <f3_11>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -765,31 +621,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_13({
-            <f1_12>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_13({
-            <f2_12>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_13({
-            <f3_12>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_13({
-            <f1_12>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_13({
-            <f2_12>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_13({
-            <f3_12>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -807,31 +651,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_14({
-            <f1_13>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_14({
-            <f2_13>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_14({
-            <f3_13>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_14({
-            <f1_13>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_14({
-            <f2_13>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_14({
-            <f3_13>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -849,31 +681,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_15({
-            <f1_14>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_15({
-            <f2_14>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_15({
-            <f3_14>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_15({
-            <f1_14>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_15({
-            <f2_14>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_15({
-            <f3_14>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -891,31 +711,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         __do_while = false;
         let g0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g1: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_16({
-            <f1_15>::default()
-        })));
+        let g1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g2: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_16({
-            <f2_15>::default()
-        })));
+        let g2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g3: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_16({
-            <f3_15>::default()
-        })));
+        let g3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let g4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g5: Value<()> = Rc::new(RefCell::new(std_function_R__A1__::new_16({
-            <f1_15>::default()
-        })));
+        let g5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g6: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__::new_16({
-            <f2_15>::default()
-        })));
+        let g6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let g7: Value<()> = Rc::new(RefCell::new(std_function_R__A1__A2__A3__::new_16({
-            <f3_15>::default()
-        })));
+        let g7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let unary: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let g8: Value<()> = Rc::new(RefCell::new(unimplemented!()));

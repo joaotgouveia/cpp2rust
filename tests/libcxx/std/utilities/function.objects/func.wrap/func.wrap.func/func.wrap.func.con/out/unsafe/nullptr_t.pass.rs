@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut f: () = std_function_int__int__::new_1({ Default::default() });
+    let mut f: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

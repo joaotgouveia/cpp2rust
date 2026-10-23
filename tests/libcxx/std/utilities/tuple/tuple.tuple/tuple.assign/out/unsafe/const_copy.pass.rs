@@ -607,15 +607,15 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut d1: () = 3_f64;
         let mut d2: () = 5_f64;
-        let t1: () = std_tuple_int_ref__double_ref_::new({ &mut i1 }, { &mut d1 });
-        let t2: () = std_tuple_int_ref__double_ref_::new({ &mut i2 }, { &mut d2 });
+        let t1: () = unimplemented!();
+        let t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: () = 1_();
-        let t2: () = 2_();
+        let t1: () = unimplemented!();
+        let t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

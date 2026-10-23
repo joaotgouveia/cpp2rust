@@ -31,35 +31,25 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (&(t));
     }
     {
-        let mut t0: () = 2_();
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: () = ('a' as ());
-            std_tuple_int__char_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let mut t: () = std_tuple_int__char_::new_2({ &mut t0 });
+        let mut t0: () = unimplemented!();
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: () = ('a' as ());
-            std_tuple_int__char__std_string_::new({ &mut __tmp_2 }, { &mut __tmp_3 }, {
-                &std::mem::transmute(*b"some text\0")
-            })
-        };
+        let t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: () = 2_();
+        let t0: () = unimplemented!();
         let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 2");;
     }

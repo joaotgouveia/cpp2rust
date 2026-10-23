@@ -29,15 +29,13 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_1({
-            t0.as_pointer()
-        })));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_2({
+        let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_1({
             p0.as_pointer()
         })));
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;

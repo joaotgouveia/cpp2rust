@@ -51,9 +51,7 @@ const _: () = assert!(true, "std::is_trivially_destructible<TDtor>::value");
 pub fn test_0() -> () {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<V>::value");;
-        let v: Value<()> = Rc::new(RefCell::new(std_variant_int__long__TDtor_::new({
-            (*in_place_index_1.with(Value::clone).borrow()).clone()
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {
         const _: () = assert!(true, "!std::is_trivially_destructible<V>::value");;
@@ -61,15 +59,7 @@ pub fn test_0() -> () {
             let count0: Value<()> = Rc::new(RefCell::new(0_()));
             let count1: Value<()> = Rc::new(RefCell::new(0_()));
             {
-                let v: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_0: Value<Ptr<()>> = Rc::new(RefCell::new((count0.as_pointer())));
-                    let __tmp_1: Value<Ptr<()>> = Rc::new(RefCell::new((count1.as_pointer())));
-                    std_variant_NonTDtor__int__NonTDtor1_::new_1(
-                        { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                        { __tmp_0.as_pointer() },
-                        { __tmp_1.as_pointer() },
-                    )
-                }));
+                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
             }
@@ -80,10 +70,7 @@ pub fn test_0() -> () {
             let mut count0: () = 0_();
             let mut count1: () = 0_();
             {
-                let v: Value<()> =
-                    Rc::new(RefCell::new(std_variant_NonTDtor__int__NonTDtor1_::new_2(
-                        { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                    )));
+                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             }
             unimplemented!();
             unimplemented!();
@@ -92,15 +79,7 @@ pub fn test_0() -> () {
             let count0: Value<()> = Rc::new(RefCell::new(0_()));
             let count1: Value<()> = Rc::new(RefCell::new(0_()));
             {
-                let v: Value<()> = Rc::new(RefCell::new({
-                    let __tmp_2: Value<Ptr<()>> = Rc::new(RefCell::new((count0.as_pointer())));
-                    let __tmp_3: Value<Ptr<()>> = Rc::new(RefCell::new((count1.as_pointer())));
-                    std_variant_NonTDtor__int__NonTDtor1_::new_3(
-                        { (*in_place_index_1.with(Value::clone).borrow()).clone() },
-                        { __tmp_2.as_pointer() },
-                        { __tmp_3.as_pointer() },
-                    )
-                }));
+                let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
             }

@@ -429,7 +429,7 @@ impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
 pub unsafe fn alloc_max_size_10(a: *const ()) -> () {
-    return (unsafe { std_allocator_traits_std_allocator_char__::max_size(a) });
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
@@ -693,9 +693,7 @@ pub unsafe fn make_thread_unsafe_shared_15()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({ &ptr });
 }
 pub unsafe fn make_thread_unsafe_shared_16()
@@ -708,9 +706,7 @@ pub unsafe fn make_thread_unsafe_shared_16()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::copy_from(
         { &ptr },
     );
@@ -761,9 +757,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_10_ {
@@ -838,9 +832,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_18446744073709551615_ {

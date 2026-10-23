@@ -941,21 +941,9 @@ pub struct Class {}
 pub struct TestHashEnabled {}
 pub fn test_hash_variant_195() {
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long__int_::new(
-                { (*in_place_index_196.with(Value::clone).borrow()).clone() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v_copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(100_()));
-            std_variant_int__long__int_::new(
-                { (*in_place_index_196.with(Value::clone).borrow()).clone() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -998,7 +986,7 @@ pub fn test_hash_variant_195() {
         unimplemented!();
     }
 }
-pub fn test_hash_monostate_197() {
+pub fn test_hash_monostate_196() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let m2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1014,18 +1002,10 @@ pub fn test_hash_monostate_197() {
         ({ test_hash_enabled_188(None) });
     }
 }
-pub fn test_hash_variant_duplicate_elements_198() {
+pub fn test_hash_variant_duplicate_elements_197() {
     let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let v1: Value<()> = Rc::new(RefCell::new(
-        std_variant_std_monostate__std_monostate_::new_1({
-            (*in_place_index_196.with(Value::clone).borrow()).clone()
-        }),
-    ));
-    let v2: Value<()> = Rc::new(RefCell::new(
-        std_variant_std_monostate__std_monostate_::new_2({
-            (*in_place_index_199.with(Value::clone).borrow()).clone()
-        }),
-    ));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1036,7 +1016,7 @@ pub struct A {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct B {}
-pub fn test_hash_variant_enabled_200() {
+pub fn test_hash_variant_enabled_198() {
     {
         ({ test_hash_enabled_189(None) });
         ({ test_hash_enabled_190(None) });
@@ -1071,9 +1051,9 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_hash_variant_195() });
-    ({ test_hash_variant_duplicate_elements_198() });
-    ({ test_hash_monostate_197() });
-    ({ test_hash_variant_enabled_200() });
+    ({ test_hash_variant_duplicate_elements_197() });
+    ({ test_hash_monostate_196() });
+    ({ test_hash_variant_enabled_198() });
     return 0_();
 }
 pub trait ConvertibleToSimple_std_monostate_Impl {

@@ -384,32 +384,8 @@ pub fn test_swap_same_alternative_14() {
         let move_called: Value<()> = Rc::new(RefCell::new(0_()));
         let move_assign_called: Value<()> = Rc::new(RefCell::new(0_()));
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_1: Value<Ptr<()>> = Rc::new(RefCell::new((move_called.as_pointer())));
-            let __tmp_2: Value<Ptr<()>> = Rc::new(RefCell::new((move_assign_called.as_pointer())));
-            let __tmp_3: Value<Ptr<()>> = Rc::new(RefCell::new((swap_called.as_pointer())));
-            std_variant_NothrowTypeImp_false__false__false__false__true__true___int_::new(
-                { (*in_place_index_15.with(Value::clone).borrow()).clone() },
-                { __tmp_0.as_pointer() },
-                { __tmp_1.as_pointer() },
-                { __tmp_2.as_pointer() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(100_()));
-            let __tmp_5: Value<Ptr<()>> = Rc::new(RefCell::new((move_called.as_pointer())));
-            let __tmp_6: Value<Ptr<()>> = Rc::new(RefCell::new((move_assign_called.as_pointer())));
-            let __tmp_7: Value<Ptr<()>> = Rc::new(RefCell::new((swap_called.as_pointer())));
-            std_variant_NothrowTypeImp_false__false__false__false__true__true___int_::new(
-                { (*in_place_index_15.with(Value::clone).borrow()).clone() },
-                { __tmp_4.as_pointer() },
-                { __tmp_5.as_pointer() },
-                { __tmp_6.as_pointer() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*v1.borrow()).swap(v2.as_pointer()) });
         unimplemented!();
         unimplemented!();
@@ -425,32 +401,8 @@ pub fn test_swap_same_alternative_14() {
         let move_called: Value<()> = Rc::new(RefCell::new(0_()));
         let move_assign_called: Value<()> = Rc::new(RefCell::new(0_()));
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_9: Value<Ptr<()>> = Rc::new(RefCell::new((move_called.as_pointer())));
-            let __tmp_10: Value<Ptr<()>> = Rc::new(RefCell::new((move_assign_called.as_pointer())));
-            let __tmp_11: Value<Ptr<()>> = Rc::new(RefCell::new((swap_called.as_pointer())));
-            std_variant_NothrowTypeImp_false__true__false__true__false__false___int_::new(
-                { (*in_place_index_15.with(Value::clone).borrow()).clone() },
-                { __tmp_8.as_pointer() },
-                { __tmp_9.as_pointer() },
-                { __tmp_10.as_pointer() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(100_()));
-            let __tmp_13: Value<Ptr<()>> = Rc::new(RefCell::new((move_called.as_pointer())));
-            let __tmp_14: Value<Ptr<()>> = Rc::new(RefCell::new((move_assign_called.as_pointer())));
-            let __tmp_15: Value<Ptr<()>> = Rc::new(RefCell::new((swap_called.as_pointer())));
-            std_variant_NothrowTypeImp_false__true__false__true__false__false___int_::new(
-                { (*in_place_index_15.with(Value::clone).borrow()).clone() },
-                { __tmp_12.as_pointer() },
-                { __tmp_13.as_pointer() },
-                { __tmp_14.as_pointer() },
-                { __tmp_15.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*v1.borrow()).swap(v2.as_pointer()) });
         unimplemented!();
         unimplemented!();
@@ -468,32 +420,14 @@ pub fn test_swap_same_alternative_14() {
         unimplemented!();
     }
 }
-pub fn test_swap_same_alternative_throws_16() {}
-pub fn test_swap_different_alternatives_17() {
+pub fn test_swap_same_alternative_throws_15() {}
+pub fn test_swap_different_alternatives_16() {
     {
         let move_called: Value<()> = Rc::new(RefCell::new(0_()));
         let move_assign_called: Value<()> = Rc::new(RefCell::new(0_()));
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(42_()));
-            let __tmp_17: Value<Ptr<()>> = Rc::new(RefCell::new((move_called.as_pointer())));
-            let __tmp_18: Value<Ptr<()>> = Rc::new(RefCell::new((move_assign_called.as_pointer())));
-            let __tmp_19: Value<Ptr<()>> = Rc::new(RefCell::new((swap_called.as_pointer())));
-            std_variant_NothrowTypeImp_false__true__false__false__false__true___int_::new_1(
-                { (*in_place_index_15.with(Value::clone).borrow()).clone() },
-                { __tmp_16.as_pointer() },
-                { __tmp_17.as_pointer() },
-                { __tmp_18.as_pointer() },
-                { __tmp_19.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(100_()));
-            std_variant_NothrowTypeImp_false__true__false__false__false__true___int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_20.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ (*v1.borrow()).swap(v2.as_pointer()) });
         unimplemented!();
         unimplemented!();
@@ -513,7 +447,13 @@ pub fn test_swap_different_alternatives_17() {
         unimplemented!();
     }
 }
-pub fn test_swap_different_alternatives_throws_19() {}
+pub fn test_swap_different_alternatives_throws_17() {}
+pub fn has_swap_member_imp_18(mut _a0: ()) -> () {
+    return true;
+}
+pub fn has_swap_member_imp_19(mut _a0: ()) -> () {
+    return true;
+}
 pub fn has_swap_member_imp_20(mut _a0: ()) -> () {
     return true;
 }
@@ -524,10 +464,10 @@ pub fn has_swap_member_imp_22(mut _a0: ()) -> () {
     return true;
 }
 pub fn has_swap_member_imp_23(mut _a0: ()) -> () {
-    return true;
+    return false;
 }
 pub fn has_swap_member_imp_24(mut _a0: ()) -> () {
-    return true;
+    return false;
 }
 pub fn has_swap_member_imp_25(mut _a0: ()) -> () {
     return false;
@@ -535,11 +475,11 @@ pub fn has_swap_member_imp_25(mut _a0: ()) -> () {
 pub fn has_swap_member_imp_26(mut _a0: ()) -> () {
     return false;
 }
-pub fn has_swap_member_imp_27(mut _a0: ()) -> () {
-    return false;
+pub fn has_swap_member_27() -> () {
+    return ({ has_swap_member_imp_23(0_()) });
 }
-pub fn has_swap_member_imp_28(mut _a0: ()) -> () {
-    return false;
+pub fn has_swap_member_28() -> () {
+    return ({ has_swap_member_imp_24(0_()) });
 }
 pub fn has_swap_member_29() -> () {
     return ({ has_swap_member_imp_25(0_()) });
@@ -548,10 +488,10 @@ pub fn has_swap_member_30() -> () {
     return ({ has_swap_member_imp_26(0_()) });
 }
 pub fn has_swap_member_31() -> () {
-    return ({ has_swap_member_imp_27(0_()) });
+    return ({ has_swap_member_imp_18(0_()) });
 }
 pub fn has_swap_member_32() -> () {
-    return ({ has_swap_member_imp_28(0_()) });
+    return ({ has_swap_member_imp_19(0_()) });
 }
 pub fn has_swap_member_33() -> () {
     return ({ has_swap_member_imp_20(0_()) });
@@ -562,13 +502,7 @@ pub fn has_swap_member_34() -> () {
 pub fn has_swap_member_35() -> () {
     return ({ has_swap_member_imp_22(0_()) });
 }
-pub fn has_swap_member_36() -> () {
-    return ({ has_swap_member_imp_23(0_()) });
-}
-pub fn has_swap_member_37() -> () {
-    return ({ has_swap_member_imp_24(0_()) });
-}
-pub fn test_swap_sfinae_38() {
+pub fn test_swap_sfinae_36() {
     {
         const _: () = assert!(true, "!has_swap_member<V>()");;
         const _: () = assert!(true, "std::is_swappable_v<V>");;
@@ -586,7 +520,7 @@ pub fn test_swap_sfinae_38() {
         const _: () = assert!(true, "!std::is_swappable_v<V>");;
     }
 }
-pub fn test_swap_noexcept_39() {
+pub fn test_swap_noexcept_37() {
     {
         const _: () = assert!(true, "std::is_swappable_v<V> && has_swap_member<V>()");;
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
@@ -641,19 +575,19 @@ pub fn test_swap_noexcept_39() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_40(v1.as_pointer(), v2.as_pointer()) });
+        ({ swap_38(v1.as_pointer(), v2.as_pointer()) });
     }
 }
-pub fn non_constexpr_test_41() {
+pub fn non_constexpr_test_39() {
     ({ test_swap_valueless_by_exception_13() });
-    ({ test_swap_same_alternative_throws_16() });
-    ({ test_swap_different_alternatives_throws_19() });
+    ({ test_swap_same_alternative_throws_15() });
+    ({ test_swap_different_alternatives_throws_17() });
 }
-pub fn test_42() -> () {
+pub fn test_40() -> () {
     ({ test_swap_same_alternative_14() });
-    ({ test_swap_different_alternatives_17() });
-    ({ test_swap_sfinae_38() });
-    ({ test_swap_noexcept_39() });
+    ({ test_swap_different_alternatives_16() });
+    ({ test_swap_sfinae_36() });
+    ({ test_swap_noexcept_37() });
     return true;
 }
 pub fn main() {
@@ -676,8 +610,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ non_constexpr_test_41() });
-    ({ test_42() });
+    ({ non_constexpr_test_39() });
+    ({ test_40() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

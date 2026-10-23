@@ -987,72 +987,72 @@ const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
 thread_local!(
-    pub static SFINAEs_away_25: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_27: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_28: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_29: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_30: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_29: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_31: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_30: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_32: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_31: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_33: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_32: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_34: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_33: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_35: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_34: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_36: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_35: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_37: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_36: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_38: Value<()> = Rc::new(RefCell::new(value_39.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_37: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_40: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_38: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_41: Value<()> = Rc::new(RefCell::new(value_39.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_39: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_42: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_40: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_43: Value<()> = Rc::new(RefCell::new(value_39.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_41: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_44: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_42: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_45: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_43: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_46: Value<()> = Rc::new(RefCell::new(value_39.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_44: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static SFINAEs_away_47: Value<()> = Rc::new(RefCell::new(value_26.with(|rc| *rc.borrow())));
+    pub static SFINAEs_away_45: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
-pub fn AssociativeContainerDeductionGuidesSfinaeAway_48() {
+pub fn AssociativeContainerDeductionGuidesSfinaeAway_46() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter, Comp>");;
@@ -1116,7 +1116,7 @@ pub fn AssociativeContainerDeductionGuidesSfinaeAway_48() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct BadAlloc_49 {}
+pub struct BadAlloc_47 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -1160,22 +1160,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_50: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_48: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_51: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_49: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_52(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_50(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_53(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_51(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_52(_x, _y)
+        operator_eq_50(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -1236,7 +1236,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_52(
+            operator_eq_50(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -1359,7 +1359,7 @@ impl test_allocator_int_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_51.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1437,7 +1437,7 @@ impl test_allocator_int_ptr_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_51.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1573,7 +1573,7 @@ impl test_allocator_long_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_51.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1651,7 +1651,7 @@ impl test_allocator_long_ptr_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_51.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1717,30 +1717,27 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn test_copy_54() {
+pub fn test_copy_52() {
     {
-        let source : Value<() > = Rc::new(RefCell::new(std_flat_multimap_long__int__std_less_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        let s: Value<()> = Rc::new(RefCell::new((*source.borrow()).clone()));
+        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let source : Value<() > = Rc::new(RefCell::new(std_flat_multimap_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        let s: Value<()> = Rc::new(RefCell::new((*source.borrow()).clone()));
+        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let source : Value<() > = Rc::new(RefCell::new(std_flat_multimap_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_2 ( { source .as_pointer()  } , { __tmp_0.as_pointer() } , )
-        }));
+        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
-pub fn test_containers_55() {
+pub fn test_containers_53() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1755,47 +1752,35 @@ pub fn test_containers_55() {
         unimplemented!(),
     ])));
     {
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )  )) ;
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , { unimplemented!()  } , None , )  )) ;
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    44_()
-                })));
-            std_flat_multimap_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_3 ( { ks .as_pointer()  } , { vs .as_pointer()  } , { __tmp_1.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    44_()
-                })));
-            std_flat_multimap_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_4 ( { unimplemented!()  } , { sorted_ks .as_pointer()  } , { sorted_vs .as_pointer()  } , { __tmp_2.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_containers_compare_56() {
+pub fn test_containers_compare_54() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1810,55 +1795,35 @@ pub fn test_containers_compare_56() {
         unimplemented!(),
     ])));
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_3.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , { unimplemented!()  } , { __tmp_4.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let __tmp_6: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    44_()
-                })));
-            std_flat_multimap_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_3 ( { ks .as_pointer()  } , { vs .as_pointer()  } , { __tmp_5.as_pointer() } , { __tmp_6.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let __tmp_8: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    44_()
-                })));
-            std_flat_multimap_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_4 ( { unimplemented!()  } , { sorted_ks .as_pointer()  } , { sorted_vs .as_pointer()  } , { __tmp_7.as_pointer() } , { __tmp_8.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_iter_iter_57() {
+pub fn test_iter_iter_55() {
     let mut arr: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -1888,33 +1853,33 @@ pub fn test_iter_iter_57() {
         unimplemented!(),
     ];
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_2 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_3 ( { unimplemented!()  } , { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_4 ( { unimplemented!()  } , { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_1 ( { ( { (*mo.borrow()) . begin_34 ( ) } )   } , { ( { (*mo.borrow()) . end_36 ( ) } )   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
         let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_2 ( { ( { (*mo.borrow()) . cbegin ( ) } )   } , { ( { (*mo.borrow()) . cend ( ) } )   } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
     }
     {
@@ -1923,17 +1888,7 @@ pub fn test_iter_iter_57() {
             unimplemented!(),
             unimplemented!(),
         ])));
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { ( source .as_pointer()  as Ptr< ()  >   )  } , { ( source .as_pointer()  as Ptr< ()  >   ) . offset ( ( 3_() ) as isize )  } , None , )  )) ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let source: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ])));
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { ( source .as_pointer()  as Ptr< ()  >   )  } , { ( source .as_pointer()  as Ptr< ()  >   ) . offset ( ( 3_() ) as isize )  } , None , )  )) ;
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1943,7 +1898,17 @@ pub fn test_iter_iter_57() {
             unimplemented!(),
             unimplemented!(),
         ])));
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_2 ( { unimplemented!()  } , { ( source .as_pointer()  as Ptr< ()  >   )  } , { ( source .as_pointer()  as Ptr< ()  >   ) . offset ( ( 3_() ) as isize )  } , None , )  )) ;
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let source: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ])));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same_v<decltype(s), std::flat_multimap<int, int>>"
@@ -1951,7 +1916,7 @@ pub fn test_iter_iter_57() {
         unimplemented!();
     }
 }
-pub fn test_iter_iter_compare_58() {
+pub fn test_iter_iter_compare_56() {
     let mut arr: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -1981,86 +1946,37 @@ pub fn test_iter_iter_compare_58() {
         unimplemented!(),
     ];
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , { __tmp_9.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_2 ( { unimplemented!()   } , { unimplemented!()   } , { __tmp_10.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_3 ( { unimplemented!()  } , { unimplemented!()   } , { unimplemented!()   } , { __tmp_11.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_4 ( { unimplemented!()  } , { unimplemented!()   } , { unimplemented!()   } , { __tmp_12.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__short__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_1 ( { ( { (*mo.borrow()) . begin_34 ( ) } )   } , { ( { (*mo.borrow()) . end_36 ( ) } )   } , { __tmp_13.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__short__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_2 ( { ( { (*mo.borrow()) . cbegin ( ) } )   } , { ( { (*mo.borrow()) . cend ( ) } )   } , { __tmp_14.as_pointer() } , )
-        }));
-        const _: () = assert!(true, "");;
-    }
-}
-pub fn test_initializer_list_59() {
-    let sorted_arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_5 ( { unimplemented!()  } , None , )  )) ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_6 ( { unimplemented!()  } , { unimplemented!()  } , None , )  )) ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_less_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short______std_vector_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_allocator_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_______std_vector_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_allocator_std_flat_multimap_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short______ :: new_1 ( { unimplemented!()  } , None , )  )) ;
         const _: () = assert!(true, "");;
         unimplemented!();
+    }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
         unimplemented!();
     }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+    }
 }
-pub fn test_initializer_list_compare_60() {
+pub fn test_initializer_list_57() {
     let sorted_arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2069,28 +1985,49 @@ pub fn test_initializer_list_compare_60() {
         unimplemented!(),
     ])));
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_5 ( { unimplemented!()  } , { __tmp_15.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let m: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_6 ( { unimplemented!()  } , { unimplemented!()  } , { __tmp_16.as_pointer() } , )
-        }));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_initializer_list_compare_58() {
+    let sorted_arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
-pub fn test_from_range_61() {
-    let r: Value<()> = Rc::new(RefCell::new(
-        std_list_std_pair_int__long___std_allocator_std_pair_int__long___::new_1({
-            unimplemented!()
-        }),
-    ));
+pub fn test_from_range_59() {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2099,30 +2036,20 @@ pub fn test_from_range_61() {
         unimplemented!(),
     ])));
     {
-        let s : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_7 ( { unimplemented!()  } , { r .as_pointer()  } , )  )) ;
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_17: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    42_()
-                })));
-            std_flat_multimap_int__long__std_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { r .as_pointer()  } , { __tmp_17.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_from_range_compare_62() {
-    let r: Value<()> = Rc::new(RefCell::new(
-        std_list_std_pair_int__long___std_allocator_std_pair_int__long___::new_1({
-            unimplemented!()
-        }),
-    ));
+pub fn test_from_range_compare_60() {
+    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2131,56 +2058,30 @@ pub fn test_from_range_compare_62() {
         unimplemented!(),
     ])));
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_flat_multimap_int__long__std_greater_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()  } , { r .as_pointer()  } , { __tmp_18.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new({
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let __tmp_20: Value<test_allocator_long_> =
-                Rc::new(RefCell::new(test_allocator_long_::new_3({ 0_() }, {
-                    42_()
-                })));
-            std_flat_multimap_int__long__std_greater_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { unimplemented!()  } , { r .as_pointer()  } , { __tmp_19.as_pointer() } , { __tmp_20.as_pointer() } , )
-        }));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_tuple_like_deduction_63() {
-    let pair_vec: Value<()> = Rc::new(RefCell::new(
-        std_vector_std_pair_const_int__float___std_allocator_std_pair_const_int__float___::new_1({
-            unimplemented!()
-        }),
-    ));
-    let fmm1 : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__float__std_less_int___std_vector_int__std_allocator_int____std_vector_float__std_allocator_float___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+pub fn test_tuple_like_deduction_61() {
+    let pair_vec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fmm1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
-    let tuple_vec: Value<()> = Rc::new(RefCell::new(
-        std_vector_std_tuple_int__double___std_allocator_std_tuple_int__double___::new_1({
-            unimplemented!()
-        }),
-    ));
-    let fmm2 : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__double__std_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+    let tuple_vec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fmm2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
-    let array_vec: Value<()> = Rc::new(RefCell::new(
-        std_vector_std_array_long__2___std_allocator_std_array_long__2___::new_1({
-            unimplemented!()
-        }),
-    ));
-    let fmm3 : Value<() > = Rc::new(RefCell::new(std_flat_multimap_long__long__std_less_long___std_vector_long__std_allocator_long____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+    let array_vec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fmm3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
-    let non_const_key_pair_vec: Value<()> = Rc::new(RefCell::new(
-        std_vector_std_pair_int__char___std_allocator_std_pair_int__char___::new_1({
-            unimplemented!()
-        }),
-    ));
-    let fmm4 : Value<() > = Rc::new(RefCell::new(std_flat_multimap_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char___ :: new_2 ( { unimplemented!()   } , { unimplemented!()   } , None , )  )) ;
+    let non_const_key_pair_vec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fmm4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
 }
 pub fn main() {
@@ -2203,17 +2104,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_copy_54() });
-    ({ test_containers_55() });
-    ({ test_containers_compare_56() });
-    ({ test_iter_iter_57() });
-    ({ test_iter_iter_compare_58() });
-    ({ test_initializer_list_59() });
-    ({ test_initializer_list_compare_60() });
-    ({ test_from_range_61() });
-    ({ test_from_range_compare_62() });
-    ({ test_tuple_like_deduction_63() });
-    ({ AssociativeContainerDeductionGuidesSfinaeAway_48() });
+    ({ test_copy_52() });
+    ({ test_containers_53() });
+    ({ test_containers_compare_54() });
+    ({ test_iter_iter_55() });
+    ({ test_iter_iter_compare_56() });
+    ({ test_initializer_list_57() });
+    ({ test_initializer_list_compare_58() });
+    ({ test_from_range_59() });
+    ({ test_from_range_compare_60() });
+    ({ test_tuple_like_deduction_61() });
+    ({ AssociativeContainerDeductionGuidesSfinaeAway_46() });
     return 0_();
 }
 pub trait BidirectionalIteratorNotDecrementableImpl {
@@ -3083,8 +2984,8 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_50.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_50.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3186,8 +3087,8 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_50.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_50.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<()>> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3278,8 +3179,8 @@ impl test_allocator_long_Impl for Ptr<test_allocator_long_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_50.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_50.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3381,8 +3282,8 @@ impl test_allocator_long_ptr_Impl for Ptr<test_allocator_long_ptr_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_50.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_50.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<()>> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3477,8 +3378,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_50.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_50.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -3495,6 +3396,7 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
 }
 pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_25.with(|_| ());
+    let _ = SFINAEs_away_26.with(|_| ());
     let _ = SFINAEs_away_27.with(|_| ());
     let _ = SFINAEs_away_28.with(|_| ());
     let _ = SFINAEs_away_29.with(|_| ());
@@ -3507,14 +3409,13 @@ pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_36.with(|_| ());
     let _ = SFINAEs_away_37.with(|_| ());
     let _ = SFINAEs_away_38.with(|_| ());
+    let _ = SFINAEs_away_39.with(|_| ());
     let _ = SFINAEs_away_40.with(|_| ());
     let _ = SFINAEs_away_41.with(|_| ());
     let _ = SFINAEs_away_42.with(|_| ());
     let _ = SFINAEs_away_43.with(|_| ());
     let _ = SFINAEs_away_44.with(|_| ());
     let _ = SFINAEs_away_45.with(|_| ());
-    let _ = SFINAEs_away_46.with(|_| ());
-    let _ = SFINAEs_away_47.with(|_| ());
-    let _ = destructed_value_50.with(|_| ());
-    let _ = moved_value_51.with(|_| ());
+    let _ = destructed_value_48.with(|_| ());
+    let _ = moved_value_49.with(|_| ());
 }

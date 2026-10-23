@@ -48,7 +48,7 @@ const _: () = assert!(
 pub fn test_0() -> () {
     let count: Value<()> = Rc::new(RefCell::new(0_()));
     {
-        let tuple: Value<()> = Rc::new(RefCell::new(TrackDtor::new({ (count.as_pointer()) })));
+        let tuple: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();

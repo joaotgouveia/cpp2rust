@@ -19,11 +19,7 @@ pub struct S {
 impl S {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            a: {
-                let mut __tmp_0: () = 1_();
-                let mut __tmp_1: Empty = <Empty>::default();
-                std_tuple_int__Empty_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-            },
+            a: unimplemented!(),
             k: (*(unsafe { get_0(&mut this.a) })),
             e: (*(unsafe { get_1(&mut this.a) })),
         };
@@ -36,11 +32,7 @@ impl Default for S {
     }
 }
 pub unsafe fn getP_2() -> () {
-    return {
-        let mut __tmp_2: () = 3_();
-        let mut __tmp_3: () = 4_();
-        std_tuple_int__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-    };
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -59,16 +51,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = 3_();
+        let mut t: () = unimplemented!();
         unimplemented!();
         (*(unsafe { get_3(&mut t) })) = 2_();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_4: () = 5_();
-            std_tuple_std_string__int_::new({ &std::mem::transmute(*b"high\0") }, { &mut __tmp_4 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -78,14 +67,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut d: () = 1.5_f64;
-        let mut t: () = {
-            let mut __tmp_5: () = 5_();
-            std_tuple_double_ref__std_string__int_::new(
-                { &mut d },
-                { &std::mem::transmute(*b"high\0") },
-                { &mut __tmp_5 },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

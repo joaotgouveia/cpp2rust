@@ -115,47 +115,59 @@ pub unsafe fn get_error_pct_17() -> () {
 pub unsafe fn check_near_18(mut a: (), mut b: (), mut expect: ()) -> () {
     {}
     return (unsafe {
-        fptest_close_pct_9(unimplemented!(), expect, (unsafe { get_error_pct_15() }))
-    });
-}
-pub unsafe fn check_near_19(mut a: (), mut b: (), mut expect: ()) -> () {
-    {}
-    return (unsafe {
-        fptest_close_pct_10(unimplemented!(), expect, (unsafe { get_error_pct_16() }))
+        fptest_close_pct_9(
+            (unsafe { midpoint_19(a, b) }),
+            expect,
+            (unsafe { get_error_pct_15() }),
+        )
     });
 }
 pub unsafe fn check_near_20(mut a: (), mut b: (), mut expect: ()) -> () {
     {}
     return (unsafe {
-        fptest_close_pct_11(unimplemented!(), expect, (unsafe { get_error_pct_17() }))
+        fptest_close_pct_10(
+            (unsafe { midpoint_21(a, b) }),
+            expect,
+            (unsafe { get_error_pct_16() }),
+        )
     });
 }
-pub unsafe fn check_exact_21(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = unimplemented!();
+pub unsafe fn check_near_22(mut a: (), mut b: (), mut expect: ()) -> () {
+    {}
+    return (unsafe {
+        fptest_close_pct_11(
+            (unsafe { midpoint_23(a, b) }),
+            expect,
+            (unsafe { get_error_pct_17() }),
+        )
+    });
+}
+pub unsafe fn check_exact_24(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = (unsafe { midpoint_19(a, b) });
     if (unsafe { is_nan_12(expect) }) {
         return (unsafe { is_nan_12(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn check_exact_22(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = unimplemented!();
+pub unsafe fn check_exact_25(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = (unsafe { midpoint_21(a, b) });
     if (unsafe { is_nan_13(expect) }) {
         return (unsafe { is_nan_13(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn check_exact_23(mut a: (), mut b: (), mut expect: ()) -> () {
-    let mut res: () = unimplemented!();
+pub unsafe fn check_exact_26(mut a: (), mut b: (), mut expect: ()) -> () {
+    let mut res: () = (unsafe { midpoint_23(a, b) });
     if (unsafe { is_nan_14(expect) }) {
         return (unsafe { is_nan_14(res) });
     }
     return ((res) == (expect));
 }
-pub unsafe fn test_ppc_edge_cases_24() -> () {
+pub unsafe fn test_ppc_edge_cases_27() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_25(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_25(d1, 5_()) });
+    let mut d0: () = (unsafe { nextafter_28(d1, 2_()) });
+    let mut d2: () = (unsafe { nextafter_28(d1, 5_()) });
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -164,22 +176,22 @@ pub unsafe fn test_ppc_edge_cases_24() -> () {
             }
         });
     return (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_19(d0, d1) });
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_19(d1, d2) });
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_ppc_edge_cases_26() -> () {
+pub unsafe fn test_ppc_edge_cases_29() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_27(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_27(d1, 5_()) });
+    let mut d0: () = (unsafe { nextafter_30(d1, 2_()) });
+    let mut d2: () = (unsafe { nextafter_30(d1, 5_()) });
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -188,22 +200,22 @@ pub unsafe fn test_ppc_edge_cases_26() -> () {
             }
         });
     return (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_21(d0, d1) });
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_21(d1, d2) });
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_ppc_edge_cases_28() -> () {
+pub unsafe fn test_ppc_edge_cases_31() -> () {
     {}
     let mut d1: () = 3.14_f64;
-    let mut d0: () = (unsafe { nextafter_29(d1, 2_()) });
-    let mut d2: () = (unsafe { nextafter_29(d1, 5_()) });
+    let mut d0: () = (unsafe { nextafter_32(d1, 2_()) });
+    let mut d2: () = (unsafe { nextafter_32(d1, 5_()) });
     let mut verify: FnPtr<fn((), (), ()) -> ()> =
         FnPtr::<fn((), (), ()) -> ()>::new(|mut res: (), mut low: (), mut high: ()| -> () {
             unsafe {
@@ -212,18 +224,18 @@ pub unsafe fn test_ppc_edge_cases_28() -> () {
             }
         });
     return (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_23(d0, d1) });
         let _low: () = d0;
         let _high: () = d1;
         verify.call(_res, _low, _high)
     }) && (unsafe {
-        let _res: () = unimplemented!();
+        let _res: () = (unsafe { midpoint_23(d1, d2) });
         let _low: () = d1;
         let _high: () = d2;
         verify.call(_res, _low, _high)
     });
 }
-pub unsafe fn test_floating_points_30() -> () {
+pub unsafe fn test_floating_points_33() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -273,7 +285,7 @@ pub unsafe fn test_floating_points_30() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_floating_points_31() -> () {
+pub unsafe fn test_floating_points_34() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -323,7 +335,7 @@ pub unsafe fn test_floating_points_31() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_floating_points_32() -> () {
+pub unsafe fn test_floating_points_35() -> () {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     let max_v: () = unimplemented!();
@@ -373,10 +385,10 @@ pub unsafe fn test_floating_points_32() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_33() -> () {
-    (unsafe { test_floating_points_30() });
-    (unsafe { test_floating_points_31() });
-    (unsafe { test_floating_points_32() });
+pub unsafe fn test_36() -> () {
+    (unsafe { test_floating_points_33() });
+    (unsafe { test_floating_points_34() });
+    (unsafe { test_floating_points_35() });
     return true;
 }
 pub fn main() {
@@ -395,7 +407,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_33() });
+    (unsafe { test_36() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

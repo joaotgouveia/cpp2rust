@@ -101,7 +101,7 @@ pub unsafe fn test_impl_12() {
     );;
     {
         let mut a: std_atomic_float_ = unimplemented!();
-        let mut r: () = (unsafe { a.fetch_sub_14(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -109,10 +109,7 @@ pub unsafe fn test_impl_12() {
         let mut store: FnPtr<fn(*mut std_atomic_float_, (), ())> =
             FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
                 |x: *mut std_atomic_float_, mut old_val: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_val) - (new_val));
-                        (*x).fetch_sub_14(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<fn(*mut std_atomic_float_) -> ()> =
@@ -129,19 +126,13 @@ pub unsafe fn test_impl_12() {
         let mut fetch_sub: FnPtr<fn(*mut std_atomic_float_, (), ())> =
             FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
                 |x: *mut std_atomic_float_, mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_value) - (new_val));
-                        (*x).fetch_sub_14(___op, None)
-                    });
+                    unimplemented!();
                 },
             );
         let mut fetch_sub_with_order: FnPtr<fn(*mut std_atomic_float_, (), ())> =
             FnPtr::<fn(*mut std_atomic_float_, (), ())>::new(
                 |x: *mut std_atomic_float_, mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_value) - (new_val));
-                        (*x).fetch_sub_14(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<Generic> = lambda_unsafe!(Generic, {});
@@ -217,7 +208,7 @@ pub unsafe fn test_impl_14() {
     );;
     {
         let mut a: std_atomic_double_ = unimplemented!();
-        let mut r: () = (unsafe { a.fetch_sub_14(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -225,10 +216,7 @@ pub unsafe fn test_impl_14() {
         let mut store: FnPtr<fn(*mut std_atomic_double_, (), ())> =
             FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
                 |x: *mut std_atomic_double_, mut old_val: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_val) - (new_val));
-                        (*x).fetch_sub_14(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<fn(*mut std_atomic_double_) -> ()> =
@@ -245,19 +233,13 @@ pub unsafe fn test_impl_14() {
         let mut fetch_sub: FnPtr<fn(*mut std_atomic_double_, (), ())> =
             FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
                 |x: *mut std_atomic_double_, mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_value) - (new_val));
-                        (*x).fetch_sub_14(___op, None)
-                    });
+                    unimplemented!();
                 },
             );
         let mut fetch_sub_with_order: FnPtr<fn(*mut std_atomic_double_, (), ())> =
             FnPtr::<fn(*mut std_atomic_double_, (), ())>::new(
                 |x: *mut std_atomic_double_, mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((old_value) - (new_val));
-                        (*x).fetch_sub_14(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<Generic> = lambda_unsafe!(Generic, {});

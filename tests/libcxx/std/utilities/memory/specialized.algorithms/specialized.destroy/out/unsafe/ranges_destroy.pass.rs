@@ -483,13 +483,7 @@ pub unsafe fn test_9() {
         let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
-            (unsafe {
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    &mut alloc,
-                    out.offset((i) as isize),
-                    &mut counter,
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -508,13 +502,7 @@ pub unsafe fn test_9() {
         let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
-            (unsafe {
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    &mut alloc,
-                    out.offset((i) as isize),
-                    &mut counter,
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -532,13 +520,7 @@ pub unsafe fn test_11() {
         let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
-            (unsafe {
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    &mut alloc,
-                    out.offset((i) as isize),
-                    &mut counter,
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -559,13 +541,7 @@ pub unsafe fn test_11() {
         let mut out: *mut Counted = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (N)) {
-            (unsafe {
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    &mut alloc,
-                    out.offset((i) as isize),
-                    &mut counter,
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -592,13 +568,7 @@ pub unsafe fn test_arrays_13() -> () {
             let array_ref: *mut [Counted; 3] = &mut (*(buffer.offset((i) as isize)));
             let mut j: () = 0_();
             'loop_: while ((j) != (M)) {
-                (unsafe {
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        &mut alloc,
-                        unimplemented!(),
-                        &mut counter,
-                    )
-                });
+                unimplemented!();
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -623,13 +593,7 @@ pub unsafe fn test_arrays_13() -> () {
             let array_ref: *mut [Counted; 3] = &mut (*(buffer.offset((i) as isize)));
             let mut j: () = 0_();
             'loop_: while ((j) != (A)) {
-                (unsafe {
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        &mut alloc,
-                        unimplemented!(),
-                        &mut counter,
-                    )
-                });
+                unimplemented!();
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -654,13 +618,7 @@ pub unsafe fn test_arrays_13() -> () {
             'loop_: while ((j) != (A)) {
                 let mut k: () = 0_();
                 'loop_: while ((k) != (B)) {
-                    (unsafe {
-                        std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::construct(
-                            &mut alloc,
-                            unimplemented!(),
-                            &mut counter,
-                        )
-                    });
+                    unimplemented!();
                     k.prefix_inc();
                 }
                 j.prefix_inc();
@@ -690,13 +648,7 @@ pub unsafe fn test_arrays_13() -> () {
             'loop_: while ((j) != (A)) {
                 let mut k: () = 0_();
                 'loop_: while ((k) != (B)) {
-                    (unsafe {
-                        std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::construct(
-                            &mut alloc,
-                            unimplemented!(),
-                            &mut counter,
-                        )
-                    });
+                    unimplemented!();
                     k.prefix_inc();
                 }
                 j.prefix_inc();

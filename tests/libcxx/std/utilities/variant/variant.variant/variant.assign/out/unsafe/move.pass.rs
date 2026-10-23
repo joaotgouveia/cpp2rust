@@ -336,28 +336,8 @@ pub unsafe fn test_move_assignment_same_index_10() {
     {
         let mut move_construct: () = 0_();
         let mut move_assign: () = 0_();
-        let mut v1: () = {
-            let mut __tmp_0: () = 43_();
-            let mut __tmp_1: *mut () = (&mut move_construct as *mut ());
-            let mut __tmp_2: *mut () = (&mut move_assign as *mut ());
-            std_variant_int__MoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
-                { &mut __tmp_0 },
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_3: () = 42_();
-            let mut __tmp_4: *mut () = (&mut move_construct as *mut ());
-            let mut __tmp_5: *mut () = (&mut move_assign as *mut ());
-            std_variant_int__MoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
-                { &mut __tmp_3 },
-                { &mut __tmp_4 },
-                { &mut __tmp_5 },
-            )
-        };
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -366,79 +346,67 @@ pub unsafe fn test_move_assignment_same_index_10() {
         unimplemented!();
     }
     {
-        let mut test: anon_12 = <anon_12>::default();
-        let result: Result_int_ = (unsafe { anon_12::operator_call(&test) });
+        let mut test: anon_11 = <anon_11>::default();
+        let result: Result_int_ = (unsafe { anon_11::operator_call(&test) });
         const _: () = assert!(true, "result.index == 0");;
         const _: () = assert!(true, "result.value == 42");;
     }
     {
-        let mut test: anon_14 = <anon_14>::default();
-        let result: Result_long_ = (unsafe { anon_14::operator_call(&test) });
+        let mut test: anon_13 = <anon_13>::default();
+        let result: Result_long_ = (unsafe { anon_13::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let mut test: anon_16 = <anon_16>::default();
-        let result: Result_int_ = (unsafe { anon_16::operator_call(&test) });
+        let mut test: anon_15 = <anon_15>::default();
+        let result: Result_int_ = (unsafe { anon_15::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_12 {}
-impl anon_12 {
+pub struct anon_11 {}
+impl anon_11 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
         let mut v: () = 43_();
         let mut v2: () = 42_();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_13(&mut v) })) as ()),
+            value: ((*(unsafe { get_12(&mut v) })) as ()),
         };
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_14 {}
-impl anon_14 {
+pub struct anon_13 {}
+impl anon_13 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
         let mut v: () = 43_();
         let mut v2: () = 42_();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_15(&mut v) })) as ()),
+            value: ((*(unsafe { get_14(&mut v) })) as ()),
         };
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_16 {}
-impl anon_16 {
+pub struct anon_15 {}
+impl anon_15 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
-        let mut v: () = {
-            let mut __tmp_6: () = 43_();
-            std_variant_int__TMoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_17)).clone() },
-                { &mut __tmp_6 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_7: () = 42_();
-            std_variant_int__TMoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_17)).clone() },
-                { &mut __tmp_7 },
-            )
-        };
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_18(&mut v) })).value,
+            value: (*(unsafe { get_16(&mut v) })).value,
         };
     }
 }
-pub unsafe fn test_move_assignment_different_index_19() {
+pub unsafe fn test_move_assignment_different_index_17() {
     {
         let mut v1: () = 43_();
         let mut v2: () = 42_();
@@ -450,24 +418,8 @@ pub unsafe fn test_move_assignment_different_index_19() {
     {
         let mut move_construct: () = 0_();
         let mut move_assign: () = 0_();
-        let mut v1: () = {
-            let mut __tmp_8: () = 43_();
-            std_variant_int__MoveAssign__unsigned_int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_20)).clone() },
-                { &mut __tmp_8 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_9: () = 42_();
-            let mut __tmp_10: *mut () = (&mut move_construct as *mut ());
-            let mut __tmp_11: *mut () = (&mut move_assign as *mut ());
-            std_variant_int__MoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
-                { &mut __tmp_9 },
-                { &mut __tmp_10 },
-                { &mut __tmp_11 },
-            )
-        };
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -476,126 +428,114 @@ pub unsafe fn test_move_assignment_different_index_19() {
         unimplemented!();
     }
     {
-        let mut test: anon_21 = <anon_21>::default();
-        let result: Result_long_ = (unsafe { anon_21::operator_call(&test) });
+        let mut test: anon_18 = <anon_18>::default();
+        let result: Result_long_ = (unsafe { anon_18::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42l");;
     }
     {
-        let mut test: anon_22 = <anon_22>::default();
-        let result: Result_long_ = (unsafe { anon_22::operator_call(&test) });
+        let mut test: anon_19 = <anon_19>::default();
+        let result: Result_long_ = (unsafe { anon_19::operator_call(&test) });
         const _: () = assert!(true, "result.index == 1");;
         const _: () = assert!(true, "result.value == 42");;
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_21 {}
-impl anon_21 {
+pub struct anon_18 {}
+impl anon_18 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
         let mut v: () = 43_();
         let mut v2: () = 42_();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_15(&mut v) })) as ()),
+            value: ((*(unsafe { get_14(&mut v) })) as ()),
         };
     }
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct anon_22 {}
-impl anon_22 {
+pub struct anon_19 {}
+impl anon_19 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = {
-            let mut __tmp_12: () = 43_();
-            std_variant_int__TMoveAssign__unsigned_int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_20)).clone() },
-                { &mut __tmp_12 },
-            )
-        };
-        let mut v2: () = {
-            let mut __tmp_13: () = 42_();
-            std_variant_int__TMoveAssign__unsigned_int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_17)).clone() },
-                { &mut __tmp_13 },
-            )
-        };
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: (*(unsafe { get_18(&mut v) })).value,
+            value: (*(unsafe { get_16(&mut v) })).value,
         };
     }
 }
-pub unsafe fn test_assignment_throw_23() {}
-pub unsafe fn test_constexpr_assign_imp_24(v: *mut (), new_value: *mut ()) {
+pub unsafe fn test_assignment_throw_20() {}
+pub unsafe fn test_constexpr_assign_imp_21(v: *mut (), new_value: *mut ()) {
     let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
     let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_22(v: *mut (), new_value: *mut ()) {
+    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
+    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_23(v: *mut (), new_value: *mut ()) {
+    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
+    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_constexpr_assign_imp_24(v: *mut (), new_value: *mut ()) {
+    let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
+    let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_25(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
-    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_assign_imp_26(v: *mut (), new_value: *mut ()) {
-    let mut v2: std_variant_long__void_ptr__int_ = (*new_value);
-    let cp: std_variant_long__void_ptr__int_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_assign_imp_27(v: *mut (), new_value: *mut ()) {
     let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
     let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_constexpr_assign_imp_28(v: *mut (), new_value: *mut ()) {
+pub unsafe fn test_constexpr_assign_imp_26(v: *mut (), new_value: *mut NonTrivialMoveAssign) {
     let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
     let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_constexpr_assign_imp_29(v: *mut (), new_value: *mut NonTrivialMoveAssign) {
-    let mut v2: std_variant_long__void_ptr__NonTrivialMoveAssign_ = (*new_value);
-    let cp: std_variant_long__void_ptr__NonTrivialMoveAssign_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_constexpr_move_assignment_trivial_30() {
+pub unsafe fn test_constexpr_move_assignment_trivial_27() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_move_assignable<V>::value");;
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = Default::default();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: () = Default::default();
-        test_constexpr_assign_imp_25(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_22(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_26(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
     });
 }
-pub unsafe fn operator_eq_31(x: *const NonTrivialMoveAssign, y: *const NonTrivialMoveAssign) -> () {
+pub unsafe fn operator_eq_28(x: *const NonTrivialMoveAssign, y: *const NonTrivialMoveAssign) -> () {
     return (((*x).i) == ((*y).i));
 }
 #[repr(C)]
@@ -623,7 +563,7 @@ impl NonTrivialMoveAssign {
 impl std::cmp::PartialEq for NonTrivialMoveAssign {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_31(
+            operator_eq_28(
                 self as *const NonTrivialMoveAssign,
                 other as *const NonTrivialMoveAssign,
             )
@@ -636,51 +576,51 @@ impl Default for NonTrivialMoveAssign {
         unsafe { NonTrivialMoveAssign { i: 0_() } }
     }
 }
-pub unsafe fn test_constexpr_move_assignment_non_trivial_32() {
+pub unsafe fn test_constexpr_move_assignment_non_trivial_29() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_move_assignable<V>::value");;
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_27(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = Default::default();
         let mut _new_value: () = 101_();
-        test_constexpr_assign_imp_27(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: () = Default::default();
-        test_constexpr_assign_imp_28(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_25(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = 42_();
         let mut _new_value: NonTrivialMoveAssign = NonTrivialMoveAssign::new({ 5_() });
-        test_constexpr_assign_imp_29(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_26(&mut _v, &mut _new_value)
     });
     (unsafe {
         let mut _v: () = NonTrivialMoveAssign::new({ 3_() });
         let mut _new_value: NonTrivialMoveAssign = NonTrivialMoveAssign::new({ 5_() });
-        test_constexpr_assign_imp_29(&mut _v, &mut _new_value)
+        test_constexpr_assign_imp_26(&mut _v, &mut _new_value)
     });
 }
-pub unsafe fn non_constexpr_test_33() {
+pub unsafe fn non_constexpr_test_30() {
     (unsafe { test_move_assignment_empty_empty_7() });
     (unsafe { test_move_assignment_non_empty_empty_8() });
     (unsafe { test_move_assignment_empty_non_empty_9() });
-    (unsafe { test_assignment_throw_23() });
+    (unsafe { test_assignment_throw_20() });
 }
-pub unsafe fn cxx17_constexpr_test_34() -> () {
+pub unsafe fn cxx17_constexpr_test_31() -> () {
     (unsafe { test_move_assignment_sfinae_6() });
     (unsafe { test_move_assignment_noexcept_5() });
-    (unsafe { test_constexpr_move_assignment_trivial_30() });
+    (unsafe { test_constexpr_move_assignment_trivial_27() });
     return true;
 }
-pub unsafe fn cxx20_constexpr_test_35() -> () {
+pub unsafe fn cxx20_constexpr_test_32() -> () {
     (unsafe { test_move_assignment_same_index_10() });
-    (unsafe { test_move_assignment_different_index_19() });
-    (unsafe { test_constexpr_move_assignment_non_trivial_32() });
+    (unsafe { test_move_assignment_different_index_17() });
+    (unsafe { test_constexpr_move_assignment_non_trivial_29() });
     return true;
 }
 pub fn main() {
@@ -699,9 +639,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { non_constexpr_test_33() });
-    (unsafe { cxx17_constexpr_test_34() });
-    (unsafe { cxx20_constexpr_test_35() });
+    (unsafe { non_constexpr_test_30() });
+    (unsafe { cxx17_constexpr_test_31() });
+    (unsafe { cxx20_constexpr_test_32() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0_();

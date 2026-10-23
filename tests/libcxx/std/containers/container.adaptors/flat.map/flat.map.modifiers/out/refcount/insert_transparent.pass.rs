@@ -770,20 +770,11 @@ const _: () = assert!(!(false), "!CanInsert<Map, Iter, int>");
 pub fn test_21() -> () {
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let res: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*m.borrow()).insert_62_struct_std_pair_struct_Transparent_int__true___int_(
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -791,22 +782,11 @@ pub fn test_21() -> () {
     }
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
-        let c: Value<TransparentComparator> =
-            Rc::new(RefCell::new(TransparentComparator::new_1({
-                transparent_used.as_pointer()
-            })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { c .as_pointer()  } , )  )) ;
+        let mut c: TransparentComparator =
+            TransparentComparator::new_1({ transparent_used.as_pointer() });
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let res: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___hint: ()   = std___key_value_iterator_std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int_____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true_ :: new_1 ( { ( { (*m.borrow()) . begin_34 ( ) } )   } , )   ;
-                let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*m.borrow()).insert_63_struct_std_pair_struct_Transparent_int__true___int_(
-                    ___hint,
-                    ___x.as_pointer(),
-                )
-            }),
-        ));
+        let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -829,24 +809,13 @@ pub fn test_21() -> () {
         }
     }
     {
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_map_std_string__int__std_less_void___std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , None , )  )) ;
-        let __decomp_23: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*m.borrow()).insert_59(___x.as_pointer())
-            }),
-        ));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let __decomp_23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Ptr<()> = ({ get_24(__decomp_23.as_pointer()) });
         let inserted: Ptr<()> = ({ get_25(__decomp_23.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        let it2: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___hint: ()   = std___key_value_iterator_std_flat_map_std_string__int__std_less_void___std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int_____std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int____true_ :: new_1 ( { ( { (*m.borrow()) . begin_34 ( ) } )   } , )   ;
-                let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*m.borrow()).insert_61(___hint, ___x.as_pointer())
-            }),
-        ));
+        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

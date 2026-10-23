@@ -510,14 +510,7 @@ pub unsafe fn test_arrays_13() -> () {
             let arr: *mut [Counted; 3] = &mut (*p);
             let mut i: () = 0_();
             'loop_: while ((i) != (3_())) {
-                (unsafe {
-                    let mut ___args: *mut () = (&mut counter as *mut ());
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        &mut alloc,
-                        unimplemented!(),
-                        &mut ___args,
-                    )
-                });
+                unimplemented!();
                 i.prefix_inc();
             }
             p.prefix_inc();
@@ -540,14 +533,7 @@ pub unsafe fn test_arrays_13() -> () {
             'loop_: while ((i) != (3_())) {
                 let mut j: () = 0_();
                 'loop_: while ((j) != (2_())) {
-                    (unsafe {
-                        let mut ___args: *mut () = (&mut counter as *mut ());
-                        std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::construct(
-                            &mut alloc,
-                            unimplemented!(),
-                            &mut ___args,
-                        )
-                    });
+                    unimplemented!();
                     j.prefix_inc();
                 }
                 i.prefix_inc();
@@ -569,10 +555,7 @@ pub unsafe fn test_14() {
     let mut pool: *mut Counted = unimplemented!();
     let mut p: *mut Counted = pool;
     'loop_: while ((p) != (pool.offset((5_()) as isize))) {
-        (unsafe {
-            let mut ___args: *mut () = (&mut counter as *mut ());
-            std_allocator_traits_std_allocator_Counted__::construct(&mut alloc, p, &mut ___args)
-        });
+        unimplemented!();
         p.prefix_inc();
     }
     unimplemented!();
@@ -588,10 +571,7 @@ pub unsafe fn test_15() {
     let mut pool: *mut Counted = unimplemented!();
     let mut p: *mut Counted = pool;
     'loop_: while ((p) != (pool.offset((5_()) as isize))) {
-        (unsafe {
-            let mut ___args: *mut () = (&mut counter as *mut ());
-            std_allocator_traits_std_allocator_Counted__::construct(&mut alloc, p, &mut ___args)
-        });
+        unimplemented!();
         p.prefix_inc();
     }
     unimplemented!();

@@ -45,18 +45,8 @@ pub unsafe fn test_2() -> () {
     let mut s2: S = S {
         calls: (&mut s_calls as *mut ()),
     };
-    let t1: () = {
-        let mut __tmp_0: CS = CS {
-            calls: (&mut cs_calls as *mut ()),
-        };
-        std_tuple_CS__S_ref_::new({ &mut __tmp_0 }, { &mut s1 })
-    };
-    let t2: () = {
-        let mut __tmp_1: CS = CS {
-            calls: (&mut cs_calls as *mut ()),
-        };
-        std_tuple_CS__S_ref_::new({ &mut __tmp_1 }, { &mut s2 })
-    };
+    let t1: () = unimplemented!();
+    let t2: () = unimplemented!();
     (unsafe { swap_3(&t1, &t2) });
     unimplemented!();
     unimplemented!();

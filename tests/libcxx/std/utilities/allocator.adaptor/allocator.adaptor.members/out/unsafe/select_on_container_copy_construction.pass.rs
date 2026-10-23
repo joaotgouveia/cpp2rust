@@ -139,17 +139,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a1: () = unimplemented!();
         unimplemented!();
-        let mut a2: () = (unsafe {
-            std_allocator_traits_std_scoped_allocator_adaptor_A1_int___::select_on_container_copy_construction ( & a1 , )
-        });
+        let mut a2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut a1: () = unimplemented!();
         unimplemented!();
-        let mut a2: () = (unsafe {
-            std_allocator_traits_std_scoped_allocator_adaptor_A3_int___::select_on_container_copy_construction ( & a1 , )
-        });
+        let mut a2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -157,9 +153,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut a2: () = (unsafe {
-            std_allocator_traits_std_scoped_allocator_adaptor_A1_int___A2_int___A3_int___::select_on_container_copy_construction ( & a1 , )
-        });
+        let mut a2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

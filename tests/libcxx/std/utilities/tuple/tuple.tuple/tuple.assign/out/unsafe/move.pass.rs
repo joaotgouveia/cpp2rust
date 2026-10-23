@@ -239,31 +239,20 @@ pub unsafe fn test_16() -> () {
         t = (t0).clone();
     }
     {
-        let mut t0: () = MoveOnly::new({ Some(0_()) });
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         t = (t0).clone();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_0: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_1: MoveOnly = MoveOnly::new({ Some(1_()) });
-            std_tuple_MoveOnly__MoveOnly_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         t = (t0).clone();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_2: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(1_()) });
-            let mut __tmp_4: MoveOnly = MoveOnly::new({ Some(2_()) });
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 }, {
-                &mut __tmp_4
-            })
-        };
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         t = (t0).clone();
         unimplemented!();
@@ -275,10 +264,8 @@ pub unsafe fn test_16() -> () {
         let mut y: () = 100_();
         let mut x2: () = -1_();
         let mut y2: () = 500_();
-        let mut t: () =
-            std_tuple_int_ref__int_refref_::new({ &mut x }, { &mut *(&raw mut y).cast::<()>() });
-        let mut t2: () =
-            std_tuple_int_ref__int_refref_::new({ &mut x2 }, { &mut *(&raw mut y2).cast::<()>() });
+        let mut t: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         t = (t2).clone();
         unimplemented!();
         unimplemented!();

@@ -45,14 +45,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0(TriviallyCopyable::new({ 42_() })) });
-    ({
-        test_1({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            std_chrono_duration_long_long__std_ratio_1__1000000000__::new_1({
-                __tmp_0.as_pointer()
-            })
-        })
-    });
+    ({ test_1(unimplemented!()) });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

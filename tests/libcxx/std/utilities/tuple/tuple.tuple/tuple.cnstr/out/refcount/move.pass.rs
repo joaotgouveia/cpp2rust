@@ -349,38 +349,25 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         (&(*t.borrow_mut()));
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            std_tuple_MoveOnly__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(0_()) })));
-            let __tmp_3: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(1_()) })));
-            let __tmp_4: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2_()) })));
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new(
-                { __tmp_2.as_pointer() },
-                { __tmp_3.as_pointer() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new((ConstructsWithTupleLeaf::new())));
+        let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }
     {

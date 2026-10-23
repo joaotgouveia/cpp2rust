@@ -746,9 +746,7 @@ pub unsafe fn make_thread_unsafe_shared_10()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({ &ptr });
 }
 pub unsafe fn make_thread_unsafe_shared_11()
@@ -761,9 +759,7 @@ pub unsafe fn make_thread_unsafe_shared_11()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::copy_from(
         { &ptr },
     );
@@ -778,9 +774,7 @@ pub unsafe fn make_thread_unsafe_shared_12()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__::copy_from({
         &ptr
     });
@@ -795,9 +789,7 @@ pub unsafe fn make_thread_unsafe_shared_13()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::copy_from({
         &ptr
     });
@@ -848,9 +840,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_10_ {
@@ -925,9 +915,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_18446744073709551615_ {
@@ -1001,9 +989,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_302405640552615600_ {
@@ -1077,9 +1063,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_292805461487453200_ {
@@ -1401,10 +1385,7 @@ impl Default for limited_allocator_unsigned_long__292805461487453200_ {
 pub unsafe fn test_14(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut _arg0: () = unimplemented!();
-        std_allocator_traits_std_allocator_unsigned_long__::max_size(&mut _arg0)
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1417,11 +1398,7 @@ pub unsafe fn test_14(v: *const ()) {
 pub unsafe fn test_15(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut _arg0: min_allocator_unsigned_long_ =
-            min_allocator_unsigned_long_::new_1({ unimplemented!() });
-        std_allocator_traits_min_allocator_unsigned_long__::max_size(&mut _arg0)
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1434,13 +1411,7 @@ pub unsafe fn test_15(v: *const ()) {
 pub unsafe fn test_16(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: test_allocator_unsigned_int_ = {
-            let mut __tmp_0: test_allocator_bool_ = unimplemented!();
-            test_allocator_unsigned_int_::new_1({ &mut __tmp_0 })
-        };
-        std_allocator_traits_test_allocator_unsigned_int__::max_size(&mut ___a)
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1453,13 +1424,7 @@ pub unsafe fn test_16(v: *const ()) {
 pub unsafe fn test_17(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut _arg0: other_allocator_unsigned_long_ = {
-            let mut __tmp_1: other_allocator_bool_ = unimplemented!();
-            other_allocator_unsigned_long_::new_1({ &mut __tmp_1 })
-        };
-        std_allocator_traits_other_allocator_unsigned_long__::max_size(&mut _arg0)
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1472,15 +1437,7 @@ pub unsafe fn test_17(v: *const ()) {
 pub unsafe fn test_18(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: sized_allocator_unsigned_char__unsigned_char__signed_char_ = {
-            let mut __tmp_2: sized_allocator_bool__unsigned_char__signed_char_ = unimplemented!();
-            sized_allocator_unsigned_char__unsigned_char__signed_char_::new_1({ &mut __tmp_2 })
-        };
-        std_allocator_traits_sized_allocator_unsigned_char__unsigned_char__signed_char__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1493,15 +1450,7 @@ pub unsafe fn test_18(v: *const ()) {
 pub unsafe fn test_19(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: sized_allocator_unsigned_short__unsigned_short__short_ = {
-            let mut __tmp_3: sized_allocator_bool__unsigned_short__short_ = unimplemented!();
-            sized_allocator_unsigned_short__unsigned_short__short_::new_1({ &mut __tmp_3 })
-        };
-        std_allocator_traits_sized_allocator_unsigned_short__unsigned_short__short__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1514,13 +1463,7 @@ pub unsafe fn test_19(v: *const ()) {
 pub unsafe fn test_20(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: sized_allocator_unsigned_int__unsigned_int__int_ = {
-            let mut __tmp_4: sized_allocator_bool__unsigned_int__int_ = unimplemented!();
-            sized_allocator_unsigned_int__unsigned_int__int_::new_1({ &mut __tmp_4 })
-        };
-        std_allocator_traits_sized_allocator_unsigned_int__unsigned_int__int__::max_size(&mut ___a)
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1533,15 +1476,7 @@ pub unsafe fn test_20(v: *const ()) {
 pub unsafe fn test_21(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: sized_allocator_unsigned_long__unsigned_long__long_ = {
-            let mut __tmp_5: sized_allocator_bool__unsigned_long__long_ = unimplemented!();
-            sized_allocator_unsigned_long__unsigned_long__long_::new_1({ &mut __tmp_5 })
-        };
-        std_allocator_traits_sized_allocator_unsigned_long__unsigned_long__long__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1554,15 +1489,7 @@ pub unsafe fn test_21(v: *const ()) {
 pub unsafe fn test_22(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: limited_allocator_unsigned_long__18446744073709551615_ = {
-            let mut __tmp_6: limited_allocator_bool__18446744073709551615_ = unimplemented!();
-            limited_allocator_unsigned_long__18446744073709551615_::new_1({ &mut __tmp_6 })
-        };
-        std_allocator_traits_limited_allocator_unsigned_long__18446744073709551615__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1575,15 +1502,7 @@ pub unsafe fn test_22(v: *const ()) {
 pub unsafe fn test_23(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: limited_allocator_unsigned_long__302405640552615600_ = {
-            let mut __tmp_7: limited_allocator_bool__302405640552615600_ = unimplemented!();
-            limited_allocator_unsigned_long__302405640552615600_::new_1({ &mut __tmp_7 })
-        };
-        std_allocator_traits_limited_allocator_unsigned_long__302405640552615600__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist
@@ -1596,15 +1515,7 @@ pub unsafe fn test_23(v: *const ()) {
 pub unsafe fn test_24(v: *const ()) {
     let max_dist: () = unimplemented!();
     unimplemented!();
-    let max_alloc: () = (unsafe {
-        let mut ___a: limited_allocator_unsigned_long__292805461487453200_ = {
-            let mut __tmp_8: limited_allocator_bool__292805461487453200_ = unimplemented!();
-            limited_allocator_unsigned_long__292805461487453200_::new_1({ &mut __tmp_8 })
-        };
-        std_allocator_traits_limited_allocator_unsigned_long__292805461487453200__::max_size(
-            &mut ___a,
-        )
-    });
+    let max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let max_size: () = if (((max_dist).wrapping_div(bits_per_word)) < (max_alloc)) {
         max_dist

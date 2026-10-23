@@ -1034,73 +1034,52 @@ pub struct RangeT_std_pair_int__short__ {}
 const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
-pub static mut SFINAEs_away_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_27: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_29: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_30: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_31: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_32: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_33: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_34: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_35: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_36: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_37: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_38: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_39))
-});
-pub static mut SFINAEs_away_40: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_41: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_39))
-});
-pub static mut SFINAEs_away_42: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_43: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_39))
-});
-pub static mut SFINAEs_away_44: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_45: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
-pub static mut SFINAEs_away_46: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_39))
-});
-pub static mut SFINAEs_away_47: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_26))
-});
+pub static mut SFINAEs_away_25: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_26: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_27: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_28: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_29: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_30: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_31: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_32: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_33: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_34: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_35: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_36: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_37: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_38: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_39: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_40: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_41: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_42: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_43: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_44: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_45: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
-pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_48() {
+pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_46() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter, Comp>");;
@@ -1164,7 +1143,7 @@ pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_48() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct BadAlloc_49 {}
+pub struct BadAlloc_47 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
@@ -1215,21 +1194,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_50: std::cell::LazyCell<()> =
+pub static mut destructed_value_48: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_51: std::cell::LazyCell<()> =
+pub static mut moved_value_49: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_52(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_50(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_53(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_51(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_52(_x, _y)
+        operator_eq_50(_x, _y)
     });
 }
 #[repr(C)]
@@ -1293,8 +1272,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1315,7 +1294,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_52(
+            operator_eq_50(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1416,7 +1395,7 @@ impl test_allocator_int_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_51));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_49));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1425,8 +1404,8 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1536,7 +1515,7 @@ impl test_allocator_int_ptr_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_51));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_49));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1545,8 +1524,8 @@ impl test_allocator_int_ptr_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1702,7 +1681,7 @@ impl test_allocator_long_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_51));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_49));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1711,8 +1690,8 @@ impl test_allocator_long_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1822,7 +1801,7 @@ impl test_allocator_long_ptr_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_51));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_49));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1831,8 +1810,8 @@ impl test_allocator_long_ptr_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_50));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_48));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1934,30 +1913,27 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn test_copy_54() {
+pub unsafe fn test_copy_52() {
     {
-        let mut source : () = std_flat_map_long__int__std_less_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut s: () = source.clone();
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut source : () = std_flat_map_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut s: () = source.clone();
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut source : () = std_flat_map_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut s: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_flat_map_long__int__std_greater_long___std_vector_long__std_allocator_long____std_vector_int__std_allocator_int___ :: new_2 ( { & source } , { & mut __tmp_0 } , )
-        };
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
-pub unsafe fn test_containers_55() {
+pub unsafe fn test_containers_53() {
     let mut ks: () = unimplemented!();
     let mut vs: () = unimplemented!();
     let mut sorted_ks: () = unimplemented!();
@@ -1969,43 +1945,35 @@ pub unsafe fn test_containers_55() {
         unimplemented!(),
     ];
     {
-        let mut s : () = std_flat_map_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , None , )  ;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s : () = std_flat_map_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_2 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_1: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 44_() });
-            std_flat_map_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_3 ( { & ks } , { & vs } , { & mut __tmp_1 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_2: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 44_() });
-            std_flat_map_int__long__std_less_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_4 ( { unimplemented!() } , { & sorted_ks } , { & sorted_vs } , { & mut __tmp_2 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_containers_compare_56() {
+pub unsafe fn test_containers_compare_54() {
     let mut ks: () = unimplemented!();
     let mut vs: () = unimplemented!();
     let mut sorted_ks: () = unimplemented!();
@@ -2017,51 +1985,35 @@ pub unsafe fn test_containers_compare_56() {
         unimplemented!(),
     ];
     {
-        let mut s: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std_flat_map_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & mut __tmp_3 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_4: () = unimplemented!();
-            std_flat_map_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_2 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_4 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_5: () = unimplemented!();
-            let mut __tmp_6: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 44_() });
-            std_flat_map_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_3 ( { & ks } , { & vs } , { & mut __tmp_5 } , { & mut __tmp_6 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_7: () = unimplemented!();
-            let mut __tmp_8: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 44_() });
-            std_flat_map_int__long__std_greater_int___std_deque_int__test_allocator_int____std_deque_long__test_allocator_long___ :: new_4 ( { unimplemented!() } , { & sorted_ks } , { & sorted_vs } , { & mut __tmp_7 } , { & mut __tmp_8 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_iter_iter_57() {
+pub unsafe fn test_iter_iter_55() {
     let arr: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -2089,161 +2041,113 @@ pub unsafe fn test_iter_iter_57() {
         unimplemented!(),
     ];
     {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_3 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_4 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut mo: () = unimplemented!();
-        let mut m : () = std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_1 ( { ( unsafe { mo . begin_34  ( ) } )  } , { ( unsafe { mo . end_36  ( ) } )  } , None , )  ;
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut mo: () = unimplemented!();
-        let mut m : () = std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_2 ( { ( unsafe { mo . cbegin  ( ) } )  } , { ( unsafe { mo . cend  ( ) } )  } , None , )  ;
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut s : () = std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { source .as_mut_ptr() } , { source .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut s : () = std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { source .as_mut_ptr() } , { source .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-        let mut s : () = std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_2 ( { unimplemented!() } , { source .as_mut_ptr() } , { source .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , None , )  ;
-        const _: () = assert!(true, "std::is_same_v<decltype(s), std::flat_map<int, int>>");;
-        unimplemented!();
-    }
-}
-pub unsafe fn test_iter_iter_compare_58() {
-    let arr: [(); 5] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let sorted_arr: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let arrc: [(); 5] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let sorted_arrc: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    {
-        let mut m: () = {
-            let mut __tmp_9: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_9 } , )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m: () = {
-            let mut __tmp_10: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_10 } , )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m: () = {
-            let mut __tmp_11: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_3 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_11 } , )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m: () = {
-            let mut __tmp_12: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_4 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_12 } , )
-        };
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut mo: () = unimplemented!();
-        let mut m: () = {
-            let mut __tmp_13: () = unimplemented!();
-            std_flat_map_int__short__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_1 ( { ( unsafe { mo . begin_34  ( ) } )  } , { ( unsafe { mo . end_36  ( ) } )  } , { & mut __tmp_13 } , )
-        };
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut mo: () = unimplemented!();
-        let mut m: () = {
-            let mut __tmp_14: () = unimplemented!();
-            std_flat_map_int__short__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short___ :: new_2 ( { ( unsafe { mo . cbegin  ( ) } )  } , { ( unsafe { mo . cend  ( ) } )  } , { & mut __tmp_14 } , )
-        };
-        const _: () = assert!(true, "");;
-    }
-}
-pub unsafe fn test_initializer_list_59() {
-    let sorted_arr: [(); 4] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_5 ( { unimplemented!() } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut m : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_6 ( { unimplemented!() } , { unimplemented!() } , None , )  ;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let mut s : () = std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char___ :: new_1 ( { unimplemented!() } , None , )  ;
+        let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
         let mut m: () = unimplemented!();
-        let mut s : () = std_flat_map_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_less_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short______std_vector_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_allocator_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_______std_vector_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short_____std_allocator_std_flat_map_int__short__std_less_int___std_vector_int__std_allocator_int____std_vector_short__std_allocator_short______ :: new_1 ( { unimplemented!() } , None , )  ;
         const _: () = assert!(true, "");;
         unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut source: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "std::is_same_v<decltype(s), std::flat_map<int, int>>");;
         unimplemented!();
     }
 }
-pub unsafe fn test_initializer_list_compare_60() {
+pub unsafe fn test_iter_iter_compare_56() {
+    let arr: [(); 5] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let sorted_arr: [(); 4] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let arrc: [(); 5] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let sorted_arrc: [(); 4] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+    }
+}
+pub unsafe fn test_initializer_list_57() {
     let sorted_arr: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
@@ -2251,26 +2155,48 @@ pub unsafe fn test_initializer_list_compare_60() {
         unimplemented!(),
     ];
     {
-        let mut m: () = {
-            let mut __tmp_15: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_5 ( { unimplemented!() } , { & mut __tmp_15 } , )
-        };
+        let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut m: () = {
-            let mut __tmp_16: () = unimplemented!();
-            std_flat_map_int__long__std_greater_long_long___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_6 ( { unimplemented!() } , { unimplemented!() } , { & mut __tmp_16 } , )
-        };
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
+        let mut s: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_initializer_list_compare_58() {
+    let sorted_arr: [(); 4] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    {
+        let mut m: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
-pub unsafe fn test_from_range_61() {
-    let mut r: () = std_list_std_pair_int__long___std_allocator_std_pair_int__long___::new_1({
-        unimplemented!()
-    });
+pub unsafe fn test_from_range_59() {
+    let mut r: () = unimplemented!();
     let expected: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
@@ -2278,26 +2204,20 @@ pub unsafe fn test_from_range_61() {
         unimplemented!(),
     ];
     {
-        let mut s : () = std_flat_map_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_7 ( { unimplemented!() } , { & mut r } , )  ;
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_17: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 42_() });
-            std_flat_map_int__long__std_less_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { unimplemented!() } , { & mut r } , { & mut __tmp_17 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_from_range_compare_62() {
-    let mut r: () = std_list_std_pair_int__long___std_allocator_std_pair_int__long___::new_1({
-        unimplemented!()
-    });
+pub unsafe fn test_from_range_compare_60() {
+    let mut r: () = unimplemented!();
     let expected: [(); 4] = [
         unimplemented!(),
         unimplemented!(),
@@ -2305,20 +2225,12 @@ pub unsafe fn test_from_range_compare_62() {
         unimplemented!(),
     ];
     {
-        let mut s: () = {
-            let mut __tmp_18: () = unimplemented!();
-            std_flat_map_int__long__std_greater_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { & mut r } , { & mut __tmp_18 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s: () = {
-            let mut __tmp_19: () = unimplemented!();
-            let mut __tmp_20: test_allocator_long_ =
-                test_allocator_long_::new_3({ 0_() }, { 42_() });
-            std_flat_map_int__long__std_greater_int___std_vector_int__test_allocator_int____std_vector_long__test_allocator_long___ :: new_1 ( { unimplemented!() } , { & mut r } , { & mut __tmp_19 } , { & mut __tmp_20 } , )
-        };
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -2341,44 +2253,33 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_copy_54() });
-    (unsafe { test_containers_55() });
-    (unsafe { test_containers_compare_56() });
-    (unsafe { test_iter_iter_57() });
-    (unsafe { test_iter_iter_compare_58() });
-    (unsafe { test_initializer_list_59() });
-    (unsafe { test_initializer_list_compare_60() });
-    (unsafe { test_from_range_61() });
-    (unsafe { test_from_range_compare_62() });
-    let mut pair_vec: () =
-        std_vector_std_pair_const_int__float___std_allocator_std_pair_const_int__float___::new_1({
-            unimplemented!()
-        });
-    let mut fm1 : () = std_flat_map_int__float__std_less_int___std_vector_int__std_allocator_int____std_vector_float__std_allocator_float___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
+    (unsafe { test_copy_52() });
+    (unsafe { test_containers_53() });
+    (unsafe { test_containers_compare_54() });
+    (unsafe { test_iter_iter_55() });
+    (unsafe { test_iter_iter_compare_56() });
+    (unsafe { test_initializer_list_57() });
+    (unsafe { test_initializer_list_compare_58() });
+    (unsafe { test_from_range_59() });
+    (unsafe { test_from_range_compare_60() });
+    let mut pair_vec: () = unimplemented!();
+    let mut fm1: () = unimplemented!();
     const _: () = assert!(true, "");;
-    let mut tuple_vec: () =
-        std_vector_std_tuple_int__double___std_allocator_std_tuple_int__double___::new_1({
-            unimplemented!()
-        });
-    let mut fm2 : () = std_flat_map_int__double__std_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
+    let mut tuple_vec: () = unimplemented!();
+    let mut fm2: () = unimplemented!();
     const _: () = assert!(true, "");;
-    let mut array_vec: () =
-        std_vector_std_array_long__2___std_allocator_std_array_long__2___::new_1({
-            unimplemented!()
-        });
-    let mut fm3 : () = std_flat_map_long__long__std_less_long___std_vector_long__std_allocator_long____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
+    let mut array_vec: () = unimplemented!();
+    let mut fm3: () = unimplemented!();
     const _: () = assert!(true, "");;
-    let mut non_const_key_pair_vec: () =
-        std_vector_std_pair_int__char___std_allocator_std_pair_int__char___::new_1({
-            unimplemented!()
-        });
-    let mut fm4 : () = std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , None , )  ;
+    let mut non_const_key_pair_vec: () = unimplemented!();
+    let mut fm4: () = unimplemented!();
     const _: () = assert!(true, "");;
-    (unsafe { AssociativeContainerDeductionGuidesSfinaeAway_48() });
+    (unsafe { AssociativeContainerDeductionGuidesSfinaeAway_46() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_25);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_26);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_27);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_28);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_29);
@@ -2391,14 +2292,13 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_36);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_37);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_38);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_39);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_40);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_41);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_42);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_43);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_44);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_45);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_46);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_47);
-    std::cell::LazyCell::force(&*&raw const destructed_value_50);
-    std::cell::LazyCell::force(&*&raw const moved_value_51);
+    std::cell::LazyCell::force(&*&raw const destructed_value_48);
+    std::cell::LazyCell::force(&*&raw const moved_value_49);
 }

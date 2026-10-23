@@ -712,32 +712,24 @@ const _: () = assert!(
 );
 pub unsafe fn test_6() -> () {
     {
-        let mut t1: () = 1_();
-        let mut t2: () = std_tuple_ConvertibleFrom_MutableCopy__::new({ &mut t1 });
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_0: () = 1_();
-            let mut __tmp_1: () = 2_();
-            std_tuple_MutableCopy__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let mut t2: () = std_tuple_ConvertibleFrom_MutableCopy___int_::new({ &mut t1 });
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t1: () = 1_();
-        let mut t2: () = std_tuple_ExplicitConstructibleFrom_MutableCopy__::new({ &mut t1 });
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_2: () = 1_();
-            let mut __tmp_3: () = 2_();
-            std_tuple_MutableCopy__int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
-        let mut t2: () = std_tuple_ExplicitConstructibleFrom_MutableCopy___int_::new({ &mut t1 });
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -759,7 +751,7 @@ pub unsafe fn test_6() -> () {
     );;
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = std_tuple_ConvertibleFrom_TracedCopyMove__::new({ &mut t1 });
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -769,17 +761,17 @@ pub unsafe fn test_6() -> () {
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = std_tuple_TracedCopyMove__TracedCopyMove_::new_1({ &mut t1 });
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = std_tuple_ConvertibleFrom_CvtFromTupleRef__::new({ &mut t1 });
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new({ &mut t1 });
+        let mut t2: () = unimplemented!();
         unimplemented!();
     }
     return true;

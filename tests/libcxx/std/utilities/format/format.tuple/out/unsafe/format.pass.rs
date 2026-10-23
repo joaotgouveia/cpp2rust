@@ -365,45 +365,17 @@ pub unsafe fn test_assure_parse_is_called_29() {
     (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
 }
 pub unsafe fn test_30() {
-    (unsafe { test_8(unimplemented!(), 1_()) });
-    (unsafe {
-        test_10(unimplemented!(), {
-            let mut __tmp_12: () = 1_();
-            let mut __tmp_13: () = ('1' as ());
-            std_tuple_int__char_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        })
-    });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_10(unimplemented!(), unimplemented!()) });
     (unsafe { test_12(unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_14(unimplemented!(), {
-            let mut __tmp_14: () = 1_();
-            let mut __tmp_15: () = ('1' as ());
-            let mut __tmp_16: () = true;
-            std_tuple_int__char__bool_::new({ &mut __tmp_14 }, { &mut __tmp_15 }, { &mut __tmp_16 })
-        })
-    });
+    (unsafe { test_14(unimplemented!(), unimplemented!()) });
     (unsafe { test_assure_parse_is_called_28() });
 }
 pub unsafe fn test_31() {
-    (unsafe { test_16(unimplemented!(), 1_()) });
-    (unsafe {
-        test_18(unimplemented!(), {
-            let mut __tmp_17: () = 1_();
-            let mut __tmp_18: () = ('1' as ());
-            std_tuple_int__wchar_t_::new({ &mut __tmp_17 }, { &mut __tmp_18 })
-        })
-    });
+    (unsafe { test_16(unimplemented!(), unimplemented!()) });
+    (unsafe { test_18(unimplemented!(), unimplemented!()) });
     (unsafe { test_20(unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_22(unimplemented!(), {
-            let mut __tmp_19: () = 1_();
-            let mut __tmp_20: () = ('1' as ());
-            let mut __tmp_21: () = true;
-            std_tuple_int__wchar_t__bool_::new({ &mut __tmp_19 }, { &mut __tmp_20 }, {
-                &mut __tmp_21
-            })
-        })
-    });
+    (unsafe { test_22(unimplemented!(), unimplemented!()) });
     (unsafe { test_assure_parse_is_called_29() });
 }
 pub unsafe fn test_32() {

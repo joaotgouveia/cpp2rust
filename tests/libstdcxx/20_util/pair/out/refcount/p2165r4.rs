@@ -430,7 +430,7 @@ pub fn test01_10() -> () {
     return true;
 }
 pub fn test01_13() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda!(
             {
@@ -808,7 +808,7 @@ pub fn test02_15() -> () {
 }
 pub fn test02_17() -> () {
     const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         lambda!(
             {
@@ -1113,7 +1113,7 @@ pub fn test03_19() -> () {
     return true;
 }
 pub fn test03_21() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
@@ -1327,7 +1327,7 @@ pub fn test04_23() -> () {
     return true;
 }
 pub fn test04_25() -> () {
-    let pair_like: Value<()> = Rc::new(RefCell::new(<()>::default()));
+    let pair_like: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let p2b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;

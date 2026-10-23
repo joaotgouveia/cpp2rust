@@ -30,43 +30,27 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new(3_()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_std_string__int_::new({ Ptr::<()>::from_string_literal(b"high") }, {
-                __tmp_0.as_pointer()
-            })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2.718_f64));
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_double__int_::new({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t) == 2.718");;
         const _: () = assert!(true, "std::get<1>(t) == 5");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(<Empty>::default()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut e: Empty = (*({ get_0(t.as_pointer()) }).upgrade().deref()).clone();
         (&(e));
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(1.5_f64));
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_double_ref__std_string__int_::new(
-                { d.as_pointer() },
-                { Ptr::<()>::from_string_literal(b"high") },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let mut d: () = 1.5_f64;
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

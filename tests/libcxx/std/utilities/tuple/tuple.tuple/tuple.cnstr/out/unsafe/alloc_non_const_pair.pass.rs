@@ -824,14 +824,7 @@ const _: () = assert!(
 pub unsafe fn test_6() -> () {
     {
         let mut p: () = unimplemented!();
-        let mut t: () = {
-            let mut __tmp_0: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_ConvertibleFrom_MutableCopy___ConvertibleFrom_int__::new(
-                { unimplemented!() },
-                { &mut __tmp_0 },
-                { &mut p },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -839,14 +832,7 @@ pub unsafe fn test_6() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut t: () = {
-            let mut __tmp_1: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_ExplicitConstructibleFrom_MutableCopy___ExplicitConstructibleFrom_int__::new(
-                { unimplemented!() },
-                { &mut __tmp_1 },
-                { &mut p },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -854,14 +840,7 @@ pub unsafe fn test_6() -> () {
     }
     {
         let mut p: () = unimplemented!();
-        let mut t: () = {
-            let mut __tmp_2: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_ConvertibleFrom_TracedCopyMove___TracedCopyMove_::new(
-                { unimplemented!() },
-                { &mut __tmp_2 },
-                { &mut p },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

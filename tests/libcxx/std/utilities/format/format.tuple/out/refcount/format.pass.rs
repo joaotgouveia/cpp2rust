@@ -388,49 +388,17 @@ pub fn test_assure_parse_is_called_29() {
     ({ test_assure_parse_is_called_26(unimplemented!()) });
 }
 pub fn test_30() {
-    ({ test_8(unimplemented!(), 1_()) });
-    ({
-        test_10(unimplemented!(), {
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            std_tuple_int__char_::new({ __tmp_12.as_pointer() }, { __tmp_13.as_pointer() })
-        })
-    });
+    ({ test_8(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
     ({ test_12(unimplemented!(), unimplemented!()) });
-    ({
-        test_14(unimplemented!(), {
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(true));
-            std_tuple_int__char__bool_::new({ __tmp_14.as_pointer() }, { __tmp_15.as_pointer() }, {
-                __tmp_16.as_pointer()
-            })
-        })
-    });
+    ({ test_14(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_28() });
 }
 pub fn test_31() {
-    ({ test_16(unimplemented!(), 1_()) });
-    ({
-        test_18(unimplemented!(), {
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            std_tuple_int__wchar_t_::new({ __tmp_17.as_pointer() }, { __tmp_18.as_pointer() })
-        })
-    });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_18(unimplemented!(), unimplemented!()) });
     ({ test_20(unimplemented!(), unimplemented!()) });
-    ({
-        test_22(unimplemented!(), {
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(('1' as ())));
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(true));
-            std_tuple_int__wchar_t__bool_::new(
-                { __tmp_19.as_pointer() },
-                { __tmp_20.as_pointer() },
-                { __tmp_21.as_pointer() },
-            )
-        })
-    });
+    ({ test_22(unimplemented!(), unimplemented!()) });
     ({ test_assure_parse_is_called_29() });
 }
 pub fn test_32() {

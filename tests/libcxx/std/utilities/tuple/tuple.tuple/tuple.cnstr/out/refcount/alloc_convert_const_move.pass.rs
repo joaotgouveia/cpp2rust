@@ -772,67 +772,27 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let t1: Value<()> = Rc::new(RefCell::new(1_()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_ConstMove__::new(
-                { unimplemented!() },
-                { __tmp_0.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            std_tuple_ConstMove__int_::new({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-        }));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_ConstMove___int_::new(
-                { unimplemented!() },
-                { __tmp_3.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(1_()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ExplicitConstructibleFrom_ConstMove__::new(
-                { unimplemented!() },
-                { __tmp_4.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(1_()));
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(2_()));
-            std_tuple_ConstMove__int_::new({ __tmp_5.as_pointer() }, { __tmp_6.as_pointer() })
-        }));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ExplicitConstructibleFrom_ConstMove___int_::new(
-                { unimplemented!() },
-                { __tmp_7.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -851,24 +811,16 @@ pub fn test_6() -> () {
     );;
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_TracedCopyMove__::new(
-                { unimplemented!() },
-                { __tmp_8.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<test_allocator_int_> =
+            let __tmp_0: Value<test_allocator_int_> =
                 Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { __tmp_9.as_pointer() }, {
+            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { __tmp_0.as_pointer() }, {
                 t1.as_pointer()
             })
         }));
@@ -877,43 +829,19 @@ pub fn test_6() -> () {
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_TracedCopyMove__TracedCopyMove_::new_1(
-                { unimplemented!() },
-                { __tmp_10.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_CvtFromTupleRef__::new(
-                { unimplemented!() },
-                { __tmp_11.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_ConvertibleFrom_ExplicitCtrFromTupleRef__::new(
-                { unimplemented!() },
-                { __tmp_12.as_pointer() },
-                { t1.as_pointer() },
-            )
-        }));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

@@ -20,23 +20,15 @@ pub unsafe fn swap_0(lhs: *const ConstSwappable, rhs: *const ConstSwappable) {
 }
 pub unsafe fn test_2() -> () {
     {
-        let t0: () = ConstSwappable { i: 0_() };
-        let mut t1: () = ConstSwappable { i: 1_() };
+        let t0: () = unimplemented!();
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: () = {
-            let mut __tmp_0: ConstSwappable = ConstSwappable { i: 0_() };
-            let mut __tmp_1: ConstSwappable = ConstSwappable { i: 1_() };
-            std_tuple_ConstSwappable__ConstSwappable_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let t1: () = {
-            let mut __tmp_2: ConstSwappable = ConstSwappable { i: 2_() };
-            let mut __tmp_3: ConstSwappable = ConstSwappable { i: 3_() };
-            std_tuple_ConstSwappable__ConstSwappable_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let t0: () = unimplemented!();
+        let t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -44,26 +36,8 @@ pub unsafe fn test_2() -> () {
         unimplemented!();
     }
     {
-        let t0: () = {
-            let mut __tmp_4: ConstSwappable = ConstSwappable { i: 0_() };
-            let mut __tmp_5: ConstSwappable = ConstSwappable { i: 1_() };
-            let mut __tmp_6: ConstSwappable = ConstSwappable { i: 2_() };
-            std_tuple_ConstSwappable__const_ConstSwappable__const_ConstSwappable_::new(
-                { &mut __tmp_4 },
-                { &mut __tmp_5 },
-                { &mut __tmp_6 },
-            )
-        };
-        let t1: () = {
-            let mut __tmp_7: ConstSwappable = ConstSwappable { i: 3_() };
-            let mut __tmp_8: ConstSwappable = ConstSwappable { i: 4_() };
-            let mut __tmp_9: ConstSwappable = ConstSwappable { i: 5_() };
-            std_tuple_ConstSwappable__const_ConstSwappable__const_ConstSwappable_::new(
-                { &mut __tmp_7 },
-                { &mut __tmp_8 },
-                { &mut __tmp_9 },
-            )
-        };
+        let t0: () = unimplemented!();
+        let t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

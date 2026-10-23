@@ -463,17 +463,11 @@ pub fn test_9() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            ({
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    alloc.as_pointer(),
-                    out.offset((i) as isize),
-                    counter.as_pointer(),
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -488,17 +482,11 @@ pub fn test_9() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            ({
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    alloc.as_pointer(),
-                    out.offset((i) as isize),
-                    counter.as_pointer(),
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -512,17 +500,11 @@ pub fn test_11() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            ({
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    alloc.as_pointer(),
-                    out.offset((i) as isize),
-                    counter.as_pointer(),
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -539,17 +521,11 @@ pub fn test_11() {
     {
         let mut N: () = 5_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut out: Ptr<Counted> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
-            ({
-                std_allocator_traits_std_allocator_Counted__::construct(
-                    alloc.as_pointer(),
-                    out.offset((i) as isize),
-                    counter.as_pointer(),
-                )
-            });
+            unimplemented!();
             i.prefix_inc();
         }
         unimplemented!();
@@ -569,20 +545,14 @@ pub fn test_arrays_13() -> () {
         let mut N: () = 5_();
         let M: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut buffer: Ptr<Box<[Counted]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Counted> = (buffer.offset((i) as isize)).as_pointer();
             let mut j: () = 0_();
             'loop_: while (j != (*M.borrow())) {
-                ({
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        alloc.as_pointer(),
-                        unimplemented!(),
-                        counter.as_pointer(),
-                    )
-                });
+                unimplemented!();
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -600,20 +570,14 @@ pub fn test_arrays_13() -> () {
         let mut N: () = 5_();
         let A: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut buffer: Ptr<Box<[Counted]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
             let array_ref: Ptr<Counted> = (buffer.offset((i) as isize)).as_pointer();
             let mut j: () = 0_();
             'loop_: while (j != (*A.borrow())) {
-                ({
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        alloc.as_pointer(),
-                        unimplemented!(),
-                        counter.as_pointer(),
-                    )
-                });
+                unimplemented!();
                 j.prefix_inc();
             }
             i.prefix_inc();
@@ -629,7 +593,7 @@ pub fn test_arrays_13() -> () {
         let A: Value<()> = Rc::new(RefCell::new(3_()));
         let B: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut buffer: Ptr<Box<[Box<[Counted]>]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
@@ -638,13 +602,7 @@ pub fn test_arrays_13() -> () {
             'loop_: while (j != (*A.borrow())) {
                 let mut k: () = 0_();
                 'loop_: while (k != (*B.borrow())) {
-                    ({
-                        std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::construct(
-                            alloc.as_pointer(),
-                            unimplemented!(),
-                            counter.as_pointer(),
-                        )
-                    });
+                    unimplemented!();
                     k.prefix_inc();
                 }
                 j.prefix_inc();
@@ -665,7 +623,7 @@ pub fn test_arrays_13() -> () {
         let A: Value<()> = Rc::new(RefCell::new(3_()));
         let B: Value<()> = Rc::new(RefCell::new(3_()));
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let counter: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut counter: () = 0_();
         let mut buffer: Ptr<Box<[Box<[Counted]>]>> = unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i != N) {
@@ -674,13 +632,7 @@ pub fn test_arrays_13() -> () {
             'loop_: while (j != (*A.borrow())) {
                 let mut k: () = 0_();
                 'loop_: while (k != (*B.borrow())) {
-                    ({
-                        std_allocator_traits_std_allocator_Countedarr3arrarr3arr__::construct(
-                            alloc.as_pointer(),
-                            unimplemented!(),
-                            counter.as_pointer(),
-                        )
-                    });
+                    unimplemented!();
                     k.prefix_inc();
                 }
                 j.prefix_inc();

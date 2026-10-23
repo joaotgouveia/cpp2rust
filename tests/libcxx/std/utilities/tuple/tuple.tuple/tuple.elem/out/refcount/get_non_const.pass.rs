@@ -24,11 +24,7 @@ pub struct S {
 impl S {
     pub fn new() -> Self {
         let __this: Value<S> = Rc::new(RefCell::new(Self {
-            a: {
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-                let __tmp_1: Value<Empty> = Rc::new(RefCell::new(<Empty>::default()));
-                std_tuple_int__Empty_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-            },
+            a: unimplemented!(),
             k: (({ get_0(field_ptr!(this, a)) }).read()),
             e: (*({ get_1(field_ptr!(this, a)) }).upgrade().deref()).clone(),
         }));
@@ -42,11 +38,7 @@ impl Default for S {
     }
 }
 pub fn getP_2() -> () {
-    return {
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(4_()));
-        std_tuple_int__int_::new({ __tmp_2.as_pointer() }, { __tmp_3.as_pointer() })
-    };
+    return unimplemented!();
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -69,18 +61,13 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new(3_()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         ({ get_3(t.as_pointer()) }).write(2_());
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_std_string__int_::new({ Ptr::<()>::from_string_literal(b"high") }, {
-                __tmp_4.as_pointer()
-            })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -89,15 +76,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let d: Value<()> = Rc::new(RefCell::new(1.5_f64));
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_double_ref__std_string__int_::new(
-                { d.as_pointer() },
-                { Ptr::<()>::from_string_literal(b"high") },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let mut d: () = 1.5_f64;
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

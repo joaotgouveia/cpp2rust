@@ -448,538 +448,127 @@ pub unsafe fn test_comparison_87(mut equal: (), mut dest: (), mut src: ()) {
 }
 pub unsafe fn test_comparison_different_rank_88() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
-    (unsafe {
-        test_comparison_12(
-            false,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
+    (unsafe { test_comparison_12(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_13(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_14(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 1_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_14(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_15(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_16(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615__18446744073709551615_::new_1({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_17(
-            false,
-            unimplemented!(),
-            std_extents_int__5__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_16(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_17(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_18(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_19(
-            false,
-            std_extents_int__18446744073709551615__18446744073709551615_::new_1({ 5_() }, { 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_20(
-            false,
-            std_extents_int__5__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_19(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_20(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_21(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_different_rank_90() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
-    (unsafe {
-        test_comparison_34(
-            false,
-            unimplemented!(),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
+    (unsafe { test_comparison_34(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_35(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_36(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 1_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_36(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_37(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_38(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 5_() },
-                { 5_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_comparison_39(
-            false,
-            unimplemented!(),
-            std_extents_unsigned_long__5__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_38(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_39(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_40(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_41(
-            false,
-            std_extents_int__18446744073709551615__18446744073709551615_::new_1({ 5_() }, { 5_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_42(
-            false,
-            std_extents_int__5__18446744073709551615_::new_1({ 5_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_41(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_42(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_43(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_different_rank_91() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
-    (unsafe {
-        test_comparison_56(
-            false,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
+    (unsafe { test_comparison_56(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_57(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_58(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_58(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_59(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_60(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615__18446744073709551615_::new_1({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_61(
-            false,
-            unimplemented!(),
-            std_extents_int__5__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_60(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_61(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_62(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_63(
-            false,
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 5_() },
-                { 5_() },
-            ),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_64(
-            false,
-            std_extents_unsigned_long__5__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_63(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_64(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_65(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_different_rank_92() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
-    (unsafe {
-        test_comparison_78(
-            false,
-            unimplemented!(),
-            std_extents_long__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
+    (unsafe { test_comparison_78(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_79(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_80(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_80(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_81(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_82(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_long__18446744073709551615__18446744073709551615_::new_1({ 5_() }, {
-                5_()
-            }),
-        )
-    });
-    (unsafe {
-        test_comparison_83(
-            false,
-            unimplemented!(),
-            std_extents_long__5__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_82(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_83(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_84(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_85(
-            false,
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 5_() },
-                { 5_() },
-            ),
-            std_extents_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_86(
-            false,
-            std_extents_unsigned_long__5__18446744073709551615_::new_1({ 5_() }),
-            std_extents_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_comparison_85(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_86(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_87(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_same_rank_93() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
     (unsafe { test_comparison_0(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_1(
-            true,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_2(
-            true,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_3(
-            true,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_1(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_2(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_3(true, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_4(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_1(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_2(
-            false,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_5(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_1(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_2(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_5(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_6(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_7 ( true , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_8 ( true , std_extents_int__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_int__5__18446744073709551615__18446744073709551615__8__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_9(
-            true,
-            std_extents_int__5__6__7__8__9_::new_1({ 5_() }, { 6_() }, { 7_() }, { 8_() }, {
-                9_()
-            }),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_comparison_7 ( false , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 3_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_10 ( false , std_extents_int__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_int__5__18446744073709551615__18446744073709551615__3__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_11(
-            false,
-            std_extents_int__5__6__7__8__9_::new_1({ 5_() }, { 6_() }, { 7_() }, { 8_() }, {
-                9_()
-            }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_7(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_8(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_9(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_7(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_10(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_11(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_same_rank_94() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
     (unsafe { test_comparison_22(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_23(
-            true,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_24(
-            true,
-            unimplemented!(),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_25(
-            true,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_23(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_24(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_25(true, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_26(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_23(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_24(
-            false,
-            unimplemented!(),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_27(
-            false,
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_23(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_24(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_27(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_28(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_29 ( true , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_30 ( true , std_extents_int__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_unsigned_long__5__18446744073709551615__18446744073709551615__8__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_31(
-            true,
-            std_extents_int__5__6__7__8__9_::new_1({ 5_() }, { 6_() }, { 7_() }, { 8_() }, {
-                9_()
-            }),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_comparison_29 ( false , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 3_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_32 ( false , std_extents_int__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_unsigned_long__5__18446744073709551615__18446744073709551615__3__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_33(
-            false,
-            std_extents_int__5__6__7__8__9_::new_1({ 5_() }, { 6_() }, { 7_() }, { 8_() }, {
-                9_()
-            }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_29(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_30(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_31(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_29(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_32(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_33(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_same_rank_95() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
     (unsafe { test_comparison_44(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_45(
-            true,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_46(
-            true,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_47(
-            true,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_45(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_46(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_47(true, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_48(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_45(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_int__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_46(
-            false,
-            unimplemented!(),
-            std_extents_int__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_49(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_45(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_46(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_49(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_50(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_51 ( true , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_52 ( true , std_extents_unsigned_long__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_int__5__18446744073709551615__18446744073709551615__8__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_53(
-            true,
-            std_extents_unsigned_long__5__6__7__8__9_::new_1(
-                { 5_() },
-                { 6_() },
-                { 7_() },
-                { 8_() },
-                { 9_() },
-            ),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_comparison_51 ( false , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 3_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_54 ( false , std_extents_unsigned_long__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_int__5__18446744073709551615__18446744073709551615__3__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_55(
-            false,
-            std_extents_unsigned_long__5__6__7__8__9_::new_1(
-                { 5_() },
-                { 6_() },
-                { 7_() },
-                { 8_() },
-                { 9_() },
-            ),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_51(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_52(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_53(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_51(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_54(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_55(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_same_rank_96() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_89));
     (unsafe { test_comparison_66(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_67(
-            true,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_68(
-            true,
-            unimplemented!(),
-            std_extents_long__18446744073709551615_::new_1({ 5_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_69(
-            true,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_67(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_68(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_69(true, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_70(true, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_67(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            std_extents_long__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_68(
-            false,
-            unimplemented!(),
-            std_extents_long__18446744073709551615_::new_1({ 7_() }),
-        )
-    });
-    (unsafe {
-        test_comparison_71(
-            false,
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 5_() }),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_67(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_68(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_71(false, unimplemented!(), unimplemented!()) });
     (unsafe { test_comparison_72(false, unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_comparison_73 ( true , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_74 ( true , std_extents_unsigned_long__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_long__5__18446744073709551615__18446744073709551615__8__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_75(
-            true,
-            std_extents_unsigned_long__5__6__7__8__9_::new_1(
-                { 5_() },
-                { 6_() },
-                { 7_() },
-                { 8_() },
-                { 9_() },
-            ),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_comparison_73 ( false , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 6_() } , { 3_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_76 ( false , std_extents_unsigned_long__18446744073709551615__6__18446744073709551615__8__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 9_() } , )  , std_extents_long__5__18446744073709551615__18446744073709551615__3__9_ :: new_1 ( { 6_() } , { 7_() } , )  , )
-    });
-    (unsafe {
-        test_comparison_77(
-            false,
-            std_extents_unsigned_long__5__6__7__8__9_::new_1(
-                { 5_() },
-                { 6_() },
-                { 7_() },
-                { 8_() },
-                { 9_() },
-            ),
-            unimplemented!(),
-        )
-    });
+    (unsafe { test_comparison_73(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_74(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_75(true, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_73(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_76(false, unimplemented!(), unimplemented!()) });
+    (unsafe { test_comparison_77(false, unimplemented!(), unimplemented!()) });
 }
 pub unsafe fn test_comparison_97() {
     (unsafe { test_comparison_same_rank_93() });

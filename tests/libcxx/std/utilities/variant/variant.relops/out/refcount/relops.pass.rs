@@ -447,80 +447,100 @@ pub fn operator_ge_15(LHS: Ptr<ComparesToMyBool>, RHS: Ptr<ComparesToMyBool>) ->
 }
 pub fn test_equality_basic_16() {
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(43_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+}
+pub fn test_equality_basic_17() {
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+}
+pub fn test_equality_basic_18() {
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
@@ -529,271 +549,63 @@ pub fn test_equality_basic_16() {
 }
 pub fn test_equality_basic_19() {
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_10.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 43_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_11.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_12.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_13.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_14.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_15.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
 }
-pub fn test_equality_basic_20() {
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_16.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_17.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_18.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(43_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_19.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_20.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_21: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_21.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_22: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_22.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_23: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_23.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-}
-pub fn test_equality_basic_21() {
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_24: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_24.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_25: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_25.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_26: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_26.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_27: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 43_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_27.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_28: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_28.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_29: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_29.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_30: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_30.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_31: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 42_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_31.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-}
-pub fn test_equality_22() {
+pub fn test_equality_20() {
     ({ test_equality_basic_16() });
+    ({ test_equality_basic_17() });
+    ({ test_equality_basic_18() });
     ({ test_equality_basic_19() });
-    ({ test_equality_basic_20() });
-    ({ test_equality_basic_21() });
+}
+pub fn test_less_21(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_greater: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
+    return ((({ (unimplemented!()) } == { expect_less })
+        && ({ !(unimplemented!()) } == { expect_less }))
+        && ({ (unimplemented!()) } == { expect_greater }))
+        && ({ !(unimplemented!()) } == { expect_greater });
+}
+pub fn test_less_22(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_greater: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
+    return ((({ (unimplemented!()) } == { expect_less })
+        && ({ !(unimplemented!()) } == { expect_less }))
+        && ({ (unimplemented!()) } == { expect_greater }))
+        && ({ !(unimplemented!()) } == { expect_greater });
 }
 pub fn test_less_23(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_greater: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
@@ -815,399 +627,119 @@ pub fn test_less_24(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_grea
         && ({ (unimplemented!()) } == { expect_greater }))
         && ({ !(unimplemented!()) } == { expect_greater });
 }
-pub fn test_less_25(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_greater: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
-    return ((({ (unimplemented!()) } == { expect_less })
-        && ({ !(unimplemented!()) } == { expect_less }))
-        && ({ (unimplemented!()) } == { expect_greater }))
-        && ({ !(unimplemented!()) } == { expect_greater });
-}
-pub fn test_less_26(l: Ptr<()>, r: Ptr<()>, mut expect_less: (), mut expect_greater: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
-    return ((({ (unimplemented!()) } == { expect_less })
-        && ({ !(unimplemented!()) } == { expect_less }))
-        && ({ (unimplemented!()) } == { expect_greater }))
-        && ({ !(unimplemented!()) } == { expect_greater });
-}
-pub fn test_relational_basic_27() {
+pub fn test_relational_basic_25() {
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_32: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_32.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_33: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_33.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_34: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_34.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_35: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_35.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_36: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_36.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_37: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_37.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_38: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_38.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_39: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_39.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_40: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_40.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_41: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__long_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_41.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+}
+pub fn test_relational_basic_26() {
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+}
+pub fn test_relational_basic_27() {
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
 }
 pub fn test_relational_basic_28() {
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_42: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_42.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_43: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_43.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_44: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_44.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_45: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_45.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_46: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_46.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_47: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_47.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_48: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_48.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_49: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_49.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_50: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_50.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_51: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_51.as_pointer() },
-            )
-        }));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
 }
-pub fn test_relational_basic_29() {
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_52: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_52.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_53: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_53.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_54: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_54.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_55: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_55.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_56: Value<()> = Rc::new(RefCell::new(1_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_56.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_57: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_57.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_58: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_58.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_59: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_59.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_60: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_60.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_61: Value<()> = Rc::new(RefCell::new(0_()));
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_61.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-}
-pub fn test_relational_basic_30() {
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_62: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_62.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_63: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_63.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_64: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_64.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_65: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_65.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_66: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 1_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_66.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_67: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_67.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_68: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_68.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_69: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_69.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_70: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*in_place_index_18.with(Value::clone).borrow()).clone() },
-                { __tmp_70.as_pointer() },
-            )
-        }));
-        let v2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_71: Value<ComparesToMyBool> =
-                Rc::new(RefCell::new(ComparesToMyBool { value: 0_() }));
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*in_place_index_17.with(Value::clone).borrow()).clone() },
-                { __tmp_71.as_pointer() },
-            )
-        }));
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-}
-pub fn test_relational_31() {
+pub fn test_relational_29() {
+    ({ test_relational_basic_25() });
+    ({ test_relational_basic_26() });
     ({ test_relational_basic_27() });
     ({ test_relational_basic_28() });
-    ({ test_relational_basic_29() });
-    ({ test_relational_basic_30() });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -1285,22 +817,22 @@ impl std::cmp::PartialEq for A2 {
     }
 }
 impl std::cmp::Eq for A2 {}
-pub fn operator_eq_32(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_eq_30(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
-pub fn operator_ne_33(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_ne_31(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
-pub fn operator_lt_34(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_lt_32(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
-pub fn operator_gt_35(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_gt_33(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
-pub fn operator_le_36(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_le_34(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
-pub fn operator_ge_37(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
+pub fn operator_ge_35(lhs: Ptr<Array>, rhs: Ptr<Array>) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1313,7 +845,7 @@ pub struct Array {
 impl std::cmp::Ord for Array {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_34(
+            if operator_lt_32(
                 Rc::new(RefCell::new(Array {
                     ptr: self.ptr.clone(),
                 }))
@@ -1324,7 +856,7 @@ impl std::cmp::Ord for Array {
                 .as_pointer(),
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_34(
+            } else if operator_lt_32(
                 Rc::new(RefCell::new(Array {
                     ptr: other.ptr.clone(),
                 }))
@@ -1349,7 +881,7 @@ impl std::cmp::PartialOrd for Array {
 impl std::cmp::PartialEq for Array {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_32(
+            operator_eq_30(
                 Rc::new(RefCell::new(Array {
                     ptr: self.ptr.clone(),
                 }))
@@ -1363,7 +895,7 @@ impl std::cmp::PartialEq for Array {
     }
 }
 impl std::cmp::Eq for Array {}
-pub fn test_recursive_38() {
+pub fn test_recursive_36() {
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
@@ -1391,8 +923,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_equality_22() });
-    ({ test_relational_31() });
+    ({ test_equality_20() });
+    ({ test_relational_29() });
     return 0_();
 }
 pub trait A1Impl {

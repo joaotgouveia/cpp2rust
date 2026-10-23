@@ -368,80 +368,100 @@ pub unsafe fn operator_ge_15(LHS: *const ComparesToMyBool, RHS: *const ComparesT
 }
 pub unsafe fn test_equality_basic_16() {
     {
-        let v1: () = {
-            let mut __tmp_0: () = 42_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_0 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_1: () = 42_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_1 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_2: () = 42_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_2 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_3: () = 43_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_3 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: () = {
-            let mut __tmp_4: () = 42_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_4 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_5: () = 42_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_5 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: () = {
-            let mut __tmp_6: () = 42_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_6 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_7: () = 42_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_7 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+}
+pub unsafe fn test_equality_basic_17() {
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+}
+pub unsafe fn test_equality_basic_18() {
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "v1 == v2");;
+        const _: () = assert!(true, "v2 == v1");;
+        const _: () = assert!(true, "!(v1 != v2)");;
+        const _: () = assert!(true, "!(v2 != v1)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "!(v1 == v2)");;
+        const _: () = assert!(true, "!(v2 == v1)");;
+        const _: () = assert!(true, "v1 != v2");;
+        const _: () = assert!(true, "v2 != v1");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
@@ -450,255 +470,71 @@ pub unsafe fn test_equality_basic_16() {
 }
 pub unsafe fn test_equality_basic_19() {
     {
-        let v1: () = {
-            let mut __tmp_8: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_8 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_9: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_9 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_10: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_10 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_11: ComparesToMyBool = ComparesToMyBool { value: 43_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_11 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: () = {
-            let mut __tmp_12: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_12 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_13: () = 42_();
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_13 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "!(v1 == v2)");;
         const _: () = assert!(true, "!(v2 == v1)");;
         const _: () = assert!(true, "v1 != v2");;
         const _: () = assert!(true, "v2 != v1");;
     }
     {
-        let v1: () = {
-            let mut __tmp_14: () = 42_();
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_14 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_15: () = 42_();
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_15 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "v1 == v2");;
         const _: () = assert!(true, "v2 == v1");;
         const _: () = assert!(true, "!(v1 != v2)");;
         const _: () = assert!(true, "!(v2 != v1)");;
     }
 }
-pub unsafe fn test_equality_basic_20() {
-    {
-        let v1: () = {
-            let mut __tmp_16: () = 42_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_16 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_17: () = 42_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_17 },
-            )
-        };
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_18: () = 42_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_18 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_19: () = 43_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_19 },
-            )
-        };
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_20: () = 42_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_20 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_21: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_21 },
-            )
-        };
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_22: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_22 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_23: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_23 },
-            )
-        };
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-}
-pub unsafe fn test_equality_basic_21() {
-    {
-        let v1: () = {
-            let mut __tmp_24: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_24 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_25: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_25 },
-            )
-        };
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_26: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_26 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_27: ComparesToMyBool = ComparesToMyBool { value: 43_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_27 },
-            )
-        };
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_28: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_28 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_29: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_29 },
-            )
-        };
-        const _: () = assert!(true, "!(v1 == v2)");;
-        const _: () = assert!(true, "!(v2 == v1)");;
-        const _: () = assert!(true, "v1 != v2");;
-        const _: () = assert!(true, "v2 != v1");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_30: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_30 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_31: ComparesToMyBool = ComparesToMyBool { value: 42_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_31 },
-            )
-        };
-        const _: () = assert!(true, "v1 == v2");;
-        const _: () = assert!(true, "v2 == v1");;
-        const _: () = assert!(true, "!(v1 != v2)");;
-        const _: () = assert!(true, "!(v2 != v1)");;
-    }
-}
-pub unsafe fn test_equality_22() {
+pub unsafe fn test_equality_20() {
     (unsafe { test_equality_basic_16() });
+    (unsafe { test_equality_basic_17() });
+    (unsafe { test_equality_basic_18() });
     (unsafe { test_equality_basic_19() });
-    (unsafe { test_equality_basic_20() });
-    (unsafe { test_equality_basic_21() });
+}
+pub unsafe fn test_less_21(
+    l: *const (),
+    r: *const (),
+    mut expect_less: (),
+    mut expect_greater: (),
+) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
+    return ((((unimplemented!()) == (expect_less)) && ((!(unimplemented!())) == (expect_less)))
+        && ((unimplemented!()) == (expect_greater)))
+        && ((!(unimplemented!())) == (expect_greater));
+}
+pub unsafe fn test_less_22(
+    l: *const (),
+    r: *const (),
+    mut expect_less: (),
+    mut expect_greater: (),
+) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
+    return ((((unimplemented!()) == (expect_less)) && ((!(unimplemented!())) == (expect_less)))
+        && ((unimplemented!()) == (expect_greater)))
+        && ((!(unimplemented!())) == (expect_greater));
 }
 pub unsafe fn test_less_23(
     l: *const (),
@@ -728,387 +564,119 @@ pub unsafe fn test_less_24(
         && ((unimplemented!()) == (expect_greater)))
         && ((!(unimplemented!())) == (expect_greater));
 }
-pub unsafe fn test_less_25(
-    l: *const (),
-    r: *const (),
-    mut expect_less: (),
-    mut expect_greater: (),
-) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
-    return ((((unimplemented!()) == (expect_less)) && ((!(unimplemented!())) == (expect_less)))
-        && ((unimplemented!()) == (expect_greater)))
-        && ((!(unimplemented!())) == (expect_greater));
-}
-pub unsafe fn test_less_26(
-    l: *const (),
-    r: *const (),
-    mut expect_less: (),
-    mut expect_greater: (),
-) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(l < r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l <= r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l > r), bool>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(l >= r), bool>");;
-    return ((((unimplemented!()) == (expect_less)) && ((!(unimplemented!())) == (expect_less)))
-        && ((unimplemented!()) == (expect_greater)))
-        && ((!(unimplemented!())) == (expect_greater));
-}
-pub unsafe fn test_relational_basic_27() {
+pub unsafe fn test_relational_basic_25() {
     {
-        let v1: () = {
-            let mut __tmp_32: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_32 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_33: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_33 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_34: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_34 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_35: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_35 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_36: () = 1_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_36 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_37: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_37 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_38: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_38 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_39: () = 0_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_39 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_40: () = 0_();
-            std_variant_int__long_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_40 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_41: () = 0_();
-            std_variant_int__long_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_41 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+}
+pub unsafe fn test_relational_basic_26() {
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+}
+pub unsafe fn test_relational_basic_27() {
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
+        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
+    }
+    {
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
 }
 pub unsafe fn test_relational_basic_28() {
     {
-        let v1: () = {
-            let mut __tmp_42: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_42 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_43: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_43 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_44: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_44 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_45: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_45 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_46: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_46 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_47: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_47 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_48: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_48 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_49: () = 0_();
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_49 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, true, false)");;
     }
     {
-        let v1: () = {
-            let mut __tmp_50: () = 0_();
-            std_variant_ComparesToMyBool__int_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_50 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_51: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__int_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_51 },
-            )
-        };
+        let v1: () = unimplemented!();
+        let v2: () = unimplemented!();
         const _: () = assert!(true, "test_less(v1, v2, false, true)");;
     }
 }
-pub unsafe fn test_relational_basic_29() {
-    {
-        let v1: () = {
-            let mut __tmp_52: () = 1_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_52 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_53: () = 1_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_53 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_54: () = 0_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_54 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_55: () = 1_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_55 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_56: () = 1_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_56 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_57: () = 0_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_57 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_58: () = 0_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_58 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_59: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_59 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_60: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_int__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_60 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_61: () = 0_();
-            std_variant_int__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_61 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-}
-pub unsafe fn test_relational_basic_30() {
-    {
-        let v1: () = {
-            let mut __tmp_62: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_62 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_63: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_63 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_64: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_64 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_65: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_65 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_66: ComparesToMyBool = ComparesToMyBool { value: 1_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_66 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_67: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_67 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_68: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_68 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_69: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_69 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, true, false)");;
-    }
-    {
-        let v1: () = {
-            let mut __tmp_70: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_18)).clone() },
-                { &mut __tmp_70 },
-            )
-        };
-        let v2: () = {
-            let mut __tmp_71: ComparesToMyBool = ComparesToMyBool { value: 0_() };
-            std_variant_ComparesToMyBool__ComparesToMyBool_::new_1(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_17)).clone() },
-                { &mut __tmp_71 },
-            )
-        };
-        const _: () = assert!(true, "test_less(v1, v2, false, true)");;
-    }
-}
-pub unsafe fn test_relational_31() {
+pub unsafe fn test_relational_29() {
+    (unsafe { test_relational_basic_25() });
+    (unsafe { test_relational_basic_26() });
     (unsafe { test_relational_basic_27() });
     (unsafe { test_relational_basic_28() });
-    (unsafe { test_relational_basic_29() });
-    (unsafe { test_relational_basic_30() });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -1204,22 +772,22 @@ impl std::cmp::PartialEq for A2 {
     }
 }
 impl std::cmp::Eq for A2 {}
-pub unsafe fn operator_eq_32(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_eq_30(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_ne_33(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_ne_31(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_lt_34(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_lt_32(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_gt_35(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_gt_33(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_le_36(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_le_34(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
-pub unsafe fn operator_ge_37(lhs: *const Array, rhs: *const Array) -> () {
+pub unsafe fn operator_ge_35(lhs: *const Array, rhs: *const Array) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -1230,9 +798,9 @@ pub struct Array {
 impl std::cmp::Ord for Array {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_34(self as *const Array, other as *const Array) {
+            if operator_lt_32(self as *const Array, other as *const Array) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_34(other as *const Array, self as *const Array) {
+            } else if operator_lt_32(other as *const Array, self as *const Array) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1247,11 +815,11 @@ impl std::cmp::PartialOrd for Array {
 }
 impl std::cmp::PartialEq for Array {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_32(self as *const Array, other as *const Array) }
+        unsafe { operator_eq_30(self as *const Array, other as *const Array) }
     }
 }
 impl std::cmp::Eq for Array {}
-pub unsafe fn test_recursive_38() {
+pub unsafe fn test_recursive_36() {
     &(unimplemented!());
     &(unimplemented!());
     &(unimplemented!());
@@ -1275,8 +843,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_equality_22() });
-    (unsafe { test_relational_31() });
+    (unsafe { test_equality_20() });
+    (unsafe { test_relational_29() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

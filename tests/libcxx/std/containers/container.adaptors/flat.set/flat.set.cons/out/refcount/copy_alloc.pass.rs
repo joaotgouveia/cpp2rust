@@ -222,6 +222,9 @@ pub struct test_allocator_int__rebind_int_ptr_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_allocator_int__rebind_const_int_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_allocator_int__rebind_unsigned_int_ {}
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Destructor)]
 #[byte_size(16)]
 pub struct test_allocator_int_ {
@@ -415,6 +418,29 @@ impl Default for test_allocator_const_int_ptr_ {
         }
     }
 }
+#[derive(Record, ByteRepr, FnPtrArg)]
+#[byte_size(16)]
+pub struct test_allocator_unsigned_int_ {
+    #[offset(0)]
+    data_: (),
+    #[offset(4)]
+    id_: (),
+    #[offset(8)]
+    #[byte_size(8)]
+    stats_: Ptr<test_allocator_statistics>,
+}
+impl test_allocator_unsigned_int_ {}
+impl Default for test_allocator_unsigned_int_ {
+    fn default() -> Self {
+        {
+            test_allocator_unsigned_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: Ptr::<test_allocator_statistics>::null(),
+            }
+        }
+    }
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct other_allocator_int_ {
@@ -450,47 +476,21 @@ impl Tag_X {
 }
 pub fn test_6() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mo: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-        std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-            { unimplemented!() },
-            { __tmp_0.as_pointer() },
-        )
-    }));
-    let m: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<test_allocator_int_> =
-            Rc::new(RefCell::new(test_allocator_int_::new_2({ 3_() })));
-        std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_2(
-            { mo.as_pointer() },
-            { __tmp_1.as_pointer() },
-        )
-    }));
+    let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let keys: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
+    let mut keys: () = ({ (*m.borrow()).extract() });
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let keys2: Value<()> = Rc::new(RefCell::new(({ (*mo.borrow()).extract() })));
+    let mut keys2: () = ({ (*mo.borrow()).extract() });
     unimplemented!();
 }
 pub fn test_7() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mo: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<test_less_int_> = Rc::new(RefCell::new(test_less_int_::new_1({ 5_() })));
-        std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-            { unimplemented!() },
-            { __tmp_2.as_pointer() },
-        )
-    }));
-    let m: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<test_allocator_int_> =
-            Rc::new(RefCell::new(test_allocator_int_::new_2({ 3_() })));
-        std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_2(
-            { mo.as_pointer() },
-            { __tmp_3.as_pointer() },
-        )
-    }));
+    let mo: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let keys: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).extract() })));
@@ -801,6 +801,36 @@ impl test_allocator_statisticsImpl for Ptr<test_allocator_statistics> {
         field!((*self), converted).write(0_());
     }
 }
+pub trait test_allocator_unsigned_int_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn address_11(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn address_12(&self, x: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn allocate(&self, mut n: (), mut _a1: ()) -> Ptr<()> {
+        unimplemented!()
+    }
+    fn deallocate(&self, mut p: Ptr<()>, mut s: ()) {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn destroy(&self, mut p: Ptr<()>) {
+        unimplemented!()
+    }
+    fn get_data(&self) -> () {
+        unimplemented!()
+    }
+    fn get_id(&self) -> () {
+        unimplemented!()
+    }
+}
+impl test_allocator_unsigned_int_Impl for Ptr<test_allocator_unsigned_int_> {}
 pub trait test_allocator_void_Impl {
     fn destructor(&self);
     fn get_id(&self) -> ();

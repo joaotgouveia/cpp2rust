@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let t: () = 3_();
+        let t: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
@@ -34,10 +34,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let t: () = {
-            let mut __tmp_0: () = 5_();
-            std_tuple_std_string__int_::new({ &std::mem::transmute(*b"high\0") }, { &mut __tmp_0 })
-        };
+        let t: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<const std::string&&, decltype(std::get<0>(std::move(t)))>::value"
@@ -56,7 +53,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut x: () = 42_();
         let y: () = 43_();
-        let p: () = std_tuple_int_ref__const_int_ref_::new({ &mut x }, { &y });
+        let p: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
@@ -71,10 +68,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut x: () = 42_();
         let y: () = 43_();
-        let p: () =
-            std_tuple_int_refref__const_int_refref_::new({ &mut *(&raw mut x).cast::<()>() }, {
-                &y
-            });
+        let p: () = unimplemented!();
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -87,11 +81,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let t: () = {
-            let mut __tmp_1: () = 2.718_f64;
-            let mut __tmp_2: () = 5_();
-            std_tuple_double__int_::new({ &mut __tmp_1 }, { &mut __tmp_2 })
-        };
+        let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(std::move(t)) == 2.718");;
         const _: () = assert!(true, "std::get<1>(std::move(t)) == 5");;
     }

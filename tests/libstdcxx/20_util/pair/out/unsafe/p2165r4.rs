@@ -396,7 +396,7 @@ pub unsafe fn test01_10() -> () {
     return true;
 }
 pub unsafe fn test01_13() -> () {
-    let mut pair_like: std_tuple_A__A_ = <()>::default();
+    let mut pair_like: std_tuple_A__A_ = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
@@ -708,7 +708,7 @@ pub unsafe fn test02_15() -> () {
 }
 pub unsafe fn test02_17() -> () {
     const _: () = assert!(true, "!std::is_convertible_v<pair_like_t<A>, pair<B, B>>");;
-    let mut pair_like: std_tuple_A__A_ = <()>::default();
+    let mut pair_like: std_tuple_A__A_ = unimplemented!();
     (unsafe {
         lambda_unsafe!(
             {
@@ -967,7 +967,7 @@ pub unsafe fn test03_19() -> () {
     return true;
 }
 pub unsafe fn test03_21() -> () {
-    let mut pair_like: std_tuple_A__A_ = <()>::default();
+    let mut pair_like: std_tuple_A__A_ = unimplemented!();
     let mut p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -1183,7 +1183,7 @@ pub unsafe fn test04_23() -> () {
     return true;
 }
 pub unsafe fn test04_25() -> () {
-    let mut pair_like: std_tuple_A__A_ = <()>::default();
+    let mut pair_like: std_tuple_A__A_ = unimplemented!();
     let p2b: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

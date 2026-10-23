@@ -25,13 +25,13 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut t0: () = unimplemented!();
-        let mut t1: () = std_tuple_long_long__short_::new_1({ &mut t0 });
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: () = unimplemented!();
-        let t1: () = std_tuple_long_long__short_::new_2({ &p0 });
+        let t1: () = std_tuple_long_long__short_::new_1({ &p0 });
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;
         const _: () = assert!(true, "std::get<1>(t1) == std::get<1>(p0)");;
         const _: () = assert!(true, "std::get<0>(t1) == 2");;

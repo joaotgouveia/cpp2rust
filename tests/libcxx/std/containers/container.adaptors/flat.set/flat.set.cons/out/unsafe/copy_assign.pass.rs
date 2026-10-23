@@ -643,24 +643,9 @@ impl Tag_X {
 pub unsafe fn test_8() {
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = {
-            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_1(
-                { unimplemented!() },
-                { &mut __tmp_0 },
-            )
-        };
-        let mut m: () = {
-            let mut __tmp_1: () = std_vector_int__test_allocator_int__::new_1({ unimplemented!() });
-            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 3_() });
-            let mut __tmp_3: test_allocator_int_ = test_allocator_int_::new_2({ 2_() });
-            std_flat_set_int__test_less_int___std_vector_int__test_allocator_int___::new_2(
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-                { &mut __tmp_3 },
-            )
-        };
-        m = (mo).clone();
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut keys: () = (unsafe { m.extract() });
@@ -672,23 +657,9 @@ pub unsafe fn test_8() {
     }
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = {
-            let mut __tmp_4: test_less_int_ = test_less_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_vector_int__other_allocator_int___::new_1(
-                { unimplemented!() },
-                { &mut __tmp_4 },
-            )
-        };
-        let mut m: () = {
-            let mut __tmp_5: test_less_int_ = test_less_int_::new_1({ 3_() });
-            let mut __tmp_6: other_allocator_int_ = other_allocator_int_::new_1({ 2_() });
-            std_flat_set_int__test_less_int___std_vector_int__other_allocator_int___::new_2(
-                { unimplemented!() },
-                { &mut __tmp_5 },
-                { &mut __tmp_6 },
-            )
-        };
-        m = (mo).clone();
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut keys: () = (unsafe { m.extract() });
@@ -699,58 +670,33 @@ pub unsafe fn test_8() {
         unimplemented!();
     }
     {
-        let mut mo: () = {
-            let mut __tmp_7: () = std_function_bool__int__int__::new_1({ unimplemented!() });
-            std_flat_set_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_7 } , )
-        };
-        let mut m: () = {
-            let mut __tmp_8: () = std_function_bool__int__int__::new_2({ unimplemented!() });
-            std_flat_set_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_8 } , )
-        };
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        m = (mo).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut m: () =
-            std_flat_set_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-                { unimplemented!() },
-                None,
-            );
-        m = (m).clone();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut so: () = unimplemented!();
         let mut s: () = unimplemented!();
-        s = (so).clone();
-        s = (so).clone();
-        (unsafe { swap_9(&mut s, &mut so) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
 }
-pub unsafe fn test_10() {
+pub unsafe fn test_9() {
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = {
-            let mut __tmp_9: test_less_int_ = test_less_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_1(
-                { unimplemented!() },
-                { &mut __tmp_9 },
-            )
-        };
-        let mut m: () = {
-            let mut __tmp_10: () = std_deque_int__test_allocator_int__::new_1({ unimplemented!() });
-            let mut __tmp_11: test_less_int_ = test_less_int_::new_1({ 3_() });
-            let mut __tmp_12: test_allocator_int_ = test_allocator_int_::new_2({ 2_() });
-            std_flat_set_int__test_less_int___std_deque_int__test_allocator_int___::new_2(
-                { &mut __tmp_10 },
-                { &mut __tmp_11 },
-                { &mut __tmp_12 },
-            )
-        };
-        m = (mo).clone();
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut keys: () = (unsafe { m.extract() });
@@ -762,23 +708,9 @@ pub unsafe fn test_10() {
     }
     {
         let mut ks: () = unimplemented!();
-        let mut mo: () = {
-            let mut __tmp_13: test_less_int_ = test_less_int_::new_1({ 5_() });
-            std_flat_set_int__test_less_int___std_deque_int__other_allocator_int___::new_1(
-                { unimplemented!() },
-                { &mut __tmp_13 },
-            )
-        };
-        let mut m: () = {
-            let mut __tmp_14: test_less_int_ = test_less_int_::new_1({ 3_() });
-            let mut __tmp_15: other_allocator_int_ = other_allocator_int_::new_1({ 2_() });
-            std_flat_set_int__test_less_int___std_deque_int__other_allocator_int___::new_2(
-                { unimplemented!() },
-                { &mut __tmp_14 },
-                { &mut __tmp_15 },
-            )
-        };
-        m = (mo).clone();
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut keys: () = (unsafe { m.extract() });
@@ -789,40 +721,31 @@ pub unsafe fn test_10() {
         unimplemented!();
     }
     {
-        let mut mo: () = {
-            let mut __tmp_16: () = std_function_bool__int__int__::new_1({ unimplemented!() });
-            std_flat_set_int__std_function_bool__int__int____std_deque_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_16 } , )
-        };
-        let mut m: () = {
-            let mut __tmp_17: () = std_function_bool__int__int__::new_2({ unimplemented!() });
-            std_flat_set_int__std_function_bool__int__int____std_deque_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut __tmp_17 } , )
-        };
+        let mut mo: () = unimplemented!();
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        m = (mo).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut m: () = std_flat_set_int__std_less_int___std_deque_int__std_allocator_int___::new_1(
-            { unimplemented!() },
-            None,
-        );
-        m = (m).clone();
+        let mut m: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut so: () = unimplemented!();
         let mut s: () = unimplemented!();
-        s = (so).clone();
-        s = (so).clone();
-        (unsafe { swap_9(&mut s, &mut so) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
 }
-pub unsafe fn test_11() -> () {
+pub unsafe fn test_10() -> () {
     (unsafe { test_8() });
     {
-        (unsafe { test_10() });
+        (unsafe { test_9() });
     }
     return true;
 }
@@ -842,7 +765,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_11() });
+    (unsafe { test_10() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

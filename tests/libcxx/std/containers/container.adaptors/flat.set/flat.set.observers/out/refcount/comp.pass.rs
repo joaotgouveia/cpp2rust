@@ -33,25 +33,23 @@ pub fn test_4() -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).value_comp() })));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let comp: Value<()> = Rc::new(RefCell::new(std_function_bool__int__int__::new_1({
-            unimplemented!()
-        })));
-        let m : Value<() > = Rc::new(RefCell::new(std_flat_set_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { comp .as_pointer()  } , )  )) ;
+        let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).value_comp() })));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
@@ -60,10 +58,10 @@ pub fn test_4() -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let kc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).key_comp() })));
+        let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<()> = Rc::new(RefCell::new(({ (*m.borrow()).value_comp() })));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();

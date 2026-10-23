@@ -21,7 +21,7 @@ pub fn test_0() {
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_float__false_).is_lock_free_2() });
+        let mut r: () = unimplemented!();
         {
             unimplemented!();
         }
@@ -42,7 +42,7 @@ pub fn test_2() {
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_double__false_).is_lock_free_2() });
+        let mut r: () = unimplemented!();
         {
             unimplemented!();
         }

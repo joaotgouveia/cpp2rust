@@ -647,20 +647,14 @@ pub unsafe fn test_6() -> () {
         let mut j1: () = 3_();
         let mut j2: () = 4_();
         let t1: () = unimplemented!();
-        let t2: () = std_tuple_long_ref__long_ref_::new({ &mut j1 }, { &mut j2 });
+        let t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let t1: () = unimplemented!();
-        let t2: () = {
-            let mut __tmp_0: () = 3_();
-            let mut __tmp_1: () = 4_();
-            std_tuple_AssignableFrom_ConstCopyAssign___ConstCopyAssign_::new({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

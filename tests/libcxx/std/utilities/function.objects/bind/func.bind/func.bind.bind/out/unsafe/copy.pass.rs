@@ -25,7 +25,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut fnc: () = std_function_float__float__float__::new_1({ Some(_pow_0) });
+    let mut fnc: () = unimplemented!();
     let mut task: std___bind_std_function_float__float__float___ref__float__float_ =
         unimplemented!();
     let mut task2: std___bind_std_function_float__float__float___ref__float__float_ = task.clone();

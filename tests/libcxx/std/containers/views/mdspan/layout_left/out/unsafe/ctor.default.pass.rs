@@ -30,7 +30,7 @@ pub unsafe fn test_construction_1() {
     unimplemented!();
     let mut expected_size: () = 1_();
     let mut r: () = 0_();
-    'loop_: while ((r) < (unsafe { std_extents_unsigned_int__18446744073709551615_::rank() })) {
+    'loop_: while ((r) < (unimplemented!())) {
         expected_size = (expected_size).wrapping_mul(unimplemented!());
         r.postfix_inc();
     }
@@ -45,7 +45,7 @@ pub unsafe fn test_construction_2() {
     unimplemented!();
     let mut expected_size: () = 1_();
     let mut r: () = 0_();
-    'loop_: while ((r) < (unsafe { std_extents_unsigned_int__7_::rank() })) {
+    'loop_: while ((r) < (unimplemented!())) {
         expected_size = (expected_size).wrapping_mul(unimplemented!());
         r.postfix_inc();
     }
@@ -60,7 +60,7 @@ pub unsafe fn test_construction_3() {
     unimplemented!();
     let mut expected_size: () = 1_();
     let mut r: () = 0_();
-    'loop_: while ((r) < (unsafe { std_extents_unsigned_int__7__8_::rank() })) {
+    'loop_: while ((r) < (unimplemented!())) {
         expected_size = (expected_size).wrapping_mul(unimplemented!());
         r.postfix_inc();
     }
@@ -74,11 +74,7 @@ pub unsafe fn test_construction_4() {
     unimplemented!();
     let mut expected_size: () = 1_();
     let mut r: () = 0_();
-    'loop_: while ((r)
-        < (unsafe {
-            std_extents_long__18446744073709551615__8__18446744073709551615__18446744073709551615_::rank ( )
-        }))
-    {
+    'loop_: while ((r) < (unimplemented!())) {
         expected_size *= unimplemented!();
         r.postfix_inc();
     }

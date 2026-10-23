@@ -88,15 +88,15 @@ impl Clone for ImplicitCopy {
 }
 pub unsafe fn testImplicitCopy1_1() -> () {
     let mut i: ImplicitCopy = ImplicitCopy::new({ 42_() });
-    return std_tuple_ImplicitCopy_::new_1({ &mut i });
+    return unimplemented!();
 }
 pub unsafe fn testImplicitCopy2_2() -> () {
     let i: ImplicitCopy = ImplicitCopy::new({ 42_() });
-    return std_tuple_ImplicitCopy_::new_2({ &i });
+    return unimplemented!();
 }
 pub unsafe fn testImplicitCopy3_3() -> () {
     let i: ImplicitCopy = ImplicitCopy::new({ 42_() });
-    return i;
+    return unimplemented!();
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -115,18 +115,15 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = {
-            let mut __tmp_0: *mut () = std::ptr::null_mut();
-            std_tuple_int_ptr_::new({ &mut __tmp_0 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = 2_();
+        let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let t: () = 2_();
+        let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 2");;
     }
     {
@@ -134,75 +131,35 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::get<0>(t) == 0");;
     }
     {
-        let mut t: () = {
-            let mut __tmp_1: () = 2_();
-            let mut __tmp_2: *mut () = std::ptr::null_mut();
-            std_tuple_int__char_ptr_::new_1({ &mut __tmp_1 }, { &mut __tmp_2 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: () = {
-            let mut __tmp_3: () = 2_();
-            let mut __tmp_4: () = Default::default();
-            std_tuple_int__char_ptr_::new_2({ &mut __tmp_3 }, { &mut __tmp_4 })
-        };
+        let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 2");;
         const _: () = assert!(true, "std::get<1>(t) == nullptr");;
     }
     {
-        let mut t: () = {
-            let mut __tmp_5: () = 2_();
-            let mut __tmp_6: () = Default::default();
-            std_tuple_int__char_ptr_::new_2({ &mut __tmp_5 }, { &mut __tmp_6 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_7: () = 2_();
-            let mut __tmp_8: () = Default::default();
-            std_tuple_int__char_ptr__std_string_::new({ &mut __tmp_7 }, { &mut __tmp_8 }, {
-                &std::mem::transmute(*b"text\0")
-            })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_9: () = 1_();
-            let mut __tmp_10: NoValueCtor = NoValueCtor::new();
-            let mut __tmp_11: () = 2_();
-            let mut __tmp_12: () = 3_();
-            std_tuple_int__NoValueCtor__int__int_::new(
-                { &mut __tmp_9 },
-                { &mut __tmp_10 },
-                { &mut __tmp_11 },
-                { &mut __tmp_12 },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_13: () = 1_();
-            let mut __tmp_14: NoValueCtorEmpty = NoValueCtorEmpty::new();
-            let mut __tmp_15: () = 2_();
-            let mut __tmp_16: () = 3_();
-            std_tuple_int__NoValueCtorEmpty__int__int_::new(
-                { &mut __tmp_13 },
-                { &mut __tmp_14 },
-                { &mut __tmp_15 },
-                { &mut __tmp_16 },
-            )
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

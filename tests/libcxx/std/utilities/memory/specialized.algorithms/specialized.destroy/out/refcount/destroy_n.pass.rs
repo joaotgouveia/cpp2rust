@@ -505,14 +505,7 @@ pub fn test_arrays_13() -> () {
             let arr: Ptr<Counted> = ((p).as_pointer()).clone();
             let mut i: () = 0_();
             'loop_: while (i != 3_()) {
-                ({
-                    let ___args: Value<Ptr<()>> = Rc::new(RefCell::new((counter.as_pointer())));
-                    std_allocator_traits_std_allocator_Countedarr3arr__::construct(
-                        alloc.as_pointer(),
-                        unimplemented!(),
-                        ___args.as_pointer(),
-                    )
-                });
+                unimplemented!();
                 i.prefix_inc();
             }
             p.prefix_inc();
@@ -535,14 +528,7 @@ pub fn test_arrays_13() -> () {
             'loop_: while (i != 3_()) {
                 let mut j: () = 0_();
                 'loop_: while (j != 2_()) {
-                    ({
-                        let ___args: Value<Ptr<()>> = Rc::new(RefCell::new((counter.as_pointer())));
-                        std_allocator_traits_std_allocator_Countedarr3arrarr2arr__::construct(
-                            alloc.as_pointer(),
-                            unimplemented!(),
-                            ___args.as_pointer(),
-                        )
-                    });
+                    unimplemented!();
                     j.prefix_inc();
                 }
                 i.prefix_inc();
@@ -564,14 +550,7 @@ pub fn test_14() {
     let mut pool: Ptr<Counted> = unimplemented!();
     let mut p: Ptr<Counted> = (pool).clone();
     'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
-        ({
-            let ___args: Value<Ptr<()>> = Rc::new(RefCell::new((counter.as_pointer())));
-            std_allocator_traits_std_allocator_Counted__::construct(
-                alloc.as_pointer(),
-                (p).clone(),
-                ___args.as_pointer(),
-            )
-        });
+        unimplemented!();
         p.prefix_inc();
     }
     unimplemented!();
@@ -587,14 +566,7 @@ pub fn test_15() {
     let mut pool: Ptr<Counted> = unimplemented!();
     let mut p: Ptr<Counted> = (pool).clone();
     'loop_: while ({ (p).clone() } != { pool.offset((5_()) as isize) }) {
-        ({
-            let ___args: Value<Ptr<()>> = Rc::new(RefCell::new((counter.as_pointer())));
-            std_allocator_traits_std_allocator_Counted__::construct(
-                alloc.as_pointer(),
-                (p).clone(),
-                ___args.as_pointer(),
-            )
-        });
+        unimplemented!();
         p.prefix_inc();
     }
     unimplemented!();

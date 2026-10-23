@@ -181,23 +181,15 @@ pub unsafe fn test_14() -> () {
         unimplemented!();
     }
     {
-        let mut t0: () = MoveOnly::new({ Some(0_()) });
-        let mut t1: () = MoveOnly::new({ Some(1_()) });
+        let mut t0: () = unimplemented!();
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_0: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_1: MoveOnly = MoveOnly::new({ Some(1_()) });
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
-        let mut t1: () = {
-            let mut __tmp_2: MoveOnly = MoveOnly::new({ Some(2_()) });
-            let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(3_()) });
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut t0: () = unimplemented!();
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -205,22 +197,8 @@ pub unsafe fn test_14() -> () {
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_4: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_5: MoveOnly = MoveOnly::new({ Some(1_()) });
-            let mut __tmp_6: MoveOnly = MoveOnly::new({ Some(2_()) });
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new({ &mut __tmp_4 }, { &mut __tmp_5 }, {
-                &mut __tmp_6
-            })
-        };
-        let mut t1: () = {
-            let mut __tmp_7: MoveOnly = MoveOnly::new({ Some(3_()) });
-            let mut __tmp_8: MoveOnly = MoveOnly::new({ Some(4_()) });
-            let mut __tmp_9: MoveOnly = MoveOnly::new({ Some(5_()) });
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new({ &mut __tmp_7 }, { &mut __tmp_8 }, {
-                &mut __tmp_9
-            })
-        };
+        let mut t0: () = unimplemented!();
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

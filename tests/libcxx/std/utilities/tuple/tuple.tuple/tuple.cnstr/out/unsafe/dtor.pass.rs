@@ -50,7 +50,7 @@ const _: () = assert!(
 pub unsafe fn test_0() -> () {
     let mut count: () = 0_();
     {
-        let mut tuple: () = TrackDtor::new({ (&mut count as *mut ()) });
+        let mut tuple: () = unimplemented!();
         unimplemented!();
     }
     unimplemented!();

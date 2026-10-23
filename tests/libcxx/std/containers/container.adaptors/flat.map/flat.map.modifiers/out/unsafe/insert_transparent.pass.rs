@@ -793,12 +793,9 @@ pub unsafe fn test_21() -> () {
     {
         let mut transparent_used: () = false;
         let mut c: TransparentComparator = TransparentComparator::new_1({ &mut transparent_used });
-        let mut m : () = std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & c } , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
-        let mut res: () = (unsafe {
-            let mut ___x: () = unimplemented!();
-            m.insert_62_struct_std_pair_struct_Transparent_int__true___int_(&mut ___x)
-        });
+        let mut res: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -807,13 +804,9 @@ pub unsafe fn test_21() -> () {
     {
         let mut transparent_used: () = false;
         let mut c: TransparentComparator = TransparentComparator::new_1({ &mut transparent_used });
-        let mut m : () = std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & c } , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
-        let mut res: () = (unsafe {
-            let ___hint: ()  = std___key_value_iterator_std_flat_map_int__int__TransparentComparator__std_vector_int__std_allocator_int____std_vector_int__std_allocator_int_____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____true_ :: new_1 ( { ( unsafe { m . begin_34  ( ) } )  } , )  ;
-            let mut ___x: () = unimplemented!();
-            m.insert_63_struct_std_pair_struct_Transparent_int__true___int_(___hint, &mut ___x)
-        });
+        let mut res: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -835,20 +828,13 @@ pub unsafe fn test_21() -> () {
         }
     }
     {
-        let mut m : () = std_flat_map_std_string__int__std_less_void___std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut __decomp_23: () = (unsafe {
-            let mut ___x: () = unimplemented!();
-            m.insert_59(&mut ___x)
-        });
+        let mut m: () = unimplemented!();
+        let mut __decomp_23: () = unimplemented!();
         let it: *mut () = (unsafe { get_24(&mut __decomp_23) });
         let inserted: *mut () = (unsafe { get_25(&mut __decomp_23) });
         unimplemented!();
         unimplemented!();
-        let mut it2: () = (unsafe {
-            let ___hint: ()  = std___key_value_iterator_std_flat_map_std_string__int__std_less_void___std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int_____std_vector_std_string__std_allocator_std_string____std_vector_int__std_allocator_int____true_ :: new_1 ( { ( unsafe { m . begin_34  ( ) } )  } , )  ;
-            let mut ___x: () = unimplemented!();
-            m.insert_61(___hint, &mut ___x)
-        });
+        let mut it2: () = unimplemented!();
         unimplemented!();
     }
     return true;

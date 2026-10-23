@@ -144,88 +144,16 @@ pub unsafe fn test_13(mut e: (), mut expected: ()) {
 pub unsafe fn test_14() -> () {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_15));
     (unsafe { test_7(unimplemented!(), unimplemented!()) });
-    (unsafe {
-        test_8(
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-            std_extents_unsigned_long__18446744073709551615_::new_1({ 1_() }),
-        )
-    });
-    (unsafe {
-        test_9(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 1_() },
-                { 2_() },
-            ),
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1(
-                { 1_() },
-                { 2_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_10 ( std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 1_() } , { 2_() } , { 3_() } , { 4_() } , { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 1_() } , { 2_() } , { 3_() } , { 4_() } , { 5_() } , { 6_() } , { 7_() } , { 8_() } , { 9_() } , )  , )
-    });
-    (unsafe {
-        test_9(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_2(
-                { NoDefaultCtorIndex::new_1({ 1_() }) },
-                { NoDefaultCtorIndex::new_1({ 2_() }) },
-            ),
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_3(
-                { 1_() },
-                { 2_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_11(
-            std_extents_unsigned_long__5_::new_1({ unimplemented!() }),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_12(
-            std_extents_unsigned_long__5__18446744073709551615_::new_1({ unimplemented!() }, {
-                6_()
-            }),
-            std_extents_unsigned_long__5__18446744073709551615_::new_2({ 6_() }),
-        )
-    });
-    (unsafe {
-        test_13(
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_1(
-                { unimplemented!() },
-                { 6_() },
-                { unimplemented!() },
-            ),
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_2({ 6_() }),
-        )
-    });
-    (unsafe {
-        test_11(
-            std_extents_unsigned_long__5_::new_2({ unsafe { std::mem::zeroed::<()>() } }),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_12(
-            std_extents_unsigned_long__5__18446744073709551615_::new_3(
-                { unsafe { std::mem::zeroed::<()>() } },
-                { 6_() },
-            ),
-            std_extents_unsigned_long__5__18446744073709551615_::new_2({ 6_() }),
-        )
-    });
-    (unsafe {
-        test_13(
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_3(
-                { unimplemented!() },
-                { 6_() },
-                { unsafe { std::mem::zeroed::<()>() } },
-            ),
-            std_extents_unsigned_long__5__18446744073709551615__7_::new_2({ 6_() }),
-        )
-    });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_9(unimplemented!(), unimplemented!()) });
+    (unsafe { test_10(unimplemented!(), unimplemented!()) });
+    (unsafe { test_9(unimplemented!(), unimplemented!()) });
+    (unsafe { test_11(unimplemented!(), unimplemented!()) });
+    (unsafe { test_12(unimplemented!(), unimplemented!()) });
+    (unsafe { test_13(unimplemented!(), unimplemented!()) });
+    (unsafe { test_11(unimplemented!(), unimplemented!()) });
+    (unsafe { test_12(unimplemented!(), unimplemented!()) });
+    (unsafe { test_13(unimplemented!(), unimplemented!()) });
     return true;
 }
 pub fn main() {

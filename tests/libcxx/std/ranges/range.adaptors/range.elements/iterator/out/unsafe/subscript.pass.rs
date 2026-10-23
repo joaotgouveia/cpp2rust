@@ -438,7 +438,12 @@ const _: () = assert!(!(false), "!std::ranges::random_access_range<BidiRange>");
 const _: () = assert!(!(false), "!CanSubscript<ElemIter<BidiRange>, int>");
 pub unsafe fn test_8() -> () {
     {
-        let mut ts: [(); 4] = [1_(), 2_(), 3_(), 4_()];
+        let mut ts: [(); 4] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
         let mut ev: std_ranges_elements_view_std_ranges_ref_view_std_tuple_int_arr4arr___0_ =
             unimplemented!();
         let mut it: () = unimplemented!();

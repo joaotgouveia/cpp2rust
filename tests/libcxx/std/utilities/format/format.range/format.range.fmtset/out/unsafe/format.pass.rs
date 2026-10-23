@@ -202,7 +202,9 @@ pub unsafe fn test_format_8(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
         })
     });
-    unimplemented!();
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____char_ ) . format  ( & arg , & mut format_ctx , )
+    });
     unimplemented!();
 }
 pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
@@ -215,7 +217,9 @@ pub unsafe fn test_format_10(mut expected: (), mut arg: ()) {
             std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_1 } , )
         })
     });
-    unimplemented!();
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_int__std_less_int___std_allocator_int____wchar_t_ ) . format  ( & arg , & mut format_ctx , )
+    });
     unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
@@ -230,8 +234,12 @@ pub unsafe fn test_assure_parse_is_called_12(mut fmt: ()) {
     });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . parse  ( & mut ctx , )
+    });
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____char_ ) . format  ( & arg , & mut format_ctx , )
+    });
 }
 pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
     let mut arg: () = unimplemented!();
@@ -245,8 +253,12 @@ pub unsafe fn test_assure_parse_is_called_14(mut fmt: ()) {
     });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . parse  ( & mut ctx , )
+    });
+    (unsafe {
+        ( formatter as std___range_default_formatter_std_range_format_set__std_set_parse_call_validator__std_less_parse_call_validator___std_allocator_parse_call_validator____wchar_t_ ) . format  ( & arg , & mut format_ctx , )
+    });
 }
 pub unsafe fn test_assure_parse_is_called_16() {
     let mut arg: () = unimplemented!();

@@ -240,41 +240,26 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = MoveOnly::new({ Some(0_()) });
+        let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_0: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_1: MoveOnly = MoveOnly::new({ Some(1_()) });
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = {
-            let mut __tmp_2: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(1_()) });
-            let mut __tmp_4: MoveOnly = MoveOnly::new({ Some(2_()) });
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 }, {
-                &mut __tmp_4
-            })
-        };
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t0: () = <Empty>::default();
+        let t0: () = unimplemented!();
         &(t0);
     }
     {
-        let t: () = {
-            let mut __tmp_5: () = 3_();
-            let mut __tmp_6: () = 2_();
-            std_tuple_A__A_::new({ &mut __tmp_5 }, { &mut __tmp_6 })
-        };
+        let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t).id_ == 3");;
     }
     (unsafe { test_sfinae_missing_elements_14() });

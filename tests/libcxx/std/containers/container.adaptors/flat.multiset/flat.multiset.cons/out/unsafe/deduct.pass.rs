@@ -988,73 +988,52 @@ pub struct RangeT_int_ {}
 const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
-pub static mut SFINAEs_away_20: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_22: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_23: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_24: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_25: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_26: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_27: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_28: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_29: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_30: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_31: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_32: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_33: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_34))
-});
-pub static mut SFINAEs_away_35: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_36: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_34))
-});
-pub static mut SFINAEs_away_37: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_38: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_34))
-});
-pub static mut SFINAEs_away_39: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_40: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
-pub static mut SFINAEs_away_41: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_34))
-});
-pub static mut SFINAEs_away_42: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut value_21))
-});
+pub static mut SFINAEs_away_20: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_21: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_22: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_23: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_24: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_25: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_26: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_27: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_28: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_29: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_30: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_31: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_32: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_33: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_34: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_35: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_36: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_37: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_38: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_39: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut SFINAEs_away_40: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct Empty {}
-pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_43() {
+pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_41() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter, Comp>");;
@@ -1118,7 +1097,7 @@ pub unsafe fn AssociativeContainerDeductionGuidesSfinaeAway_43() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct BadAlloc_44 {}
+pub struct BadAlloc_42 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
 pub struct test_allocator_statistics {
@@ -1169,21 +1148,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_45: std::cell::LazyCell<()> =
+pub static mut destructed_value_43: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_46: std::cell::LazyCell<()> =
+pub static mut moved_value_44: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_47(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_45(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_48(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_46(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_47(_x, _y)
+        operator_eq_45(_x, _y)
     });
 }
 #[repr(C)]
@@ -1247,8 +1226,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1269,7 +1248,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_47(
+            operator_eq_45(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1370,7 +1349,7 @@ impl test_allocator_int_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_46));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_44));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1379,8 +1358,8 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1496,7 +1475,7 @@ impl test_allocator_int_ptr_ {
             (*this.stats_).moved.prefix_inc();
         }
         unimplemented!();
-        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_46));
+        (*a).id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_value_44));
         this
     }
     pub unsafe fn destructor(&mut self) {
@@ -1505,8 +1484,8 @@ impl test_allocator_int_ptr_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
     }
     pub unsafe fn allocate(&mut self, mut n: (), mut _a1: Option<()>) -> *mut *mut () {
         let mut _a1: () = _a1.unwrap_or_else(|| unsafe { unimplemented!() });
@@ -1607,8 +1586,8 @@ impl test_allocator_long_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_45));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_43));
     }
 }
 impl Default for test_allocator_long_ {
@@ -1648,32 +1627,22 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn test_49() {
+pub unsafe fn test_47() {
     {
-        let mut source: () =
-            std_flat_multiset_long__std_less_long___std_vector_long__std_allocator_long___::new_1(
-                { unimplemented!() },
-                None,
-            );
-        let mut s: () = source.clone();
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut source : () = std_flat_multiset_short__std_greater_short___std_vector_short__std_allocator_short___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut s: () = source.clone();
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut source : () = std_flat_multiset_long__std_greater_long___std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , None , )  ;
-        let mut s: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_flat_multiset_long__std_greater_long___std_vector_long__std_allocator_long___::new_2(
-                { &source },
-                { &mut __tmp_0 },
-            )
-        };
+        let mut source: () = unimplemented!();
+        let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
@@ -1682,49 +1651,25 @@ pub unsafe fn test_49() {
         let mut sorted_ks: () = unimplemented!();
         let mut expected: [(); 5] = [1_(), 1_(), 2_(), 3_(), 2147483647_()];
         {
-            let mut s: () =
-                std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_1(
-                    { unimplemented!() },
-                    None,
-                );
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () =
-                std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_2(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_1: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 44_() });
-                std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_3(
-                    { &ks },
-                    { &mut __tmp_1 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_2: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 44_() });
-                std_flat_multiset_int__std_less_int___std_deque_int__test_allocator_int___::new_4(
-                    { unimplemented!() },
-                    { &sorted_ks },
-                    { &mut __tmp_2 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
@@ -1735,57 +1680,25 @@ pub unsafe fn test_49() {
         let mut sorted_ks: () = unimplemented!();
         let mut expected: [(); 5] = [2147483647_(), 3_(), 2_(), 1_(), 1_()];
         {
-            let mut s: () = {
-                let mut __tmp_3: () = unimplemented!();
-                std_flat_multiset_int__std_greater_int___std_deque_int__test_allocator_int___::new_1(
-                    { unimplemented!() },
-                    { &mut __tmp_3 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_4: () = unimplemented!();
-                std_flat_multiset_int__std_greater_int___std_deque_int__test_allocator_int___::new_2(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { &mut __tmp_4 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_5: () = unimplemented!();
-                let mut __tmp_6: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 44_() });
-                std_flat_multiset_int__std_greater_int___std_deque_int__test_allocator_int___::new_3(
-                    { &ks },
-                    { &mut __tmp_5 },
-                    { &mut __tmp_6 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_7: () = unimplemented!();
-                let mut __tmp_8: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 44_() });
-                std_flat_multiset_int__std_greater_int___std_deque_int__test_allocator_int___::new_4(
-                    { unimplemented!() },
-                    { &sorted_ks },
-                    { &mut __tmp_7 },
-                    { &mut __tmp_8 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
@@ -1797,82 +1710,44 @@ pub unsafe fn test_49() {
         let arrc: [(); 5] = [1_(), 2_(), 1_(), 2147483647_(), 3_()];
         let sorted_arrc: [(); 5] = [1_(), 1_(), 2_(), 3_(), 2147483647_()];
         {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_1(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_2(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_3(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_4(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut mo: () = unimplemented!();
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_5(
-                    { (unsafe { mo.begin_34() }) },
-                    { (unsafe { mo.end_36() }) },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
             let mut mo: () = unimplemented!();
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_5(
-                    { (unsafe { mo.cbegin() }) },
-                    { (unsafe { mo.cend() }) },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
             let mut source: [(); 3] = [1_(), 2_(), 3_()];
-            let mut s : () = std_flat_multiset_int_ptr__std_less_int_ptr___std_vector_int_ptr__std_allocator_int_ptr___ :: new_1 ( { unimplemented!() } , None , )  ;
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut source: [(); 3] = [1_(), 2_(), 3_()];
-            let mut s: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_3(
-                    { unimplemented!() },
-                    { source.as_mut_ptr() },
-                    { source.as_mut_ptr().offset((3_()) as isize) },
-                    None,
-                );
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "std::is_same_v<decltype(s), std::flat_multiset<int>>");;
             unimplemented!();
         }
@@ -1883,87 +1758,56 @@ pub unsafe fn test_49() {
         let arrc: [(); 5] = [1_(), 2_(), 1_(), 2147483647_(), 3_()];
         let sorted_arrc: [(); 5] = [2147483647_(), 3_(), 2_(), 1_(), 1_()];
         {
-            let mut m: () = {
-                let mut __tmp_9: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_9 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () = {
-                let mut __tmp_10: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_2 ( { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_10 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () = {
-                let mut __tmp_11: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_3 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_11 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () = {
-                let mut __tmp_12: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_4 ( { unimplemented!() } , { unimplemented!()  } , { unimplemented!()  } , { & mut __tmp_12 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut mo: () = unimplemented!();
-            let mut m: () = {
-                let mut __tmp_13: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_5 ( { ( unsafe { mo . begin_34  ( ) } )  } , { ( unsafe { mo . end_36  ( ) } )  } , { & mut __tmp_13 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
             let mut mo: () = unimplemented!();
-            let mut m: () = {
-                let mut __tmp_14: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_5 ( { ( unsafe { mo . cbegin  ( ) } )  } , { ( unsafe { mo . cend  ( ) } )  } , { & mut __tmp_14 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
         }
     }
     {
         let sorted_arr: [(); 5] = [1_(), 1_(), 2_(), 3_(), 2147483647_()];
         {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_6(
-                    { unimplemented!() },
-                    None,
-                );
-            const _: () = assert!(true, "");;
-            unimplemented!();
-        }
-        {
-            let mut m: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_7(
-                    { unimplemented!() },
-                    { unimplemented!() },
-                    None,
-                );
-            const _: () = assert!(true, "");;
-            unimplemented!();
-        }
-        {
-            let mut s: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_6(
-                    { unimplemented!() },
-                    None,
-                );
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut m: () = unimplemented!();
-            let mut s : () = std_flat_multiset_std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int_____std_less_std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int______std_vector_std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int_____std_allocator_std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int______ :: new_1 ( { unimplemented!() } , None , )  ;
+            const _: () = assert!(true, "");;
+            unimplemented!();
+        }
+        {
+            let mut s: () = unimplemented!();
+            const _: () = assert!(true, "");;
+            unimplemented!();
+        }
+        {
+            let mut m: () = unimplemented!();
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -1971,77 +1815,47 @@ pub unsafe fn test_49() {
     {
         let sorted_arr: [(); 5] = [2147483647_(), 3_(), 2_(), 1_(), 1_()];
         {
-            let mut m: () = {
-                let mut __tmp_15: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_6 ( { unimplemented!() } , { & mut __tmp_15 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut m: () = {
-                let mut __tmp_16: () = unimplemented!();
-                std_flat_multiset_int__std_greater_long___std_vector_int__std_allocator_int___ :: new_7 ( { unimplemented!() } , { unimplemented!() } , { & mut __tmp_16 } , )
-            };
+            let mut m: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
     }
     {
-        let mut r: () = std_list_int__std_allocator_int__::new_1({ unimplemented!() });
+        let mut r: () = unimplemented!();
         let expected: [(); 5] = [1_(), 1_(), 2_(), 3_(), 2147483647_()];
         {
-            let mut s: () =
-                std_flat_multiset_int__std_less_int___std_vector_int__std_allocator_int___::new_8(
-                    { unimplemented!() },
-                    { &mut r },
-                );
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_17: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 42_() });
-                std_flat_multiset_int__std_less_int___std_vector_int__test_allocator_int___::new_1(
-                    { unimplemented!() },
-                    { &mut r },
-                    { &mut __tmp_17 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
     }
     {
-        let mut r: () = std_list_int__std_allocator_int__::new_1({ unimplemented!() });
+        let mut r: () = unimplemented!();
         let expected: [(); 5] = [2147483647_(), 3_(), 2_(), 1_(), 1_()];
         {
-            let mut s: () = {
-                let mut __tmp_18: () = unimplemented!();
-                std_flat_multiset_int__std_greater_int___std_vector_int__std_allocator_int___::new_1(
-                    { unimplemented!() },
-                    { &mut r },
-                    { &mut __tmp_18 },
-                )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
-            let mut s: () = {
-                let mut __tmp_19: () = unimplemented!();
-                let mut __tmp_20: test_allocator_long_ =
-                    test_allocator_long_::new_1({ 0_() }, { 42_() });
-                std_flat_multiset_int__std_greater_int___std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & mut r } , { & mut __tmp_19 } , { & mut __tmp_20 } , )
-            };
+            let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
             unimplemented!();
         }
     }
-    (unsafe { AssociativeContainerDeductionGuidesSfinaeAway_43() });
+    (unsafe { AssociativeContainerDeductionGuidesSfinaeAway_41() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -2059,11 +1873,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_49() });
+    (unsafe { test_47() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_20);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_21);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_22);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_23);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_24);
@@ -2076,14 +1891,13 @@ pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_31);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_32);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_33);
+    std::cell::LazyCell::force(&*&raw const SFINAEs_away_34);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_35);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_36);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_37);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_38);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_39);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_40);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_41);
-    std::cell::LazyCell::force(&*&raw const SFINAEs_away_42);
-    std::cell::LazyCell::force(&*&raw const destructed_value_45);
-    std::cell::LazyCell::force(&*&raw const moved_value_46);
+    std::cell::LazyCell::force(&*&raw const destructed_value_43);
+    std::cell::LazyCell::force(&*&raw const moved_value_44);
 }

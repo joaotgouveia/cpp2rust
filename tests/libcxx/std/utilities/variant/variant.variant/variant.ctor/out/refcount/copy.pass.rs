@@ -139,135 +139,87 @@ pub fn test_copy_ctor_sfinae_0() {
 }
 pub fn test_copy_ctor_basic_1() {
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int_::new(
-                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                { __tmp_0.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new(
-                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_NonT_::new(
-                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                { __tmp_2.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__NonT_::new(
-                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                { __tmp_3.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int_::new(
-                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                { __tmp_4.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 0");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__long_::new(
-                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                { __tmp_5.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_TCopy_::new(
-                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                { __tmp_6.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 0");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2).value == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__TCopy_::new(
-                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                { __tmp_7.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2).value == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_TCopyNTMove_::new(
-                { (*in_place_index_2.with(Value::clone).borrow()).clone() },
-                { __tmp_8.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 0");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v2).value == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(42_()));
-            std_variant_int__TCopyNTMove_::new(
-                { (*in_place_index_3.with(Value::clone).borrow()).clone() },
-                { __tmp_9.as_pointer() },
-            )
-        }));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v2.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v2).value == 42");;
     }
 }
-pub fn test_copy_ctor_valueless_by_exception_4() {}
+pub fn test_copy_ctor_valueless_by_exception_2() {}
+pub fn test_constexpr_copy_ctor_imp_3(v: Ptr<()>) {
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_constexpr_copy_ctor_imp_4(v: Ptr<()>) {
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub fn test_constexpr_copy_ctor_imp_5(v: Ptr<()>) {
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -292,35 +244,23 @@ pub fn test_constexpr_copy_ctor_imp_8(v: Ptr<()>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_constexpr_copy_ctor_imp_9(v: Ptr<()>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_copy_ctor_imp_10(v: Ptr<()>) {
-    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_constexpr_copy_ctor_trivial_11() {
+pub fn test_constexpr_copy_ctor_trivial_9() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_constructible<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(42_()));
-        test_constexpr_copy_ctor_imp_5(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_3(_v.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_copy_ctor_imp_6(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_4(_v.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(101_()));
-        test_constexpr_copy_ctor_imp_7(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_5(_v.as_pointer())
     });
 }
-pub fn operator_eq_12(x: Ptr<NonTrivialCopyCtor>, y: Ptr<NonTrivialCopyCtor>) -> () {
+pub fn operator_eq_10(x: Ptr<NonTrivialCopyCtor>, y: Ptr<NonTrivialCopyCtor>) -> () {
     return ({ x.with(|__s| __s.i) } == { y.with(|__s| __s.i) });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
@@ -347,7 +287,7 @@ impl NonTrivialCopyCtor {
 impl std::cmp::PartialEq for NonTrivialCopyCtor {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_10(
                 Rc::new(RefCell::new(NonTrivialCopyCtor { i: self.i.clone() })).as_pointer(),
                 Rc::new(RefCell::new(NonTrivialCopyCtor { i: other.i.clone() })).as_pointer(),
             )
@@ -367,32 +307,32 @@ impl Default for NonTrivialCopyCtor {
         { NonTrivialCopyCtor { i: 0_() } }
     }
 }
-pub fn test_constexpr_copy_ctor_non_trivial_13() {
+pub fn test_constexpr_copy_ctor_non_trivial_11() {
     const _: () = assert!(true, "!std::is_trivially_copy_constructible<V>::value");;
     ({
         let _v: Value<()> = Rc::new(RefCell::new(42_()));
-        test_constexpr_copy_ctor_imp_8(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_6(_v.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(NonTrivialCopyCtor::new({ 5_() })));
-        test_constexpr_copy_ctor_imp_9(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_7(_v.as_pointer())
     });
     ({
         let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
-        test_constexpr_copy_ctor_imp_10(_v.as_pointer())
+        test_constexpr_copy_ctor_imp_8(_v.as_pointer())
     });
 }
-pub fn non_constexpr_test_14() {
-    ({ test_copy_ctor_valueless_by_exception_4() });
+pub fn non_constexpr_test_12() {
+    ({ test_copy_ctor_valueless_by_exception_2() });
 }
-pub fn cxx17_constexpr_test_15() -> () {
+pub fn cxx17_constexpr_test_13() -> () {
     ({ test_copy_ctor_sfinae_0() });
-    ({ test_constexpr_copy_ctor_trivial_11() });
+    ({ test_constexpr_copy_ctor_trivial_9() });
     return true;
 }
-pub fn cxx20_constexpr_test_16() -> () {
+pub fn cxx20_constexpr_test_14() -> () {
     ({ test_copy_ctor_basic_1() });
-    ({ test_constexpr_copy_ctor_non_trivial_13() });
+    ({ test_constexpr_copy_ctor_non_trivial_11() });
     return true;
 }
 pub fn main() {
@@ -415,9 +355,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ non_constexpr_test_14() });
-    ({ cxx17_constexpr_test_15() });
-    ({ cxx20_constexpr_test_16() });
+    ({ non_constexpr_test_12() });
+    ({ cxx17_constexpr_test_13() });
+    ({ cxx20_constexpr_test_14() });
     const _: () = assert!(true, "cxx17_constexpr_test()");;
     const _: () = assert!(true, "cxx20_constexpr_test()");;
     return 0_();

@@ -32,17 +32,13 @@ pub fn test_0() -> () {
         (*t.borrow_mut()) = (*t0.borrow()).clone();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(2_()));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(('a' as ())));
-            std_tuple_int__char_::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();
@@ -51,16 +47,10 @@ pub fn test_0() -> () {
     {
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(100_()));
-        let x2: Value<()> = Rc::new(RefCell::new(-1_()));
+        let mut x2: () = -1_();
         let y2: Value<()> = Rc::new(RefCell::new(500_()));
-        let t: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__int_refref_::new(
-            { x.as_pointer() },
-            { (y.as_pointer()).reinterpret_cast::<()>() },
-        )));
-        let t2: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__int_refref_::new(
-            { x2.as_pointer() },
-            { (y2.as_pointer()).reinterpret_cast::<()>() },
-        )));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*t.borrow_mut()) = (*t2.borrow()).clone();
         unimplemented!();
         unimplemented!();
@@ -92,15 +82,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_0() });
     const _: () = assert!(true, "test()");;
     {
-        let t0: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(('a' as ())));
-            std_tuple_int__char__std_string_::new_1(
-                { __tmp_2.as_pointer() },
-                { __tmp_3.as_pointer() },
-                { Ptr::<()>::from_string_literal(b"some text") },
-            )
-        }));
+        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*t.borrow_mut()) = (*t0.borrow()).clone();
         unimplemented!();

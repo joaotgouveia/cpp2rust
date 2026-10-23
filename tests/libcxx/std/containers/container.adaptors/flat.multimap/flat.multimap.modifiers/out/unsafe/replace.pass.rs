@@ -762,7 +762,7 @@ pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___
 {
     data_: (),
 }
-impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : std_vector_int__std_allocator_int__ :: new_1 ( { il .clone() } , )  , } ;
+impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
  this } pub unsafe fn begin_11 ( &mut self , ) -> three_way_random_access_iterator_int_ptr_ { return three_way_random_access_iterator_int_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
  } pub unsafe fn begin_12 ( &self , ) -> three_way_random_access_iterator_const_int_ptr_ { return three_way_random_access_iterator_const_int_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
  } pub unsafe fn end_14 ( &mut self , ) -> three_way_random_access_iterator_int_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_int_ptr_  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: begin_11 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: size ( self , ) } )  ; operator_add_0 ( _x , _n , ) } )   ;
@@ -776,7 +776,7 @@ pub struct MinSequenceContainer_double__three_way_random_access_iterator_double_
 {
     data_: (),
 }
-impl MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : std_vector_double__std_allocator_double__ :: new_1 ( { il .clone() } , )  , } ;
+impl MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ { pub unsafe fn new_1 ( mut il : () , ) -> Self { let mut this = Self { data_ : unimplemented!() , } ;
  this } pub unsafe fn begin_11 ( &mut self , ) -> three_way_random_access_iterator_double_ptr_ { return three_way_random_access_iterator_double_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
  } pub unsafe fn begin_12 ( &self , ) -> three_way_random_access_iterator_const_double_ptr_ { return three_way_random_access_iterator_const_double_ptr_ :: new_1 ( { unimplemented!()  } , )   ;
  } pub unsafe fn end_14 ( &mut self , ) -> three_way_random_access_iterator_double_ptr_ { return ( unsafe { let _x: three_way_random_access_iterator_double_ptr_  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: begin_11 ( self , ) } )  ; let _n: ()  = ( unsafe { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: size ( self , ) } )  ; operator_add_6 ( _x , _n , ) } )   ;
@@ -1511,60 +1511,45 @@ const _: () = assert!(
     "!CanReplace<Map, const std::vector<int>&, const std::vector<int>&>"
 );
 pub unsafe fn test_44() {
-    let mut m : () = std_flat_multimap_int__double__std_less_int___std_vector_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { std_vector_int__std_allocator_int__ :: new_1 ( { unimplemented!() } , )  } , { std_vector_double__std_allocator_double__ :: new_1 ( { unimplemented!() } , )  } , None , )  ;
-    let mut new_keys: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-    let mut new_values: () = std_vector_double__std_allocator_double__::new_1({ unimplemented!() });
+    let mut m: () = unimplemented!();
+    let mut new_keys: () = unimplemented!();
+    let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
     let mut expected_values: () = unimplemented!();
-    (unsafe {
-        m.replace(
-            &mut *(&raw mut new_keys).cast::<()>(),
-            &mut *(&raw mut new_values).cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_45() {
-    let mut m : () = std_flat_multimap_int__double__std_less_int___std_deque_int__std_allocator_int____std_vector_double__std_allocator_double___ :: new_1 ( { std_deque_int__std_allocator_int__ :: new_1 ( { unimplemented!() } , )  } , { std_vector_double__std_allocator_double__ :: new_1 ( { unimplemented!() } , )  } , None , )  ;
-    let mut new_keys: () = std_deque_int__std_allocator_int__::new_1({ unimplemented!() });
-    let mut new_values: () = std_vector_double__std_allocator_double__::new_1({ unimplemented!() });
+    let mut m: () = unimplemented!();
+    let mut new_keys: () = unimplemented!();
+    let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
     let mut expected_values: () = unimplemented!();
-    (unsafe {
-        m.replace(
-            &mut *(&raw mut new_keys).cast::<()>(),
-            &mut *(&raw mut new_values).cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_46() {
-    let mut m : () = std_flat_multimap_int__double__std_less_int___MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr___ :: new_1 ( { MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!() } , )  } , { MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!() } , )  } , None , )  ;
+    let mut m: () = unimplemented!();
     let mut new_keys : MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ = MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ :: new_1 ( { unimplemented!() } , )  ;
     let mut new_values : MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ = MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ :: new_1 ( { unimplemented!() } , )  ;
     let mut expected_keys : MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ = new_keys .clone() ;
     let mut expected_values : MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__ = new_values .clone() ;
-    (unsafe { m.replace(&mut new_keys, &mut new_values) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_47() {
-    let mut m : () = std_flat_multimap_int__double__std_less_int___std_vector_int__min_allocator_int____std_vector_double__min_allocator_double___ :: new_1 ( { std_vector_int__min_allocator_int__ :: new_1 ( { unimplemented!() } , )  } , { std_vector_double__min_allocator_double__ :: new_1 ( { unimplemented!() } , )  } , None , )  ;
-    let mut new_keys: () = std_vector_int__min_allocator_int__::new_1({ unimplemented!() });
-    let mut new_values: () = std_vector_double__min_allocator_double__::new_1({ unimplemented!() });
+    let mut m: () = unimplemented!();
+    let mut new_keys: () = unimplemented!();
+    let mut new_values: () = unimplemented!();
     let mut expected_keys: () = unimplemented!();
     let mut expected_values: () = unimplemented!();
-    (unsafe {
-        m.replace(
-            &mut *(&raw mut new_keys).cast::<()>(),
-            &mut *(&raw mut new_values).cast::<()>(),
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

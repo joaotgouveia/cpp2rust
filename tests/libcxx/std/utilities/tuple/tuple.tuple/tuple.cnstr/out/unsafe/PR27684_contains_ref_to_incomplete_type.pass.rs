@@ -32,18 +32,12 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_1(
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut cinc1_2)) },
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut cinc2_3)) },
-        );
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t: () = std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_2(
-            { &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut inc1_0)) },
-            { &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut inc2_1)) },
-        );
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

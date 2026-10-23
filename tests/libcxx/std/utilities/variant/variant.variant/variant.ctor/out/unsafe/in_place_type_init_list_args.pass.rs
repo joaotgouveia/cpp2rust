@@ -134,22 +134,12 @@ pub unsafe fn test_ctor_sfinae_12() {
 }
 pub unsafe fn test_ctor_basic_13() {
     {
-        let v: () = std_variant_InitList__InitListArg_::new_1(
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_14)).clone() },
-            { unimplemented!() },
-        );
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v).size == 3");;
     }
     {
-        let v: () = {
-            let mut __tmp_0: () = 42_();
-            std_variant_InitList__InitListArg_::new_2(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_15)).clone() },
-                { unimplemented!() },
-                { &mut __tmp_0 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v).size == 4");;
         const _: () = assert!(true, "std::get<1>(v).value == 42");;

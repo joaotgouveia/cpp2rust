@@ -106,62 +106,35 @@ pub unsafe fn test_ctor_sfinae_12() {
 }
 pub unsafe fn test_ctor_basic_13() {
     {
-        let v: () = {
-            let mut __tmp_0: () = 42_();
-            std_variant_int_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_14)).clone() },
-                { &mut __tmp_0 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_1: () = 42_();
-            std_variant_int__long_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_15)).clone() },
-                { &mut __tmp_1 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: () = {
-            let mut __tmp_2: () = 42_();
-            std_variant_int__const_int__long_::new(
-                { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_16)).clone() },
-                { &mut __tmp_2 },
-            )
-        };
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
         let mut x: () = 42_();
-        let mut v: () = std_variant_const_int__volatile_int__int_::new_1(
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_16)).clone() },
-            { &mut x },
-        );
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut x: () = 42_();
-        let mut v: () = std_variant_const_int__volatile_int__int_::new_2(
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_17)).clone() },
-            { &mut x },
-        );
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut x: () = 42_();
-        let mut v: () = std_variant_const_int__volatile_int__int_::new_3(
-            { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_14)).clone() },
-            { &mut x },
-        );
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

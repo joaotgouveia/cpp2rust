@@ -551,25 +551,19 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let i1: Value<()> = Rc::new(RefCell::new(1_()));
-        let i2: Value<()> = Rc::new(RefCell::new(2_()));
+        let mut i1: () = 1_();
+        let mut i2: () = 2_();
         let d1: Value<()> = Rc::new(RefCell::new(3_f64));
         let d2: Value<()> = Rc::new(RefCell::new(5_f64));
-        let t1: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__double_ref_::new(
-            { i1.as_pointer() },
-            { d1.as_pointer() },
-        )));
-        let t2: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__double_ref_::new(
-            { i2.as_pointer() },
-            { d2.as_pointer() },
-        )));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t1: Value<()> = Rc::new(RefCell::new(1_()));
-        let t2: Value<()> = Rc::new(RefCell::new(2_()));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

@@ -737,23 +737,19 @@ const _: () = assert!(
 pub unsafe fn test_6() -> () {
     {
         let mut p: () = unimplemented!();
-        let mut t: () =
-            std_tuple_ConvertibleFrom_MutableCopy___ConvertibleFrom_int__::new({ &mut p });
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut p: () = unimplemented!();
-        let mut t: () =
-            std_tuple_ExplicitConstructibleFrom_MutableCopy___ExplicitConstructibleFrom_int__::new(
-                { &mut p },
-            );
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut p: () = unimplemented!();
-        let mut t: () = std_tuple_ConvertibleFrom_TracedCopyMove___TracedCopyMove_::new({ &mut p });
+        let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

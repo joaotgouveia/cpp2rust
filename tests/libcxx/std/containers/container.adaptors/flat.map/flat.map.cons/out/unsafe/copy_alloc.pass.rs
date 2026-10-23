@@ -814,14 +814,8 @@ impl Tag_X {
 pub unsafe fn test_7() {
     let mut ks: () = unimplemented!();
     let mut vs: () = unimplemented!();
-    let mut mo: () = {
-        let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 5_() });
-        std_flat_map_int__char__test_less_int___std_vector_int__test_allocator_int____std_vector_char__test_allocator_char___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & mut __tmp_0 } , )
-    };
-    let mut m: () = {
-        let mut __tmp_1: test_allocator_int_ = test_allocator_int_::new_2({ 3_() });
-        std_flat_map_int__char__test_less_int___std_vector_int__test_allocator_int____std_vector_char__test_allocator_char___ :: new_2 ( { & mo } , { & mut __tmp_1 } , )
-    };
+    let mut mo: () = unimplemented!();
+    let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -836,14 +830,8 @@ pub unsafe fn test_7() {
 pub unsafe fn test_8() {
     let mut ks: () = unimplemented!();
     let mut vs: () = unimplemented!();
-    let mut mo: () = {
-        let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 5_() });
-        std_flat_map_int__char__test_less_int___std_deque_int__test_allocator_int____std_deque_char__test_allocator_char___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { & mut __tmp_2 } , )
-    };
-    let mut m: () = {
-        let mut __tmp_3: test_allocator_int_ = test_allocator_int_::new_2({ 3_() });
-        std_flat_map_int__char__test_less_int___std_deque_int__test_allocator_int____std_deque_char__test_allocator_char___ :: new_2 ( { & mo } , { & mut __tmp_3 } , )
-    };
+    let mut mo: () = unimplemented!();
+    let mut m: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

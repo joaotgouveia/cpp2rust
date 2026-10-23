@@ -1825,72 +1825,24 @@ impl std::cmp::PartialEq for test_less_int_ {
 impl std::cmp::Eq for test_less_int_ {}
 pub unsafe fn test_58() {
     {
-        let mut ks: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__std_allocator_long__::new_1({ unimplemented!() });
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
         let mut ks2: () = unimplemented!();
         let mut vs2: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2 : () = std_flat_multimap_int__long__std_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_vector_int__min_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__min_allocator_long__::new_1({ unimplemented!() });
-        let mut m : () = std_flat_multimap_int__long__std_greater_int___std_vector_int__min_allocator_int____std_vector_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_greater_int___std_vector_int__min_allocator_int____std_vector_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
         unimplemented!();
         unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__int__std_less_int___std_vector_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_vector_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__std_allocator_long__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_0: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_0 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_1: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_vector_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_1 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_vector_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_2: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_3: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_vector_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_2 } , { & mut __tmp_3 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_4: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_5: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_vector_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_4 } , { & mut __tmp_5 } , )
-        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1899,19 +1851,47 @@ pub unsafe fn test_58() {
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m: () = {
-            let mut __tmp_6: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_vector_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_6 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_7: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_vector_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_7 } , )
-        };
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1919,72 +1899,24 @@ pub unsafe fn test_58() {
 }
 pub unsafe fn test_59() {
     {
-        let mut ks: () = std_deque_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__std_allocator_long__::new_1({ unimplemented!() });
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
         let mut ks2: () = unimplemented!();
         let mut vs2: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2 : () = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__min_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__min_allocator_long__::new_1({ unimplemented!() });
-        let mut m : () = std_flat_multimap_int__long__std_greater_int___std_deque_int__min_allocator_int____std_vector_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_greater_int___std_deque_int__min_allocator_int____std_vector_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
         unimplemented!();
         unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_long__std_allocator_long__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_8: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_deque_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_8 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_9: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_deque_int__std_allocator_int____std_vector_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_9 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_vector_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_10: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_11: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_deque_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_10 } , { & mut __tmp_11 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_12: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_13: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_deque_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_12 } , { & mut __tmp_13 } , )
-        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1993,19 +1925,47 @@ pub unsafe fn test_59() {
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m: () = {
-            let mut __tmp_14: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_14 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_15: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_vector_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_15 } , )
-        };
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2013,72 +1973,24 @@ pub unsafe fn test_59() {
 }
 pub unsafe fn test_60() {
     {
-        let mut ks: () = std_deque_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_deque_long__std_allocator_long__::new_1({ unimplemented!() });
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
         let mut ks2: () = unimplemented!();
         let mut vs2: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_deque_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_deque_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2 : () = std_flat_multimap_int__long__std_less_int___std_deque_int__std_allocator_int____std_deque_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__min_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_deque_long__min_allocator_long__::new_1({ unimplemented!() });
-        let mut m : () = std_flat_multimap_int__long__std_greater_int___std_deque_int__min_allocator_int____std_deque_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
-        unimplemented!();
-        m  = std_flat_multimap_int__long__std_greater_int___std_deque_int__min_allocator_int____std_deque_long__min_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )   ;
         unimplemented!();
         unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m : () = std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_deque_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , None , )  ;
+        let mut m: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__std_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_deque_long__std_allocator_long__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_16: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_deque_int__std_allocator_int____std_deque_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_16 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_17: test_less_int_ = test_less_int_::new_1({ 4_() });
-            std_flat_multimap_int__long__test_less_int___std_deque_int__std_allocator_int____std_deque_long__std_allocator_long___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , { & mut __tmp_17 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = std_deque_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut vs: () = std_deque_int__test_allocator_int__::new_1({ unimplemented!() });
-        let mut m: () = {
-            let mut __tmp_18: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_19: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_deque_int__test_allocator_int____std_deque_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_18 } , { & mut __tmp_19 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_20: test_less_int_ = test_less_int_::new_1({ 4_() });
-            let mut __tmp_21: test_allocator_int_ = test_allocator_int_::new_1({ 5_() });
-            std_flat_multimap_int__int__test_less_int___std_deque_int__test_allocator_int____std_deque_int__test_allocator_int___ :: new_1 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_20 } , { & mut __tmp_21 } , )
-        };
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2087,19 +1999,47 @@ pub unsafe fn test_60() {
     {
         let mut ks: () = unimplemented!();
         let mut vs: () = unimplemented!();
-        let mut m: () = {
-            let mut __tmp_22: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_deque_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_22 } , )
-        };
+        let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut m2: () = {
-            let mut __tmp_23: test_allocator_int_ = test_allocator_int_::new_1({ 6_() });
-            std_flat_multimap_int__int__std_less_int___std_deque_int__test_allocator_int____std_deque_int__test_allocator_int___ :: new_2 ( { unimplemented!() } , { & ks } , { & vs } , { & mut __tmp_23 } , )
-        };
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new(3_()));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<const int&&, decltype(std::get<0>(std::move(t)))>::value"
@@ -38,12 +38,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_std_string__int_::new({ Ptr::<()>::from_string_literal(b"high") }, {
-                __tmp_0.as_pointer()
-            })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<const std::string&&, decltype(std::get<0>(std::move(t)))>::value"
@@ -60,12 +55,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(42_()));
+        let mut x: () = 42_();
         let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let p: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__const_int_ref_::new(
-            { x.as_pointer() },
-            { y.as_pointer() },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<0>(std::move(p)))>::value"
@@ -80,10 +72,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let p: Value<()> = Rc::new(RefCell::new(std_tuple_int_refref__const_int_refref_::new(
-            { (x.as_pointer()).reinterpret_cast::<()>() },
-            { y.as_pointer() },
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<int&&, decltype(std::get<0>(std::move(p)))>::value"
@@ -96,11 +85,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "noexcept(std::get<1>(std::move(p)))");;
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(2.718_f64));
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(5_()));
-            std_tuple_double__int_::new({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-        }));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(std::move(t)) == 2.718");;
         const _: () = assert!(true, "std::get<1>(std::move(t)) == 5");;
     }

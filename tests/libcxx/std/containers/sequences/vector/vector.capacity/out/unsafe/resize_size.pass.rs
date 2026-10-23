@@ -272,9 +272,7 @@ pub unsafe fn make_thread_unsafe_shared_5()
     );
     let mut alloc: () = unimplemented!();
     ptr.block = unimplemented!();
-    (unsafe {
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block__::construct ( & mut alloc , ptr . block  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__::copy_from({ &ptr });
 }
 impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block {
@@ -323,9 +321,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_301__ {
             return;
         };
         let mut alloc: () = unimplemented!();
-        (unsafe {
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_301___control_block__::destroy ( & mut alloc , self . block  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     pub unsafe fn operator_arrow_7(&mut self) -> *mut limited_alloc_handle_301_ {

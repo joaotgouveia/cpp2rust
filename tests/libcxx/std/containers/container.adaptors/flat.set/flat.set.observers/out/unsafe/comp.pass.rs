@@ -33,23 +33,23 @@ pub unsafe fn test_4() -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut kc: () = (unsafe { m.key_comp() });
+        let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc: () = (unsafe { m.value_comp() });
+        let mut vc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut comp: () = std_function_bool__int__int__::new_1({ unimplemented!() });
-        let mut m : () = std_flat_set_int__std_function_bool__int__int____std_vector_int__std_allocator_int___ :: new_1 ( { unimplemented!() } , { & comp } , )  ;
+        let mut comp: () = unimplemented!();
+        let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut kc: () = (unsafe { m.key_comp() });
+        let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc: () = (unsafe { m.value_comp() });
+        let mut vc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -58,10 +58,10 @@ pub unsafe fn test_4() -> () {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
-        let mut kc: () = (unsafe { m.key_comp() });
+        let mut kc: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut vc: () = (unsafe { m.value_comp() });
+        let mut vc: () = unimplemented!();
         let mut a: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();

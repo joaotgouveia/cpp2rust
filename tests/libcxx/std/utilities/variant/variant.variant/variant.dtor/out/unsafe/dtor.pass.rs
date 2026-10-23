@@ -58,9 +58,7 @@ const _: () = assert!(true, "std::is_trivially_destructible<TDtor>::value");
 pub unsafe fn test_0() -> () {
     {
         const _: () = assert!(true, "std::is_trivially_destructible<V>::value");;
-        let mut v: () = std_variant_int__long__TDtor_::new({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_1)).clone()
-        });
+        let mut v: () = unimplemented!();
     }
     {
         const _: () = assert!(true, "!std::is_trivially_destructible<V>::value");;
@@ -68,18 +66,7 @@ pub unsafe fn test_0() -> () {
             let mut count0: () = 0_();
             let mut count1: () = 0_();
             {
-                let mut v: () = {
-                    let mut __tmp_0: *mut () = (&mut count0 as *mut ());
-                    let mut __tmp_1: *mut () = (&mut count1 as *mut ());
-                    std_variant_NonTDtor__int__NonTDtor1_::new_1(
-                        {
-                            (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_2))
-                                .clone()
-                        },
-                        { &mut __tmp_0 },
-                        { &mut __tmp_1 },
-                    )
-                };
+                let mut v: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -90,9 +77,7 @@ pub unsafe fn test_0() -> () {
             let mut count0: () = 0_();
             let mut count1: () = 0_();
             {
-                let mut v: () = std_variant_NonTDtor__int__NonTDtor1_::new_2({
-                    (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_3)).clone()
-                });
+                let mut v: () = unimplemented!();
             }
             unimplemented!();
             unimplemented!();
@@ -101,18 +86,7 @@ pub unsafe fn test_0() -> () {
             let mut count0: () = 0_();
             let mut count1: () = 0_();
             {
-                let mut v: () = {
-                    let mut __tmp_2: *mut () = (&mut count0 as *mut ());
-                    let mut __tmp_3: *mut () = (&mut count1 as *mut ());
-                    std_variant_NonTDtor__int__NonTDtor1_::new_3(
-                        {
-                            (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_index_1))
-                                .clone()
-                        },
-                        { &mut __tmp_2 },
-                        { &mut __tmp_3 },
-                    )
-                };
+                let mut v: () = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }

@@ -203,7 +203,7 @@ pub struct Unconstrained {
 }
 pub unsafe fn test_tuple_cat_with_unconstrained_constructor_16() -> () {
     {
-        let mut tup_src: () = Unconstrained::new({ 5_() });
+        let mut tup_src: () = unimplemented!();
         let mut tup: std_tuple_Unconstrained_ = unimplemented!();
         unimplemented!();
     }
@@ -216,7 +216,7 @@ pub unsafe fn test_tuple_cat_with_unconstrained_constructor_16() -> () {
         unimplemented!();
     }
     {
-        let mut tup_src: () = Unconstrained::new({ 8_() });
+        let mut tup_src: () = unimplemented!();
         let mut tup: std_tuple_Unconstrained_ = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -267,7 +267,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (&(t));
     }
     {
-        let mut t1: () = 1_();
+        let mut t1: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
     }
@@ -289,12 +289,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (&(t));
     }
     {
-        let t1: () = 1_();
+        let t1: () = unimplemented!();
         let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 1");;
     }
     {
-        let t1: () = 1_();
+        let t1: () = unimplemented!();
         let t: () = unimplemented!();
         const _: () = assert!(true, "std::get<0>(t) == 1");;
         const _: () = assert!(true, "std::get<1>(t) == 1");;
@@ -323,37 +323,33 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = 2_();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = 2_();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = 2_();
-        let mut t3: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut t1: () = unimplemented!();
-        let mut t2: () = 2_();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = {
-            let mut __tmp_0: () = 2_();
-            let mut __tmp_1: () = 3.5_f64;
-            std_tuple_int__double_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut t2: () = unimplemented!();
+        let mut t3: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -361,27 +357,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = {
-            let mut __tmp_2: () = 2_();
-            let mut __tmp_3: () = 3.5_f64;
-            std_tuple_int__double_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-        };
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_4: () = Default::default();
-            let mut __tmp_5: () = 1_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
-        };
-        let mut t2: () = {
-            let mut __tmp_6: () = 2_();
-            let mut __tmp_7: () = 3.5_f64;
-            std_tuple_int__double_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -389,16 +373,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_8: () = Default::default();
-            let mut __tmp_9: () = 1_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
-        };
-        let mut t2: () = {
-            let mut __tmp_10: () = 2_();
-            let mut __tmp_11: () = 3.5_f64;
-            std_tuple_int__double_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -406,16 +382,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_12: () = 1_();
-            let mut __tmp_13: () = 2_();
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_12 }, { &mut __tmp_13 })
-        };
-        let mut t2: () = {
-            let mut __tmp_14: () = Default::default();
-            let mut __tmp_15: () = 4_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_14 }, { &mut __tmp_15 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -423,16 +391,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_16: () = 1_();
-            let mut __tmp_17: () = 2_();
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_16 }, { &mut __tmp_17 })
-        };
-        let mut t2: () = {
-            let mut __tmp_18: () = Default::default();
-            let mut __tmp_19: () = 4_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -440,16 +400,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_20: () = 1_();
-            let mut __tmp_21: () = 2_();
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
-        };
-        let mut t2: () = {
-            let mut __tmp_22: () = Default::default();
-            let mut __tmp_23: () = 4_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -457,16 +409,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_24: () = 1_();
-            let mut __tmp_25: () = 2_();
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
-        };
-        let mut t2: () = {
-            let mut __tmp_26: () = Default::default();
-            let mut __tmp_27: () = 4_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -474,16 +418,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut t1: () = {
-            let mut __tmp_28: () = 1_();
-            let mut __tmp_29: () = 2_();
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
-        };
-        let mut t2: () = {
-            let mut __tmp_30: () = Default::default();
-            let mut __tmp_31: () = 4_();
-            std_tuple_int_ptr__MoveOnly_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
-        };
+        let mut t1: () = unimplemented!();
+        let mut t2: () = unimplemented!();
         let mut t3: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -499,35 +435,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut x: () = 101_();
-        let mut t: () = {
-            let mut __tmp_32: () = 42_();
-            let mut __tmp_33: () = 101_();
-            std_tuple_int__const_int__int_ref__const_int_ref__int_refref_::new(
-                { &mut __tmp_32 },
-                { &mut __tmp_33 },
-                { &mut x },
-                { &mut x },
-                { &mut *(&raw mut x).cast::<()>() },
-            )
-        };
+        let mut t: () = unimplemented!();
         let ct: *const () = &t;
-        let mut t2: () = {
-            let mut __tmp_34: () = 42_();
-            let mut __tmp_35: () = 101_();
-            std_tuple_int__const_int__int_ref__const_int_ref_::new(
-                { &mut __tmp_34 },
-                { &mut __tmp_35 },
-                { &mut x },
-                { &mut x },
-            )
-        };
+        let mut t2: () = unimplemented!();
         let ct2: *const () = &t2;
         let mut r : std_tuple_int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int_refref__int__const_int__int_ref__const_int_ref__int__const_int__int_ref__const_int_ref_ = unimplemented!()  ;
         const _: () = assert!(true, "");;
         (&(r));
     }
     {
-        let mut t1: () = NS_Namespaced { i: 1_() };
+        let mut t1: () = unimplemented!();
         let mut t: () = unimplemented!();
         let mut t2: () = unimplemented!();
         unimplemented!();

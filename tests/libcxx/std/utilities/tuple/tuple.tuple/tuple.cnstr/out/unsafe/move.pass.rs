@@ -333,36 +333,25 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (&(t));
     }
     {
-        let mut t0: () = MoveOnly::new({ Some(0_()) });
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_0: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_1: MoveOnly = MoveOnly::new({ Some(1_()) });
-            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-        };
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t0: () = {
-            let mut __tmp_2: MoveOnly = MoveOnly::new({ Some(0_()) });
-            let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(1_()) });
-            let mut __tmp_4: MoveOnly = MoveOnly::new({ Some(2_()) });
-            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 }, {
-                &mut __tmp_4
-            })
-        };
+        let mut t0: () = unimplemented!();
         let mut t: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut d: () = (ConstructsWithTupleLeaf::new());
+        let mut d: () = unimplemented!();
         let mut d2: () = unimplemented!();
     }
     {

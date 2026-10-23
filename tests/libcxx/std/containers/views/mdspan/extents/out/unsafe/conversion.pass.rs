@@ -101,122 +101,120 @@ pub unsafe fn test_conversion_27(mut src: ()) {
     }
 }
 pub unsafe fn test_conversion_28(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_1(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_29(mut src: ()) {
-    let mut dest: () = std_extents_int__5_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_30(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_2(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_31(mut src: ()) {
-    let mut dest: () = std_extents_int__5__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_32(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_3(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_33(mut src: ()) {
-    let mut dest: () =
-        std_extents_int__18446744073709551615__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_int__18446744073709551615__18446744073709551615_::new_1({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () =
-                std_extents_int__18446744073709551615__18446744073709551615_::new_1({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_4(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_34(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_5(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_35(mut src: ()) {
-    let mut dest : () = std_extents_int__5__18446744073709551615__8__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_36(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_6(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_37(mut src: ()) {
-    let mut dest : () = std_extents_int__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest  = std_extents_int__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )   ;
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: ()  = std_extents_int__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )  ;
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_7(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_38(mut src: ()) {
-    let mut dest: () = src.clone();
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
         dest = (src).clone();
         unimplemented!();
         (unsafe {
-            let _dest: () = src.clone();
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_8(_dest, _src)
         });
     }
@@ -227,59 +225,57 @@ pub unsafe fn test_conversion_39(mut src: ()) {
     {}
 }
 pub unsafe fn test_conversion_40(mut src: ()) {
-    let mut dest: () = std_extents_int__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_41(mut src: ()) {
-    let mut dest: () = std_extents_int__5_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_42(mut src: ()) {
-    let mut dest: () = std_extents_int__5_::new_3({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_43(mut src: ()) {
-    let mut dest: () = std_extents_int__5__18446744073709551615_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_44(mut src: ()) {
-    let mut dest: () =
-        std_extents_int__18446744073709551615__18446744073709551615_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_45(mut src: ()) {
-    let mut dest: () =
-        std_extents_int__18446744073709551615__18446744073709551615_::new_3({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_46(mut src: ()) {
-    let mut dest: () = std_extents_int__5__7_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_47(mut src: ()) {
-    let mut dest : () = std_extents_int__5__18446744073709551615__8__18446744073709551615__18446744073709551615_ :: new_2 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_48(mut src: ()) {
-    let mut dest : () = std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_49(mut src: ()) {
-    let mut dest : () = std_extents_int__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_2 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_50(mut src: ()) {
-    let mut dest: () = std_extents_int__5__7__8__9__1_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
@@ -297,130 +293,120 @@ pub unsafe fn test_conversion_51(mut src: ()) {
     }
 }
 pub unsafe fn test_conversion_52(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__18446744073709551615_::new_1({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__18446744073709551615_::new_1({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_10(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_53(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_54(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5_::new_2({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5_::new_2({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_11(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_55(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_56(mut src: ()) {
-    let mut dest: () =
-        std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest =
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () =
-                std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_1({
-                    &src
-                });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_12(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_57(mut src: ()) {
-    let mut dest: () =
-        std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest =
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_2({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () =
-                std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_2({
-                    &src
-                });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_13(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_58(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__7_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5__7_::new_1({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5__7_::new_1({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_14(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_59(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__5__18446744073709551615__8__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_60(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )   ;
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: ()  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { & src } , )  ;
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_15(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_61(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )   ;
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: ()  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_1 ( { & src } , )  ;
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_16(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_62(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__7__8__9__1_::new_1({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5__7__8__9__1_::new_1({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5__7__8__9__1_::new_1({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_17(_dest, _src)
         });
     }
@@ -439,130 +425,120 @@ pub unsafe fn test_conversion_63(mut src: ()) {
     }
 }
 pub unsafe fn test_conversion_64(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__18446744073709551615_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__18446744073709551615_::new_2({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__18446744073709551615_::new_2({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_19(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_65(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5_::new_3({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_66(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5_::new_4({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5_::new_4({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5_::new_4({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_20(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_67(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__18446744073709551615_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_68(mut src: ()) {
-    let mut dest: () =
-        std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_3({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest =
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_3({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () =
-                std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_3({
-                    &src
-                });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_21(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_69(mut src: ()) {
-    let mut dest: () =
-        std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_4({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest =
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_4({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () =
-                std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_4({
-                    &src
-                });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_22(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_70(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__7_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5__7_::new_2({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5__7_::new_2({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_23(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_71(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__5__18446744073709551615__8__18446744073709551615__18446744073709551615_ :: new_2 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {}
 }
 pub unsafe fn test_conversion_72(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_2 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_2 ( { & src } , )   ;
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: ()  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_2 ( { & src } , )  ;
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_24(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_73(mut src: ()) {
-    let mut dest : () = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_2 ( { & src } , )  ;
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_2 ( { & src } , )   ;
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: ()  = std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__18446744073709551615_ :: new_2 ( { & src } , )  ;
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_25(_dest, _src)
         });
     }
 }
 pub unsafe fn test_conversion_74(mut src: ()) {
-    let mut dest: () = std_extents_unsigned_long__5__7__8__9__1_::new_2({ &src });
+    let mut dest: () = unimplemented!();
     unimplemented!();
     {
-        dest = std_extents_unsigned_long__5__7__8__9__1_::new_2({ &src });
+        dest = unimplemented!();
         unimplemented!();
         (unsafe {
-            let _dest: () = std_extents_unsigned_long__5__7__8__9__1_::new_2({ &src });
-            let _src: () = src.clone();
+            let _dest: () = unimplemented!();
+            let _src: () = unimplemented!();
             test_implicit_conversion_26(_dest, _src)
         });
     }
@@ -571,170 +547,64 @@ pub unsafe fn test_conversion_75() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
     let idx_convertible: () = ((unimplemented!()) >= (unimplemented!()));
     (unsafe { test_conversion_27(unimplemented!()) });
-    (unsafe { test_conversion_28(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
-    (unsafe { test_conversion_29(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
+    (unsafe { test_conversion_28(unimplemented!()) });
+    (unsafe { test_conversion_29(unimplemented!()) });
     (unsafe { test_conversion_30(unimplemented!()) });
-    (unsafe {
-        test_conversion_31(
-            std_extents_int__18446744073709551615__18446744073709551615_::new_4({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe {
-        test_conversion_32(
-            std_extents_int__18446744073709551615__18446744073709551615_::new_4({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe { test_conversion_33(std_extents_int__18446744073709551615__7_::new_1({ 5_() })) });
+    (unsafe { test_conversion_31(unimplemented!()) });
+    (unsafe { test_conversion_32(unimplemented!()) });
+    (unsafe { test_conversion_33(unimplemented!()) });
     (unsafe { test_conversion_34(unimplemented!()) });
-    (unsafe {
-        test_conversion_35(
-            std_extents_int__18446744073709551615__18446744073709551615__8__9__1_::new_1(
-                { 5_() },
-                { 7_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_36 ( std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_2 ( { 5_() } , { 7_() } , { 8_() } , { 9_() } , { 1_() } , )  , )
-    });
-    (unsafe {
-        test_conversion_37(std_extents_int__18446744073709551615__7__8__9__1_::new_1({
-            5_()
-        }))
-    });
+    (unsafe { test_conversion_35(unimplemented!()) });
+    (unsafe { test_conversion_36(unimplemented!()) });
+    (unsafe { test_conversion_37(unimplemented!()) });
     (unsafe { test_conversion_38(unimplemented!()) });
 }
 pub unsafe fn test_conversion_77() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
     let idx_convertible: () = ((unimplemented!()) >= (unimplemented!() as ()));
     (unsafe { test_conversion_39(unimplemented!()) });
-    (unsafe {
-        test_conversion_40(std_extents_unsigned_long__18446744073709551615_::new_3({
-            5_()
-        }))
-    });
-    (unsafe {
-        test_conversion_41(std_extents_unsigned_long__18446744073709551615_::new_3({
-            5_()
-        }))
-    });
+    (unsafe { test_conversion_40(unimplemented!()) });
+    (unsafe { test_conversion_41(unimplemented!()) });
     (unsafe { test_conversion_42(unimplemented!()) });
-    (unsafe {
-        test_conversion_43(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_5(
-                { 5_() },
-                { 5_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_44(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615_::new_5(
-                { 5_() },
-                { 5_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_45(std_extents_unsigned_long__18446744073709551615__7_::new_1(
-            { 5_() },
-        ))
-    });
+    (unsafe { test_conversion_43(unimplemented!()) });
+    (unsafe { test_conversion_44(unimplemented!()) });
+    (unsafe { test_conversion_45(unimplemented!()) });
     (unsafe { test_conversion_46(unimplemented!()) });
-    (unsafe {
-        test_conversion_47(
-            std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1_::new_1(
-                { 5_() },
-                { 7_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_48 ( std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_3 ( { 5_() } , { 7_() } , { 8_() } , { 9_() } , { 1_() } , )  , )
-    });
-    (unsafe {
-        test_conversion_49(
-            std_extents_unsigned_long__18446744073709551615__7__8__9__1_::new_1({ 5_() }),
-        )
-    });
+    (unsafe { test_conversion_47(unimplemented!()) });
+    (unsafe { test_conversion_48(unimplemented!()) });
+    (unsafe { test_conversion_49(unimplemented!()) });
     (unsafe { test_conversion_50(unimplemented!()) });
 }
 pub unsafe fn test_conversion_78() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
     let idx_convertible: () = ((unimplemented!() as ()) >= (unimplemented!()));
     (unsafe { test_conversion_51(unimplemented!()) });
-    (unsafe { test_conversion_52(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
-    (unsafe { test_conversion_53(std_extents_int__18446744073709551615_::new_2({ 5_() })) });
+    (unsafe { test_conversion_52(unimplemented!()) });
+    (unsafe { test_conversion_53(unimplemented!()) });
     (unsafe { test_conversion_54(unimplemented!()) });
-    (unsafe {
-        test_conversion_55(
-            std_extents_int__18446744073709551615__18446744073709551615_::new_4({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe {
-        test_conversion_56(
-            std_extents_int__18446744073709551615__18446744073709551615_::new_4({ 5_() }, { 5_() }),
-        )
-    });
-    (unsafe { test_conversion_57(std_extents_int__18446744073709551615__7_::new_1({ 5_() })) });
+    (unsafe { test_conversion_55(unimplemented!()) });
+    (unsafe { test_conversion_56(unimplemented!()) });
+    (unsafe { test_conversion_57(unimplemented!()) });
     (unsafe { test_conversion_58(unimplemented!()) });
-    (unsafe {
-        test_conversion_59(
-            std_extents_int__18446744073709551615__18446744073709551615__8__9__1_::new_1(
-                { 5_() },
-                { 7_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_60 ( std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_2 ( { 5_() } , { 7_() } , { 8_() } , { 9_() } , { 1_() } , )  , )
-    });
-    (unsafe {
-        test_conversion_61(std_extents_int__18446744073709551615__7__8__9__1_::new_1({
-            5_()
-        }))
-    });
+    (unsafe { test_conversion_59(unimplemented!()) });
+    (unsafe { test_conversion_60(unimplemented!()) });
+    (unsafe { test_conversion_61(unimplemented!()) });
     (unsafe { test_conversion_62(unimplemented!()) });
 }
 pub unsafe fn test_conversion_79() {
     let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_76));
     let idx_convertible: () = ((unimplemented!() as ()) >= (unimplemented!()));
     (unsafe { test_conversion_63(unimplemented!()) });
-    (unsafe { test_conversion_64(std_extents_long__18446744073709551615_::new_1({ 5_() })) });
-    (unsafe { test_conversion_65(std_extents_long__18446744073709551615_::new_1({ 5_() })) });
+    (unsafe { test_conversion_64(unimplemented!()) });
+    (unsafe { test_conversion_65(unimplemented!()) });
     (unsafe { test_conversion_66(unimplemented!()) });
-    (unsafe {
-        test_conversion_67(
-            std_extents_long__18446744073709551615__18446744073709551615_::new_1({ 5_() }, {
-                5_()
-            }),
-        )
-    });
-    (unsafe {
-        test_conversion_68(
-            std_extents_long__18446744073709551615__18446744073709551615_::new_1({ 5_() }, {
-                5_()
-            }),
-        )
-    });
-    (unsafe { test_conversion_69(std_extents_long__18446744073709551615__7_::new_1({ 5_() })) });
+    (unsafe { test_conversion_67(unimplemented!()) });
+    (unsafe { test_conversion_68(unimplemented!()) });
+    (unsafe { test_conversion_69(unimplemented!()) });
     (unsafe { test_conversion_70(unimplemented!()) });
-    (unsafe {
-        test_conversion_71(
-            std_extents_long__18446744073709551615__18446744073709551615__8__9__1_::new_1(
-                { 5_() },
-                { 7_() },
-            ),
-        )
-    });
-    (unsafe {
-        test_conversion_72 ( std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615_ :: new_1 ( { 5_() } , { 7_() } , { 8_() } , { 9_() } , { 1_() } , )  , )
-    });
-    (unsafe {
-        test_conversion_73(std_extents_long__18446744073709551615__7__8__9__1_::new_1(
-            { 5_() },
-        ))
-    });
+    (unsafe { test_conversion_71(unimplemented!()) });
+    (unsafe { test_conversion_72(unimplemented!()) });
+    (unsafe { test_conversion_73(unimplemented!()) });
     (unsafe { test_conversion_74(unimplemented!()) });
 }
 pub unsafe fn test_no_implicit_conversion_80() {

@@ -34,22 +34,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t: Value<()> = Rc::new(RefCell::new(
-            std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_1(
-                { (cinc1_2.with(Ptr::clone)).clone() },
-                { (cinc2_3.with(Ptr::clone)).clone() },
-            ),
-        ));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let t: Value<()> = Rc::new(RefCell::new(
-            std_tuple_const_IncompleteType_ref__const_IncompleteType_ref_::new_2(
-                { inc1_0.with(|v| v.as_pointer()) },
-                { inc2_1.with(|v| v.as_pointer()) },
-            ),
-        ));
+        let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

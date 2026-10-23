@@ -651,9 +651,7 @@ pub fn make_thread_unsafe_shared_10() -> detail_thread_unsafe_shared_ptr_limited
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__::copy_from({
         ptr.as_pointer()
     });
@@ -668,9 +666,7 @@ pub fn make_thread_unsafe_shared_11()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__::copy_from(
         { ptr.as_pointer() },
     );
@@ -684,9 +680,7 @@ pub fn make_thread_unsafe_shared_12()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__::copy_from({
         ptr.as_pointer()
     });
@@ -700,9 +694,7 @@ pub fn make_thread_unsafe_shared_13()
     let _dtor_ptr = ScopedDestructor::new(&ptr, |__p| __p.destructor());
     let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*ptr.borrow_mut()).block = unimplemented!();
-    ({
-        std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::construct ( alloc .as_pointer()  , { (*ptr.borrow()) . block .clone() }  , )
-    });
+    unimplemented!();
     return detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__::copy_from({
         ptr.as_pointer()
     });
@@ -1158,10 +1150,7 @@ impl Default for limited_allocator_unsigned_long__292805461487453200_ {
 pub fn test_14(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let _arg0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_allocator_traits_std_allocator_unsigned_long__::max_size(_arg0.as_pointer())
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1174,13 +1163,7 @@ pub fn test_14(v: Ptr<()>) {
 pub fn test_15(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let _arg0: Value<min_allocator_unsigned_long_> =
-            Rc::new(RefCell::new(min_allocator_unsigned_long_::new_1({
-                unimplemented!()
-            })));
-        std_allocator_traits_min_allocator_unsigned_long__::max_size(_arg0.as_pointer())
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1193,13 +1176,7 @@ pub fn test_15(v: Ptr<()>) {
 pub fn test_16(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<test_allocator_unsigned_int_> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));
-            test_allocator_unsigned_int_::new_1({ __tmp_0.as_pointer() })
-        }));
-        std_allocator_traits_test_allocator_unsigned_int__::max_size(___a.as_pointer())
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1212,13 +1189,7 @@ pub fn test_16(v: Ptr<()>) {
 pub fn test_17(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let _arg0: Value<other_allocator_unsigned_long_> = Rc::new(RefCell::new({
-            let __tmp_1: Value<other_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));
-            other_allocator_unsigned_long_::new_1({ __tmp_1.as_pointer() })
-        }));
-        std_allocator_traits_other_allocator_unsigned_long__::max_size(_arg0.as_pointer())
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1231,19 +1202,7 @@ pub fn test_17(v: Ptr<()>) {
 pub fn test_18(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<sized_allocator_unsigned_char__unsigned_char__signed_char_> =
-            Rc::new(RefCell::new({
-                let __tmp_2: Value<sized_allocator_bool__unsigned_char__signed_char_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                sized_allocator_unsigned_char__unsigned_char__signed_char_::new_1({
-                    __tmp_2.as_pointer()
-                })
-            }));
-        std_allocator_traits_sized_allocator_unsigned_char__unsigned_char__signed_char__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1256,19 +1215,7 @@ pub fn test_18(v: Ptr<()>) {
 pub fn test_19(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<sized_allocator_unsigned_short__unsigned_short__short_> =
-            Rc::new(RefCell::new({
-                let __tmp_3: Value<sized_allocator_bool__unsigned_short__short_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                sized_allocator_unsigned_short__unsigned_short__short_::new_1({
-                    __tmp_3.as_pointer()
-                })
-            }));
-        std_allocator_traits_sized_allocator_unsigned_short__unsigned_short__short__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1281,17 +1228,7 @@ pub fn test_19(v: Ptr<()>) {
 pub fn test_20(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<sized_allocator_unsigned_int__unsigned_int__int_> =
-            Rc::new(RefCell::new({
-                let __tmp_4: Value<sized_allocator_bool__unsigned_int__int_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                sized_allocator_unsigned_int__unsigned_int__int_::new_1({ __tmp_4.as_pointer() })
-            }));
-        std_allocator_traits_sized_allocator_unsigned_int__unsigned_int__int__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1304,17 +1241,7 @@ pub fn test_20(v: Ptr<()>) {
 pub fn test_21(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<sized_allocator_unsigned_long__unsigned_long__long_> =
-            Rc::new(RefCell::new({
-                let __tmp_5: Value<sized_allocator_bool__unsigned_long__long_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                sized_allocator_unsigned_long__unsigned_long__long_::new_1({ __tmp_5.as_pointer() })
-            }));
-        std_allocator_traits_sized_allocator_unsigned_long__unsigned_long__long__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1327,19 +1254,7 @@ pub fn test_21(v: Ptr<()>) {
 pub fn test_22(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<limited_allocator_unsigned_long__18446744073709551615_> =
-            Rc::new(RefCell::new({
-                let __tmp_6: Value<limited_allocator_bool__18446744073709551615_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                limited_allocator_unsigned_long__18446744073709551615_::new_1({
-                    __tmp_6.as_pointer()
-                })
-            }));
-        std_allocator_traits_limited_allocator_unsigned_long__18446744073709551615__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1352,19 +1267,7 @@ pub fn test_22(v: Ptr<()>) {
 pub fn test_23(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<limited_allocator_unsigned_long__302405640552615600_> =
-            Rc::new(RefCell::new({
-                let __tmp_7: Value<limited_allocator_bool__302405640552615600_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                limited_allocator_unsigned_long__302405640552615600_::new_1({
-                    __tmp_7.as_pointer()
-                })
-            }));
-        std_allocator_traits_limited_allocator_unsigned_long__302405640552615600__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1377,19 +1280,7 @@ pub fn test_23(v: Ptr<()>) {
 pub fn test_24(v: Ptr<()>) {
     let mut max_dist: () = unimplemented!();
     unimplemented!();
-    let mut max_alloc: () = ({
-        let ___a: Value<limited_allocator_unsigned_long__292805461487453200_> =
-            Rc::new(RefCell::new({
-                let __tmp_8: Value<limited_allocator_bool__292805461487453200_> =
-                    Rc::new(RefCell::new(unimplemented!()));
-                limited_allocator_unsigned_long__292805461487453200_::new_1({
-                    __tmp_8.as_pointer()
-                })
-            }));
-        std_allocator_traits_limited_allocator_unsigned_long__292805461487453200__::max_size(
-            ___a.as_pointer(),
-        )
-    });
+    let mut max_alloc: () = unimplemented!();
     let mut bits_per_word: () = (::std::mem::size_of::<()>() as ()).wrapping_mul(8_());
     let mut max_size: () = if ((max_dist).wrapping_div(bits_per_word) < max_alloc) {
         max_dist
@@ -1531,9 +1422,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__Impl
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_10___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_10_> {
@@ -1583,9 +1472,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_18446744073709551615_> {
@@ -1635,9 +1522,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200__Im
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_292805461487453200___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_292805461487453200_> {
@@ -1687,9 +1572,7 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600__Im
             return;
         };
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            std_allocator_traits_std_allocator_detail_thread_unsafe_shared_ptr_limited_alloc_handle_302405640552615600___control_block__::destroy ( alloc .as_pointer()  , (* self ) .with(|__s| __s . block .clone())  , )
-        });
+        unimplemented!();
         unimplemented!();
     }
     fn operator_arrow_7(&self) -> Ptr<limited_alloc_handle_302405640552615600_> {
