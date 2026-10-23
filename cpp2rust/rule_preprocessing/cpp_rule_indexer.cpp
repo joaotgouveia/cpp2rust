@@ -172,7 +172,7 @@ public:
 private:
   void Add(const clang::NamedDecl *decl) {
     if (!decl || !decl->getIdentifier() ||
-        !llvm::isa<clang::NamespaceDecl>(
+        !llvm::isa<clang::NamespaceDecl, clang::TranslationUnitDecl>(
             decl->getDeclContext()->getRedeclContext())) {
       return;
     }
@@ -194,6 +194,12 @@ std::set<std::string> TemplateParameterNames(const clang::Decl *rule) {
     for (auto param : *tmpl->getTemplateParameters()) {
       visitor.TraverseDecl(param);
     }
+  }
+  // A typedef rule applies only where the typedef it names is declared: the
+  // global nullptr_t of libc++'s <stddef.h> shares its key with the builtin
+  // nullptr type.
+  if (auto alias = llvm::dyn_cast<clang::TypedefNameDecl>(rule)) {
+    visitor.TraverseTypeLoc(alias->getTypeSourceInfo()->getTypeLoc());
   }
   return std::move(visitor.names);
 }
