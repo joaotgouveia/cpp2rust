@@ -27,20 +27,18 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let p: Value<std_exception_ptr> = Rc::new(RefCell::new(<std_exception_ptr>::default()));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let p2: Value<std_exception_ptr> = Rc::new(RefCell::new((*p.borrow()).clone()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     (*p2.borrow_mut()) = (*p.borrow()).clone();
     unimplemented!();
     unimplemented!();
-    let p3: Value<std_exception_ptr> = Rc::new(RefCell::new(std_exception_ptr::new_1({
-        Default::default()
-    })));
+    let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*p3.borrow_mut()) = std_exception_ptr::new_1({ Default::default() });
+    (*p3.borrow_mut()) = unimplemented!();
     unimplemented!();
     return 0_();
 }

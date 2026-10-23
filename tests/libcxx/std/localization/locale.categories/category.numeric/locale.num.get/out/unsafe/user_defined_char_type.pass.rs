@@ -30,10 +30,10 @@ impl Char {
         return (self.underlying_ as i32);
     }
 }
-pub static mut id_0: std::cell::LazyCell<std_locale_id> =
-    std::cell::LazyCell::new(|| unsafe { <std_locale_id>::default() });
-pub static mut id_1: std::cell::LazyCell<std_locale_id> =
-    std::cell::LazyCell::new(|| unsafe { <std_locale_id>::default() });
+pub static mut id_0: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+pub static mut id_1: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -51,9 +51,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = std_locale::new_1({ (unsafe { std_locale::classic() }) }, {
-        (Box::leak(Box::new(unimplemented!())) as *mut ())
-    });
+    let mut l: () = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

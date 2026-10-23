@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
+    let mut l: () = unimplemented!();
     let f: *const () = (unsafe { use_facet_0(&l) });
     {
         let from: () =
@@ -41,7 +41,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut mbs: () = unimplemented!();
         let mut from_next: *const () = std::ptr::null();
         let mut to_next: *mut () = std::ptr::null_mut();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -64,7 +64,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut mbs: () = unimplemented!();
         let mut from_next: *const () = std::ptr::null();
         let mut to_next: *mut () = std::ptr::null_mut();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -86,7 +86,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut mbs: () = unimplemented!();
         let mut from_next: *const () = std::ptr::null();
         let mut to_next: *mut () = std::ptr::null_mut();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

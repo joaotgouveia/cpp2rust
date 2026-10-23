@@ -27,13 +27,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let f: Ptr<std_codecvt_char16_t__char8_t____mbstate_t_> =
-        ({ use_facet_0(({ std_locale::classic() })) });
+    let f: Ptr<()> = ({ use_facet_0(unimplemented!()) });
     let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let to: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let to_next: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
+    let mut to_next: Ptr<()> = Ptr::<()>::null();
     unimplemented!();
     unimplemented!();
     return 0_();

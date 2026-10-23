@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
-    let f: *const std_codecvt_char32_t__char____mbstate_t_ = (unsafe { use_facet_0(&l) });
+    let mut l: () = unimplemented!();
+    let f: *const () = (unsafe { use_facet_0(&l) });
     unimplemented!();
     return 0_();
 }

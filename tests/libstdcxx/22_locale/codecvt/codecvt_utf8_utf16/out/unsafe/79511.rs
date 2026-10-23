@@ -257,16 +257,16 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn conv_10(mut src: *const ()) -> () {
-    let mut conv : std_wstring_convert_std_codecvt_utf8_utf16_char16_t__1114111__0___char16_t__std_allocator_char16_t___std_allocator_char__ = <std_wstring_convert_std_codecvt_utf8_utf16_char16_t__1114111__0___char16_t__std_allocator_char16_t___std_allocator_char__ >::default() ;
-    return (unsafe { conv.from_bytes_9(src) });
+    let mut conv: () = unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn conv_11(mut src: *const ()) -> () {
-    let mut conv : std_wstring_convert_std_codecvt_utf8_utf16_char32_t__1114111__0___char32_t__std_allocator_char32_t___std_allocator_char__ = <std_wstring_convert_std_codecvt_utf8_utf16_char32_t__1114111__0___char32_t__std_allocator_char32_t___std_allocator_char__ >::default() ;
-    return (unsafe { conv.from_bytes_9(src) });
+    let mut conv: () = unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn conv_12(mut src: *const ()) -> () {
-    let mut conv : std_wstring_convert_std_codecvt_utf8_utf16_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ = <std_wstring_convert_std_codecvt_utf8_utf16_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ >::default() ;
-    return (unsafe { conv.from_bytes_9(src) });
+    let mut conv: () = unimplemented!();
+    return unimplemented!();
 }
 pub unsafe fn test01_13() {
     let mut __do_while = true;

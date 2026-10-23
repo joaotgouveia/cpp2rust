@@ -24,39 +24,33 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut c: std_codecvt_utf8_utf16_wchar_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_wchar_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as ()).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_wchar_t__4294967295__std_consume_header_ =
-            <std_codecvt_utf8_utf16_wchar_t__4294967295__std_consume_header_>::default();
-        let mut r: () = (unsafe { (c as ()).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char16_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_char16_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char16_t__4294967295__std_consume_header_ =
-            <std_codecvt_utf8_utf16_char16_t__4294967295__std_consume_header_>::default();
-        let mut r: () = (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char32_t__1114111__0_ =
-            <std_codecvt_utf8_utf16_char32_t__1114111__0_>::default();
-        let mut r: () = (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     {
-        let mut c: std_codecvt_utf8_utf16_char32_t__4294967295__std_consume_header_ =
-            <std_codecvt_utf8_utf16_char32_t__4294967295__std_consume_header_>::default();
-        let mut r: () = (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+        let mut c: () = unimplemented!();
+        let mut r: () = (unsafe { c.max_length() });
         unimplemented!();
     }
     return 0_();

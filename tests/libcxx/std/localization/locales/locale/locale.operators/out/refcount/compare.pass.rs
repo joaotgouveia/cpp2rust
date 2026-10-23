@@ -28,24 +28,22 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let l: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
+        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
-            let s2: Value<()> = Rc::new(RefCell::new(
+            let mut s2: () =
                 std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                     { Ptr::<()>::from_string_literal(b"aaaaaaA") },
                     None,
-                ),
-            ));
-            let s3: Value<()> = Rc::new(RefCell::new(
+                );
+            let mut s3: () =
                 std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
                     { Ptr::<()>::from_string_literal(b"BaaaaaA") },
                     None,
-                ),
-            ));
+                );
             unimplemented!();
         }
         {
-            let s2: Value<()> = Rc::new(RefCell::new(
+            let mut s2: () =
                 std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
                     {
                         Ptr::<()>::from_string_literal(&[
@@ -54,9 +52,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                         ])
                     },
                     None,
-                ),
-            ));
-            let s3: Value<()> = Rc::new(RefCell::new(
+                );
+            let mut s3: () =
                 std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
                     {
                         Ptr::<()>::from_string_literal(&[
@@ -65,8 +62,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                         ])
                     },
                     None,
-                ),
-            ));
+                );
             unimplemented!();
         }
     }

@@ -134,7 +134,7 @@ pub fn test_9(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    ({ (*s.borrow()).reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -154,7 +154,7 @@ pub fn test_10(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    ({ (*s.borrow()).reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -174,7 +174,7 @@ pub fn test_11(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    ({ (*s.borrow()).reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -274,9 +274,9 @@ impl MoveOnly {
 pub unsafe fn test01_10() {
     let mut buf: [(); 8] = [unimplemented!(); 8];
     let mut addr: *mut MoveOnly = (buf.as_mut_ptr() as *mut MoveOnly);
-    let mut iter: () = std_raw_storage_iterator_MoveOnly_ptr__MoveOnly_::new({ addr });
-    (*unimplemented!()) = MoveOnly::new({ 1_() });
-    (*unimplemented!()) = MoveOnly::new({ 2_() });
+    let mut iter: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -249,7 +249,7 @@ pub fn test_14() {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let loc: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
+    let loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -296,7 +296,7 @@ pub fn test_15() {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..10).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let loc: Value<std_locale> = Rc::new(RefCell::new(<std_locale>::default()));
+    let loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

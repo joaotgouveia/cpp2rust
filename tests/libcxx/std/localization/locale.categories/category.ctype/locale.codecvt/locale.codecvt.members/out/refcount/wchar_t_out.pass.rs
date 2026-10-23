@@ -27,9 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let l: Value<std_locale> = Rc::new(RefCell::new(
-        (*({ std_locale::classic() }).upgrade().deref()).clone(),
-    ));
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
     {
         let mut from: () =
@@ -46,7 +44,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
         let mut to_next: Ptr<()> = Ptr::<()>::null();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -68,7 +66,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
         let mut to_next: Ptr<()> = Ptr::<()>::null();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -89,7 +87,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut from_next: Ptr<()> = Ptr::<()>::null();
         let mut to_next: Ptr<()> = Ptr::<()>::null();
-        let mut r: std_codecvt_base_result = unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -13,14 +13,14 @@ impl TestHelper_wchar_t__4_ {
     pub unsafe fn test() {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
-            let mut myconv : std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ = <std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ >::default() ;
+            let mut myconv: () = unimplemented!();
             let mut ws: () =
                 std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
                     { 1_() },
                     { (*[262147 as (), 0 as ()].as_ptr()) },
                     None,
                 );
-            let mut bs: () = (unsafe { myconv.to_bytes_13((*unimplemented!())) });
+            let mut bs: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

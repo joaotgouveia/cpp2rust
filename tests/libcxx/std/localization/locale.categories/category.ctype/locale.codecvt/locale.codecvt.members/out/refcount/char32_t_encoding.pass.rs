@@ -27,10 +27,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let l: Value<std_locale> = Rc::new(RefCell::new(
-        (*({ std_locale::classic() }).upgrade().deref()).clone(),
-    ));
-    let f: Ptr<std_codecvt_char32_t__char____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
     unimplemented!();
     return 0_();
 }

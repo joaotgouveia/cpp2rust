@@ -28,7 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "(std::is_same<F::intern_type, wchar_t>::value)");;
     const _: () = assert!(true, "(std::is_same<F::extern_type, char>::value)");;
     const _: () = assert!(true, "(std::is_same<F::state_type, std::mbstate_t>::value)");;
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
+    let mut l: () = unimplemented!();
     unimplemented!();
     let f: *const () = (unsafe { use_facet_0(&l) });
     (&(*f));

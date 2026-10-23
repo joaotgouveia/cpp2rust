@@ -26,7 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e: std_codecvt_mode = std_codecvt_mode_consume_header;
+    let mut e: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

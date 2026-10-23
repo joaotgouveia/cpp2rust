@@ -11,96 +11,48 @@ use std::rc::{Rc, Weak};
 pub struct Holder {
     #[offset(0)]
     #[byte_size(8)]
-    pub ref_: Ptr<Vec<i32>>,
+    pub ref_: Ptr<()>,
     #[offset(8)]
     #[byte_size(24)]
-    pub vec_: Vec<i32>,
+    pub vec_: (),
 }
-pub fn pick_0(a: Ptr<Vec<i32>>, b: Ptr<Vec<i32>>, mut first: bool) -> Ptr<Vec<i32>> {
+pub fn pick_0(a: Ptr<()>, b: Ptr<()>, mut first: ()) -> Ptr<()> {
     return if first { (a).clone() } else { (b).clone() };
 }
-pub fn sum_1(v: Ptr<Vec<i32>>) -> i32 {
-    let mut total: i32 = 0;
-    let it: Value<RandomAccessIterator<i32>> = Rc::new(RefCell::new(v.decay().begin()));
-    'loop_: while (*it.borrow()) != v.decay().end() {
-        total += ((*it.borrow()).iter_deref().read());
-        (*it.borrow_mut()).iter_inc();
+pub fn sum_1(v: Ptr<()>) -> () {
+    let mut total: () = 0_();
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    'loop_: while unimplemented!() {
+        total += (unimplemented!().read());
+        unimplemented!();
     }
-    return ({ total } + {
-        ({
-            let __idx = 0_usize;
-            if __idx as usize >= (*v.upgrade().deref()).len() {
-                panic!("out of bounds access")
-            } else {
-                v.decay().offset(__idx as isize)
-            }
-        }
-        .read())
-    });
+    return ({ total } + { (unimplemented!().read()) });
 }
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());
 }
-fn main_0() -> i32 {
-    let v: Value<Vec<i32>> = Rc::new(RefCell::new(Vec::from([1, 2, 3])));
+fn main_0() -> () {
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let h: Value<Holder> = Rc::new(RefCell::new(Holder {
         ref_: v.as_pointer(),
-        vec_: Vec::from([4, 5]),
+        vec_: unimplemented!(),
     }));
-    assert!((({ (*h.borrow()).ref_.clone() }.decay().read()) == 1));
-    { (*h.borrow()).ref_.clone() }.decay().write(9);
-    assert!(({ (*v.borrow())[0_usize] } == 9));
-    { (*h.borrow()).ref_.clone() }.decay().write(1);
-    assert!(((field_ref!(h.as_pointer(), vec_).decay().to_last().read()) == 5));
-    let mut p: Ptr<Vec<i32>> = (field_ref!(h.as_pointer(), vec_).as_pointer());
-    assert!(((p.decay().read()) == 4));
-    ({
-        pick_0(
-            v.as_pointer(),
-            field_ref!(h.as_pointer(), vec_).as_pointer(),
-            false,
-        )
-    })
-    .decay()
-    .write(7);
-    assert!(((vec_elem!(h.as_pointer(), vec_, 0_usize).read()) == 7));
-    let m: Value<Map<i32, (Value<i32>, Value<Vec<i32>>)>> = Rc::new(RefCell::new(Map::new()));
-    {
-        let __a1 = 8;
-        Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(1)).as_pointer(),
-            |__k| cpp_move!(__k),
-        )
-        .with_mut(|__v: &mut Vec<i32>| __v.push(__a1))
-    };
-    assert!(
-        ((Map::subscript_move(
-            m.as_pointer(),
-            Rc::new(RefCell::new(1)).as_pointer(),
-            |__k| cpp_move!(__k)
-        )
-        .decay()
-        .begin()
-        .iter_deref()
-        .read())
-            == 8)
-    );
-    let c: Ptr<Vec<i32>> = v.as_pointer();
-    assert!(
-        (({
-            let __idx = 2_usize;
-            if __idx as usize >= (*c.upgrade().deref()).len() {
-                panic!("out of bounds access")
-            } else {
-                c.decay().offset(__idx as isize)
-            }
-        }
-        .read())
-            == 3)
-    );
-    assert!((({ sum_1(v.as_pointer(),) }) == 7));
-    return 0;
+    unimplemented!();
+    unimplemented!().write(9_());
+    unimplemented!();
+    unimplemented!().write(1_());
+    unimplemented!();
+    let mut p: Ptr<()> = (field_ptr!(h.as_pointer(), vec_));
+    unimplemented!();
+    unimplemented!().write(7_());
+    unimplemented!();
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let c: Ptr<()> = v.as_pointer();
+    unimplemented!();
+    unimplemented!();
+    return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

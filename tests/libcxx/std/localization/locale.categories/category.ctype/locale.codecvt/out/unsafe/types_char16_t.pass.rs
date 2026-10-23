@@ -28,10 +28,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "(std::is_same<F::intern_type, char16_t>::value)");;
     const _: () = assert!(true, "(std::is_same<F::extern_type, char>::value)");;
     const _: () = assert!(true, "(std::is_same<F::state_type, std::mbstate_t>::value)");;
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
+    let mut l: () = unimplemented!();
     unimplemented!();
-    let f: *const std_codecvt_char16_t__char____mbstate_t_ = (unsafe { use_facet_0(&l) });
-    &(*std::cell::LazyCell::force_mut(&mut *&raw mut id_1));
+    let f: *const () = (unsafe { use_facet_0(&l) });
+    &(*unimplemented!());
     (&(*f));
     return 0_();
 }

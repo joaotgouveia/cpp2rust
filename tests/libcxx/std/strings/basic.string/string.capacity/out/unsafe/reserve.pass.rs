@@ -180,7 +180,7 @@ pub unsafe fn test_9(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    (unsafe { s.reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -198,7 +198,7 @@ pub unsafe fn test_10(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    (unsafe { s.reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -216,7 +216,7 @@ pub unsafe fn test_11(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     let mut old_cap: () = unimplemented!();
     let mut s0: () = unimplemented!();
-    (unsafe { s.reserve_53() });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = std_locale::new_1({ c"C".as_ptr() });
+    let mut l: () = unimplemented!();
     {
         let cf: *const () = (unsafe { use_facet_0(&l) });
         unimplemented!();

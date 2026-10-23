@@ -27,9 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let l: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1({
-        Ptr::<()>::from_string_literal(b"C")
-    })));
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let cf: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
         unimplemented!();

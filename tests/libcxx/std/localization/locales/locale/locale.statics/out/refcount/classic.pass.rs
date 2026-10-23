@@ -6,7 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn check_for_0(loc: Ptr<std_locale>) {
+pub fn check_for_0(loc: Ptr<()>) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -20,7 +20,7 @@ pub fn check_for_0(loc: Ptr<std_locale>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn check_for_1(loc: Ptr<std_locale>) {
+pub fn check_for_1(loc: Ptr<()>) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -34,7 +34,7 @@ pub fn check_for_1(loc: Ptr<std_locale>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn check_2(loc: Ptr<std_locale>) {
+pub fn check_2(loc: Ptr<()>) {
     ({ check_for_0((loc).clone()) });
     ({ check_for_1((loc).clone()) });
     unimplemented!();
@@ -62,16 +62,12 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let loc: Value<std_locale> = Rc::new(RefCell::new(
-        (*({ std_locale::classic() }).upgrade().deref()).clone(),
-    ));
+    let loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     ({ check_2(loc.as_pointer()) });
     ({
-        let _loc: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1({
-            Ptr::<()>::from_string_literal(b"C")
-        })));
+        let _loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         check_2(_loc.as_pointer())
     });
     return 0_();

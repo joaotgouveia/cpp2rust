@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let sb: Value<std_strstreambuf> = Rc::new(RefCell::new(<std_strstreambuf>::default()));
+        let sb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -36,7 +36,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ (*sb.borrow()).freeze(Some(false)) });
+        unimplemented!();
     }
     return 0_();
 }

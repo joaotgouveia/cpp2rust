@@ -258,11 +258,11 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut a: [(); 2] = [unimplemented!(); 2];
-    let mut it: () = std_raw_storage_iterator_int_ptr__int_::new({ a.as_mut_ptr() });
+    let mut it: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { it.base() }) == (a.as_mut_ptr())) {
+        if !((unimplemented!()) == (a.as_mut_ptr())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -281,7 +281,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { (*unimplemented!()).base() }) == (a.as_mut_ptr().offset((1_()) as isize))) {
+        if !((unimplemented!()) == (a.as_mut_ptr().offset((1_()) as isize))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

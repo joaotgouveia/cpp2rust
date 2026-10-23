@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = <std_locale>::default();
+    let mut l: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

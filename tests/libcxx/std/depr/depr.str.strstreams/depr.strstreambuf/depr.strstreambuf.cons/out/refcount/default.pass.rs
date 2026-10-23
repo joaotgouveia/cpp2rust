@@ -6,7 +6,18 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-
+pub fn test_convertible_imp_0(mut _a0: ()) -> () {
+    return true;
+}
+pub fn test_convertible_imp_1(mut _a0: ()) -> () {
+    return false;
+}
+pub fn test_convertible_2() -> () {
+    return ({ test_convertible_imp_0(0_()) });
+}
+pub fn test_convertible_3() -> () {
+    return ({ test_convertible_imp_1(0_()) });
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -28,13 +39,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let s: Value<std_strstreambuf> = Rc::new(RefCell::new(<std_strstreambuf>::default()));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let s: Value<std_strstreambuf> =
-            Rc::new(RefCell::new(std_strstreambuf::new_1({ 1024_() })));
+        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

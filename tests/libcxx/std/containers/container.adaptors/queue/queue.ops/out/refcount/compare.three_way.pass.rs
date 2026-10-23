@@ -321,6 +321,86 @@ impl Default for nasty_list_LessAndEqComp_ {
         { nasty_list_LessAndEqComp_::new_1() }
     }
 }
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_int_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_int_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_const_int_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_const_int_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_StrongOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_StrongOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_const_StrongOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_const_StrongOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_WeakOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_WeakOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_const_WeakOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_const_WeakOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_PartialOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_PartialOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_const_PartialOrder_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_const_PartialOrder_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_LessAndEqComp_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_LessAndEqComp_ptr_ {}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(24)]
+pub struct nasty_list_const_LessAndEqComp_ptr_ {
+    #[offset(0)]
+    #[byte_size(24)]
+    pub l_: (),
+}
+impl nasty_list_const_LessAndEqComp_ptr_ {}
 pub fn operator_eq_1(x: Ptr<nasty_list_int_>, y: Ptr<nasty_list_int_>) -> () {
     return unimplemented!();
 }
@@ -4604,6 +4684,132 @@ pub trait nasty_list_LessAndEqComp_Impl {
 impl nasty_list_LessAndEqComp_Impl for Ptr<nasty_list_LessAndEqComp_> {
     fn destructor(&self) {}
 }
+pub trait nasty_list_LessAndEqComp_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_LessAndEqComp_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_LessAndEqComp_ptr_Impl for Ptr<nasty_list_LessAndEqComp_ptr_> {}
 pub trait nasty_list_PartialOrder_Impl {
     fn destructor(&self);
     fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_PartialOrder_> {
@@ -4730,6 +4936,132 @@ pub trait nasty_list_PartialOrder_Impl {
 impl nasty_list_PartialOrder_Impl for Ptr<nasty_list_PartialOrder_> {
     fn destructor(&self) {}
 }
+pub trait nasty_list_PartialOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_PartialOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_PartialOrder_ptr_Impl for Ptr<nasty_list_PartialOrder_ptr_> {}
 pub trait nasty_list_StrongOrder_Impl {
     fn destructor(&self);
     fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_StrongOrder_> {
@@ -4856,6 +5188,132 @@ pub trait nasty_list_StrongOrder_Impl {
 impl nasty_list_StrongOrder_Impl for Ptr<nasty_list_StrongOrder_> {
     fn destructor(&self) {}
 }
+pub trait nasty_list_StrongOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_StrongOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_StrongOrder_ptr_Impl for Ptr<nasty_list_StrongOrder_ptr_> {}
 pub trait nasty_list_WeakOrder_Impl {
     fn destructor(&self);
     fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_WeakOrder_> {
@@ -4982,6 +5440,762 @@ pub trait nasty_list_WeakOrder_Impl {
 impl nasty_list_WeakOrder_Impl for Ptr<nasty_list_WeakOrder_> {
     fn destructor(&self) {}
 }
+pub trait nasty_list_WeakOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_WeakOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_WeakOrder_ptr_Impl for Ptr<nasty_list_WeakOrder_ptr_> {}
+pub trait nasty_list_const_LessAndEqComp_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_const_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_const_LessAndEqComp_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_const_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_const_LessAndEqComp_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_const_LessAndEqComp_ptr_Impl for Ptr<nasty_list_const_LessAndEqComp_ptr_> {}
+pub trait nasty_list_const_PartialOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_const_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_const_PartialOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_const_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_const_PartialOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_const_PartialOrder_ptr_Impl for Ptr<nasty_list_const_PartialOrder_ptr_> {}
+pub trait nasty_list_const_StrongOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_const_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_const_StrongOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_const_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_const_StrongOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_const_StrongOrder_ptr_Impl for Ptr<nasty_list_const_StrongOrder_ptr_> {}
+pub trait nasty_list_const_WeakOrder_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_const_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_const_WeakOrder_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_const_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_const_WeakOrder_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_const_WeakOrder_ptr_Impl for Ptr<nasty_list_const_WeakOrder_ptr_> {}
+pub trait nasty_list_const_int_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_const_int_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_const_int_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_const_int_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_const_int_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_const_int_ptr_Impl for Ptr<nasty_list_const_int_ptr_> {}
 pub trait nasty_list_int_Impl {
     fn destructor(&self);
     fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_int_> {
@@ -5108,6 +6322,132 @@ pub trait nasty_list_int_Impl {
 impl nasty_list_int_Impl for Ptr<nasty_list_int_> {
     fn destructor(&self) {}
 }
+pub trait nasty_list_int_ptr_Impl {
+    fn destructor(&self) {
+        unimplemented!()
+    }
+    fn operator_assign_9(&self, il: ()) -> Ptr<nasty_list_int_ptr_> {
+        unimplemented!()
+    }
+    fn assign_11(&self, mut n: (), t: Ptr<()>) {
+        unimplemented!()
+    }
+    fn assign_12(&self, il: ()) {
+        unimplemented!()
+    }
+    fn begin_13(&self) -> () {
+        unimplemented!()
+    }
+    fn begin_14(&self) -> () {
+        unimplemented!()
+    }
+    fn end_15(&self) -> () {
+        unimplemented!()
+    }
+    fn end_16(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_17(&self) -> () {
+        unimplemented!()
+    }
+    fn rbegin_18(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_19(&self) -> () {
+        unimplemented!()
+    }
+    fn rend_20(&self) -> () {
+        unimplemented!()
+    }
+    fn cbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn cend(&self) -> () {
+        unimplemented!()
+    }
+    fn crbegin(&self) -> () {
+        unimplemented!()
+    }
+    fn crend(&self) -> () {
+        unimplemented!()
+    }
+    fn front_25(&self) -> () {
+        unimplemented!()
+    }
+    fn front_26(&self) -> () {
+        unimplemented!()
+    }
+    fn back_27(&self) -> () {
+        unimplemented!()
+    }
+    fn back_28(&self) -> () {
+        unimplemented!()
+    }
+    fn size(&self) -> () {
+        unimplemented!()
+    }
+    fn max_size(&self) -> () {
+        unimplemented!()
+    }
+    fn empty(&self) -> () {
+        unimplemented!()
+    }
+    fn push_front_32(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_33(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_back_34(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn push_front_35(&self, x: Ptr<()>) {
+        unimplemented!()
+    }
+    fn pop_front(&self) {
+        unimplemented!()
+    }
+    fn pop_back(&self) {
+        unimplemented!()
+    }
+    fn insert_41(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_42(&self, pos: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_43(&self, pos: (), mut n: (), x: Ptr<()>) -> () {
+        unimplemented!()
+    }
+    fn insert_45(&self, pos: (), il: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_46(&self, pos: ()) -> () {
+        unimplemented!()
+    }
+    fn erase_47(&self, first: (), last: ()) -> () {
+        unimplemented!()
+    }
+    fn resize_48(&self, mut n: ()) {
+        unimplemented!()
+    }
+    fn resize_49(&self, mut n: (), c: Ptr<()>) {
+        unimplemented!()
+    }
+    fn swap(&self, nl: Ptr<nasty_list_int_ptr_>) {
+        unimplemented!()
+    }
+    fn clear(&self) {
+        unimplemented!()
+    }
+    fn operator_addr_52(&self) -> Ptr<nasty_list_int_ptr_> {
+        unimplemented!()
+    }
+    fn operator_addr_53(&self) -> Ptr<nasty_list_int_ptr_> {
+        unimplemented!()
+    }
+}
+impl nasty_list_int_ptr_Impl for Ptr<nasty_list_int_ptr_> {}
 pub trait nasty_mutexImpl {
     fn destructor(&self);
     fn operator_addr(&self) -> Ptr<nasty_mutex>;

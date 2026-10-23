@@ -119,14 +119,15 @@ thread_local!(
 thread_local!(
     pub static move_called_14: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
 #[byte_size(4)]
 pub struct A3_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A3_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(id: Option<()>) -> Self {
+        let mut id: () = id.unwrap_or_else(|| 0_());
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A3_int_>) -> Self {
@@ -167,6 +168,11 @@ impl Clone for A3_int_ {
             id_: self.id_.clone(),
         }));
         A3_int_::copy_from(__src.as_pointer())
+    }
+}
+impl Default for A3_int_ {
+    fn default() -> Self {
+        { A3_int_::new(None) }
     }
 }
 pub fn operator_eq_17(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> () {
@@ -224,7 +230,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let a1: Value<()> = Rc::new(RefCell::new({
             let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new_2({ 4_() })));
             let __tmp_3: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 6_() })));
+            let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(6_()) })));
             std_scoped_allocator_adaptor_A1_double___A2_int___A3_int__::new_1(
                 { __tmp_2.as_pointer() },
                 { __tmp_3.as_pointer() },

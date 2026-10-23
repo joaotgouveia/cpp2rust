@@ -27,9 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let l: Value<std_locale> = Rc::new(RefCell::new(
-        (*({ std_locale::classic() }).upgrade().deref()).clone(),
-    ));
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let mut x1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { Ptr::<()>::from_string_literal(b"1234") },

@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
+    let mut l: () = unimplemented!();
     let from: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
         { c"some text".as_ptr() },
         None,
@@ -44,7 +44,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut mbs: () = unimplemented!();
     let mut from_next: *const () = std::ptr::null();
     let mut to_next: *mut () = std::ptr::null_mut();
-    let mut r: std_codecvt_base_result = unimplemented!();
+    let mut r: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

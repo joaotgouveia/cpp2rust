@@ -23,18 +23,18 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut p: std_exception_ptr = <std_exception_ptr>::default();
+    let mut p: () = unimplemented!();
     unimplemented!();
-    let mut p2: std_exception_ptr = p.clone();
+    let mut p2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     p2 = (p).clone();
     unimplemented!();
     unimplemented!();
-    let mut p3: std_exception_ptr = std_exception_ptr::new_1({ Default::default() });
+    let mut p3: () = unimplemented!();
     unimplemented!();
-    p3 = std_exception_ptr::new_1({ Default::default() });
+    p3 = unimplemented!();
     unimplemented!();
     return 0_();
 }

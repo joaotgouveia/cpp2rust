@@ -24,13 +24,7 @@ fn main_0() -> () {
     unimplemented!();
     ({
         ((*p.borrow()) as __gnu_pbds_detail_pairing_heap_int__std_less_int___std_allocator_char__)
-            .erase_if(
-                ({
-                    let ___fn: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    let ___x: Value<()> = Rc::new(RefCell::new(500_()));
-                    bind1st_0(___fn.as_pointer(), ___x.as_pointer())
-                }),
-            )
+            .erase_if(unimplemented!())
     });
     unimplemented!();
     0

@@ -30,7 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e: std_codecvt_mode = std_codecvt_mode_consume_header;
+    let mut e: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

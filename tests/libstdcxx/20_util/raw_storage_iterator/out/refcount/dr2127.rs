@@ -275,11 +275,9 @@ pub fn test01_10() {
         (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
     let mut addr: Ptr<MoveOnly> = (buf.as_pointer() as Ptr<()>).reinterpret_cast::<MoveOnly>();
-    let iter: Value<()> = Rc::new(RefCell::new(
-        std_raw_storage_iterator_MoveOnly_ptr__MoveOnly_::new({ (addr).clone() }),
-    ));
-    unimplemented!().write(MoveOnly::new({ 1_() }));
-    unimplemented!().write(MoveOnly::new({ 2_() }));
+    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

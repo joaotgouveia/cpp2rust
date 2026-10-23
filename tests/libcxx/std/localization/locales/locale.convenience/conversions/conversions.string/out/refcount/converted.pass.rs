@@ -13,19 +13,13 @@ impl TestHelper_wchar_t__4_ {
     pub fn test() {
         const _: () = assert!(true, "(std::is_same<CharT, wchar_t>::value)");;
         {
-            let myconv : Value<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
+            let myconv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
-            let mut bs: () = ({
-                (*myconv.borrow())
-                    .to_bytes_14(Ptr::<()>::from_string_literal(&[262147 as (), 0 as ()]))
-            });
+            let mut bs: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            let mut ws: () = ({
-                (*myconv.borrow())
-                    .from_bytes_10(Ptr::<()>::from_string_literal(b"\xf1\x80\x80\x83"))
-            });
+            let mut ws: () = unimplemented!();
             unimplemented!();
         }
     }

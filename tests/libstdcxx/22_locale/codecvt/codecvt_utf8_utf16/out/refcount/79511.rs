@@ -255,16 +255,16 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn conv_10(mut src: Ptr<()>) -> () {
-    let conv : Value<std_wstring_convert_std_codecvt_utf8_utf16_char16_t__1114111__0___char16_t__std_allocator_char16_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_utf16_char16_t__1114111__0___char16_t__std_allocator_char16_t___std_allocator_char__  >::default() )) ;
-    return ({ (*conv.borrow()).from_bytes_9(src) });
+    let conv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return unimplemented!();
 }
 pub fn conv_11(mut src: Ptr<()>) -> () {
-    let conv : Value<std_wstring_convert_std_codecvt_utf8_utf16_char32_t__1114111__0___char32_t__std_allocator_char32_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_utf16_char32_t__1114111__0___char32_t__std_allocator_char32_t___std_allocator_char__  >::default() )) ;
-    return ({ (*conv.borrow()).from_bytes_9(src) });
+    let conv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return unimplemented!();
 }
 pub fn conv_12(mut src: Ptr<()>) -> () {
-    let conv : Value<std_wstring_convert_std_codecvt_utf8_utf16_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ > = Rc::new(RefCell::new(<std_wstring_convert_std_codecvt_utf8_utf16_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__  >::default() )) ;
-    return ({ (*conv.borrow()).from_bytes_9(src) });
+    let conv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    return unimplemented!();
 }
 pub fn test01_13() {
     let mut __do_while = true;

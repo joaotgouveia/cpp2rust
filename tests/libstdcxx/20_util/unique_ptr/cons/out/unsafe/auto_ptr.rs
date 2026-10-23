@@ -260,12 +260,12 @@ impl __gnu_test_semaphore {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
 pub unsafe fn test01_10() {
-    let mut a: std_auto_ptr_A_ = <std_auto_ptr_A_>::default();
+    let mut a: () = unimplemented!();
     let mut a2: () = (*unimplemented!());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { a.get() }).is_null()) {
+        if !((unimplemented!()).is_null()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

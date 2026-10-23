@@ -25,11 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut buf: [(); 5] = std::mem::transmute(*b"abcd\0");
-        let mut sb: std_strstreambuf = std_strstreambuf::new_1(
-            { buf.as_mut_ptr() },
-            { ::std::mem::size_of::<[(); 5]>() },
-            None,
-        );
+        let mut sb: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -39,8 +35,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut buf: [(); 5] = std::mem::transmute(*b"abcd\0");
-        let mut sb: std_strstreambuf =
-            std_strstreambuf::new_1({ buf.as_mut_ptr() }, { 0_() }, None);
+        let mut sb: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -49,11 +44,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut buf: [(); 5] = std::mem::transmute(*b"abcd\0");
-        let mut sb: std_strstreambuf = std_strstreambuf::new_1(
-            { buf.as_mut_ptr() },
-            { ::std::mem::size_of::<[(); 5]>() },
-            { Some(buf.as_mut_ptr()) },
-        );
+        let mut sb: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -70,8 +61,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut buf: [(); 5] = std::mem::transmute(*b"abcd\0");
-        let mut sb: std_strstreambuf =
-            std_strstreambuf::new_1({ buf.as_mut_ptr() }, { 0_() }, { Some(buf.as_mut_ptr()) });
+        let mut sb: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -87,11 +77,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut buf: [(); 10] = std::mem::transmute(*b"abcd\0\0\0\0\0\0");
         let mut s: () = (unsafe { strlen_0((buf.as_mut_ptr()).cast_const()) });
-        let mut sb: std_strstreambuf = std_strstreambuf::new_1(
-            { buf.as_mut_ptr() },
-            { (::std::mem::size_of::<[(); 10]>() as ()).wrapping_sub(s) },
-            { Some(buf.as_mut_ptr().offset((s) as isize)) },
-        );
+        let mut sb: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

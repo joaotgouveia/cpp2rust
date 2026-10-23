@@ -32,15 +32,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: std_codecvt_utf8_char16_t__1114111__0_ =
             <std_codecvt_utf8_char16_t__1114111__0_>::default();
-        let mut r: () =
-            (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).always_noconv() });
+        let mut r: () = (unsafe { (c as ()).always_noconv() });
         unimplemented!();
     }
     {
         let mut c: std_codecvt_utf8_char32_t__1114111__0_ =
             <std_codecvt_utf8_char32_t__1114111__0_>::default();
-        let mut r: () =
-            (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).always_noconv() });
+        let mut r: () = (unsafe { (c as ()).always_noconv() });
         unimplemented!();
     }
     return 0_();

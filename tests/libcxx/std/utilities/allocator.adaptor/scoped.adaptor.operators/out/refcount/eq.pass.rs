@@ -12,14 +12,15 @@ thread_local!(
 thread_local!(
     pub static move_called_1: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg, MoveCtor)]
 #[byte_size(4)]
 pub struct A1_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A1_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(id: Option<()>) -> Self {
+        let mut id: () = id.unwrap_or_else(|| 0_());
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A1_int_>) -> Self {
@@ -60,6 +61,11 @@ impl Clone for A1_int_ {
             id_: self.id_.clone(),
         }));
         A1_int_::copy_from(__src.as_pointer())
+    }
+}
+impl Default for A1_int_ {
+    fn default() -> Self {
+        { A1_int_::new(None) }
     }
 }
 pub fn operator_eq_4(x: Ptr<A1_int_>, y: Ptr<A1_int_>) -> () {
@@ -117,14 +123,15 @@ pub fn operator_eq_8(x: Ptr<A2_int_>, y: Ptr<A2_int_>) -> () {
 thread_local!(
     pub static copy_called_9: Value<()> = Rc::new(RefCell::new(false));
 );
-#[derive(Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[derive(Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(4)]
 pub struct A3_int_ {
     #[offset(0)]
     id_: (),
 }
 impl A3_int_ {
-    pub fn new(mut id: ()) -> Self {
+    pub fn new(id: Option<()>) -> Self {
+        let mut id: () = id.unwrap_or_else(|| 0_());
         Self { id_: id }
     }
     pub fn copy_from(a: Ptr<A3_int_>) -> Self {
@@ -160,6 +167,11 @@ impl Clone for A3_int_ {
         A3_int_::copy_from(__src.as_pointer())
     }
 }
+impl Default for A3_int_ {
+    fn default() -> Self {
+        { A3_int_::new(None) }
+    }
+}
 pub fn operator_eq_13(x: Ptr<A3_int_>, y: Ptr<A3_int_>) -> () {
     return ({ ({ A3_int_Impl::id(&x) }) } == { ({ A3_int_Impl::id(&y) }) });
 }
@@ -184,7 +196,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let a1: Value<()> = Rc::new(RefCell::new(A1_int_::new({ 3_() })));
+        let a1: Value<()> = Rc::new(RefCell::new(A1_int_::new({ Some(3_()) })));
         let a2: Value<()> = Rc::new(RefCell::new(std_scoped_allocator_adaptor_A1_int__::new_1(
             { a1.as_pointer() },
         )));
@@ -193,7 +205,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 4_() })));
+            let __tmp_0: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
             let __tmp_1: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
             std_scoped_allocator_adaptor_A1_int___A2_int__::new_1({ __tmp_0.as_pointer() }, {
                 __tmp_1.as_pointer()
@@ -205,9 +217,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 4_() })));
+            let __tmp_2: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
             let __tmp_3: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 6_() })));
+            let __tmp_4: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(6_()) })));
             std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
                 { __tmp_2.as_pointer() },
                 { __tmp_3.as_pointer() },
@@ -220,9 +232,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let a1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 4_() })));
+            let __tmp_5: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
             let __tmp_6: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_7: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 6_() })));
+            let __tmp_7: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(6_()) })));
             std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
                 { __tmp_5.as_pointer() },
                 { __tmp_6.as_pointer() },
@@ -230,9 +242,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             )
         }));
         let a2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ 4_() })));
+            let __tmp_8: Value<A1_int_> = Rc::new(RefCell::new(A1_int_::new({ Some(4_()) })));
             let __tmp_9: Value<A2_int_> = Rc::new(RefCell::new(A2_int_::new({ 5_() })));
-            let __tmp_10: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ 5_() })));
+            let __tmp_10: Value<A3_int_> = Rc::new(RefCell::new(A3_int_::new({ Some(5_()) })));
             std_scoped_allocator_adaptor_A1_int___A2_int___A3_int__::new_1(
                 { __tmp_8.as_pointer() },
                 { __tmp_9.as_pointer() },

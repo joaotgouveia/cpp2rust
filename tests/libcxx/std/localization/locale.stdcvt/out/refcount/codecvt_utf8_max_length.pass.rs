@@ -12,18 +12,13 @@ pub struct TestHelper_wchar_t__4_ {}
 impl TestHelper_wchar_t__4_ {
     pub fn test() {
         {
-            let c: Value<std_codecvt_utf8_wchar_t__1114111__0_> = Rc::new(RefCell::new(
-                <std_codecvt_utf8_wchar_t__1114111__0_>::default(),
-            ));
-            let mut r: () = ({ ((*c.borrow()) as ()).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
         {
-            let c: Value<std_codecvt_utf8_wchar_t__4294967295__std_consume_header_> =
-                Rc::new(RefCell::new(
-                    <std_codecvt_utf8_wchar_t__4294967295__std_consume_header_>::default(),
-                ));
-            let mut r: () = ({ ((*c.borrow()) as ()).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
     }
@@ -34,20 +29,13 @@ pub struct TestHelper_char16_t__2_ {}
 impl TestHelper_char16_t__2_ {
     pub fn test() {
         {
-            let c: Value<std_codecvt_utf8_char16_t__1114111__0_> = Rc::new(RefCell::new(
-                <std_codecvt_utf8_char16_t__1114111__0_>::default(),
-            ));
-            let mut r: () =
-                ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
         {
-            let c: Value<std_codecvt_utf8_char16_t__4294967295__std_consume_header_> =
-                Rc::new(RefCell::new(
-                    <std_codecvt_utf8_char16_t__4294967295__std_consume_header_>::default(),
-                ));
-            let mut r: () =
-                ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
     }
@@ -58,20 +46,13 @@ pub struct TestHelper_char32_t__4_ {}
 impl TestHelper_char32_t__4_ {
     pub fn test() {
         {
-            let c: Value<std_codecvt_utf8_char32_t__1114111__0_> = Rc::new(RefCell::new(
-                <std_codecvt_utf8_char32_t__1114111__0_>::default(),
-            ));
-            let mut r: () =
-                ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
         {
-            let c: Value<std_codecvt_utf8_char32_t__4294967295__std_consume_header_> =
-                Rc::new(RefCell::new(
-                    <std_codecvt_utf8_char32_t__4294967295__std_consume_header_>::default(),
-                ));
-            let mut r: () =
-                ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+            let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut r: () = ({ (*c.borrow()).max_length() });
             unimplemented!();
         }
     }

@@ -25,9 +25,9 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut s: () = unimplemented!();
-        let mut b : std_wbuffer_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_char_traits_wchar_t__ = <std_wbuffer_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_char_traits_wchar_t__ >::default() ;
+        let mut b: () = unimplemented!();
         unimplemented!();
-        (unsafe { b.rdbuf_5(unimplemented!()) });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

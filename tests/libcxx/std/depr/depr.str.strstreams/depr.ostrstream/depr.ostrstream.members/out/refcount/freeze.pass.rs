@@ -28,17 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let out: Value<std_ostrstream> = Rc::new(RefCell::new(<std_ostrstream>::default()));
-        ({ (*out.borrow()).freeze(None) });
+        let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ (*out.borrow()).freeze(Some(false)) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        ({ (*out.borrow()).freeze(Some(false)) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
     }
     return 0_();
 }

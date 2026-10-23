@@ -6,7 +6,18 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-
+pub unsafe fn test_convertible_imp_0(mut _a0: ()) -> () {
+    return true;
+}
+pub unsafe fn test_convertible_imp_1(mut _a0: ()) -> () {
+    return false;
+}
+pub unsafe fn test_convertible_2() -> () {
+    return (unsafe { test_convertible_imp_0(0_()) });
+}
+pub unsafe fn test_convertible_3() -> () {
+    return (unsafe { test_convertible_imp_1(0_()) });
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -24,12 +35,12 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut s: std_strstreambuf = <std_strstreambuf>::default();
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut s: std_strstreambuf = std_strstreambuf::new_1({ 1024_() });
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

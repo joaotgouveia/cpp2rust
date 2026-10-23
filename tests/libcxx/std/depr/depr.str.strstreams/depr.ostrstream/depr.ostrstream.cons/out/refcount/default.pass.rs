@@ -27,7 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let out: Value<std_ostrstream> = Rc::new(RefCell::new(<std_ostrstream>::default()));
+    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 123_();
     let mut d: () = 4.5_f64;
     let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
@@ -36,7 +36,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );
     unimplemented!();
     unimplemented!();
-    ({ (*out.borrow()).freeze(Some(false)) });
+    unimplemented!();
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

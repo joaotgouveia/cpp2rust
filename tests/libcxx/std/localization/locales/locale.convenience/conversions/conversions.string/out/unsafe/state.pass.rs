@@ -23,8 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut myconv : std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ = <std_wstring_convert_std_codecvt_utf8_wchar_t__1114111__0___wchar_t__std_allocator_wchar_t___std_allocator_char__ >::default() ;
-    let mut s: () = (unsafe { myconv.state() });
+    let mut myconv: () = unimplemented!();
+    let mut s: () = unimplemented!();
     (&(s));
     return 0_();
 }

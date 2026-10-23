@@ -38,16 +38,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let c: Value<std_codecvt_utf8_utf16_char16_t__1114111__0_> = Rc::new(RefCell::new(
             <std_codecvt_utf8_utf16_char16_t__1114111__0_>::default(),
         ));
-        let mut r: () =
-            ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).always_noconv() });
+        let mut r: () = ({ ((*c.borrow()) as ()).always_noconv() });
         unimplemented!();
     }
     {
         let c: Value<std_codecvt_utf8_utf16_char32_t__1114111__0_> = Rc::new(RefCell::new(
             <std_codecvt_utf8_utf16_char32_t__1114111__0_>::default(),
         ));
-        let mut r: () =
-            ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).always_noconv() });
+        let mut r: () = ({ ((*c.borrow()) as ()).always_noconv() });
         unimplemented!();
     }
     return 0_();

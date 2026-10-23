@@ -514,7 +514,7 @@ impl Default for MaybePOCCAAllocator_int__false_ {
     fn default() -> Self {
         {
             MaybePOCCAAllocator_int__false_ {
-                id_: unimplemented!(),
+                id_: 0_(),
                 copy_assigned_into_: Ptr::<()>::null(),
             }
         }
@@ -581,7 +581,7 @@ impl Default for MaybePOCCAAllocator_int__true_ {
     fn default() -> Self {
         {
             MaybePOCCAAllocator_int__true_ {
-                id_: unimplemented!(),
+                id_: 0_(),
                 copy_assigned_into_: Ptr::<()>::null(),
             }
         }

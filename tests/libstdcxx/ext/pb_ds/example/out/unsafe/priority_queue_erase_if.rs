@@ -23,13 +23,8 @@ unsafe fn main_0() -> () {
     }
     unimplemented!();
     (unsafe {
-        (p as __gnu_pbds_detail_pairing_heap_int__std_less_int___std_allocator_char__).erase_if(
-            (unsafe {
-                let mut ___fn: () = unimplemented!();
-                let mut ___x: () = 500_();
-                bind1st_0(&mut ___fn, &mut ___x)
-            }),
-        )
+        (p as __gnu_pbds_detail_pairing_heap_int__std_less_int___std_allocator_char__)
+            .erase_if(unimplemented!())
     });
     unimplemented!();
     0

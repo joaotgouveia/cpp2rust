@@ -26,10 +26,10 @@ impl Char {
     }
 }
 thread_local!(
-    pub static id_0: Value<std_locale_id> = Rc::new(RefCell::new(<std_locale_id>::default()));
+    pub static id_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
-    pub static id_1: Value<std_locale_id> = Rc::new(RefCell::new(<std_locale_id>::default()));
+    pub static id_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 
 pub fn main() {
@@ -52,10 +52,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let l: Value<std_locale> = Rc::new(RefCell::new(std_locale::new_1(
-        { ({ std_locale::classic() }) },
-        { Ptr::alloc(unimplemented!()) },
-    )));
+    let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return 0_();
 }
 pub trait CharImpl {

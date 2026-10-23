@@ -258,13 +258,11 @@ pub fn test01_10() {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..2).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    let it: Value<()> = Rc::new(RefCell::new(std_raw_storage_iterator_int_ptr__int_::new({
-        (a.as_pointer() as Ptr<()>)
-    })));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*it.borrow()).base() }) == (a.as_pointer() as Ptr<()>)) {
+        if !(unimplemented!() == (a.as_pointer() as Ptr<()>)) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -283,9 +281,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*unimplemented!().upgrade().deref()).base() })
-            == (a.as_pointer() as Ptr<()>).offset((1_()) as isize))
-        {
+        if !(unimplemented!() == (a.as_pointer() as Ptr<()>).offset((1_()) as isize)) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

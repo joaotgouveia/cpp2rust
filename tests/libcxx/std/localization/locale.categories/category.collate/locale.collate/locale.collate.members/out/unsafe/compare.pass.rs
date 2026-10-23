@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut l: std_locale = (*(unsafe { std_locale::classic() })).clone();
+    let mut l: () = unimplemented!();
     {
         let ia: [(); 5] = std::mem::transmute(*b"1234\0");
         let sa: () = (::std::mem::size_of::<[(); 5]>() as ())
