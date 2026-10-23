@@ -295,6 +295,9 @@ ExprMatch findExpr(const clang::Expr *use) {
     return {};
   }
   consider(*key);
+  if (auto object = RuleKeys::GetObjectMemberKey(use); object && *object != *key) {
+    consider(*object);
+  }
   if (auto member = std::get_if<RuleKeys::Member>(&*key)) {
     consider(RuleKeys::Unqualified{member->name});
   }

@@ -51,6 +51,11 @@ inline const Constructor kAnyConstructor{nullptr};
 std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
                                   const clang::Expr *use);
 
+// A member call keyed by the class of its object rather than by the class
+// declaring the member: rules for inherited members are written on the
+// derived class.
+std::optional<ExprKey> GetObjectMemberKey(const clang::Expr *use);
+
 std::vector<ExprKey> GetExprKeys(clang::Sema &sema,
                                  const clang::NamedDecl *rule);
 

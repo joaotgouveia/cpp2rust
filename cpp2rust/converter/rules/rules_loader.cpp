@@ -83,7 +83,7 @@ public:
 
   bool VisitMemberExpr(clang::MemberExpr *expr) {
     AddReferencedDecl(expr->getMemberDecl());
-    auto object = expr->getBase()->getType();
+    auto object = expr->getBase()->IgnoreParenImpCasts()->getType();
     if (expr->isArrow()) {
       object = object->getPointeeType();
     }
@@ -95,7 +95,7 @@ public:
     if (auto method = llvm::dyn_cast_or_null<clang::CXXMethodDecl>(
             expr->getDirectCallee());
         method && expr->getNumArgs() > 0) {
-      AddMemberKey(expr->getArg(0)->getType(),
+      AddMemberKey(expr->getArg(0)->IgnoreParenImpCasts()->getType(),
                    MemberName(method->getDeclName()));
     }
     return true;

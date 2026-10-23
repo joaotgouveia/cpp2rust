@@ -255,6 +255,43 @@ substituteSpecializationInRuleTmpl(clang::Sema &sema,
   return result.isInvalid() || trial.failed() ? nullptr : result.get();
 }
 
+// A static member named through its class (std::numeric_limits<T1>::min())
+// binds the rule's parameters from the class of the member the use names.
+std::optional<std::vector<clang::TemplateArgument>>
+deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
+                    const clang::Expr *use) {
+  auto returned = RuleDecls::GetReturned(rule->getTemplatedDecl());
+  if (!returned) {
+    return std::nullopt;
+  }
+  returned = RuleDecls::SkipImplicit(returned);
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
+    returned = call->getCallee()->IgnoreParenImpCasts();
+  }
+  auto ref = llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(returned);
+  if (!ref ||
+      ref->getQualifier().getKind() != clang::NestedNameSpecifier::Kind::Type) {
+    return std::nullopt;
+  }
+  use = RuleDecls::SkipImplicit(use);
+  const clang::Decl *used = nullptr;
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(use)) {
+    used = call->getDirectCallee();
+  } else if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(use)) {
+    used = ref->getDecl();
+  }
+  auto record = used ? llvm::dyn_cast<clang::CXXRecordDecl>(
+                           used->getDeclContext())
+                     : nullptr;
+  if (!record) {
+    return std::nullopt;
+  }
+  return RuleDecls::DeduceFromType(
+      sema, rule->getTemplateParameters(),
+      clang::QualType(ref->getQualifier().getAsType(), 0),
+      sema.Context.getCanonicalTagType(record));
+}
+
 clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
                                               clang::FunctionTemplateDecl *rule,
                                               const clang::Expr *use) {
@@ -275,10 +312,24 @@ clang::TemplateArgumentListInfo getResultArgs(clang::Sema &sema,
           ->getType()
           .getCanonicalType()
           .getUnqualifiedType());
+  auto last = static_cast<unsigned>(deducible.find_last_unset());
+  auto bound = [&](const auto &args) {
+    for (unsigned i = 0; i < params->size() && i <= last; ++i) {
+      if (!params->getParam(i)->isParameterPack() && args[i].isNull()) {
+        return false;
+      }
+    }
+    return true;
+  };
+  if (!deduced || !bound(*deduced)) {
+    if (auto qualified = deduceFromQualifier(sema, rule, use);
+        qualified && bound(*qualified)) {
+      deduced = std::move(qualified);
+    }
+  }
   if (!deduced) {
     return explicit_args;
   }
-  auto last = static_cast<unsigned>(deducible.find_last_unset());
   for (unsigned i = 0; i < params->size() && i <= last; ++i) {
     auto param = params->getParam(i);
     if (param->isParameterPack() || (*deduced)[i].isNull()) {

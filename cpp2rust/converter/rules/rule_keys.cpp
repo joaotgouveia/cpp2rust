@@ -151,6 +151,24 @@ std::optional<ExprKey> GetDeclKey(const clang::NamedDecl *decl) {
   return getMemberKey(getParent(decl), decl->getDeclName());
 }
 
+std::optional<ExprKey> GetObjectMemberKey(const clang::Expr *use) {
+  use = RuleDecls::SkipImplicit(use);
+  if (auto call = llvm::dyn_cast<clang::CXXMemberCallExpr>(use);
+      call && call->getMethodDecl()) {
+    auto object = call->getImplicitObjectArgument()->IgnoreParenImpCasts();
+    return getMemberKey(getParent(object->getType()),
+                        call->getMethodDecl()->getDeclName());
+  }
+  if (auto call = llvm::dyn_cast<clang::CXXOperatorCallExpr>(use);
+      call && call->getNumArgs() > 0 &&
+      llvm::isa_and_nonnull<clang::CXXMethodDecl>(call->getDirectCallee())) {
+    auto object = call->getArg(0)->IgnoreParenImpCasts();
+    return getMemberKey(getParent(object->getType()),
+                        call->getDirectCallee()->getDeclName());
+  }
+  return std::nullopt;
+}
+
 std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
                                   const clang::Expr *expr) {
   expr = RuleDecls::SkipImplicit(expr);
