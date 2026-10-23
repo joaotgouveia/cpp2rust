@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let a: Value<()> = Rc::new(RefCell::new({
         let __tmp_0: Value<()> = Rc::new(RefCell::new(5_()));
-        std_any::new_1(
+        std_any::new(
             { (*in_place_type_11.with(Value::clone).borrow()).clone() },
             { __tmp_0.as_pointer() },
         )
@@ -284,7 +284,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let b: Value<()> = Rc::new(RefCell::new(std_any::new_2(
+    let b: Value<()> = Rc::new(RefCell::new(std_any::new(
         { (*in_place_type_11.with(Value::clone).borrow()).clone() },
         { unimplemented!() },
     )));

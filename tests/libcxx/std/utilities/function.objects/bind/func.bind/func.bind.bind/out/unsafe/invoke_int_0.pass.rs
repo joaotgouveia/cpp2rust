@@ -6,31 +6,7 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0(mut f: std___bind_int__ref____, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_1(mut f: std___bind_int__ptr____, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_2(mut f: std___bind_A_int_0_, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_3(mut f: std___bind_r_int__int__ref____, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_4(mut f: std___bind_r_int__int__ptr____, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_5(mut f: std___bind_r_int__A_int_0_, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_const_6(f: *const std___bind_A_int_0_, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn test_const_7(f: *const std___bind_r_int__A_int_0_, mut expected: ()) {
-    unimplemented!();
-}
-pub unsafe fn f_8() -> () {
+pub unsafe fn f_0() -> () {
     return 1_();
 }
 #[repr(C)]
@@ -44,22 +20,22 @@ impl A_int_0 {
         return 5_();
     }
 }
-pub unsafe fn test_all_9() -> () {
-    (unsafe { test_0((unsafe { bind_10(Some(f_8)) }), 1_()) });
+pub unsafe fn test_all_1() -> () {
+    (unsafe { test_2((unsafe { bind_3(Some(f_0)) }), 1_()) });
     (unsafe {
-        test_1(
+        test_4(
             (unsafe {
-                let mut ___f: Option<unsafe fn() -> ()> = (Some(f_8));
-                bind_11(&mut ___f)
+                let mut ___f: Option<unsafe fn() -> ()> = (Some(f_0));
+                bind_5(&mut ___f)
             }),
             1_(),
         )
     });
     (unsafe {
-        test_2(
+        test_6(
             (unsafe {
                 let mut ___f: A_int_0 = <A_int_0>::default();
-                bind_12(&mut ___f)
+                bind_7(&mut ___f)
             }),
             4_(),
         )
@@ -67,25 +43,25 @@ pub unsafe fn test_all_9() -> () {
     (unsafe {
         let mut _f: std___bind_A_int_0_ = (unsafe {
             let mut ___f: A_int_0 = <A_int_0>::default();
-            bind_12(&mut ___f)
+            bind_7(&mut ___f)
         });
-        test_const_6(&mut _f, 5_())
+        test_const_8(&mut _f, 5_())
     });
-    (unsafe { test_3((unsafe { bind_13(Some(f_8)) }), 1_()) });
+    (unsafe { test_9((unsafe { bind_10(Some(f_0)) }), 1_()) });
     (unsafe {
-        test_4(
+        test_11(
             (unsafe {
-                let mut ___f: Option<unsafe fn() -> ()> = (Some(f_8));
-                bind_14(&mut ___f)
+                let mut ___f: Option<unsafe fn() -> ()> = (Some(f_0));
+                bind_12(&mut ___f)
             }),
             1_(),
         )
     });
     (unsafe {
-        test_5(
+        test_13(
             (unsafe {
                 let mut ___f: A_int_0 = <A_int_0>::default();
-                bind_15(&mut ___f)
+                bind_14(&mut ___f)
             }),
             4_(),
         )
@@ -93,9 +69,9 @@ pub unsafe fn test_all_9() -> () {
     (unsafe {
         let mut _f: std___bind_r_int__A_int_0_ = (unsafe {
             let mut ___f: A_int_0 = <A_int_0>::default();
-            bind_15(&mut ___f)
+            bind_14(&mut ___f)
         });
-        test_const_7(&mut _f, 5_())
+        test_const_15(&mut _f, 5_())
     });
     return true;
 }
@@ -115,7 +91,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_all_9() });
+    (unsafe { test_all_1() });
     const _: () = assert!(true, "test_all()");;
     return 0_();
 }

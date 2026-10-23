@@ -11,67 +11,7 @@ pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_bool__const_bool_ {}
-pub unsafe fn test_1(_a0: *const std___bind_C_) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub unsafe fn test_2(_a0: *const std___bind_C__const_std_placeholders___ph_2__ref_) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub unsafe fn test_3(_a0: *const std___bind_r_int__C_) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub unsafe fn test_4(_a0: *const ()) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub unsafe fn test_5(_a0: *const std_placeholders___ph_2_) {
+pub unsafe fn test_1(_a0: *const ()) {
     const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
     const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
@@ -113,26 +53,26 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         let mut _arg0: std___bind_C_ = (unsafe {
             let mut ___f: C = <C>::default();
-            bind_6(&mut ___f)
-        });
-        test_1(&mut _arg0)
-    });
-    (unsafe {
-        let mut _arg0: std___bind_C__const_std_placeholders___ph_2__ref_ = unimplemented!();
-        test_2(&mut _arg0)
-    });
-    (unsafe {
-        let mut _arg0: std___bind_r_int__C_ = (unsafe {
-            let mut ___f: C = <C>::default();
-            bind_7(&mut ___f)
+            bind_2(&mut ___f)
         });
         test_3(&mut _arg0)
     });
     (unsafe {
-        let mut _arg0: () = 1_();
+        let mut _arg0: std___bind_C__const_std_placeholders___ph_2__ref_ = unimplemented!();
         test_4(&mut _arg0)
     });
-    (unsafe { test_5(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _2_8))) });
+    (unsafe {
+        let mut _arg0: std___bind_r_int__C_ = (unsafe {
+            let mut ___f: C = <C>::default();
+            bind_5(&mut ___f)
+        });
+        test_6(&mut _arg0)
+    });
+    (unsafe {
+        let mut _arg0: () = 1_();
+        test_1(&mut _arg0)
+    });
+    (unsafe { test_7(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _2_8))) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

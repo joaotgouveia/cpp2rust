@@ -256,47 +256,7 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-pub unsafe fn test_10(
-    s: *const __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__,
-) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( s , )
-    }) == (unsafe {
-        let mut ___str: () = (unsafe { ((*s) as ())() });
-        unimplemented!()(&mut ___str)
-    }));
-}
-pub unsafe fn test_11(
-    s : *const __gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__,
-) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { ((*s) as ())() });
-        unimplemented!()(&mut ___s)
-    }));
-}
-pub unsafe fn test_12(
-    s : *const __gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__,
-) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { ((*s) as ())() });
-        unimplemented!()(&mut ___s)
-    }));
-}
-pub unsafe fn test_13(
-    s: *const __gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__,
-) -> () {
-    return ((unsafe {
-        ( unimplemented!() as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( s , )
-    }) == (unsafe {
-        let mut ___s: () = (unsafe { ((*s) as ())() });
-        unimplemented!()(&mut ___s)
-    }));
-}
-pub unsafe fn test01_14() {
+pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -306,10 +266,10 @@ pub unsafe fn test01_14() {
                     { c"a narrow string".as_ptr() },
                     None,
                 );
-            test_10(&mut _s)
+            test_11(&mut _s)
         }) {
             (unsafe {
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -328,10 +288,10 @@ pub unsafe fn test01_14() {
         __do_while = false;
         if !(unsafe {
             let mut _s : __gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__  = __gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 49 as () , 54 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
-            test_11(&mut _s)
+            test_13(&mut _s)
         }) {
             (unsafe {
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -350,10 +310,10 @@ pub unsafe fn test01_14() {
         __do_while = false;
         if !(unsafe {
             let mut _s : __gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__  = __gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__ :: new_1 ( { [97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 51 as () , 50 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
-            test_12(&mut _s)
+            test_14(&mut _s)
         }) {
             (unsafe {
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -372,10 +332,10 @@ pub unsafe fn test01_14() {
         __do_while = false;
         if !(unsafe {
             let mut _s : __gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__  = __gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { [97 as () , 32 as () , 119 as () , 105 as () , 100 as () , 101 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] .as_ptr() } , None , )  ;
-            test_13(&mut _s)
+            test_15(&mut _s)
         }) {
             (unsafe {
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -397,7 +357,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { test01_14() });
+    (unsafe { test01_10() });
     0
 }
 impl __gnu_test_semaphore {
@@ -550,7 +510,7 @@ pub unsafe fn run_tests_wrapped_locale_25(mut name: *const (), l: *const __gnu_t
             __do_while = false;
             if !(unimplemented!()) {
                 (unsafe {
-                    __builtin_fprintf_15 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
+                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
                 });
                 unimplemented!();
             }

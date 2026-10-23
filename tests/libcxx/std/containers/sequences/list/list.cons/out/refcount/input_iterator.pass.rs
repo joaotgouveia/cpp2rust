@@ -1805,46 +1805,6 @@ pub trait forward_sized_iterator_int_ptr_Impl {
     }
 }
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
-pub trait limited_alloc_handle_6_Impl {
-    fn allocate_1_struct_std___list_node_int__void_ptr_(
-        &self,
-        N: (),
-    ) -> Ptr<std___list_node_int__void_ptr_>;
-    fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &self,
-        ptr: Ptr<std___list_node_int__void_ptr_>,
-        N: (),
-    );
-}
-impl limited_alloc_handle_6_Impl for Ptr<limited_alloc_handle_6_> {
-    fn allocate_1_struct_std___list_node_int__void_ptr_(
-        &self,
-        mut N: (),
-    ) -> Ptr<std___list_node_int__void_ptr_> {
-        if ((N).wrapping_add((*self).with(|__s| __s.outstanding_)) > 6_()) {
-            unimplemented!();
-        }
-        let alloc: Value<Ptr<std___list_node_int__void_ptr_>> =
-            Rc::new(RefCell::new(unimplemented!()));
-        field!((*self), last_alloc_).write((*alloc.borrow()).to_any());
-        field!((*self), outstanding_)
-            .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_add(N) });
-        return (*alloc.borrow()).clone();
-    }
-    fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &self,
-        mut ptr: Ptr<std___list_node_int__void_ptr_>,
-        mut N: (),
-    ) {
-        if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
-            field!((*self), last_alloc_).write(unimplemented!());
-            unimplemented!();
-            field!((*self), outstanding_)
-                .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
-        }
-        unimplemented!();
-    }
-}
 pub trait limited_allocator_int__6_Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()

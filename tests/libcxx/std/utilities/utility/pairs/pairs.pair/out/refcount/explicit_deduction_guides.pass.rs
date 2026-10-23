@@ -24,7 +24,7 @@ pub fn test_decay_3() {
     let pr: Value<()> = Rc::new(RefCell::new({
         let __tmp_0: Value<Ptr<()>> = Rc::new(RefCell::new((arr.as_pointer() as Ptr<()>)));
         let __tmp_1: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(dummy_2)));
-        std_pair_char_ptr__void__ptr____::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
+        std_pair_char_ptr__void__ptr____::new_1({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
     }));
     const _: () = assert!(true, "");;
     unimplemented!();

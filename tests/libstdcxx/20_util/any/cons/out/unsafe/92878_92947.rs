@@ -266,7 +266,7 @@ pub unsafe fn test01_10() {
     let mut x: () = {
         let mut __tmp_0: () = 1_();
         let mut __tmp_1: () = 2_();
-        std_any::new_1(
+        std_any::new(
             { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
             { &mut __tmp_0 },
             { &mut __tmp_1 },
@@ -312,7 +312,7 @@ pub unsafe fn test01_10() {
     }
     let mut y: () = {
         let mut __tmp_2: () = 1_();
-        std_any::new_2(
+        std_any::new(
             { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
             { &mut __tmp_2 },
         )
@@ -355,7 +355,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut z: () = std_any::new_3({
+    let mut z: () = std_any::new({
         (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone()
     });
     let mut __do_while = true;

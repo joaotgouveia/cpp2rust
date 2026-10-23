@@ -197,21 +197,21 @@ pub unsafe fn get_test_data_36() -> () {
                 return {
                     let mut __tmp_0: () = 4660_();
                     let mut __tmp_1: () = 13330_();
-                    std_pair_wchar_t__wchar_t_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
+                    std_pair_wchar_t__wchar_t_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_2: () = 1622115587_();
                     let mut __tmp_3: () = 59092832_();
-                    std_pair_wchar_t__wchar_t_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
+                    std_pair_wchar_t__wchar_t_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_4: () = 2006148102_();
                     let mut __tmp_5: () = -1795240533_();
-                    std_pair_wchar_t__wchar_t_::new_1({ &mut __tmp_4 }, { &mut __tmp_5 })
+                    std_pair_wchar_t__wchar_t_::new({ &mut __tmp_4 }, { &mut __tmp_5 })
                 };
             }
             _ => {
@@ -229,21 +229,21 @@ pub unsafe fn get_test_data_37() -> () {
                 return {
                     let mut __tmp_6: () = 4660_();
                     let mut __tmp_7: () = 13330_();
-                    std_pair_short__short_::new_1({ &mut __tmp_6 }, { &mut __tmp_7 })
+                    std_pair_short__short_::new({ &mut __tmp_6 }, { &mut __tmp_7 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_8: () = -31485_();
                     let mut __tmp_9: () = -20640_();
-                    std_pair_short__short_::new_1({ &mut __tmp_8 }, { &mut __tmp_9 })
+                    std_pair_short__short_::new({ &mut __tmp_8 }, { &mut __tmp_9 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_10: () = 25606_();
                     let mut __tmp_11: () = -12885_();
-                    std_pair_short__short_::new_1({ &mut __tmp_10 }, { &mut __tmp_11 })
+                    std_pair_short__short_::new({ &mut __tmp_10 }, { &mut __tmp_11 })
                 };
             }
             _ => {
@@ -261,7 +261,7 @@ pub unsafe fn get_test_data_38() -> () {
                 return {
                     let mut __tmp_12: () = 4660_();
                     let mut __tmp_13: () = 13330_();
-                    std_pair_unsigned_short__unsigned_short_::new_1({ &mut __tmp_12 }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ &mut __tmp_12 }, {
                         &mut __tmp_13
                     })
                 };
@@ -270,7 +270,7 @@ pub unsafe fn get_test_data_38() -> () {
                 return {
                     let mut __tmp_14: () = 34051_();
                     let mut __tmp_15: () = 44896_();
-                    std_pair_unsigned_short__unsigned_short_::new_1({ &mut __tmp_14 }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ &mut __tmp_14 }, {
                         &mut __tmp_15
                     })
                 };
@@ -279,7 +279,7 @@ pub unsafe fn get_test_data_38() -> () {
                 return {
                     let mut __tmp_16: () = 25606_();
                     let mut __tmp_17: () = 52651_();
-                    std_pair_unsigned_short__unsigned_short_::new_1({ &mut __tmp_16 }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ &mut __tmp_16 }, {
                         &mut __tmp_17
                     })
                 };
@@ -299,21 +299,21 @@ pub unsafe fn get_test_data_39() -> () {
                 return {
                     let mut __tmp_18: () = (4660_() as ());
                     let mut __tmp_19: () = (13330_() as ());
-                    std_pair_int__int_::new_1({ &mut __tmp_18 }, { &mut __tmp_19 })
+                    std_pair_int__int_::new({ &mut __tmp_18 }, { &mut __tmp_19 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_20: () = (1622115587_() as ());
                     let mut __tmp_21: () = (59092832_() as ());
-                    std_pair_int__int_::new_1({ &mut __tmp_20 }, { &mut __tmp_21 })
+                    std_pair_int__int_::new({ &mut __tmp_20 }, { &mut __tmp_21 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_22: () = 2006148102_();
                     let mut __tmp_23: () = -1795240533_();
-                    std_pair_int__int_::new_1({ &mut __tmp_22 }, { &mut __tmp_23 })
+                    std_pair_int__int_::new({ &mut __tmp_22 }, { &mut __tmp_23 })
                 };
             }
             _ => {
@@ -331,27 +331,21 @@ pub unsafe fn get_test_data_40() -> () {
                 return {
                     let mut __tmp_24: () = 4660_();
                     let mut __tmp_25: () = 13330_();
-                    std_pair_unsigned_int__unsigned_int_::new_1({ &mut __tmp_24 }, {
-                        &mut __tmp_25
-                    })
+                    std_pair_unsigned_int__unsigned_int_::new({ &mut __tmp_24 }, { &mut __tmp_25 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_26: () = 1622115587_();
                     let mut __tmp_27: () = 59092832_();
-                    std_pair_unsigned_int__unsigned_int_::new_1({ &mut __tmp_26 }, {
-                        &mut __tmp_27
-                    })
+                    std_pair_unsigned_int__unsigned_int_::new({ &mut __tmp_26 }, { &mut __tmp_27 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_28: () = 2006148102_();
                     let mut __tmp_29: () = 2499726763_();
-                    std_pair_unsigned_int__unsigned_int_::new_1({ &mut __tmp_28 }, {
-                        &mut __tmp_29
-                    })
+                    std_pair_unsigned_int__unsigned_int_::new({ &mut __tmp_28 }, { &mut __tmp_29 })
                 };
             }
             _ => {
@@ -369,21 +363,21 @@ pub unsafe fn get_test_data_41() -> () {
                 return {
                     let mut __tmp_30: () = 4660_();
                     let mut __tmp_31: () = 13330_();
-                    std_pair_long__long_::new_1({ &mut __tmp_30 }, { &mut __tmp_31 })
+                    std_pair_long__long_::new({ &mut __tmp_30 }, { &mut __tmp_31 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_32: () = 1622115587_();
                     let mut __tmp_33: () = 59092832_();
-                    std_pair_long__long_::new_1({ &mut __tmp_32 }, { &mut __tmp_33 })
+                    std_pair_long__long_::new({ &mut __tmp_32 }, { &mut __tmp_33 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_34: () = -6066913209383427066_();
                     let mut __tmp_35: () = (460655203708751275_() as ());
-                    std_pair_long__long_::new_1({ &mut __tmp_34 }, { &mut __tmp_35 })
+                    std_pair_long__long_::new({ &mut __tmp_34 }, { &mut __tmp_35 })
                 };
             }
             _ => {
@@ -401,7 +395,7 @@ pub unsafe fn get_test_data_42() -> () {
                 return {
                     let mut __tmp_36: () = 4660_();
                     let mut __tmp_37: () = 13330_();
-                    std_pair_unsigned_long__unsigned_long_::new_1({ &mut __tmp_36 }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ &mut __tmp_36 }, {
                         &mut __tmp_37
                     })
                 };
@@ -410,7 +404,7 @@ pub unsafe fn get_test_data_42() -> () {
                 return {
                     let mut __tmp_38: () = 1622115587_();
                     let mut __tmp_39: () = 59092832_();
-                    std_pair_unsigned_long__unsigned_long_::new_1({ &mut __tmp_38 }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ &mut __tmp_38 }, {
                         &mut __tmp_39
                     })
                 };
@@ -419,7 +413,7 @@ pub unsafe fn get_test_data_42() -> () {
                 return {
                     let mut __tmp_40: () = (12379830864326124550_() as ());
                     let mut __tmp_41: () = 460655203708751275_();
-                    std_pair_unsigned_long__unsigned_long_::new_1({ &mut __tmp_40 }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ &mut __tmp_40 }, {
                         &mut __tmp_41
                     })
                 };
@@ -439,21 +433,21 @@ pub unsafe fn get_test_data_43() -> () {
                 return {
                     let mut __tmp_42: () = 4660_();
                     let mut __tmp_43: () = 13330_();
-                    std_pair_long_long__long_long_::new_1({ &mut __tmp_42 }, { &mut __tmp_43 })
+                    std_pair_long_long__long_long_::new({ &mut __tmp_42 }, { &mut __tmp_43 })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let mut __tmp_44: () = 1622115587_();
                     let mut __tmp_45: () = 59092832_();
-                    std_pair_long_long__long_long_::new_1({ &mut __tmp_44 }, { &mut __tmp_45 })
+                    std_pair_long_long__long_long_::new({ &mut __tmp_44 }, { &mut __tmp_45 })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let mut __tmp_46: () = -6066913209383427066_();
                     let mut __tmp_47: () = 460655203708751275_();
-                    std_pair_long_long__long_long_::new_1({ &mut __tmp_46 }, { &mut __tmp_47 })
+                    std_pair_long_long__long_long_::new({ &mut __tmp_46 }, { &mut __tmp_47 })
                 };
             }
             _ => {
@@ -471,7 +465,7 @@ pub unsafe fn get_test_data_44() -> () {
                 return {
                     let mut __tmp_48: () = 4660_();
                     let mut __tmp_49: () = 13330_();
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1({ &mut __tmp_48 }, {
+                    std_pair_unsigned_long_long__unsigned_long_long_::new({ &mut __tmp_48 }, {
                         &mut __tmp_49
                     })
                 };
@@ -480,7 +474,7 @@ pub unsafe fn get_test_data_44() -> () {
                 return {
                     let mut __tmp_50: () = 1622115587_();
                     let mut __tmp_51: () = 59092832_();
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1({ &mut __tmp_50 }, {
+                    std_pair_unsigned_long_long__unsigned_long_long_::new({ &mut __tmp_50 }, {
                         &mut __tmp_51
                     })
                 };
@@ -489,7 +483,7 @@ pub unsafe fn get_test_data_44() -> () {
                 return {
                     let mut __tmp_52: () = 12379830864326124550_();
                     let mut __tmp_53: () = 460655203708751275_();
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1({ &mut __tmp_52 }, {
+                    std_pair_unsigned_long_long__unsigned_long_long_::new({ &mut __tmp_52 }, {
                         &mut __tmp_53
                     })
                 };

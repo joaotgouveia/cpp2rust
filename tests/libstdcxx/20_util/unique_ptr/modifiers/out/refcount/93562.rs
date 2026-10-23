@@ -263,7 +263,11 @@ pub fn test02_11(p1: Ptr<()>, p2: Ptr<()>) {
     unimplemented!();
 }
 pub fn swap_12(lhs: Ptr<A_Deleter>, rhs: Ptr<A_Deleter>) {
-    unimplemented!();
+    ({
+        let ___a: Ptr<()> = field_ptr!(lhs, id);
+        let ___b: Ptr<()> = field_ptr!(rhs, id);
+        swap_13(___a, ___b)
+    });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -273,9 +277,15 @@ pub struct A_Deleter {
 }
 const _: () = assert!(true, "!std::is_move_assignable<Deleter>::value");
 const _: () = assert!(true, "std::is_swappable_v<Deleter>");
-pub fn test03_13() {
-    let mut p1: () = unimplemented!();
-    let mut p2: () = unimplemented!();
+pub fn test03_14() {
+    let mut p1: () = {
+        let __tmp_0: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -1_() }));
+        std_unique_ptr_int__A_Deleter_::new({ Ptr::alloc(1_()) }, { __tmp_0.as_pointer() })
+    };
+    let mut p2: () = {
+        let __tmp_1: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -2_() }));
+        std_unique_ptr_int__A_Deleter_::new({ Ptr::alloc(2_()) }, { __tmp_1.as_pointer() })
+    };
     let mut pi1: Ptr<()> = unimplemented!();
     let mut pi2: Ptr<()> = unimplemented!();
     unimplemented!();
@@ -284,7 +294,7 @@ pub fn test03_13() {
         __do_while = false;
         if !({ unimplemented!() } == { (pi2).clone() }) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -303,7 +313,7 @@ pub fn test03_13() {
         __do_while = false;
         if !(unimplemented!().with(|__s| __s.id) == -2_()) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -322,7 +332,7 @@ pub fn test03_13() {
         __do_while = false;
         if !({ unimplemented!() } == { (pi1).clone() }) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -341,7 +351,7 @@ pub fn test03_13() {
         __do_while = false;
         if !(unimplemented!().with(|__s| __s.id) == -1_()) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -356,9 +366,19 @@ pub fn test03_13() {
         }
     }
 }
-pub fn test04_15() {
-    let mut p1: () = unimplemented!();
-    let mut p2: () = unimplemented!();
+pub fn test04_16() {
+    let mut p1: () = {
+        let __tmp_2: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -1_() }));
+        std_unique_ptr_intarrarr__A_Deleter_::new({ Ptr::alloc_array(Box::new([1_()])) }, {
+            __tmp_2.as_pointer()
+        })
+    };
+    let mut p2: () = {
+        let __tmp_3: Value<A_Deleter> = Rc::new(RefCell::new(A_Deleter { id: -2_() }));
+        std_unique_ptr_intarrarr__A_Deleter_::new({ Ptr::alloc_array(Box::new([2_(), 2_()])) }, {
+            __tmp_3.as_pointer()
+        })
+    };
     let mut pi1: Ptr<()> = unimplemented!();
     let mut pi2: Ptr<()> = unimplemented!();
     unimplemented!();
@@ -367,7 +387,7 @@ pub fn test04_15() {
         __do_while = false;
         if !({ unimplemented!() } == { (pi2).clone() }) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -386,7 +406,7 @@ pub fn test04_15() {
         __do_while = false;
         if !(unimplemented!().with(|__s| __s.id) == -2_()) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -405,7 +425,7 @@ pub fn test04_15() {
         __do_while = false;
         if !({ unimplemented!() } == { (pi1).clone() }) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -424,7 +444,7 @@ pub fn test04_15() {
         __do_while = false;
         if !(unimplemented!().with(|__s| __s.id) == -1_()) {
             ({
-                __builtin_fprintf_14(
+                __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -444,8 +464,8 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test03_13() });
-    ({ test04_15() });
+    ({ test03_14() });
+    ({ test04_16() });
     0
 }
 impl __gnu_test_semaphore {
@@ -455,9 +475,9 @@ impl __gnu_test_semaphore {
             pid_: 0 as ::libc::pid_t,
         }));
         let this: Ptr<__gnu_test_semaphore> = __this.as_pointer();
-        field!(this, pid_).write((({ getpid_16() }) as ::libc::pid_t));
+        field!(this, pid_).write((({ getpid_17() }) as ::libc::pid_t));
         field!(this, sem_set_)
-            .write(({ semget_17(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
+            .write(({ semget_18(((0_() as ()) as ::libc::key_t), 1_(), (256_() | 128_())) }));
         if (this.with(|__s| __s.sem_set_) == -1_()) {
             ({
                 __throw_runtime_error_3(Ptr::<()>::from_string_literal(
@@ -468,7 +488,7 @@ impl __gnu_test_semaphore {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
         if (({
-            semctl_18(
+            semctl_19(
                 this.with(|__s| __s.sem_set_),
                 0_(),
                 16_(),
@@ -485,35 +505,35 @@ impl __gnu_test_semaphore {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn set_memory_limits_19(size: Option<()>) {
+pub fn set_memory_limits_20(size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| 16_f64);
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = (size * 1048576_());
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_21((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
-    ({ getrlimit_20((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_22((__rlimit_resource_RLIMIT_DATA as ()), (r.as_pointer())) });
+    ({ getrlimit_21((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
+    ({ setrlimit_22((__rlimit_resource___RLIMIT_RSS as ()), (r.as_pointer())) });
     if (limit < 20971520_()) {
         limit = 20971520_();
     }
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ getrlimit_21((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
+    ({ setrlimit_22((__rlimit_resource_RLIMIT_AS as ()), (r.as_pointer())) });
 }
-pub fn set_file_limit_22(mut size: ()) {
+pub fn set_file_limit_23(mut size: ()) {
     let r: Value<rlimit> = Rc::new(RefCell::new(<rlimit>::default()));
     let mut limit: () = ((size) as ());
-    ({ getrlimit_20((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ getrlimit_21((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
     (*r.borrow_mut()).rlim_cur = limit;
-    ({ setrlimit_21((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
+    ({ setrlimit_22((__rlimit_resource_RLIMIT_FSIZE as ()), (r.as_pointer())) });
 }
-pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
+pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
     let status: Value<()> = Rc::new(RefCell::new(0_()));
     let mut s: Ptr<()> = Ptr::<()>::null();
     let mut demangled: Ptr<()> = ({
-        __cxa_demangle_24(
+        __cxa_demangle_25(
             (mangled).clone(),
             Ptr::<()>::null(),
             Ptr::<()>::null(),
@@ -545,42 +565,56 @@ pub fn verify_demangle_23(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = unimplemented!();
+    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { (wanted).clone() },
+        None,
+    );
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
     unimplemented!();
 }
-pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
+pub fn run_tests_wrapped_locale_26(mut name: Ptr<()>, l: Ptr<__gnu_test_func_callback>) {
     let loc_name: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () = unimplemented!();
+        let mut preLC_ALL: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { (res).clone() },
+                None,
+            );
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () = unimplemented!();
+        let mut postLC_ALL: () =
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { unimplemented!() },
+                None,
+            );
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unimplemented!()) {
                 ({
-                    __builtin_fprintf_14 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
+                    __builtin_fprintf_15 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
                 });
                 unimplemented!();
             }
         }
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
+            None,
+        );
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub fn run_tests_wrapped_env_26(
+pub fn run_tests_wrapped_env_27(
     mut name: Ptr<()>,
     mut env: Ptr<()>,
     l: Ptr<__gnu_test_func_callback>,
@@ -597,7 +631,10 @@ pub fn run_tests_wrapped_env_26(
         }
         unimplemented!();
     } else {
-        let mut s: () = unimplemented!();
+        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { (env).clone() },
+            None,
+        );
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
@@ -650,7 +687,7 @@ impl Default for __gnu_test_semun {
     }
 }
 impl __gnu_test_semaphore {}
-pub fn test_tm_28(
+pub fn test_tm_29(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -661,19 +698,19 @@ pub fn test_tm_28(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_sec = sec;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_min = min;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_hour = hour;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_mday = mday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_mon = mon;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_year = year;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_wday = wday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_yday = yday;
-    (*tmp_29.with(Value::clone).borrow_mut()).tm_isdst = isdst;
-    return tmp_29.with(|rc| *rc.borrow());
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_sec = sec;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_min = min;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_hour = hour;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_mday = mday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_mon = mon;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_year = year;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_wday = wday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_yday = yday;
+    (*tmp_30.with(Value::clone).borrow_mut()).tm_isdst = isdst;
+    return tmp_30.with(|rc| *rc.borrow());
 }
 thread_local!(
-    static tmp_29: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
+    static tmp_30: Value<::libc::tm> = Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));
 );
 pub trait A_DeleterImpl {
     fn operator_call(&self, p: Ptr<()>);
@@ -755,9 +792,9 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn destructor(&self) {
         let val: Value<__gnu_test_semun> = Rc::new(RefCell::new(<__gnu_test_semun>::default()));
         __gnu_test_semun::val(val.as_pointer()).write(0_());
-        if ((*self).with(|__s| __s.pid_) == ({ getpid_16() })) {
+        if ((*self).with(|__s| __s.pid_) == ({ getpid_17() })) {
             ({
-                semctl_18(
+                semctl_19(
                     (*self).with(|__s| __s.sem_set_),
                     0_(),
                     0_(),
@@ -769,7 +806,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn signal(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_27(
+            semop_28(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),
@@ -786,7 +823,7 @@ impl __gnu_test_semaphoreImpl for Ptr<__gnu_test_semaphore> {
     fn wait(&self) {
         let op: Value<Box<[sembuf]>> = Rc::new(RefCell::new(Box::new([unimplemented!()])));
         if (({
-            semop_27(
+            semop_28(
                 (*self).with(|__s| __s.sem_set_),
                 (op.as_pointer() as Ptr<sembuf>),
                 1_(),

@@ -6,59 +6,29 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(f: std___bind_int__ref____, mut expected: ()) {
-    let f: Value<std___bind_int__ref____> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_1(f: std___bind_int__ptr____, mut expected: ()) {
-    let f: Value<std___bind_int__ptr____> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_2(f: std___bind_A_int_0_, mut expected: ()) {
-    let f: Value<std___bind_A_int_0_> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_3(f: std___bind_r_int__int__ref____, mut expected: ()) {
-    let f: Value<std___bind_r_int__int__ref____> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_4(f: std___bind_r_int__int__ptr____, mut expected: ()) {
-    let f: Value<std___bind_r_int__int__ptr____> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_5(f: std___bind_r_int__A_int_0_, mut expected: ()) {
-    let f: Value<std___bind_r_int__A_int_0_> = Rc::new(RefCell::new(f));
-    unimplemented!();
-}
-pub fn test_const_6(f: Ptr<std___bind_A_int_0_>, mut expected: ()) {
-    unimplemented!();
-}
-pub fn test_const_7(f: Ptr<std___bind_r_int__A_int_0_>, mut expected: ()) {
-    unimplemented!();
-}
-pub fn f_8() -> () {
+pub fn f_0() -> () {
     return 1_();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct A_int_0 {}
-pub fn test_all_9() -> () {
-    ({ test_0(({ bind_10(FnPtr::<fn() -> ()>::new(f_8)) }), 1_()) });
+pub fn test_all_1() -> () {
+    ({ test_2(({ bind_3(FnPtr::<fn() -> ()>::new(f_0)) }), 1_()) });
     ({
-        test_1(
+        test_4(
             ({
                 let ___f: Value<FnPtr<fn() -> ()>> =
-                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_8))));
-                bind_11(___f.as_pointer())
+                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_0))));
+                bind_5(___f.as_pointer())
             }),
             1_(),
         )
     });
     ({
-        test_2(
+        test_6(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_12(___f.as_pointer())
+                bind_7(___f.as_pointer())
             }),
             4_(),
         )
@@ -67,27 +37,27 @@ pub fn test_all_9() -> () {
         let _f: Value<std___bind_A_int_0_> = Rc::new(RefCell::new(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_12(___f.as_pointer())
+                bind_7(___f.as_pointer())
             }),
         ));
-        test_const_6(_f.as_pointer(), 5_())
+        test_const_8(_f.as_pointer(), 5_())
     });
-    ({ test_3(({ bind_13(FnPtr::<fn() -> ()>::new(f_8)) }), 1_()) });
+    ({ test_9(({ bind_10(FnPtr::<fn() -> ()>::new(f_0)) }), 1_()) });
     ({
-        test_4(
+        test_11(
             ({
                 let ___f: Value<FnPtr<fn() -> ()>> =
-                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_8))));
-                bind_14(___f.as_pointer())
+                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(f_0))));
+                bind_12(___f.as_pointer())
             }),
             1_(),
         )
     });
     ({
-        test_5(
+        test_13(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_15(___f.as_pointer())
+                bind_14(___f.as_pointer())
             }),
             4_(),
         )
@@ -96,10 +66,10 @@ pub fn test_all_9() -> () {
         let _f: Value<std___bind_r_int__A_int_0_> = Rc::new(RefCell::new(
             ({
                 let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_15(___f.as_pointer())
+                bind_14(___f.as_pointer())
             }),
         ));
-        test_const_7(_f.as_pointer(), 5_())
+        test_const_15(_f.as_pointer(), 5_())
     });
     return true;
 }
@@ -123,7 +93,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_all_9() });
+    ({ test_all_1() });
     const _: () = assert!(true, "test_all()");;
     return 0_();
 }

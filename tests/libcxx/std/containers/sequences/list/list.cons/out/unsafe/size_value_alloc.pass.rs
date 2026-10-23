@@ -264,32 +264,6 @@ pub struct limited_alloc_handle_5_ {
     pub outstanding_: (),
     pub last_alloc_: (),
 }
-impl limited_alloc_handle_5_ {
-    pub unsafe fn allocate_1_struct_std___list_node_int__void_ptr_(
-        &mut self,
-        mut N: (),
-    ) -> *mut std___list_node_int__void_ptr_ {
-        if (((N).wrapping_add(self.outstanding_)) > (5_())) {
-            unimplemented!();
-        }
-        let mut alloc: *mut std___list_node_int__void_ptr_ = unimplemented!();
-        self.last_alloc_ = (alloc as ());
-        self.outstanding_ = (self.outstanding_).wrapping_add(N);
-        return alloc;
-    }
-    pub unsafe fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &mut self,
-        mut ptr: *mut std___list_node_int__void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-}
 impl Default for limited_alloc_handle_5_ {
     fn default() -> Self {
         unsafe {

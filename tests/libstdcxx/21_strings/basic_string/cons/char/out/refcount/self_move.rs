@@ -273,30 +273,6 @@ pub fn test_10(mut s: Ptr<()>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_11(mut s: Ptr<()>) {
-    let s1: Value<__gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new(
-            __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (s).clone() },
-                None,
-            ),
-        ));
-    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { ({ (*s1.borrow()).c_str() }) },
-        None,
-    );
-    (*s1.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
-    let s3: Value<__gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new((*s1.borrow()).clone()));
-    (*s1.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
-    &({ (*s1.borrow()).begin_21() });
-    (*s1.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
-    let s4: Value<__gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__> =
-        Rc::new(RefCell::new((*s1.borrow()).clone()));
-    (*s1.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
-    unimplemented!();
-    (*s1.borrow_mut()) = { (*unimplemented!().upgrade().deref()).clone() };
-}
 pub fn main() {
     __cpp2rust_init_globals();
     std::process::exit(main_0());

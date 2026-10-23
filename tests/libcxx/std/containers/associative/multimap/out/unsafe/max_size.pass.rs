@@ -217,20 +217,6 @@ pub struct limited_alloc_handle_10_ {
     pub outstanding_: (),
     pub last_alloc_: (),
 }
-impl limited_alloc_handle_10_ {
-    pub unsafe fn deallocate_2_class_std___tree_node_struct_std___value_type_int__int___void_ptr_(
-        &mut self,
-        mut ptr: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-}
 impl Default for limited_alloc_handle_10_ {
     fn default() -> Self {
         unsafe {
@@ -246,20 +232,6 @@ impl Default for limited_alloc_handle_10_ {
 pub struct limited_alloc_handle_18446744073709551615_ {
     pub outstanding_: (),
     pub last_alloc_: (),
-}
-impl limited_alloc_handle_18446744073709551615_ {
-    pub unsafe fn deallocate_2_class_std___tree_node_struct_std___value_type_int__int___void_ptr_(
-        &mut self,
-        mut ptr: *mut std___tree_node_std___value_type_int__int___void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
 }
 impl Default for limited_alloc_handle_18446744073709551615_ {
     fn default() -> Self {

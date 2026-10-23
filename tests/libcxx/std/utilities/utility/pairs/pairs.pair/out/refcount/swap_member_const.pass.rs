@@ -64,11 +64,11 @@ pub fn test_1() -> () {
         let i2: Value<()> = Rc::new(RefCell::new(1_()));
         let i3: Value<()> = Rc::new(RefCell::new(2_()));
         let i4: Value<()> = Rc::new(RefCell::new(3_()));
-        let p1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new(
+        let p1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
             { i1.as_pointer() },
             { i2.as_pointer() },
         )));
-        let p2: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new(
+        let p2: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
             { i3.as_pointer() },
             { i4.as_pointer() },
         )));

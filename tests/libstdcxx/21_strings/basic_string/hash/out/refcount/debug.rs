@@ -254,63 +254,7 @@ pub struct __gnu_test_semaphore {
     pid_: ::libc::pid_t,
 }
 impl __gnu_test_semaphore {}
-pub fn test_10(
-    s: Ptr<__gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__>,
-) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char__std_allocator_char___std_basic_string_char__std_char_traits_char___std_allocator_char___ ) ( (s ).clone() , )
-        })
-    } == {
-        ({
-            let ___str: Value<()> = Rc::new(RefCell::new(({ ((*s.upgrade().deref()) as ())() })));
-            unimplemented!()(___str.as_pointer())
-        })
-    });
-}
-pub fn test_11(
-    s: Ptr<__gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__>,
-) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char16_t__std_allocator_char16_t___std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t___ ) ( (s ).clone() , )
-        })
-    } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ ((*s.upgrade().deref()) as ())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
-}
-pub fn test_12(
-    s: Ptr<__gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__>,
-) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_char32_t__std_allocator_char32_t___std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t___ ) ( (s ).clone() , )
-        })
-    } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ ((*s.upgrade().deref()) as ())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
-}
-pub fn test_13(
-    s: Ptr<__gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__>,
-) -> () {
-    return ({
-        ({
-            ( unimplemented!() as std___str_hash_base_wchar_t__std_allocator_wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t___ ) ( (s ).clone() , )
-        })
-    } == {
-        ({
-            let ___s: Value<()> = Rc::new(RefCell::new(({ ((*s.upgrade().deref()) as ())() })));
-            unimplemented!()(___s.as_pointer())
-        })
-    });
-}
-pub fn test01_14() {
+pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -323,10 +267,10 @@ pub fn test01_14() {
                     None,
                 ),
             ));
-            test_10(_s.as_pointer())
+            test_11(_s.as_pointer())
         }) {
             ({
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -348,10 +292,10 @@ pub fn test01_14() {
         __do_while = false;
         if !({
             let _s : Value<__gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__ > = Rc::new(RefCell::new(__gnu_debug_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 49 as () , 54 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] )  } , None , )  ));
-            test_11(_s.as_pointer())
+            test_13(_s.as_pointer())
         }) {
             ({
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -373,10 +317,10 @@ pub fn test01_14() {
         __do_while = false;
         if !({
             let _s : Value<__gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__ > = Rc::new(RefCell::new(__gnu_debug_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 117 as () , 116 as () , 102 as () , 45 as () , 51 as () , 50 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] )  } , None , )  ));
-            test_12(_s.as_pointer())
+            test_14(_s.as_pointer())
         }) {
             ({
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -398,10 +342,10 @@ pub fn test01_14() {
         __do_while = false;
         if !({
             let _s : Value<__gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ > = Rc::new(RefCell::new(__gnu_debug_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { Ptr::<() >::from_string_literal(&[97 as () , 32 as () , 119 as () , 105 as () , 100 as () , 101 as () , 32 as () , 115 as () , 116 as () , 114 as () , 105 as () , 110 as () , 103 as () , 0 as () , ] )  } , None , )  ));
-            test_13(_s.as_pointer())
+            test_15(_s.as_pointer())
         }) {
             ({
-                __builtin_fprintf_15(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     Ptr::<()>::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n"),
                     Box::new([
@@ -424,7 +368,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    ({ test01_14() });
+    ({ test01_10() });
     0
 }
 impl __gnu_test_semaphore {
@@ -559,7 +503,7 @@ pub fn run_tests_wrapped_locale_25(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             __do_while = false;
             if !(unimplemented!()) {
                 ({
-                    __builtin_fprintf_15 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
+                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe()  , Ptr::<() >::from_string_literal(b"%s:%d: %s: Assertion \'%s\' failed.\n" )  , Box::new ( [ ( Ptr::<() >::from_string_literal(b"testsuite_hooks.cc" )  ) .into() , ( 182_() ) .into() , ( Ptr::<() >::from_string_literal(b"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" )  ) .into() , ( Ptr::<() >::from_string_literal(b"preLC_ALL == postLC_ALL" )  ) .into() , ] ) )
                 });
                 unimplemented!();
             }

@@ -575,7 +575,7 @@ pub fn test_6() -> () {
         let i2: Value<()> = Rc::new(RefCell::new(2_()));
         let j1: Value<()> = Rc::new(RefCell::new(3_()));
         let j2: Value<()> = Rc::new(RefCell::new(4_()));
-        let t1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new(
+        let t1: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
             { i1.as_pointer() },
             { i2.as_pointer() },
         )));

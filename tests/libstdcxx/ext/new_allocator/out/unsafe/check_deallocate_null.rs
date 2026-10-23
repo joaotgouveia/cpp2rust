@@ -295,27 +295,21 @@ impl __gnu_test_tracker_allocator_counter {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut destructCount__13)) = 0_();
     }
 }
-pub unsafe fn check_deallocate_null_14() -> () {
-    let mut a: __gnu_cxx_new_allocator_int_ = <__gnu_cxx_new_allocator_int_>::default();
-    (unsafe { (a as std___new_allocator_int_).deallocate(std::ptr::null_mut(), 1_()) });
-    (unsafe { (a as std___new_allocator_int_).deallocate(std::ptr::null_mut(), 10_()) });
-    return true;
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct __gnu_test_uneq_allocator_base {}
 impl __gnu_test_uneq_allocator_base {
     pub unsafe fn get_map() -> *mut () {
-        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_15));
+        return &mut (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_map_14));
     }
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_15(
     mut _a0: __gnu_test_NullablePointer_void_,
     mut _a1: __gnu_test_NullablePointer_void_,
 ) -> () {
     return true;
 }
-pub unsafe fn operator_ne_17(
+pub unsafe fn operator_ne_16(
     mut _a0: __gnu_test_NullablePointer_void_,
     mut _a1: __gnu_test_NullablePointer_void_,
 ) -> () {
@@ -339,7 +333,7 @@ impl __gnu_test_NullablePointer_void_ {
 }
 impl std::cmp::PartialEq for __gnu_test_NullablePointer_void_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self.clone(), other.clone()) }
+        unsafe { operator_eq_15(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for __gnu_test_NullablePointer_void_ {}
@@ -377,7 +371,7 @@ impl __gnu_test_default_resource_mgr {
         unimplemented!();
     }
 }
-static mut alloc_map_15: std::cell::LazyCell<()> =
+static mut alloc_map_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub fn main() {
     unsafe {
@@ -386,7 +380,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    (unsafe { check_deallocate_null_14() });
+    (unsafe { check_deallocate_null_17() });
     return 0_();
 }
 impl __gnu_test_semaphore {

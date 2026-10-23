@@ -18,48 +18,6 @@ pub const anon_1_value: anon_1 = 1;
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_std_span_const_int__18446744073709551615___std_span_const_int__18446744073709551615__
 {}
-pub type anon_2 = ();
-pub const anon_2_value: anon_2 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized__
-{}
-pub type anon_3 = ();
-pub const anon_3_value: anon_3 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized___std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized__
-{}
-pub type anon_4 = ();
-pub const anon_4_value: anon_4 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_5 = ();
-pub const anon_5_value: anon_5 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_6 = ();
-pub const anon_6_value: anon_6 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_7 = ();
-pub const anon_7_value: anon_7 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_8 = ();
-pub const anon_8_value: anon_8 = 1;
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct support_double_move_tracker {
@@ -107,7 +65,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-pub unsafe fn base_9(i: *const cpp17_output_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_2(i: *const cpp17_output_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -142,7 +100,7 @@ const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-pub unsafe fn base_10(i: *const cpp17_input_iterator_int_ptr__int_ptr_) -> *mut () {
+pub unsafe fn base_3(i: *const cpp17_input_iterator_int_ptr__int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -177,7 +135,7 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub unsafe fn operator_eq_11(
+pub unsafe fn operator_eq_4(
     x: *const bidirectional_iterator_int_ptr_,
     y: *const bidirectional_iterator_int_ptr_,
 ) -> () {
@@ -218,7 +176,7 @@ impl bidirectional_iterator_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_11(
+            operator_eq_4(
                 self as *const bidirectional_iterator_int_ptr_,
                 other as *const bidirectional_iterator_int_ptr_,
             )
@@ -231,7 +189,7 @@ impl Default for bidirectional_iterator_int_ptr_ {
         unsafe { bidirectional_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_eq_12(
+pub unsafe fn operator_eq_5(
     x: *const bidirectional_iterator_const_int_ptr_,
     y: *const bidirectional_iterator_const_int_ptr_,
 ) -> () {
@@ -272,7 +230,7 @@ impl bidirectional_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_5(
                 self as *const bidirectional_iterator_const_int_ptr_,
                 other as *const bidirectional_iterator_const_int_ptr_,
             )
@@ -285,14 +243,14 @@ impl Default for bidirectional_iterator_const_int_ptr_ {
         unsafe { bidirectional_iterator_const_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_add_13(
+pub unsafe fn operator_add_6(
     mut x: random_access_iterator_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_int_ptr_ {
     (unsafe { random_access_iterator_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_int_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_eq_14(
+pub unsafe fn operator_eq_7(
     x: *const random_access_iterator_int_ptr_,
     y: *const random_access_iterator_int_ptr_,
 ) -> () {
@@ -340,7 +298,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_14(
+            operator_eq_7(
                 self as *const random_access_iterator_int_ptr_,
                 other as *const random_access_iterator_int_ptr_,
             )
@@ -353,14 +311,14 @@ impl Default for random_access_iterator_int_ptr_ {
         unsafe { random_access_iterator_int_ptr_::new_1() }
     }
 }
-pub unsafe fn operator_add_15(
+pub unsafe fn operator_add_8(
     mut x: random_access_iterator_const_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_const_int_ptr_ {
     (unsafe { random_access_iterator_const_int_ptr_::operator_add_assign(&mut x, n) });
     return random_access_iterator_const_int_ptr_::move_from({ &mut x });
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_9(
     x: *const random_access_iterator_const_int_ptr_,
     y: *const random_access_iterator_const_int_ptr_,
 ) -> () {
@@ -408,7 +366,7 @@ impl random_access_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_16(
+            operator_eq_9(
                 self as *const random_access_iterator_const_int_ptr_,
                 other as *const random_access_iterator_const_int_ptr_,
             )
@@ -519,7 +477,7 @@ impl Default for contiguous_iterator_const_int_ptr_ {
         unsafe { contiguous_iterator_const_int_ptr_::new_1() }
     }
 }
-pub unsafe fn base_17(i: *const cpp20_input_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_10(i: *const cpp20_input_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -615,7 +573,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub unsafe fn operator_eq_18(
+pub unsafe fn operator_eq_11(
     _a0: *const forward_sized_iterator_int_ptr_,
     _a1: *const forward_sized_iterator_int_ptr_,
 ) -> () {
@@ -630,7 +588,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_18(
+            operator_eq_11(
                 self as *const forward_sized_iterator_int_ptr_,
                 other as *const forward_sized_iterator_int_ptr_,
             )
@@ -652,33 +610,33 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub unsafe fn operator_add_19(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub unsafe fn operator_add_12(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1({ i.ptr_.offset((n) as isize) }, { i.iter_moves_ }, {
         i.iter_swaps_
     });
 }
-pub unsafe fn operator_add_20(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return (unsafe {
         let _i: adl_Iterator = i;
-        operator_add_19(_i, n)
+        operator_add_12(_i, n)
     });
 }
-pub unsafe fn iter_swap_21(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_22(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_23(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_24(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -762,7 +720,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_24(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -772,7 +730,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_23(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -849,7 +807,7 @@ pub struct LvalueConvertible {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct OnlyExplicitlyConvertible {}
-pub unsafe fn test_25() -> () {
+pub unsafe fn test_18() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
         const _: () = assert!(
@@ -873,11 +831,11 @@ pub unsafe fn test_25() -> () {
     {
         let mut c1: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut buffer, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut buffer, &mut ___count)
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(
                 &(*unimplemented!()),
                 &mut ___count,
             )
@@ -894,45 +852,45 @@ pub unsafe fn test_25() -> () {
             contiguous_iterator_const_int_ptr_::new_2({ (buffer.as_mut_ptr()).cast_const() });
         let mut c1: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut it, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut it, &mut ___count)
         });
         let mut c2: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(
                 &(*unimplemented!()),
                 &mut ___count,
             )
         });
         let mut c3: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut it, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut it, &mut ___count)
         });
         let mut c4: () = (unsafe {
             let mut ___it: contiguous_iterator_int_ptr_ =
                 contiguous_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() });
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut ___it, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut ___it, &mut ___count)
         });
         let mut c5: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut cit, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut cit, &mut ___count)
         });
         let mut c6: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(
                 &(*unimplemented!()),
                 &mut ___count,
             )
         });
         let mut c7: () = (unsafe {
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut cit, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut cit, &mut ___count)
         });
         let mut c8: () = (unsafe {
             let mut ___it: contiguous_iterator_const_int_ptr_ =
                 contiguous_iterator_const_int_ptr_::new_2({ (buffer.as_mut_ptr()).cast_const() });
             let mut ___count: () = 3_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26))(&mut ___it, &mut ___count)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19))(&mut ___it, &mut ___count)
         });
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -958,14 +916,14 @@ pub unsafe fn test_25() -> () {
             random_access_iterator_const_int_ptr_::new_2({ (buffer.as_mut_ptr()).cast_const() });
         let mut it_copy: random_access_iterator_int_ptr_ = it;
         let mut cit_copy: random_access_iterator_const_int_ptr_ = cit;
-        let mut c1 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it , & mut ___count , ) } ) ;
-        let mut c2 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c3 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it_copy , & mut ___count , ) } ) ;
-        let mut c4 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
-        let mut c5 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut cit , & mut ___count , ) } ) ;
-        let mut c6 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c7 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut cit_copy , & mut ___count , ) } ) ;
-        let mut c8 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : random_access_iterator_const_int_ptr_  = random_access_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_mut_ptr() ) .cast_const() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c1 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it , & mut ___count , ) } ) ;
+        let mut c2 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c3 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it_copy , & mut ___count , ) } ) ;
+        let mut c4 : std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : random_access_iterator_int_ptr_  = random_access_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c5 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut cit , & mut ___count , ) } ) ;
+        let mut c6 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c7 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut cit_copy , & mut ___count , ) } ) ;
+        let mut c8 : std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : random_access_iterator_const_int_ptr_  = random_access_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_mut_ptr() ) .cast_const() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -990,14 +948,14 @@ pub unsafe fn test_25() -> () {
             bidirectional_iterator_const_int_ptr_::new_2({ (buffer.as_mut_ptr()).cast_const() });
         let mut it_copy: bidirectional_iterator_int_ptr_ = it;
         let mut cit_copy: bidirectional_iterator_const_int_ptr_ = cit;
-        let mut c1 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it , & mut ___count , ) } ) ;
-        let mut c2 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c3 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it_copy , & mut ___count , ) } ) ;
-        let mut c4 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
-        let mut c5 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut cit , & mut ___count , ) } ) ;
-        let mut c6 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c7 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut cit_copy , & mut ___count , ) } ) ;
-        let mut c8 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : bidirectional_iterator_const_int_ptr_  = bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_mut_ptr() ) .cast_const() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c1 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it , & mut ___count , ) } ) ;
+        let mut c2 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c3 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it_copy , & mut ___count , ) } ) ;
+        let mut c4 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : bidirectional_iterator_int_ptr_  = bidirectional_iterator_int_ptr_ :: new_2 ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c5 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut cit , & mut ___count , ) } ) ;
+        let mut c6 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c7 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut cit_copy , & mut ___count , ) } ) ;
+        let mut c8 : std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : bidirectional_iterator_const_int_ptr_  = bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_mut_ptr() ) .cast_const() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1019,10 +977,10 @@ pub unsafe fn test_25() -> () {
         let mut it: cpp17_output_iterator_int_ptr_ =
             cpp17_output_iterator_int_ptr_::new({ buffer.as_mut_ptr() });
         let mut it_copy: cpp17_output_iterator_int_ptr_ = it;
-        let mut c1 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it , & mut ___count , ) } ) ;
-        let mut c2 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it_copy , & mut ___count , ) } ) ;
-        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp17_output_iterator_int_ptr_  = cpp17_output_iterator_int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c1 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it , & mut ___count , ) } ) ;
+        let mut c2 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it_copy , & mut ___count , ) } ) ;
+        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp17_output_iterator_int_ptr_  = cpp17_output_iterator_int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1036,10 +994,10 @@ pub unsafe fn test_25() -> () {
         let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
             cpp17_input_iterator_int_ptr__int_ptr_::new({ buffer.as_mut_ptr() });
         let mut it_copy: cpp17_input_iterator_int_ptr__int_ptr_ = it;
-        let mut c1 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it , & mut ___count , ) } ) ;
-        let mut c2 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
-        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it_copy , & mut ___count , ) } ) ;
-        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c1 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it , & mut ___count , ) } ) ;
+        let mut c2 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & ( * unimplemented!()  )  , & mut ___count , ) } ) ;
+        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it_copy , & mut ___count , ) } ) ;
+        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1061,8 +1019,8 @@ pub unsafe fn test_25() -> () {
             !(false),
             "!CountedInvocable<const cpp20_input_iterator<int*>&, int>"
         );;
-        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut it , & mut ___count , ) } ) ;
-        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_26)) ( & mut ___it , & mut ___count , ) } ) ;
+        let mut c3 : std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut it , & mut ___count , ) } ) ;
+        let mut c4 : std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ = ( unsafe { let mut ___it : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { buffer .as_mut_ptr() } , )  ; let mut ___count : ()  = 3_() ; (*std::cell::LazyCell::force_mut(&mut *&raw mut counted_19)) ( & mut ___it , & mut ___count , ) } ) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1086,7 +1044,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_25() });
+    (unsafe { test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

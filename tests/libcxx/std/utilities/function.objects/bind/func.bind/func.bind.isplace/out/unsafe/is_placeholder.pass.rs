@@ -11,7 +11,7 @@ pub const anon_0_value: anon_0 = 1;
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_macros_detail_is_same_const_int__const_int_ {}
-pub unsafe fn test_1(_a0: *const std_placeholders___ph_1_) {
+pub unsafe fn test_1(_a0: *const ()) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
@@ -38,7 +38,7 @@ pub unsafe fn test_1(_a0: *const std_placeholders___ph_1_) {
     const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
     const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
 }
-pub unsafe fn test_2(_a0: *const std_placeholders___ph_2_) {
+pub unsafe fn test_2(_a0: *const ()) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
@@ -65,7 +65,7 @@ pub unsafe fn test_2(_a0: *const std_placeholders___ph_2_) {
     const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
     const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
 }
-pub unsafe fn test_3(_a0: *const std_placeholders___ph_3_) {
+pub unsafe fn test_3(_a0: *const ()) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
@@ -92,277 +92,7 @@ pub unsafe fn test_3(_a0: *const std_placeholders___ph_3_) {
     const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
     const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
 }
-pub unsafe fn test_4(_a0: *const std_placeholders___ph_4_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_5(_a0: *const std_placeholders___ph_5_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_6(_a0: *const std_placeholders___ph_6_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_7(_a0: *const std_placeholders___ph_7_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_8(_a0: *const std_placeholders___ph_8_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_9(_a0: *const std_placeholders___ph_9_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_10(_a0: *const std_placeholders___ph_10_) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_11(_a0: *const ()) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_12(_a0: *const ()) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_13(_a0: *const ()) {
-    const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_placeholder<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<T&> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<int, Expected>, std::is_placeholder<const T&> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_placeholder_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_placeholder_v<const T&> == Expected");;
-}
-pub unsafe fn test_14(_a0: *const C) {
+pub unsafe fn test_4(_a0: *const C) {
     const _: () = assert!(true, "std::is_placeholder<T>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_placeholder<const T>::value == Expected");;
@@ -408,31 +138,31 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_1(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_15))) });
-    (unsafe { test_2(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _2_16))) });
-    (unsafe { test_3(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _3_17))) });
-    (unsafe { test_4(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _4_18))) });
-    (unsafe { test_5(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _5_19))) });
-    (unsafe { test_6(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _6_20))) });
-    (unsafe { test_7(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _7_21))) });
-    (unsafe { test_8(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _8_22))) });
-    (unsafe { test_9(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _9_23))) });
-    (unsafe { test_10(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _10_24))) });
+    (unsafe { test_5(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_6))) });
+    (unsafe { test_7(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _2_8))) });
+    (unsafe { test_9(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _3_10))) });
+    (unsafe { test_11(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _4_12))) });
+    (unsafe { test_13(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _5_14))) });
+    (unsafe { test_15(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _6_16))) });
+    (unsafe { test_17(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _7_18))) });
+    (unsafe { test_19(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _8_20))) });
+    (unsafe { test_21(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _9_22))) });
+    (unsafe { test_23(&(*std::cell::LazyCell::force_mut(&mut *&raw mut _10_24))) });
     (unsafe {
         let mut _arg0: () = 4_();
-        test_11(&mut _arg0)
+        test_1(&mut _arg0)
     });
     (unsafe {
         let mut _arg0: () = 5.5_f64;
-        test_12(&mut _arg0)
+        test_2(&mut _arg0)
     });
     (unsafe {
         let mut _arg0: () = ('a' as ());
-        test_13(&mut _arg0)
+        test_3(&mut _arg0)
     });
     (unsafe {
         let mut _arg0: C = <C>::default();
-        test_14(&mut _arg0)
+        test_4(&mut _arg0)
     });
     return 0_();
 }

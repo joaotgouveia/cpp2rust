@@ -837,9 +837,7 @@ pub trait forward_sized_iterator_int_ptr_Impl {
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
 pub trait random_access_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
-    fn operator_index(&self, mut n: ()) -> () {
-        unimplemented!()
-    }
+    fn operator_index(&self, n: ()) -> ();
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_>;
     fn operator_dec_8(&self) -> Ptr<random_access_iterator_int_ptr_> {
         unimplemented!()
@@ -860,6 +858,9 @@ pub trait random_access_iterator_int_ptr_Impl {
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
         return (*self).with(|__s| __s.it_.clone());
+    }
+    fn operator_index(&self, mut n: ()) -> () {
+        return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());

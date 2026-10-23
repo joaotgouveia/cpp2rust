@@ -101,6 +101,13 @@ impl bidirectional_iterator_int_ptr_ {
         };
         this
     }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &mut (*self.it_);
+    }
+    pub unsafe fn operator_dec_7(&mut self) -> *mut bidirectional_iterator_int_ptr_ {
+        self.it_.prefix_dec();
+        return &mut (*(self as *mut bidirectional_iterator_int_ptr_));
+    }
 }
 pub unsafe fn base_3(i: *const bidirectional_iterator_const_int_ptr_) -> *const () {
     return (*i).it_;
@@ -118,6 +125,13 @@ impl bidirectional_iterator_const_int_ptr_ {
             tracker_: support_double_move_tracker::new(),
         };
         this
+    }
+    pub unsafe fn operator_deref(&self) -> () {
+        return &(*self.it_);
+    }
+    pub unsafe fn operator_dec_7(&mut self) -> *mut bidirectional_iterator_const_int_ptr_ {
+        self.it_.prefix_dec();
+        return &mut (*(self as *mut bidirectional_iterator_const_int_ptr_));
     }
 }
 #[repr(C)]

@@ -301,7 +301,7 @@ impl Clone for X2 {
 pub unsafe fn test01_12() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_10)) = false;
     let mut x: X = <X>::default();
-    let mut a1: () = std_any::new_1({ &mut x });
+    let mut a1: () = std_any::new({ &mut x });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -345,7 +345,7 @@ pub unsafe fn test01_12() {
 pub unsafe fn test02_14() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_10)) = false;
     let mut x: X = <X>::default();
-    let mut a1: () = std_any::new_1({ &mut x });
+    let mut a1: () = std_any::new({ &mut x });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -390,7 +390,7 @@ pub unsafe fn test02_14() {
 pub unsafe fn test03_15() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut moved_10)) = false;
     let mut x: X2 = <X2>::default();
-    let mut a1: () = std_any::new_2({ &mut x });
+    let mut a1: () = std_any::new({ &mut x });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

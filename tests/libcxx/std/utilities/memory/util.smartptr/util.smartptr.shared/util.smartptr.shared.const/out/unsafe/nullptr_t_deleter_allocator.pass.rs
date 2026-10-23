@@ -53,17 +53,6 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct min_pointer_std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void____std_integral_constant_unsigned_long__0__
-{
-    ptr_: *mut std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void__,
-}
-impl min_pointer_std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void____std_integral_constant_unsigned_long__0__ { unsafe fn new_1 ( mut p : *mut std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void__ , ) -> Self { let mut this = Self { ptr_ : p , } ;
- this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
- } pub unsafe fn operator_deref ( &self , ) -> *mut std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void__ { return & mut ( * self . ptr_   )  ;
- } pub unsafe fn pointer_to ( t : *mut std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void__ , ) -> min_pointer_std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void____std_integral_constant_unsigned_long__0__ { return min_pointer_std___shared_ptr_pointer_std_nullptr_t__test_deleter_A___min_allocator_void____std_integral_constant_unsigned_long__0__ :: new_1 ( { unimplemented!()  } , )   ;
- } }
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct min_allocator_void_ {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

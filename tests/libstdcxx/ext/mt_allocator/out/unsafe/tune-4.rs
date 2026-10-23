@@ -258,374 +258,10 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ {}
-impl test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ {
-    pub unsafe fn per_type() -> () {
-        return false;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ {}
-impl test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ {
-    pub unsafe fn per_type() -> () {
-        return false;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__ {}
-impl test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__ {
-    pub unsafe fn per_type() -> () {
-        return true;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__ {}
-impl test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__ {
-    pub unsafe fn per_type() -> () {
-        return true;
-    }
-}
-#[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct pod2 {
     pub i: (),
     pub j: (),
     pub k: (),
-}
-pub unsafe fn test04_10() {
-    let mut a : __gnu_cxx___mt_alloc_float____gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ = <__gnu_cxx___mt_alloc_float____gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ >::default() ;
-    let mut t_default: __gnu_cxx___pool_base__Tune = (unsafe { a._M_get_options() });
-    let mut t_opt: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 32_() },
-        { 5120_() },
-        { 32_() },
-        { 5120_() },
-        { 20_() },
-        { 10_() },
-        { false },
-    );
-    let mut t_small: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 16_() },
-        { 1024_() },
-        { 32_() },
-        { 2048_() },
-        { 1_() },
-        { 10_() },
-        { false },
-    );
-    let mut t1: __gnu_cxx___pool_base__Tune = t_default;
-    if (unsafe { test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__true__::per_type() })
-    {
-        (unsafe { a._M_set_options(t_opt) });
-        t1 = (unsafe { a._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t1._M_align) != (t_default._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t1._M_align != t_default._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-    }
-    let mut p1: *mut () = (unsafe { a.allocate(128_(), None) });
-    let mut a2 : __gnu_cxx___mt_alloc_pod2____gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ = <__gnu_cxx___mt_alloc_pod2____gnu_cxx___common_pool_policy___gnu_cxx___pool__true__ >::default() ;
-    let mut t2: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    if (unsafe { test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__true__::per_type() })
-    {
-        (unsafe { a2._M_set_options(t_opt) });
-        let mut t: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t2._M_align) != (t._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 84_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t2._M_align != t._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-        t2 = t;
-    }
-    let mut p2: *mut pod2 = (unsafe { a2.allocate(5128_(), None) });
-    (unsafe { a2._M_set_options(t_small) });
-    let mut t4: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) != (t_small._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 92_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size != t_small._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) == (t2._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 93_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size == t2._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    (unsafe { a.deallocate(p1, 128_()) });
-    (unsafe { a2.deallocate(p2, 5128_()) });
-}
-pub unsafe fn test04_12() {
-    let mut a : __gnu_cxx___mt_alloc_double____gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__ = <__gnu_cxx___mt_alloc_double____gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__ >::default() ;
-    let mut t_default: __gnu_cxx___pool_base__Tune = (unsafe { a._M_get_options() });
-    let mut t_opt: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 32_() },
-        { 5120_() },
-        { 32_() },
-        { 5120_() },
-        { 20_() },
-        { 10_() },
-        { false },
-    );
-    let mut t_small: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 16_() },
-        { 1024_() },
-        { 32_() },
-        { 2048_() },
-        { 1_() },
-        { 10_() },
-        { false },
-    );
-    let mut t1: __gnu_cxx___pool_base__Tune = t_default;
-    if (unsafe {
-        test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__::per_type()
-    }) {
-        (unsafe { a._M_set_options(t_opt) });
-        t1 = (unsafe { a._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t1._M_align) != (t_default._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t1._M_align != t_default._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-    }
-    let mut p1: *mut () = (unsafe { a.allocate(128_(), None) });
-    let mut a2 : __gnu_cxx___mt_alloc_pod2____gnu_cxx___per_type_pool_policy_pod2____gnu_cxx___pool__true__ = <__gnu_cxx___mt_alloc_pod2____gnu_cxx___per_type_pool_policy_pod2____gnu_cxx___pool__true__ >::default() ;
-    let mut t2: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    if (unsafe {
-        test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__true__::per_type()
-    }) {
-        (unsafe { a2._M_set_options(t_opt) });
-        let mut t: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t2._M_align) != (t._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 84_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t2._M_align != t._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-        t2 = t;
-    }
-    let mut p2: *mut pod2 = (unsafe { a2.allocate(5128_(), None) });
-    (unsafe { a2._M_set_options(t_small) });
-    let mut t4: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) != (t_small._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 92_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size != t_small._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) == (t2._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 93_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, true>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size == t2._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    (unsafe { a.deallocate(p1, 128_()) });
-    (unsafe { a2.deallocate(p2, 5128_()) });
-}
-pub unsafe fn test04_13() {
-    let mut a : __gnu_cxx___mt_alloc_float____gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ = <__gnu_cxx___mt_alloc_float____gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ >::default() ;
-    let mut t_default: __gnu_cxx___pool_base__Tune = (unsafe { a._M_get_options() });
-    let mut t_opt: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 32_() },
-        { 5120_() },
-        { 32_() },
-        { 5120_() },
-        { 20_() },
-        { 10_() },
-        { false },
-    );
-    let mut t_small: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 16_() },
-        { 1024_() },
-        { 32_() },
-        { 2048_() },
-        { 1_() },
-        { 10_() },
-        { false },
-    );
-    let mut t1: __gnu_cxx___pool_base__Tune = t_default;
-    if (unsafe { test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__false__::per_type() })
-    {
-        (unsafe { a._M_set_options(t_opt) });
-        t1 = (unsafe { a._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t1._M_align) != (t_default._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t1._M_align != t_default._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-    }
-    let mut p1: *mut () = (unsafe { a.allocate(128_(), None) });
-    let mut a2 : __gnu_cxx___mt_alloc_pod2____gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ = <__gnu_cxx___mt_alloc_pod2____gnu_cxx___common_pool_policy___gnu_cxx___pool__false__ >::default() ;
-    let mut t2: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    if (unsafe { test_policy___gnu_cxx___common_pool_policy___gnu_cxx___pool__false__::per_type() })
-    {
-        (unsafe { a2._M_set_options(t_opt) });
-        let mut t: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t2._M_align) != (t._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 84_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t2._M_align != t._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-        t2 = t;
-    }
-    let mut p2: *mut pod2 = (unsafe { a2.allocate(5128_(), None) });
-    (unsafe { a2._M_set_options(t_small) });
-    let mut t4: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) != (t_small._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 92_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size != t_small._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) == (t2._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 93_() ) .into() , ( c"void test04() [_Tp = float, _Cp = __gnu_cxx::__common_pool_policy<__gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size == t2._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    (unsafe { a.deallocate(p1, 128_()) });
-    (unsafe { a2.deallocate(p2, 5128_()) });
-}
-pub unsafe fn test04_14() {
-    let mut a : __gnu_cxx___mt_alloc_double____gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__ = <__gnu_cxx___mt_alloc_double____gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__ >::default() ;
-    let mut t_default: __gnu_cxx___pool_base__Tune = (unsafe { a._M_get_options() });
-    let mut t_opt: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 32_() },
-        { 5120_() },
-        { 32_() },
-        { 5120_() },
-        { 20_() },
-        { 10_() },
-        { false },
-    );
-    let mut t_small: __gnu_cxx___pool_base__Tune = __gnu_cxx___pool_base__Tune::new_1(
-        { 16_() },
-        { 1024_() },
-        { 32_() },
-        { 2048_() },
-        { 1_() },
-        { 10_() },
-        { false },
-    );
-    let mut t1: __gnu_cxx___pool_base__Tune = t_default;
-    if (unsafe {
-        test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__::per_type()
-    }) {
-        (unsafe { a._M_set_options(t_opt) });
-        t1 = (unsafe { a._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t1._M_align) != (t_default._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t1._M_align != t_default._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-    }
-    let mut p1: *mut () = (unsafe { a.allocate(128_(), None) });
-    let mut a2 : __gnu_cxx___mt_alloc_pod2____gnu_cxx___per_type_pool_policy_pod2____gnu_cxx___pool__false__ = <__gnu_cxx___mt_alloc_pod2____gnu_cxx___per_type_pool_policy_pod2____gnu_cxx___pool__false__ >::default() ;
-    let mut t2: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    if (unsafe {
-        test_policy___gnu_cxx___per_type_pool_policy_double____gnu_cxx___pool__false__::per_type()
-    }) {
-        (unsafe { a2._M_set_options(t_opt) });
-        let mut t: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-        let mut __do_while = true;
-        'loop_: while __do_while || (false) {
-            __do_while = false;
-            if !((t2._M_align) != (t._M_align)) {
-                (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 84_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t2._M_align != t._M_align" .as_ptr() ) .into() , ] ) )
-                });
-                unimplemented!();
-            }
-        }
-        t2 = t;
-    }
-    let mut p2: *mut pod2 = (unsafe { a2.allocate(5128_(), None) });
-    (unsafe { a2._M_set_options(t_small) });
-    let mut t4: __gnu_cxx___pool_base__Tune = (unsafe { a2._M_get_options() });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) != (t_small._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 92_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size != t_small._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((t4._M_chunk_size) == (t2._M_chunk_size)) {
-            (unsafe {
-                __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"tune-4.cc" .as_ptr() ) .into() , ( 93_() ) .into() , ( c"void test04() [_Tp = double, _Cp = __gnu_cxx::__per_type_pool_policy<double, __gnu_cxx::__pool, false>]" .as_ptr() ) .into() , ( c"t4._M_chunk_size == t2._M_chunk_size" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    (unsafe { a.deallocate(p1, 128_()) });
-    (unsafe { a2.deallocate(p2, 5128_()) });
 }
 pub fn main() {
     unsafe {
@@ -635,9 +271,9 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     (unsafe { test04_10() });
+    (unsafe { test04_11() });
     (unsafe { test04_12() });
     (unsafe { test04_13() });
-    (unsafe { test04_14() });
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -646,47 +282,47 @@ impl __gnu_test_semaphore {
             sem_set_: unimplemented!(),
             pid_: 0 as ::libc::pid_t,
         };
-        this.pid_ = ((unsafe { getpid_15() }) as ::libc::pid_t);
+        this.pid_ = ((unsafe { getpid_14() }) as ::libc::pid_t);
         this.sem_set_ =
-            (unsafe { semget_16(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+            (unsafe { semget_15(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
         if ((this.sem_set_) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_17(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
+        if ((unsafe { semctl_16(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
         {
             (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_18(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_17(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) * (1048576_()));
     (unsafe {
-        getrlimit_19(
+        getrlimit_18(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_20(
+        setrlimit_19(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
     (unsafe {
-        getrlimit_19(
+        getrlimit_18(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_20(
+        setrlimit_19(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
@@ -694,37 +330,37 @@ pub unsafe fn set_memory_limits_18(mut size: Option<()>) {
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_19((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    (unsafe { getrlimit_18((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_20(
+        setrlimit_19(
             (__rlimit_resource_RLIMIT_AS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn set_file_limit_21(mut size: ()) {
+pub unsafe fn set_file_limit_20(mut size: ()) {
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) as ());
     (unsafe {
-        getrlimit_19(
+        getrlimit_18(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_20(
+        setrlimit_19(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn verify_demangle_22(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_21(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_23(
+        __cxa_demangle_22(
             mangled,
             std::ptr::null_mut(),
             std::ptr::null_mut(),
@@ -763,7 +399,7 @@ pub unsafe fn verify_demangle_22(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_24(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_23(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -790,7 +426,7 @@ pub unsafe fn run_tests_wrapped_locale_24(mut name: *const (), l: *const __gnu_t
             __do_while = false;
             if !(unimplemented!()) {
                 (unsafe {
-                    __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
+                    __builtin_fprintf_24 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
                 });
                 unimplemented!();
             }
@@ -855,8 +491,8 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_15() })) {
-            (unsafe { semctl_17(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unsafe { getpid_14() })) {
+            (unsafe { semctl_16(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
         }
     }
 }

@@ -463,28 +463,6 @@ impl detail_thread_unsafe_shared_ptr_limited_alloc_handle_4__Impl
         return (*self).clone();
     }
 }
-pub trait limited_alloc_handle_4_Impl {
-    fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &self,
-        ptr: Ptr<std___list_node_int__void_ptr_>,
-        N: (),
-    );
-}
-impl limited_alloc_handle_4_Impl for Ptr<limited_alloc_handle_4_> {
-    fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &self,
-        mut ptr: Ptr<std___list_node_int__void_ptr_>,
-        mut N: (),
-    ) {
-        if ({ (ptr).to_any() } == { (*self).with(|__s| __s.last_alloc_.clone()) }) {
-            field!((*self), last_alloc_).write(unimplemented!());
-            unimplemented!();
-            field!((*self), outstanding_)
-                .write({ ((*self).with(|__s| __s.outstanding_)).wrapping_sub(N) });
-        }
-        unimplemented!();
-    }
-}
 pub trait limited_allocator_int__4_Impl {
     fn allocate(&self, mut n: ()) -> Ptr<()> {
         unimplemented!()

@@ -273,26 +273,6 @@ pub unsafe fn test_10(mut s: *const ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_11(mut s: *const ()) {
-    let mut s1: __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__ =
-        __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { s },
-            None,
-        );
-    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (unsafe { s1.c_str() }) },
-        None,
-    );
-    s1 = (*unimplemented!()).clone();
-    let mut s3: __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__ = s1;
-    s1 = (*unimplemented!()).clone();
-    &(unsafe { s1.begin_21() });
-    s1 = (*unimplemented!()).clone();
-    let mut s4: __gnu_debug_basic_string_char__std_char_traits_char___std_allocator_char__ = s1;
-    s1 = (*unimplemented!()).clone();
-    unimplemented!();
-    s1 = (*unimplemented!()).clone();
-}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

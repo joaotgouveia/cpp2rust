@@ -456,25 +456,21 @@ pub unsafe fn operator_add_11(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_12(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_13(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -558,7 +554,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -568,7 +564,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -718,7 +714,7 @@ impl ForwardDiffView {
         let mut this = Self {
             buffer_: unimplemented!(),
         };
-        unimplemented!();
+        this.buffer_ = (v).clone();
         this
     }
     pub unsafe fn begin_8(&mut self) -> forward_iterator_char_ptr_ {
@@ -816,7 +812,7 @@ const _: () = assert!(
     "!std::ranges::forward_range<const ForwardOnlyIfNonConstView>"
 );
 const _: () = assert!(true, "std::ranges::view<ForwardOnlyIfNonConstView>");
-pub unsafe fn operator_eq_17(lhs: *const InputView, rhs: *const InputView) -> () {
+pub unsafe fn operator_eq_16(lhs: *const InputView, rhs: *const InputView) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -833,7 +829,7 @@ impl InputView {
         let mut this = Self {
             buffer_: unimplemented!(),
         };
-        unimplemented!();
+        this.buffer_ = (v).clone();
         this
     }
     pub unsafe fn begin_4(&mut self) -> cpp20_input_iterator_char_ptr_ {
@@ -863,7 +859,7 @@ impl InputView {
 }
 impl std::cmp::PartialEq for InputView {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const InputView, other as *const InputView) }
+        unsafe { operator_eq_16(self as *const InputView, other as *const InputView) }
     }
 }
 impl std::cmp::Eq for InputView {}
@@ -936,7 +932,7 @@ const _: () = assert!(
     true,
     "noexcept(std::declval<InnerIterInput const &&>().base())"
 );
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_17() -> () {
     {
         let mut input: CopyableView = CopyableView::new_1({ c"abc def".as_ptr() });
         let mut v: () =
@@ -1006,7 +1002,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_17() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

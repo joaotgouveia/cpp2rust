@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut a: () = {
         let mut __tmp_0: () = 5_();
-        std_any::new_1(
+        std_any::new(
             { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
             { &mut __tmp_0 },
         )
@@ -283,7 +283,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut b: () = std_any::new_2(
+    let mut b: () = std_any::new(
         { (*std::cell::LazyCell::force_mut(&mut *&raw mut in_place_type_11)).clone() },
         { unimplemented!() },
     );

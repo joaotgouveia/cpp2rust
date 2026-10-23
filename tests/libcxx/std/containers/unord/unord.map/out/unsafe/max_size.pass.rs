@@ -217,32 +217,6 @@ pub struct limited_alloc_handle_10_ {
     pub outstanding_: (),
     pub last_alloc_: (),
 }
-impl limited_alloc_handle_10_ {
-    pub unsafe fn deallocate_2_struct_std___hash_node_base_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr__ptr__ptr(
-        &mut self,
-        mut ptr : *mut *mut std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-    pub unsafe fn deallocate_2_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr_(
-        &mut self,
-        mut ptr: *mut std___hash_node_std___hash_value_type_int__int___void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-}
 impl Default for limited_alloc_handle_10_ {
     fn default() -> Self {
         unsafe {
@@ -258,32 +232,6 @@ impl Default for limited_alloc_handle_10_ {
 pub struct limited_alloc_handle_18446744073709551615_ {
     pub outstanding_: (),
     pub last_alloc_: (),
-}
-impl limited_alloc_handle_18446744073709551615_ {
-    pub unsafe fn deallocate_2_struct_std___hash_node_base_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr__ptr__ptr(
-        &mut self,
-        mut ptr : *mut *mut std___hash_node_base_std___hash_node_std___hash_value_type_int__int___void_ptr__ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-    pub unsafe fn deallocate_2_struct_std___hash_node_struct_std___hash_value_type_int__int___void_ptr_(
-        &mut self,
-        mut ptr: *mut std___hash_node_std___hash_value_type_int__int___void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
 }
 impl Default for limited_alloc_handle_18446744073709551615_ {
     fn default() -> Self {

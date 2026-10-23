@@ -11,67 +11,7 @@ pub const anon_0_value: anon_0 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_const_bool__const_bool_ {}
-pub fn test_1(_a0: Ptr<std___bind_C_>) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub fn test_2(_a0: Ptr<std___bind_C__const_std_placeholders___ph_2__ref_>) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub fn test_3(_a0: Ptr<std___bind_r_int__C_>) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub fn test_4(_a0: Ptr<()>) {
-    const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression<const T&>::value == Expected");;
-    const _: () = assert!(
-        true,
-        "std::is_base_of<std::integral_constant<bool, Expected>, std::is_bind_expression<T> >::value"
-    );;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<T&> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T> == Expected");;
-    const _: () = assert!(true, "std::is_bind_expression_v<const T&> == Expected");;
-}
-pub fn test_5(_a0: Ptr<std_placeholders___ph_2_>) {
+pub fn test_1(_a0: Ptr<()>) {
     const _: () = assert!(true, "std::is_bind_expression<T>::value == Expected");;
     const _: () = assert!(true, "std::is_bind_expression<T&>::value == Expected");;
     const _: () = assert!(true, "std::is_bind_expression<const T>::value == Expected");;
@@ -113,30 +53,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let _arg0: Value<std___bind_C_> = Rc::new(RefCell::new(
             ({
                 let ___f: Value<C> = Rc::new(RefCell::new(<C>::default()));
-                bind_6(___f.as_pointer())
-            }),
-        ));
-        test_1(_arg0.as_pointer())
-    });
-    ({
-        let _arg0: Value<std___bind_C__const_std_placeholders___ph_2__ref_> =
-            Rc::new(RefCell::new(unimplemented!()));
-        test_2(_arg0.as_pointer())
-    });
-    ({
-        let _arg0: Value<std___bind_r_int__C_> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<C> = Rc::new(RefCell::new(<C>::default()));
-                bind_7(___f.as_pointer())
+                bind_2(___f.as_pointer())
             }),
         ));
         test_3(_arg0.as_pointer())
     });
     ({
-        let _arg0: Value<()> = Rc::new(RefCell::new(1_()));
+        let _arg0: Value<std___bind_C__const_std_placeholders___ph_2__ref_> =
+            Rc::new(RefCell::new(unimplemented!()));
         test_4(_arg0.as_pointer())
     });
-    ({ test_5(_2_8.with(|v| v.as_pointer())) });
+    ({
+        let _arg0: Value<std___bind_r_int__C_> = Rc::new(RefCell::new(
+            ({
+                let ___f: Value<C> = Rc::new(RefCell::new(<C>::default()));
+                bind_5(___f.as_pointer())
+            }),
+        ));
+        test_6(_arg0.as_pointer())
+    });
+    ({
+        let _arg0: Value<()> = Rc::new(RefCell::new(1_()));
+        test_1(_arg0.as_pointer())
+    });
+    ({ test_7(_2_8.with(|v| v.as_pointer())) });
     return 0_();
 }
 pub trait CImpl {

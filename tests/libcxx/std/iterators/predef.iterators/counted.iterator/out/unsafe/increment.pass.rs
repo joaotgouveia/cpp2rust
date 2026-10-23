@@ -114,13 +114,20 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
 impl cpp17_input_iterator_int_ptr__int_ptr_ {}
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
 pub struct forward_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -142,14 +149,26 @@ impl forward_iterator_int_ptr_ {
         this
     }
 }
+impl Default for forward_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { forward_iterator_int_ptr_::new_1() }
+    }
+}
 #[repr(C)]
-#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe, Default)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
 pub struct random_access_iterator_int_ptr_ {
     it_: *mut (),
     tracker_: support_double_move_tracker,
 }
 impl random_access_iterator_int_ptr_ {
-    pub unsafe fn new_1(mut it: *mut ()) -> Self {
+    pub unsafe fn new_1() -> Self {
+        let mut this = Self {
+            it_: std::ptr::null_mut(),
+            tracker_: support_double_move_tracker::new(),
+        };
+        this
+    }
+    pub unsafe fn new_2(mut it: *mut ()) -> Self {
         let mut this = Self {
             it_: it,
             tracker_: support_double_move_tracker::new(),
@@ -158,6 +177,9 @@ impl random_access_iterator_int_ptr_ {
     }
     pub unsafe fn operator_deref(&self) -> () {
         return &mut (*self.it_);
+    }
+    pub unsafe fn operator_index(&self, mut n: ()) -> () {
+        return &mut (*self.it_.offset((n) as isize));
     }
     pub unsafe fn operator_inc_7(&mut self) -> *mut random_access_iterator_int_ptr_ {
         self.it_.prefix_inc();
@@ -169,6 +191,11 @@ impl random_access_iterator_int_ptr_ {
             tracker_: support_double_move_tracker::move_from({ &mut (*_a0).tracker_ }),
         };
         this
+    }
+}
+impl Default for random_access_iterator_int_ptr_ {
+    fn default() -> Self {
+        unsafe { random_access_iterator_int_ptr_::new_1() }
     }
 }
 #[repr(C)]
@@ -556,7 +583,7 @@ pub unsafe fn test_14() -> () {
     }
     {
         let mut iter: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
+            { forward_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
             { 8_() },
         );
         unimplemented!();
@@ -566,7 +593,7 @@ pub unsafe fn test_14() -> () {
     }
     {
         let mut iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-            { random_access_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
+            { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
             { 8_() },
         );
         unimplemented!();

@@ -215,7 +215,7 @@ pub fn get_test_data_36() -> () {
                 return {
                     let __tmp_0: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_1: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_wchar_t__wchar_t_::new_1({ __tmp_0.as_pointer() }, {
+                    std_pair_wchar_t__wchar_t_::new({ __tmp_0.as_pointer() }, {
                         __tmp_1.as_pointer()
                     })
                 };
@@ -224,7 +224,7 @@ pub fn get_test_data_36() -> () {
                 return {
                     let __tmp_2: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_3: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_wchar_t__wchar_t_::new_1({ __tmp_2.as_pointer() }, {
+                    std_pair_wchar_t__wchar_t_::new({ __tmp_2.as_pointer() }, {
                         __tmp_3.as_pointer()
                     })
                 };
@@ -233,7 +233,7 @@ pub fn get_test_data_36() -> () {
                 return {
                     let __tmp_4: Value<()> = Rc::new(RefCell::new(2006148102_()));
                     let __tmp_5: Value<()> = Rc::new(RefCell::new(-1795240533_()));
-                    std_pair_wchar_t__wchar_t_::new_1({ __tmp_4.as_pointer() }, {
+                    std_pair_wchar_t__wchar_t_::new({ __tmp_4.as_pointer() }, {
                         __tmp_5.as_pointer()
                     })
                 };
@@ -253,25 +253,21 @@ pub fn get_test_data_37() -> () {
                 return {
                     let __tmp_6: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_7: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_short__short_::new_1({ __tmp_6.as_pointer() }, {
-                        __tmp_7.as_pointer()
-                    })
+                    std_pair_short__short_::new({ __tmp_6.as_pointer() }, { __tmp_7.as_pointer() })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let __tmp_8: Value<()> = Rc::new(RefCell::new(-31485_()));
                     let __tmp_9: Value<()> = Rc::new(RefCell::new(-20640_()));
-                    std_pair_short__short_::new_1({ __tmp_8.as_pointer() }, {
-                        __tmp_9.as_pointer()
-                    })
+                    std_pair_short__short_::new({ __tmp_8.as_pointer() }, { __tmp_9.as_pointer() })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let __tmp_10: Value<()> = Rc::new(RefCell::new(25606_()));
                     let __tmp_11: Value<()> = Rc::new(RefCell::new(-12885_()));
-                    std_pair_short__short_::new_1({ __tmp_10.as_pointer() }, {
+                    std_pair_short__short_::new({ __tmp_10.as_pointer() }, {
                         __tmp_11.as_pointer()
                     })
                 };
@@ -291,7 +287,7 @@ pub fn get_test_data_38() -> () {
                 return {
                     let __tmp_12: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_13: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_unsigned_short__unsigned_short_::new_1({ __tmp_12.as_pointer() }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ __tmp_12.as_pointer() }, {
                         __tmp_13.as_pointer()
                     })
                 };
@@ -300,7 +296,7 @@ pub fn get_test_data_38() -> () {
                 return {
                     let __tmp_14: Value<()> = Rc::new(RefCell::new(34051_()));
                     let __tmp_15: Value<()> = Rc::new(RefCell::new(44896_()));
-                    std_pair_unsigned_short__unsigned_short_::new_1({ __tmp_14.as_pointer() }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ __tmp_14.as_pointer() }, {
                         __tmp_15.as_pointer()
                     })
                 };
@@ -309,7 +305,7 @@ pub fn get_test_data_38() -> () {
                 return {
                     let __tmp_16: Value<()> = Rc::new(RefCell::new(25606_()));
                     let __tmp_17: Value<()> = Rc::new(RefCell::new(52651_()));
-                    std_pair_unsigned_short__unsigned_short_::new_1({ __tmp_16.as_pointer() }, {
+                    std_pair_unsigned_short__unsigned_short_::new({ __tmp_16.as_pointer() }, {
                         __tmp_17.as_pointer()
                     })
                 };
@@ -329,21 +325,21 @@ pub fn get_test_data_39() -> () {
                 return {
                     let __tmp_18: Value<()> = Rc::new(RefCell::new((4660_() as ())));
                     let __tmp_19: Value<()> = Rc::new(RefCell::new((13330_() as ())));
-                    std_pair_int__int_::new_1({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
+                    std_pair_int__int_::new({ __tmp_18.as_pointer() }, { __tmp_19.as_pointer() })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let __tmp_20: Value<()> = Rc::new(RefCell::new((1622115587_() as ())));
                     let __tmp_21: Value<()> = Rc::new(RefCell::new((59092832_() as ())));
-                    std_pair_int__int_::new_1({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
+                    std_pair_int__int_::new({ __tmp_20.as_pointer() }, { __tmp_21.as_pointer() })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let __tmp_22: Value<()> = Rc::new(RefCell::new(2006148102_()));
                     let __tmp_23: Value<()> = Rc::new(RefCell::new(-1795240533_()));
-                    std_pair_int__int_::new_1({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
+                    std_pair_int__int_::new({ __tmp_22.as_pointer() }, { __tmp_23.as_pointer() })
                 };
             }
             _ => {
@@ -361,7 +357,7 @@ pub fn get_test_data_40() -> () {
                 return {
                     let __tmp_24: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_25: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_unsigned_int__unsigned_int_::new_1({ __tmp_24.as_pointer() }, {
+                    std_pair_unsigned_int__unsigned_int_::new({ __tmp_24.as_pointer() }, {
                         __tmp_25.as_pointer()
                     })
                 };
@@ -370,7 +366,7 @@ pub fn get_test_data_40() -> () {
                 return {
                     let __tmp_26: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_27: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_unsigned_int__unsigned_int_::new_1({ __tmp_26.as_pointer() }, {
+                    std_pair_unsigned_int__unsigned_int_::new({ __tmp_26.as_pointer() }, {
                         __tmp_27.as_pointer()
                     })
                 };
@@ -379,7 +375,7 @@ pub fn get_test_data_40() -> () {
                 return {
                     let __tmp_28: Value<()> = Rc::new(RefCell::new(2006148102_()));
                     let __tmp_29: Value<()> = Rc::new(RefCell::new(2499726763_()));
-                    std_pair_unsigned_int__unsigned_int_::new_1({ __tmp_28.as_pointer() }, {
+                    std_pair_unsigned_int__unsigned_int_::new({ __tmp_28.as_pointer() }, {
                         __tmp_29.as_pointer()
                     })
                 };
@@ -399,27 +395,21 @@ pub fn get_test_data_41() -> () {
                 return {
                     let __tmp_30: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_31: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_long__long_::new_1({ __tmp_30.as_pointer() }, {
-                        __tmp_31.as_pointer()
-                    })
+                    std_pair_long__long_::new({ __tmp_30.as_pointer() }, { __tmp_31.as_pointer() })
                 };
             }
             __v if __v == 4_() => {
                 return {
                     let __tmp_32: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_33: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_long__long_::new_1({ __tmp_32.as_pointer() }, {
-                        __tmp_33.as_pointer()
-                    })
+                    std_pair_long__long_::new({ __tmp_32.as_pointer() }, { __tmp_33.as_pointer() })
                 };
             }
             __v if __v == 8_() => {
                 return {
                     let __tmp_34: Value<()> = Rc::new(RefCell::new(-6066913209383427066_()));
                     let __tmp_35: Value<()> = Rc::new(RefCell::new((460655203708751275_() as ())));
-                    std_pair_long__long_::new_1({ __tmp_34.as_pointer() }, {
-                        __tmp_35.as_pointer()
-                    })
+                    std_pair_long__long_::new({ __tmp_34.as_pointer() }, { __tmp_35.as_pointer() })
                 };
             }
             _ => {
@@ -437,7 +427,7 @@ pub fn get_test_data_42() -> () {
                 return {
                     let __tmp_36: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_37: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_unsigned_long__unsigned_long_::new_1({ __tmp_36.as_pointer() }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ __tmp_36.as_pointer() }, {
                         __tmp_37.as_pointer()
                     })
                 };
@@ -446,7 +436,7 @@ pub fn get_test_data_42() -> () {
                 return {
                     let __tmp_38: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_39: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_unsigned_long__unsigned_long_::new_1({ __tmp_38.as_pointer() }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ __tmp_38.as_pointer() }, {
                         __tmp_39.as_pointer()
                     })
                 };
@@ -456,7 +446,7 @@ pub fn get_test_data_42() -> () {
                     let __tmp_40: Value<()> =
                         Rc::new(RefCell::new((12379830864326124550_() as ())));
                     let __tmp_41: Value<()> = Rc::new(RefCell::new(460655203708751275_()));
-                    std_pair_unsigned_long__unsigned_long_::new_1({ __tmp_40.as_pointer() }, {
+                    std_pair_unsigned_long__unsigned_long_::new({ __tmp_40.as_pointer() }, {
                         __tmp_41.as_pointer()
                     })
                 };
@@ -476,7 +466,7 @@ pub fn get_test_data_43() -> () {
                 return {
                     let __tmp_42: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_43: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_long_long__long_long_::new_1({ __tmp_42.as_pointer() }, {
+                    std_pair_long_long__long_long_::new({ __tmp_42.as_pointer() }, {
                         __tmp_43.as_pointer()
                     })
                 };
@@ -485,7 +475,7 @@ pub fn get_test_data_43() -> () {
                 return {
                     let __tmp_44: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_45: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_long_long__long_long_::new_1({ __tmp_44.as_pointer() }, {
+                    std_pair_long_long__long_long_::new({ __tmp_44.as_pointer() }, {
                         __tmp_45.as_pointer()
                     })
                 };
@@ -494,7 +484,7 @@ pub fn get_test_data_43() -> () {
                 return {
                     let __tmp_46: Value<()> = Rc::new(RefCell::new(-6066913209383427066_()));
                     let __tmp_47: Value<()> = Rc::new(RefCell::new(460655203708751275_()));
-                    std_pair_long_long__long_long_::new_1({ __tmp_46.as_pointer() }, {
+                    std_pair_long_long__long_long_::new({ __tmp_46.as_pointer() }, {
                         __tmp_47.as_pointer()
                     })
                 };
@@ -514,7 +504,7 @@ pub fn get_test_data_44() -> () {
                 return {
                     let __tmp_48: Value<()> = Rc::new(RefCell::new(4660_()));
                     let __tmp_49: Value<()> = Rc::new(RefCell::new(13330_()));
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1(
+                    std_pair_unsigned_long_long__unsigned_long_long_::new(
                         { __tmp_48.as_pointer() },
                         { __tmp_49.as_pointer() },
                     )
@@ -524,7 +514,7 @@ pub fn get_test_data_44() -> () {
                 return {
                     let __tmp_50: Value<()> = Rc::new(RefCell::new(1622115587_()));
                     let __tmp_51: Value<()> = Rc::new(RefCell::new(59092832_()));
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1(
+                    std_pair_unsigned_long_long__unsigned_long_long_::new(
                         { __tmp_50.as_pointer() },
                         { __tmp_51.as_pointer() },
                     )
@@ -534,7 +524,7 @@ pub fn get_test_data_44() -> () {
                 return {
                     let __tmp_52: Value<()> = Rc::new(RefCell::new(12379830864326124550_()));
                     let __tmp_53: Value<()> = Rc::new(RefCell::new(460655203708751275_()));
-                    std_pair_unsigned_long_long__unsigned_long_long_::new_1(
+                    std_pair_unsigned_long_long__unsigned_long_long_::new(
                         { __tmp_52.as_pointer() },
                         { __tmp_53.as_pointer() },
                     )

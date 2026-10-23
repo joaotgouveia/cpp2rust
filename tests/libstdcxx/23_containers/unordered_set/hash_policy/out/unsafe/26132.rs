@@ -322,59 +322,6 @@ pub unsafe fn test_10() {
         lf *= 10_f64;
     }
 }
-pub unsafe fn test_12() {
-    let mut lf: () = 1_f64;
-    'loop_: while ((lf) < (101_f64)) {
-        let mut size: () = 1_();
-        'loop_: while ((size) <= (6561_())) {
-            let mut us1 : std__Hashtable_int__int__std_allocator_int___std___detail__Identity__std_equal_to_int___std_hash_int___std___detail__Mask_range_hashing__std___detail__Default_ranged_hash__std___detail__Power2_rehash_policy__std___detail__Hashtable_traits_false__true__true__ = <std__Hashtable_int__int__std_allocator_int___std___detail__Identity__std_equal_to_int___std_hash_int___std___detail__Mask_range_hashing__std___detail__Default_ranged_hash__std___detail__Power2_rehash_policy__std___detail__Hashtable_traits_false__true__true__ >::default() ;
-            (unsafe {
-                ( us1 as std___detail__Rehash_base_int__int__std_allocator_int___std___detail__Identity__std_equal_to_int___std_hash_int___std___detail__Mask_range_hashing__std___detail__Default_ranged_hash__std___detail__Power2_rehash_policy__std___detail__Hashtable_traits_false__true__true___std_integral_constant_bool__true__ ) . max_load_factor_2  ( 10_f64 , )
-            });
-            let mut i: () = 0_();
-            'loop_: while ((i) < (size)) {
-                (unsafe { us1.insert_91(&i) });
-                i.prefix_inc();
-            }
-            (unsafe {
-                ( us1 as std___detail__Rehash_base_int__int__std_allocator_int___std___detail__Identity__std_equal_to_int___std_hash_int___std___detail__Mask_range_hashing__std___detail__Default_ranged_hash__std___detail__Power2_rehash_policy__std___detail__Hashtable_traits_false__true__true___std_integral_constant_bool__true__ ) . max_load_factor_2  ( lf , )
-            });
-            let mut i: () = 1_();
-            'loop_: while ((i) <= (6561_())) {
-                let n: () = (((size) * (81_())) / (i));
-                (unsafe { us1.rehash(n) });
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !((unsafe { us1.bucket_count() })
-                        > ((unsafe { us1.size() })
-                            / (unsafe {
-                                ( us1 as std___detail__Rehash_base_int__int__std_allocator_int___std___detail__Identity__std_equal_to_int___std_hash_int___std___detail__Mask_range_hashing__std___detail__Default_ranged_hash__std___detail__Power2_rehash_policy__std___detail__Hashtable_traits_false__true__true___std_integral_constant_bool__true__ ) . max_load_factor_1  ( )
-                            })))
-                    {
-                        (unsafe {
-                            __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"26132.cc" .as_ptr() ) .into() , ( 46_() ) .into() , ( c"void test() [_USet = std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mask_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Power2_rehash_policy, std::__detail::_Hashtable_traits<false, true, true>>]" .as_ptr() ) .into() , ( c"us1.bucket_count() > us1.size() / us1.max_load_factor()" .as_ptr() ) .into() , ] ) )
-                        });
-                        unimplemented!();
-                    }
-                }
-                let mut __do_while = true;
-                'loop_: while __do_while || (false) {
-                    __do_while = false;
-                    if !((unsafe { us1.bucket_count() }) >= (n)) {
-                        (unsafe {
-                            __builtin_fprintf_11 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"26132.cc" .as_ptr() ) .into() , ( 47_() ) .into() , ( c"void test() [_USet = std::_Hashtable<int, int, std::allocator<int>, std::__detail::_Identity, std::equal_to<int>, std::hash<int>, std::__detail::_Mask_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Power2_rehash_policy, std::__detail::_Hashtable_traits<false, true, true>>]" .as_ptr() ) .into() , ( c"us1.bucket_count() >= n" .as_ptr() ) .into() , ] ) )
-                        });
-                        unimplemented!();
-                    }
-                }
-                i *= 81_();
-            }
-            size *= 3_();
-        }
-        lf *= 10_f64;
-    }
-}
 pub fn main() {
     unsafe {
         __cpp2rust_init_globals();

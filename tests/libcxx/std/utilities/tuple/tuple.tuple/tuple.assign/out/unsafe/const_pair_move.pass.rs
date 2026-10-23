@@ -658,7 +658,7 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut j1: () = 3_();
         let mut j2: () = 4_();
-        let mut t1: () = std_pair_int_ref__int_ref_::new({ &mut i1 }, { &mut i2 });
+        let mut t1: () = std_pair_int_ref__int_ref_::new_1({ &mut i1 }, { &mut i2 });
         let t2: () = std_tuple_long_ref__long_ref_::new({ &mut j1 }, { &mut j2 });
         t2 = (t1).clone();
         unimplemented!();

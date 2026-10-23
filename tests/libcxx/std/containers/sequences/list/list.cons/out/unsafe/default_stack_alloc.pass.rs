@@ -212,20 +212,6 @@ pub struct limited_alloc_handle_4_ {
     pub outstanding_: (),
     pub last_alloc_: (),
 }
-impl limited_alloc_handle_4_ {
-    pub unsafe fn deallocate_2_struct_std___list_node_int__void_ptr_(
-        &mut self,
-        mut ptr: *mut std___list_node_int__void_ptr_,
-        mut N: (),
-    ) {
-        if ((ptr as ()) == (self.last_alloc_)) {
-            self.last_alloc_ = unimplemented!();
-            unimplemented!();
-            self.outstanding_ = (self.outstanding_).wrapping_sub(N);
-        }
-        unimplemented!();
-    }
-}
 impl Default for limited_alloc_handle_4_ {
     fn default() -> Self {
         unsafe {

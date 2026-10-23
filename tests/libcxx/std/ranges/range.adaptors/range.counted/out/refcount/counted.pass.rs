@@ -18,48 +18,6 @@ pub const anon_1_value: anon_1 = 1;
 #[byte_size(1)]
 pub struct test_macros_detail_is_same_std_span_const_int__18446744073709551615___std_span_const_int__18446744073709551615__
 {}
-pub type anon_2 = ();
-pub const anon_2_value: anon_2 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized__
-{}
-pub type anon_3 = ();
-pub const anon_3_value: anon_3 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized___std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized__
-{}
-pub type anon_4 = ();
-pub const anon_4_value: anon_4 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_5 = ();
-pub const anon_5_value: anon_5 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_6 = ();
-pub const anon_6_value: anon_6 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_7 = ();
-pub const anon_7_value: anon_7 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
-pub type anon_8 = ();
-pub const anon_8_value: anon_8 = 1;
-#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
-#[byte_size(1)]
-pub struct test_macros_detail_is_same_std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized___std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized__
-{}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, MoveAssign)]
 #[byte_size(1)]
 pub struct support_double_move_tracker {
@@ -98,7 +56,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-pub fn base_9(i: Ptr<cpp17_output_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_2(i: Ptr<cpp17_output_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
@@ -130,7 +88,7 @@ const _: () = assert!(
     true,
     "std::output_iterator<cpp17_output_iterator<int*>, int>"
 );
-pub fn base_10(i: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Ptr<()> {
+pub fn base_3(i: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, MoveCtor, Default)]
@@ -158,7 +116,7 @@ impl cpp17_input_iterator_int_ptr__int_ptr_ {
     }
 }
 const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
-pub fn operator_eq_11(
+pub fn operator_eq_4(
     x: Ptr<bidirectional_iterator_int_ptr_>,
     y: Ptr<bidirectional_iterator_int_ptr_>,
 ) -> () {
@@ -197,7 +155,7 @@ impl bidirectional_iterator_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_4(
                 Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -222,7 +180,7 @@ impl Default for bidirectional_iterator_int_ptr_ {
         { bidirectional_iterator_int_ptr_::new_1() }
     }
 }
-pub fn operator_eq_12(
+pub fn operator_eq_5(
     x: Ptr<bidirectional_iterator_const_int_ptr_>,
     y: Ptr<bidirectional_iterator_const_int_ptr_>,
 ) -> () {
@@ -261,7 +219,7 @@ impl bidirectional_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for bidirectional_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_5(
                 Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -286,7 +244,7 @@ impl Default for bidirectional_iterator_const_int_ptr_ {
         { bidirectional_iterator_const_int_ptr_::new_1() }
     }
 }
-pub fn operator_add_13(
+pub fn operator_add_6(
     x: random_access_iterator_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_int_ptr_ {
@@ -294,7 +252,7 @@ pub fn operator_add_13(
     ({ random_access_iterator_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_eq_14(
+pub fn operator_eq_7(
     x: Ptr<random_access_iterator_int_ptr_>,
     y: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
@@ -333,7 +291,7 @@ impl random_access_iterator_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_7(
                 Rc::new(RefCell::new(random_access_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -358,7 +316,7 @@ impl Default for random_access_iterator_int_ptr_ {
         { random_access_iterator_int_ptr_::new_1() }
     }
 }
-pub fn operator_add_15(
+pub fn operator_add_8(
     x: random_access_iterator_const_int_ptr_,
     mut n: (),
 ) -> random_access_iterator_const_int_ptr_ {
@@ -366,7 +324,7 @@ pub fn operator_add_15(
     ({ random_access_iterator_const_int_ptr_Impl::operator_add_assign(&x.as_pointer(), n) });
     return random_access_iterator_const_int_ptr_::move_from({ x.as_pointer() });
 }
-pub fn operator_eq_16(
+pub fn operator_eq_9(
     x: Ptr<random_access_iterator_const_int_ptr_>,
     y: Ptr<random_access_iterator_const_int_ptr_>,
 ) -> () {
@@ -405,7 +363,7 @@ impl random_access_iterator_const_int_ptr_ {
 impl std::cmp::PartialEq for random_access_iterator_const_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_9(
                 Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ {
                     it_: self.it_.clone(),
                     tracker_: support_double_move_tracker {
@@ -515,7 +473,7 @@ impl Default for contiguous_iterator_const_int_ptr_ {
         { contiguous_iterator_const_int_ptr_::new_1() }
     }
 }
-pub fn base_17(i: Ptr<cpp20_input_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_10(i: Ptr<cpp20_input_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -589,7 +547,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_18(
+pub fn operator_eq_11(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -606,7 +564,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_18(
+            operator_eq_11(
                 Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                 }))
@@ -634,36 +592,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_19(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_12(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_20(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_19(_i, n)
+        operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_21(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_22(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
 }
-pub fn operator_eq_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -709,7 +667,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_24(
+            operator_cmp_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -734,7 +692,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_23(
+            operator_eq_16(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -827,7 +785,7 @@ pub struct LvalueConvertible {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct OnlyExplicitlyConvertible {}
-pub fn test_25() -> () {
+pub fn test_18() -> () {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         1_(),
         2_(),
@@ -861,7 +819,7 @@ pub fn test_25() -> () {
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     buffer.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -870,7 +828,7 @@ pub fn test_25() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -893,7 +851,7 @@ pub fn test_25() -> () {
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -902,7 +860,7 @@ pub fn test_25() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -911,7 +869,7 @@ pub fn test_25() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -924,7 +882,7 @@ pub fn test_25() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -934,7 +892,7 @@ pub fn test_25() -> () {
         let c5: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     cit.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -943,7 +901,7 @@ pub fn test_25() -> () {
         let c6: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -952,7 +910,7 @@ pub fn test_25() -> () {
         let c7: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     cit.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -965,7 +923,7 @@ pub fn test_25() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_26.with(Value::clone).borrow_mut())(
+                (*counted_19.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1001,14 +959,14 @@ pub fn test_25() -> () {
             Rc::new(RefCell::new((*it.borrow()).clone()));
         let cit_copy: Value<random_access_iterator_const_int_ptr_> =
             Rc::new(RefCell::new((*cit.borrow()).clone()));
-        let c1 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c2 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c3 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c4 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<random_access_iterator_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
-        let c5 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( cit .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c6 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c7 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( cit_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c8 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<random_access_iterator_const_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c1 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c2 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c3 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c4 : Value<std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<random_access_iterator_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c5 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( cit .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c6 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c7 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( cit_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c8 : Value<std_ranges_subrange_random_access_iterator_const_int_ptr___random_access_iterator_const_int_ptr___std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<random_access_iterator_const_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1038,14 +996,14 @@ pub fn test_25() -> () {
             Rc::new(RefCell::new((*it.borrow()).clone()));
         let cit_copy: Value<bidirectional_iterator_const_int_ptr_> =
             Rc::new(RefCell::new((*cit.borrow()).clone()));
-        let c1 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c2 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c3 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c4 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<bidirectional_iterator_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
-        let c5 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( cit .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c6 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c7 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( cit_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c8 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<bidirectional_iterator_const_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c1 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c2 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c3 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c4 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<bidirectional_iterator_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c5 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( cit .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c6 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c7 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( cit_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c8 : Value<std_ranges_subrange_std_counted_iterator_bidirectional_iterator_const_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<bidirectional_iterator_const_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_const_int_ptr_ :: new_2 ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1070,10 +1028,10 @@ pub fn test_25() -> () {
             })));
         let it_copy: Value<cpp17_output_iterator_int_ptr_> =
             Rc::new(RefCell::new((*it.borrow()).clone()));
-        let c1 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c2 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp17_output_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c1 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c2 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp17_output_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp17_output_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1090,10 +1048,10 @@ pub fn test_25() -> () {
             })));
         let it_copy: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
             Rc::new(RefCell::new((*it.borrow()).clone()));
-        let c1 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c2 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
-        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c1 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c2 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( unimplemented!()   , ___count.as_pointer() , ) } ) )) ;
+        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it_copy .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1117,8 +1075,8 @@ pub fn test_25() -> () {
             !(false),
             "!CountedInvocable<const cpp20_input_iterator<int*>&, int>"
         );;
-        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
-        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_26.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
+        let c3 : Value<std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(( { let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( it .as_pointer()  , ___count.as_pointer() , ) } ) )) ;
+        let c4 : Value<std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new((( { let ___it : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( buffer .as_pointer()  as Ptr::<()> )  } , )  )); let ___count : Value<() > = Rc::new(RefCell::new(3_() )); (*counted_19.with(Value::clone).borrow_mut()) ( ___it.as_pointer() , ___count.as_pointer() , ) } ) ).clone())) ;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -1146,7 +1104,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_25() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

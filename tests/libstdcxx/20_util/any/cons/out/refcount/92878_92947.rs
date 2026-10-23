@@ -266,7 +266,7 @@ pub fn test01_10() {
     let x: Value<()> = Rc::new(RefCell::new({
         let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
         let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-        std_any::new_1(
+        std_any::new(
             { (*in_place_type_11.with(Value::clone).borrow()).clone() },
             { __tmp_0.as_pointer() },
             { __tmp_1.as_pointer() },
@@ -318,7 +318,7 @@ pub fn test01_10() {
     }
     let y: Value<()> = Rc::new(RefCell::new({
         let __tmp_2: Value<()> = Rc::new(RefCell::new(1_()));
-        std_any::new_2(
+        std_any::new(
             { (*in_place_type_11.with(Value::clone).borrow()).clone() },
             { __tmp_2.as_pointer() },
         )
@@ -367,7 +367,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let z: Value<()> = Rc::new(RefCell::new(std_any::new_3({
+    let z: Value<()> = Rc::new(RefCell::new(std_any::new({
         (*in_place_type_11.with(Value::clone).borrow()).clone()
     })));
     let mut __do_while = true;
