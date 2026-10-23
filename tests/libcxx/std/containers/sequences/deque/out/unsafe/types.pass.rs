@@ -1,0 +1,671 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg)]
+pub struct test_allocator_statistics {
+    pub time_to_throw: (),
+    pub throw_after: (),
+    pub count: (),
+    pub alloc_count: (),
+    pub allocated_size: (),
+    pub construct_count: (),
+    pub destroy_count: (),
+    pub copied: (),
+    pub moved: (),
+    pub converted: (),
+}
+impl test_allocator_statistics {
+    pub unsafe fn clear(&mut self) {
+        unimplemented!();
+        self.count = 0_();
+        self.time_to_throw = 0_();
+        self.alloc_count = 0_();
+        self.allocated_size = 0_();
+        self.construct_count = 0_();
+        self.destroy_count = 0_();
+        self.throw_after = 2147483647_();
+        (unsafe { test_allocator_statistics::clear_ctor_counters(self) });
+    }
+    pub unsafe fn clear_ctor_counters(&mut self) {
+        self.copied = 0_();
+        self.moved = 0_();
+        self.converted = 0_();
+    }
+}
+impl Default for test_allocator_statistics {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_statistics {
+                time_to_throw: 0_(),
+                throw_after: 2147483647_(),
+                count: 0_(),
+                alloc_count: 0_(),
+                allocated_size: 0_(),
+                construct_count: 0_(),
+                destroy_count: 0_(),
+                copied: 0_(),
+                moved: 0_(),
+                converted: 0_(),
+            }
+        }
+    }
+}
+pub static mut destructed_value_0: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { -1_() });
+pub static mut moved_value_1: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 2147483647_() });
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_alloc_base {}
+pub unsafe fn operator_eq_2(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+    return (((*x).data_) == ((*y).data_));
+}
+pub unsafe fn operator_ne_3(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+    return !(unsafe {
+        let _x: *const test_allocator_void_ = x;
+        let _y: *const test_allocator_void_ = y;
+        operator_eq_2(_x, _y)
+    });
+}
+#[repr(C)]
+#[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
+pub struct test_allocator_void_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_void_ {
+    pub unsafe fn new_1(mut stats: *mut test_allocator_statistics) -> Self {
+        let mut this = Self {
+            data_: 0_(),
+            id_: 0_(),
+            stats_: stats,
+        };
+        this
+    }
+    pub unsafe fn new_2(mut data: ()) -> Self {
+        let mut this = Self {
+            data_: data,
+            id_: 0_(),
+            stats_: std::ptr::null_mut(),
+        };
+        this
+    }
+    pub unsafe fn new_3(mut data: (), mut stats: *mut test_allocator_statistics) -> Self {
+        let mut this = Self {
+            data_: data,
+            id_: 0_(),
+            stats_: stats,
+        };
+        this
+    }
+    pub unsafe fn new_4(mut data: (), mut id: ()) -> Self {
+        let mut this = Self {
+            data_: data,
+            id_: id,
+            stats_: std::ptr::null_mut(),
+        };
+        this
+    }
+    pub unsafe fn new_5(
+        mut data: (),
+        mut id: (),
+        mut stats: *mut test_allocator_statistics,
+    ) -> Self {
+        let mut this = Self {
+            data_: data,
+            id_: id,
+            stats_: stats,
+        };
+        this
+    }
+    pub unsafe fn copy_from(a: *const test_allocator_void_) -> Self {
+        let mut this = Self {
+            data_: (*a).data_,
+            id_: (*a).id_,
+            stats_: (*a).stats_,
+        };
+        this
+    }
+    pub unsafe fn destructor(&mut self) {
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_0));
+    }
+    pub unsafe fn get_id(&self) -> () {
+        return self.id_;
+    }
+    pub unsafe fn get_data(&self) -> () {
+        return self.data_;
+    }
+    pub unsafe fn copy_assign(
+        &mut self,
+        _a0: *const test_allocator_void_,
+    ) -> *mut test_allocator_void_ {
+        self.data_ = (*_a0).data_;
+        self.id_ = (*_a0).id_;
+        self.stats_ = (*_a0).stats_;
+        return &mut (*(self as *mut test_allocator_void_));
+    }
+}
+impl std::cmp::PartialEq for test_allocator_void_ {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_2(
+                self as *const test_allocator_void_,
+                other as *const test_allocator_void_,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for test_allocator_void_ {}
+impl Clone for test_allocator_void_ {
+    fn clone(&self) -> Self {
+        unsafe { test_allocator_void_::copy_from(self as *const test_allocator_void_) }
+    }
+}
+impl Default for test_allocator_void_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_void_ {
+                data_: 0_(),
+                id_: 0_(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_int__rebind_int_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_int__rebind_int_ptr_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_int__rebind_const_int_ptr_ {}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_int_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_int_ {}
+impl Default for test_allocator_int_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_int_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_Copyable__rebind_Copyable_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_Copyable__rebind_Copyable_ptr_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_allocator_Copyable__rebind_const_Copyable_ptr_ {}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_Copyable_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_Copyable_ {}
+impl Default for test_allocator_Copyable_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_Copyable_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_int_ptr_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_int_ptr_ {}
+impl Default for test_allocator_int_ptr_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_int_ptr_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_const_int_ptr_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_const_int_ptr_ {}
+impl Default for test_allocator_const_int_ptr_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_const_int_ptr_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_Copyable_ptr_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_Copyable_ptr_ {}
+impl Default for test_allocator_Copyable_ptr_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_Copyable_ptr_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg)]
+pub struct test_allocator_const_Copyable_ptr_ {
+    data_: (),
+    id_: (),
+    stats_: *mut test_allocator_statistics,
+}
+impl test_allocator_const_Copyable_ptr_ {}
+impl Default for test_allocator_const_Copyable_ptr_ {
+    fn default() -> Self {
+        unsafe {
+            test_allocator_const_Copyable_ptr_ {
+                data_: unimplemented!(),
+                id_: unimplemented!(),
+                stats_: std::ptr::null_mut(),
+            }
+        }
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct Ctor_Tag {}
+#[repr(C)]
+#[derive(FnPtrArg, CopyAssignUnsafe, MoveAssignUnsafe, Default)]
+pub struct Tag_X {}
+impl Tag_X {
+    pub unsafe fn new_1(mut _a0: Ctor_Tag) -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn new_2(mut _a0: Ctor_Tag, _a1: *const Tag_X) -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn new_3(mut _a0: Ctor_Tag, _a1: *mut Tag_X) -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn copy_assign(&mut self, _a0: *const Tag_X) -> *mut Tag_X {
+        return &mut (*(self as *mut Tag_X));
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut Tag_X) -> *mut Tag_X {
+        return &mut (*(self as *mut Tag_X));
+    }
+}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct Copyable {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct malloc_allocator_base {}
+impl malloc_allocator_base {
+    pub unsafe fn outstanding_alloc() -> () {
+        unimplemented!();
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_5))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_6))));
+    }
+    pub unsafe fn reset() {
+        unimplemented!();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_7)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_4)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_5)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_6)) = 0_();
+    }
+}
+pub static mut outstanding_bytes_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut alloc_count_5: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut dealloc_count_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut disable_default_constructor_7: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { false });
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_short__std_integral_constant_unsigned_long__0__ {
+    ptr_: *mut (),
+}
+impl min_pointer_short__std_integral_constant_unsigned_long__0__ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_const_short__std_integral_constant_unsigned_long__0__ {
+    ptr_: *const (),
+}
+impl min_pointer_const_short__std_integral_constant_unsigned_long__0__ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_min_pointer_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *mut min_pointer_short__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_min_pointer_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_const_min_pointer_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *const min_pointer_short__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_const_min_pointer_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_min_pointer_const_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *mut min_pointer_const_short__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_min_pointer_const_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_pointer_const_min_pointer_const_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__
+{
+    ptr_: *const min_pointer_const_short__std_integral_constant_unsigned_long__0__,
+}
+impl min_pointer_const_min_pointer_const_short__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ { }
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_allocator_short_ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_allocator_min_pointer_short__std_integral_constant_unsigned_long__0___ {}
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct min_allocator_min_pointer_const_short__std_integral_constant_unsigned_long__0___ {}
+pub unsafe fn test_8() {
+    const _: () = assert!(true, "(std::is_same<typename C::value_type, T>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::value_type, typename std::allocator_traits<Allocator>::value_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::allocator_type, Allocator>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::size_type, typename std::allocator_traits<Allocator>::size_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type, typename std::allocator_traits<Allocator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::reference, typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_reference, const typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::pointer, typename std::allocator_traits<Allocator>::pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_pointer, typename std::allocator_traits<Allocator>::const_pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::const_iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::reverse_iterator, std::reverse_iterator<typename C::iterator> >::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::const_reverse_iterator, std::reverse_iterator<typename C::const_iterator> >::value)"
+    );;
+    const _: () = assert!(true, "(std::is_signed<typename C::difference_type>::value)");;
+    const _: () = assert!(true, "(std::is_unsigned<typename C::size_type>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::iterator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::const_iterator>::difference_type>::value)"
+    );;
+}
+pub unsafe fn test_9() {
+    const _: () = assert!(true, "(std::is_same<typename C::value_type, T>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::value_type, typename std::allocator_traits<Allocator>::value_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::allocator_type, Allocator>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::size_type, typename std::allocator_traits<Allocator>::size_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type, typename std::allocator_traits<Allocator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::reference, typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_reference, const typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::pointer, typename std::allocator_traits<Allocator>::pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_pointer, typename std::allocator_traits<Allocator>::const_pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::const_iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::reverse_iterator, std::reverse_iterator<typename C::iterator> >::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::const_reverse_iterator, std::reverse_iterator<typename C::const_iterator> >::value)"
+    );;
+    const _: () = assert!(true, "(std::is_signed<typename C::difference_type>::value)");;
+    const _: () = assert!(true, "(std::is_unsigned<typename C::size_type>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::iterator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::const_iterator>::difference_type>::value)"
+    );;
+}
+pub unsafe fn test_10() {
+    const _: () = assert!(true, "(std::is_same<typename C::value_type, T>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::value_type, typename std::allocator_traits<Allocator>::value_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::allocator_type, Allocator>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::size_type, typename std::allocator_traits<Allocator>::size_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type, typename std::allocator_traits<Allocator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::reference, typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_reference, const typename std::allocator_traits<Allocator>::value_type&>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::pointer, typename std::allocator_traits<Allocator>::pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::const_pointer, typename std::allocator_traits<Allocator>::const_pointer>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename std::iterator_traits<typename C::const_iterator>::iterator_category,\n                               std::random_access_iterator_tag>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::reverse_iterator, std::reverse_iterator<typename C::iterator> >::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same< typename C::const_reverse_iterator, std::reverse_iterator<typename C::const_iterator> >::value)"
+    );;
+    const _: () = assert!(true, "(std::is_signed<typename C::difference_type>::value)");;
+    const _: () = assert!(true, "(std::is_unsigned<typename C::size_type>::value)");;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::iterator>::difference_type>::value)"
+    );;
+    const _: () = assert!(
+        true,
+        "(std::is_same<typename C::difference_type,\n                              typename std::iterator_traits<typename C::const_iterator>::difference_type>::value)"
+    );;
+}
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_8() });
+    (unsafe { test_9() });
+    (unsafe { test_10() });
+    const _: () = assert!(
+        true,
+        "(std::is_same<std::deque<char>::allocator_type, std::allocator<char> >::value)"
+    );;
+    {
+        const _: () = assert!(true, "(std::is_same<C::value_type, short>::value)");;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::allocator_type, min_allocator<C::value_type> >::value)"
+        );;
+        const _: () = assert!(true, "(std::is_same<C::reference, C::value_type&>::value)");;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::const_reference, const C::value_type&>::value)"
+        );;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::pointer, min_pointer<C::value_type>>::value)"
+        );;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::const_pointer, min_pointer<const C::value_type>>::value)"
+        );;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::size_type, std::make_unsigned<C::difference_type>::type>::value)"
+        );;
+        const _: () = assert!(
+            true,
+            "(std::is_same<C::difference_type, std::ptrdiff_t>::value)"
+        );;
+        const _: () = assert!(true, "(std::is_signed<typename C::difference_type>::value)");;
+        const _: () = assert!(true, "(std::is_unsigned<typename C::size_type>::value)");;
+        const _: () = assert!(
+            true,
+            "(std::is_same<typename C::difference_type,\n                                typename std::iterator_traits<typename C::iterator>::difference_type>::value)"
+        );;
+        const _: () = assert!(
+            true,
+            "(std::is_same<typename C::difference_type,\n                                typename std::iterator_traits<typename C::const_iterator>::difference_type>::value)"
+        );;
+    }
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {
+    std::cell::LazyCell::force(&*&raw const destructed_value_0);
+    std::cell::LazyCell::force(&*&raw const moved_value_1);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_4);
+    std::cell::LazyCell::force(&*&raw const alloc_count_5);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_6);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_7);
+}

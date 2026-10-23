@@ -1,0 +1,71 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+pub unsafe fn test_0() {
+    const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
+    const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
+    {
+        let r: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_1));
+    }
+    {
+        let a: () = unimplemented!();
+        let mut r: () = (unsafe { (a as std___atomic_base_float__false_).is_lock_free_1() });
+        {
+            unimplemented!();
+        }
+    }
+    {
+        let a: () = unimplemented!();
+        let mut r: () = (unsafe { (a as std___atomic_base_float__false_).is_lock_free_2() });
+        {
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn test_2() {
+    const _: () = assert!(true, "isLockFreeNoexcept<const std::atomic<T>&>");;
+    const _: () = assert!(true, "isLockFreeNoexcept<const volatile std::atomic<T>&>");;
+    {
+        let r: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut is_always_lock_free_3));
+    }
+    {
+        let a: () = unimplemented!();
+        let mut r: () = (unsafe { (a as std___atomic_base_double__false_).is_lock_free_1() });
+        {
+            unimplemented!();
+        }
+    }
+    {
+        let a: () = unimplemented!();
+        let mut r: () = (unsafe { (a as std___atomic_base_double__false_).is_lock_free_2() });
+        {
+            unimplemented!();
+        }
+    }
+}
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_0() });
+    (unsafe { test_2() });
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {}

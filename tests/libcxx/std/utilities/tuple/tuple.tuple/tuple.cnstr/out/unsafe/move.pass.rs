@@ -1,0 +1,374 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+pub unsafe fn operator_eq_0(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) == ((*y).data_));
+}
+pub unsafe fn operator_ne_1(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) != ((*y).data_));
+}
+pub unsafe fn operator_lt_2(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) < ((*y).data_));
+}
+pub unsafe fn operator_le_3(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) <= ((*y).data_));
+}
+pub unsafe fn operator_gt_4(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) > ((*y).data_));
+}
+pub unsafe fn operator_ge_5(x: *const MoveOnly, y: *const MoveOnly) -> () {
+    return (((*x).data_) >= ((*y).data_));
+}
+pub unsafe fn operator_cmp_6(_a0: *const MoveOnly, _a1: *const MoveOnly) -> () {
+    {
+        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(unimplemented!()) {
+            return unimplemented!();
+        }
+    }
+    return unimplemented!();
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+pub struct MoveOnly {
+    data_: (),
+}
+impl MoveOnly {
+    pub unsafe fn new(mut data: Option<()>) -> Self {
+        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+        let mut this = Self { data_: data };
+        this
+    }
+    pub unsafe fn move_from(x: *mut MoveOnly) -> Self {
+        let mut this = Self { data_: (*x).data_ };
+        (*x).data_ = 0_();
+        this
+    }
+    pub unsafe fn move_assign(&mut self, x: *mut MoveOnly) -> *mut MoveOnly {
+        self.data_ = (*x).data_;
+        (*x).data_ = 0_();
+        return &mut (*(self as *mut MoveOnly));
+    }
+    pub unsafe fn get(&self) -> () {
+        return self.data_;
+    }
+    pub unsafe fn operator_add(&self, x: *const MoveOnly) -> MoveOnly {
+        return MoveOnly::new({ Some(((self.data_) + ((*x).data_))) });
+    }
+    pub unsafe fn operator_mul(&self, x: *const MoveOnly) -> MoveOnly {
+        return MoveOnly::new({ Some(((self.data_) * ((*x).data_))) });
+    }
+}
+impl std::cmp::Ord for MoveOnly {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe { operator_cmp_6(self as *const MoveOnly, other as *const MoveOnly) }
+    }
+}
+impl std::cmp::PartialOrd for MoveOnly {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for MoveOnly {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe { operator_eq_0(self as *const MoveOnly, other as *const MoveOnly) }
+    }
+}
+impl std::cmp::Eq for MoveOnly {}
+impl Default for MoveOnly {
+    fn default() -> Self {
+        unsafe { MoveOnly::new(None) }
+    }
+}
+pub unsafe fn operator_eq_7(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) == ((*y).data_));
+}
+pub unsafe fn operator_ne_8(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) != ((*y).data_));
+}
+pub unsafe fn operator_lt_9(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) < ((*y).data_));
+}
+pub unsafe fn operator_le_10(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) <= ((*y).data_));
+}
+pub unsafe fn operator_gt_11(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) > ((*y).data_));
+}
+pub unsafe fn operator_ge_12(x: *const TrivialMoveOnly, y: *const TrivialMoveOnly) -> () {
+    return (((*x).data_) >= ((*y).data_));
+}
+pub unsafe fn operator_cmp_13(_a0: *const TrivialMoveOnly, _a1: *const TrivialMoveOnly) -> () {
+    {
+        let mut cmp: () = std::cmp::Ord::cmp(&((*_a0).data_), &((*_a1).data_));
+        if !(unimplemented!()) {
+            return unimplemented!();
+        }
+    }
+    return unimplemented!();
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
+pub struct TrivialMoveOnly {
+    data_: (),
+}
+impl TrivialMoveOnly {
+    pub unsafe fn new(mut data: Option<()>) -> Self {
+        let mut data: () = data.unwrap_or_else(|| unsafe { 1_() });
+        let mut this = Self { data_: data };
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut TrivialMoveOnly) -> Self {
+        let mut this = Self {
+            data_: (*_a0).data_,
+        };
+        this
+    }
+    pub unsafe fn move_assign(&mut self, _a0: *mut TrivialMoveOnly) -> *mut TrivialMoveOnly {
+        self.data_ = (*_a0).data_;
+        return &mut (*(self as *mut TrivialMoveOnly));
+    }
+    pub unsafe fn get(&self) -> () {
+        return self.data_;
+    }
+    pub unsafe fn operator_add(&self, x: *const TrivialMoveOnly) -> TrivialMoveOnly {
+        return TrivialMoveOnly::new({ Some(((self.data_) + ((*x).data_))) });
+    }
+    pub unsafe fn operator_mul(&self, x: *const TrivialMoveOnly) -> TrivialMoveOnly {
+        return TrivialMoveOnly::new({ Some(((self.data_) * ((*x).data_))) });
+    }
+}
+impl std::cmp::Ord for TrivialMoveOnly {
+    fn cmp(&self, other: &Self) -> std::cmp::Ordering {
+        unsafe {
+            operator_cmp_13(
+                self as *const TrivialMoveOnly,
+                other as *const TrivialMoveOnly,
+            )
+        }
+    }
+}
+impl std::cmp::PartialOrd for TrivialMoveOnly {
+    fn partial_cmp(&self, other: &Self) -> Option<std::cmp::Ordering> {
+        Some(self.cmp(other))
+    }
+}
+impl std::cmp::PartialEq for TrivialMoveOnly {
+    fn eq(&self, other: &Self) -> bool {
+        unsafe {
+            operator_eq_7(
+                self as *const TrivialMoveOnly,
+                other as *const TrivialMoveOnly,
+            )
+        }
+    }
+}
+impl std::cmp::Eq for TrivialMoveOnly {}
+impl Default for TrivialMoveOnly {
+    fn default() -> Self {
+        unsafe { TrivialMoveOnly::new(None) }
+    }
+}
+#[repr(C)]
+#[derive(VaArg, FnPtrArg, MoveCtorUnsafe)]
+pub struct ConstructsWithTupleLeaf {}
+impl ConstructsWithTupleLeaf {
+    pub unsafe fn new() -> Self {
+        let mut this = Self {};
+        this
+    }
+    pub unsafe fn copy_from(_a0: *const ConstructsWithTupleLeaf) -> Self {
+        let mut this = Self {};
+        unimplemented!();
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut ConstructsWithTupleLeaf) -> Self {
+        let mut this = Self {};
+        this
+    }
+}
+impl Clone for ConstructsWithTupleLeaf {
+    fn clone(&self) -> Self {
+        unsafe { ConstructsWithTupleLeaf::copy_from(self as *const ConstructsWithTupleLeaf) }
+    }
+}
+impl Default for ConstructsWithTupleLeaf {
+    fn default() -> Self {
+        unsafe { ConstructsWithTupleLeaf::new() }
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe, Default)]
+pub struct move_only_ebo {}
+impl move_only_ebo {
+    pub unsafe fn move_from(_a0: *mut move_only_ebo) -> Self {
+        let mut this = Self {};
+        this
+    }
+}
+#[repr(C)]
+#[derive(FnPtrArg, MoveCtorUnsafe)]
+pub struct move_only_large {
+    pub value: (),
+}
+impl move_only_large {
+    pub unsafe fn new() -> Self {
+        let mut this = Self { value: 42_() };
+        this
+    }
+    pub unsafe fn move_from(_a0: *mut move_only_large) -> Self {
+        let mut this = Self {
+            value: (*_a0).value,
+        };
+        this
+    }
+}
+impl Default for move_only_large {
+    fn default() -> Self {
+        unsafe { move_only_large::new() }
+    }
+}
+pub unsafe fn test_sfinae_14() {
+    {
+        const _: () = assert!(true, "std::is_default_constructible<Tup>::value");;
+        const _: () = assert!(true, "std::is_move_constructible<Tup>::value");;
+        const _: () = assert!(true, "!std::is_copy_constructible<Tup>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Tup&>::value");;
+    }
+    {
+        const _: () = assert!(true, "std::is_constructible<Tup, Elem&&>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Elem const&>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Elem&>::value");;
+    }
+    {
+        const _: () = assert!(true, "std::is_constructible<Tup, Tag, Alloc>::value");;
+        const _: () = assert!(true, "std::is_constructible<Tup, Tag, Alloc, Tup&&>::value");;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Tup const&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Tup &>::value"
+        );;
+    }
+    {
+        const _: () = assert!(
+            true,
+            "std::is_constructible<Tup, Tag, Alloc, Elem&&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Elem const&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Elem &>::value"
+        );;
+    }
+}
+pub unsafe fn test_sfinae_15() {
+    {
+        const _: () = assert!(true, "std::is_default_constructible<Tup>::value");;
+        const _: () = assert!(true, "std::is_move_constructible<Tup>::value");;
+        const _: () = assert!(true, "!std::is_copy_constructible<Tup>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Tup&>::value");;
+    }
+    {
+        const _: () = assert!(true, "std::is_constructible<Tup, Elem&&>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Elem const&>::value");;
+        const _: () = assert!(true, "!std::is_constructible<Tup, Elem&>::value");;
+    }
+    {
+        const _: () = assert!(true, "std::is_constructible<Tup, Tag, Alloc>::value");;
+        const _: () = assert!(true, "std::is_constructible<Tup, Tag, Alloc, Tup&&>::value");;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Tup const&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Tup &>::value"
+        );;
+    }
+    {
+        const _: () = assert!(
+            true,
+            "std::is_constructible<Tup, Tag, Alloc, Elem&&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Elem const&>::value"
+        );;
+        const _: () = assert!(
+            true,
+            "!std::is_constructible<Tup, Tag, Alloc, Elem &>::value"
+        );;
+    }
+}
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    {
+        let mut t0: () = unimplemented!();
+        let mut t: () = unimplemented!();
+        (&(t));
+    }
+    {
+        let mut t0: () = MoveOnly::new({ Some(0_()) });
+        let mut t: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut t0: () = {
+            let mut __tmp_0: MoveOnly = MoveOnly::new({ Some(0_()) });
+            let mut __tmp_1: MoveOnly = MoveOnly::new({ Some(1_()) });
+            std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
+        };
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut t0: () = {
+            let mut __tmp_2: MoveOnly = MoveOnly::new({ Some(0_()) });
+            let mut __tmp_3: MoveOnly = MoveOnly::new({ Some(1_()) });
+            let mut __tmp_4: MoveOnly = MoveOnly::new({ Some(2_()) });
+            std_tuple_MoveOnly__MoveOnly__MoveOnly_::new({ &mut __tmp_2 }, { &mut __tmp_3 }, {
+                &mut __tmp_4
+            })
+        };
+        let mut t: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut d: () = (ConstructsWithTupleLeaf::new());
+        let mut d2: () = unimplemented!();
+    }
+    {
+        (unsafe { test_sfinae_14() });
+        (unsafe { test_sfinae_15() });
+    }
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {}

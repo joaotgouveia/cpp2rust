@@ -1,0 +1,104 @@
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::cell::RefCell;
+use std::collections::BTreeMap;
+use std::io::prelude::*;
+use std::io::{Read, Seek, Write};
+use std::os::fd::AsFd;
+use std::rc::{Rc, Weak};
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct TestHelper_wchar_t__4_ {}
+impl TestHelper_wchar_t__4_ {
+    pub fn test() {
+        {
+            let c: Value<std_codecvt_utf8_wchar_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_wchar_t__1114111__0_>::default(),
+            ));
+            let mut r: () = ({ ((*c.borrow()) as ()).max_length() });
+            unimplemented!();
+        }
+        {
+            let c: Value<std_codecvt_utf8_wchar_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_wchar_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: () = ({ ((*c.borrow()) as ()).max_length() });
+            unimplemented!();
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct TestHelper_char16_t__2_ {}
+impl TestHelper_char16_t__2_ {
+    pub fn test() {
+        {
+            let c: Value<std_codecvt_utf8_char16_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_char16_t__1114111__0_>::default(),
+            ));
+            let mut r: () =
+                ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+            unimplemented!();
+        }
+        {
+            let c: Value<std_codecvt_utf8_char16_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_char16_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: () =
+                ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).max_length() });
+            unimplemented!();
+        }
+    }
+}
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct TestHelper_char32_t__4_ {}
+impl TestHelper_char32_t__4_ {
+    pub fn test() {
+        {
+            let c: Value<std_codecvt_utf8_char32_t__1114111__0_> = Rc::new(RefCell::new(
+                <std_codecvt_utf8_char32_t__1114111__0_>::default(),
+            ));
+            let mut r: () =
+                ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+            unimplemented!();
+        }
+        {
+            let c: Value<std_codecvt_utf8_char32_t__4294967295__std_consume_header_> =
+                Rc::new(RefCell::new(
+                    <std_codecvt_utf8_char32_t__4294967295__std_consume_header_>::default(),
+                ));
+            let mut r: () =
+                ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).max_length() });
+            unimplemented!();
+        }
+    }
+}
+pub fn main() {
+    let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
+    let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
+    let args_ptr: Ptr<i8> = args.as_pointer();
+    let mut off = 0;
+    let argv: Value<Box<[Ptr<i8>]>> = Rc::new(RefCell::new(
+        ::std::env::args()
+            .map(|arg| {
+                let ptr = args_ptr.offset(off);
+                ptr.write_c_bytes(arg.as_bytes());
+                off += arg.len() + 1;
+                ptr
+            })
+            .chain(::std::iter::once(Ptr::null()))
+            .collect(),
+    ));
+    __cpp2rust_init_globals();
+    ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
+}
+fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ TestHelper_wchar_t__4_::test() });
+    ({ TestHelper_char16_t__2_::test() });
+    ({ TestHelper_char32_t__4_::test() });
+    return 0_();
+}
+pub fn __cpp2rust_init_globals() {}
