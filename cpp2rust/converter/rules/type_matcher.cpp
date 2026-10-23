@@ -169,6 +169,23 @@ const clang::NamedDecl *MoreSpecializedType(clang::Sema &sema,
     if (a_of_b != b_of_a) {
       return a_of_b ? a : b;
     }
+    // equal patterns: the more constrained alias wins (atomic<_Tp> requires
+    // is_floating_point_v<_Tp> over the primary atomic<_Tp>)
+    if (a_of_b) {
+      llvm::SmallVector<clang::AssociatedConstraint, 2> a_constraints;
+      llvm::SmallVector<clang::AssociatedConstraint, 2> b_constraints;
+      a_alias->getAssociatedConstraints(a_constraints);
+      b_alias->getAssociatedConstraints(b_constraints);
+      bool a_at_least = false;
+      bool b_at_least = false;
+      if (!sema.IsAtLeastAsConstrained(a_alias, a_constraints, b_alias,
+                                       b_constraints, a_at_least) &&
+          !sema.IsAtLeastAsConstrained(b_alias, b_constraints, a_alias,
+                                       a_constraints, b_at_least) &&
+          a_at_least != b_at_least) {
+        return a_at_least ? a : b;
+      }
+    }
   }
   return nullptr;
 }
