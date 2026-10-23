@@ -26,10 +26,34 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut i: () = unimplemented!();
     let mut v: () = unimplemented!();
     let mut exp: () = 0_();
-    &(unimplemented!());
-    &(unimplemented!());
-    unimplemented!();
-    unimplemented!();
+    &(unsafe {
+        (i as std___atomic_base_int__false_).compare_exchange_weak_16(
+            &mut exp,
+            0_(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_acq_rel_0)),
+        )
+    });
+    &(unsafe {
+        (i as std___atomic_base_int__false_).compare_exchange_weak_16(
+            &mut exp,
+            0_(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_1)),
+        )
+    });
+    (unsafe {
+        (i as std___atomic_base_int__false_).compare_exchange_strong_18(
+            &mut exp,
+            0_(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_acq_rel_0)),
+        )
+    });
+    (unsafe {
+        (i as std___atomic_base_int__false_).compare_exchange_strong_18(
+            &mut exp,
+            0_(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_1)),
+        )
+    });
     &(unsafe {
         (v as std___atomic_base_int__false_).compare_exchange_weak_15(
             &mut exp,

@@ -9,7 +9,12 @@ use std::rc::Rc;
 pub unsafe fn cmpxchg_weak_loop_0(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_char__false_).compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -34,7 +39,13 @@ pub unsafe fn cmpxchg_weak_loop_1(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_2(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_signed_char__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -60,7 +71,13 @@ pub unsafe fn cmpxchg_weak_loop_3(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_4(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_unsigned_char__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -86,7 +103,13 @@ pub unsafe fn cmpxchg_weak_loop_5(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_6(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_short__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -112,7 +135,13 @@ pub unsafe fn cmpxchg_weak_loop_7(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_8(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_unsigned_short__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -138,7 +167,12 @@ pub unsafe fn cmpxchg_weak_loop_9(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_10(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_int__false_).compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -163,7 +197,13 @@ pub unsafe fn cmpxchg_weak_loop_11(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_12(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_unsigned_int__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -189,7 +229,12 @@ pub unsafe fn cmpxchg_weak_loop_13(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_14(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_long__false_).compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -214,7 +259,13 @@ pub unsafe fn cmpxchg_weak_loop_15(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_16(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_unsigned_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -240,7 +291,13 @@ pub unsafe fn cmpxchg_weak_loop_17(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_18(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_long_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -266,7 +323,13 @@ pub unsafe fn cmpxchg_weak_loop_19(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_20(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_unsigned_long_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -292,7 +355,13 @@ pub unsafe fn cmpxchg_weak_loop_21(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_22(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_char8_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -318,7 +387,13 @@ pub unsafe fn cmpxchg_weak_loop_23(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_24(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_char16_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -344,7 +419,13 @@ pub unsafe fn cmpxchg_weak_loop_25(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_26(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_char32_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -370,7 +451,13 @@ pub unsafe fn cmpxchg_weak_loop_27(atomic: *mut (), expected: *mut (), mut desir
 pub unsafe fn cmpxchg_weak_loop_28(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unimplemented!()) == (true)) {
+        if ((unsafe {
+            let ___e: *mut () = expected;
+            let ___d: () = desired;
+            ((*atomic) as std___atomic_base_wchar_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == (true))
+        {
             return true;
         }
         i.postfix_inc();
@@ -403,9 +490,14 @@ pub unsafe fn do_test_30() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_char__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -454,7 +546,7 @@ pub unsafe fn do_test_30() {
         unimplemented!();
     }
 }
-pub unsafe fn do_test_31() {
+pub unsafe fn do_test_32() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
@@ -470,7 +562,7 @@ pub unsafe fn do_test_31() {
     (unsafe {
         (obj as std___atomic_base_char__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -531,9 +623,14 @@ pub unsafe fn do_test_33() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_signed_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_signed_char__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -598,7 +695,7 @@ pub unsafe fn do_test_34() {
     (unsafe {
         (obj as std___atomic_base_signed_char__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -659,9 +756,14 @@ pub unsafe fn do_test_35() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_unsigned_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_unsigned_char__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -726,7 +828,7 @@ pub unsafe fn do_test_36() {
     (unsafe {
         (obj as std___atomic_base_unsigned_char__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -787,9 +889,14 @@ pub unsafe fn do_test_37() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_short__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_short__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -854,7 +961,7 @@ pub unsafe fn do_test_38() {
     (unsafe {
         (obj as std___atomic_base_short__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -915,9 +1022,14 @@ pub unsafe fn do_test_39() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_unsigned_short__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_unsigned_short__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -982,7 +1094,7 @@ pub unsafe fn do_test_40() {
     (unsafe {
         (obj as std___atomic_base_unsigned_short__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1043,9 +1155,14 @@ pub unsafe fn do_test_41() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_int__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_int__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1109,7 +1226,7 @@ pub unsafe fn do_test_42() {
     (unsafe {
         (obj as std___atomic_base_int__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1170,9 +1287,14 @@ pub unsafe fn do_test_43() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_unsigned_int__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_unsigned_int__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1237,7 +1359,7 @@ pub unsafe fn do_test_44() {
     (unsafe {
         (obj as std___atomic_base_unsigned_int__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1298,9 +1420,14 @@ pub unsafe fn do_test_45() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_long__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1374,7 +1501,7 @@ pub unsafe fn do_test_46() {
     (unsafe {
         (obj as std___atomic_base_long__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1444,9 +1571,14 @@ pub unsafe fn do_test_47() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_unsigned_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_unsigned_long__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1520,7 +1652,7 @@ pub unsafe fn do_test_48() {
     (unsafe {
         (obj as std___atomic_base_unsigned_long__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1590,9 +1722,14 @@ pub unsafe fn do_test_49() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_long_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_long_long__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1666,7 +1803,7 @@ pub unsafe fn do_test_50() {
     (unsafe {
         (obj as std___atomic_base_long_long__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1736,9 +1873,14 @@ pub unsafe fn do_test_51() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_unsigned_long_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_unsigned_long_long__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1812,7 +1954,7 @@ pub unsafe fn do_test_52() {
     (unsafe {
         (obj as std___atomic_base_unsigned_long_long__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -1882,9 +2024,14 @@ pub unsafe fn do_test_53() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_char8_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_char8_t__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1949,7 +2096,7 @@ pub unsafe fn do_test_54() {
     (unsafe {
         (obj as std___atomic_base_char8_t__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -2010,9 +2157,14 @@ pub unsafe fn do_test_55() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_char16_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_char16_t__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2077,7 +2229,7 @@ pub unsafe fn do_test_56() {
     (unsafe {
         (obj as std___atomic_base_char16_t__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -2138,9 +2290,14 @@ pub unsafe fn do_test_57() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_char32_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_char32_t__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2205,7 +2362,7 @@ pub unsafe fn do_test_58() {
     (unsafe {
         (obj as std___atomic_base_char32_t__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -2266,9 +2423,14 @@ pub unsafe fn do_test_59() {
             unimplemented!();
         }
     }
+    (unsafe { (obj as std___atomic_base_wchar_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    (unsafe {
+        (obj as std___atomic_base_wchar_t__false_).store_4(
+            1_(),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
+        )
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2333,7 +2495,7 @@ pub unsafe fn do_test_60() {
     (unsafe {
         (obj as std___atomic_base_wchar_t__false_).store_3(
             1_(),
-            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_32))),
+            Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_31))),
         )
     });
     unimplemented!();
@@ -2386,7 +2548,7 @@ pub unsafe fn do_test_60() {
 }
 pub unsafe fn test_61() {
     (unsafe { do_test_30() });
-    (unsafe { do_test_31() });
+    (unsafe { do_test_32() });
 }
 pub unsafe fn test_62() {
     (unsafe { do_test_33() });
@@ -2445,8 +2607,8 @@ pub unsafe fn test_75() {
     (unsafe { do_test_60() });
 }
 pub unsafe fn test_76() {
-    (unsafe { do_test_31() });
-    (unsafe { do_test_31() });
+    (unsafe { do_test_32() });
+    (unsafe { do_test_32() });
 }
 pub unsafe fn test_77() {
     (unsafe { do_test_34() });

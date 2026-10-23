@@ -9,7 +9,13 @@ use std::rc::{Rc, Weak};
 pub fn cmpxchg_weak_loop_0(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_char__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -35,7 +41,13 @@ pub fn cmpxchg_weak_loop_1(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_2(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_signed_char__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -61,7 +73,13 @@ pub fn cmpxchg_weak_loop_3(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_4(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_unsigned_char__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -87,7 +105,13 @@ pub fn cmpxchg_weak_loop_5(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_6(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_short__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -113,7 +137,13 @@ pub fn cmpxchg_weak_loop_7(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_8(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_unsigned_short__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -139,7 +169,13 @@ pub fn cmpxchg_weak_loop_9(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_10(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_int__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -165,7 +201,13 @@ pub fn cmpxchg_weak_loop_11(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_12(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_unsigned_int__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -191,7 +233,13 @@ pub fn cmpxchg_weak_loop_13(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_14(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -217,7 +265,13 @@ pub fn cmpxchg_weak_loop_15(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_16(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_unsigned_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -243,7 +297,13 @@ pub fn cmpxchg_weak_loop_17(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_18(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_long_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -269,7 +329,13 @@ pub fn cmpxchg_weak_loop_19(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_20(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_unsigned_long_long__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -295,7 +361,13 @@ pub fn cmpxchg_weak_loop_21(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_22(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_char8_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -321,7 +393,13 @@ pub fn cmpxchg_weak_loop_23(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_24(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_char16_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -347,7 +425,13 @@ pub fn cmpxchg_weak_loop_25(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_26(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_char32_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -373,7 +457,13 @@ pub fn cmpxchg_weak_loop_27(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ())
 pub fn cmpxchg_weak_loop_28(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (unimplemented!() == true) {
+        if (({
+            let ___e: Ptr<()> = (expected).clone();
+            let ___d: () = desired;
+            ((*atomic.upgrade().deref()) as std___atomic_base_wchar_t__false_)
+                .compare_exchange_weak_16(___e, ___d, None)
+        }) == true)
+        {
             return true;
         }
         i.postfix_inc();
@@ -406,9 +496,12 @@ pub fn do_test_30() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_char__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -459,7 +552,7 @@ pub fn do_test_30() {
         unimplemented!();
     }
 }
-pub fn do_test_31() {
+pub fn do_test_32() {
     let obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     {
@@ -474,7 +567,7 @@ pub fn do_test_31() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_char__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -536,9 +629,12 @@ pub fn do_test_33() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_signed_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_signed_char__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -604,7 +700,7 @@ pub fn do_test_34() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_signed_char__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -666,9 +762,12 @@ pub fn do_test_35() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_unsigned_char__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_unsigned_char__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -734,7 +833,7 @@ pub fn do_test_36() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_unsigned_char__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -796,9 +895,12 @@ pub fn do_test_37() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_short__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_short__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -864,7 +966,7 @@ pub fn do_test_38() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_short__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -926,9 +1028,12 @@ pub fn do_test_39() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_unsigned_short__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_unsigned_short__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -994,7 +1099,7 @@ pub fn do_test_40() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_unsigned_short__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1056,9 +1161,12 @@ pub fn do_test_41() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_int__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_int__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1129,7 +1237,7 @@ pub fn do_test_42() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_int__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1196,9 +1304,12 @@ pub fn do_test_43() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_unsigned_int__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_unsigned_int__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1269,7 +1380,7 @@ pub fn do_test_44() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_unsigned_int__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1336,9 +1447,12 @@ pub fn do_test_45() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_long__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1413,7 +1527,7 @@ pub fn do_test_46() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_long__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1484,9 +1598,12 @@ pub fn do_test_47() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_unsigned_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_unsigned_long__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1561,7 +1678,7 @@ pub fn do_test_48() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_unsigned_long__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1632,9 +1749,12 @@ pub fn do_test_49() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_long_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_long_long__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1709,7 +1829,7 @@ pub fn do_test_50() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_long_long__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1780,9 +1900,12 @@ pub fn do_test_51() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_unsigned_long_long__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_unsigned_long_long__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1858,7 +1981,7 @@ pub fn do_test_52() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_unsigned_long_long__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -1929,9 +2052,12 @@ pub fn do_test_53() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_char8_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_char8_t__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1997,7 +2123,7 @@ pub fn do_test_54() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_char8_t__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -2059,9 +2185,12 @@ pub fn do_test_55() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_char16_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_char16_t__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2127,7 +2256,7 @@ pub fn do_test_56() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_char16_t__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -2189,9 +2318,12 @@ pub fn do_test_57() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_char32_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_char32_t__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2262,7 +2394,7 @@ pub fn do_test_58() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_char32_t__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -2329,9 +2461,12 @@ pub fn do_test_59() {
             unimplemented!();
         }
     }
+    ({ ((*obj.borrow()) as std___atomic_base_wchar_t__false_).store_4(0_(), None) });
     unimplemented!();
-    unimplemented!();
-    unimplemented!();
+    ({
+        ((*obj.borrow()) as std___atomic_base_wchar_t__false_)
+            .store_4(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2402,7 +2537,7 @@ pub fn do_test_60() {
     unimplemented!();
     ({
         ((*obj.borrow()) as std___atomic_base_wchar_t__false_)
-            .store_3(1_(), Some(memory_order_release_32.with(|rc| *rc.borrow())))
+            .store_3(1_(), Some(memory_order_release_31.with(|rc| *rc.borrow())))
     });
     unimplemented!();
     unimplemented!();
@@ -2461,7 +2596,7 @@ pub fn do_test_60() {
 }
 pub fn test_61() {
     ({ do_test_30() });
-    ({ do_test_31() });
+    ({ do_test_32() });
 }
 pub fn test_62() {
     ({ do_test_33() });
@@ -2520,8 +2655,8 @@ pub fn test_75() {
     ({ do_test_60() });
 }
 pub fn test_76() {
-    ({ do_test_31() });
-    ({ do_test_31() });
+    ({ do_test_32() });
+    ({ do_test_32() });
 }
 pub fn test_77() {
     ({ do_test_34() });

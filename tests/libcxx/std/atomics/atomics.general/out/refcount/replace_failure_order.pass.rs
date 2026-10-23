@@ -30,10 +30,34 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let exp: Value<()> = Rc::new(RefCell::new(0_()));
-    &(unimplemented!());
-    &(unimplemented!());
-    unimplemented!();
-    unimplemented!();
+    &({
+        ((*i.borrow()) as std___atomic_base_int__false_).compare_exchange_weak_16(
+            exp.as_pointer(),
+            0_(),
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    &({
+        ((*i.borrow()) as std___atomic_base_int__false_).compare_exchange_weak_16(
+            exp.as_pointer(),
+            0_(),
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*i.borrow()) as std___atomic_base_int__false_).compare_exchange_strong_18(
+            exp.as_pointer(),
+            0_(),
+            memory_order_acq_rel_0.with(|rc| *rc.borrow()),
+        )
+    });
+    ({
+        ((*i.borrow()) as std___atomic_base_int__false_).compare_exchange_strong_18(
+            exp.as_pointer(),
+            0_(),
+            memory_order_release_1.with(|rc| *rc.borrow()),
+        )
+    });
     &({
         ((*v.borrow()) as std___atomic_base_int__false_).compare_exchange_weak_15(
             exp.as_pointer(),
