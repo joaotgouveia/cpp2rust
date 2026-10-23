@@ -16,7 +16,7 @@ bool f101(const std::filesystem::directory_iterator &a0,
 
 bool f102(const std::filesystem::file_status &a0,
           const std::filesystem::file_status &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 bool f103(const std::filesystem::recursive_directory_iterator &a0,

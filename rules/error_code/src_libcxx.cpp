@@ -3,11 +3,11 @@
 #include <utility>
 
 bool f6(const std::error_code &a0, const std::error_condition &a1) {
-  return a0 == a1;
+  return std::operator==(a0, a1);
 }
 
 bool f7(const std::error_code &a0, const std::error_code &a1) {
-  return a0 == a1;
+  return std::operator==(a0, a1);
 }
 
 using t1 = std::error_code;

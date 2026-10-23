@@ -33,7 +33,7 @@ std::pmr::memory_resource *f7() { return std::pmr::null_memory_resource(); }
 
 bool f8(const std::pmr::memory_resource &a0,
         const std::pmr::memory_resource &a1) {
-  return a0 == a1;
+  return std::pmr::operator==(a0, a1);
 }
 
 std::pmr::memory_resource *f9(std::pmr::memory_resource *a0) {

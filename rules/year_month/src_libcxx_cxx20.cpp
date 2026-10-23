@@ -4,55 +4,55 @@
 
 std::chrono::year_month f1(const std::chrono::months &a0,
                            const std::chrono::year_month &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year_month f2(const std::chrono::years &a0,
                            const std::chrono::year_month &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year_month f3(const std::chrono::year_month &a0,
                            const std::chrono::months &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year_month f4(const std::chrono::year_month &a0,
                            const std::chrono::years &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year_month f5(const std::chrono::year_month &a0,
                            const std::chrono::months &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::year_month f6(const std::chrono::year_month &a0,
                            const std::chrono::years &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::months f7(const std::chrono::year_month &a0,
                        const std::chrono::year_month &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::year_month f8(const std::chrono::year &a0,
                            const std::chrono::month &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::year_month f9(const std::chrono::year &a0, int a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::strong_ordering f10(const std::chrono::year_month &a0,
                          const std::chrono::year_month &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=>(a0, a1);
 }
 
 bool f11(const std::chrono::year_month &a0, const std::chrono::year_month &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 using t1 = std::chrono::year_month;

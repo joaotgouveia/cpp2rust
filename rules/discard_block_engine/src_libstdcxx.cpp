@@ -18,7 +18,7 @@ template <
                     bool, !std::is_convertible<T4, typename T1::result_type>::
                               value>::value>::value,
         void>::type>
-std::discard_block_engine<T1, T2, T3> f15(T4 &a0) {
+std::discard_block_engine<T1, T2, T3> f14(T4 &a0) {
   return std::discard_block_engine<T1, T2, T3>(a0);
 }
 
@@ -36,6 +36,12 @@ typename std::enable_if<
                 bool, !std::is_convertible<
                           T4, typename T1::result_type>::value>::value>::value,
     void>::type
-f16(std::discard_block_engine<T1, T2, T3> &a0, T4 &a1) {
+f15(std::discard_block_engine<T1, T2, T3> &a0, T4 &a1) {
   return a0.template seed<T4>(a1);
+}
+
+template <typename T1, std::size_t T2, std::size_t T3>
+bool f16(const std::discard_block_engine<T1, T2, T3> &a0,
+         const std::discard_block_engine<T1, T2, T3> &a1) {
+  return operator==(a0, a1);
 }

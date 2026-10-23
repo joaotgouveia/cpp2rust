@@ -74,48 +74,48 @@ std::chrono::month_weekday_last &f16(std::chrono::month_weekday_last &a0,
 
 std::chrono::month_weekday f17(const std::chrono::month &a0,
                                const std::chrono::weekday_indexed &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f18(const std::chrono::month &a0,
                                     const std::chrono::weekday_last &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday f19(const std::chrono::weekday_indexed &a0,
                                const std::chrono::month &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday f20(const std::chrono::weekday_indexed &a0, int a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f21(const std::chrono::weekday_last &a0,
                                     const std::chrono::month &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f22(const std::chrono::weekday_last &a0,
                                     int a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday f23(int a0, const std::chrono::weekday_indexed &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f24(int a0,
                                     const std::chrono::weekday_last &a1) {
-  return a0 / a1;
+  return std::chrono::operator/(a0, a1);
 }
 
 bool f25(const std::chrono::month_weekday &a0,
          const std::chrono::month_weekday &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 bool f26(const std::chrono::month_weekday_last &a0,
          const std::chrono::month_weekday_last &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }

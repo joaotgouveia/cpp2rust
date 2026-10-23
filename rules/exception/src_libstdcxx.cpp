@@ -17,3 +17,5 @@ std::terminate_handler f12(std::terminate_handler a0) {
 void f13() { return std::terminate(); }
 
 using t3 = std::terminate_handler;
+
+bool f14() { return std::uncaught_exception(); }

@@ -3,4 +3,6 @@
 #include <utility>
 #include <valarray>
 
-bool f173(const std::slice &a0, const std::slice &a1) { return a0 == a1; }
+bool f173(const std::slice &a0, const std::slice &a1) {
+  return operator==(a0, a1);
+}

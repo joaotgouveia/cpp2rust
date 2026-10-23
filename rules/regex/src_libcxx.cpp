@@ -114,13 +114,13 @@ std::regex_constants::match_flag_type f95() {
 std::regex_constants::match_flag_type
 f96(std::regex_constants::match_flag_type a0,
     std::regex_constants::match_flag_type a1) {
-  return a0 & a1;
+  return std::regex_constants::operator&(a0, a1);
 }
 
 std::regex_constants::syntax_option_type
 f97(std::regex_constants::syntax_option_type a0,
     std::regex_constants::syntax_option_type a1) {
-  return a0 & a1;
+  return std::regex_constants::operator&(a0, a1);
 }
 
 std::regex_constants::match_flag_type &
@@ -138,13 +138,13 @@ f99(std::regex_constants::syntax_option_type &a0,
 std::regex_constants::match_flag_type
 f100(std::regex_constants::match_flag_type a0,
      std::regex_constants::match_flag_type a1) {
-  return a0 ^ a1;
+  return std::regex_constants::operator^(a0, a1);
 }
 
 std::regex_constants::syntax_option_type
 f101(std::regex_constants::syntax_option_type a0,
      std::regex_constants::syntax_option_type a1) {
-  return a0 ^ a1;
+  return std::regex_constants::operator^(a0, a1);
 }
 
 std::regex_constants::match_flag_type &
@@ -162,13 +162,13 @@ f103(std::regex_constants::syntax_option_type &a0,
 std::regex_constants::match_flag_type
 f104(std::regex_constants::match_flag_type a0,
      std::regex_constants::match_flag_type a1) {
-  return a0 | a1;
+  return std::regex_constants::operator|(a0, a1);
 }
 
 std::regex_constants::syntax_option_type
 f105(std::regex_constants::syntax_option_type a0,
      std::regex_constants::syntax_option_type a1) {
-  return a0 | a1;
+  return std::regex_constants::operator|(a0, a1);
 }
 
 std::regex_constants::match_flag_type &
@@ -185,12 +185,12 @@ f107(std::regex_constants::syntax_option_type &a0,
 
 std::regex_constants::match_flag_type
 f108(std::regex_constants::match_flag_type a0) {
-  return ~a0;
+  return std::regex_constants::operator~(a0);
 }
 
 std::regex_constants::syntax_option_type
 f109(std::regex_constants::syntax_option_type a0) {
-  return ~a0;
+  return std::regex_constants::operator~(a0);
 }
 
 using t26 = std::regex_constants::syntax_option_type;

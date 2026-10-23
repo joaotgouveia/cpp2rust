@@ -11,21 +11,21 @@ std::string f79(const std::filesystem::path &a0) {
 }
 
 bool f80(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 >= a1;
+  return operator>=(a0, a1);
 }
 
 bool f81(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 > a1;
+  return operator>(a0, a1);
 }
 
 bool f82(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 <= a1;
+  return operator<=(a0, a1);
 }
 
 bool f83(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 < a1;
+  return operator<(a0, a1);
 }
 
 bool f84(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 != a1;
+  return operator!=(a0, a1);
 }

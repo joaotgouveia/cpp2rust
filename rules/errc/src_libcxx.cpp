@@ -83,70 +83,78 @@ std::errc f39() { return std::errc::no_link; }
 
 std::errc f40() { return std::errc::no_lock_available; }
 
-std::errc f41() { return std::errc::no_message; }
+std::errc f41() { return std::errc::no_message_available; }
 
-std::errc f42() { return std::errc::no_protocol_option; }
+std::errc f42() { return std::errc::no_message; }
 
-std::errc f43() { return std::errc::no_space_on_device; }
+std::errc f43() { return std::errc::no_protocol_option; }
 
-std::errc f44() { return std::errc::no_such_device_or_address; }
+std::errc f44() { return std::errc::no_space_on_device; }
 
-std::errc f45() { return std::errc::no_such_device; }
+std::errc f45() { return std::errc::no_stream_resources; }
 
-std::errc f46() { return std::errc::no_such_file_or_directory; }
+std::errc f46() { return std::errc::no_such_device_or_address; }
 
-std::errc f47() { return std::errc::no_such_process; }
+std::errc f47() { return std::errc::no_such_device; }
 
-std::errc f48() { return std::errc::not_a_directory; }
+std::errc f48() { return std::errc::no_such_file_or_directory; }
 
-std::errc f49() { return std::errc::not_a_socket; }
+std::errc f49() { return std::errc::no_such_process; }
 
-std::errc f50() { return std::errc::not_connected; }
+std::errc f50() { return std::errc::not_a_directory; }
 
-std::errc f51() { return std::errc::not_enough_memory; }
+std::errc f51() { return std::errc::not_a_socket; }
 
-std::errc f52() { return std::errc::not_supported; }
+std::errc f52() { return std::errc::not_a_stream; }
 
-std::errc f53() { return std::errc::operation_canceled; }
+std::errc f53() { return std::errc::not_connected; }
 
-std::errc f54() { return std::errc::operation_in_progress; }
+std::errc f54() { return std::errc::not_enough_memory; }
 
-std::errc f55() { return std::errc::operation_not_permitted; }
+std::errc f55() { return std::errc::not_supported; }
 
-std::errc f56() { return std::errc::operation_not_supported; }
+std::errc f56() { return std::errc::operation_canceled; }
 
-std::errc f57() { return std::errc::operation_would_block; }
+std::errc f57() { return std::errc::operation_in_progress; }
 
-std::errc f58() { return std::errc::owner_dead; }
+std::errc f58() { return std::errc::operation_not_permitted; }
 
-std::errc f59() { return std::errc::permission_denied; }
+std::errc f59() { return std::errc::operation_not_supported; }
 
-std::errc f60() { return std::errc::protocol_error; }
+std::errc f60() { return std::errc::operation_would_block; }
 
-std::errc f61() { return std::errc::protocol_not_supported; }
+std::errc f61() { return std::errc::owner_dead; }
 
-std::errc f62() { return std::errc::read_only_file_system; }
+std::errc f62() { return std::errc::permission_denied; }
 
-std::errc f63() { return std::errc::resource_deadlock_would_occur; }
+std::errc f63() { return std::errc::protocol_error; }
 
-std::errc f64() { return std::errc::resource_unavailable_try_again; }
+std::errc f64() { return std::errc::protocol_not_supported; }
 
-std::errc f65() { return std::errc::result_out_of_range; }
+std::errc f65() { return std::errc::read_only_file_system; }
 
-std::errc f66() { return std::errc::state_not_recoverable; }
+std::errc f66() { return std::errc::resource_deadlock_would_occur; }
 
-std::errc f67() { return std::errc::text_file_busy; }
+std::errc f67() { return std::errc::resource_unavailable_try_again; }
 
-std::errc f68() { return std::errc::timed_out; }
+std::errc f68() { return std::errc::result_out_of_range; }
 
-std::errc f69() { return std::errc::too_many_files_open_in_system; }
+std::errc f69() { return std::errc::state_not_recoverable; }
 
-std::errc f70() { return std::errc::too_many_files_open; }
+std::errc f70() { return std::errc::stream_timeout; }
 
-std::errc f71() { return std::errc::too_many_links; }
+std::errc f71() { return std::errc::text_file_busy; }
 
-std::errc f72() { return std::errc::too_many_symbolic_link_levels; }
+std::errc f72() { return std::errc::timed_out; }
 
-std::errc f73() { return std::errc::value_too_large; }
+std::errc f73() { return std::errc::too_many_files_open_in_system; }
 
-std::errc f74() { return std::errc::wrong_protocol_type; }
+std::errc f74() { return std::errc::too_many_files_open; }
+
+std::errc f75() { return std::errc::too_many_links; }
+
+std::errc f76() { return std::errc::too_many_symbolic_link_levels; }
+
+std::errc f77() { return std::errc::value_too_large; }
+
+std::errc f78() { return std::errc::wrong_protocol_type; }

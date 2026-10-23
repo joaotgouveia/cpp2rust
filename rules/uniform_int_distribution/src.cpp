@@ -78,5 +78,5 @@ f11(std::uniform_int_distribution<T1> &a0, T2 &a1,
 template <typename T1>
 bool f12(const std::uniform_int_distribution<T1> &a0,
          const std::uniform_int_distribution<T1> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

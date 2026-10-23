@@ -5,58 +5,59 @@
 template <typename T1>
 auto f15(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 != a1) {
-  return a0 != a1;
+    -> decltype(std::operator!= <T1>(a0, a1)) {
+  return std::operator!= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f16(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 != a1) {
-  return a0 != a1;
+    -> decltype(std::operator!= <T1>(a0, a1)) {
+  return std::operator!= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f17(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 != a1) {
-  return a0 != a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator!= <T1>(a0, a1)) {
+  return std::operator!= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f18(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 % a1) {
-  return a0 % a1;
+    -> decltype(std::operator% <T1>(a0, a1)) {
+  return std::operator% <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f19(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 % a1) {
-  return a0 % a1;
+    -> decltype(std::operator% <T1>(a0, a1)) {
+  return std::operator% <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f20(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 % a1) {
-  return a0 % a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator% <T1>(a0, a1)) {
+  return std::operator% <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f21(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 & a1) {
-  return a0 & a1;
+    -> decltype(std::operator& <T1>(a0, a1)) {
+  return std::operator& <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f22(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 & a1) {
-  return a0 & a1;
+    -> decltype(std::operator& <T1>(a0, a1)) {
+  return std::operator& <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f23(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 & a1) {
-  return a0 & a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator& <T1>(a0, a1)) {
+  return std::operator& <T1>(a0, a1);
 }
 
 template <typename T1>
@@ -82,248 +83,253 @@ auto f26(const typename std::valarray<T1>::value_type &a0,
 template <typename T1>
 auto f27(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 * a1) {
-  return a0 * a1;
+    -> decltype(std::operator* <T1>(a0, a1)) {
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f28(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 * a1) {
-  return a0 * a1;
+    -> decltype(std::operator* <T1>(a0, a1)) {
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f29(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 * a1) {
-  return a0 * a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator* <T1>(a0, a1)) {
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f30(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 + a1) {
-  return a0 + a1;
+    -> decltype(std::operator+ <T1>(a0, a1)) {
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f31(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 + a1) {
-  return a0 + a1;
+    -> decltype(std::operator+ <T1>(a0, a1)) {
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f32(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 + a1) {
-  return a0 + a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator+ <T1>(a0, a1)) {
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f33(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 - a1) {
-  return a0 - a1;
+    -> decltype(std::operator- <T1>(a0, a1)) {
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f34(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 - a1) {
-  return a0 - a1;
+    -> decltype(std::operator- <T1>(a0, a1)) {
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f35(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 - a1) {
-  return a0 - a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator- <T1>(a0, a1)) {
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f36(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 / a1) {
-  return a0 / a1;
+    -> decltype(std::operator/ <T1>(a0, a1)) {
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f37(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 / a1) {
-  return a0 / a1;
+    -> decltype(std::operator/ <T1>(a0, a1)) {
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f38(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 / a1) {
-  return a0 / a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator/ <T1>(a0, a1)) {
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f39(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 < a1) {
-  return a0 < a1;
+    -> decltype(std::operator< <T1>(a0, a1)) {
+  return std::operator< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f40(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 < a1) {
-  return a0 < a1;
+    -> decltype(std::operator< <T1>(a0, a1)) {
+  return std::operator< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f41(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 < a1) {
-  return a0 < a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator< <T1>(a0, a1)) {
+  return std::operator< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f42(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 << a1) {
-  return a0 << a1;
+    -> decltype(std::operator<< <T1>(a0, a1)) {
+  return std::operator<< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f43(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 << a1) {
-  return a0 << a1;
+    -> decltype(std::operator<< <T1>(a0, a1)) {
+  return std::operator<< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f44(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 << a1) {
-  return a0 << a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator<< <T1>(a0, a1)) {
+  return std::operator<< <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f45(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 <= a1) {
-  return a0 <= a1;
+    -> decltype(std::operator<= <T1>(a0, a1)) {
+  return std::operator<= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f46(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 <= a1) {
-  return a0 <= a1;
+    -> decltype(std::operator<= <T1>(a0, a1)) {
+  return std::operator<= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f47(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 <= a1) {
-  return a0 <= a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator<= <T1>(a0, a1)) {
+  return std::operator<= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f48(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 == a1) {
-  return a0 == a1;
+    -> decltype(std::operator== <T1>(a0, a1)) {
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f49(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 == a1) {
-  return a0 == a1;
+    -> decltype(std::operator== <T1>(a0, a1)) {
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f50(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 == a1) {
-  return a0 == a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator== <T1>(a0, a1)) {
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f51(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 > a1) {
-  return a0 > a1;
+    -> decltype(std::operator><T1>(a0, a1)) {
+  return std::operator><T1>(a0, a1);
 }
 
 template <typename T1>
 auto f52(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 > a1) {
-  return a0 > a1;
+    -> decltype(std::operator><T1>(a0, a1)) {
+  return std::operator><T1>(a0, a1);
 }
 
 template <typename T1>
 auto f53(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 > a1) {
-  return a0 > a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator><T1>(a0, a1)) {
+  return std::operator><T1>(a0, a1);
 }
 
 template <typename T1>
 auto f54(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 >= a1) {
-  return a0 >= a1;
+    -> decltype(std::operator>= <T1>(a0, a1)) {
+  return std::operator>= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f55(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 >= a1) {
-  return a0 >= a1;
+    -> decltype(std::operator>= <T1>(a0, a1)) {
+  return std::operator>= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f56(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 >= a1) {
-  return a0 >= a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator>= <T1>(a0, a1)) {
+  return std::operator>= <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f57(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 >> a1) {
-  return a0 >> a1;
+    -> decltype(std::operator>> <T1>(a0, a1)) {
+  return std::operator>> <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f58(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 >> a1) {
-  return a0 >> a1;
+    -> decltype(std::operator>> <T1>(a0, a1)) {
+  return std::operator>> <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f59(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 >> a1) {
-  return a0 >> a1;
+         const std::valarray<T1> &a1)
+    -> decltype(std::operator>> <T1>(a0, a1)) {
+  return std::operator>> <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f60(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 ^ a1) {
-  return a0 ^ a1;
+    -> decltype(std::operator^ <T1>(a0, a1)) {
+  return std::operator^ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f61(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 ^ a1) {
-  return a0 ^ a1;
+    -> decltype(std::operator^ <T1>(a0, a1)) {
+  return std::operator^ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f62(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 ^ a1) {
-  return a0 ^ a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator^ <T1>(a0, a1)) {
+  return std::operator^ <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f63(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)
-    -> decltype(a0 | a1) {
-  return a0 | a1;
+    -> decltype(std::operator| <T1>(a0, a1)) {
+  return std::operator| <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f64(const std::valarray<T1> &a0, const std::valarray<T1> &a1)
-    -> decltype(a0 | a1) {
-  return a0 | a1;
+    -> decltype(std::operator| <T1>(a0, a1)) {
+  return std::operator| <T1>(a0, a1);
 }
 
 template <typename T1>
 auto f65(const typename std::valarray<T1>::value_type &a0,
-         const std::valarray<T1> &a1) -> decltype(a0 | a1) {
-  return a0 | a1;
+         const std::valarray<T1> &a1) -> decltype(std::operator| <T1>(a0, a1)) {
+  return std::operator| <T1>(a0, a1);
 }
 
 template <typename T1>

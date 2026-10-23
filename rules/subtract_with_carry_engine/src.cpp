@@ -53,22 +53,16 @@ f7(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0) {
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-bool f8(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
-        const std::subtract_with_carry_engine<T1, T2, T3, T4> &a1) {
-  return a0 == a1;
-}
-
-template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-std::size_t f9() {
+std::size_t f8() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::word_size;
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-std::size_t f10() {
+std::size_t f9() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::short_lag;
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-std::size_t f11() {
+std::size_t f10() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::long_lag;
 }

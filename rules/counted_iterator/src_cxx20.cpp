@@ -112,23 +112,23 @@ std::counted_iterator<T1> &f20(std::counted_iterator<T1> &a0,
 
 template <typename T1>
 bool f21(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
-  return a0 == std::move(a1);
+  return operator==(a0, std::move(a1));
 }
 
 template <typename T1>
 std::iter_difference_t<T1> f22(std::default_sentinel_t a0,
                                const std::counted_iterator<T1> &a1) {
-  return std::move(a0) - a1;
+  return operator-(std::move(a0), a1);
 }
 
 template <typename T1>
 std::iter_difference_t<T1> f23(const std::counted_iterator<T1> &a0,
                                std::default_sentinel_t a1) {
-  return a0 - std::move(a1);
+  return operator-(a0, std::move(a1));
 }
 
 template <typename T1>
 std::counted_iterator<T1> f24(std::iter_difference_t<T1> a0,
                               const std::counted_iterator<T1> &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }

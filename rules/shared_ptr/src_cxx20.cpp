@@ -19,13 +19,13 @@ std::shared_ptr<T1> f39(std::shared_ptr<T2> &&a0) {
 
 template <typename T1>
 std::strong_ordering f40(const std::shared_ptr<T1> &a0, std::nullptr_t a1) {
-  return a0 <=> a1;
+  return std::operator<=> <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
 std::strong_ordering f41(const std::shared_ptr<T1> &a0,
                          const std::shared_ptr<T2> &a1) {
-  return a0 <=> a1;
+  return std::operator<=> <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>

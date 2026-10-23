@@ -18,23 +18,23 @@ f14(const std::normal_distribution<T1> &a0) {
 template <typename T1>
 bool f15(const std::normal_distribution<T1> &a0,
          const std::normal_distribution<T1> &a1) {
-  return a0 != a1;
+  return operator!=(a0, a1);
 }
 
 template <typename T1>
 bool f16(const std::normal_distribution<T1> &a0,
          const std::normal_distribution<T1> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f17(std::basic_ostream<T1, T2> &a0,
                                 const std::normal_distribution<T3> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f18(std::basic_istream<T1, T2> &a0,
                                 std::normal_distribution<T3> &a1) {
-  return a0 >> a1;
+  return std::operator>> <T1, T2, T3>(a0, a1);
 }

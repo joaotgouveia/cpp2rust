@@ -17,7 +17,7 @@ template <
                 std::integral_constant<
                     bool, !std::is_convertible<T5, T1>::value>::value>::value,
         void>::type>
-std::subtract_with_carry_engine<T1, T2, T3, T4> f12(T5 &a0) {
+std::subtract_with_carry_engine<T1, T2, T3, T4> f11(T5 &a0) {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>(a0);
 }
 
@@ -35,8 +35,14 @@ typename std::enable_if<
                   std::integral_constant<
                       bool, !std::is_convertible<T5, T1>::value>::value>::value,
     void>::type
-f13(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0, T5 &a1) {
+f12(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0, T5 &a1) {
   return a0.template seed<T5>(a1);
+}
+
+template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
+bool f13(const std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
+         const std::subtract_with_carry_engine<T1, T2, T3, T4> &a1) {
+  return operator==(a0, a1);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>

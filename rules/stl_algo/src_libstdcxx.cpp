@@ -274,166 +274,174 @@ template <typename T1, typename T2> bool f63(T1 a0, T1 a1, T2 a2) {
   return std::prev_permutation<T1, T2>(a0, a1, a2);
 }
 
-template <typename T1, typename T2> T1 f64(T1 a0, T1 a1, const T2 &a2) {
+template <typename T1> void f64(T1 a0, T1 a1) {
+  return std::random_shuffle<T1>(a0, a1);
+}
+
+template <typename T1, typename T2> void f65(T1 a0, T1 a1, T2 &&a2) {
+  return std::random_shuffle<T1, T2>(a0, a1, std::forward<T2>(a2));
+}
+
+template <typename T1, typename T2> T1 f66(T1 a0, T1 a1, const T2 &a2) {
   return std::remove<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f65(T1 a0, T1 a1, T2 a2, const T3 &a3) {
+T2 f67(T1 a0, T1 a1, T2 a2, const T3 &a3) {
   return std::remove_copy<T1, T2, T3>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f66(T1 a0, T1 a1, T2 a2, T3 a3) {
+T2 f68(T1 a0, T1 a1, T2 a2, T3 a3) {
   return std::remove_copy_if<T1, T2, T3>(a0, a1, a2, a3);
 }
 
-template <typename T1, typename T2> T1 f67(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> T1 f69(T1 a0, T1 a1, T2 a2) {
   return std::remove_if<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2>
-void f68(T1 a0, T1 a1, const T2 &a2, const T2 &a3) {
+void f70(T1 a0, T1 a1, const T2 &a2, const T2 &a3) {
   return std::replace<T1, T2>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f69(T1 a0, T1 a1, T2 a2, const T3 &a3, const T3 &a4) {
+T2 f71(T1 a0, T1 a1, T2 a2, const T3 &a3, const T3 &a4) {
   return std::replace_copy<T1, T2, T3>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T2 f70(T1 a0, T1 a1, T2 a2, T3 a3, const T4 &a4) {
+T2 f72(T1 a0, T1 a1, T2 a2, T3 a3, const T4 &a4) {
   return std::replace_copy_if<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3>
-void f71(T1 a0, T1 a1, T2 a2, const T3 &a3) {
+void f73(T1 a0, T1 a1, T2 a2, const T3 &a3) {
   return std::replace_if<T1, T2, T3>(a0, a1, a2, a3);
 }
 
-template <typename T1> void f72(T1 a0, T1 a1) {
+template <typename T1> void f74(T1 a0, T1 a1) {
   return std::reverse<T1>(a0, a1);
 }
 
-template <typename T1, typename T2> T2 f73(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> T2 f75(T1 a0, T1 a1, T2 a2) {
   return std::reverse_copy<T1, T2>(a0, a1, a2);
 }
 
-template <typename T1> T1 f74(T1 a0, T1 a1, T1 a2) {
+template <typename T1> T1 f76(T1 a0, T1 a1, T1 a2) {
   return std::rotate<T1>(a0, a1, a2);
 }
 
-template <typename T1, typename T2> T2 f75(T1 a0, T1 a1, T1 a2, T2 a3) {
+template <typename T1, typename T2> T2 f77(T1 a0, T1 a1, T1 a2, T2 a3) {
   return std::rotate_copy<T1, T2>(a0, a1, a2, a3);
 }
 
-template <typename T1, typename T2> T1 f76(T1 a0, T1 a1, T2 a2, T2 a3) {
+template <typename T1, typename T2> T1 f78(T1 a0, T1 a1, T2 a2, T2 a3) {
   return std::search<T1, T2>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3>
-T1 f77(T1 a0, T1 a1, T2 a2, const T3 &a3) {
+T1 f79(T1 a0, T1 a1, T2 a2, const T3 &a3) {
   return std::search_n<T1, T2, T3>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T1 f78(T1 a0, T1 a1, T2 a2, const T3 &a3, T4 a4) {
+T1 f80(T1 a0, T1 a1, T2 a2, const T3 &a3, T4 a4) {
   return std::search_n<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3>
-T3 f79(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
+T3 f81(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
   return std::set_difference<T1, T2, T3>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T3 f80(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
+T3 f82(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
   return std::set_difference<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3>
-T3 f81(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
+T3 f83(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
   return std::set_intersection<T1, T2, T3>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T3 f82(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
+T3 f84(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
   return std::set_intersection<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3>
-T3 f83(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
+T3 f85(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
   return std::set_symmetric_difference<T1, T2, T3>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T3 f84(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
+T3 f86(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
   return std::set_symmetric_difference<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
 }
 
 template <typename T1, typename T2, typename T3>
-T3 f85(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
+T3 f87(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4) {
   return std::set_union<T1, T2, T3>(a0, a1, a2, a3, a4);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T3 f86(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
+T3 f88(T1 a0, T1 a1, T2 a2, T2 a3, T3 a4, T4 a5) {
   return std::set_union<T1, T2, T3, T4>(a0, a1, a2, a3, a4, a5);
 }
 
-template <typename T1, typename T2> void f87(T1 a0, T1 a1, T2 &&a2) {
+template <typename T1, typename T2> void f89(T1 a0, T1 a1, T2 &&a2) {
   return std::shuffle<T1, T2>(a0, a1, std::forward<T2>(a2));
 }
 
-template <typename T1> void f88(T1 a0, T1 a1) { return std::sort<T1>(a0, a1); }
+template <typename T1> void f90(T1 a0, T1 a1) { return std::sort<T1>(a0, a1); }
 
-template <typename T1, typename T2> void f89(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> void f91(T1 a0, T1 a1, T2 a2) {
   return std::sort<T1, T2>(a0, a1, a2);
 }
 
-template <typename T1, typename T2> T1 f90(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> T1 f92(T1 a0, T1 a1, T2 a2) {
   return std::stable_partition<T1, T2>(a0, a1, a2);
 }
 
-template <typename T1> void f91(T1 a0, T1 a1) {
+template <typename T1> void f93(T1 a0, T1 a1) {
   return std::stable_sort<T1>(a0, a1);
 }
 
-template <typename T1, typename T2> void f92(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> void f94(T1 a0, T1 a1, T2 a2) {
   return std::stable_sort<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f93(T1 a0, T1 a1, T2 a2, T3 a3) {
+T2 f95(T1 a0, T1 a1, T2 a2, T3 a3) {
   return std::transform<T1, T2, T3>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-T3 f94(T1 a0, T1 a1, T2 a2, T3 a3, T4 a4) {
+T3 f96(T1 a0, T1 a1, T2 a2, T3 a3, T4 a4) {
   return std::transform<T1, T2, T3, T4>(a0, a1, a2, a3, a4);
 }
 
-template <typename T1> T1 f95(T1 a0, T1 a1) { return std::unique<T1>(a0, a1); }
+template <typename T1> T1 f97(T1 a0, T1 a1) { return std::unique<T1>(a0, a1); }
 
-template <typename T1, typename T2> T1 f96(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> T1 f98(T1 a0, T1 a1, T2 a2) {
   return std::unique<T1, T2>(a0, a1, a2);
 }
 
-template <typename T1, typename T2> T2 f97(T1 a0, T1 a1, T2 a2) {
+template <typename T1, typename T2> T2 f99(T1 a0, T1 a1, T2 a2) {
   return std::unique_copy<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f98(T1 a0, T1 a1, T2 a2, T3 a3) {
+T2 f100(T1 a0, T1 a1, T2 a2, T3 a3) {
   return std::unique_copy<T1, T2, T3>(a0, a1, a2, a3);
 }
 
-template <typename T1, typename T2> T1 f99(T1 a0, T1 a1, const T2 &a2) {
+template <typename T1, typename T2> T1 f101(T1 a0, T1 a1, const T2 &a2) {
   return std::upper_bound<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-T1 f100(T1 a0, T1 a1, const T2 &a2, T3 a3) {
+T1 f102(T1 a0, T1 a1, const T2 &a2, T3 a3) {
   return std::upper_bound<T1, T2, T3>(a0, a1, a2, a3);
 }

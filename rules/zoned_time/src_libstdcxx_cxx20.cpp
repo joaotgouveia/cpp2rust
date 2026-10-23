@@ -153,5 +153,5 @@ std::chrono::zoned_time<T1, T2> f25(std::string_view a0,
 template <typename T1, typename T2>
 bool f26(const std::chrono::zoned_time<T1, T2> &a0,
          const std::chrono::zoned_time<T1, T2> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

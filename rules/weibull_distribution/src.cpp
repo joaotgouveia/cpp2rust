@@ -65,5 +65,5 @@ f9(std::weibull_distribution<T1> &a0, T2 &a1,
 template <typename T1>
 bool f10(const std::weibull_distribution<T1> &a0,
          const std::weibull_distribution<T1> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

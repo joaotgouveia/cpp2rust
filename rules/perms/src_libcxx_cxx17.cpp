@@ -3,7 +3,7 @@
 
 std::filesystem::perms f1(std::filesystem::perms a0,
                           std::filesystem::perms a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::perms &f2(std::filesystem::perms &a0,
@@ -13,7 +13,7 @@ std::filesystem::perms &f2(std::filesystem::perms &a0,
 
 std::filesystem::perms f3(std::filesystem::perms a0,
                           std::filesystem::perms a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::perms &f4(std::filesystem::perms &a0,
@@ -23,7 +23,7 @@ std::filesystem::perms &f4(std::filesystem::perms &a0,
 
 std::filesystem::perms f5(std::filesystem::perms a0,
                           std::filesystem::perms a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::perms &f6(std::filesystem::perms &a0,
@@ -31,7 +31,9 @@ std::filesystem::perms &f6(std::filesystem::perms &a0,
   return std::filesystem::operator|=(a0, a1);
 }
 
-std::filesystem::perms f7(std::filesystem::perms a0) { return ~a0; }
+std::filesystem::perms f7(std::filesystem::perms a0) {
+  return std::filesystem::operator~(a0);
+}
 
 using t1 = std::filesystem::perms;
 

@@ -4,50 +4,51 @@
 template <typename T1, typename T2>
 bool f20(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 != a1;
+  return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f21(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1>
 std::reverse_iterator<T1>
 f22(typename std::reverse_iterator<T1>::difference_type a0,
     const std::reverse_iterator<T1> &a1) {
-  return a0 + a1;
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
 auto f23(const std::reverse_iterator<T1> &a0,
-         const std::reverse_iterator<T2> &a1) -> decltype(a0 - a1) {
-  return a0 - a1;
+         const std::reverse_iterator<T2> &a1)
+    -> decltype(std::operator- <T1, T2>(a0, a1)) {
+  return std::operator- <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f24(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 < a1;
+  return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f25(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 <= a1;
+  return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f26(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 > a1;
+  return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f27(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
-  return a0 >= a1;
+  return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1>

@@ -115,19 +115,19 @@ std::error_condition f42(std::errc a0) { return std::make_error_condition(a0); }
 template <typename T1, typename T2>
 std::basic_ostream<T1, T2> &f43(std::basic_ostream<T1, T2> &a0,
                                 const std::error_code &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2>(a0, a1);
 }
 
 bool f44(const std::error_code &a0, const std::error_condition &a1) {
-  return a0 == a1;
+  return std::operator==(a0, a1);
 }
 
 bool f45(const std::error_code &a0, const std::error_code &a1) {
-  return a0 == a1;
+  return std::operator==(a0, a1);
 }
 
 bool f46(const std::error_condition &a0, const std::error_condition &a1) {
-  return a0 == a1;
+  return std::operator==(a0, a1);
 }
 
 const std::error_category &f47() { return std::system_category(); }

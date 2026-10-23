@@ -3,36 +3,36 @@
 
 std::chrono::weekday f1(const std::chrono::days &a0,
                         const std::chrono::weekday &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::weekday f2(const std::chrono::weekday &a0,
                         const std::chrono::days &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::weekday f3(const std::chrono::weekday &a0,
                         const std::chrono::days &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::days f4(const std::chrono::weekday &a0,
                      const std::chrono::weekday &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 bool f5(const std::chrono::weekday &a0, const std::chrono::weekday &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 bool f6(const std::chrono::weekday_indexed &a0,
         const std::chrono::weekday_indexed &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 bool f7(const std::chrono::weekday_last &a0,
         const std::chrono::weekday_last &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 using t1 = std::chrono::weekday;

@@ -619,13 +619,13 @@ void f92(std::flat_multiset<T1, T2, T3> &a0,
 template <typename T1, typename T2, typename T3>
 auto f93(const std::flat_multiset<T1, T2, T3> &a0,
          const std::flat_multiset<T1, T2, T3> &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f94(const std::flat_multiset<T1, T2, T3> &a0,
          const std::flat_multiset<T1, T2, T3> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>

@@ -48,7 +48,7 @@ void f20(std::pmr::monotonic_buffer_resource &a0, void *a1, std::size_t a2,
 template <typename T1, typename T2>
 bool f21(const std::pmr::polymorphic_allocator<T1> &a0,
          const std::pmr::polymorphic_allocator<T2> &a1) {
-  return a0 == a1;
+  return std::pmr::operator== <T1, T2>(a0, a1);
 }
 
 using t3 = std::pmr::pool_options;

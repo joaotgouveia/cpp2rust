@@ -27,11 +27,11 @@ std::exception_ptr &f9(std::exception_ptr &a0, std::exception_ptr &&a1) {
 bool f10(const std::exception_ptr &a0) { return static_cast<bool>(a0); }
 
 bool f11(const std::exception_ptr &a0, const std::exception_ptr &a1) {
-  return a0 != a1;
+  return operator!=(a0, a1);
 }
 
 bool f12(const std::exception_ptr &a0, const std::exception_ptr &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 void f13(std::exception_ptr &a0, std::exception_ptr &a1) {

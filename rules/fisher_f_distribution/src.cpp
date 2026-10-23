@@ -65,5 +65,5 @@ f9(std::fisher_f_distribution<T1> &a0, T2 &a1,
 template <typename T1>
 bool f10(const std::fisher_f_distribution<T1> &a0,
          const std::fisher_f_distribution<T1> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

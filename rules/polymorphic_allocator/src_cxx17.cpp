@@ -65,5 +65,5 @@ void f10(std::pmr::polymorphic_allocator<T1> &a0, T2 *a1) {
 template <typename T1>
 bool f11(const std::pmr::polymorphic_allocator<T1> &a0,
          const std::pmr::polymorphic_allocator<T1> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

@@ -85,12 +85,12 @@ template <typename T1> double f122(T1 a0) { return std::norm<T1>(a0); }
 
 template <typename T1>
 std::complex<T1> f123(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 * a1;
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f124(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 / a1;
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1>

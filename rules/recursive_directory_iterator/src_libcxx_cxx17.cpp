@@ -14,12 +14,12 @@ f2(std::filesystem::recursive_directory_iterator a0) {
 
 bool f3(const std::filesystem::recursive_directory_iterator &a0,
         const std::filesystem::recursive_directory_iterator &a1) {
-  return a0 != a1;
+  return std::filesystem::operator!=(a0, a1);
 }
 
 bool f4(const std::filesystem::recursive_directory_iterator &a0,
         const std::filesystem::recursive_directory_iterator &a1) {
-  return a0 == a1;
+  return std::filesystem::operator==(a0, a1);
 }
 
 using t1 = std::filesystem::recursive_directory_iterator;

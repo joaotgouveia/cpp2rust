@@ -3,32 +3,32 @@
 
 template <typename T1, typename T2>
 bool f24(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 != a1;
+  return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f25(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f26(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 < a1;
+  return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f27(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 <= a1;
+  return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f28(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 > a1;
+  return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f29(const std::stack<T1, T2> &a0, const std::stack<T1, T2> &a1) {
-  return a0 >= a1;
+  return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2> std::stack<T1, T2> f30() {

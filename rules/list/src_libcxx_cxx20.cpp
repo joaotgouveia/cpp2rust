@@ -10,5 +10,5 @@ f104(std::list<T1, T2> &a0, const typename std::list<T1, T2>::value_type &a1) {
 
 template <typename T1, typename T2>
 auto f105(const std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
-  return a0 <=> a1;
+  return std::operator<=> <T1, T2>(a0, a1);
 }

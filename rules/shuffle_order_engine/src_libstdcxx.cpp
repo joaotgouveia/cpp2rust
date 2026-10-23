@@ -17,7 +17,7 @@ template <
                     bool, !std::is_convertible<T3, typename T1::result_type>::
                               value>::value>::value,
         void>::type>
-std::shuffle_order_engine<T1, T2> f14(T3 &a0) {
+std::shuffle_order_engine<T1, T2> f13(T3 &a0) {
   return std::shuffle_order_engine<T1, T2>(a0);
 }
 
@@ -34,6 +34,12 @@ typename std::enable_if<
                       bool, !std::is_convertible<T3, typename T1::result_type>::
                                 value>::value>::value,
     void>::type
-f15(std::shuffle_order_engine<T1, T2> &a0, T3 &a1) {
+f14(std::shuffle_order_engine<T1, T2> &a0, T3 &a1) {
   return a0.template seed<T3>(a1);
+}
+
+template <typename T1, std::size_t T2>
+bool f15(const std::shuffle_order_engine<T1, T2> &a0,
+         const std::shuffle_order_engine<T1, T2> &a1) {
+  return operator==(a0, a1);
 }

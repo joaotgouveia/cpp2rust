@@ -100,28 +100,28 @@ std::chrono::day &f119(std::chrono::day &a0, std::chrono::day &&a1) {
 }
 
 std::chrono::days f120(const std::chrono::day &a0, const std::chrono::day &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::day f121(const std::chrono::day &a0, const std::chrono::days &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::day f122(const std::chrono::days &a0, const std::chrono::day &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::day f123(const std::chrono::day &a0, const std::chrono::days &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::strong_ordering f124(const std::chrono::day &a0,
                           const std::chrono::day &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f125(const std::chrono::day &a0, const std::chrono::day &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t32 = std::chrono::days;
@@ -435,12 +435,12 @@ std::chrono::seconds f178(const std::chrono::leap_second &a0) {
 
 std::strong_ordering f179(const std::chrono::leap_second &a0,
                           const std::chrono::leap_second &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f180(const std::chrono::leap_second &a0,
           const std::chrono::leap_second &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t48 = std::chrono::leap_second_info;
@@ -585,31 +585,31 @@ std::chrono::month &f215(std::chrono::month &a0, std::chrono::month &&a1) {
 
 std::chrono::months f216(const std::chrono::month &a0,
                          const std::chrono::month &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::month f217(const std::chrono::month &a0,
                         const std::chrono::months &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::month f218(const std::chrono::months &a0,
                         const std::chrono::month &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::month f219(const std::chrono::month &a0,
                         const std::chrono::months &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::strong_ordering f220(const std::chrono::month &a0,
                           const std::chrono::month &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f221(const std::chrono::month &a0, const std::chrono::month &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t55 = std::chrono::month_day;
@@ -646,34 +646,34 @@ std::chrono::month_day &f230(std::chrono::month_day &a0,
 }
 
 std::chrono::month_day f231(const std::chrono::day &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_day f232(const std::chrono::day &a0,
                             const std::chrono::month &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_day f233(int a0, const std::chrono::day &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_day f234(const std::chrono::month &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_day f235(const std::chrono::month &a0,
                             const std::chrono::day &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::strong_ordering f236(const std::chrono::month_day &a0,
                           const std::chrono::month_day &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f237(const std::chrono::month_day &a0, const std::chrono::month_day &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t56 = std::chrono::month_day_last;
@@ -707,31 +707,31 @@ std::chrono::month_day_last &f244(std::chrono::month_day_last &a0,
 }
 
 std::chrono::month_day_last f245(std::chrono::last_spec a0, int a1) {
-  return std::move(a0) / a1;
+  return operator/(std::move(a0), a1);
 }
 
 std::chrono::month_day_last f246(std::chrono::last_spec a0,
                                  const std::chrono::month &a1) {
-  return std::move(a0) / a1;
+  return operator/(std::move(a0), a1);
 }
 
 std::chrono::month_day_last f247(int a0, std::chrono::last_spec a1) {
-  return a0 / std::move(a1);
+  return operator/(a0, std::move(a1));
 }
 
 std::chrono::month_day_last f248(const std::chrono::month &a0,
                                  std::chrono::last_spec a1) {
-  return a0 / std::move(a1);
+  return operator/(a0, std::move(a1));
 }
 
 std::strong_ordering f249(const std::chrono::month_day_last &a0,
                           const std::chrono::month_day_last &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f250(const std::chrono::month_day_last &a0,
           const std::chrono::month_day_last &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t57 = std::chrono::month_weekday;
@@ -771,27 +771,27 @@ std::chrono::month_weekday &f258(std::chrono::month_weekday &a0,
 
 std::chrono::month_weekday f259(const std::chrono::weekday_indexed &a0,
                                 int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday f260(const std::chrono::weekday_indexed &a0,
                                 const std::chrono::month &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday f261(int a0,
                                 const std::chrono::weekday_indexed &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday f262(const std::chrono::month &a0,
                                 const std::chrono::weekday_indexed &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 bool f263(const std::chrono::month_weekday &a0,
           const std::chrono::month_weekday &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t58 = std::chrono::month_weekday_last;
@@ -833,27 +833,27 @@ std::chrono::month_weekday_last &f271(std::chrono::month_weekday_last &a0,
 
 std::chrono::month_weekday_last f272(const std::chrono::weekday_last &a0,
                                      int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f273(const std::chrono::weekday_last &a0,
                                      const std::chrono::month &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f274(int a0,
                                      const std::chrono::weekday_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::month_weekday_last f275(const std::chrono::month &a0,
                                      const std::chrono::weekday_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 bool f276(const std::chrono::month_weekday_last &a0,
           const std::chrono::month_weekday_last &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t59 = std::chrono::months;
@@ -895,19 +895,19 @@ const char *f282(const std::chrono::nonexistent_local_time &a0) {
 template <typename T1, typename T2, typename T3>
 auto f283(const std::chrono::time_point<T1, T2> &a0,
           const std::chrono::time_point<T1, T3> &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=> <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 auto f284(const std::chrono::duration<T1, T2> &a0,
           const std::chrono::duration<T3, T4> &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=> <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f285(const std::chrono::zoned_time<T1, T2> &a0,
           const std::chrono::zoned_time<T3, T4> &a1) {
-  return a0 == a1;
+  return std::chrono::operator== <T1, T2, T3, T4>(a0, a1);
 }
 
 std::string f286() { return std::chrono::remote_version(); }
@@ -1270,11 +1270,11 @@ f346(const std::chrono::time_zone &a0, const std::chrono::sys_time<T1> &a1) {
 
 std::strong_ordering f347(const std::chrono::time_zone &a0,
                           const std::chrono::time_zone &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f348(const std::chrono::time_zone &a0, const std::chrono::time_zone &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t77 = std::chrono::time_zone_link;
@@ -1298,12 +1298,12 @@ std::string_view f352(const std::chrono::time_zone_link &a0) {
 
 std::strong_ordering f353(const std::chrono::time_zone_link &a0,
                           const std::chrono::time_zone_link &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f354(const std::chrono::time_zone_link &a0,
           const std::chrono::time_zone_link &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t78 = std::chrono::tzdb;
@@ -1681,26 +1681,26 @@ std::chrono::weekday &f425(std::chrono::weekday &a0,
 
 std::chrono::days f426(const std::chrono::weekday &a0,
                        const std::chrono::weekday &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::weekday f427(const std::chrono::weekday &a0,
                           const std::chrono::days &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::weekday f428(const std::chrono::days &a0,
                           const std::chrono::weekday &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::weekday f429(const std::chrono::weekday &a0,
                           const std::chrono::days &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 bool f430(const std::chrono::weekday &a0, const std::chrono::weekday &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t93 = std::chrono::weekday_indexed;
@@ -1740,7 +1740,7 @@ std::chrono::weekday_indexed &f439(std::chrono::weekday_indexed &a0,
 
 bool f440(const std::chrono::weekday_indexed &a0,
           const std::chrono::weekday_indexed &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t94 = std::chrono::weekday_last;
@@ -1775,7 +1775,7 @@ std::chrono::weekday_last &f447(std::chrono::weekday_last &a0,
 
 bool f448(const std::chrono::weekday_last &a0,
           const std::chrono::weekday_last &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t95 = std::chrono::weeks;
@@ -1838,31 +1838,31 @@ std::chrono::year &f467(std::chrono::year &a0, std::chrono::year &&a1) {
 
 std::chrono::years f468(const std::chrono::year &a0,
                         const std::chrono::year &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year f469(const std::chrono::year &a0,
                        const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year f470(const std::chrono::years &a0,
                        const std::chrono::year &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year f471(const std::chrono::year &a0,
                        const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::strong_ordering f472(const std::chrono::year &a0,
                           const std::chrono::year &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f473(const std::chrono::year &a0, const std::chrono::year &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t97 = std::chrono::year_month;
@@ -1911,42 +1911,42 @@ std::chrono::year_month &f484(std::chrono::year_month &a0,
 }
 
 std::chrono::year_month f485(const std::chrono::year &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month f486(const std::chrono::year &a0,
                              const std::chrono::month &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month f487(const std::chrono::year_month &a0,
                              const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year_month f488(const std::chrono::years &a0,
                              const std::chrono::year_month &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year_month f489(const std::chrono::year_month &a0,
                              const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::months f490(const std::chrono::year_month &a0,
                          const std::chrono::year_month &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::strong_ordering f491(const std::chrono::year_month &a0,
                           const std::chrono::year_month &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f492(const std::chrono::year_month &a0,
           const std::chrono::year_month &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t98 = std::chrono::year_month_day;
@@ -2022,55 +2022,55 @@ std::chrono::year_month_day &f509(std::chrono::year_month_day &a0,
 }
 
 std::chrono::year_month_day f510(const std::chrono::month_day &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f511(const std::chrono::month_day &a0,
                                  const std::chrono::year &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f512(int a0, const std::chrono::month_day &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f513(const std::chrono::year &a0,
                                  const std::chrono::month_day &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f514(const std::chrono::year_month &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f515(const std::chrono::year_month &a0,
                                  const std::chrono::day &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day f516(const std::chrono::year_month_day &a0,
                                  const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year_month_day f517(const std::chrono::years &a0,
                                  const std::chrono::year_month_day &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year_month_day f518(const std::chrono::year_month_day &a0,
                                  const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::strong_ordering f519(const std::chrono::year_month_day &a0,
                           const std::chrono::year_month_day &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f520(const std::chrono::year_month_day &a0,
           const std::chrono::year_month_day &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t99 = std::chrono::year_month_day_last;
@@ -2138,52 +2138,52 @@ std::chrono::year_month_day_last &f534(std::chrono::year_month_day_last &a0,
 
 std::chrono::year_month_day_last f535(const std::chrono::month_day_last &a0,
                                       int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day_last f536(const std::chrono::month_day_last &a0,
                                       const std::chrono::year &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day_last f537(int a0,
                                       const std::chrono::month_day_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day_last f538(const std::chrono::year &a0,
                                       const std::chrono::month_day_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_day_last f539(const std::chrono::year_month &a0,
                                       std::chrono::last_spec a1) {
-  return a0 / std::move(a1);
+  return operator/(a0, std::move(a1));
 }
 
 std::chrono::year_month_day_last
 f540(const std::chrono::year_month_day_last &a0, const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year_month_day_last
 f541(const std::chrono::years &a0, const std::chrono::year_month_day_last &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year_month_day_last
 f542(const std::chrono::year_month_day_last &a0, const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::strong_ordering f543(const std::chrono::year_month_day_last &a0,
                           const std::chrono::year_month_day_last &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f544(const std::chrono::year_month_day_last &a0,
           const std::chrono::year_month_day_last &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t100 = std::chrono::year_month_weekday;
@@ -2268,47 +2268,47 @@ std::chrono::year_month_weekday &f562(std::chrono::year_month_weekday &a0,
 
 std::chrono::year_month_weekday f563(const std::chrono::month_weekday &a0,
                                      int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday f564(const std::chrono::month_weekday &a0,
                                      const std::chrono::year &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday f565(int a0,
                                      const std::chrono::month_weekday &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday f566(const std::chrono::year &a0,
                                      const std::chrono::month_weekday &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday f567(const std::chrono::year_month &a0,
                                      const std::chrono::weekday_indexed &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday f568(const std::chrono::year_month_weekday &a0,
                                      const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year_month_weekday
 f569(const std::chrono::years &a0, const std::chrono::year_month_weekday &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year_month_weekday f570(const std::chrono::year_month_weekday &a0,
                                      const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 bool f571(const std::chrono::year_month_weekday &a0,
           const std::chrono::year_month_weekday &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t101 = std::chrono::year_month_weekday_last;
@@ -2379,50 +2379,50 @@ f585(std::chrono::year_month_weekday_last &a0,
 
 std::chrono::year_month_weekday_last
 f586(const std::chrono::month_weekday_last &a0, int a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f587(const std::chrono::month_weekday_last &a0, const std::chrono::year &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f588(int a0, const std::chrono::month_weekday_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f589(const std::chrono::year &a0, const std::chrono::month_weekday_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday_last f590(const std::chrono::year_month &a0,
                                           const std::chrono::weekday_last &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f591(const std::chrono::year_month_weekday_last &a0,
      const std::chrono::years &a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f592(const std::chrono::years &a0,
      const std::chrono::year_month_weekday_last &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 std::chrono::year_month_weekday_last
 f593(const std::chrono::year_month_weekday_last &a0,
      const std::chrono::years &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 bool f594(const std::chrono::year_month_weekday_last &a0,
           const std::chrono::year_month_weekday_last &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 using t102 = std::chrono::years;

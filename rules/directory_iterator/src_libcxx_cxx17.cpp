@@ -91,10 +91,10 @@ f15(std::filesystem::directory_iterator a0) {
 
 bool f16(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
-  return a0 != a1;
+  return std::filesystem::operator!=(a0, a1);
 }
 
 bool f17(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
-  return a0 == a1;
+  return std::filesystem::operator==(a0, a1);
 }

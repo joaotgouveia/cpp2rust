@@ -19,7 +19,7 @@ std::nullopt_t &f4(std::nullopt_t &a0, std::nullopt_t &&a1) {
 }
 
 template <typename T1> bool f5(const std::optional<T1> &a0, std::nullopt_t a1) {
-  return a0 == std::move(a1);
+  return std::operator== <T1>(a0, std::move(a1));
 }
 
 template <typename T1> using t2 = std::optional<T1>;

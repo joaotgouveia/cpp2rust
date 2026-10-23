@@ -4,11 +4,11 @@
 
 std::strong_ordering f1(std::coroutine_handle<> a0,
                         std::coroutine_handle<> a1) {
-  return std::move(a0) <=> std::move(a1);
+  return std::operator<=>(std::move(a0), std::move(a1));
 }
 
 bool f2(std::coroutine_handle<> a0, std::coroutine_handle<> a1) {
-  return std::move(a0) == std::move(a1);
+  return std::operator==(std::move(a0), std::move(a1));
 }
 
 std::noop_coroutine_handle f3() { return std::noop_coroutine(); }

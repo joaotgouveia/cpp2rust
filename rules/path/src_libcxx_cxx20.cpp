@@ -14,5 +14,5 @@ std::u8string f79(const std::filesystem::path &a0) {
 
 std::strong_ordering f80(const std::filesystem::path &a0,
                          const std::filesystem::path &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }

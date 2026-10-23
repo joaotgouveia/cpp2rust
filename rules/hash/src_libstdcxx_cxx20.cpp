@@ -12,7 +12,7 @@
 #include <utility>
 #include <vector>
 
-using t38 = std::hash<std::u8string_view>;
+using t40 = std::hash<std::u8string_view>;
 
 std::size_t f185(const std::hash<std::u8string_view> &a0,
                  const std::u8string_view &a1) {
@@ -39,7 +39,7 @@ std::hash<std::u8string_view> &f190(std::hash<std::u8string_view> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t39 = std::hash<char8_t>;
+using t41 = std::hash<char8_t>;
 
 std::size_t f191(const std::hash<char8_t> &a0, char8_t a1) {
   return a0.operator()(a1);

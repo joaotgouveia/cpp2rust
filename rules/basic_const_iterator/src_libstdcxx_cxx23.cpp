@@ -170,19 +170,19 @@ template <typename T1>
 std::basic_const_iterator<T1>
 f31(const std::basic_const_iterator<T1> &a0,
     typename std::basic_const_iterator<T1>::difference_type a1) {
-  return a0 - a1;
+  return operator-(a0, a1);
 }
 
 template <typename T1>
 std::basic_const_iterator<T1>
 f32(typename std::basic_const_iterator<T1>::difference_type a0,
     const std::basic_const_iterator<T1> &a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }
 
 template <typename T1>
 std::basic_const_iterator<T1>
 f33(const std::basic_const_iterator<T1> &a0,
     typename std::basic_const_iterator<T1>::difference_type a1) {
-  return a0 + a1;
+  return operator+(a0, a1);
 }

@@ -28,5 +28,5 @@ void f8(std::stop_token &a0, std::stop_token &a1) { return a0.swap(a1); }
 void f9(std::stop_token &a0, std::stop_token &a1) { return swap(a0, a1); }
 
 bool f10(const std::stop_token &a0, const std::stop_token &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

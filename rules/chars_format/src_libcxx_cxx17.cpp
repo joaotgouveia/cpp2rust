@@ -2,7 +2,7 @@
 #include <utility>
 
 std::chars_format f1(std::chars_format a0, std::chars_format a1) {
-  return a0 & a1;
+  return std::operator&(a0, a1);
 }
 
 std::chars_format &f2(std::chars_format &a0, std::chars_format a1) {
@@ -10,7 +10,7 @@ std::chars_format &f2(std::chars_format &a0, std::chars_format a1) {
 }
 
 std::chars_format f3(std::chars_format a0, std::chars_format a1) {
-  return a0 ^ a1;
+  return std::operator^(a0, a1);
 }
 
 std::chars_format &f4(std::chars_format &a0, std::chars_format a1) {
@@ -18,14 +18,14 @@ std::chars_format &f4(std::chars_format &a0, std::chars_format a1) {
 }
 
 std::chars_format f5(std::chars_format a0, std::chars_format a1) {
-  return a0 | a1;
+  return std::operator|(a0, a1);
 }
 
 std::chars_format &f6(std::chars_format &a0, std::chars_format a1) {
   return std::operator|=(a0, a1);
 }
 
-std::chars_format f7(std::chars_format a0) { return ~a0; }
+std::chars_format f7(std::chars_format a0) { return std::operator~(a0); }
 
 using t1 = std::chars_format;
 

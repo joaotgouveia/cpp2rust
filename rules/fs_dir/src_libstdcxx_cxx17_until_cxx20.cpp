@@ -29,10 +29,10 @@ bool f97(const std::filesystem::directory_entry &a0,
 
 bool f98(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
-  return a0 != a1;
+  return operator!=(a0, a1);
 }
 
 bool f99(const std::filesystem::recursive_directory_iterator &a0,
          const std::filesystem::recursive_directory_iterator &a1) {
-  return a0 != a1;
+  return operator!=(a0, a1);
 }

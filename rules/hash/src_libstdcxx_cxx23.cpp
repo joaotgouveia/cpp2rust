@@ -13,7 +13,7 @@
 #include <utility>
 #include <vector>
 
-using t40 = std::hash<std::stacktrace_entry>;
+using t42 = std::hash<std::stacktrace_entry>;
 
 std::size_t f197(const std::hash<std::stacktrace_entry> &a0,
                  const std::stacktrace_entry &a1) {
@@ -44,7 +44,7 @@ std::hash<std::stacktrace_entry> &f202(std::hash<std::stacktrace_entry> &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1> using t41 = std::hash<std::basic_stacktrace<T1>>;
+template <typename T1> using t43 = std::hash<std::basic_stacktrace<T1>>;
 
 template <typename T1>
 std::size_t f203(const std::hash<std::basic_stacktrace<T1>> &a0,

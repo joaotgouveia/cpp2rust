@@ -11,7 +11,7 @@
 #include <vector>
 
 template <typename T1>
-using t53 = std::hash<
+using t55 = std::hash<
     std::__enable_hash_helper<std::optional<T1>, std::remove_const_t<T1>>>;
 
 template <typename T1>
@@ -23,7 +23,7 @@ f254(const std::hash<std::__enable_hash_helper<std::optional<T1>,
 }
 
 template <typename... T1>
-using t54 = std::hash<
+using t56 = std::hash<
     std::__enable_hash_helper<std::variant<T1...>, std::remove_const_t<T1>...>>;
 
 template <typename... T1>

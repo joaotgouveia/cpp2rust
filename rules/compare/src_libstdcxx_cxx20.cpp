@@ -70,52 +70,52 @@ std::partial_ordering &f16(std::partial_ordering &a0,
 
 template <typename T1>
 std::partial_ordering f17(T1 &&a0, std::partial_ordering a1) {
-  return std::forward<T1>(a0) <=> std::move(a1);
+  return operator<=>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1>
 std::partial_ordering f18(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) <=> std::forward<T1>(a1);
+  return operator<=>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f19(T1 &&a0, std::partial_ordering a1) {
-  return std::forward<T1>(a0) >= std::move(a1);
+  return operator>=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f20(T1 &&a0, std::partial_ordering a1) {
-  return std::forward<T1>(a0) <= std::move(a1);
+  return operator<=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f21(T1 &&a0, std::partial_ordering a1) {
-  return std::forward<T1>(a0) > std::move(a1);
+  return operator>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f22(T1 &&a0, std::partial_ordering a1) {
-  return std::forward<T1>(a0) < std::move(a1);
+  return operator<(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f23(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) >= std::forward<T1>(a1);
+  return operator>=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f24(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) <= std::forward<T1>(a1);
+  return operator<=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f25(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) > std::forward<T1>(a1);
+  return operator>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f26(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) < std::forward<T1>(a1);
+  return operator<(std::move(a0), std::forward<T1>(a1));
 }
 
 bool f27(std::partial_ordering a0, std::partial_ordering a1) {
-  return std::move(a0) == std::move(a1);
+  return operator==(std::move(a0), std::move(a1));
 }
 
 template <typename T1> bool f28(std::partial_ordering a0, T1 &&a1) {
-  return std::move(a0) == std::forward<T1>(a1);
+  return operator==(std::move(a0), std::forward<T1>(a1));
 }
 
 const std::partial_ordering &f29() { return std::partial_ordering::less; }
@@ -155,52 +155,52 @@ std::strong_ordering &f38(std::strong_ordering &a0, std::strong_ordering &&a1) {
 
 template <typename T1>
 std::strong_ordering f39(T1 &&a0, std::strong_ordering a1) {
-  return std::forward<T1>(a0) <=> std::move(a1);
+  return operator<=>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1>
 std::strong_ordering f40(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) <=> std::forward<T1>(a1);
+  return operator<=>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f41(T1 &&a0, std::strong_ordering a1) {
-  return std::forward<T1>(a0) >= std::move(a1);
+  return operator>=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f42(T1 &&a0, std::strong_ordering a1) {
-  return std::forward<T1>(a0) <= std::move(a1);
+  return operator<=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f43(T1 &&a0, std::strong_ordering a1) {
-  return std::forward<T1>(a0) > std::move(a1);
+  return operator>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f44(T1 &&a0, std::strong_ordering a1) {
-  return std::forward<T1>(a0) < std::move(a1);
+  return operator<(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f45(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) >= std::forward<T1>(a1);
+  return operator>=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f46(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) <= std::forward<T1>(a1);
+  return operator<=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f47(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) > std::forward<T1>(a1);
+  return operator>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f48(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) < std::forward<T1>(a1);
+  return operator<(std::move(a0), std::forward<T1>(a1));
 }
 
 bool f49(std::strong_ordering a0, std::strong_ordering a1) {
-  return std::move(a0) == std::move(a1);
+  return operator==(std::move(a0), std::move(a1));
 }
 
 template <typename T1> bool f50(std::strong_ordering a0, T1 &&a1) {
-  return std::move(a0) == std::forward<T1>(a1);
+  return operator==(std::move(a0), std::forward<T1>(a1));
 }
 
 const std::strong_ordering &f51() { return std::strong_ordering::less; }
@@ -234,51 +234,51 @@ std::weak_ordering &f59(std::weak_ordering &a0, std::weak_ordering &&a1) {
 }
 
 template <typename T1> std::weak_ordering f60(T1 &&a0, std::weak_ordering a1) {
-  return std::forward<T1>(a0) <=> std::move(a1);
+  return operator<=>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> std::weak_ordering f61(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) <=> std::forward<T1>(a1);
+  return operator<=>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f62(T1 &&a0, std::weak_ordering a1) {
-  return std::forward<T1>(a0) >= std::move(a1);
+  return operator>=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f63(T1 &&a0, std::weak_ordering a1) {
-  return std::forward<T1>(a0) <= std::move(a1);
+  return operator<=(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f64(T1 &&a0, std::weak_ordering a1) {
-  return std::forward<T1>(a0) > std::move(a1);
+  return operator>(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f65(T1 &&a0, std::weak_ordering a1) {
-  return std::forward<T1>(a0) < std::move(a1);
+  return operator<(std::forward<T1>(a0), std::move(a1));
 }
 
 template <typename T1> bool f66(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) >= std::forward<T1>(a1);
+  return operator>=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f67(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) <= std::forward<T1>(a1);
+  return operator<=(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f68(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) > std::forward<T1>(a1);
+  return operator>(std::move(a0), std::forward<T1>(a1));
 }
 
 template <typename T1> bool f69(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) < std::forward<T1>(a1);
+  return operator<(std::move(a0), std::forward<T1>(a1));
 }
 
 bool f70(std::weak_ordering a0, std::weak_ordering a1) {
-  return std::move(a0) == std::move(a1);
+  return operator==(std::move(a0), std::move(a1));
 }
 
 template <typename T1> bool f71(std::weak_ordering a0, T1 &&a1) {
-  return std::move(a0) == std::forward<T1>(a1);
+  return operator==(std::move(a0), std::forward<T1>(a1));
 }
 
 const std::weak_ordering &f72() { return std::weak_ordering::less; }

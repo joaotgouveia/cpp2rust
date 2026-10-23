@@ -87,25 +87,31 @@ std::error_condition f25(std::future_errc a0) {
   return std::make_error_condition(a0);
 }
 
-std::launch f26(std::launch a0, std::launch a1) { return a0 & a1; }
+std::launch f26(std::launch a0, std::launch a1) {
+  return std::operator&(a0, a1);
+}
 
 std::launch &f27(std::launch &a0, std::launch a1) {
   return std::operator&=(a0, a1);
 }
 
-std::launch f28(std::launch a0, std::launch a1) { return a0 ^ a1; }
+std::launch f28(std::launch a0, std::launch a1) {
+  return std::operator^(a0, a1);
+}
 
 std::launch &f29(std::launch &a0, std::launch a1) {
   return std::operator^=(a0, a1);
 }
 
-std::launch f30(std::launch a0, std::launch a1) { return a0 | a1; }
+std::launch f30(std::launch a0, std::launch a1) {
+  return std::operator|(a0, a1);
+}
 
 std::launch &f31(std::launch &a0, std::launch a1) {
   return std::operator|=(a0, a1);
 }
 
-std::launch f32(std::launch a0) { return ~a0; }
+std::launch f32(std::launch a0) { return std::operator~(a0); }
 
 template <typename T1> void f33(std::promise<T1> &a0, std::promise<T1> &a1) {
   return std::swap<T1>(a0, a1);

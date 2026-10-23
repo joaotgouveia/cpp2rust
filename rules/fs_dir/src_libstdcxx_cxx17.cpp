@@ -273,7 +273,7 @@ f59(std::filesystem::directory_iterator &a0, std::error_code &a1) {
 
 bool f60(const std::filesystem::directory_iterator &a0,
          const std::filesystem::directory_iterator &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 std::filesystem::directory_iterator
@@ -434,5 +434,5 @@ void f91(std::filesystem::recursive_directory_iterator &a0) {
 
 bool f92(const std::filesystem::recursive_directory_iterator &a0,
          const std::filesystem::recursive_directory_iterator &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

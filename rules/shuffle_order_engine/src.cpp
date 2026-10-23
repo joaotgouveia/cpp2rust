@@ -68,12 +68,6 @@ f11(std::shuffle_order_engine<T1, T2> &a0) {
   return a0.operator()();
 }
 
-template <typename T1, std::size_t T2>
-bool f12(const std::shuffle_order_engine<T1, T2> &a0,
-         const std::shuffle_order_engine<T1, T2> &a1) {
-  return a0 == a1;
-}
-
-template <typename T1, std::size_t T2> std::size_t f13() {
+template <typename T1, std::size_t T2> std::size_t f12() {
   return std::shuffle_order_engine<T1, T2>::table_size;
 }

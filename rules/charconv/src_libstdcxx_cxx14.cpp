@@ -87,7 +87,7 @@ std::from_chars_result &f13(std::from_chars_result &a0,
 }
 
 std::chars_format f14(std::chars_format a0, std::chars_format a1) {
-  return a0 & a1;
+  return std::operator&(a0, a1);
 }
 
 std::chars_format &f15(std::chars_format &a0, std::chars_format a1) {
@@ -95,7 +95,7 @@ std::chars_format &f15(std::chars_format &a0, std::chars_format a1) {
 }
 
 std::chars_format f16(std::chars_format a0, std::chars_format a1) {
-  return a0 ^ a1;
+  return std::operator^(a0, a1);
 }
 
 std::chars_format &f17(std::chars_format &a0, std::chars_format a1) {
@@ -103,14 +103,14 @@ std::chars_format &f17(std::chars_format &a0, std::chars_format a1) {
 }
 
 std::chars_format f18(std::chars_format a0, std::chars_format a1) {
-  return a0 | a1;
+  return std::operator|(a0, a1);
 }
 
 std::chars_format &f19(std::chars_format &a0, std::chars_format a1) {
   return std::operator|=(a0, a1);
 }
 
-std::chars_format f20(std::chars_format a0) { return ~a0; }
+std::chars_format f20(std::chars_format a0) { return std::operator~(a0); }
 
 std::to_chars_result f21(char *a0, char *a1, char a2, int a3) {
   return std::to_chars(a0, a1, a2, a3);

@@ -272,11 +272,11 @@ std::basic_string<T1, T2, T3> f66(const std::filesystem::path &a0,
 
 std::filesystem::path f67(const std::filesystem::path &a0,
                           const std::filesystem::path &a1) {
-  return a0 / a1;
+  return operator/(a0, a1);
 }
 
 bool f68(const std::filesystem::path &a0, const std::filesystem::path &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 std::filesystem::path::value_type f69() {

@@ -21,12 +21,12 @@ template <typename T1, typename T2> T1 *f3(const std::shared_ptr<T2> &a0) {
 
 template <typename T1>
 bool f4(const std::shared_ptr<T1> &a0, std::nullptr_t a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f5(const std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1> using t1 = std::shared_ptr<T1>;

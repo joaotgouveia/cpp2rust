@@ -4,7 +4,7 @@
 
 template <typename T1, typename T2>
 bool f76(const std::deque<T1, T2> &a0, const std::deque<T1, T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>

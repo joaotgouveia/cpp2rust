@@ -19,7 +19,7 @@ std::bad_function_call &f4(std::bad_function_call &a0,
 
 template <typename T1, typename... T2>
 bool f5(const std::function<T1(T2...)> &a0, std::nullptr_t a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2...>(a0, a1);
 }
 
 template <typename T1, typename... T2>

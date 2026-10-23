@@ -17,7 +17,7 @@ std::filesystem::directory_options f3() {
 
 std::filesystem::directory_options f4(std::filesystem::directory_options a0,
                                       std::filesystem::directory_options a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::directory_options &f5(std::filesystem::directory_options &a0,
@@ -27,7 +27,7 @@ std::filesystem::directory_options &f5(std::filesystem::directory_options &a0,
 
 std::filesystem::directory_options f6(std::filesystem::directory_options a0,
                                       std::filesystem::directory_options a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::directory_options &f7(std::filesystem::directory_options &a0,
@@ -37,7 +37,7 @@ std::filesystem::directory_options &f7(std::filesystem::directory_options &a0,
 
 std::filesystem::directory_options f8(std::filesystem::directory_options a0,
                                       std::filesystem::directory_options a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::directory_options &f9(std::filesystem::directory_options &a0,
@@ -46,5 +46,5 @@ std::filesystem::directory_options &f9(std::filesystem::directory_options &a0,
 }
 
 std::filesystem::directory_options f10(std::filesystem::directory_options a0) {
-  return ~a0;
+  return std::filesystem::operator~(a0);
 }

@@ -47,12 +47,6 @@ f6(std::istream_iterator<T1, T2, T3, T4> &a0, int a1) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f7(const std::istream_iterator<T1, T2, T3, T4> &a0,
-        const std::istream_iterator<T1, T2, T3, T4> &a1) {
-  return a0 == a1;
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
 using t5 =
     typename std::istream_iterator<T1, T2, T3, T4>::istream_type::char_type;
 
@@ -76,11 +70,11 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t10 =
     typename std::istream_iterator<T1, T2, T3, T4>::istream_type::sentry;
 
-template <typename T1, typename T2, typename T3, typename T4> bool f8(bool a0) {
+template <typename T1, typename T2, typename T3, typename T4> bool f7(bool a0) {
   return std::istream_iterator<T1, T2, T3, T4>::istream_type::sync_with_stdio(
       a0);
 }
 
-template <typename T1, typename T2, typename T3, typename T4> int f9() {
+template <typename T1, typename T2, typename T3, typename T4> int f8() {
   return std::istream_iterator<T1, T2, T3, T4>::istream_type::xalloc();
 }

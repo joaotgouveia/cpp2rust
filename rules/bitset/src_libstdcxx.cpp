@@ -52,11 +52,11 @@ f43(const std::bitset<T1> &a0) {
 template <typename T1, typename T2, std::size_t T3>
 std::basic_ostream<T1, T2> &f44(std::basic_ostream<T1, T2> &a0,
                                 const std::bitset<T3> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, std::size_t T3>
 std::basic_istream<T1, T2> &f45(std::basic_istream<T1, T2> &a0,
                                 std::bitset<T3> &a1) {
-  return a0 >> a1;
+  return std::operator>> <T1, T2, T3>(a0, a1);
 }

@@ -53,7 +53,7 @@ f7(std::linear_congruential_engine<T1, T2, T3, T4> &a0) {
 template <typename T1, T1 T2, T1 T3, T1 T4>
 bool f8(const std::linear_congruential_engine<T1, T2, T3, T4> &a0,
         const std::linear_congruential_engine<T1, T2, T3, T4> &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>

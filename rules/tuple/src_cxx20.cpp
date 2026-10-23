@@ -5,5 +5,5 @@
 
 template <typename... T1, typename... T2>
 auto f30(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
-  return a0 <=> a1;
+  return std::operator<=> <T1..., T2...>(a0, a1);
 }

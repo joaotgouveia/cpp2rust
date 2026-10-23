@@ -45,7 +45,7 @@ std::filesystem::copy_options f10() {
 
 std::filesystem::copy_options f11(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::copy_options &f12(std::filesystem::copy_options &a0,
@@ -55,7 +55,7 @@ std::filesystem::copy_options &f12(std::filesystem::copy_options &a0,
 
 std::filesystem::copy_options f13(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::copy_options &f14(std::filesystem::copy_options &a0,
@@ -65,7 +65,7 @@ std::filesystem::copy_options &f14(std::filesystem::copy_options &a0,
 
 std::filesystem::copy_options f15(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::copy_options &f16(std::filesystem::copy_options &a0,
@@ -74,5 +74,5 @@ std::filesystem::copy_options &f16(std::filesystem::copy_options &a0,
 }
 
 std::filesystem::copy_options f17(std::filesystem::copy_options a0) {
-  return ~a0;
+  return std::filesystem::operator~(a0);
 }

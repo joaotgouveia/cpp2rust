@@ -27,3 +27,5 @@ std::future_status f40(const std::future<T1> &a0,
                        const std::chrono::time_point<T2, T3> &a1) {
   return a0.template wait_until<T2, T3>(a1);
 }
+
+std::launch f41() { return std::launch::any; }

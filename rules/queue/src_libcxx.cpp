@@ -3,32 +3,32 @@
 
 template <typename T1, typename T2>
 bool f26(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 != a1;
+  return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f27(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f28(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 < a1;
+  return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f29(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 <= a1;
+  return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f30(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 > a1;
+  return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f31(const std::queue<T1, T2> &a0, const std::queue<T1, T2> &a1) {
-  return a0 >= a1;
+  return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2> std::queue<T1, T2> f32() {

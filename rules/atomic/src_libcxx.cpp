@@ -203,22 +203,33 @@ T1 f394(std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
 template <typename T1>
 void f395(volatile std::atomic<T1> *a0,
           typename std::atomic<T1>::value_type a1) {
-  return std::atomic_store<T1>(a0, a1);
+  return std::atomic_init<T1>(a0, a1);
 }
 
 template <typename T1>
 void f396(std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1) {
+  return std::atomic_init<T1>(a0, a1);
+}
+
+template <typename T1>
+void f397(volatile std::atomic<T1> *a0,
+          typename std::atomic<T1>::value_type a1) {
   return std::atomic_store<T1>(a0, a1);
 }
 
 template <typename T1>
-void f397(volatile std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
+void f398(std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1) {
+  return std::atomic_store<T1>(a0, a1);
+}
+
+template <typename T1>
+void f399(volatile std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
           std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }
 
 template <typename T1>
-void f398(std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
+void f400(std::atomic<T1> *a0, typename std::atomic<T1>::value_type a1,
           std::memory_order a2) {
   return std::atomic_store_explicit<T1>(a0, a1, a2);
 }

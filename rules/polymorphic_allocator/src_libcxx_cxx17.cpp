@@ -6,7 +6,7 @@
 template <typename T1, typename T2>
 bool f25(const std::pmr::polymorphic_allocator<T1> &a0,
          const std::pmr::polymorphic_allocator<T2> &a1) {
-  return a0 == a1;
+  return std::pmr::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4, typename... T5>

@@ -13,5 +13,5 @@ template <typename T1> auto f55(std::size_t a0) {
 template <typename T1, typename T2, typename T3, typename T4>
 std::basic_ostream<T1, T2> &f56(std::basic_ostream<T1, T2> &a0,
                                 const std::unique_ptr<T3, T4> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2, T3, T4>(a0, a1);
 }

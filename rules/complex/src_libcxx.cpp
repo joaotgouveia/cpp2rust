@@ -166,26 +166,26 @@ template <typename T1,
           typename std::enable_if<!std::is_floating_point<T1>::value, int>::type
               T2 = 0>
 std::complex<T1> f175(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 * a1;
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<
                            std::is_floating_point<T1>::value, int>::type T2 = 0>
 std::complex<T1> f176(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 * a1;
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1,
           typename std::enable_if<!std::is_floating_point<T1>::value, int>::type
               T2 = 0>
 std::complex<T1> f177(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 / a1;
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<
                            std::is_floating_point<T1>::value, int>::type T2 = 0>
 std::complex<T1> f178(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 / a1;
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<

@@ -6,5 +6,5 @@
 template <typename T1, typename T2>
 bool f45(const std::pmr::polymorphic_allocator<T1> &a0,
          const std::pmr::polymorphic_allocator<T2> &a1) {
-  return a0 != a1;
+  return std::pmr::operator!= <T1, T2>(a0, a1);
 }

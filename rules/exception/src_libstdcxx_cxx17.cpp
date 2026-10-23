@@ -2,4 +2,4 @@
 #include <new>
 #include <utility>
 
-int f15() { return std::uncaught_exceptions(); }
+int f18() { return std::uncaught_exceptions(); }

@@ -5,5 +5,5 @@
 
 std::strong_ordering f19(const std::error_condition &a0,
                          const std::error_condition &a1) {
-  return a0 <=> a1;
+  return std::operator<=>(a0, a1);
 }

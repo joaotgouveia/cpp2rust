@@ -4,31 +4,31 @@
 
 std::chrono::year f1(const std::chrono::years &a0,
                      const std::chrono::year &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year f2(const std::chrono::year &a0,
                      const std::chrono::years &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::year f3(const std::chrono::year &a0,
                      const std::chrono::years &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::years f4(const std::chrono::year &a0,
                       const std::chrono::year &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::strong_ordering f5(const std::chrono::year &a0,
                         const std::chrono::year &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=>(a0, a1);
 }
 
 bool f6(const std::chrono::year &a0, const std::chrono::year &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }
 
 using t1 = std::chrono::year;

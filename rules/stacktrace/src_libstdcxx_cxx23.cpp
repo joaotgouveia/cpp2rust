@@ -4,12 +4,12 @@
 #include <utility>
 
 std::ostream &f1(std::ostream &a0, const std::stacktrace_entry &a1) {
-  return a0 << a1;
+  return std::operator<<(a0, a1);
 }
 
 template <typename T1>
 std::ostream &f2(std::ostream &a0, const std::basic_stacktrace<T1> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1>(a0, a1);
 }
 
 using t1 = std::pmr::stacktrace;
@@ -45,11 +45,11 @@ unsigned int f10(const std::stacktrace_entry &a0) { return a0.source_line(); }
 
 std::strong_ordering f11(const std::stacktrace_entry &a0,
                          const std::stacktrace_entry &a1) {
-  return a0 <=> a1;
+  return operator<=>(a0, a1);
 }
 
 bool f12(const std::stacktrace_entry &a0, const std::stacktrace_entry &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }
 
 template <typename T1>

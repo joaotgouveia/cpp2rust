@@ -38,7 +38,7 @@ auto f6(T1 &&...a0)
 
 template <typename... T1, typename... T2>
 bool f7(const std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
-  return a0 == a1;
+  return std::operator== <T1..., T2...>(a0, a1);
 }
 
 template <typename... T1> std::tuple<T1 &...> f8(T1 &...a0) {

@@ -52,29 +52,29 @@ std::chrono::month &f14(std::chrono::month &a0, std::chrono::month &&a1) {
 
 std::chrono::month f15(const std::chrono::months &a0,
                        const std::chrono::month &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::month f16(const std::chrono::month &a0,
                        const std::chrono::months &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::month f17(const std::chrono::month &a0,
                        const std::chrono::months &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::months f18(const std::chrono::month &a0,
                         const std::chrono::month &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::strong_ordering f19(const std::chrono::month &a0,
                          const std::chrono::month &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=>(a0, a1);
 }
 
 bool f20(const std::chrono::month &a0, const std::chrono::month &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }

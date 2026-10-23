@@ -6,13 +6,13 @@
 template <typename T1, typename T2, typename T3, typename T4>
 bool f3(const std::unordered_multiset<T1, T2, T3, T4> &a0,
         const std::unordered_multiset<T1, T2, T3, T4> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
 bool f4(const std::unordered_set<T1, T2, T3, T4> &a0,
         const std::unordered_set<T1, T2, T3, T4> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

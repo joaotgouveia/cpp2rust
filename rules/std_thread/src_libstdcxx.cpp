@@ -2,7 +2,7 @@
 #include <utility>
 
 bool f1(std::thread::id a0, std::thread::id a1) {
-  return std::move(a0) == std::move(a1);
+  return std::operator==(std::move(a0), std::move(a1));
 }
 
 void f2(std::thread &a0, std::thread &a1) { return std::swap(a0, a1); }

@@ -47,26 +47,26 @@ std::chrono::day &f14(std::chrono::day &a0, std::chrono::day &&a1) {
 }
 
 std::chrono::day f15(const std::chrono::day &a0, const std::chrono::days &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::day f16(const std::chrono::days &a0, const std::chrono::day &a1) {
-  return a0 + a1;
+  return std::chrono::operator+(a0, a1);
 }
 
 std::chrono::day f17(const std::chrono::day &a0, const std::chrono::days &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::chrono::days f18(const std::chrono::day &a0, const std::chrono::day &a1) {
-  return a0 - a1;
+  return std::chrono::operator-(a0, a1);
 }
 
 std::strong_ordering f19(const std::chrono::day &a0,
                          const std::chrono::day &a1) {
-  return a0 <=> a1;
+  return std::chrono::operator<=>(a0, a1);
 }
 
 bool f20(const std::chrono::day &a0, const std::chrono::day &a1) {
-  return a0 == a1;
+  return std::chrono::operator==(a0, a1);
 }

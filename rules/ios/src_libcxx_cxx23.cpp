@@ -1,5 +1,6 @@
 #include <ios>
 #include <iosfwd>
+#include <string>
 #include <utility>
 
-std::ios_base::openmode f82() { return std::ios_base::noreplace; }
+std::ios_base::openmode f144() { return std::ios_base::noreplace; }

@@ -6,19 +6,19 @@ using t8 = typename std::basic_stringbuf<T1, T2, T3>::string_type;
 
 template <typename T1, typename T2, typename T3>
 std::basic_stringbuf<T1, T2, T3>
-f36(const typename std::basic_stringbuf<T1, T2, T3>::string_type &a0,
+f37(const typename std::basic_stringbuf<T1, T2, T3>::string_type &a0,
     std::ios_base::openmode a1) {
   return std::basic_stringbuf<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_stringbuf<T1, T2, T3>::string_type
-f37(const std::basic_stringbuf<T1, T2, T3> &a0) {
+f38(const std::basic_stringbuf<T1, T2, T3> &a0) {
   return a0.str();
 }
 
 template <typename T1, typename T2, typename T3>
-void f38(std::basic_stringbuf<T1, T2, T3> &a0,
+void f39(std::basic_stringbuf<T1, T2, T3> &a0,
          const typename std::basic_stringbuf<T1, T2, T3>::string_type &a1) {
   return a0.str(a1);
 }

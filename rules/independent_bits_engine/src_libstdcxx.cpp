@@ -16,7 +16,7 @@ template <
                 std::integral_constant<
                     bool, !std::is_convertible<T4, T3>::value>::value>::value,
         void>::type>
-std::independent_bits_engine<T1, T2, T3> f13(T4 &a0) {
+std::independent_bits_engine<T1, T2, T3> f12(T4 &a0) {
   return std::independent_bits_engine<T1, T2, T3>(a0);
 }
 
@@ -33,6 +33,12 @@ typename std::enable_if<
                   std::integral_constant<
                       bool, !std::is_convertible<T4, T3>::value>::value>::value,
     void>::type
-f14(std::independent_bits_engine<T1, T2, T3> &a0, T4 &a1) {
+f13(std::independent_bits_engine<T1, T2, T3> &a0, T4 &a1) {
   return a0.template seed<T4>(a1);
+}
+
+template <typename T1, std::size_t T2, typename T3>
+bool f14(const std::independent_bits_engine<T1, T2, T3> &a0,
+         const std::independent_bits_engine<T1, T2, T3> &a1) {
+  return operator==(a0, a1);
 }

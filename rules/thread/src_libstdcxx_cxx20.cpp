@@ -50,5 +50,5 @@ std::jthread f20(T1 &&a0, T2 &&...a1) {
 void f21(std::jthread &a0, std::jthread &a1) { return swap(a0, a1); }
 
 std::strong_ordering f22(std::thread::id a0, std::thread::id a1) {
-  return std::move(a0) <=> std::move(a1);
+  return std::operator<=>(std::move(a0), std::move(a1));
 }

@@ -149,15 +149,15 @@ f31(const std::bitset<T1> &a0, T2 a1, T2 a2) {
 
 template <std::size_t T1>
 std::bitset<T1> f32(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
-  return a0 & a1;
+  return std::operator& <T1>(a0, a1);
 }
 
 template <std::size_t T1>
 std::bitset<T1> f33(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
-  return a0 ^ a1;
+  return std::operator^ <T1>(a0, a1);
 }
 
 template <std::size_t T1>
 std::bitset<T1> f34(const std::bitset<T1> &a0, const std::bitset<T1> &a1) {
-  return a0 | a1;
+  return std::operator| <T1>(a0, a1);
 }

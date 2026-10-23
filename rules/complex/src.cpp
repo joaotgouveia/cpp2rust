@@ -313,81 +313,81 @@ template <typename T1> T1 f68(const std::complex<T1> &a0) {
 
 template <typename T1>
 std::complex<T1> f69(const std::complex<T1> &a0, const T1 &a1) {
-  return a0 * a1;
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f70(const T1 &a0, const std::complex<T1> &a1) {
-  return a0 * a1;
+  return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f71(const std::complex<T1> &a0, const T1 &a1) {
-  return a0 + a1;
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f72(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 + a1;
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f73(const std::complex<T1> &a0) {
-  return +a0;
+  return std::operator+ <T1>(a0);
 }
 
 template <typename T1>
 std::complex<T1> f74(const T1 &a0, const std::complex<T1> &a1) {
-  return a0 + a1;
+  return std::operator+ <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f75(const std::complex<T1> &a0, const T1 &a1) {
-  return a0 - a1;
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f76(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 - a1;
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f77(const std::complex<T1> &a0) {
-  return -a0;
+  return std::operator- <T1>(a0);
 }
 
 template <typename T1>
 std::complex<T1> f78(const T1 &a0, const std::complex<T1> &a1) {
-  return a0 - a1;
+  return std::operator- <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f79(const std::complex<T1> &a0, const T1 &a1) {
-  return a0 / a1;
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1>
 std::complex<T1> f80(const T1 &a0, const std::complex<T1> &a1) {
-  return a0 / a1;
+  return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T2, T3> &f81(std::basic_ostream<T2, T3> &a0,
                                 const std::complex<T1> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1> bool f82(const std::complex<T1> &a0, const T1 &a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 bool f83(const std::complex<T1> &a0, const std::complex<T1> &a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T2, T3> &f84(std::basic_istream<T2, T3> &a0,
                                 std::complex<T1> &a1) {
-  return a0 >> a1;
+  return std::operator>> <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1> std::complex<T1> f85(const T1 &a0, const T1 &a1) {

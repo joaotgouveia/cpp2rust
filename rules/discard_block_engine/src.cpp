@@ -69,16 +69,10 @@ f11(std::discard_block_engine<T1, T2, T3> &a0) {
   return a0.operator()();
 }
 
-template <typename T1, std::size_t T2, std::size_t T3>
-bool f12(const std::discard_block_engine<T1, T2, T3> &a0,
-         const std::discard_block_engine<T1, T2, T3> &a1) {
-  return a0 == a1;
-}
-
-template <typename T1, std::size_t T2, std::size_t T3> std::size_t f13() {
+template <typename T1, std::size_t T2, std::size_t T3> std::size_t f12() {
   return std::discard_block_engine<T1, T2, T3>::block_size;
 }
 
-template <typename T1, std::size_t T2, std::size_t T3> std::size_t f14() {
+template <typename T1, std::size_t T2, std::size_t T3> std::size_t f13() {
   return std::discard_block_engine<T1, T2, T3>::used_block;
 }

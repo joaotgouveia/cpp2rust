@@ -58,5 +58,5 @@ void f26(std::stop_source &a0, std::stop_source &a1) { return a0.swap(a1); }
 void f27(std::stop_source &a0, std::stop_source &a1) { return swap(a0, a1); }
 
 bool f28(const std::stop_source &a0, const std::stop_source &a1) {
-  return a0 == a1;
+  return operator==(a0, a1);
 }

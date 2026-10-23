@@ -75,32 +75,32 @@ template <typename T1, typename... T2> bool f13(const std::variant<T2...> &a0) {
 
 template <typename... T1>
 bool f14(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 != a1;
+  return std::operator!= <T1...>(a0, a1);
 }
 
 template <typename... T1>
 bool f15(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 < a1;
+  return std::operator< <T1...>(a0, a1);
 }
 
 template <typename... T1>
 bool f16(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 <= a1;
+  return std::operator<= <T1...>(a0, a1);
 }
 
 template <typename... T1>
 bool f17(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 == a1;
+  return std::operator== <T1...>(a0, a1);
 }
 
 template <typename... T1>
 bool f18(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 > a1;
+  return std::operator><T1...>(a0, a1);
 }
 
 template <typename... T1>
 bool f19(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {
-  return a0 >= a1;
+  return std::operator>= <T1...>(a0, a1);
 }
 
 template <typename... T1> using t1 = std::variant<T1...>;

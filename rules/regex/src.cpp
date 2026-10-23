@@ -6,37 +6,37 @@
 template <typename T1, typename T2, typename T3>
 std::basic_ostream<T1, T2> &f40(std::basic_ostream<T1, T2> &a0,
                                 const std::sub_match<T3> &a1) {
-  return a0 << a1;
+  return std::operator<< <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1>
 bool f41(const std::sub_match<T1> &a0,
          const typename std::iterator_traits<T1>::value_type &a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 bool f42(const std::sub_match<T1> &a0,
          const typename std::iterator_traits<T1>::value_type *a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1>
 bool f43(const std::sub_match<T1> &a0, const std::sub_match<T1> &a1) {
-  return a0 == a1;
+  return std::operator== <T1>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f44(const std::match_results<T1, T2> &a0,
          const std::match_results<T1, T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
 bool f45(const std::sub_match<T1> &a0,
          const std::basic_string<typename std::iterator_traits<T1>::value_type,
                                  T2, T3> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2>

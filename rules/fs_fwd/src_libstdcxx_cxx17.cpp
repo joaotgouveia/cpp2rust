@@ -137,22 +137,22 @@ std::filesystem::file_time_type f34(const std::filesystem::path &a0,
 
 std::filesystem::copy_options f35(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::directory_options f36(std::filesystem::directory_options a0,
                                        std::filesystem::directory_options a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::perm_options f37(std::filesystem::perm_options a0,
                                   std::filesystem::perm_options a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::perms f38(std::filesystem::perms a0,
                            std::filesystem::perms a1) {
-  return a0 & a1;
+  return std::filesystem::operator&(a0, a1);
 }
 
 std::filesystem::copy_options &f39(std::filesystem::copy_options &a0,
@@ -177,22 +177,22 @@ std::filesystem::perms &f42(std::filesystem::perms &a0,
 
 std::filesystem::copy_options f43(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::directory_options f44(std::filesystem::directory_options a0,
                                        std::filesystem::directory_options a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::perm_options f45(std::filesystem::perm_options a0,
                                   std::filesystem::perm_options a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::perms f46(std::filesystem::perms a0,
                            std::filesystem::perms a1) {
-  return a0 ^ a1;
+  return std::filesystem::operator^(a0, a1);
 }
 
 std::filesystem::copy_options &f47(std::filesystem::copy_options &a0,
@@ -217,22 +217,22 @@ std::filesystem::perms &f50(std::filesystem::perms &a0,
 
 std::filesystem::copy_options f51(std::filesystem::copy_options a0,
                                   std::filesystem::copy_options a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::directory_options f52(std::filesystem::directory_options a0,
                                        std::filesystem::directory_options a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::perm_options f53(std::filesystem::perm_options a0,
                                   std::filesystem::perm_options a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::perms f54(std::filesystem::perms a0,
                            std::filesystem::perms a1) {
-  return a0 | a1;
+  return std::filesystem::operator|(a0, a1);
 }
 
 std::filesystem::copy_options &f55(std::filesystem::copy_options &a0,
@@ -256,18 +256,20 @@ std::filesystem::perms &f58(std::filesystem::perms &a0,
 }
 
 std::filesystem::copy_options f59(std::filesystem::copy_options a0) {
-  return ~a0;
+  return std::filesystem::operator~(a0);
 }
 
 std::filesystem::directory_options f60(std::filesystem::directory_options a0) {
-  return ~a0;
+  return std::filesystem::operator~(a0);
 }
 
 std::filesystem::perm_options f61(std::filesystem::perm_options a0) {
-  return ~a0;
+  return std::filesystem::operator~(a0);
 }
 
-std::filesystem::perms f62(std::filesystem::perms a0) { return ~a0; }
+std::filesystem::perms f62(std::filesystem::perms a0) {
+  return std::filesystem::operator~(a0);
+}
 
 using t5 = std::filesystem::perm_options;
 

@@ -10,7 +10,7 @@
 #include <variant>
 #include <vector>
 
-using t32 = std::hash<std::string_view>;
+using t34 = std::hash<std::string_view>;
 
 std::size_t f149(const std::hash<std::string_view> &a0,
                  const std::string_view &a1) {
@@ -37,7 +37,7 @@ std::hash<std::string_view> &f154(std::hash<std::string_view> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t33 = std::hash<std::wstring_view>;
+using t35 = std::hash<std::wstring_view>;
 
 std::size_t f155(const std::hash<std::wstring_view> &a0,
                  const std::wstring_view &a1) {
@@ -64,7 +64,7 @@ std::hash<std::wstring_view> &f160(std::hash<std::wstring_view> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t34 = std::hash<std::u16string_view>;
+using t36 = std::hash<std::u16string_view>;
 
 std::size_t f161(const std::hash<std::u16string_view> &a0,
                  const std::u16string_view &a1) {
@@ -93,7 +93,7 @@ std::hash<std::u16string_view> &f166(std::hash<std::u16string_view> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t35 = std::hash<std::u32string_view>;
+using t37 = std::hash<std::u32string_view>;
 
 std::size_t f167(const std::hash<std::u32string_view> &a0,
                  const std::u32string_view &a1) {
@@ -122,7 +122,7 @@ std::hash<std::u32string_view> &f172(std::hash<std::u32string_view> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t36 = std::hash<std::error_condition>;
+using t38 = std::hash<std::error_condition>;
 
 std::size_t f173(const std::hash<std::error_condition> &a0,
                  const std::error_condition &a1) {
@@ -153,7 +153,7 @@ std::hash<std::error_condition> &f178(std::hash<std::error_condition> &a0,
   return a0.operator=(std::move(a1));
 }
 
-using t37 = std::hash<std::nullptr_t>;
+using t39 = std::hash<std::nullptr_t>;
 
 std::size_t f179(const std::hash<std::nullptr_t> &a0, std::nullptr_t a1) {
   return a0.operator()(a1);

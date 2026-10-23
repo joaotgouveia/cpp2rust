@@ -233,5 +233,5 @@ T2 &f31(std::array<T2, T3> &a0) {
 
 template <typename T1, std::size_t T2>
 bool f32(const std::array<T1, T2> &a0, const std::array<T1, T2> &a1) {
-  return a0 == a1;
+  return std::operator== <T1, T2>(a0, a1);
 }
