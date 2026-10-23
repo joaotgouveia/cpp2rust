@@ -26,7 +26,7 @@ typename T3::iterator f212(std::formatter<std::tuple<T2...>, T1> &a0, T3 &a1) {
 template <typename T1, typename... T2, typename T3>
 typename T3::iterator
 f213(const std::formatter<std::tuple<T2...>, T1> &a0,
-     std::conditional_t<(formattable<T2 const, T1> && ...),
+     std::conditional_t<(std::formattable<T2 const, T1> && ...),
                         const std::tuple<T2...> &, std::tuple<T2...> &>
          a1,
      T3 &a2) {
@@ -56,7 +56,7 @@ typename T3::iterator f216(std::formatter<std::pair<T2...>, T1> &a0, T3 &a1) {
 template <typename T1, typename... T2, typename T3>
 typename T3::iterator
 f217(const std::formatter<std::pair<T2...>, T1> &a0,
-     std::conditional_t<(formattable<T2 const, T1> && ...),
+     std::conditional_t<(std::formattable<T2 const, T1> && ...),
                         const std::pair<T2...> &, std::pair<T2...> &>
          a1,
      T3 &a2) {
