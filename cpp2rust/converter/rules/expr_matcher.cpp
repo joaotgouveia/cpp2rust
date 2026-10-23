@@ -580,8 +580,18 @@ const clang::NamedDecl *moreConstrained(clang::Sema &sema,
                                         clang::FunctionTemplateDecl *a_tmpl,
                                         const clang::NamedDecl *b,
                                         clang::FunctionTemplateDecl *b_tmpl) {
-  if (!sema.Context.hasSameType(a_tmpl->getTemplatedDecl()->getType(),
-                                b_tmpl->getTemplatedDecl()->getType()) ||
+  // overloads differ in their parameters, never in their return type
+  // (move_iterator's void operator++(int) and the constrained one returning
+  // move_iterator)
+  auto a_params = a_tmpl->getTemplatedDecl()->parameters();
+  auto b_params = b_tmpl->getTemplatedDecl()->parameters();
+  if (a_params.size() != b_params.size() ||
+      !llvm::all_of(llvm::zip(a_params, b_params),
+                    [&](auto params) {
+                      return sema.Context.hasSameType(
+                          std::get<0>(params)->getType(),
+                          std::get<1>(params)->getType());
+                    }) ||
       !sema.TemplateParameterListsAreEqual(
           a_tmpl->getTemplateParameters(), b_tmpl->getTemplateParameters(),
           /*Complain=*/false, clang::Sema::TPL_TemplateMatch)) {
