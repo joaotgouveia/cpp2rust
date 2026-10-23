@@ -122,6 +122,8 @@ void AddRequiredClasses(clang::QualType type,
   }
 }
 
+const clang::Expr *RuleExpr(const clang::Decl *decl);
+
 std::unordered_set<std::string>
 RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
   std::unordered_set<std::string> required;
@@ -129,6 +131,25 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
     AddRequiredClasses(alias->getUnderlyingType(), required);
   } else if (auto fn = rule->getAsFunction()) {
     AddRequiredClasses(fn->getType(), required);
+    // a static member named through a class (std::istrstream::xalloc())
+    // needs that class, which no parameter mentions
+    if (auto expr = RuleExpr(rule)) {
+      expr = expr->IgnoreImplicit();
+      if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
+        expr = call->getCallee()->IgnoreParenImpCasts();
+      }
+      clang::NestedNameSpecifier qualifier = std::nullopt;
+      if (auto ref = llvm::dyn_cast<clang::DeclRefExpr>(expr)) {
+        qualifier = ref->getQualifier();
+      } else if (auto ref =
+                     llvm::dyn_cast<clang::DependentScopeDeclRefExpr>(expr)) {
+        qualifier = ref->getQualifier();
+      }
+      if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
+        AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0),
+                           required);
+      }
+    }
   } else if (auto var = llvm::dyn_cast<clang::VarDecl>(rule)) {
     AddRequiredClasses(var->getType(), required);
   }
