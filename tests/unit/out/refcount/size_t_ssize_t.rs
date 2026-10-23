@@ -23,13 +23,13 @@ fn main_0() -> () {
     let mut n: () = (::std::mem::size_of::<()>() as ()).wrapping_add(4_());
     unimplemented!();
     let mut ul: () = 10_();
-    let sz: Value<()> = Rc::new(RefCell::new(20_()));
-    let mut mixed: () = (*sz.borrow()).wrapping_add(ul);
+    let mut sz: () = 20_();
+    let mut mixed: () = (sz).wrapping_add(ul);
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut chain: () = (((*sz.borrow()).wrapping_add(ul)).wrapping_add(5_()))
+    let mut chain: () = (((sz).wrapping_add(ul)).wrapping_add(5_()))
         .wrapping_add((::std::mem::size_of::<()>() as ()));
     unimplemented!();
     let mut acc: () = 100_();
@@ -37,16 +37,11 @@ fn main_0() -> () {
     acc = { (acc).wrapping_mul(2_()) };
     acc = { (acc).wrapping_sub(ul) };
     unimplemented!();
-    (*sz.borrow_mut()) = { (*sz.borrow()).wrapping_add(1_()) };
+    sz = { (sz).wrapping_add(1_()) };
     unimplemented!();
-    let mut fr: () = ({
-        add_sizes_0(
-            (::std::mem::size_of::<()>() as ()).wrapping_add((*sz.borrow())),
-            ul,
-        )
-    });
+    let mut fr: () = ({ add_sizes_0((::std::mem::size_of::<()>() as ()).wrapping_add(sz), ul) });
     unimplemented!();
-    let mut fr2: () = ({ take_ulong_1((*sz.borrow())) });
+    let mut fr2: () = ({ take_ulong_1(sz) });
     unimplemented!();
     let mut lo: () = (unimplemented!().read());
     let mut hi: () = (unimplemented!().read());
@@ -69,8 +64,8 @@ fn main_0() -> () {
         i.postfix_inc();
     }
     unimplemented!();
-    let mut cond: () = if ((*sz.borrow()) > ul) {
-        (*sz.borrow()).wrapping_add((::std::mem::size_of::<()>() as ()))
+    let mut cond: () = if (sz > ul) {
+        (sz).wrapping_add((::std::mem::size_of::<()>() as ()))
     } else {
         ul
     };
@@ -95,7 +90,7 @@ fn main_0() -> () {
     let mut smax: () = (unimplemented!().read());
     unimplemented!();
     unimplemented!();
-    let mut delta: () = ((*sz.borrow()) - ul);
+    let mut delta: () = (sz - ul);
     unimplemented!();
     let mut a64: () = 100_();
     let mut b: () = 30_();
@@ -116,10 +111,7 @@ fn main_0() -> () {
     ];
     unimplemented!();
     unimplemented!();
-    let pr: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_unsigned_long__int_::new({ sz.as_pointer() }, { __tmp_0.as_pointer() })
-    }));
+    let pr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let sizes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_()])));
     let mut sizes_end: Ptr<()> = unimplemented!();

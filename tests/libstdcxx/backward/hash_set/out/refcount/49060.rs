@@ -28,7 +28,7 @@ fn main_0() -> () {
             (*table.borrow()).insert_equal(___obj.as_pointer())
         }),
     ));
-    ({ (*table.borrow()).erase_38(field_ptr!(it.as_pointer(), first)) });
+    ({ (*table.borrow()).erase_38(field_ptr!(unimplemented!(), first)) });
     0
 }
 pub trait modulo2_eqImpl {

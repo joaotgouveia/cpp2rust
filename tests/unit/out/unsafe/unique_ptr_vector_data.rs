@@ -16,7 +16,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut v : () = std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ :: new ( { (Box::leak(Box::new(unimplemented!() )) as *mut () ) } , )  ;
+    let mut v: () = unimplemented!();
     let mut p: *mut u8 = (unimplemented!() as *mut ()).cast::<u8>();
     (*p.offset((2_()) as isize)) = 1_u8;
     (*(unsafe { first_0(&v) }).offset((0_()) as isize)) = 5_u8;

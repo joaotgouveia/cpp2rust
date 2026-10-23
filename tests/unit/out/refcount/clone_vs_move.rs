@@ -203,11 +203,7 @@ fn main_0() -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    let pair1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(2_()));
-        std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let pair1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pair2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*pair2.borrow_mut()).first = { ({ (*pair2.borrow()).first } * 10_()) };
     (*pair2.borrow_mut()).second = { ({ (*pair2.borrow()).second } * 10_()) };
@@ -215,13 +211,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let pair3: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
-        std_pair_std_vector_int__std_allocator_int____int_::new({ __tmp_2.as_pointer() }, {
-            __tmp_3.as_pointer()
-        })
-    }));
+    let pair3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pair4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     (*pair4.borrow_mut()).second = 1_();
@@ -229,11 +219,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 3_() },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     unimplemented!().write(('b' as ()));
     unimplemented!().write(('b' as ()));

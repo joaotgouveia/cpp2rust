@@ -7,10 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn make_std_pair_0(mut x: ()) -> () {
-    return {
-        let mut __tmp_0: () = ((x) > (0_()));
-        std_pair_int__bool_::new({ &mut x }, { &mut __tmp_0 })
-    };
+    return unimplemented!();
 }
 pub fn main() {
     unsafe {
@@ -24,11 +21,7 @@ unsafe fn main_0() -> () {
     let positive: *mut () = (unsafe { get_3(&mut __decomp_1) });
     unimplemented!();
     unimplemented!();
-    let mut p: () = {
-        let mut __tmp_1: () = 1_();
-        let mut __tmp_2: () = 2_();
-        std_pair_int__int_::new({ &mut __tmp_1 }, { &mut __tmp_2 })
-    };
+    let mut p: () = unimplemented!();
     let mut __decomp_4: () = unimplemented!();
     let a: *mut () = (unsafe { get_5(&mut __decomp_4) });
     let b: *mut () = (unsafe { get_6(&mut __decomp_4) });

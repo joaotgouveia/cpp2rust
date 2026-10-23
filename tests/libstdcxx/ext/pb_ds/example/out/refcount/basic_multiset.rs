@@ -54,7 +54,7 @@ impl contains_pqImpl for Ptr<contains_pq> {
         });
     }
     fn push(&self, mut i: ()) {
-        field!(( { let _r_value : Value<() > = Rc::new(RefCell::new(unimplemented!()   )); ( (*(* self ) .upgrade().deref()) . m_tree  as __gnu_pbds_detail_rb_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . insert ( _r_value.as_pointer() , ) } )  . first  , second) .with_mut(|__v| __v. prefix_inc ()) ;
+        unimplemented!().second.prefix_inc();
     }
     fn pop(&self) -> () {
         unimplemented!();
@@ -63,8 +63,8 @@ impl contains_pqImpl for Ptr<contains_pq> {
                 ( (*(* self ) .upgrade().deref()) . m_tree  as __gnu_pbds_detail_bin_search_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . begin_18 ( )
             }),
         ));
-        let mut i: () = { ((*it.borrow()).read()).first };
-        if (field!((*it.borrow_mut()), second).with_mut(|__v| __v.prefix_dec()) == 0_()) {
+        let mut i: () = { unimplemented!().first };
+        if ({ unimplemented!().second.prefix_dec() } == 0_()) {
             ({
                 ( (*(* self ) .upgrade().deref()) . m_tree  as __gnu_pbds_detail_rb_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . erase_10 ( unimplemented!()  , )
             });

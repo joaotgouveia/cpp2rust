@@ -11,10 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"ABCD") },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let mut bytes: Ptr<u8> = unimplemented!().reinterpret_cast::<u8>();
     unimplemented!();
     unimplemented!();

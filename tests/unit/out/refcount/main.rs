@@ -27,10 +27,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(argc: i32, argv: Ptr<Ptr<i8>>) -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (elem!(argv, 0_()).read()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

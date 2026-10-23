@@ -178,43 +178,23 @@ unsafe fn main_0() -> () {
     unimplemented!();
     (unsafe { fn_1(&mut v7, unimplemented!()) });
     let mut src: [u32; 3] = [1_u32, 2_u32, 3_u32];
-    let mut v9: () = std_vector_unsigned_int__std_allocator_unsigned_int__::new_1(
-        { (src.as_mut_ptr() as *mut u32).cast::<()>() },
-        { (src.as_mut_ptr().offset((3_()) as isize) as *mut u32).cast::<()>() },
-        None,
-    );
+    let mut v9: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v10: () = std_vector_unsigned_long__std_allocator_unsigned_long__::new_1(
-        { (src.as_mut_ptr() as *mut u32).cast::<()>() },
-        { (src.as_mut_ptr().offset((3_()) as isize) as *mut u32).cast::<()>() },
-        None,
-    );
+    let mut v10: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut v11: () = std_vector_int__std_allocator_int__::new_1(
-        { (src.as_mut_ptr() as *mut u32).cast::<()>() },
-        { (src.as_mut_ptr().offset((3_()) as isize) as *mut u32).cast::<()>() },
-        None,
-    );
+    let mut v11: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let src1: [u32; 3] = [1_u32, 2_u32, 3_u32];
-    let mut v12: () = std_vector_unsigned_int__std_allocator_unsigned_int__::new_2(
-        { (src1.as_ptr() as *const u32).cast::<()>() },
-        { unimplemented!() },
-        None,
-    );
+    let mut v12: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut buf: [u8; 5] = [10_u8, 20_u8, 30_u8, 40_u8, 50_u8];
     let mut start: *const u8 = (buf.as_mut_ptr()).cast_const();
     let mut len: () = 5_();
-    let mut v13: () = std_vector_unsigned_char__std_allocator_unsigned_char__::new_1(
-        { (start as *const u8).cast::<()>() },
-        { (start.offset((len) as isize) as *const u8).cast::<()>() },
-        None,
-    );
+    let mut v13: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

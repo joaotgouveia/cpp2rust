@@ -42,25 +42,33 @@ unsafe fn main_0() -> () {
     let mut end: () = unimplemented!();
     let mut it: () = unimplemented!();
     let mut const_it: () = unimplemented!();
-    let mut x1: () = if unimplemented!() { 0_() } else { (*it).second };
+    let mut x1: () = if unimplemented!() {
+        0_()
+    } else {
+        (*unimplemented!()).second
+    };
     unimplemented!();
     let mut x2: () = if unimplemented!() {
         0_()
     } else {
-        (*const_it).second
+        (*unimplemented!()).second
     };
     unimplemented!();
-    let mut x3: () = if unimplemented!() { 0_() } else { (*it).second };
+    let mut x3: () = if unimplemented!() {
+        0_()
+    } else {
+        (*unimplemented!()).second
+    };
     unimplemented!();
     let mut x4: () = if unimplemented!() {
         0_()
     } else {
-        (*const_it).second
+        (*unimplemented!()).second
     };
     unimplemented!();
     (*unimplemented!()) = 5_();
     let mut it4: () = unimplemented!();
-    let mut p: *mut () = (&mut (*it4).second as *mut ());
+    let mut p: *mut () = (&mut (*unimplemented!()).second as *mut ());
     let mut x5: () = (*p);
     unimplemented!();
     unimplemented!();
@@ -96,11 +104,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     let mut other_map: () = unimplemented!();
     unimplemented!();
-    let mut key0: () = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 1_();
-        std_pair_int__long_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut key0: () = unimplemented!();
     let mut value: () = 2_();
     (*unimplemented!()) = value;
     value = (*unimplemented!());

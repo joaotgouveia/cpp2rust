@@ -44,30 +44,30 @@ fn main_0() -> () {
     let mut x1: () = if unimplemented!() {
         0_()
     } else {
-        { ((*it.borrow()).read()).second }
+        { unimplemented!().second }
     };
     unimplemented!();
     let mut x2: () = if unimplemented!() {
         0_()
     } else {
-        { ((*const_it.borrow()).read()).second }
+        { unimplemented!().second }
     };
     unimplemented!();
     let mut x3: () = if unimplemented!() {
         0_()
     } else {
-        { ((*it.borrow()).read()).second }
+        { unimplemented!().second }
     };
     unimplemented!();
     let mut x4: () = if unimplemented!() {
         0_()
     } else {
-        { ((*const_it.borrow()).read()).second }
+        { unimplemented!().second }
     };
     unimplemented!();
     unimplemented!().write(5_());
     let it4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut p: Ptr<()> = (field_ptr!(it4.as_pointer(), second));
+    let mut p: Ptr<()> = (field_ptr!(unimplemented!(), second));
     let mut x5: () = (p.read());
     unimplemented!();
     unimplemented!();
@@ -103,11 +103,7 @@ fn main_0() -> () {
     unimplemented!();
     let other_map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let key0: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_int__long_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let key0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut value: () = 2_();
     unimplemented!().write(value);
     value = (unimplemented!().read());

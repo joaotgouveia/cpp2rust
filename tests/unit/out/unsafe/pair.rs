@@ -13,18 +13,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut p1: () = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 2_();
-        std_pair_double__int_::new_1({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut p1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut p2: () = {
-        let mut __tmp_2: () = 3_();
-        let mut __tmp_3: () = 4_();
-        std_pair_double__int_::new_1({ &mut __tmp_2 }, { &mut __tmp_3 })
-    };
+    let mut p2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut p3: () = unimplemented!();
@@ -33,7 +25,7 @@ unsafe fn main_0() -> () {
     let arr: [(); 2] = [1_(), 2_()];
     let mut n: () = 2_();
     let mut const_ptr_pairs: () = unimplemented!();
-    unimplemented!();
+    (*unimplemented!()) = unimplemented!();
     unimplemented!();
     return 0_();
 }

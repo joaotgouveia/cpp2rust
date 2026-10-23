@@ -109,10 +109,7 @@ unsafe fn main_0() -> () {
     let mut mins: [(); 4] = [0_(), (*unimplemented!()), (*unimplemented!()), mx];
     unimplemented!();
     unimplemented!();
-    let mut pr: () = {
-        let mut __tmp_0: () = 1_();
-        std_pair_unsigned_long__int_::new({ &mut sz }, { &mut __tmp_0 })
-    };
+    let mut pr: () = unimplemented!();
     unimplemented!();
     let sizes: [(); 4] = [1_(), 2_(), 3_(), 4_()];
     let mut sizes_end: *const () = unimplemented!();

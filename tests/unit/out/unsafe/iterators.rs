@@ -13,10 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut x: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"hello".as_ptr() },
-        None,
-    );
+    let mut x: () = unimplemented!();
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let c: *mut () = &mut (*unimplemented!());
         (*c).prefix_inc();

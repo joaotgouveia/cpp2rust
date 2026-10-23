@@ -44,75 +44,35 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"as") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"ad") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"t") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"tr") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"trie") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     ({
-        let _key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"zzz") },
-                None,
-            ),
-        ));
+        let _key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         print_prefix_match_0(t.as_pointer(), _key.as_pointer())
     });
     return 0_();

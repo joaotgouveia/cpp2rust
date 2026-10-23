@@ -177,11 +177,7 @@ unsafe fn main_0() -> () {
         unimplemented!();
         i.prefix_inc();
     }
-    let mut pair1: () = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 2_();
-        std_pair_int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut pair1: () = unimplemented!();
     let mut pair2: () = unimplemented!();
     pair2.first = ((pair2.first) * (10_()));
     pair2.second = ((pair2.second) * (10_()));
@@ -189,11 +185,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut pair3: () = {
-        let mut __tmp_2: () = unimplemented!();
-        let mut __tmp_3: () = 0_();
-        std_pair_std_vector_int__std_allocator_int____int_::new({ &mut __tmp_2 }, { &mut __tmp_3 })
-    };
+    let mut pair3: () = unimplemented!();
     let mut pair4: () = unimplemented!();
     unimplemented!();
     pair4.second = 1_();
@@ -201,11 +193,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 3_() },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     (*unimplemented!()) = ('b' as ());
     (*unimplemented!()) = ('b' as ());

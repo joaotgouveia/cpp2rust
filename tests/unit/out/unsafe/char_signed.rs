@@ -66,10 +66,7 @@ unsafe fn main_0() -> () {
             ((unsafe { strcmp_2(c"\x80".as_ptr(), c"a".as_ptr()) }) > (0_())),
         )
     });
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\xfe!".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     (unsafe {
         libc::printf(
             c"%d %d\n".as_ptr() as *const libc::c_char,

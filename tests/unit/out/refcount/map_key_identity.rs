@@ -122,7 +122,7 @@ fn main_0() -> () {
     let a: Ptr<Mapped> = unimplemented!();
     field!(a, value).write(11_());
     let a_it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut a_value: Ptr<Mapped> = (field_ptr!(a_it.as_pointer(), second));
+    let mut a_value: Ptr<Mapped> = (field_ptr!(unimplemented!(), second));
     ok &= (default_constructions_0.with(|rc| *rc.borrow()) == 1_());
     let b: Ptr<Mapped> = unimplemented!();
     field!(b, value).write(22_());
@@ -134,8 +134,8 @@ fn main_0() -> () {
     ok &= (unimplemented!());
     ok &= (unimplemented!());
     ok &= (unimplemented!());
-    ok &= ({ (field_ptr!(a_it.as_pointer(), second)) } == { (a_value).clone() });
-    ok &= ({ ((*a_it.borrow()).read()).second.value } == 11_());
+    ok &= ({ (field_ptr!(unimplemented!(), second)) } == { (a_value).clone() });
+    ok &= ({ unimplemented!().second.value } == 11_());
     ok &= ({
         let _a: Ptr<Key> = distinct_a.as_pointer();
         operator_eq_2(_a, distinct_b.as_pointer())
@@ -170,7 +170,7 @@ fn main_0() -> () {
     let first: Ptr<Mapped> = unimplemented!();
     field!(first, value).write(31_());
     let first_it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut first_value: Ptr<Mapped> = (field_ptr!(first_it.as_pointer(), second));
+    let mut first_value: Ptr<Mapped> = (field_ptr!(unimplemented!(), second));
     ok &= (default_constructions_0.with(|rc| *rc.borrow()) == (before_equivalent + 1_()));
     let second: Ptr<Mapped> = unimplemented!();
     let mut reused: () =
@@ -182,8 +182,8 @@ fn main_0() -> () {
         ok &= ({ (first).clone() } == { (second).clone() });
         ok &= (unimplemented!());
         ok &= (unimplemented!());
-        ok &= ({ (field_ptr!(first_it.as_pointer(), second)) } == { (first_value).clone() });
-        ok &= (({ ((*first_it.borrow()).read()).second.value } == 31_())
+        ok &= ({ (field_ptr!(unimplemented!(), second)) } == { (first_value).clone() });
+        ok &= (({ unimplemented!().second.value } == 31_())
             && (second.with(|__s| __s.value) == 31_()));
         let mut equivalent_count: () = 0_();
         'loop_: for entry in IterRange::new(unimplemented!(), unimplemented!()) {
@@ -208,8 +208,8 @@ fn main_0() -> () {
     ok &= (unimplemented!() == 2_());
     if reused {
         ok &= (unimplemented!());
-        ok &= ({ (field_ptr!(first_it.as_pointer(), second)) } == { (first_value).clone() });
-        ok &= ({ ((*first_it.borrow()).read()).second.value } == 31_());
+        ok &= ({ (field_ptr!(unimplemented!(), second)) } == { (first_value).clone() });
+        ok &= ({ unimplemented!().second.value } == 31_());
     }
     let mut matching_a: Key = Key {
         order: 5_(),
@@ -228,22 +228,22 @@ fn main_0() -> () {
     let matched: Ptr<Mapped> = unimplemented!();
     field!(matched, value).write(51_());
     let matched_it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut matched_value: Ptr<Mapped> = (field_ptr!(matched_it.as_pointer(), second));
+    let mut matched_value: Ptr<Mapped> = (field_ptr!(unimplemented!(), second));
     ok &= (default_constructions_0.with(|rc| *rc.borrow()) == (before_matching + 1_()));
     let matched_again: Ptr<Mapped> = unimplemented!();
     ok &= (default_constructions_0.with(|rc| *rc.borrow()) == (before_matching + 1_()));
     ok &= (unimplemented!() == 1_());
     ok &= ({ (matched).clone() } == { (matched_again).clone() });
     ok &= (unimplemented!());
-    ok &= ({ (field_ptr!(matched_it.as_pointer(), second)) } == { (matched_value).clone() });
-    ok &= ({ ((*matched_it.borrow()).read()).second.value } == 51_());
+    ok &= ({ (field_ptr!(unimplemented!(), second)) } == { (matched_value).clone() });
+    ok &= ({ unimplemented!().second.value } == 51_());
     let other: Ptr<Mapped> = unimplemented!();
     field!(other, value).write(61_());
     ok &= (default_constructions_0.with(|rc| *rc.borrow()) == (before_matching + 2_()));
     ok &= (unimplemented!() == 2_());
     ok &= (unimplemented!());
-    ok &= ({ (field_ptr!(matched_it.as_pointer(), second)) } == { (matched_value).clone() });
-    ok &= ({ ((*matched_it.borrow()).read()).second.value } == 51_());
+    ok &= ({ (field_ptr!(unimplemented!(), second)) } == { (matched_value).clone() });
+    ok &= ({ unimplemented!().second.value } == 51_());
     return if ok { 0_() } else { 1_() };
 }
 pub fn __cpp2rust_init_globals() {

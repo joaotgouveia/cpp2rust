@@ -53,24 +53,9 @@ pub fn regex_sanity_check_3(__res: Ptr<()>, __f: Option<()>, __error: Option<()>
     unimplemented!();
 }
 pub fn test01_5() {
-    let sre0: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"\\d{3}-\\d{3}-\\d{4}") },
-            None,
-        ),
-    ));
-    let sre1: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b" this\n  and new : forms\n  ") },
-            None,
-        ),
-    ));
-    let sre2: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"[:num:]{3}-[:num:]{3}-[:num:]{4}") },
-            None,
-        ),
-    ));
+    let sre0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sre1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let sre2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let re2: Value<()> = Rc::new(RefCell::new(unimplemented!()));

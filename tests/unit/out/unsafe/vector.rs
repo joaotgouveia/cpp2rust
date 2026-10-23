@@ -69,16 +69,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     let mut src: () = unimplemented!();
-    (unsafe {
-        let ___position: () = unimplemented!();
-        let ___first: () = unimplemented!();
-        let ___last: () = unimplemented!();
-        v2.insert_66_class___gnu_cxx___normal_iterator_int_ptr__class_std_vector_int____void(
-            ___position,
-            ___first,
-            ___last,
-        )
-    });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

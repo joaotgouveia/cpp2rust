@@ -102,90 +102,31 @@ pub unsafe fn compare_paths_0(p1: *const (), p2: *const ()) {
 }
 pub static mut test_paths_1: std::cell::LazyCell<[(); 18]> = std::cell::LazyCell::new(|| unsafe {
     [
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"//".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/.".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/./".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a//".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a/b/c/d".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a//b".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c.d".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/..".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c.".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/.c".as_ptr() },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ]
 });
 pub unsafe fn root_path_2() -> () {
-    return std_filesystem_path::new_1({ &std::mem::transmute(*b"/\0") }, None);
+    return unimplemented!();
 }
 pub unsafe fn nonexistent_path_3(mut file: Option<()>) -> () {
-    let mut file: () = file.unwrap_or_else(|| unsafe {
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { concat!(file!(), "\0").as_ptr() as *const () },
-            None,
-        )
-    });
+    let mut file: () = file.unwrap_or_else(|| unsafe { unimplemented!() });
     if ((unimplemented!()) > (3_())) && ((unimplemented!()) == (0_())) {
         unimplemented!();
     }
@@ -281,7 +222,7 @@ pub unsafe fn test01_8() {
             .as_ptr()
             .offset((18_()) as isize),
     ) {
-        let p: () = std_filesystem_path::new_2({ &(*p) }, None);
+        let p: () = unimplemented!();
         let mut copy: () = unimplemented!();
         (unsafe { compare_paths_0(&p, &copy) });
     }
@@ -293,7 +234,7 @@ pub unsafe fn test02_9() {
             .as_ptr()
             .offset((18_()) as isize),
     ) {
-        let p: () = std_filesystem_path::new_2({ &(*p) }, None);
+        let p: () = unimplemented!();
         let mut copy: () = unimplemented!();
         let mut move_: () = unimplemented!();
         (unsafe { compare_paths_0(&p, &move_) });

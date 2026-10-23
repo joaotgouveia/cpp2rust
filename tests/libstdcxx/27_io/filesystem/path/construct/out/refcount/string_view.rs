@@ -102,90 +102,31 @@ pub fn compare_paths_0(p1: Ptr<()>, p2: Ptr<()>) {
 }
 thread_local!(
     pub static test_paths_1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"//") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/.") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/./") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a//") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a/b/c/d") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a//b") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c.d") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/..") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c.") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/.c") },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
 );
 pub fn root_path_2() -> () {
-    return std_filesystem_path::new_1({ Ptr::<()>::from_string_literal(b"/") }, None);
+    return unimplemented!();
 }
 pub fn nonexistent_path_3(file: Option<()>) -> () {
-    let file: Value<()> = Rc::new(RefCell::new(file.unwrap_or_else(|| {
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(file!().as_bytes()) },
-            None,
-        )
-    })));
+    let file: Value<()> = Rc::new(RefCell::new(file.unwrap_or_else(|| unimplemented!())));
     if (unimplemented!() > 3_()) && (unimplemented!() == 0_()) {
         unimplemented!();
     }
@@ -522,46 +463,25 @@ pub fn test01_18() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p1: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-            { s.as_pointer() },
-            None,
-        )));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sv: Value<()> = Rc::new(RefCell::new(({ (*s.borrow())() })));
-        let p2: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_3(
-            { sv.as_pointer() },
-            None,
-        )));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p1.as_pointer(), p2.as_pointer()) });
-        let ws: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-                None,
-            ),
-        ));
-        let p3: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_4(
-            { ws.as_pointer() },
-            None,
-        )));
+        let ws: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let wsv: Value<()> = Rc::new(RefCell::new(({ (*ws.borrow())() })));
-        let p4: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_5(
-            { wsv.as_pointer() },
-            None,
-        )));
+        let p4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p1.as_pointer(), p4.as_pointer()) });
     }
 }
 pub fn test02_19() {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
         unimplemented!();
         i.prefix_inc();
     }
-    let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-        { s.as_pointer() },
-        None,
-    )));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < 100_()) {
@@ -587,10 +507,7 @@ pub fn test02_19() {
             }
         }
         ({
-            let _p2: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_3(
-                { sv.as_pointer() },
-                None,
-            )));
+            let _p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             compare_paths_0(unimplemented!(), _p2.as_pointer())
         });
         unimplemented!();
@@ -760,10 +677,7 @@ pub fn verify_demangle_28(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_11((s).clone()) });
     }
@@ -774,22 +688,14 @@ pub fn run_tests_wrapped_locale_30(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -801,10 +707,7 @@ pub fn run_tests_wrapped_locale_30(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_11(unimplemented!()) });
     }
@@ -826,10 +729,7 @@ pub fn run_tests_wrapped_env_31(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_11(unimplemented!()) });

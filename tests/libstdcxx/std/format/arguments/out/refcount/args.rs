@@ -703,12 +703,7 @@ pub fn test_args_28() {
             unimplemented!();
         }
     }
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"tenfour") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -725,17 +720,7 @@ pub fn test_args_28() {
         101 as (), 108 as (), 101 as (), 118 as (), 101 as (), 110 as (), 0 as (),
     ])));
     let twelve13: Value<()> = Rc::new(RefCell::new(12.13_f64));
-    let tenfour: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                Ptr::<()>::from_string_literal(&[
-                    116 as (), 101 as (), 110 as (), 102 as (), 111 as (), 117 as (), 114 as (),
-                    0 as (),
-                ])
-            },
-            None,
-        ),
-    ));
+    let tenfour: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let wstore : Value<std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t___wchar_t__wchar_t__const_wchar_t_ptr__long_double__std_basic_string_view_wchar_t__std_char_traits_wchar_t___ > = Rc::new(RefCell::new(unimplemented!()  )) ;
     let wargs : Value<() > = Rc::new(RefCell::new(std_basic_format_args_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t__ :: new_2 ( { wstore .as_pointer()  } , )  )) ;
     let mut __do_while = true;
@@ -1150,12 +1135,7 @@ pub fn verify_demangle_58(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let w: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (wanted).clone() },
-            None,
-        ),
-    ));
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1166,22 +1146,14 @@ pub fn run_tests_wrapped_locale_60(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1193,10 +1165,7 @@ pub fn run_tests_wrapped_locale_60(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1218,10 +1187,7 @@ pub fn run_tests_wrapped_env_61(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

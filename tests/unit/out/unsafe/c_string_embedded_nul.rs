@@ -24,10 +24,7 @@ unsafe fn main_0() -> () {
     libc::fputs((buf.as_mut_ptr()).cast_const(), libcc2rs::stdout_unsafe());
     libc::fputc(('|' as ()), libcc2rs::stdout_unsafe());
     libc::puts((buf.as_mut_ptr()).cast_const());
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (buf.as_mut_ptr()).cast_const() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     (unsafe { libc::printf(c"%zu\n".as_ptr() as *const libc::c_char, (unimplemented!())) });
     (unsafe {
         libc::printf(
@@ -45,8 +42,7 @@ unsafe fn main_0() -> () {
         (0 as libc::c_char),
     ])
         .as_ptr();
-    let mut t: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ lit }, None);
+    let mut t: () = unimplemented!();
     (unsafe { libc::printf(c"%zu\n".as_ptr() as *const libc::c_char, (unimplemented!())) });
     return 0_();
 }

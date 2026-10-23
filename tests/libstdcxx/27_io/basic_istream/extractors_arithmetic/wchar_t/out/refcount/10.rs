@@ -255,17 +255,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test10_10() {
-    let mut str_01: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                Ptr::<()>::from_string_literal(&[
-                    48 as (), 32 as (), 48 as (), 48 as (), 32 as (), 48 as (), 48 as (), 48 as (),
-                    32 as (), 43 as (), 48 as (), 32 as (), 43 as (), 48 as (), 32 as (), 45 as (),
-                    48 as (), 0 as (),
-                ])
-            },
-            None,
-        );
+    let mut str_01: () = unimplemented!();
     let isbuf_01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut n: () = 365_();
@@ -416,17 +406,7 @@ pub fn test10_10() {
             unimplemented!();
         }
     }
-    let mut str_02: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                Ptr::<()>::from_string_literal(&[
-                    48 as (), 120 as (), 51 as (), 50 as (), 32 as (), 48 as (), 88 as (),
-                    51 as (), 51 as (), 32 as (), 48 as (), 51 as (), 51 as (), 32 as (), 51 as (),
-                    51 as (), 0 as (),
-                ])
-            },
-            None,
-        );
+    let mut str_02: () = unimplemented!();
     let isbuf_02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -713,17 +693,7 @@ pub fn test10_10() {
             unimplemented!();
         }
     }
-    let mut str_04: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                Ptr::<()>::from_string_literal(&[
-                    51 as (), 46 as (), 32 as (), 52 as (), 46 as (), 53 as (), 69 as (), 43 as (),
-                    50 as (), 97 as (), 53 as (), 69 as (), 45 as (), 51 as (), 32 as (), 46 as (),
-                    54 as (), 69 as (), 49 as (), 0 as (),
-                ])
-            },
-            None,
-        );
+    let mut str_04: () = unimplemented!();
     let isbuf_04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut f: () = unimplemented!();
@@ -830,16 +800,7 @@ pub fn test10_10() {
             unimplemented!();
         }
     }
-    let mut str_05: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            {
-                Ptr::<()>::from_string_literal(&[
-                    48 as (), 69 as (), 50 as (), 48 as (), 32 as (), 53 as (), 69 as (), 97 as (),
-                    32 as (), 69 as (), 49 as (), 54 as (), 0 as (),
-                ])
-            },
-            None,
-        );
+    let mut str_05: () = unimplemented!();
     let isbuf_05: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let is_05: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1097,10 +1058,7 @@ pub fn verify_demangle_19(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1111,22 +1069,14 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1138,10 +1088,7 @@ pub fn run_tests_wrapped_locale_21(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1163,10 +1110,7 @@ pub fn run_tests_wrapped_env_22(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

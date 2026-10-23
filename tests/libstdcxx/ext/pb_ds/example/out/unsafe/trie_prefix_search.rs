@@ -44,67 +44,35 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"a".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"as".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"ad".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"t".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"tr".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"trie".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     (unsafe {
-        let mut _key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"zzz".as_ptr() },
-                None,
-            );
+        let mut _key: () = unimplemented!();
         print_prefix_match_0(&t, &mut _key)
     });
     return 0_();

@@ -102,90 +102,31 @@ pub fn compare_paths_0(p1: Ptr<()>, p2: Ptr<()>) {
 }
 thread_local!(
     pub static test_paths_1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"//") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/.") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/./") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a//") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a/b/c/d") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"/a//b") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c.d") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/..") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/c.") },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a/b/.c") },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ])));
 );
 pub fn root_path_2() -> () {
-    return std_filesystem_path::new_1({ Ptr::<()>::from_string_literal(b"/") }, None);
+    return unimplemented!();
 }
 pub fn nonexistent_path_3(file: Option<()>) -> () {
-    let file: Value<()> = Rc::new(RefCell::new(file.unwrap_or_else(|| {
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(file!().as_bytes()) },
-            None,
-        )
-    })));
+    let file: Value<()> = Rc::new(RefCell::new(file.unwrap_or_else(|| unimplemented!())));
     if (unimplemented!() > 3_()) && (unimplemented!() == 0_()) {
         unimplemented!();
     }
@@ -273,10 +214,7 @@ pub fn test01_8() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-            { (p).clone() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p.as_pointer(), copy.as_pointer()) });
     }
@@ -286,10 +224,7 @@ pub fn test02_9() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
-        let p: Value<()> = Rc::new(RefCell::new(std_filesystem_path::new_2(
-            { (p).clone() },
-            None,
-        )));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let copy: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let move_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p.as_pointer(), move_.as_pointer()) });

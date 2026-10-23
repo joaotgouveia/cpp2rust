@@ -46,12 +46,7 @@ fn main_0() -> () {
     unimplemented!();
     println!("{}", Ptr::<()>::from_string_literal(b"printf"));
     print!("hello world");
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"a string") },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     println!("{}", unimplemented!());
     println!("{}", unimplemented!());
     println!("{}", unimplemented!());

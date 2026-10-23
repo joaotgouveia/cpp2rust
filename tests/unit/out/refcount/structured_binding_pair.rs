@@ -6,12 +6,8 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn make_std_pair_0(x: ()) -> () {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    return {
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(((*x.borrow()) > 0_())));
-        std_pair_int__bool_::new({ x.as_pointer() }, { __tmp_0.as_pointer() })
-    };
+pub fn make_std_pair_0(mut x: ()) -> () {
+    return unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();
@@ -23,11 +19,7 @@ fn main_0() -> () {
     let positive: Ptr<()> = ({ get_3(__decomp_1.as_pointer()) });
     unimplemented!();
     unimplemented!();
-    let p: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(2_()));
-        std_pair_int__int_::new({ __tmp_1.as_pointer() }, { __tmp_2.as_pointer() })
-    }));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __decomp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a: Ptr<()> = ({ get_5(__decomp_4.as_pointer()) });
     let b: Ptr<()> = ({ get_6(__decomp_4.as_pointer()) });

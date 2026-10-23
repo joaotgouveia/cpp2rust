@@ -18,7 +18,7 @@ unsafe fn main_0() -> () {
     let mut m: () = unimplemented!();
     (*unimplemented!()) = sentinel;
     let mut it: () = unimplemented!();
-    let mut p: *mut () = (&mut (*it).second as *mut ());
+    let mut p: *mut () = (&mut (*unimplemented!()).second as *mut ());
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -34,7 +34,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*it).second = 57005_();
+    (*unimplemented!()).second = 57005_();
     unimplemented!();
     unimplemented!();
     unimplemented!();

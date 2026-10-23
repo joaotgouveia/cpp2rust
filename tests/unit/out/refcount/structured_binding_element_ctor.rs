@@ -100,11 +100,7 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let p: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 7_() })));
-        let __tmp_1: Value<Elem> = Rc::new(RefCell::new(Elem::new({ 8_() })));
-        std_pair_Elem__Elem_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     before_copies = copies_0.with(|rc| *rc.borrow());
     let __decomp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let x: Ptr<Elem> = ({ get_8(__decomp_7.as_pointer()) });

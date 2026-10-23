@@ -268,73 +268,43 @@ pub unsafe fn hash_string_10(mut s: *const ()) -> () {
 pub unsafe fn test01_11() {
     let mut m1 : __gnu_cxx_hash_map_std_basic_string_char__std_char_traits_char___std_allocator_char____int____gnu_cxx_hash___gnu_cxx_string___std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_int__ = <__gnu_cxx_hash_map_std_basic_string_char__std_char_traits_char___std_allocator_char____int____gnu_cxx_hash___gnu_cxx_string___std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_int__ >::default() ;
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_0: () = 1_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { & std::mem::transmute(*b"because to why\0") } , { & mut __tmp_0 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_1: () = 2_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_2 ( { & std::mem::transmute(*b"the stockholm syndrome\0") } , { & mut __tmp_1 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_2: () = 3_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { & std::mem::transmute(*b"a cereous night\0") } , { & mut __tmp_2 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_3: () = 4_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_4 ( { & std::mem::transmute(*b"eeilo\0") } , { & mut __tmp_3 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_4: () = 5_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_5 ( { & std::mem::transmute(*b"protean\0") } , { & mut __tmp_4 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_5: () = 6_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_6 ( { & std::mem::transmute(*b"the way you are when\0") } , { & mut __tmp_5 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_6: () = 7_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_7 ( { & std::mem::transmute(*b"tillsammans\0") } , { & mut __tmp_6 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_7: () = 8_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_1 ( { & std::mem::transmute(*b"umbra/penumbra\0") } , { & mut __tmp_7 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_8: () = 9_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_8 ( { & std::mem::transmute(*b"belonging (no longer mix)\0") } , { & mut __tmp_8 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     (unsafe {
-        let mut ___obj: () = {
-            let mut __tmp_9: () = 10_();
-            std_pair_const_std_basic_string_char__std_char_traits_char___std_allocator_char____int_ :: new_3 ( { & std::mem::transmute(*b"one line behind\0") } , { & mut __tmp_9 } , )
-        };
+        let mut ___obj: () = unimplemented!();
         m1.insert(&mut ___obj)
     });
     let mut __do_while = true;
@@ -360,11 +330,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let mut ___key: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"eeilo".as_ptr() },
-                    None,
-                );
+            let mut ___key: () = unimplemented!();
             m1.erase_29(&mut ___key)
         }) == (1_()))
         {
@@ -403,11 +369,7 @@ pub unsafe fn test01_11() {
         }
     }
     let mut it1: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"eeilo".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut __do_while = true;
@@ -433,11 +395,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let mut ___key: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"tillsammans".as_ptr() },
-                    None,
-                );
+            let mut ___key: () = unimplemented!();
             m1.erase_29(&mut ___key)
         }) == (1_()))
         {
@@ -476,11 +434,7 @@ pub unsafe fn test01_11() {
         }
     }
     let mut it2: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"tillsammans".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut __do_while = true;
@@ -503,11 +457,7 @@ pub unsafe fn test01_11() {
         }
     }
     let mut it3: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"belonging (no longer mix)".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut __do_while = true;
@@ -532,7 +482,7 @@ pub unsafe fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { m1.erase_29(&(*it3).first) }) == (1_())) {
+        if !((unsafe { m1.erase_29(&(*unimplemented!()).first) }) == (1_())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -591,11 +541,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!((unsafe {
-            let mut ___key: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"abra".as_ptr() },
-                    None,
-                );
+            let mut ___key: () = unimplemented!();
             m1.erase_29(&mut ___key)
         }) != 0))
         {
@@ -637,11 +583,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!((unsafe {
-            let mut ___key: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"eeilo".as_ptr() },
-                    None,
-                );
+            let mut ___key: () = unimplemented!();
             m1.erase_29(&mut ___key)
         }) != 0))
         {
@@ -683,11 +625,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let mut ___key: () =
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { c"because to why".as_ptr() },
-                    None,
-                );
+            let mut ___key: () = unimplemented!();
             m1.erase_29(&mut ___key)
         }) == (1_()))
         {
@@ -726,11 +664,7 @@ pub unsafe fn test01_11() {
         }
     }
     let mut it4: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"because to why".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut __do_while = true;
@@ -753,19 +687,11 @@ pub unsafe fn test01_11() {
         }
     }
     let mut it5: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"umbra/penumbra".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut it6: () = (unsafe {
-        let mut ___key: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"one line behind".as_ptr() },
-                None,
-            );
+        let mut ___key: () = unimplemented!();
         m1.find_23(&mut ___key)
     });
     let mut __do_while = true;
@@ -885,7 +811,7 @@ pub unsafe fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { m1.erase_29(&(*it5).first) }) == (1_())) {
+        if !((unsafe { m1.erase_29(&(*unimplemented!()).first) }) == (1_())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -943,7 +869,7 @@ pub unsafe fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { m1.erase_29(&(*it6).first) }) == (1_())) {
+        if !((unsafe { m1.erase_29(&(*unimplemented!()).first) }) == (1_())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -1006,7 +932,7 @@ pub unsafe fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { m1.erase_29(&(*it8).first) }) == (1_())) {
+        if !((unsafe { m1.erase_29(&(*unimplemented!()).first) }) == (1_())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -1066,7 +992,7 @@ pub unsafe fn test01_11() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { m1.erase_29(&(*it9).first) }) == (1_())) {
+        if !((unsafe { m1.erase_29(&(*unimplemented!()).first) }) == (1_())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -1166,7 +1092,7 @@ pub unsafe fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((unsafe {
-            let ___key: *const () = &(*(unsafe { m1.begin_16() })).first;
+            let ___key: *const () = &(*unimplemented!()).first;
             m1.erase_29(___key)
         }) == (1_()))
         {
@@ -1350,8 +1276,7 @@ pub unsafe fn verify_demangle_20(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -1362,11 +1287,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -1374,11 +1295,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1390,10 +1307,7 @@ pub unsafe fn run_tests_wrapped_locale_22(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1416,10 +1330,7 @@ pub unsafe fn run_tests_wrapped_env_23(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

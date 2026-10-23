@@ -21,7 +21,7 @@ impl contains_pq {
 }
 impl contains_pq {
     pub unsafe fn push(&mut self, mut i: ()) {
-        ( * ( unsafe { let mut _r_value : ()  = unimplemented!()  ; ( self . m_tree  as __gnu_pbds_detail_rb_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . insert  ( & mut _r_value , ) } )  . first   ) . second  .prefix_inc() ;
+        (*unimplemented!()).second.prefix_inc();
     }
 }
 impl contains_pq {
@@ -30,8 +30,8 @@ impl contains_pq {
         let mut it: () = (unsafe {
             ( self . m_tree  as __gnu_pbds_detail_bin_search_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . begin_18  ( )
         });
-        let i: () = (*it).first;
-        if (((*it).second.prefix_dec()) == (0_())) {
+        let i: () = (*unimplemented!()).first;
+        if (((*unimplemented!()).second.prefix_dec()) == (0_())) {
             (unsafe {
                 ( self . m_tree  as __gnu_pbds_detail_rb_tree_map_int__unsigned_long__std_greater_int_____gnu_pbds_detail_tree_traits_int__unsigned_long__std_greater_int_____gnu_pbds_null_node_update____gnu_pbds_rb_tree_tag__std_allocator_char____std_allocator_char__ ) . erase_10  ( unimplemented!() , )
             });

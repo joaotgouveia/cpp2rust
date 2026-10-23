@@ -352,90 +352,31 @@ pub unsafe fn compare_paths_10(p1: *const (), p2: *const ()) {
 }
 pub static mut test_paths_11: std::cell::LazyCell<[(); 18]> = std::cell::LazyCell::new(|| unsafe {
     [
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"//".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/.".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/./".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a//".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a/b/c/d".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"/a//b".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c.d".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/..".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/c.".as_ptr() },
-            None,
-        ),
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"a/b/.c".as_ptr() },
-            None,
-        ),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
     ]
 });
 pub unsafe fn root_path_12() -> () {
-    return std_filesystem_path::new_1({ &std::mem::transmute(*b"/\0") }, None);
+    return unimplemented!();
 }
 pub unsafe fn nonexistent_path_13(mut file: Option<()>) -> () {
-    let mut file: () = file.unwrap_or_else(|| unsafe {
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { concat!(file!(), "\0").as_ptr() as *const () },
-            None,
-        )
-    });
+    let mut file: () = file.unwrap_or_else(|| unsafe { unimplemented!() });
     if ((unimplemented!()) > (3_())) && ((unimplemented!()) == (0_())) {
         unimplemented!();
     }
@@ -525,7 +466,7 @@ pub unsafe fn permissions_are_testable_17(mut print_msg: Option<()>) -> () {
 static mut counter_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { (unsafe { unimplemented!()() }) });
 pub unsafe fn test01_18() {
-    let mut p1: () = std_filesystem_path::new_2({ &std::mem::transmute(*b"foo/bar\0") }, None);
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -545,7 +486,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    let mut p2: () = std_filesystem_path::new_3({ &std::mem::transmute(*b"/foo/bar\0") }, None);
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -565,7 +506,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    let mut p3: () = std_filesystem_path::new_4({ &std::mem::transmute(*b"//foo\0") }, None);
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -585,7 +526,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    let mut p4: () = std_filesystem_path::new_5({ &std::mem::transmute(*b"///foo\0") }, None);
+    let mut p4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -613,7 +554,7 @@ pub unsafe fn test02_20() {
             .as_ptr()
             .offset((18_()) as isize),
     ) {
-        let p: () = std_filesystem_path::new_6({ &(*p) }, None);
+        let p: () = unimplemented!();
         let mut rootdir: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
@@ -784,8 +725,7 @@ pub unsafe fn verify_demangle_28(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -796,11 +736,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -808,11 +744,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -824,10 +756,7 @@ pub unsafe fn run_tests_wrapped_locale_30(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -850,10 +779,7 @@ pub unsafe fn run_tests_wrapped_env_31(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

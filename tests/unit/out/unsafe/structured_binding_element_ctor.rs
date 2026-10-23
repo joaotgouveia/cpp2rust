@@ -94,11 +94,7 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut p: () = {
-        let mut __tmp_0: Elem = Elem::new({ 7_() });
-        let mut __tmp_1: Elem = Elem::new({ 8_() });
-        std_pair_Elem__Elem_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut p: () = unimplemented!();
     before_copies = (*std::cell::LazyCell::force_mut(&mut *&raw mut copies_0));
     let mut __decomp_7: () = unimplemented!();
     let x: *mut Elem = (unsafe { get_8(&mut __decomp_7) });

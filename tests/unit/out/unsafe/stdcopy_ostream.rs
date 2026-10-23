@@ -13,10 +13,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"Hello, world!\n".as_ptr() },
-        None,
-    );
+    let mut str: () = unimplemented!();
     let file: [(); 25] = std::mem::transmute(*b"test_stdcopy_ostream.txt\0");
     {
         let mut ofs: () = unimplemented!();

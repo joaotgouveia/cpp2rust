@@ -38,7 +38,7 @@ unsafe fn main_0() -> () {
         let mut ___obj: () = unimplemented!();
         table.insert_equal(&mut ___obj)
     });
-    (unsafe { table.erase_38(&(*it).first) });
+    (unsafe { table.erase_38(&(*unimplemented!()).first) });
     0
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -58,19 +58,11 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut h : __gnu_pbds_cc_hash_table_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long___false__std_allocator_char__ = <__gnu_pbds_cc_hash_table_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long___false__std_allocator_char__ >::default() ;
     (unsafe {
-        let mut _r_val: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"Hello, ".as_ptr() },
-                None,
-            );
+        let mut _r_val: () = unimplemented!();
         ( h as __gnu_pbds_detail_cc_ht_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_char___false__simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long__ ) . insert  ( & mut _r_val , )
     });
     (unsafe {
-        let mut _r_val: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { c"world".as_ptr() },
-                None,
-            );
+        let mut _r_val: () = unimplemented!();
         ( h as __gnu_pbds_detail_cc_ht_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_char___false__simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long__ ) . insert  ( & mut _r_val , )
     });
     unimplemented!();

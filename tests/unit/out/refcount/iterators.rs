@@ -11,12 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let x: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"hello") },
-            None,
-        ),
-    ));
+    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let c: Ptr<()> = unimplemented!();
         c.with_mut(|__v| __v.prefix_inc());

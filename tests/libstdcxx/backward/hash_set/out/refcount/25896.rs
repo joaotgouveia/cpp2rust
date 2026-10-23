@@ -266,93 +266,43 @@ pub fn hash_string_10(mut s: Ptr<()>) -> () {
 pub fn test01_11() {
     let s1 : Value<__gnu_cxx_hash_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_cxx_hash___gnu_cxx_string___std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____ > = Rc::new(RefCell::new(<__gnu_cxx_hash_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_cxx_hash___gnu_cxx_string___std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_std_basic_string_char__std_char_traits_char___std_allocator_char____  >::default() )) ;
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"because to why") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"the stockholm syndrome") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"a cereous night") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"eeilo") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"protean") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"the way you are when") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"tillsammans") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"umbra/penumbra") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"belonging (no longer mix)") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     ({
-        let ___obj: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"one line behind") },
-                None,
-            ),
-        ));
+        let ___obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*s1.borrow()).insert(___obj.as_pointer())
     });
     let mut __do_while = true;
@@ -378,12 +328,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"eeilo") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).erase_24(___key.as_pointer())
         }) == 1_())
         {
@@ -423,12 +368,7 @@ pub fn test01_11() {
     }
     let it1: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"eeilo") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
@@ -455,12 +395,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"tillsammans") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).erase_24(___key.as_pointer())
         }) == 1_())
         {
@@ -500,12 +435,7 @@ pub fn test01_11() {
     }
     let it2: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"tillsammans") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
@@ -530,12 +460,7 @@ pub fn test01_11() {
     }
     let it3: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"belonging (no longer mix)") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
@@ -620,12 +545,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"abra") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).erase_24(___key.as_pointer())
         }) != 0))
         {
@@ -667,12 +587,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"eeilo") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).erase_24(___key.as_pointer())
         }) != 0))
         {
@@ -714,12 +629,7 @@ pub fn test01_11() {
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"because to why") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).erase_24(___key.as_pointer())
         }) == 1_())
         {
@@ -760,12 +670,7 @@ pub fn test01_11() {
     }
     let it4: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"because to why") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
@@ -790,23 +695,13 @@ pub fn test01_11() {
     }
     let it5: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"umbra/penumbra") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
     let it6: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___key: Value<()> = Rc::new(RefCell::new(
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { Ptr::<()>::from_string_literal(b"one line behind") },
-                    None,
-                ),
-            ));
+            let ___key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*s1.borrow()).find(___key.as_pointer())
         }),
     ));
@@ -1383,10 +1278,7 @@ pub fn verify_demangle_20(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -1397,22 +1289,14 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1424,10 +1308,7 @@ pub fn run_tests_wrapped_locale_22(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1449,10 +1330,7 @@ pub fn run_tests_wrapped_env_23(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

@@ -517,9 +517,8 @@ pub unsafe fn test01_11() {
 }
 pub unsafe fn test02_12() {
     let s: () = unimplemented!();
-    let mut p0: () = std_filesystem_path::new_1({ &s }, None);
-    let mut p1: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_auto_format) });
+    let mut p0: () = unimplemented!();
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -539,8 +538,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    let mut p2: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_native_format) });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -560,8 +558,7 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    let mut p3: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_generic_format) });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -583,13 +580,9 @@ pub unsafe fn test02_12() {
     }
 }
 pub unsafe fn test03_13() {
-    let s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"foo/bar".as_ptr() },
-        None,
-    );
-    let mut p0: () = std_filesystem_path::new_1({ &s }, None);
-    let mut p1: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_auto_format) });
+    let s: () = unimplemented!();
+    let mut p0: () = unimplemented!();
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -609,8 +602,7 @@ pub unsafe fn test03_13() {
             unimplemented!();
         }
     }
-    let mut p2: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_native_format) });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -630,8 +622,7 @@ pub unsafe fn test03_13() {
             unimplemented!();
         }
     }
-    let mut p3: () =
-        std_filesystem_path::new_1({ &s }, { Some(std_filesystem_path_format_generic_format) });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -653,18 +644,9 @@ pub unsafe fn test03_13() {
     }
 }
 pub unsafe fn test04_14() {
-    let s: () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        {
-            [
-                102 as (), 111 as (), 111 as (), 47 as (), 98 as (), 97 as (), 114 as (), 0 as (),
-            ]
-            .as_ptr()
-        },
-        None,
-    );
-    let mut p0: () = std_filesystem_path::new_2({ &s }, None);
-    let mut p1: () =
-        std_filesystem_path::new_2({ &s }, { Some(std_filesystem_path_format_auto_format) });
+    let s: () = unimplemented!();
+    let mut p0: () = unimplemented!();
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -684,8 +666,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    let mut p2: () =
-        std_filesystem_path::new_2({ &s }, { Some(std_filesystem_path_format_native_format) });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -705,8 +686,7 @@ pub unsafe fn test04_14() {
             unimplemented!();
         }
     }
-    let mut p3: () =
-        std_filesystem_path::new_2({ &s }, { Some(std_filesystem_path_format_generic_format) });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -729,9 +709,8 @@ pub unsafe fn test04_14() {
 }
 pub unsafe fn test05_15() {
     let mut s: *const () = c"foo/bar".as_ptr();
-    let mut p0: () = std_filesystem_path::new_3({ &s }, None);
-    let mut p1: () =
-        std_filesystem_path::new_3({ &s }, { Some(std_filesystem_path_format_auto_format) });
+    let mut p0: () = unimplemented!();
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -751,8 +730,7 @@ pub unsafe fn test05_15() {
             unimplemented!();
         }
     }
-    let mut p2: () =
-        std_filesystem_path::new_3({ &s }, { Some(std_filesystem_path_format_native_format) });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -772,8 +750,7 @@ pub unsafe fn test05_15() {
             unimplemented!();
         }
     }
-    let mut p3: () =
-        std_filesystem_path::new_3({ &s }, { Some(std_filesystem_path_format_generic_format) });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -805,11 +782,9 @@ pub unsafe fn test06_16() {
             },
         );
     let mut c0: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p0: () = std_filesystem_path::new_4({ unimplemented!() }, { unimplemented!() }, None);
+    let mut p0: () = unimplemented!();
     let mut c1: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p1: () = std_filesystem_path::new_4({ unimplemented!() }, { unimplemented!() }, {
-        Some(std_filesystem_path_format_auto_format)
-    });
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -830,9 +805,7 @@ pub unsafe fn test06_16() {
         }
     }
     let mut c2: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p2: () = std_filesystem_path::new_4({ unimplemented!() }, { unimplemented!() }, {
-        Some(std_filesystem_path_format_native_format)
-    });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -853,9 +826,7 @@ pub unsafe fn test06_16() {
         }
     }
     let mut c3: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p3: () = std_filesystem_path::new_4({ unimplemented!() }, { unimplemented!() }, {
-        Some(std_filesystem_path_format_generic_format)
-    });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -879,10 +850,8 @@ pub unsafe fn test06_16() {
 pub unsafe fn test07_18() {
     let mut s: *const () = c"foo/bar".as_ptr();
     let mut loc: () = unimplemented!();
-    let mut p0: () = std_filesystem_path::new_5({ &s }, { &loc }, None);
-    let mut p1: () = std_filesystem_path::new_5({ &s }, { &loc }, {
-        Some(std_filesystem_path_format_auto_format)
-    });
+    let mut p0: () = unimplemented!();
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -902,9 +871,7 @@ pub unsafe fn test07_18() {
             unimplemented!();
         }
     }
-    let mut p2: () = std_filesystem_path::new_5({ &s }, { &loc }, {
-        Some(std_filesystem_path_format_native_format)
-    });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -924,9 +891,7 @@ pub unsafe fn test07_18() {
             unimplemented!();
         }
     }
-    let mut p3: () = std_filesystem_path::new_5({ &s }, { &loc }, {
-        Some(std_filesystem_path_format_generic_format)
-    });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -959,13 +924,9 @@ pub unsafe fn test08_19() {
         );
     let mut loc: () = unimplemented!();
     let mut c0: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p0: () =
-        std_filesystem_path::new_6({ unimplemented!() }, { unimplemented!() }, { &loc }, None);
+    let mut p0: () = unimplemented!();
     let mut c1: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p1: () =
-        std_filesystem_path::new_6({ unimplemented!() }, { unimplemented!() }, { &loc }, {
-            Some(std_filesystem_path_format_auto_format)
-        });
+    let mut p1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -986,10 +947,7 @@ pub unsafe fn test08_19() {
         }
     }
     let mut c2: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p2: () =
-        std_filesystem_path::new_6({ unimplemented!() }, { unimplemented!() }, { &loc }, {
-            Some(std_filesystem_path_format_native_format)
-        });
+    let mut p2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1010,10 +968,7 @@ pub unsafe fn test08_19() {
         }
     }
     let mut c3: __gnu_test_test_container_const_char____gnu_test_input_iterator_wrapper_ = c;
-    let mut p3: () =
-        std_filesystem_path::new_6({ unimplemented!() }, { unimplemented!() }, { &loc }, {
-            Some(std_filesystem_path_format_generic_format)
-        });
+    let mut p3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1167,8 +1122,7 @@ pub unsafe fn verify_demangle_27(mut mangled: *const (), mut wanted: *const ()) 
             }
         });
     }
-    let mut w: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ wanted }, None);
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         (unsafe { __throw_runtime_error_3(s) });
     }
@@ -1179,11 +1133,7 @@ pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_t
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { res },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: *const Option<unsafe fn()> =
             (unsafe { __gnu_test_func_callback::tests(&(*l)) });
         let mut i: () = 0_();
@@ -1191,11 +1141,7 @@ pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_t
             (unsafe { (*tests.offset((i) as isize)).unwrap()() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (unimplemented!()).cast_const() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -1207,10 +1153,7 @@ pub unsafe fn run_tests_wrapped_locale_29(mut name: *const (), l: *const __gnu_t
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { c"LC_ALL for ".as_ptr() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
@@ -1233,10 +1176,7 @@ pub unsafe fn run_tests_wrapped_env_30(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { env },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         (unsafe { __throw_runtime_error_3(unimplemented!()) });

@@ -56,18 +56,9 @@ pub unsafe fn regex_sanity_check_3(__res: *const (), mut __f: Option<()>, mut __
     unimplemented!();
 }
 pub unsafe fn test01_5() {
-    let mut sre0: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"\\d{3}-\\d{3}-\\d{4}".as_ptr() },
-        None,
-    );
-    let mut sre1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c" this\n  and new : forms\n  ".as_ptr() },
-        None,
-    );
-    let mut sre2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"[:num:]{3}-[:num:]{3}-[:num:]{4}".as_ptr() },
-        None,
-    );
+    let mut sre0: () = unimplemented!();
+    let mut sre1: () = unimplemented!();
+    let mut sre2: () = unimplemented!();
     let mut re0: () = unimplemented!();
     let mut re1: () = unimplemented!();
     let mut re2: () = unimplemented!();

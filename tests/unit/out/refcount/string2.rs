@@ -11,19 +11,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let mut arr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { Ptr::<()>::from_string_literal(b"foo") },
-        None,
-    );
+    let mut arr: () = unimplemented!();
     unimplemented!().write(('b' as ()));
     let mut p: Ptr<()> = unimplemented!().offset((1_()) as isize);
     unimplemented!();
     unimplemented!();
     let mut names: [Ptr<()>; 1] = [unimplemented!()];
-    let mut copy: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (names[(0_()) as usize]).clone() },
-        None,
-    );
+    let mut copy: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

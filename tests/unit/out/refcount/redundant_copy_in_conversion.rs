@@ -10,7 +10,7 @@ pub fn sink_0(it: ()) -> () {
     let it: Value<()> = Rc::new(RefCell::new(it));
     let cit: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return if unimplemented!() {
-        { ((*it.borrow()).read()).second }
+        { unimplemented!().second }
     } else {
         0_()
     };

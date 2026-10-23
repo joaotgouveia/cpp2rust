@@ -71,10 +71,7 @@ unsafe fn main_0() -> () {
         )
     });
     (unsafe { libc::printf(c"hello world".as_ptr() as *const libc::c_char) });
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { c"a string".as_ptr() },
-        None,
-    );
+    let mut s: () = unimplemented!();
     (unsafe { libc::printf(c"%s\n".as_ptr() as *const libc::c_char, (unimplemented!())) });
     (unsafe { libc::printf(c"%s\n".as_ptr() as *const libc::c_char, (unimplemented!())) });
     (unsafe { libc::printf(c"%s\n".as_ptr() as *const libc::c_char, (unimplemented!())) });

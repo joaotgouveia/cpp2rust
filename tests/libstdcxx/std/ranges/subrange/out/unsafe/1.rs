@@ -13,7 +13,7 @@ pub unsafe fn test01_0() {
         (&mut a[(0_()) as usize] as *mut ()),
         (&mut a[(1_()) as usize] as *mut ()),
     ];
-    let mut c : std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ = std_ranges_subrange_const_int_ptrconst_ptr__const_int_ptrconst_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { & mut b } , )  ;
+    let mut c: () = unimplemented!();
 }
 pub fn main() {
     unsafe {

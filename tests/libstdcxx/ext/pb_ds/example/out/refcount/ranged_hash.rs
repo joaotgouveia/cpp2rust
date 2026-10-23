@@ -31,21 +31,11 @@ pub fn main() {
 fn main_0() -> () {
     let h : Value<__gnu_pbds_cc_hash_table_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long___false__std_allocator_char__ > = Rc::new(RefCell::new(<__gnu_pbds_cc_hash_table_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long___false__std_allocator_char__  >::default() )) ;
     ({
-        let _r_val: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"Hello, ") },
-                None,
-            ),
-        ));
+        let _r_val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ( (*h.borrow()) as __gnu_pbds_detail_cc_ht_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_char___false__simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long__ ) . insert ( _r_val.as_pointer() , )
     });
     ({
-        let _r_val: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"world") },
-                None,
-            ),
-        ));
+        let _r_val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ( (*h.borrow()) as __gnu_pbds_detail_cc_ht_set_std_basic_string_char__std_char_traits_char___std_allocator_char______gnu_pbds_null_type____gnu_pbds_null_type__std_equal_to_std_basic_string_char__std_char_traits_char___std_allocator_char_____std_allocator_char___false__simple_string_ranged_hash_fn____gnu_pbds_hash_standard_resize_policy___gnu_pbds_hash_prime_size_policy____gnu_pbds_hash_load_check_resize_trigger_false__unsigned_long___false__unsigned_long__ ) . insert ( _r_val.as_pointer() , )
     });
     unimplemented!();
