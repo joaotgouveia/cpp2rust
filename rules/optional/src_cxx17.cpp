@@ -41,15 +41,33 @@ template <typename T1> void f9(std::optional<T1> &a0, std::optional<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1> bool f10(const std::optional<T1> &a0) {
+template <typename T1> T1 &f10(std::optional<T1> &a0) { return a0.operator*(); }
+
+template <typename T1> T1 &&f11(std::optional<T1> &&a0) {
+  return std::move(a0).operator*();
+}
+
+template <typename T1> bool f12(const std::optional<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
+template <typename T1> bool f13(const std::optional<T1> &a0) {
+  return a0.has_value();
+}
+
+template <typename T1> T1 &f14(std::optional<T1> &a0) { return a0.value(); }
+
+template <typename T1> T1 &&f15(std::optional<T1> &&a0) {
+  return std::move(a0).value();
+}
+
+template <typename T1> void f16(std::optional<T1> &a0) { return a0.reset(); }
+
 template <typename T1, typename T2>
-T1 f11(const std::optional<T1> &a0, T2 &&a1) {
+T1 f17(const std::optional<T1> &a0, T2 &&a1) {
   return a0.template value_or<T2>(std::forward<T2>(a1));
 }
 
-template <typename T1, typename T2> T1 f12(std::optional<T1> &&a0, T2 &&a1) {
+template <typename T1, typename T2> T1 f18(std::optional<T1> &&a0, T2 &&a1) {
   return std::move(a0).template value_or<T2>(std::forward<T2>(a1));
 }

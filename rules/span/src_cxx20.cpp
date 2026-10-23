@@ -134,6 +134,12 @@ std::span<T1, T3> f21(const std::span<T1, T2> &a0) {
   return a0.template last<T3>();
 }
 
-template <typename T1, std::size_t T2> std::size_t f22() {
+template <typename T1, std::size_t T2, std::size_t T3,
+          std::size_t T4 = std::dynamic_extent>
+auto f22(const std::span<T1, T2> &a0) {
+  return a0.template subspan<T3>();
+}
+
+template <typename T1, std::size_t T2> std::size_t f23() {
   return std::span<T1, T2>::extent;
 }

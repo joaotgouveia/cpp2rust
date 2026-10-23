@@ -80,3 +80,7 @@ f217(const std::hash<std::__enable_hash_helper<
      const std::unique_ptr<T1, T2> &a1) {
   return a0.operator()(a1);
 }
+
+template <typename T1> std::size_t f218(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}

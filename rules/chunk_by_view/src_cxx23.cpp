@@ -30,5 +30,10 @@ const T2 &f5(const std::ranges::chunk_by_view<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 auto f6(std::ranges::chunk_by_view<T1, T2> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, typename T2>
+auto f7(std::ranges::chunk_by_view<T1, T2> &a0) {
   return a0.end();
 }

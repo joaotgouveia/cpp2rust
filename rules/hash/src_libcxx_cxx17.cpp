@@ -16,7 +16,7 @@ using t51 = std::hash<
 
 template <typename T1>
 std::size_t
-f218(const std::hash<std::__enable_hash_helper<std::optional<T1>,
+f219(const std::hash<std::__enable_hash_helper<std::optional<T1>,
                                                std::remove_const_t<T1>>> &a0,
      const std::optional<T1> &a1) {
   return a0.operator()(a1);
@@ -28,7 +28,7 @@ using t52 = std::hash<
 
 template <typename... T1>
 std::size_t
-f219(const std::hash<std::__enable_hash_helper<std::variant<T1...>,
+f220(const std::hash<std::__enable_hash_helper<std::variant<T1...>,
                                                std::remove_const_t<T1>...>> &a0,
      const std::variant<T1...> &a1) {
   return a0.operator()(a1);

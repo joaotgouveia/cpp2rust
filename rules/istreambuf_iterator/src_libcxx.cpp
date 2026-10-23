@@ -23,3 +23,9 @@ using t11 = typename std::istreambuf_iterator<T1, T2>::pointer;
 
 template <typename T1, typename T2>
 using t12 = typename std::istreambuf_iterator<T1, T2>::reference;
+
+template <typename T1, typename T2>
+auto f14(std::istreambuf_iterator<T1, T2> &a0, int a1)
+    -> decltype(a0.operator++(a1)) {
+  return a0.operator++(a1);
+}

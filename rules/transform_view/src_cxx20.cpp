@@ -25,10 +25,30 @@ T1 f4(std::ranges::transform_view<T1, T2> &&a0) {
 
 template <typename T1, typename T2>
 auto f5(std::ranges::transform_view<T1, T2> &a0) {
-  return a0.size();
+  return a0.begin();
 }
 
 template <typename T1, typename T2>
 auto f6(const std::ranges::transform_view<T1, T2> &a0) {
+  return a0.begin();
+}
+
+template <typename T1, typename T2>
+auto f7(std::ranges::transform_view<T1, T2> &a0) {
+  return a0.end();
+}
+
+template <typename T1, typename T2>
+auto f8(const std::ranges::transform_view<T1, T2> &a0) {
+  return a0.end();
+}
+
+template <typename T1, typename T2>
+auto f9(std::ranges::transform_view<T1, T2> &a0) {
+  return a0.size();
+}
+
+template <typename T1, typename T2>
+auto f10(const std::ranges::transform_view<T1, T2> &a0) {
   return a0.size();
 }

@@ -114,100 +114,138 @@ const T1 &f24(const std::valarray<T1> &a0, std::size_t a1) {
 }
 
 template <typename T1>
-std::slice_array<T1> f25(std::valarray<T1> &a0, std::slice a1) {
+auto f25(const std::valarray<T1> &a0, std::slice a1)
+    -> decltype(a0.operator[](std::move(a1))) {
   return a0.operator[](std::move(a1));
 }
 
 template <typename T1>
-std::gslice_array<T1> f26(std::valarray<T1> &a0, const std::gslice &a1) {
+std::slice_array<T1> f26(std::valarray<T1> &a0, std::slice a1) {
+  return a0.operator[](std::move(a1));
+}
+
+template <typename T1>
+auto f27(const std::valarray<T1> &a0, const std::gslice &a1)
+    -> decltype(a0.operator[](a1)) {
   return a0.operator[](a1);
 }
 
 template <typename T1>
-std::mask_array<T1> f27(std::valarray<T1> &a0, const std::valarray<bool> &a1) {
+std::gslice_array<T1> f28(std::valarray<T1> &a0, const std::gslice &a1) {
   return a0.operator[](a1);
 }
 
 template <typename T1>
-std::indirect_array<T1> f28(std::valarray<T1> &a0,
+std::mask_array<T1> f29(std::valarray<T1> &a0, const std::valarray<bool> &a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1>
+auto f30(const std::valarray<T1> &a0, const std::valarray<std::size_t> &a1)
+    -> decltype(a0.operator[](a1)) {
+  return a0.operator[](a1);
+}
+
+template <typename T1>
+std::indirect_array<T1> f31(std::valarray<T1> &a0,
                             const std::valarray<std::size_t> &a1) {
   return a0.operator[](a1);
 }
 
 template <typename T1>
-std::valarray<T1> &f29(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator*=(a1);
+auto f32(const std::valarray<T1> &a0) -> decltype(a0.operator+()) {
+  return a0.operator+();
 }
 
 template <typename T1>
-std::valarray<T1> &f30(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator/=(a1);
+auto f33(const std::valarray<T1> &a0) -> decltype(a0.operator-()) {
+  return a0.operator-();
 }
 
 template <typename T1>
-std::valarray<T1> &f31(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator%=(a1);
+auto f34(const std::valarray<T1> &a0) -> decltype(a0.operator~()) {
+  return a0.operator~();
 }
 
 template <typename T1>
-std::valarray<T1> &f32(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator+=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f33(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator-=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f34(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator^=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f35(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator&=(a1);
+auto f35(const std::valarray<T1> &a0) -> decltype(a0.operator!()) {
+  return a0.operator!();
 }
 
 template <typename T1>
 std::valarray<T1> &f36(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator|=(a1);
+  return a0.operator*=(a1);
 }
 
 template <typename T1>
 std::valarray<T1> &f37(std::valarray<T1> &a0, const T1 &a1) {
-  return a0.operator<<=(a1);
+  return a0.operator/=(a1);
 }
 
 template <typename T1>
 std::valarray<T1> &f38(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator%=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f39(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator+=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f40(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator-=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f41(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator^=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f42(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator&=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f43(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator|=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f44(std::valarray<T1> &a0, const T1 &a1) {
+  return a0.operator<<=(a1);
+}
+
+template <typename T1>
+std::valarray<T1> &f45(std::valarray<T1> &a0, const T1 &a1) {
   return a0.operator>>=(a1);
 }
 
-template <typename T1> void f39(std::valarray<T1> &a0, std::valarray<T1> &a1) {
+template <typename T1> void f46(std::valarray<T1> &a0, std::valarray<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1> std::size_t f40(const std::valarray<T1> &a0) {
+template <typename T1> std::size_t f47(const std::valarray<T1> &a0) {
   return a0.size();
 }
 
-template <typename T1> T1 f41(const std::valarray<T1> &a0) { return a0.sum(); }
+template <typename T1> T1 f48(const std::valarray<T1> &a0) { return a0.sum(); }
 
-template <typename T1> T1 f42(const std::valarray<T1> &a0) { return a0.min(); }
+template <typename T1> T1 f49(const std::valarray<T1> &a0) { return a0.min(); }
 
-template <typename T1> T1 f43(const std::valarray<T1> &a0) { return a0.max(); }
+template <typename T1> T1 f50(const std::valarray<T1> &a0) { return a0.max(); }
 
 template <typename T1>
-std::valarray<T1> f44(const std::valarray<T1> &a0, int a1) {
+std::valarray<T1> f51(const std::valarray<T1> &a0, int a1) {
   return a0.shift(a1);
 }
 
 template <typename T1>
-std::valarray<T1> f45(const std::valarray<T1> &a0, int a1) {
+std::valarray<T1> f52(const std::valarray<T1> &a0, int a1) {
   return a0.cshift(a1);
 }
 
-template <typename T1> void f46(std::valarray<T1> &a0, std::size_t a1, T1 a2) {
+template <typename T1> void f53(std::valarray<T1> &a0, std::size_t a1, T1 a2) {
   return a0.resize(a1, a2);
 }

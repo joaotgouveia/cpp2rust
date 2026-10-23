@@ -426,3 +426,41 @@ template <
 T1 &f118(std::optional<T1> &a0, std::initializer_list<T2> a1, T3 &&...a2) {
   return a0.template emplace<T2, T3...>(a1, std::forward<T3>(a2)...);
 }
+
+template <typename T1>
+std::add_pointer_t<T1 const> f119(const std::optional<T1> &a0) {
+  return a0.operator->();
+}
+
+template <typename T1> std::add_pointer_t<T1> f120(std::optional<T1> &a0) {
+  return a0.operator->();
+}
+
+template <typename T1> T1 const &f121(const std::optional<T1> &a0) {
+  return a0.operator*();
+}
+
+template <typename T1> T1 const &&f122(const std::optional<T1> &&a0) {
+  return std::move(a0).operator*();
+}
+
+template <typename T1> T1 const &f123(const std::optional<T1> &a0) {
+  return a0.value();
+}
+
+template <typename T1> T1 const &&f124(const std::optional<T1> &&a0) {
+  return std::move(a0).value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f125(const std::optional<T1> &a0) {
+  return a0.operator->();
+}
+
+template <typename T1> T1 &f126(const std::optional<T1> &a0) {
+  return a0.operator*();
+}
+
+template <typename T1> T1 &f127(const std::optional<T1> &a0) {
+  return a0.value();
+}
