@@ -943,7 +943,7 @@ pub unsafe fn test_18() -> () {
             std_ranges_lazy_split_view_CopyableView__ForwardView_::new_1({ input.clone() }, {
                 ForwardView::new_1({ c" ".as_ptr() })
             });
-        let mut i: () = (unsafe { (*unimplemented!()).begin() });
+        let mut i: () = (unsafe { (unimplemented!()).begin() });
         let ci: () = i.clone();
         {
             let b: *const forward_iterator_const_char_ptr_ = (unsafe { i.base_6() });
@@ -969,7 +969,7 @@ pub unsafe fn test_18() -> () {
     {
         let mut input: InputView = InputView::new_1({ c"abc def".as_ptr() });
         let mut v: () = unimplemented!();
-        let mut i: () = (unsafe { (*unimplemented!()).begin() });
+        let mut i: () = (unsafe { (unimplemented!()).begin() });
         let ci: () = i.clone();
         {
             let b: *const cpp20_input_iterator_char_ptr_ = (unsafe { i.base_6() });

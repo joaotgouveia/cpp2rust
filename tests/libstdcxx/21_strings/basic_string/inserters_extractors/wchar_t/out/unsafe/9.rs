@@ -257,7 +257,12 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn test09_10() {
-    let mut blanks: () = unimplemented!();
+    let mut blanks: () =
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 3_() },
+            { (0 as ()) },
+            None,
+        );
     let mut foo: () = unimplemented!();
     unimplemented!();
     unimplemented!();

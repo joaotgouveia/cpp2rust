@@ -827,7 +827,7 @@ pub fn test_15() -> () {
         let mut input: CopyableView = CopyableView::new_1({ Ptr::<()>::from_string_literal(b"a") });
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -837,7 +837,7 @@ pub fn test_15() -> () {
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -852,7 +852,7 @@ pub fn test_15() -> () {
         })));
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -862,7 +862,7 @@ pub fn test_15() -> () {
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"

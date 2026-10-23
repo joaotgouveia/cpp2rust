@@ -387,7 +387,7 @@ pub unsafe fn test_to_string_30() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_12(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -395,7 +395,7 @@ pub unsafe fn test_to_string_30() -> () {
             (unsafe { check_equal_12(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_12(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -403,7 +403,7 @@ pub unsafe fn test_to_string_30() -> () {
             (unsafe { check_equal_12(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_12(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -424,7 +424,7 @@ pub unsafe fn test_to_string_31() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_13(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -432,7 +432,7 @@ pub unsafe fn test_to_string_31() -> () {
             (unsafe { check_equal_13(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_13(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -440,7 +440,7 @@ pub unsafe fn test_to_string_31() -> () {
             (unsafe { check_equal_13(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_13(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -461,7 +461,7 @@ pub unsafe fn test_to_string_32() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_14(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -469,7 +469,7 @@ pub unsafe fn test_to_string_32() -> () {
             (unsafe { check_equal_14(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_14(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -477,7 +477,7 @@ pub unsafe fn test_to_string_32() -> () {
             (unsafe { check_equal_14(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_14(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -498,7 +498,7 @@ pub unsafe fn test_to_string_33() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_15(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -506,7 +506,7 @@ pub unsafe fn test_to_string_33() -> () {
             (unsafe { check_equal_15(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_15(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -514,7 +514,7 @@ pub unsafe fn test_to_string_33() -> () {
             (unsafe { check_equal_15(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_15(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -535,7 +535,7 @@ pub unsafe fn test_to_string_34() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_16(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -543,7 +543,7 @@ pub unsafe fn test_to_string_34() -> () {
             (unsafe { check_equal_16(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_16(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -551,7 +551,7 @@ pub unsafe fn test_to_string_34() -> () {
             (unsafe { check_equal_16(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_16(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -572,7 +572,7 @@ pub unsafe fn test_to_string_35() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_17(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -580,7 +580,7 @@ pub unsafe fn test_to_string_35() -> () {
             (unsafe { check_equal_17(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_17(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -588,7 +588,7 @@ pub unsafe fn test_to_string_35() -> () {
             (unsafe { check_equal_17(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_17(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -609,7 +609,7 @@ pub unsafe fn test_to_string_36() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_18(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -617,7 +617,7 @@ pub unsafe fn test_to_string_36() -> () {
             (unsafe { check_equal_18(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_18(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -625,7 +625,7 @@ pub unsafe fn test_to_string_36() -> () {
             (unsafe { check_equal_18(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_18(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -646,7 +646,7 @@ pub unsafe fn test_to_string_37() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_19(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -654,7 +654,7 @@ pub unsafe fn test_to_string_37() -> () {
             (unsafe { check_equal_19(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_19(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -662,7 +662,7 @@ pub unsafe fn test_to_string_37() -> () {
             (unsafe { check_equal_19(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_19(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -683,7 +683,7 @@ pub unsafe fn test_to_string_38() -> () {
     'loop_: while ((c) != (unimplemented!())) {
         let v: () = (*unimplemented!()).clone();
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(None, None) });
             (unsafe { check_equal_20(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -691,7 +691,7 @@ pub unsafe fn test_to_string_38() -> () {
             (unsafe { check_equal_20(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), None) });
             (unsafe { check_equal_20(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
@@ -699,7 +699,7 @@ pub unsafe fn test_to_string_38() -> () {
             (unsafe { check_equal_20(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {
-            let mut s: () = unimplemented!();
+            let mut s: () = (unsafe { v.to_string(Some(('0' as ())), Some(('1' as ()))) });
             (unsafe { check_equal_20(&s, &v, ('0' as ()), ('1' as ())) });
         }
         {

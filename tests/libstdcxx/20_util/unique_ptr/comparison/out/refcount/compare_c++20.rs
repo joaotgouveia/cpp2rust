@@ -371,7 +371,9 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p1: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(1_()) }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -486,7 +488,9 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_const_int__std_default_delete_const_int__::new({ Ptr::alloc(1_()) }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -946,7 +950,9 @@ pub fn test02_12() {
             unimplemented!();
         }
     }
-    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p1: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(1_()) }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -903,7 +903,7 @@ const _: () = assert!(!(false), "!std::same_as<InnerIterConst, InnerIterNonConst
 pub unsafe fn test_15() -> () {
     {
         let mut v: () = unimplemented!();
-        let mut val : std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+        let mut val : std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____outer_iterator_false__value_type = unimplemented!()  ;
         {
             let mut i: () = (unsafe { val.begin() });
             const _: () = assert!(true, "std::same_as<decltype(*i), char&>");;
@@ -919,7 +919,7 @@ pub unsafe fn test_15() -> () {
     }
     {
         let mut v: () = unimplemented!();
-        let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+        let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = unimplemented!()  ;
         {
             let mut i: () = (unsafe { val.begin() });
             const _: () = assert!(true, "std::same_as<decltype(*i), char&>");;

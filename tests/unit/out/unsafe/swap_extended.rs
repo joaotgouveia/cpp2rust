@@ -84,7 +84,9 @@ unsafe fn main_0() -> () {
             &mut (*(Box::leak(Box::new(10_())) as *mut ()).offset((0_()) as isize)),
         )
     });
-    let mut j: () = unimplemented!();
+    let mut j: () = std_unique_ptr_int__std_default_delete_int__::new({
+        (Box::leak(Box::new(11_())) as *mut ())
+    });
     let mut k: *mut () = unimplemented!();
     unimplemented!();
     let mut l: () = unimplemented!();

@@ -255,7 +255,13 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let xxx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let xxx: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { 10000_() },
+            { ('x' as ()) },
+            None,
+        ),
+    ));
     let t: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
         xxx.as_pointer()
     })));

@@ -861,7 +861,7 @@ pub fn test_15() -> () {
         unimplemented!();
         unimplemented!();
         let v2: Value<()> = Rc::new(RefCell::new((*v1.borrow()).clone()));
-        let val2 : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+        let val2 : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
         let i2: Value<()> = Rc::new(RefCell::new(({ (*val2.borrow()).begin() })));
         unimplemented!();
         unimplemented!();

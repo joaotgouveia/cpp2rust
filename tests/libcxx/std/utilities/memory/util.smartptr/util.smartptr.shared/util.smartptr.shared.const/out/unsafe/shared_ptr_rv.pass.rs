@@ -56,7 +56,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut pA: () = std_shared_ptr_A_::new_1({ (Box::leak(Box::new(A::new())) as *mut A) });
+        let mut pA: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -87,8 +87,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     unimplemented!();
     {
-        let mut pA: () =
-            std_shared_ptr_const_A_::new_1({ (Box::leak(Box::new(A::new())) as *mut A) });
+        let mut pA: () = unimplemented!();
         let mut p: *const A = unimplemented!();
         let mut pA2: () = unimplemented!();
         unimplemented!();

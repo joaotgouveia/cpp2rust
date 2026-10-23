@@ -170,7 +170,11 @@ pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
     return true;
 }
 pub unsafe fn test_9(mut min_cap: (), mut erased_index: ()) {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { min_cap },
+        { ('a' as ()) },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -184,7 +188,11 @@ pub unsafe fn test_9(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
 }
 pub unsafe fn test_10(mut min_cap: (), mut erased_index: ()) {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
+        { min_cap },
+        { ('a' as ()) },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -198,7 +206,11 @@ pub unsafe fn test_10(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
 }
 pub unsafe fn test_11(mut min_cap: (), mut erased_index: ()) {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
+        { min_cap },
+        { ('a' as ()) },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();

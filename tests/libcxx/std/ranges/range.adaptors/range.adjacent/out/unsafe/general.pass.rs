@@ -27,7 +27,7 @@ pub unsafe fn test_string_view_4() {
     let mut sv: () = unimplemented!();
     let mut v: std_ranges_adjacent_view_std_string_view__3_ = unimplemented!();
     let mut __decomp_5: std_tuple_const_char_ref__const_char_ref__const_char_ref_ =
-        (*unimplemented!());
+        unimplemented!();
     let a: *const () = (unsafe { get_6(&mut *(&raw mut __decomp_5).cast::<()>()) });
     let b: *const () = (unsafe { get_7(&mut *(&raw mut __decomp_5).cast::<()>()) });
     let c: *const () = (unsafe { get_8(&mut *(&raw mut __decomp_5).cast::<()>()) });

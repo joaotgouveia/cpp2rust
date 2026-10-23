@@ -858,7 +858,7 @@ pub fn test_16() -> () {
         ));
         let val: Value<
             std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type,
-        > = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        > = Rc::new(RefCell::new(unimplemented!()));
         let b: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).begin() })));
         let e: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).end() })));
         {
@@ -874,7 +874,7 @@ pub fn test_16() -> () {
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+        let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
         let b: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).begin() })));
         let e: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).end() })));
         const _: () = assert!(

@@ -39,11 +39,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         const _: () = assert!(true, "std::is_move_constructible<P1>::value");;
-        let p1: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(3_()));
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(4_()));
-            std_pair_int__short_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-        }));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -57,12 +53,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let obj: Value<NotCopyOrMoveConstructible> =
                 Rc::new(RefCell::new(<NotCopyOrMoveConstructible>::default()));
-            let p2: Value<()> = Rc::new(RefCell::new({
-                let __tmp_2: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_NotCopyOrMoveConstructible_ref__int_::new({ obj.as_pointer() }, {
-                    __tmp_2.as_pointer()
-                })
-            }));
+            let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
@@ -71,12 +62,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             const _: () = assert!(true, "std::is_move_constructible<P>::value");;
             let obj: Value<NotCopyOrMoveConstructible> =
                 Rc::new(RefCell::new(<NotCopyOrMoveConstructible>::default()));
-            let p2: Value<()> = Rc::new(RefCell::new({
-                let __tmp_3: Value<()> = Rc::new(RefCell::new(3_()));
-                std_pair_NotCopyOrMoveConstructible_refref__int_::new({ obj.as_pointer() }, {
-                    __tmp_3.as_pointer()
-                })
-            }));
+            let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();

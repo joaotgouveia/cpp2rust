@@ -259,7 +259,9 @@ impl __gnu_test_semaphore {}
 pub struct A {}
 pub fn test01_10() {
     let mut p1: () = unimplemented!();
-    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(
+        std_unique_ptr_A__std_default_delete_A__::new_1({ Ptr::alloc(<A>::default()) }),
+    ));
     let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ swap_11(p3.as_pointer(), p2.as_pointer()) });
     let mut __do_while = true;

@@ -880,9 +880,7 @@ pub fn test_18() -> () {
                 { ForwardView::new_1({ Ptr::<()>::from_string_literal(b" ") }) },
             ),
         ));
-        let i: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).begin() }),
-        ));
+        let i: Value<()> = Rc::new(RefCell::new(({ (unimplemented!()).begin() })));
         let ci: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
         {
             let b: Ptr<forward_iterator_const_char_ptr_> = ({ (*i.borrow()).base_6() });
@@ -911,9 +909,7 @@ pub fn test_18() -> () {
             Ptr::<()>::from_string_literal(b"abc def")
         })));
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new(
-            ({ (*unimplemented!().upgrade().deref()).begin() }),
-        ));
+        let i: Value<()> = Rc::new(RefCell::new(({ (unimplemented!()).begin() })));
         let ci: Value<()> = Rc::new(RefCell::new((*i.borrow()).clone()));
         {
             let b: Ptr<cpp20_input_iterator_char_ptr_> = ({ (*i.borrow()).base_6() });

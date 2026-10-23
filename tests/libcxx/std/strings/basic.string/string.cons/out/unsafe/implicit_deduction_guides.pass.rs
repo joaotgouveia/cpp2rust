@@ -998,18 +998,41 @@ pub unsafe fn test_22() -> () {
     {}
     {}
     {
-        let mut s: () = unimplemented!();
+        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { 6_() },
+            { ('a' as ()) },
+            None,
+        );
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w: () = unimplemented!();
+        let mut w: () =
+            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                { 2_() },
+                { (98 as ()) },
+                None,
+            );
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut s: () = unimplemented!();
+        let mut s: () = {
+            let mut __tmp_0: test_allocator_char_ = <test_allocator_char_>::default();
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+                { 6_() },
+                { ('a' as ()) },
+                { &mut __tmp_0 },
+            )
+        };
         const _: () = assert!(true, "");;
         unimplemented!();
-        let mut w: () = unimplemented!();
+        let mut w: () = {
+            let mut __tmp_1: test_allocator_wchar_t_ = <test_allocator_wchar_t_>::default();
+            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
+                { 2_() },
+                { (98 as ()) },
+                { &mut __tmp_1 },
+            )
+        };
         const _: () = assert!(true, "");;
         unimplemented!();
     }

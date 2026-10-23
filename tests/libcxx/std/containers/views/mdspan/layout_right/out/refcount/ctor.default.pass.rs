@@ -8,9 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_construction_0() {
     const _: () = assert!(true, "");;
-    let m: Value<std_layout_right_mapping_std_extents_int__> = Rc::new(RefCell::new(
-        <std_layout_right_mapping_std_extents_int__>::default(),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -24,10 +22,7 @@ pub fn test_construction_0() {
 }
 pub fn test_construction_1() {
     const _: () = assert!(true, "");;
-    let m: Value<std_layout_right_mapping_std_extents_unsigned_int__18446744073709551615__> =
-        Rc::new(RefCell::new(
-            <std_layout_right_mapping_std_extents_unsigned_int__18446744073709551615__>::default(),
-        ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -44,9 +39,7 @@ pub fn test_construction_1() {
 }
 pub fn test_construction_2() {
     const _: () = assert!(true, "");;
-    let m: Value<std_layout_right_mapping_std_extents_unsigned_int__7__> = Rc::new(RefCell::new(
-        <std_layout_right_mapping_std_extents_unsigned_int__7__>::default(),
-    ));
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -63,9 +56,7 @@ pub fn test_construction_2() {
 }
 pub fn test_construction_3() {
     const _: () = assert!(true, "");;
-    let m: Value<std_layout_right_mapping_std_extents_unsigned_int__7__8__> = Rc::new(
-        RefCell::new(<std_layout_right_mapping_std_extents_unsigned_int__7__8__>::default()),
-    );
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -82,7 +73,7 @@ pub fn test_construction_3() {
 }
 pub fn test_construction_4() {
     const _: () = assert!(true, "");;
-    let m : Value<std_layout_right_mapping_std_extents_long__18446744073709551615__8__18446744073709551615__18446744073709551615__ > = Rc::new(RefCell::new(<std_layout_right_mapping_std_extents_long__18446744073709551615__8__18446744073709551615__18446744073709551615__  >::default() )) ;
+    let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();

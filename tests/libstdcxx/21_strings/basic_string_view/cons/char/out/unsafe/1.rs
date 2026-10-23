@@ -393,7 +393,11 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut istr07: () = unimplemented!();
+    let mut istr07: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 10_() },
+        { ('z' as ()) },
+        None,
+    );
     let mut str07: () = (unsafe { istr07() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

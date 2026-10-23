@@ -134,8 +134,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut i: () = unimplemented!();
-        let mut j: () = unimplemented!();
+        let mut i: () = std_unique_ptr_int__std_default_delete_int__::new({
+            (Box::leak(Box::new(1_())) as *mut ())
+        });
+        let mut j: () = std_unique_ptr_int__std_default_delete_int__::new({
+            (Box::leak(Box::new(2_())) as *mut ())
+        });
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -263,7 +263,11 @@ pub static mut num_strings_for_quality_tests_11: std::cell::LazyCell<()> =
 pub static mut string_size_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 42_() });
 pub unsafe fn random_strings_13(mut n: (), mut len: ()) -> () {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { len },
+        { ('\0' as ()) },
+        None,
+    );
     let mut result_set: () = unimplemented!();
     'loop_: while ((unimplemented!()) < (n)) {
         unimplemented!();

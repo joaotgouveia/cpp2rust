@@ -705,7 +705,7 @@ pub trait cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator
     }
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__Impl for Ptr<cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__> {
-fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_  { return (( * (*(* self ) .upgrade().deref()) . it_  .upgrade().deref() ) ).clone()  ;
+fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_  { return unimplemented!()    ;
  } fn operator_inc_5 ( &self , ) -> Ptr< cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  > { unimplemented!()  ;
  return ((* self )  ).clone()  ;
  } }
@@ -842,7 +842,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
     for Ptr<forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__>
 {
     fn operator_deref(&self) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ {
-        return (*(*(*self).upgrade().deref()).it_.upgrade().deref()).clone();
+        return unimplemented!();
     }
     fn operator_inc_6(
         &self,

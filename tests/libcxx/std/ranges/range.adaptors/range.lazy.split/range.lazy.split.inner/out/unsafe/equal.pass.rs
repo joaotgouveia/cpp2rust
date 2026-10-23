@@ -920,7 +920,7 @@ pub unsafe fn test_16() -> () {
             { ForwardView::new_1({ c"abc def".as_ptr() }) },
             { ForwardView::new_1({ c" ".as_ptr() }) },
         );
-        let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+        let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
         let mut b: () = (unsafe { val.begin() });
         let mut e: () = (unsafe { val.end() });
         {
@@ -936,7 +936,7 @@ pub unsafe fn test_16() -> () {
     }
     {
         let mut v: () = unimplemented!();
-        let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+        let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = unimplemented!()  ;
         let mut b: () = (unsafe { val.begin() });
         let mut e: () = (unsafe { val.end() });
         const _: () = assert!(

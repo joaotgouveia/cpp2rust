@@ -16,12 +16,12 @@ pub fn check_reset_1() -> () {
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
-        unimplemented!();
+        ({ ((*opt.borrow()) as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        ({ ((*opt.borrow()) as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
     return true;
@@ -52,14 +52,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         unimplemented!();
-        unimplemented!();
+        ({ ((*opt.borrow()) as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();
         unimplemented!();
     }
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);
-        unimplemented!();
+        ({ ((*opt.borrow()) as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();
         unimplemented!();
         dtor_called_0.with(|rc| *rc.borrow_mut() = false);

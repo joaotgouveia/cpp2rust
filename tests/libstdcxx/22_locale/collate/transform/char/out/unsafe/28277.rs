@@ -259,7 +259,11 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut loc_c: () = unimplemented!();
     let coll_c: *const () = (unsafe { use_facet_11(&loc_c) });
-    let sstr: () = unimplemented!();
+    let sstr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 10000000_() },
+        { ('a' as ()) },
+        None,
+    );
     let dstr: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

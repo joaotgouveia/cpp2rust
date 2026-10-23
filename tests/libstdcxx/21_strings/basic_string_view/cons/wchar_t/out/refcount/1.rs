@@ -396,7 +396,13 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let istr07: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let istr07: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 10_() },
+            { (122 as ()) },
+            None,
+        ),
+    ));
     let str07: Value<()> = Rc::new(RefCell::new(({ (*istr07.borrow())() })));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

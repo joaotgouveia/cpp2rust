@@ -30,11 +30,7 @@ pub fn test01_1() {
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*t1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
-    let t4: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_0() })));
-        let __tmp_1: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_0() })));
-        std_tuple_MoveOnly__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let t4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*t4.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();

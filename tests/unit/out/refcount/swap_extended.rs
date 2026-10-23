@@ -58,7 +58,7 @@ fn main_0() -> () {
             (Ptr::alloc(10_())).offset((0_()) as isize),
         )
     });
-    let mut j: () = unimplemented!();
+    let mut j: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(11_()) });
     let mut k: Ptr<()> = unimplemented!();
     unimplemented!();
     let mut l: () = unimplemented!();

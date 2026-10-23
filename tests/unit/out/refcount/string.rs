@@ -30,7 +30,11 @@ fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 10_() },
+        { ('a' as ()) },
+        None,
+    );
     let mut p2: Ptr<()> = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i < unimplemented!()) {

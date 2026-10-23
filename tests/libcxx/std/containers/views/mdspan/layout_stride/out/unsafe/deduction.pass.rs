@@ -6,8 +6,32 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0() -> () {
-    let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_1));
+pub type anon_0 = ();
+pub const anon_0_value: anon_0 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std_layout_stride_mapping_std_extents_int____std_layout_stride_mapping_std_extents_int___
+{}
+pub type anon_1 = ();
+pub const anon_1_value: anon_1 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std_layout_stride_mapping_std_extents_int__4____std_layout_stride_mapping_std_extents_int__4___
+{}
+pub type anon_2 = ();
+pub const anon_2_value: anon_2 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std_layout_stride_mapping_std_extents_int__18446744073709551615____std_layout_stride_mapping_std_extents_int__18446744073709551615___
+{}
+pub type anon_3 = ();
+pub const anon_3_value: anon_3 = 1;
+#[repr(C)]
+#[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
+pub struct test_macros_detail_is_same_std_layout_stride_mapping_std_extents_unsigned_int__18446744073709551615__3____std_layout_stride_mapping_std_extents_unsigned_int__18446744073709551615__3___
+{}
+pub unsafe fn test_4() -> () {
+    let D: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut dynamic_extent_5));
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
@@ -34,7 +58,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_0() });
+    (unsafe { test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

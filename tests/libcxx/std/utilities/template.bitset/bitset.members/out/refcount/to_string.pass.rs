@@ -387,7 +387,7 @@ pub fn test_to_string_30() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_12(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -395,7 +395,9 @@ pub fn test_to_string_30() -> () {
             ({ check_equal_12(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_12(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -403,7 +405,9 @@ pub fn test_to_string_30() -> () {
             ({ check_equal_12(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_12(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -424,7 +428,7 @@ pub fn test_to_string_31() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_13(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -432,7 +436,9 @@ pub fn test_to_string_31() -> () {
             ({ check_equal_13(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_13(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -440,7 +446,9 @@ pub fn test_to_string_31() -> () {
             ({ check_equal_13(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_13(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -461,7 +469,7 @@ pub fn test_to_string_32() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_14(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -469,7 +477,9 @@ pub fn test_to_string_32() -> () {
             ({ check_equal_14(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_14(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -477,7 +487,9 @@ pub fn test_to_string_32() -> () {
             ({ check_equal_14(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_14(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -498,7 +510,7 @@ pub fn test_to_string_33() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_15(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -506,7 +518,9 @@ pub fn test_to_string_33() -> () {
             ({ check_equal_15(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_15(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -514,7 +528,9 @@ pub fn test_to_string_33() -> () {
             ({ check_equal_15(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_15(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -535,7 +551,7 @@ pub fn test_to_string_34() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_16(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -543,7 +559,9 @@ pub fn test_to_string_34() -> () {
             ({ check_equal_16(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_16(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -551,7 +569,9 @@ pub fn test_to_string_34() -> () {
             ({ check_equal_16(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_16(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -572,7 +592,7 @@ pub fn test_to_string_35() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_17(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -580,7 +600,9 @@ pub fn test_to_string_35() -> () {
             ({ check_equal_17(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_17(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -588,7 +610,9 @@ pub fn test_to_string_35() -> () {
             ({ check_equal_17(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_17(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -609,7 +633,7 @@ pub fn test_to_string_36() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_18(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -617,7 +641,9 @@ pub fn test_to_string_36() -> () {
             ({ check_equal_18(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_18(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -625,7 +651,9 @@ pub fn test_to_string_36() -> () {
             ({ check_equal_18(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_18(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -646,7 +674,7 @@ pub fn test_to_string_37() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_19(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -654,7 +682,9 @@ pub fn test_to_string_37() -> () {
             ({ check_equal_19(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_19(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -662,7 +692,9 @@ pub fn test_to_string_37() -> () {
             ({ check_equal_19(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_19(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -683,7 +715,7 @@ pub fn test_to_string_38() -> () {
     'loop_: while (c != unimplemented!()) {
         let v: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(({ (*v.borrow()).to_string(None, None) })));
             ({ check_equal_20(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -691,7 +723,9 @@ pub fn test_to_string_38() -> () {
             ({ check_equal_20(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), None) }),
+            ));
             ({ check_equal_20(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
@@ -699,7 +733,9 @@ pub fn test_to_string_38() -> () {
             ({ check_equal_20(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {
-            let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let s: Value<()> = Rc::new(RefCell::new(
+                ({ (*v.borrow()).to_string(Some(('0' as ())), Some(('1' as ()))) }),
+            ));
             ({ check_equal_20(s.as_pointer(), v.as_pointer(), ('0' as ()), ('1' as ())) });
         }
         {

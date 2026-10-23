@@ -100,14 +100,14 @@ pub fn test_basic_18() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () = std_unique_ptr_char__std_default_delete_char__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -116,13 +116,15 @@ pub fn test_basic_18() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_char__std_default_delete_const_char__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_char__std_default_delete_const_char__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -166,14 +168,14 @@ pub fn test_basic_19() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () = std_unique_ptr_int__std_default_delete_int__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -182,13 +184,15 @@ pub fn test_basic_19() {
     {
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<()> = Ptr::alloc(Default::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_int__std_default_delete_const_int__::new({ (x).clone() });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -232,14 +236,16 @@ pub fn test_basic_20() {
     {
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_1___std_default_delete_WithSize_1___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -248,13 +254,19 @@ pub fn test_basic_20() {
     {
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_1_> = Ptr::alloc(<WithSize_1_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_1___std_default_delete_const_WithSize_1___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -310,14 +322,16 @@ pub fn test_basic_21() {
     {
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_2___std_default_delete_WithSize_2___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -326,13 +340,19 @@ pub fn test_basic_21() {
     {
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_2_> = Ptr::alloc(<WithSize_2_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_2___std_default_delete_const_WithSize_2___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -388,14 +408,16 @@ pub fn test_basic_22() {
     {
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_3___std_default_delete_WithSize_3___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -404,13 +426,19 @@ pub fn test_basic_22() {
     {
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_3_> = Ptr::alloc(<WithSize_3_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_3___std_default_delete_const_WithSize_3___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -466,14 +494,16 @@ pub fn test_basic_23() {
     {
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_4___std_default_delete_WithSize_4___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -482,13 +512,19 @@ pub fn test_basic_23() {
     {
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_4_> = Ptr::alloc(<WithSize_4_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_4___std_default_delete_const_WithSize_4___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -544,14 +580,16 @@ pub fn test_basic_24() {
     {
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_8___std_default_delete_WithSize_8___::new({ (x).clone() });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -560,13 +598,19 @@ pub fn test_basic_24() {
     {
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_8_> = Ptr::alloc(<WithSize_8_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_8___std_default_delete_const_WithSize_8___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -622,14 +666,20 @@ pub fn test_basic_25() {
     {
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_16___std_default_delete_WithSize_16___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -638,13 +688,19 @@ pub fn test_basic_25() {
     {
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_16_> = Ptr::alloc(<WithSize_16_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_16___std_default_delete_const_WithSize_16___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             unimplemented!();
         }
@@ -700,14 +756,20 @@ pub fn test_basic_26() {
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_WithSize_256___std_default_delete_WithSize_256___::new({
+                    (x).clone()
+                });
             const _: () = assert!(true, "");;
             const _: () = assert!(true, "");;
             unimplemented!();
@@ -716,13 +778,19 @@ pub fn test_basic_26() {
     {
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
+                    { (x).clone() },
+                );
             const _: () = assert!(true, "");;
             unimplemented!();
         }
         {
             let mut x: Ptr<WithSize_256_> = Ptr::alloc(<WithSize_256_>::default());
-            let mut ptr: () = unimplemented!();
+            let mut ptr: () =
+                std_unique_ptr_const_WithSize_256___std_default_delete_const_WithSize_256___::new(
+                    { (x).clone() },
+                );
             const _: () = assert!(true, "");;
             unimplemented!();
         }

@@ -992,7 +992,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let nullopt_hash: () = unimplemented!();
+    let nullopt_hash: () = (unsafe {
+        let mut ___opt: () = unimplemented!();
+        unimplemented!()(&mut ___opt)
+    });
     {
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "");;

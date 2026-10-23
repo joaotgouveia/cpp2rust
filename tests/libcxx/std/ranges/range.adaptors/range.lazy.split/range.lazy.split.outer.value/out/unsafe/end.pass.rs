@@ -905,7 +905,7 @@ pub unsafe fn test_15() -> () {
         let mut input: CopyableView = CopyableView::new_1({ c"a".as_ptr() });
         {
             let mut v: () = unimplemented!();
-            let mut val : std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type = unimplemented!()  ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -915,7 +915,7 @@ pub unsafe fn test_15() -> () {
         }
         {
             let mut v: () = unimplemented!();
-            let val : std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let val : std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type = unimplemented!()  ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -928,7 +928,7 @@ pub unsafe fn test_15() -> () {
         let mut input: InputView = InputView::new_1({ c"a".as_ptr() });
         {
             let mut v: () = unimplemented!();
-            let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = unimplemented!()  ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"
@@ -938,7 +938,7 @@ pub unsafe fn test_15() -> () {
         }
         {
             let mut v: () = unimplemented!();
-            let val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+            let val : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = unimplemented!()  ;
             const _: () = assert!(
                 true,
                 "std::same_as<decltype(val.end()), std::default_sentinel_t>"

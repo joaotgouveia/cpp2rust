@@ -1026,7 +1026,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let mut nullopt_hash: () = unimplemented!();
+    let mut nullopt_hash: () = ({
+        let ___opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!()(___opt.as_pointer())
+    });
     {
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;

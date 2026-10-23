@@ -79,7 +79,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let ptr: Value<()> = Rc::new(RefCell::new(std_unique_ptr_int__Deleter_int__::new({
             Pointer_int_::new_2({ Ptr::alloc(unimplemented!()) })
         })));
-        let v: Value<()> = Rc::new(RefCell::new((*ptr.borrow_mut()).clone()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     unimplemented!();

@@ -384,7 +384,12 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let mut str05: () = unimplemented!();
+    let mut str05: () =
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 30_() },
+            { (113 as ()) },
+            None,
+        );
     let mut str06: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

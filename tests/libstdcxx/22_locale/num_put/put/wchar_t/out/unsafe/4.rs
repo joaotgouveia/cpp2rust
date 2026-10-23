@@ -259,7 +259,11 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test04_10() {
     let loc_c: () = unimplemented!();
     let str: () = unimplemented!();
-    let x: () = unimplemented!();
+    let x: () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+        { 18_() },
+        { (120 as ()) },
+        None,
+    );
     let mut res: () = unimplemented!();
     let mut oss: () = unimplemented!();
     unimplemented!();

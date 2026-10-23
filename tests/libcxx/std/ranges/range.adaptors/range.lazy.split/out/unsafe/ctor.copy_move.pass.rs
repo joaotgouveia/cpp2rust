@@ -937,7 +937,7 @@ pub unsafe fn test_15() -> () {
         unimplemented!();
         unimplemented!();
         let mut v2: () = v1.clone();
-        let mut val2 : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = ( * unimplemented!()  ) ;
+        let mut val2 : std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type = unimplemented!()  ;
         let mut i2: () = (unsafe { val2.begin() });
         unimplemented!();
         unimplemented!();

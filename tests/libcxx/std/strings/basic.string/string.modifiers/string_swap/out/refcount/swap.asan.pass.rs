@@ -23,8 +23,20 @@ pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
 }
 pub fn test_5(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let short_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { 3_() },
+            { val },
+            None,
+        ),
+    ));
+    let long_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { 1100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -49,22 +61,44 @@ pub fn test_5(mut val: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let long_s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let long_s2: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+            { 11100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut long_s3: () = unimplemented!();
+    let mut long_s3: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 111_() },
+        { val },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_6(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let short_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 3_() },
+            { val },
+            None,
+        ),
+    ));
+    let long_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 1100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -89,22 +123,45 @@ pub fn test_6(mut val: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let long_s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let long_s2: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 11100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut long_s3: () = unimplemented!();
+    let mut long_s3: () =
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 111_() },
+            { val },
+            None,
+        );
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_7(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let short_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
+            { 3_() },
+            { val },
+            None,
+        ),
+    ));
+    let long_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
+            { 1100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -129,22 +186,45 @@ pub fn test_7(mut val: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let long_s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let long_s2: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
+            { 11100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut long_s3: () = unimplemented!();
+    let mut long_s3: () =
+        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
+            { 111_() },
+            { val },
+            None,
+        );
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_8(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let short_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
+            { 3_() },
+            { val },
+            None,
+        ),
+    ));
+    let long_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
+            { 1100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -169,22 +249,45 @@ pub fn test_8(mut val: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let long_s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let long_s2: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
+            { 11100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut long_s3: () = unimplemented!();
+    let mut long_s3: () =
+        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
+            { 111_() },
+            { val },
+            None,
+        );
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub fn test_9(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let short_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
+            { 3_() },
+            { val },
+            None,
+        ),
+    ));
+    let long_s: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
+            { 1100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -209,14 +312,25 @@ pub fn test_9(mut val: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let long_s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let long_s2: Value<()> = Rc::new(RefCell::new(
+        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
+            { 11100_() },
+            { val },
+            None,
+        ),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut long_s3: () = unimplemented!();
+    let mut long_s3: () =
+        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
+            { 111_() },
+            { val },
+            None,
+        );
     unimplemented!();
     unimplemented!();
     unimplemented!();

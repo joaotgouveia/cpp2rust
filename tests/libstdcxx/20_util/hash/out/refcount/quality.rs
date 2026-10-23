@@ -264,7 +264,11 @@ thread_local!(
     pub static string_size_12: Value<()> = Rc::new(RefCell::new(42_()));
 );
 pub fn random_strings_13(mut n: (), mut len: ()) -> () {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { len },
+        { ('\0' as ()) },
+        None,
+    );
     let result_set: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while (unimplemented!() < n) {
         unimplemented!();

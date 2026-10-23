@@ -740,9 +740,7 @@ pub trait cpp20_random_access_iterator_const_char_ptr_Impl {
     fn operator_inc_7(&self) -> Ptr<cpp20_random_access_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_dec_8(&self) -> Ptr<cpp20_random_access_iterator_const_char_ptr_> {
-        unimplemented!()
-    }
+    fn operator_dec_8(&self) -> Ptr<cpp20_random_access_iterator_const_char_ptr_>;
     fn operator_post_inc_9(&self, mut _a0: ()) -> cpp20_random_access_iterator_const_char_ptr_ {
         unimplemented!()
     }
@@ -762,6 +760,10 @@ impl cpp20_random_access_iterator_const_char_ptr_Impl
     }
     fn operator_index(&self, mut n: ()) -> Ptr<()> {
         return (*self).with(|__s| __s.it_.clone()).offset((n) as isize);
+    }
+    fn operator_dec_8(&self) -> Ptr<cpp20_random_access_iterator_const_char_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        return (*self).clone();
     }
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<cpp20_random_access_iterator_const_char_ptr_> {
         {
@@ -814,18 +816,14 @@ pub trait forward_sized_iterator_int_ptr_Impl {
 }
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
 pub trait random_access_iterator_const_char_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_index(&self, mut n: ()) -> () {
         unimplemented!()
     }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_const_char_ptr_> {
         unimplemented!()
     }
-    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_char_ptr_> {
-        unimplemented!()
-    }
+    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_char_ptr_>;
     fn operator_post_inc_9(&self, mut _a0: ()) -> random_access_iterator_const_char_ptr_ {
         unimplemented!()
     }
@@ -838,6 +836,13 @@ pub trait random_access_iterator_const_char_ptr_Impl {
     fn operator_sub_assign(&self, n: ()) -> Ptr<random_access_iterator_const_char_ptr_>;
 }
 impl random_access_iterator_const_char_ptr_Impl for Ptr<random_access_iterator_const_char_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
+    fn operator_dec_8(&self) -> Ptr<random_access_iterator_const_char_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_dec());
+        return (*self).clone();
+    }
     fn operator_sub_assign(&self, mut n: ()) -> Ptr<random_access_iterator_const_char_ptr_> {
         {
             let _ptr = field!((*self), it_);

@@ -1276,7 +1276,11 @@ pub fn test03_13() {
     }
 }
 pub fn test04_14() {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 1000_() },
+        { ('0' as ()) },
+        None,
+    );
     let mut d: () = 1_f64;
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*res.borrow_mut()) = unimplemented!();
@@ -1465,7 +1469,11 @@ pub fn test04_14() {
     }
 }
 pub fn to_string_15(mut val: ()) -> () {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { (unimplemented!() + 2_()) },
+        { ('0' as ()) },
+        None,
+    );
     let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while (val != 0_()) {
         unimplemented!().write(('0' as ()).wrapping_add(((val).wrapping_rem(10_()))));

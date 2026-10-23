@@ -1051,9 +1051,7 @@ impl adl_IteratorImpl for Ptr<adl_Iterator> {
     }
 }
 pub trait bidirectional_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_>;
     fn operator_dec_7(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         unimplemented!()
@@ -1066,6 +1064,9 @@ pub trait bidirectional_iterator_int_ptr_Impl {
     }
 }
 impl bidirectional_iterator_int_ptr_Impl for Ptr<bidirectional_iterator_int_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
     fn operator_inc_6(&self) -> Ptr<bidirectional_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
@@ -1075,9 +1076,7 @@ pub trait contiguous_iterator_int_ptr_Impl {
     fn base(&self) -> Ptr<()> {
         unimplemented!()
     }
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_arrow(&self) -> () {
         unimplemented!()
     }
@@ -1102,15 +1101,16 @@ pub trait contiguous_iterator_int_ptr_Impl {
     }
 }
 impl contiguous_iterator_int_ptr_Impl for Ptr<contiguous_iterator_int_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
     fn operator_inc_9(&self) -> Ptr<contiguous_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }
 }
 pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_inc_5(&self) -> Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
         unimplemented!()
     }
@@ -1118,7 +1118,11 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
         unimplemented!()
     }
 }
-impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
+impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
+}
 pub trait cpp17_output_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> () {
         unimplemented!()
@@ -1220,15 +1224,16 @@ impl cpp20_random_access_iterator_int_ptr_Impl for Ptr<cpp20_random_access_itera
     }
 }
 pub trait forward_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_>;
     fn operator_post_inc_7(&self, mut _a0: ()) -> forward_iterator_int_ptr_ {
         unimplemented!()
     }
 }
 impl forward_iterator_int_ptr_Impl for Ptr<forward_iterator_int_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
     fn operator_inc_6(&self) -> Ptr<forward_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
@@ -1247,9 +1252,7 @@ pub trait forward_sized_iterator_int_ptr_Impl {
 }
 impl forward_sized_iterator_int_ptr_Impl for Ptr<forward_sized_iterator_int_ptr_> {}
 pub trait random_access_iterator_int_ptr_Impl {
-    fn operator_deref(&self) -> () {
-        unimplemented!()
-    }
+    fn operator_deref(&self) -> ();
     fn operator_index(&self, mut n: ()) -> () {
         unimplemented!()
     }
@@ -1271,6 +1274,9 @@ pub trait random_access_iterator_int_ptr_Impl {
     }
 }
 impl random_access_iterator_int_ptr_Impl for Ptr<random_access_iterator_int_ptr_> {
+    fn operator_deref(&self) -> () {
+        return (*self).with(|__s| __s.it_.clone());
+    }
     fn operator_inc_7(&self) -> Ptr<random_access_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();

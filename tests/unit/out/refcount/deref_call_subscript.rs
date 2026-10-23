@@ -18,7 +18,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     unimplemented!().write(4_());
-    let mut v: () = unimplemented!();
+    let mut v : ()  = std_unique_ptr_std_vector_unsigned_char__std_allocator_unsigned_char____std_default_delete_std_vector_unsigned_char__std_allocator_unsigned_char____ :: new ( { Ptr::alloc( unimplemented!() )  } , )   ;
     unimplemented!().write(5_());
     unimplemented!();
     unimplemented!();

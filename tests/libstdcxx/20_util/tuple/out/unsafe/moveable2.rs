@@ -35,11 +35,7 @@ pub unsafe fn test01_1() {
     let mut t2: () = unimplemented!();
     let mut t3: () = unimplemented!();
     t1 = (*unimplemented!()).clone();
-    let mut t4: () = {
-        let mut __tmp_0: MoveOnly = (unsafe { make_move_only_0() });
-        let mut __tmp_1: MoveOnly = (unsafe { make_move_only_0() });
-        std_tuple_MoveOnly__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut t4: () = unimplemented!();
     let mut t5: () = unimplemented!();
     let mut t6: () = unimplemented!();
     t4 = (*unimplemented!()).clone();

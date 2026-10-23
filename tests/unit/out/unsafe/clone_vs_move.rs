@@ -193,7 +193,11 @@ unsafe fn main_0() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut s1: () = unimplemented!();
+    let mut s1: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 3_() },
+        { ('a' as ()) },
+        None,
+    );
     let mut s2: () = unimplemented!();
     (*unimplemented!()) = ('b' as ());
     (*unimplemented!()) = ('b' as ());

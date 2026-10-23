@@ -257,7 +257,11 @@ impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let loc_c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let coll_c: Ptr<()> = ({ use_facet_11(loc_c.as_pointer()) });
-    let mut sstr: () = unimplemented!();
+    let mut sstr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 10000000_() },
+        { ('a' as ()) },
+        None,
+    );
     let mut dstr: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

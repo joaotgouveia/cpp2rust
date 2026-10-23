@@ -829,12 +829,12 @@ pub fn test_15() -> () {
         })));
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_CopyableView__CopyableView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
     }
@@ -844,12 +844,12 @@ pub fn test_15() -> () {
         })));
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
     }

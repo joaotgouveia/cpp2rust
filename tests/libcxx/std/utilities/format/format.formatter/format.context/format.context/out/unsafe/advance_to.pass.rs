@@ -242,7 +242,7 @@ impl cpp20_output_iterator_std___wrap_iter_char_ptr__ {
         return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_char_ptr__));
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*self.it_);
+        return &mut (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -278,7 +278,7 @@ impl cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__ {
         return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__));
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*self.it_);
+        return &mut (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -314,7 +314,7 @@ impl cpp20_output_iterator_std___wrap_iter_char8_t_ptr__ {
         return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_char8_t_ptr__));
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*self.it_);
+        return &mut (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -352,7 +352,7 @@ impl cpp20_output_iterator_std___wrap_iter_char16_t_ptr__ {
         return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_char16_t_ptr__));
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*self.it_);
+        return &mut (*unimplemented!());
     }
 }
 #[repr(C)]
@@ -390,7 +390,7 @@ impl cpp20_output_iterator_std___wrap_iter_char32_t_ptr__ {
         return &mut (*(self as *mut cpp20_output_iterator_std___wrap_iter_char32_t_ptr__));
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
-        return &mut (*self.it_);
+        return &mut (*unimplemented!());
     }
 }
 const _: () = assert!(

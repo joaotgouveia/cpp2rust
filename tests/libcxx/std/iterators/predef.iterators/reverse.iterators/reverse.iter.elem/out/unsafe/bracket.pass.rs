@@ -493,17 +493,17 @@ impl util_iterator_error {
 }
 pub unsafe fn test_10(mut i: random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = r[(n) as usize];
+    let mut rr: () = (*unimplemented!());
     unimplemented!();
 }
 pub unsafe fn test_11(mut i: cpp20_random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = (r[(n) as usize] as ());
+    let mut rr: () = ((*unimplemented!()) as ());
     unimplemented!();
 }
 pub unsafe fn test_12(mut i: *const (), mut n: (), mut x: ()) {
     let r: () = unimplemented!();
-    let mut rr: () = r[(n) as usize];
+    let mut rr: () = (*unimplemented!());
     unimplemented!();
 }
 pub unsafe fn tests_13() -> () {

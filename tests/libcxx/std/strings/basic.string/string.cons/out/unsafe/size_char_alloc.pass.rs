@@ -511,7 +511,11 @@ pub unsafe fn is_string_asan_correct_16(_a0: *const ()) -> () {
     return true;
 }
 pub unsafe fn test_17(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -524,7 +528,11 @@ pub unsafe fn test_17(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_18(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -537,7 +545,11 @@ pub unsafe fn test_18(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_19(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -550,7 +562,11 @@ pub unsafe fn test_19(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_20(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -563,7 +579,10 @@ pub unsafe fn test_20(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_21(mut n: (), mut c: (), a: *const ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -576,7 +595,10 @@ pub unsafe fn test_21(mut n: (), mut c: (), a: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_22(mut n: (), mut c: (), a: *const test_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -589,7 +611,10 @@ pub unsafe fn test_22(mut n: (), mut c: (), a: *const test_allocator_char_) {
     unimplemented!();
 }
 pub unsafe fn test_23(mut n: (), mut c: (), a: *const min_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -602,7 +627,10 @@ pub unsafe fn test_23(mut n: (), mut c: (), a: *const min_allocator_char_) {
     unimplemented!();
 }
 pub unsafe fn test_24(mut n: (), mut c: (), a: *const safe_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -615,7 +643,11 @@ pub unsafe fn test_24(mut n: (), mut c: (), a: *const safe_allocator_char_) {
     unimplemented!();
 }
 pub unsafe fn test_25(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -627,7 +659,11 @@ pub unsafe fn test_25(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_26(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -639,7 +675,11 @@ pub unsafe fn test_26(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_27(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -651,7 +691,11 @@ pub unsafe fn test_27(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_28(mut n: (), mut c: ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () = std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
+        { n },
+        { c },
+        None,
+    );
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -663,7 +707,10 @@ pub unsafe fn test_28(mut n: (), mut c: ()) {
     unimplemented!();
 }
 pub unsafe fn test_29(mut n: (), mut c: (), a: *const ()) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -675,7 +722,10 @@ pub unsafe fn test_29(mut n: (), mut c: (), a: *const ()) {
     unimplemented!();
 }
 pub unsafe fn test_30(mut n: (), mut c: (), a: *const test_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -687,7 +737,10 @@ pub unsafe fn test_30(mut n: (), mut c: (), a: *const test_allocator_char_) {
     unimplemented!();
 }
 pub unsafe fn test_31(mut n: (), mut c: (), a: *const min_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -699,7 +752,10 @@ pub unsafe fn test_31(mut n: (), mut c: (), a: *const min_allocator_char_) {
     unimplemented!();
 }
 pub unsafe fn test_32(mut n: (), mut c: (), a: *const safe_allocator_char_) {
-    let mut s2: () = unimplemented!();
+    let mut s2: () =
+        std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1({ n }, { c }, {
+            Some(a)
+        });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();

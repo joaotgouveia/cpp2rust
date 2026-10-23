@@ -260,23 +260,17 @@ pub fn main() {
 }
 fn main_0() -> () {
     let x1: Value<()> = Rc::new(RefCell::new(0_()));
-    let x2: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut x2: () = 0_();
     let z1: Ptr<()> = x1.as_pointer();
     let ta: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tc: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_1(
-        { x1.as_pointer() },
-        { x2.as_pointer() },
-    )));
-    let td: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_ref_::new(
-        { x1.as_pointer() },
-        { x2.as_pointer() },
-    )));
+    let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let td: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let te: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
         (z1).clone()
     })));
     (*x1.borrow_mut()) = 1_();
-    (*x2.borrow_mut()) = 1_();
+    x2 = 1_();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -303,38 +297,18 @@ fn main_0() -> () {
         }
     }
     let tf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tg: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_2({
-        td.as_pointer()
-    })));
+    let tg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let th: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ti: Value<()> = Rc::new(RefCell::new(std_tuple_int__double_::new_1({
-        tc.as_pointer()
-    })));
-    let tj: Value<()> = Rc::new(RefCell::new(std_tuple_int__double_::new_2({
-        td.as_pointer()
-    })));
-    let tl: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref__const_int_ref_::new(
-        { tc.as_pointer() },
-    )));
+    let ti: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tl: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let pair1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_pair_int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() })
-    }));
+    let pair1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pair2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let tn: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_3({
-        pair1.as_pointer()
-    })));
-    let to: Value<()> = Rc::new(RefCell::new(std_tuple_int__const_int_ref_::new({
-        pair1.as_pointer()
-    })));
-    let tp: Value<()> = Rc::new(RefCell::new(std_tuple_int__int_::new_3({
-        pair2.as_pointer()
-    })));
-    let tq: Value<()> = Rc::new(RefCell::new(std_tuple_int__const_int_ref_::new({
-        pair2.as_pointer()
-    })));
+    let tn: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let tq: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     return 0_();
 }
 impl __gnu_test_semaphore {
@@ -434,10 +408,7 @@ pub fn verify_demangle_21(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let mut w: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { (wanted).clone() },
-        None,
-    );
+    let mut w: () = unimplemented!();
     if unimplemented!() {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -448,22 +419,14 @@ pub fn run_tests_wrapped_locale_23(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -475,10 +438,7 @@ pub fn run_tests_wrapped_locale_23(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -500,10 +460,7 @@ pub fn run_tests_wrapped_env_24(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

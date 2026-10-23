@@ -925,12 +925,12 @@ pub unsafe fn test_15() -> () {
                 { ForwardView::new_1({ c"abc def".as_ptr() }) },
                 { ForwardView::new_1({ c" ".as_ptr() }) },
             );
-            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
             unimplemented!();
         }
         {
             let mut v: () = unimplemented!();
-            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
             unimplemented!();
         }
     }
@@ -940,12 +940,12 @@ pub unsafe fn test_15() -> () {
                 { ForwardView::new_1({ c"abc def".as_ptr() }) },
                 { ForwardView::new_1({ c" ".as_ptr() }) },
             );
-            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
             unimplemented!();
         }
         {
             let mut v: () = unimplemented!();
-            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+            let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
             unimplemented!();
         }
     }
@@ -954,7 +954,7 @@ pub unsafe fn test_15() -> () {
             { ForwardView::new_1({ c"abc def".as_ptr() }) },
             { ForwardView::new_1({ c" ".as_ptr() }) },
         );
-        let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = ( * unimplemented!()  ) ;
+        let mut val : std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type = unimplemented!()  ;
         unimplemented!();
     }
     return true;

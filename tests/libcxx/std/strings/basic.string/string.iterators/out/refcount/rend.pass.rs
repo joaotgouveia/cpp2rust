@@ -157,25 +157,11 @@ pub fn test_9(s: ()) {
 }
 pub fn test_string_10() {
     ({ test_8(unimplemented!()) });
-    ({
-        test_8(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
-        )
-    });
+    ({ test_8(unimplemented!()) });
 }
 pub fn test_string_11() {
     ({ test_9(unimplemented!()) });
-    ({
-        test_9(
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { Ptr::<()>::from_string_literal(b"123") },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!()) });
 }
 pub fn test_12() -> () {
     ({ test_string_10() });

@@ -354,7 +354,9 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut p1: () = unimplemented!();
+    let mut p1: () = std_unique_ptr_int__std_default_delete_int__::new_1({
+        (Box::leak(Box::new(1_())) as *mut ())
+    });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -450,7 +452,9 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut p2: () = unimplemented!();
+    let mut p2: () = std_unique_ptr_const_int__std_default_delete_const_int__::new({
+        (Box::leak(Box::new(1_())) as *mut ()).cast_const()
+    });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -815,7 +819,9 @@ pub unsafe fn test02_12() {
             unimplemented!();
         }
     }
-    let mut p1: () = unimplemented!();
+    let mut p1: () = std_unique_ptr_int__std_default_delete_int__::new_1({
+        (Box::leak(Box::new(1_())) as *mut ())
+    });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

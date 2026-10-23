@@ -843,7 +843,11 @@ pub unsafe fn test03_13() {
 }
 pub unsafe fn test04_14() {
     let mut res: () = unimplemented!();
-    let mut z: () = unimplemented!();
+    let mut z: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 2000_() },
+        { ('0' as ()) },
+        None,
+    );
     'loop_: for s in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut s: *const () = (*s);
         'loop_: for len in IterRange::new(unimplemented!(), unimplemented!()) {

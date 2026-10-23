@@ -27,589 +27,592 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool__float__double__long_double___types_type_list_Enum__EnumClass__void_ptr__const_void_ptr__Class_ptr__std_nullptr_t__
 {}
 pub unsafe fn can_hash_impl_0(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
+}
+pub unsafe fn can_hash_impl_1(mut _a0: ()) -> () {
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_2(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_3(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_4(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_5(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_6(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_7(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_8(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_9(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_10(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_11(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_12(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_13(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_14(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_15(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_16(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_17(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_18(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_19(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_20(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_21(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_22(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_23(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_24(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_25(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_26(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_27(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_28(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_29(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_30(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_31(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_32(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_33(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_34(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_35(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_36(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_37(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_38(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_39(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_40(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_41(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_42(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_43(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_44(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_45(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_46(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_47(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_48(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_49(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_50(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_51(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_52(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_53(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_54(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_55(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_56(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_57(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_58(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_59(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_60(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_61(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_62(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_63(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_64(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_65(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_66(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_67(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_68(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_69(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_70(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_71(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_72(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_73(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_74(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_75(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_76(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_77(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_78(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_79(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_80(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_81(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_82(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_83(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_84(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_85(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_86(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_87(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_88(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_89(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_90(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_91(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_92(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_93(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_94(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_95(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_96(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_97(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_98(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_99(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_100(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_101(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_102(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_103(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_104(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_105(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_106(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_107(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_108(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_109(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_110(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_111(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_112(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_113(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_114(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_115(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_116(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_117(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_118(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_119(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_120(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_121(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_122(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_123(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_124(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_125(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_126(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_127(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_128(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_129(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_130(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_131(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_132(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_133(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_134(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_135(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_136(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_137(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_138(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_139(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_140(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_141(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_142(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_143(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_144(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_145(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_146(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_147(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_148(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_149(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_150(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_151(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_152(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_153(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_154(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_155(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_156(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_157(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_158(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_159(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_160(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_161(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_162(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_163(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_164(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_165(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_166(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_167(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_168(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_169(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_170(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_171(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_172(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_173(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_174(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_175(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_176(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_177(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_178(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_179(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_180(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_181(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_182(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_183(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_184(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_185(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_186(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_187(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_188(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_189(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_190(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_191(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_192(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_193(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_194(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return unimplemented!();
 }
 pub unsafe fn can_hash_impl_195(mut _a0: ()) -> () {
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut value_1));
+    return false;
 }
 pub unsafe fn can_hash_impl_196(mut _a0: ()) -> () {
     return false;
@@ -842,11 +845,11 @@ pub unsafe fn can_hash_impl_271(mut _a0: ()) -> () {
 pub unsafe fn can_hash_impl_272(mut _a0: ()) -> () {
     return false;
 }
-pub unsafe fn can_hash_impl_273(mut _a0: ()) -> () {
-    return false;
+pub unsafe fn can_hash_273() -> () {
+    return (unsafe { can_hash_impl_0(0_()) });
 }
 pub unsafe fn can_hash_274() -> () {
-    return (unsafe { can_hash_impl_0(0_()) });
+    return (unsafe { can_hash_impl_1(0_()) });
 }
 pub unsafe fn can_hash_275() -> () {
     return (unsafe { can_hash_impl_2(0_()) });
@@ -1661,9 +1664,6 @@ pub unsafe fn can_hash_544() -> () {
 pub unsafe fn can_hash_545() -> () {
     return (unsafe { can_hash_impl_272(0_()) });
 }
-pub unsafe fn can_hash_546() -> () {
-    return (unsafe { can_hash_impl_273(0_()) });
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConvertibleToSimple_std_unique_ptr_int__Deleter_int___ {}
@@ -1846,7 +1846,7 @@ impl Default for ConvertibleTo_std_unique_ptr_int__CopyDeleter_intarrarr___ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__ {
     pub to: (),
 }
@@ -1859,6 +1859,13 @@ impl ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__ {
         };
         this
     }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__,
+    ) -> *mut ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__ {
+        unimplemented!();
+        return &mut (*(self as *mut ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__));
+    }
 }
 impl Default for ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__ {
     fn default() -> Self {
@@ -1870,7 +1877,7 @@ impl Default for ConvertibleTo_std_unique_ptr_int__NCDeleter_int__ref__ {
     }
 }
 #[repr(C)]
-#[derive(FnPtrArg, MoveCtorUnsafe)]
+#[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe)]
 pub struct ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__ {
     pub to: (),
 }
@@ -1882,6 +1889,14 @@ impl ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__ {
             to: unimplemented!(),
         };
         this
+    }
+    pub unsafe fn move_assign(
+        &mut self,
+        _a0: *mut ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__,
+    ) -> *mut ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__ {
+        unimplemented!();
+        return &mut (*(self
+            as *mut ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__));
     }
 }
 impl Default for ConvertibleTo_std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref__ {
@@ -2095,7 +2110,7 @@ impl Default for ConvertibleTo_std_unique_ptr_Aarrarr__PointerDeleter_Aarrarr__1
         }
     }
 }
-pub unsafe fn test_hash_enabled_547(key: *const ()) {
+pub unsafe fn test_hash_enabled_546(key: *const ()) {
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
     const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
     const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
@@ -2119,10 +2134,34 @@ pub unsafe fn test_hash_enabled_547(key: *const ()) {
     let h: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_hash_enabled_548(key: Option<*const *mut ()>) {
+pub unsafe fn test_hash_enabled_547(key: Option<*const *mut ()>) {
     let mut __key_default: Option<*mut ()> = None;
     let mut key: *const *mut () = key
         .unwrap_or_else(|| unsafe { __key_default.insert(std::ptr::null_mut()) as *const *mut () });
+    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
+    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
+    let h: () = unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_hash_enabled_548(key: *const ()) {
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
     const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
     const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
@@ -2314,31 +2353,7 @@ pub unsafe fn test_hash_enabled_555(key: *const ()) {
     let h: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_hash_enabled_556(key: *const ()) {
-    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
-    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
-    let h: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_hash_enabled_557(
+pub unsafe fn test_hash_enabled_556(
     key: Option<*const min_pointer_int__std_integral_constant_unsigned_long__1__>,
 ) {
     let mut __key_default: Option<min_pointer_int__std_integral_constant_unsigned_long__1__> = None;
@@ -2372,6 +2387,30 @@ pub unsafe fn test_hash_enabled_557(
         <std_hash_min_pointer_int__std_integral_constant_unsigned_long__1___>::default();
     unimplemented!();
 }
+pub unsafe fn test_hash_enabled_557(key: *const ()) {
+    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
+    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
+    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
+    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
+    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
+    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
+    let h: () = unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_hash_enabled_558(key: *const ()) {
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
     const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
@@ -2396,31 +2435,7 @@ pub unsafe fn test_hash_enabled_558(key: *const ()) {
     let h: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_hash_enabled_559(key: *const ()) {
-    const _: () = assert!(true, "std::is_destructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_constructible<Hash>::value");;
-    const _: () = assert!(true, "std::is_copy_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_move_assignable<Hash>::value");;
-    const _: () = assert!(true, "std::is_swappable<Hash>::value");;
-    const _: () = assert!(true, "can_hash<Hash, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key const&>()");;
-    const _: () = assert!(true, "can_hash<Hash const, Key&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key>&&>()");;
-    const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
-    let h: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_hash_enabled_560(
+pub unsafe fn test_hash_enabled_559(
     key: Option<*const min_pointer_A__std_integral_constant_unsigned_long__1__>,
 ) {
     let mut __key_default: Option<min_pointer_A__std_integral_constant_unsigned_long__1__> = None;
@@ -2454,7 +2469,7 @@ pub unsafe fn test_hash_enabled_560(
         <std_hash_min_pointer_A__std_integral_constant_unsigned_long__1___>::default();
     unimplemented!();
 }
-pub unsafe fn test_hash_enabled_561(key: *const ()) {
+pub unsafe fn test_hash_enabled_560(key: *const ()) {
     const _: () = assert!(true, "std::is_destructible<Hash>::value");;
     const _: () = assert!(true, "std::is_default_constructible<Hash>::value");;
     const _: () = assert!(true, "std::is_copy_constructible<Hash>::value");;
@@ -2477,6 +2492,30 @@ pub unsafe fn test_hash_enabled_561(key: *const ()) {
     const _: () = assert!(true, "can_hash<Hash, ConvertibleTo<Key> const&&>()");;
     let h: () = unimplemented!();
     unimplemented!();
+}
+pub unsafe fn test_hash_disabled_561() {
+    const _: () = assert!(true, "!std::is_default_constructible<Hash>::value");;
+    const _: () = assert!(true, "!std::is_copy_constructible<Hash>::value");;
+    const _: () = assert!(true, "!std::is_move_constructible<Hash>::value");;
+    const _: () = assert!(true, "!std::is_copy_assignable<Hash>::value");;
+    const _: () = assert!(true, "!std::is_move_assignable<Hash>::value");;
+    const _: () = assert!(
+        true,
+        "!std::is_function<typename std::remove_pointer<typename std::remove_reference<Hash>::type>::type>::value"
+    );;
+    const _: () = assert!(true, "!can_hash<Hash, Key&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, Key const&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, Key&&>()");;
+    const _: () = assert!(true, "!can_hash<Hash const, Key&>()");;
+    const _: () = assert!(true, "!can_hash<Hash const, Key const&>()");;
+    const _: () = assert!(true, "!can_hash<Hash const, Key&&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key>&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key>&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key> const&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key>&&>()");;
+    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key> const&&>()");;
 }
 pub unsafe fn test_hash_disabled_562() {
     const _: () = assert!(true, "!std::is_default_constructible<Hash>::value");;
@@ -2598,30 +2637,6 @@ pub unsafe fn test_hash_disabled_566() {
     const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key>&&>()");;
     const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key> const&&>()");;
 }
-pub unsafe fn test_hash_disabled_567() {
-    const _: () = assert!(true, "!std::is_default_constructible<Hash>::value");;
-    const _: () = assert!(true, "!std::is_copy_constructible<Hash>::value");;
-    const _: () = assert!(true, "!std::is_move_constructible<Hash>::value");;
-    const _: () = assert!(true, "!std::is_copy_assignable<Hash>::value");;
-    const _: () = assert!(true, "!std::is_move_assignable<Hash>::value");;
-    const _: () = assert!(
-        true,
-        "!std::is_function<typename std::remove_pointer<typename std::remove_reference<Hash>::type>::type>::value"
-    );;
-    const _: () = assert!(true, "!can_hash<Hash, Key&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, Key const&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, Key&&>()");;
-    const _: () = assert!(true, "!can_hash<Hash const, Key&>()");;
-    const _: () = assert!(true, "!can_hash<Hash const, Key const&>()");;
-    const _: () = assert!(true, "!can_hash<Hash const, Key&&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key>&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key> const&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleToSimple<Key>&&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key>&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key> const&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key>&&>()");;
-    const _: () = assert!(true, "!can_hash<Hash, ConvertibleTo<Key> const&&>()");;
-}
 pub type Enum = ();
 pub type EnumClass = ();
 #[repr(C)]
@@ -2636,24 +2651,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_569))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_570))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_568))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_569))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_571)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_568)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_569)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_570)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_570)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_567)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_568)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_569)) = 0_();
     }
 }
-pub static mut outstanding_bytes_568: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_567: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_569: std::cell::LazyCell<()> =
+pub static mut alloc_count_568: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_570: std::cell::LazyCell<()> =
+pub static mut dealloc_count_569: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_571: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_570: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -2971,8 +2986,8 @@ impl Clone for CopyDeleter_intarrarr_ {
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_deleter_base {}
-pub static mut count_572: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_573: std::cell::LazyCell<()> =
+pub static mut count_571: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut dealloc_count_572: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -3170,72 +3185,63 @@ impl PointerDeleter_Aarrarr__0_ {
         return &mut (*(self as *mut PointerDeleter_Aarrarr__0_));
     }
 }
-pub unsafe fn test_enabled_with_deleter_574() {
+pub unsafe fn test_enabled_with_deleter_573() {
     let mut d: Deleter_int_ = Deleter_int_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, Deleter_int_::destructor);
-    let mut p: () = std_unique_ptr_int__Deleter_int__::new({ unimplemented!() }, { &mut d });
-    (unsafe { test_hash_enabled_547(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_546(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_575() {
+pub unsafe fn test_enabled_with_deleter_574() {
     let mut d: Deleter_intarrarr_ = Deleter_intarrarr_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, Deleter_intarrarr_::destructor);
-    let mut p: () =
-        std_unique_ptr_intarrarr__Deleter_intarrarr__::new({ Default::default() }, { &mut d });
-    (unsafe { test_hash_enabled_549(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_548(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_576() {
+pub unsafe fn test_enabled_with_deleter_575() {
     let mut d: CopyDeleter_int_ = CopyDeleter_int_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, CopyDeleter_int_::destructor);
-    let mut p: () = std_unique_ptr_int__CopyDeleter_int__::new({ unimplemented!() }, { &mut d });
-    (unsafe { test_hash_enabled_550(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_549(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_577() {
+pub unsafe fn test_enabled_with_deleter_576() {
     let mut d: CopyDeleter_intarrarr_ = CopyDeleter_intarrarr_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, CopyDeleter_intarrarr_::destructor);
-    let mut p: () =
-        std_unique_ptr_int__CopyDeleter_intarrarr__::new({ unimplemented!() }, { &mut d });
-    (unsafe { test_hash_enabled_551(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_550(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_578() {
+pub unsafe fn test_enabled_with_deleter_577() {
     let mut d: NCDeleter_int_ = NCDeleter_int_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, NCDeleter_int_::destructor);
-    let mut p: () = std_unique_ptr_int__NCDeleter_int__ref_::new({ unimplemented!() }, { &mut d });
-    (unsafe { test_hash_enabled_552(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_551(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_579() {
+pub unsafe fn test_enabled_with_deleter_578() {
     let mut d: NCDeleter_intarrarr_ = NCDeleter_intarrarr_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, NCDeleter_intarrarr_::destructor);
-    let mut p: () =
-        std_unique_ptr_intarrarr__NCDeleter_intarrarr__ref_::new({ Default::default() }, {
-            &mut d
-        });
-    (unsafe { test_hash_enabled_553(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_552(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_580() {
+pub unsafe fn test_enabled_with_deleter_579() {
     let mut d: NCConstDeleter_int_ = NCConstDeleter_int_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, NCConstDeleter_int_::destructor);
-    let mut p: () =
-        std_unique_ptr_int__const_NCConstDeleter_int__ref_::new({ unimplemented!() }, { &d });
-    (unsafe { test_hash_enabled_554(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_553(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_581() {
+pub unsafe fn test_enabled_with_deleter_580() {
     let mut d: NCConstDeleter_intarrarr_ = NCConstDeleter_intarrarr_::new_1({ 1_() });
     let _dtor_d = ScopedDestructorUnsafe::new(&raw mut d, NCConstDeleter_intarrarr_::destructor);
-    let mut p: () = std_unique_ptr_intarrarr__const_NCConstDeleter_intarrarr__ref_::new(
-        { Default::default() },
-        { &d },
-    );
-    (unsafe { test_hash_enabled_555(&p) });
-    (unsafe { test_hash_enabled_548(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_554(&p) });
+    (unsafe { test_hash_enabled_547(None) });
 }
-pub unsafe fn test_enabled_with_deleter_582() {
+pub unsafe fn test_enabled_with_deleter_581() {
     let mut d: PointerDeleter_int__1_ = PointerDeleter_int__1_::new_1({ 1_() });
     let mut p: () = std_unique_ptr_int__PointerDeleter_int__1__::new_1(
         {
@@ -3243,51 +3249,45 @@ pub unsafe fn test_enabled_with_deleter_582() {
         },
         { &mut d },
     );
-    (unsafe { test_hash_enabled_556(&p) });
-    (unsafe { test_hash_enabled_557(None) });
+    (unsafe { test_hash_enabled_555(&p) });
+    (unsafe { test_hash_enabled_556(None) });
+}
+pub unsafe fn test_enabled_with_deleter_582() {
+    let mut d: PointerDeleter_intarrarr__1_ = PointerDeleter_intarrarr__1_::new_1({ 1_() });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_557(&p) });
+    (unsafe { test_hash_enabled_556(None) });
 }
 pub unsafe fn test_enabled_with_deleter_583() {
-    let mut d: PointerDeleter_intarrarr__1_ = PointerDeleter_intarrarr__1_::new_1({ 1_() });
-    let mut p: () =
-        std_unique_ptr_intarrarr__PointerDeleter_intarrarr__1__::new({ Default::default() }, {
-            &mut d
-        });
-    (unsafe { test_hash_enabled_558(&p) });
-    (unsafe { test_hash_enabled_557(None) });
-}
-pub unsafe fn test_enabled_with_deleter_584() {
     let mut d: PointerDeleter_A__1_ = PointerDeleter_A__1_::new_1({ 1_() });
     let mut p: () = std_unique_ptr_A__PointerDeleter_A__1__::new(
         { min_pointer_A__std_integral_constant_unsigned_long__1__::new_1({ Default::default() }) },
         { &mut d },
     );
-    (unsafe { test_hash_enabled_559(&p) });
-    (unsafe { test_hash_enabled_560(None) });
+    (unsafe { test_hash_enabled_558(&p) });
+    (unsafe { test_hash_enabled_559(None) });
 }
-pub unsafe fn test_enabled_with_deleter_585() {
+pub unsafe fn test_enabled_with_deleter_584() {
     let mut d: PointerDeleter_Aarrarr__1_ = PointerDeleter_Aarrarr__1_::new_1({ 1_() });
-    let mut p: () =
-        std_unique_ptr_Aarrarr__PointerDeleter_Aarrarr__1__::new({ Default::default() }, {
-            &mut d
-        });
-    (unsafe { test_hash_enabled_561(&p) });
-    (unsafe { test_hash_enabled_560(None) });
+    let mut p: () = unimplemented!();
+    (unsafe { test_hash_enabled_560(&p) });
+    (unsafe { test_hash_enabled_559(None) });
+}
+pub unsafe fn test_disabled_with_deleter_585() {
+    (unsafe { test_hash_disabled_561() });
+    (unsafe { test_hash_disabled_562() });
 }
 pub unsafe fn test_disabled_with_deleter_586() {
-    (unsafe { test_hash_disabled_562() });
     (unsafe { test_hash_disabled_563() });
+    (unsafe { test_hash_disabled_562() });
 }
 pub unsafe fn test_disabled_with_deleter_587() {
     (unsafe { test_hash_disabled_564() });
-    (unsafe { test_hash_disabled_563() });
+    (unsafe { test_hash_disabled_565() });
 }
 pub unsafe fn test_disabled_with_deleter_588() {
+    (unsafe { test_hash_disabled_566() });
     (unsafe { test_hash_disabled_565() });
-    (unsafe { test_hash_disabled_566() });
-}
-pub unsafe fn test_disabled_with_deleter_589() {
-    (unsafe { test_hash_disabled_567() });
-    (unsafe { test_hash_disabled_566() });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -3321,6 +3321,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "");;
     }
     {
+        (unsafe { test_enabled_with_deleter_573() });
         (unsafe { test_enabled_with_deleter_574() });
         (unsafe { test_enabled_with_deleter_575() });
         (unsafe { test_enabled_with_deleter_576() });
@@ -3328,17 +3329,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe { test_enabled_with_deleter_578() });
         (unsafe { test_enabled_with_deleter_579() });
         (unsafe { test_enabled_with_deleter_580() });
-        (unsafe { test_enabled_with_deleter_581() });
     }
     {
+        (unsafe { test_enabled_with_deleter_581() });
         (unsafe { test_enabled_with_deleter_582() });
         (unsafe { test_enabled_with_deleter_583() });
         (unsafe { test_enabled_with_deleter_584() });
-        (unsafe { test_enabled_with_deleter_585() });
+        (unsafe { test_disabled_with_deleter_585() });
         (unsafe { test_disabled_with_deleter_586() });
         (unsafe { test_disabled_with_deleter_587() });
         (unsafe { test_disabled_with_deleter_588() });
-        (unsafe { test_disabled_with_deleter_589() });
     }
     return 0_();
 }
@@ -3347,10 +3347,10 @@ pub struct std_hash_min_pointer_int__std_integral_constant_unsigned_long__1___;
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct std_hash_min_pointer_A__std_integral_constant_unsigned_long__1___;
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_568);
-    std::cell::LazyCell::force(&*&raw const alloc_count_569);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_570);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_571);
-    std::cell::LazyCell::force(&*&raw const count_572);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_573);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_567);
+    std::cell::LazyCell::force(&*&raw const alloc_count_568);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_569);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_570);
+    std::cell::LazyCell::force(&*&raw const count_571);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_572);
 }

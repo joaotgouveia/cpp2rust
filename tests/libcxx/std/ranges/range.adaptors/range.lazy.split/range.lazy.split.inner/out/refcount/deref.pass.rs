@@ -836,7 +836,7 @@ const _: () = assert!(!(false), "!std::same_as<InnerIterConst, InnerIterNonConst
 pub fn test_15() -> () {
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val : Value<std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+        let val : Value<std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
         {
             let i: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).begin() })));
             const _: () = assert!(true, "std::same_as<decltype(*i), char&>");;
@@ -852,7 +852,7 @@ pub fn test_15() -> () {
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+        let val : Value<std_ranges_lazy_split_view_InputView__ForwardTinyView____outer_iterator_false__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
         {
             let i: Value<()> = Rc::new(RefCell::new(({ (*val.borrow()).begin() })));
             const _: () = assert!(true, "std::same_as<decltype(*i), char&>");;

@@ -256,7 +256,12 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let oss_01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut str_01: () = unimplemented!();
+    let mut str_01: () =
+        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+            { 50_() },
+            { (97 as ()) },
+            None,
+        );
     unimplemented!();
     let mut width: () = unimplemented!();
     unimplemented!();

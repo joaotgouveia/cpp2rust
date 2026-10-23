@@ -848,12 +848,12 @@ pub fn test_15() -> () {
                     { ForwardView::new_1({ Ptr::<()>::from_string_literal(b" ") }) },
                 ),
             ));
-            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
     }
@@ -865,12 +865,12 @@ pub fn test_15() -> () {
                     { ForwardView::new_1({ Ptr::<()>::from_string_literal(b" ") }) },
                 ),
             ));
-            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new((( * unimplemented!()  .upgrade().deref() ) ).clone())) ;
+            let val : Value<std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
         }
     }
@@ -883,7 +883,7 @@ pub fn test_15() -> () {
         ));
         let val: Value<
             std_ranges_lazy_split_view_ForwardView__ForwardView____outer_iterator_true__value_type,
-        > = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+        > = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

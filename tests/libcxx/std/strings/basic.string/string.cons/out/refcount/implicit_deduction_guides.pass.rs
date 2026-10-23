@@ -895,18 +895,46 @@ pub fn test_22() -> () {
     {}
     {}
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new(
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { 6_() },
+                { ('a' as ()) },
+                None,
+            ),
+        ));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<()> = Rc::new(RefCell::new(
+            std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
+                { 2_() },
+                { (98 as ()) },
+                None,
+            ),
+        ));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<test_allocator_char_> =
+                Rc::new(RefCell::new(<test_allocator_char_>::default()));
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+                { 6_() },
+                { ('a' as ()) },
+                { __tmp_0.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         unimplemented!();
-        let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let w: Value<()> = Rc::new(RefCell::new({
+            let __tmp_1: Value<test_allocator_wchar_t_> =
+                Rc::new(RefCell::new(<test_allocator_wchar_t_>::default()));
+            std_basic_string_wchar_t__std_char_traits_wchar_t___test_allocator_wchar_t__::new_1(
+                { 2_() },
+                { (98 as ()) },
+                { __tmp_1.as_pointer() },
+            )
+        }));
         const _: () = assert!(true, "");;
         unimplemented!();
     }

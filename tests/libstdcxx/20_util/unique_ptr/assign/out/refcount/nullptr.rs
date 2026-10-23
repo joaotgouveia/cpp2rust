@@ -258,7 +258,7 @@ impl __gnu_test_semaphore {}
 #[byte_size(1)]
 pub struct A {}
 pub fn test01_10() {
-    let mut p: () = unimplemented!();
+    let mut p: () = std_unique_ptr_A__std_default_delete_A__::new({ Ptr::alloc(<A>::default()) });
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

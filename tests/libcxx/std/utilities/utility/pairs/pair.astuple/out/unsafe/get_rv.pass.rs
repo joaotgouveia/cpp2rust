@@ -24,15 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: () = {
-            let mut __tmp_0: () = std_unique_ptr_int__std_default_delete_int__::new({
-                (Box::leak(Box::new(3_())) as *mut ())
-            });
-            let mut __tmp_1: () = 4_();
-            std_pair_std_unique_ptr_int__std_default_delete_int____short_::new({ &mut __tmp_0 }, {
-                &mut __tmp_1
-            })
-        };
+        let mut p: () = unimplemented!();
         let mut ptr: () = unimplemented!();
         unimplemented!();
     }

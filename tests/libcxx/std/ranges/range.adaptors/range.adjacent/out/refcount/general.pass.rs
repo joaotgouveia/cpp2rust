@@ -28,8 +28,7 @@ pub fn test_adjacent_pairs_0() {
 pub fn test_string_view_4() {
     let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let __decomp_5: Value<()> =
-        Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
+    let __decomp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a: Ptr<()> = ({ get_6((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });
     let b: Ptr<()> = ({ get_7((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });
     let c: Ptr<()> = ({ get_8((__decomp_5.as_pointer()).reinterpret_cast::<()>()) });

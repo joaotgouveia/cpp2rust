@@ -889,16 +889,21 @@ impl rvalue_iterator_int_ptr_Impl for Ptr<rvalue_iterator_int_ptr_> {
 }
 pub trait simple_iterator_int_ptr_Impl {
     fn operator_deref(&self) -> ();
-    fn operator_inc_4(&self) -> Ptr<simple_iterator_int_ptr_> {
-        unimplemented!()
-    }
-    fn operator_post_inc_5(&self, mut _a0: ()) -> simple_iterator_int_ptr_ {
-        unimplemented!()
-    }
+    fn operator_inc_4(&self) -> Ptr<simple_iterator_int_ptr_>;
+    fn operator_post_inc_5(&self, _a0: ()) -> simple_iterator_int_ptr_;
 }
 impl simple_iterator_int_ptr_Impl for Ptr<simple_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
         return (*self).with(|__s| __s.it_.clone());
+    }
+    fn operator_inc_4(&self) -> Ptr<simple_iterator_int_ptr_> {
+        field!((*self), it_).with_mut(|__v| __v.prefix_inc());
+        return (*self).clone();
+    }
+    fn operator_post_inc_5(&self, mut _a0: ()) -> simple_iterator_int_ptr_ {
+        let mut tmp: simple_iterator_int_ptr_ = (*(*self).upgrade().deref()).clone();
+        ({ simple_iterator_int_ptr_Impl::operator_inc_4(&(*self)) });
+        return tmp;
     }
 }
 pub trait support_double_move_trackerImpl {

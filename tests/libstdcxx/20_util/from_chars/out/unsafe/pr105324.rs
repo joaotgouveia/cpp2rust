@@ -13,7 +13,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 512_() },
+        { ('1' as ()) },
+        None,
+    );
     (*unimplemented!()) = ('.' as ());
     let mut d: () = unimplemented!();
     unimplemented!();

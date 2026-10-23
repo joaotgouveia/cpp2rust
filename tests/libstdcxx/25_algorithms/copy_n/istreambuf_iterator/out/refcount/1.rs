@@ -256,7 +256,11 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ostr: () = unimplemented!();
+    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 5_() },
+        { ('0' as ()) },
+        None,
+    );
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -377,7 +381,11 @@ pub fn test01_10() {
 }
 pub fn test02_12() {
     let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut ostr: () = unimplemented!();
+    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 5_() },
+        { ('0' as ()) },
+        None,
+    );
     let ibfit: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
@@ -420,7 +428,11 @@ pub fn test02_12() {
     }
 }
 pub fn test03_13() {
-    let mut ostr: () = unimplemented!();
+    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 5_() },
+        { ('0' as ()) },
+        None,
+    );
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

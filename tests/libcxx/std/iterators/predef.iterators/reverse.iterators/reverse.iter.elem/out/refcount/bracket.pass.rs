@@ -452,17 +452,17 @@ impl util_iterator_error {
 }
 pub fn test_10(mut i: random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rr: () = { (*r.borrow())[n] };
+    let mut rr: () = (unimplemented!().read());
     unimplemented!();
 }
 pub fn test_11(mut i: cpp20_random_access_iterator_const_char_ptr_, mut n: (), mut x: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rr: () = ({ (*r.borrow())[n] } as ());
+    let mut rr: () = ((unimplemented!().read()) as ());
     unimplemented!();
 }
 pub fn test_12(mut i: Ptr<()>, mut n: (), mut x: ()) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut rr: () = { (*r.borrow())[n] };
+    let mut rr: () = (unimplemented!().read());
     unimplemented!();
 }
 pub fn tests_13() -> () {

@@ -8,8 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_construction_0() {
     const _: () = assert!(true, "");;
-    let mut m: std_layout_right_mapping_std_extents_int__ =
-        <std_layout_right_mapping_std_extents_int__>::default();
+    let mut m: () = unimplemented!();
     let mut e: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -23,8 +22,7 @@ pub unsafe fn test_construction_0() {
 }
 pub unsafe fn test_construction_1() {
     const _: () = assert!(true, "");;
-    let mut m: std_layout_right_mapping_std_extents_unsigned_int__18446744073709551615__ =
-        <std_layout_right_mapping_std_extents_unsigned_int__18446744073709551615__>::default();
+    let mut m: () = unimplemented!();
     let mut e: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -38,8 +36,7 @@ pub unsafe fn test_construction_1() {
 }
 pub unsafe fn test_construction_2() {
     const _: () = assert!(true, "");;
-    let mut m: std_layout_right_mapping_std_extents_unsigned_int__7__ =
-        <std_layout_right_mapping_std_extents_unsigned_int__7__>::default();
+    let mut m: () = unimplemented!();
     let mut e: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -53,8 +50,7 @@ pub unsafe fn test_construction_2() {
 }
 pub unsafe fn test_construction_3() {
     const _: () = assert!(true, "");;
-    let mut m: std_layout_right_mapping_std_extents_unsigned_int__7__8__ =
-        <std_layout_right_mapping_std_extents_unsigned_int__7__8__>::default();
+    let mut m: () = unimplemented!();
     let mut e: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
@@ -68,7 +64,7 @@ pub unsafe fn test_construction_3() {
 }
 pub unsafe fn test_construction_4() {
     const _: () = assert!(true, "");;
-    let mut m : std_layout_right_mapping_std_extents_long__18446744073709551615__8__18446744073709551615__18446744073709551615__ = <std_layout_right_mapping_std_extents_long__18446744073709551615__8__18446744073709551615__18446744073709551615__ >::default() ;
+    let mut m: () = unimplemented!();
     let mut e: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();

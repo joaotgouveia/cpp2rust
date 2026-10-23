@@ -222,21 +222,25 @@ pub unsafe fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
-    unimplemented!();
+    (unsafe {
+        let ___x: *mut *mut () = &mut a.ptr_;
+        let ___y: *mut *mut () = &mut b.ptr_;
+        swap_4(___x, ___y)
+    });
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
     return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
 }
-pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -320,7 +324,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -330,7 +334,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_5(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -398,7 +402,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_eq_7(x: *const A, y: *const A) -> () {
+pub unsafe fn operator_eq_8(x: *const A, y: *const A) -> () {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
@@ -417,7 +421,7 @@ impl A {
 }
 impl std::cmp::PartialEq for A {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const A, other as *const A) }
+        unsafe { operator_eq_8(self as *const A, other as *const A) }
     }
 }
 impl std::cmp::Eq for A {}
@@ -426,14 +430,14 @@ impl Default for A {
         unsafe { A::new() }
     }
 }
-pub unsafe fn test_8(mut i: *mut A, mut x: A) {
+pub unsafe fn test_9(mut i: *mut A, mut x: A) {
     let mut r: () = unimplemented!();
     unimplemented!();
     let mut x2: A = (*unimplemented!()).clone();
     let _dtor_x2 = ScopedDestructorUnsafe::new(&raw mut x2, A::destructor);
     unimplemented!();
 }
-pub unsafe fn test_9(mut i: *mut (), mut x: ()) {
+pub unsafe fn test_10(mut i: *mut (), mut x: ()) {
     let mut r: () = unimplemented!();
     unimplemented!();
     let mut x2: () = unimplemented!();
@@ -464,12 +468,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: A = A::new();
         let _dtor_a = ScopedDestructorUnsafe::new(&raw mut a, A::destructor);
-        (unsafe { test_8((&mut a as *mut A), A::new()) });
+        (unsafe { test_9((&mut a as *mut A), A::new()) });
     }
     {
         let mut i: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        (unsafe { test_9((&mut p as *mut ()), unimplemented!()) });
+        let mut p: () = std_unique_ptr_int__do_nothing_::new({ (&mut i as *mut ()) });
+        (unsafe {
+            test_10(
+                (&mut p as *mut ()),
+                std_unique_ptr_int__do_nothing_::new({ (&mut i as *mut ()) }),
+            )
+        });
     }
     {
         let p: *const () = c"123456789".as_ptr();

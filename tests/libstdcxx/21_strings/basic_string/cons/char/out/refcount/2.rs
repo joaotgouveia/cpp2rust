@@ -255,7 +255,11 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test02_10() {
-    let mut s: () = unimplemented!();
+    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+        { 10_() },
+        { 0_() },
+        None,
+    );
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

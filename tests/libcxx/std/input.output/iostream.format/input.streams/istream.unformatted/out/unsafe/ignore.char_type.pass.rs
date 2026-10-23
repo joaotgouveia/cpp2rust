@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut in_: () = unimplemented!();
-    unimplemented!();
+    (unsafe { in_.ignore(100_(), (b'\xa1' as ())) });
     unimplemented!();
     unimplemented!();
     let mut str: () = unimplemented!();

@@ -425,7 +425,11 @@ pub unsafe fn test01_12() {
         }
     }
     let mut inst_obj: A_B_ = <A_B_>::default();
-    let mut str07: () = unimplemented!();
+    let mut str07: () = std_basic_string_A_B___std_char_traits_A_B____std_allocator_A_B___::new_1(
+        { 30_() },
+        { inst_obj },
+        None,
+    );
     let mut str08: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

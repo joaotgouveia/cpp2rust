@@ -1412,7 +1412,7 @@ pub fn test_25() -> () {
     }
     {
         let mut out: Ptr<ConstCopy> = unimplemented!();
-        let out_range : Value<std_ranges_subrange_ConstCopy_ptr__ConstCopy_ptr__std_ranges_subrange_kind_sized_ > = Rc::new(RefCell::new(std_ranges_subrange_ConstCopy_ptr__ConstCopy_ptr__std_ranges_subrange_kind_sized_ :: new_1 ( { (out ).clone() } , { out . offset ( ( (*n.borrow()) ) as isize )  } , )  )) ;
+        let out_range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*uninitialized_copy_26.with(Value::clone).borrow_mut())(
@@ -1525,13 +1525,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 Rc::new(RefCell::new(forward_iterator_Counted_ptr_::new_1({
                     (in_.as_pointer() as Ptr<Counted>)
                 })));
-            let range : Value<std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { ((*it.borrow()) ).clone()  } , { sentinel_wrapper_forward_iterator_Counted_ptr__ :: new_1 ( { it .as_pointer()  } , )   } , )  )) ;
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let result: Value<()> = Rc::new(RefCell::new(
                 ({
-                    let ___ifirst: forward_iterator_Counted_ptr_ =
-                        ({ (*range.borrow()).begin_8() });
+                    let ___ifirst: forward_iterator_Counted_ptr_ = unimplemented!();
                     let ___ilast: sentinel_wrapper_forward_iterator_Counted_ptr__ =
-                        ({ (*range.borrow()).end() });
+                        unimplemented!();
                     let ___ofirst: Ptr<Counted> =
                         ({ Buffer_Counted__1_Impl::begin(&out.as_pointer()) });
                     let ___olast: Ptr<Counted> =
@@ -1553,7 +1552,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 Rc::new(RefCell::new(forward_iterator_Counted_ptr_::new_1({
                     (in_.as_pointer() as Ptr<Counted>)
                 })));
-            let range : Value<std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ > = Rc::new(RefCell::new(std_ranges_subrange_forward_iterator_Counted_ptr___sentinel_wrapper_forward_iterator_Counted_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { ((*it.borrow()) ).clone()  } , { sentinel_wrapper_forward_iterator_Counted_ptr__ :: new_1 ( { it .as_pointer()  } , )   } , )  )) ;
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let result: Value<()> = Rc::new(RefCell::new(
                 ({
                     (*uninitialized_copy_26.with(Value::clone).borrow_mut())(
@@ -1617,14 +1616,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ])));
         let out: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({ Counted::reset() });
-        let range: Value<
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_,
-        > = Rc::new(RefCell::new(
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { (in_.as_pointer() as Ptr<Counted>) },
-                { (in_.as_pointer() as Ptr<Counted>).offset((*N.borrow()) as isize) },
-            ),
-        ));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*uninitialized_copy_26.with(Value::clone).borrow_mut())(
@@ -1725,14 +1717,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ])));
         let out: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({ Counted::reset() });
-        let range: Value<
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_,
-        > = Rc::new(RefCell::new(
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { (in_.as_pointer() as Ptr<Counted>) },
-                { (in_.as_pointer() as Ptr<Counted>).offset((*N.borrow()) as isize) },
-            ),
-        ));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let view: Value<()> = Rc::new(RefCell::new(
             ({ (*reverse_28.with(Value::clone).borrow_mut())(range.as_pointer()) }),
         ));
@@ -1860,14 +1845,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ])));
         let out: Value<Buffer_Counted__3_> = Rc::new(RefCell::new(<Buffer_Counted__3_>::default()));
         ({ Counted::reset() });
-        let range: Value<
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_,
-        > = Rc::new(RefCell::new(
-            std_ranges_subrange_Counted_ptr__Counted_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { (in_.as_pointer() as Ptr<Counted>) },
-                { (in_.as_pointer() as Ptr<Counted>).offset((*N.borrow()) as isize) },
-            ),
-        ));
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 (*uninitialized_copy_26.with(Value::clone).borrow_mut())(

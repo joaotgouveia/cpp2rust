@@ -20,12 +20,12 @@ pub unsafe fn check_reset_1() -> () {
     {
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
-        unimplemented!();
+        (unsafe { (opt as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
     {
         let mut opt: () = unimplemented!();
-        unimplemented!();
+        (unsafe { (opt as std___optional_destruct_base_int__true_).reset() });
         unimplemented!();
     }
     return true;
@@ -52,14 +52,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut opt: () = unimplemented!();
         const _: () = assert!(true, "noexcept(opt.reset()) == true");;
         unimplemented!();
-        unimplemented!();
+        (unsafe { (opt as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();
         unimplemented!();
     }
     {
         let mut opt: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = false;
-        unimplemented!();
+        (unsafe { (opt as std___optional_destruct_base_X__false_).reset() });
         unimplemented!();
         unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut dtor_called_0)) = false;

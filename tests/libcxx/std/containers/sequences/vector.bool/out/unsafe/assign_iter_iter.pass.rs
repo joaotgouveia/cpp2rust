@@ -85,7 +85,7 @@ pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocato
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub unsafe fn new ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ { return ( * self . it_  )  ;
+ this } pub unsafe fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ { return unimplemented!()   ;
  } pub unsafe fn operator_inc_5 ( &mut self , ) -> *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { unimplemented!()  ;
  return & mut ( * ( self as *mut cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  )  )  ;
  } }
@@ -141,7 +141,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
     pub unsafe fn operator_deref(
         &self,
     ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ {
-        return (*self.it_);
+        return unimplemented!();
     }
     pub unsafe fn operator_inc_6(
         &mut self,

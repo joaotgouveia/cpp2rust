@@ -388,7 +388,14 @@ pub fn test_string_15(a: Ptr<()>) {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                { 3_() },
+                { ('x' as ()) },
+                { __tmp_0.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
     }
@@ -406,7 +413,17 @@ pub fn test_string_16(a: Ptr<test_allocator_char_>) {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new({
+            let __tmp_1: Value<test_allocator_char_> =
+                Rc::new(RefCell::new(test_allocator_char_::copy_from({
+                    (a).clone()
+                })));
+            std_basic_string_char__std_char_traits_char___test_allocator_char__::new_1(
+                { 3_() },
+                { ('x' as ()) },
+                { __tmp_1.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
     }
@@ -424,7 +441,15 @@ pub fn test_string_17(a: Ptr<min_allocator_char_>) {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<min_allocator_char_> =
+                Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
+            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
+                { 3_() },
+                { ('x' as ()) },
+                { __tmp_2.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
     }
@@ -442,7 +467,15 @@ pub fn test_string_18(a: Ptr<safe_allocator_char_>) {
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s: Value<()> = Rc::new(RefCell::new({
+            let __tmp_3: Value<safe_allocator_char_> =
+                Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
+            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
+                { 3_() },
+                { ('x' as ()) },
+                { __tmp_3.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
     }

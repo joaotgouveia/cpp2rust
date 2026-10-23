@@ -1689,7 +1689,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1716,7 +1721,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1743,7 +1753,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1791,7 +1806,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1826,7 +1846,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1853,7 +1878,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1880,7 +1910,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1907,7 +1942,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1934,7 +1974,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1961,7 +2006,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -1988,7 +2038,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2015,7 +2070,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2042,7 +2102,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2069,7 +2134,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2096,7 +2166,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2123,7 +2198,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2150,7 +2230,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2177,7 +2262,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2204,7 +2294,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2231,7 +2326,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2258,7 +2358,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2285,7 +2390,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2312,7 +2422,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2339,7 +2454,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2366,7 +2486,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2393,7 +2518,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2420,7 +2550,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2447,7 +2582,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2474,7 +2614,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2501,7 +2646,12 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out: () =
+                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
+                        { unimplemented!() },
+                        { (' ' as ()) },
+                        None,
+                    );
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2534,7 +2684,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2561,7 +2711,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2588,7 +2738,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2615,7 +2765,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2663,7 +2813,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2698,7 +2848,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2725,7 +2875,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2752,7 +2902,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2779,7 +2929,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2806,7 +2956,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2833,7 +2983,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2860,7 +3010,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2887,7 +3037,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2914,7 +3064,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2941,7 +3091,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2968,7 +3118,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -2995,7 +3145,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3022,7 +3172,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3049,7 +3199,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3076,7 +3226,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3103,7 +3253,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3130,7 +3280,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3157,7 +3307,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3184,7 +3334,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3211,7 +3361,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3238,7 +3388,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3265,7 +3415,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3292,7 +3442,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3319,7 +3469,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3346,7 +3496,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
@@ -3373,7 +3523,7 @@ thread_local!(
             let expected: Value<()> = Rc::new(RefCell::new(expected));
             let fmt: Value<()> = Rc::new(RefCell::new(fmt));
             {
-                let mut out: () = unimplemented!();
+                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()   } , { ( ' ' as ()  )  } , None , )   ;
                 let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 unimplemented!();
                 unimplemented!();
