@@ -18,14 +18,17 @@ template <typename T1, typename T2> std::time_put<T1, T2> f1(std::size_t a0) {
 }
 
 template <typename T1, typename T2>
-typename std::time_put<T1, T2>::iter_type
-f2(const std::time_put<T1, T2> &a0,
-   typename std::time_put<T1, T2>::iter_type a1, std::ios_base &a2,
-   typename std::time_put<T1, T2>::char_type a3, const std::tm *a4, char a5,
-   char a6) {
+T2 f2(const std::time_put<T1, T2> &a0, T2 a1, std::ios_base &a2, T1 a3,
+      const std::tm *a4, const T1 *a5, const T1 *a6) {
   return a0.put(a1, a2, a3, a4, a5, a6);
 }
 
-template <typename T1, typename T2> const std::locale::id &f3() {
+template <typename T1, typename T2>
+T2 f3(const std::time_put<T1, T2> &a0, T2 a1, std::ios_base &a2, T1 a3,
+      const std::tm *a4, char a5, char a6) {
+  return a0.put(a1, a2, a3, a4, a5, a6);
+}
+
+template <typename T1, typename T2> const std::locale::id &f4() {
   return std::time_put<T1, T2>::id;
 }

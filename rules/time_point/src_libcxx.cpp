@@ -65,8 +65,6 @@ bool f22(const std::chrono::time_point<T1, T2> &a0,
 template <typename T1, typename T2, typename T3,
           typename std::enable_if<std::is_convertible<T3, T2>::value, int>::type
               T4 = 0>
-std::chrono::time_point<T1, T2>
-f23(const std::chrono::time_point<
-    typename std::chrono::time_point<T1, T2>::clock, T3> &a0) {
+std::chrono::time_point<T1, T2> f23(const std::chrono::time_point<T1, T3> &a0) {
   return std::chrono::time_point<T1, T2>(a0);
 }

@@ -4,82 +4,61 @@
 #include <streambuf>
 #include <utility>
 
-template <typename T1, typename T2>
-std::basic_istream<T1, T2> &
-f75(std::basic_istream<T1, T2> &a0,
-    std::basic_ios<typename std::basic_istream<T1, T2>::char_type,
-                   typename std::basic_istream<T1, T2>::traits_type> &(*a1)(
-        std::basic_ios<typename std::basic_istream<T1, T2>::char_type,
-                       typename std::basic_istream<T1, T2>::traits_type> &)) {
-  return a0.operator>>(a1);
-}
-
-template <typename T1, typename T2>
-std::basic_istream<T1, T2> &
-f76(std::basic_istream<T1, T2> &a0,
-    std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                         typename std::basic_istream<T1, T2>::traits_type>
-        *a1) {
-  return a0.operator>>(a1);
-}
-
-template <typename T1, typename T2>
-std::basic_istream<T1, T2> &
-f77(std::basic_istream<T1, T2> &a0,
-    std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                         typename std::basic_istream<T1, T2>::traits_type>
-        &a1) {
-  return a0.get(a1);
-}
-
-template <typename T1, typename T2>
-std::basic_istream<T1, T2> &
-f78(std::basic_istream<T1, T2> &a0,
-    std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                         typename std::basic_istream<T1, T2>::traits_type> &a1,
-    typename std::basic_istream<T1, T2>::char_type a2) {
-  return a0.get(a1, a2);
-}
-
 template <
-    typename T1, typename T2,
-    typename T3 = typename std::basic_istream<T1, T2>::char_type,
+    typename T1, typename T2, typename T3 = T1,
     typename std::enable_if<std::is_same<T1, char>::value, int>::type T4 = 0>
-std::basic_istream<T1, T2> &
-f79(std::basic_istream<T1, T2> &a0, std::streamsize a1,
-    typename std::basic_istream<T1, T2>::char_type a2) {
+std::basic_istream<T1, T2> &f75(std::basic_istream<T1, T2> &a0,
+                                std::streamsize a1, T1 a2) {
   return a0.ignore(a1, a2);
 }
 
 template <typename T1, typename T2>
-std::basic_ostream<typename std::basic_istream<T1, T2>::char_type,
-                   typename std::basic_istream<T1, T2>::traits_type> *
-f80(const std::basic_istream<T1, T2> &a0) {
-  return a0.tie();
+unsigned int f76(const std::basic_istream<T1, T2> &a0) {
+  return a0.rdstate();
 }
 
 template <typename T1, typename T2>
-std::basic_ostream<typename std::basic_istream<T1, T2>::char_type,
-                   typename std::basic_istream<T1, T2>::traits_type> *
-f81(std::basic_istream<T1, T2> &a0,
-    std::basic_ostream<typename std::basic_istream<T1, T2>::char_type,
-                       typename std::basic_istream<T1, T2>::traits_type> *a1) {
-  return a0.tie(a1);
+void f77(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.clear(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                     typename std::basic_istream<T1, T2>::traits_type> *
-f82(const std::basic_istream<T1, T2> &a0) {
-  return a0.rdbuf();
+void f78(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.setstate(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                     typename std::basic_istream<T1, T2>::traits_type> *
-f83(std::basic_istream<T1, T2> &a0,
-    std::basic_streambuf<typename std::basic_istream<T1, T2>::char_type,
-                         typename std::basic_istream<T1, T2>::traits_type>
-        *a1) {
-  return a0.rdbuf(a1);
+unsigned int f79(const std::basic_istream<T1, T2> &a0) {
+  return a0.exceptions();
+}
+
+template <typename T1, typename T2>
+void f80(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.exceptions(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f81(const std::basic_istream<T1, T2> &a0) {
+  return a0.flags();
+}
+
+template <typename T1, typename T2>
+unsigned int f82(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.flags(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f83(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.setf(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f84(std::basic_istream<T1, T2> &a0, unsigned int a1,
+                 unsigned int a2) {
+  return a0.setf(a1, a2);
+}
+
+template <typename T1, typename T2>
+void f85(std::basic_istream<T1, T2> &a0, unsigned int a1) {
+  return a0.unsetf(a1);
 }

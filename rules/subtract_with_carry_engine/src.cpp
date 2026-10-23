@@ -18,25 +18,20 @@ std::subtract_with_carry_engine<T1, T2, T3, T4> f1() {
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-std::subtract_with_carry_engine<T1, T2, T3, T4>
-f2(typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type a0) {
+std::subtract_with_carry_engine<T1, T2, T3, T4> f2(T1 a0) {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-void f3(
-    std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
-    typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type a1) {
+void f3(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0, T1 a1) {
   return a0.seed(a1);
 }
 
-template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type f4() {
+template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4> T1 f4() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::min();
 }
 
-template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type f5() {
+template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4> T1 f5() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::max();
 }
 
@@ -47,8 +42,7 @@ void f6(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type
-f7(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0) {
+T1 f7(std::subtract_with_carry_engine<T1, T2, T3, T4> &a0) {
   return a0.operator()();
 }
 

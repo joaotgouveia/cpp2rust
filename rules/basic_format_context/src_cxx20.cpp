@@ -25,13 +25,11 @@ std::locale f2(std::basic_format_context<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-typename std::basic_format_context<T1, T2>::iterator
-f3(std::basic_format_context<T1, T2> &a0) {
+T1 f3(std::basic_format_context<T1, T2> &a0) {
   return a0.out();
 }
 
 template <typename T1, typename T2>
-void f4(std::basic_format_context<T1, T2> &a0,
-        typename std::basic_format_context<T1, T2>::iterator a1) {
+void f4(std::basic_format_context<T1, T2> &a0, T1 a1) {
   return a0.advance_to(a1);
 }

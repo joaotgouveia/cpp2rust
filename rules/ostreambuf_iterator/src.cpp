@@ -1,6 +1,8 @@
 #include <ios>
 #include <iosfwd>
 #include <iterator>
+#include <ostream>
+#include <streambuf>
 #include <utility>
 
 template <typename T1, typename T2> using t1 = std::ostreambuf_iterator<T1, T2>;
@@ -18,14 +20,12 @@ template <typename T1, typename T2>
 using t5 = typename std::ostreambuf_iterator<T1, T2>::ostream_type;
 
 template <typename T1, typename T2>
-std::ostreambuf_iterator<T1, T2>
-f1(typename std::ostreambuf_iterator<T1, T2>::ostream_type &a0) {
+std::ostreambuf_iterator<T1, T2> f1(std::basic_ostream<T1, T2> &a0) {
   return std::ostreambuf_iterator<T1, T2>(a0);
 }
 
 template <typename T1, typename T2>
-std::ostreambuf_iterator<T1, T2>
-f2(typename std::ostreambuf_iterator<T1, T2>::streambuf_type *a0) {
+std::ostreambuf_iterator<T1, T2> f2(std::basic_streambuf<T1, T2> *a0) {
   return std::ostreambuf_iterator<T1, T2>(a0);
 }
 
@@ -54,12 +54,4 @@ std::ostreambuf_iterator<T1, T2> &f6(std::ostreambuf_iterator<T1, T2> &a0) {
 template <typename T1, typename T2>
 bool f7(const std::ostreambuf_iterator<T1, T2> &a0) {
   return a0.failed();
-}
-
-template <typename T1, typename T2> bool f8(bool a0) {
-  return std::ostreambuf_iterator<T1, T2>::ostream_type::sync_with_stdio(a0);
-}
-
-template <typename T1, typename T2> int f9() {
-  return std::ostreambuf_iterator<T1, T2>::ostream_type::xalloc();
 }

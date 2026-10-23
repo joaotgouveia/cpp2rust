@@ -33,6 +33,6 @@ f18(std::basic_istream<T1, T2> &a0,
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4>
-typename std::subtract_with_carry_engine<T1, T2, T3, T4>::result_type f19() {
+T1 f19() {
   return std::subtract_with_carry_engine<T1, T2, T3, T4>::default_seed;
 }

@@ -23,68 +23,78 @@ template <typename T1, typename T2, typename T3>
 using t7 = typename std::priority_queue<T1, T2, T3>::value_compare;
 
 template <typename T1, typename T2, typename T3>
-std::priority_queue<T1, T2, T3> f1(const std::priority_queue<T1, T2, T3> &a0) {
+std::priority_queue<T1, T2, T3> f1(const T3 &a0, const T2 &a1) {
+  return std::priority_queue<T1, T2, T3>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+std::priority_queue<T1, T2, T3> f2(const T3 &a0, T2 &&a1) {
+  return std::priority_queue<T1, T2, T3>(a0, std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3>
+std::priority_queue<T1, T2, T3> f3(const std::priority_queue<T1, T2, T3> &a0) {
   return std::priority_queue<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::priority_queue<T1, T2, T3> &f2(std::priority_queue<T1, T2, T3> &a0,
+std::priority_queue<T1, T2, T3> &f4(std::priority_queue<T1, T2, T3> &a0,
                                     const std::priority_queue<T1, T2, T3> &a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::priority_queue<T1, T2, T3> f3(std::priority_queue<T1, T2, T3> &&a0) {
+std::priority_queue<T1, T2, T3> f5(std::priority_queue<T1, T2, T3> &&a0) {
   return std::priority_queue<T1, T2, T3>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3>
-std::priority_queue<T1, T2, T3> &f4(std::priority_queue<T1, T2, T3> &a0,
+std::priority_queue<T1, T2, T3> &f6(std::priority_queue<T1, T2, T3> &a0,
                                     std::priority_queue<T1, T2, T3> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-bool f5(const std::priority_queue<T1, T2, T3> &a0) {
+bool f7(const std::priority_queue<T1, T2, T3> &a0) {
   return a0.empty();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::priority_queue<T1, T2, T3>::size_type
-f6(const std::priority_queue<T1, T2, T3> &a0) {
+f8(const std::priority_queue<T1, T2, T3> &a0) {
   return a0.size();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::priority_queue<T1, T2, T3>::const_reference
-f7(const std::priority_queue<T1, T2, T3> &a0) {
+f9(const std::priority_queue<T1, T2, T3> &a0) {
   return a0.top();
 }
 
 template <typename T1, typename T2, typename T3>
-void f8(std::priority_queue<T1, T2, T3> &a0,
-        const typename std::priority_queue<T1, T2, T3>::value_type &a1) {
+void f10(std::priority_queue<T1, T2, T3> &a0,
+         const typename std::priority_queue<T1, T2, T3>::value_type &a1) {
   return a0.push(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f9(std::priority_queue<T1, T2, T3> &a0,
-        typename std::priority_queue<T1, T2, T3>::value_type &&a1) {
+void f11(std::priority_queue<T1, T2, T3> &a0,
+         typename std::priority_queue<T1, T2, T3>::value_type &&a1) {
   return a0.push(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-void f10(std::priority_queue<T1, T2, T3> &a0) {
+void f12(std::priority_queue<T1, T2, T3> &a0) {
   return a0.pop();
 }
 
 template <typename T1, typename T2, typename T3>
-void f11(std::priority_queue<T1, T2, T3> &a0,
+void f13(std::priority_queue<T1, T2, T3> &a0,
          std::priority_queue<T1, T2, T3> &a1) {
   return a0.swap(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
-void f12(std::priority_queue<T1, T2, T3> &a0, T4 &&...a1) {
+void f14(std::priority_queue<T1, T2, T3> &a0, T4 &&...a1) {
   return a0.template emplace<T4...>(std::forward<T4>(a1)...);
 }

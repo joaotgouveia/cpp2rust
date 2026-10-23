@@ -75,234 +75,32 @@ std::slice &f134(std::slice &a0, std::slice &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1>
-std::valarray<T1> f135(const typename std::valarray<T1>::value_type &a0,
-                       std::size_t a1) {
+template <typename T1> std::valarray<T1> f135(const T1 *a0, std::size_t a1) {
   return std::valarray<T1>(a0, a1);
 }
 
 template <typename T1>
-std::valarray<T1> f136(const typename std::valarray<T1>::value_type *a0,
-                       std::size_t a1) {
-  return std::valarray<T1>(a0, a1);
-}
-
-template <typename T1>
-std::valarray<T1>
-f137(std::initializer_list<typename std::valarray<T1>::value_type> a0) {
-  return std::valarray<T1>(a0);
-}
-
-template <typename T1>
-std::valarray<T1>
-f138(const std::slice_array<typename std::valarray<T1>::value_type> &a0) {
-  return std::valarray<T1>(a0);
-}
-
-template <typename T1>
-std::valarray<T1>
-f139(const std::gslice_array<typename std::valarray<T1>::value_type> &a0) {
-  return std::valarray<T1>(a0);
-}
-
-template <typename T1>
-std::valarray<T1>
-f140(const std::mask_array<typename std::valarray<T1>::value_type> &a0) {
-  return std::valarray<T1>(a0);
-}
-
-template <typename T1>
-std::valarray<T1>
-f141(const std::indirect_array<typename std::valarray<T1>::value_type> &a0) {
-  return std::valarray<T1>(a0);
-}
-
-template <typename T1>
-std::valarray<T1> &
-f142(std::valarray<T1> &a0,
-     std::initializer_list<typename std::valarray<T1>::value_type> a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f143(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &
-f144(std::valarray<T1> &a0,
-     const std::slice_array<typename std::valarray<T1>::value_type> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &
-f145(std::valarray<T1> &a0,
-     const std::gslice_array<typename std::valarray<T1>::value_type> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &
-f146(std::valarray<T1> &a0,
-     const std::mask_array<typename std::valarray<T1>::value_type> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &
-f147(std::valarray<T1> &a0,
-     const std::indirect_array<typename std::valarray<T1>::value_type> &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-const typename std::valarray<T1>::value_type &f148(const std::valarray<T1> &a0,
-                                                   std::size_t a1) {
-  return a0.operator[](a1);
-}
-
-template <typename T1>
-typename std::valarray<T1>::value_type &f149(std::valarray<T1> &a0,
-                                             std::size_t a1) {
-  return a0.operator[](a1);
-}
-
-template <typename T1>
-std::slice_array<typename std::valarray<T1>::value_type>
-f150(std::valarray<T1> &a0, std::slice a1) {
+std::gslice_array<T1> f136(std::valarray<T1> &a0, std::gslice &&a1) {
   return a0.operator[](std::move(a1));
 }
 
 template <typename T1>
-std::gslice_array<typename std::valarray<T1>::value_type>
-f151(std::valarray<T1> &a0, const std::gslice &a1) {
-  return a0.operator[](a1);
-}
-
-template <typename T1>
-std::gslice_array<typename std::valarray<T1>::value_type>
-f152(std::valarray<T1> &a0, std::gslice &&a1) {
+std::mask_array<T1> f137(std::valarray<T1> &a0, std::valarray<bool> &&a1) {
   return a0.operator[](std::move(a1));
 }
 
 template <typename T1>
-std::mask_array<typename std::valarray<T1>::value_type>
-f153(std::valarray<T1> &a0, const std::valarray<bool> &a1) {
-  return a0.operator[](a1);
-}
-
-template <typename T1>
-std::mask_array<typename std::valarray<T1>::value_type>
-f154(std::valarray<T1> &a0, std::valarray<bool> &&a1) {
+std::indirect_array<T1> f138(std::valarray<T1> &a0,
+                             std::valarray<std::size_t> &&a1) {
   return a0.operator[](std::move(a1));
 }
 
 template <typename T1>
-std::indirect_array<typename std::valarray<T1>::value_type>
-f155(std::valarray<T1> &a0, const std::valarray<std::size_t> &a1) {
-  return a0.operator[](a1);
-}
-
-template <typename T1>
-std::indirect_array<typename std::valarray<T1>::value_type>
-f156(std::valarray<T1> &a0, std::valarray<std::size_t> &&a1) {
-  return a0.operator[](std::move(a1));
-}
-
-template <typename T1>
-std::valarray<T1> &f157(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator*=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f158(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator/=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f159(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator%=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f160(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator+=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f161(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator-=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f162(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator^=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f163(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator&=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f164(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator|=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f165(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator<<=(a1);
-}
-
-template <typename T1>
-std::valarray<T1> &f166(std::valarray<T1> &a0,
-                        const typename std::valarray<T1>::value_type &a1) {
-  return a0.operator>>=(a1);
-}
-
-template <typename T1>
-typename std::valarray<T1>::value_type f167(const std::valarray<T1> &a0) {
-  return a0.sum();
-}
-
-template <typename T1>
-typename std::valarray<T1>::value_type f168(const std::valarray<T1> &a0) {
-  return a0.min();
-}
-
-template <typename T1>
-typename std::valarray<T1>::value_type f169(const std::valarray<T1> &a0) {
-  return a0.max();
-}
-
-template <typename T1>
-std::valarray<T1> f170(const std::valarray<T1> &a0,
-                       typename std::valarray<T1>::value_type(a1)(
-                           typename std::valarray<T1>::value_type)) {
+std::valarray<T1> f139(const std::valarray<T1> &a0, T1(a1)(T1)) {
   return a0.apply(a1);
 }
 
 template <typename T1>
-std::valarray<T1> f171(const std::valarray<T1> &a0,
-                       typename std::valarray<T1>::value_type(a1)(
-                           const typename std::valarray<T1>::value_type &)) {
+std::valarray<T1> f140(const std::valarray<T1> &a0, T1(a1)(const T1 &)) {
   return a0.apply(a1);
-}
-
-template <typename T1>
-void f172(std::valarray<T1> &a0, std::size_t a1,
-          typename std::valarray<T1>::value_type a2) {
-  return a0.resize(a1, a2);
 }

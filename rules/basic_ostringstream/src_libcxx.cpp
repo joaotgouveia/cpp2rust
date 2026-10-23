@@ -1,85 +1,68 @@
 #include <sstream>
+#include <string>
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
 using t8 = typename std::basic_ostringstream<T1, T2, T3>::string_type;
 
 template <typename T1, typename T2, typename T3>
+std::basic_ostringstream<T1, T2, T3> f78(unsigned int a0) {
+  return std::basic_ostringstream<T1, T2, T3>(a0);
+}
+
+template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3>
-f78(const typename std::basic_ostringstream<T1, T2, T3>::string_type &a0,
-    typename std::basic_ostringstream<T1, T2, T3>::openmode a1) {
+f79(const std::basic_string<T1, T2, T3> &a0, unsigned int a1) {
   return std::basic_ostringstream<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_stringbuf<
-    typename std::basic_ostringstream<T1, T2, T3>::char_type,
-    typename std::basic_ostringstream<T1, T2, T3>::traits_type,
-    typename std::basic_ostringstream<T1, T2, T3>::allocator_type> *
-f79(const std::basic_ostringstream<T1, T2, T3> &a0) {
-  return a0.rdbuf();
+unsigned int f80(const std::basic_ostringstream<T1, T2, T3> &a0) {
+  return a0.rdstate();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_ostringstream<T1, T2, T3>::string_type
-f80(const std::basic_ostringstream<T1, T2, T3> &a0) {
-  return a0.str();
+void f81(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.clear(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f81(std::basic_ostringstream<T1, T2, T3> &a0,
-         const typename std::basic_ostringstream<T1, T2, T3>::string_type &a1) {
-  return a0.str(a1);
+void f82(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.setstate(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<typename std::basic_ostringstream<T1, T2, T3>::char_type,
-                   typename std::basic_ostringstream<T1, T2, T3>::traits_type> *
-f82(const std::basic_ostringstream<T1, T2, T3> &a0) {
-  return a0.tie();
+unsigned int f83(const std::basic_ostringstream<T1, T2, T3> &a0) {
+  return a0.exceptions();
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_ostream<typename std::basic_ostringstream<T1, T2, T3>::char_type,
-                   typename std::basic_ostringstream<T1, T2, T3>::traits_type> *
-f83(std::basic_ostringstream<T1, T2, T3> &a0,
-    std::basic_ostream<
-        typename std::basic_ostringstream<T1, T2, T3>::char_type,
-        typename std::basic_ostringstream<T1, T2, T3>::traits_type> *a1) {
-  return a0.tie(a1);
+void f84(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.exceptions(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-using t9 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::traits_type;
+unsigned int f85(const std::basic_ostringstream<T1, T2, T3> &a0) {
+  return a0.flags();
+}
 
 template <typename T1, typename T2, typename T3>
-using t10 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::value_type;
+unsigned int f86(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.flags(a1);
+}
 
 template <typename T1, typename T2, typename T3>
-using t11 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::allocator_type;
+unsigned int f87(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.setf(a1);
+}
 
 template <typename T1, typename T2, typename T3>
-using t12 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::size_type;
+unsigned int f88(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1,
+                 unsigned int a2) {
+  return a0.setf(a1, a2);
+}
 
 template <typename T1, typename T2, typename T3>
-using t13 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t14 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::reference;
-
-template <typename T1, typename T2, typename T3>
-using t15 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::const_reference;
-
-template <typename T1, typename T2, typename T3>
-using t16 = typename std::basic_ostringstream<T1, T2, T3>::string_type::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t17 =
-    typename std::basic_ostringstream<T1, T2, T3>::string_type::const_pointer;
+void f89(std::basic_ostringstream<T1, T2, T3> &a0, unsigned int a1) {
+  return a0.unsetf(a1);
+}

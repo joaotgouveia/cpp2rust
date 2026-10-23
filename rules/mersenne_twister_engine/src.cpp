@@ -33,9 +33,7 @@ template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
 std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11, T12,
                              T13, T14>
-f2(typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9,
-                                         T10, T11, T12, T13, T14>::result_type
-       a0) {
+f2(T1 a0) {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>(a0);
 }
@@ -45,18 +43,14 @@ template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
 void f3(std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                      T11, T12, T13, T14> &a0,
-        typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8,
-                                              T9, T10, T11, T12, T13,
-                                              T14>::result_type a1) {
+        T1 a1) {
   return a0.seed(a1);
 }
 
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f4() {
+T1 f4() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::min();
 }
@@ -64,9 +58,7 @@ f4() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f5() {
+T1 f5() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::max();
 }
@@ -83,10 +75,8 @@ void f6(std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f7(std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11,
-                                T12, T13, T14> &a0) {
+T1 f7(std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10, T11,
+                                   T12, T13, T14> &a0) {
   return a0.operator()();
 }
 
@@ -125,9 +115,7 @@ std::size_t f11() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f12() {
+T1 f12() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::xor_mask;
 }
@@ -143,9 +131,7 @@ std::size_t f13() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f14() {
+T1 f14() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::tempering_d;
 }
@@ -161,9 +147,7 @@ std::size_t f15() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f16() {
+T1 f16() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::tempering_b;
 }
@@ -179,9 +163,7 @@ std::size_t f17() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f18() {
+T1 f18() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::tempering_c;
 }
@@ -197,9 +179,7 @@ std::size_t f19() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f20() {
+T1 f20() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13,
                                       T14>::initialization_multiplier;
@@ -208,9 +188,7 @@ f20() {
 template <typename T1, std::size_t T2, std::size_t T3, std::size_t T4,
           std::size_t T5, T1 T6, std::size_t T7, T1 T8, std::size_t T9, T1 T10,
           std::size_t T11, T1 T12, std::size_t T13, T1 T14>
-typename std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
-                                      T11, T12, T13, T14>::result_type
-f21() {
+T1 f21() {
   return std::mersenne_twister_engine<T1, T2, T3, T4, T5, T6, T7, T8, T9, T10,
                                       T11, T12, T13, T14>::default_seed;
 }

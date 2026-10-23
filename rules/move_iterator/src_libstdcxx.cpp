@@ -2,22 +2,17 @@
 #include <utility>
 
 template <typename T1>
-std::move_iterator<T1> f14(typename std::move_iterator<T1>::iterator_type a0) {
-  return std::move_iterator<T1>(a0);
-}
-
-template <typename T1>
-std::move_iterator<T1> f15(std::move_iterator<T1> &a0, int a1) {
+std::move_iterator<T1> f24(std::move_iterator<T1> &a0, int a1) {
   return a0.operator++(a1);
 }
 
 template <typename T1, typename T2>
-std::move_iterator<T1> f16(const std::move_iterator<T2> &a0) {
+std::move_iterator<T1> f25(const std::move_iterator<T2> &a0) {
   return std::move_iterator<T1>(a0);
 }
 
 template <typename T1, typename T2>
-std::move_iterator<T1> &f17(std::move_iterator<T1> &a0,
+std::move_iterator<T1> &f26(std::move_iterator<T1> &a0,
                             const std::move_iterator<T2> &a1) {
   return a0.template operator= <T2>(a1);
 }

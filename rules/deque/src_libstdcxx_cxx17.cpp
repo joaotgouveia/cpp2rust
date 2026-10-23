@@ -1,5 +1,5 @@
+#include <algorithm>
 #include <deque>
-#include <initializer_list>
 #include <utility>
 
 template <typename T1, typename T2, typename... T3>

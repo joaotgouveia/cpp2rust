@@ -10,32 +10,22 @@ template <typename T1> using t2 = typename std::collate<T1>::char_type;
 template <typename T1> using t3 = typename std::collate<T1>::string_type;
 
 template <typename T1>
-using t4 = typename std::collate<T1>::string_type::traits_type;
+int f1(const std::collate<T1> &a0, const T1 *a1, const T1 *a2, const T1 *a3,
+       const T1 *a4) {
+  return a0.compare(a1, a2, a3, a4);
+}
 
 template <typename T1>
-using t5 = typename std::collate<T1>::string_type::value_type;
+std::basic_string<T1> f2(const std::collate<T1> &a0, const T1 *a1,
+                         const T1 *a2) {
+  return a0.transform(a1, a2);
+}
 
 template <typename T1>
-using t6 = typename std::collate<T1>::string_type::allocator_type;
+long f3(const std::collate<T1> &a0, const T1 *a1, const T1 *a2) {
+  return a0.hash(a1, a2);
+}
 
-template <typename T1>
-using t7 = typename std::collate<T1>::string_type::size_type;
-
-template <typename T1>
-using t8 = typename std::collate<T1>::string_type::difference_type;
-
-template <typename T1>
-using t9 = typename std::collate<T1>::string_type::reference;
-
-template <typename T1>
-using t10 = typename std::collate<T1>::string_type::const_reference;
-
-template <typename T1>
-using t11 = typename std::collate<T1>::string_type::pointer;
-
-template <typename T1>
-using t12 = typename std::collate<T1>::string_type::const_pointer;
-
-template <typename T1> const std::locale::id &f1() {
+template <typename T1> const std::locale::id &f4() {
   return std::collate<T1>::id;
 }

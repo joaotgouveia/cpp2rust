@@ -115,16 +115,14 @@ f17(std::basic_spanbuf<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-std::streamsize f18(std::basic_spanbuf<T1, T2> &a0,
-                    typename std::basic_spanbuf<T1, T2>::char_type *a1,
+std::streamsize f18(std::basic_spanbuf<T1, T2> &a0, T1 *a1,
                     std::streamsize a2) {
   return a0.sgetn(a1, a2);
 }
 
 template <typename T1, typename T2>
 typename std::basic_spanbuf<T1, T2>::int_type
-f19(std::basic_spanbuf<T1, T2> &a0,
-    typename std::basic_spanbuf<T1, T2>::char_type a1) {
+f19(std::basic_spanbuf<T1, T2> &a0, T1 a1) {
   return a0.sputbackc(a1);
 }
 
@@ -136,14 +134,12 @@ f20(std::basic_spanbuf<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 typename std::basic_spanbuf<T1, T2>::int_type
-f21(std::basic_spanbuf<T1, T2> &a0,
-    typename std::basic_spanbuf<T1, T2>::char_type a1) {
+f21(std::basic_spanbuf<T1, T2> &a0, T1 a1) {
   return a0.sputc(a1);
 }
 
 template <typename T1, typename T2>
-std::streamsize f22(std::basic_spanbuf<T1, T2> &a0,
-                    const typename std::basic_spanbuf<T1, T2>::char_type *a1,
+std::streamsize f22(std::basic_spanbuf<T1, T2> &a0, T1 const *a1,
                     std::streamsize a2) {
   return a0.sputn(a1, a2);
 }

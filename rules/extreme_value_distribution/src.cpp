@@ -15,55 +15,61 @@ template <typename T1> std::extreme_value_distribution<T1> f1() {
   return std::extreme_value_distribution<T1>();
 }
 
+template <typename T1> std::extreme_value_distribution<T1> f2(T1 a0, T1 a1) {
+  return std::extreme_value_distribution<T1>(a0, a1);
+}
+
 template <typename T1>
 std::extreme_value_distribution<T1>
-f2(const typename std::extreme_value_distribution<T1>::param_type &a0) {
+f3(const typename std::extreme_value_distribution<T1>::param_type &a0) {
   return std::extreme_value_distribution<T1>(a0);
 }
 
-template <typename T1> void f3(std::extreme_value_distribution<T1> &a0) {
+template <typename T1> void f4(std::extreme_value_distribution<T1> &a0) {
   return a0.reset();
+}
+
+template <typename T1> T1 f5(const std::extreme_value_distribution<T1> &a0) {
+  return a0.a();
+}
+
+template <typename T1> T1 f6(const std::extreme_value_distribution<T1> &a0) {
+  return a0.b();
 }
 
 template <typename T1>
 typename std::extreme_value_distribution<T1>::param_type
-f4(const std::extreme_value_distribution<T1> &a0) {
+f7(const std::extreme_value_distribution<T1> &a0) {
   return a0.param();
 }
 
 template <typename T1>
-void f5(std::extreme_value_distribution<T1> &a0,
+void f8(std::extreme_value_distribution<T1> &a0,
         const typename std::extreme_value_distribution<T1>::param_type &a1) {
   return a0.param(a1);
 }
 
-template <typename T1>
-typename std::extreme_value_distribution<T1>::result_type
-f6(const std::extreme_value_distribution<T1> &a0) {
+template <typename T1> T1 f9(const std::extreme_value_distribution<T1> &a0) {
   return a0.min();
 }
 
-template <typename T1>
-typename std::extreme_value_distribution<T1>::result_type
-f7(const std::extreme_value_distribution<T1> &a0) {
+template <typename T1> T1 f10(const std::extreme_value_distribution<T1> &a0) {
   return a0.max();
 }
 
 template <typename T1, typename T2>
-typename std::extreme_value_distribution<T1>::result_type
-f8(std::extreme_value_distribution<T1> &a0, T2 &a1) {
+T1 f11(std::extreme_value_distribution<T1> &a0, T2 &a1) {
   return a0.template operator()<T2>(a1);
 }
 
 template <typename T1, typename T2>
-typename std::extreme_value_distribution<T1>::result_type
-f9(std::extreme_value_distribution<T1> &a0, T2 &a1,
-   const typename std::extreme_value_distribution<T1>::param_type &a2) {
+T1 f12(std::extreme_value_distribution<T1> &a0, T2 &a1,
+       const typename std::extreme_value_distribution<T1>::param_type &a2) {
   return a0.template operator()<T2>(a1, a2);
 }
 
 template <typename T1>
-bool f10(const std::extreme_value_distribution<T1> &a0,
+bool f13(const std::extreme_value_distribution<T1> &a0,
          const std::extreme_value_distribution<T1> &a1) {
   return operator==(a0, a1);
 }

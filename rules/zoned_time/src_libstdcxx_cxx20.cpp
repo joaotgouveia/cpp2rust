@@ -1,5 +1,6 @@
 #include <chrono>
 #include <string_view>
+#include <type_traits>
 #include <utility>
 
 template <typename T1, typename T2> using t1 = std::chrono::zoned_time<T1, T2>;
@@ -85,17 +86,18 @@ std::chrono::zoned_time<T1, T2> &f14(std::chrono::zoned_time<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-std::chrono::sys_time<typename std::chrono::zoned_time<T1, T2>::duration>
+std::chrono::sys_time<std::common_type_t<T1, std::chrono::seconds>>
 f15(const std::chrono::zoned_time<T1, T2> &a0) {
-  return static_cast<std::chrono::sys_time<
-      typename std::chrono::zoned_time<T1, T2>::duration>>(a0);
+  return static_cast<
+      std::chrono::sys_time<std::common_type_t<T1, std::chrono::seconds>>>(a0);
 }
 
 template <typename T1, typename T2>
-std::chrono::local_time<typename std::chrono::zoned_time<T1, T2>::duration>
+std::chrono::local_time<std::common_type_t<T1, std::chrono::seconds>>
 f16(const std::chrono::zoned_time<T1, T2> &a0) {
-  return static_cast<std::chrono::local_time<
-      typename std::chrono::zoned_time<T1, T2>::duration>>(a0);
+  return static_cast<
+      std::chrono::local_time<std::common_type_t<T1, std::chrono::seconds>>>(
+      a0);
 }
 
 template <typename T1, typename T2>
@@ -104,13 +106,13 @@ T2 f17(const std::chrono::zoned_time<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-std::chrono::local_time<typename std::chrono::zoned_time<T1, T2>::duration>
+std::chrono::local_time<std::common_type_t<T1, std::chrono::seconds>>
 f18(const std::chrono::zoned_time<T1, T2> &a0) {
   return a0.get_local_time();
 }
 
 template <typename T1, typename T2>
-std::chrono::sys_time<typename std::chrono::zoned_time<T1, T2>::duration>
+std::chrono::sys_time<std::common_type_t<T1, std::chrono::seconds>>
 f19(const std::chrono::zoned_time<T1, T2> &a0) {
   return a0.get_sys_time();
 }

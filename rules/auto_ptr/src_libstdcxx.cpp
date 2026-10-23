@@ -37,41 +37,28 @@ std::auto_ptr<T1> &f7(std::auto_ptr<T1> &a0, std::auto_ptr<T1> &a1) {
   return a0.operator=(a1);
 }
 
-template <typename T1>
-typename std::auto_ptr<T1>::element_type &f8(const std::auto_ptr<T1> &a0) {
+template <typename T1> T1 &f8(const std::auto_ptr<T1> &a0) {
   return a0.operator*();
 }
 
-template <typename T1>
-typename std::auto_ptr<T1>::element_type *f9(const std::auto_ptr<T1> &a0) {
+template <typename T1> T1 *f9(const std::auto_ptr<T1> &a0) {
   return a0.operator->();
 }
 
-template <typename T1>
-typename std::auto_ptr<T1>::element_type *f10(const std::auto_ptr<T1> &a0) {
-  return a0.get();
-}
+template <typename T1> T1 *f10(const std::auto_ptr<T1> &a0) { return a0.get(); }
 
-template <typename T1>
-typename std::auto_ptr<T1>::element_type *f11(std::auto_ptr<T1> &a0) {
-  return a0.release();
-}
+template <typename T1> T1 *f11(std::auto_ptr<T1> &a0) { return a0.release(); }
 
-template <typename T1>
-void f12(std::auto_ptr<T1> &a0, typename std::auto_ptr<T1>::element_type *a1) {
+template <typename T1> void f12(std::auto_ptr<T1> &a0, T1 *a1) {
   return a0.reset(a1);
 }
 
-template <typename T1>
-std::auto_ptr<T1>
-f13(std::auto_ptr_ref<typename std::auto_ptr<T1>::element_type> a0) {
+template <typename T1> std::auto_ptr<T1> f13(std::auto_ptr_ref<T1> a0) {
   return {a0};
 }
 
 template <typename T1>
-std::auto_ptr<T1> &
-f14(std::auto_ptr<T1> &a0,
-    std::auto_ptr_ref<typename std::auto_ptr<T1>::element_type> a1) {
+std::auto_ptr<T1> &f14(std::auto_ptr<T1> &a0, std::auto_ptr_ref<T1> a1) {
   return a0.operator=(a1);
 }
 

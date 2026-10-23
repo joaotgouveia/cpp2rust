@@ -26,48 +26,35 @@ std::flat_multiset<T1, T2, T3> f4(std::flat_multiset<T1, T2, T3> &&a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3>
-f5(const typename std::flat_multiset<T1, T2, T3>::key_compare &a0) {
+std::flat_multiset<T1, T2, T3> f5(const T2 &a0) {
   return std::flat_multiset<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3>
-f6(typename std::flat_multiset<T1, T2, T3>::container_type a0,
-   const typename std::flat_multiset<T1, T2, T3>::key_compare &a1) {
+std::flat_multiset<T1, T2, T3> f6(T3 a0, const T2 &a1) {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3>
-f7(std::sorted_equivalent_t a0,
-   typename std::flat_multiset<T1, T2, T3>::container_type a1,
-   const typename std::flat_multiset<T1, T2, T3>::key_compare &a2) {
+std::flat_multiset<T1, T2, T3> f7(std::sorted_equivalent_t a0, T3 a1,
+                                  const T2 &a2) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3>
-f8(std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-       a0,
-   const typename std::flat_multiset<T1, T2, T3>::key_compare &a1) {
+std::flat_multiset<T1, T2, T3> f8(std::initializer_list<T1> a0, const T2 &a1) {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3>
-f9(std::sorted_equivalent_t a0,
-   std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-       a1,
-   const typename std::flat_multiset<T1, T2, T3>::key_compare &a2) {
+std::flat_multiset<T1, T2, T3> f9(std::sorted_equivalent_t a0,
+                                  std::initializer_list<T1> a1, const T2 &a2) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-std::flat_multiset<T1, T2, T3> &
-f10(std::flat_multiset<T1, T2, T3> &a0,
-    std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a1) {
+std::flat_multiset<T1, T2, T3> &f10(std::flat_multiset<T1, T2, T3> &a0,
+                                    std::initializer_list<T1> a1) {
   return a0.operator=(a1);
 }
 
@@ -174,59 +161,48 @@ f27(const std::flat_multiset<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
-f28(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::value_type &a1) {
+f28(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
-f29(std::flat_multiset<T1, T2, T3> &a0,
-    typename std::flat_multiset<T1, T2, T3>::value_type &&a1) {
+f29(std::flat_multiset<T1, T2, T3> &a0, T1 &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f30(std::flat_multiset<T1, T2, T3> &a0,
-    typename std::flat_multiset<T1, T2, T3>::const_iterator a1,
-    const typename std::flat_multiset<T1, T2, T3>::value_type &a2) {
+    typename std::flat_multiset<T1, T2, T3>::const_iterator a1, const T1 &a2) {
   return a0.insert(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
 f31(std::flat_multiset<T1, T2, T3> &a0,
-    typename std::flat_multiset<T1, T2, T3>::const_iterator a1,
-    typename std::flat_multiset<T1, T2, T3>::value_type &&a2) {
+    typename std::flat_multiset<T1, T2, T3>::const_iterator a1, T1 &&a2) {
   return a0.insert(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
-void f32(
-    std::flat_multiset<T1, T2, T3> &a0,
-    std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a1) {
+void f32(std::flat_multiset<T1, T2, T3> &a0, std::initializer_list<T1> a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f33(
-    std::flat_multiset<T1, T2, T3> &a0, std::sorted_equivalent_t a1,
-    std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a2) {
+void f33(std::flat_multiset<T1, T2, T3> &a0, std::sorted_equivalent_t a1,
+         std::initializer_list<T1> a2) {
   return a0.insert(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::flat_multiset<T1, T2, T3>::container_type
-f34(std::flat_multiset<T1, T2, T3> &&a0) {
+T3 f34(std::flat_multiset<T1, T2, T3> &&a0) {
   return std::move(a0).extract();
 }
 
 template <typename T1, typename T2, typename T3>
-void f35(std::flat_multiset<T1, T2, T3> &a0,
-         typename std::flat_multiset<T1, T2, T3>::container_type &&a1) {
+void f35(std::flat_multiset<T1, T2, T3> &a0, T3 &&a1) {
   return a0.replace(std::move(a1));
 }
 
@@ -239,8 +215,7 @@ f36(std::flat_multiset<T1, T2, T3> &a0,
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::size_type
-f37(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f37(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.erase(a1);
 }
 
@@ -264,99 +239,84 @@ void f40(std::flat_multiset<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::flat_multiset<T1, T2, T3>::key_compare
-f41(const std::flat_multiset<T1, T2, T3> &a0) {
+T2 f41(const std::flat_multiset<T1, T2, T3> &a0) {
   return a0.key_comp();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::flat_multiset<T1, T2, T3>::value_compare
-f42(const std::flat_multiset<T1, T2, T3> &a0) {
+T2 f42(const std::flat_multiset<T1, T2, T3> &a0) {
   return a0.value_comp();
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
-f43(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f43(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
-f44(const std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f44(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::size_type
-f45(const std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f45(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.count(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-bool f46(const std::flat_multiset<T1, T2, T3> &a0,
-         const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+bool f46(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.contains(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
-f47(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f47(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.lower_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
-f48(const std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f48(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.lower_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::iterator
-f49(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f49(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.upper_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::flat_multiset<T1, T2, T3>::const_iterator
-f50(const std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f50(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.upper_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::flat_multiset<T1, T2, T3>::iterator,
           typename std::flat_multiset<T1, T2, T3>::iterator>
-f51(std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f51(std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::flat_multiset<T1, T2, T3>::const_iterator,
           typename std::flat_multiset<T1, T2, T3>::const_iterator>
-f52(const std::flat_multiset<T1, T2, T3> &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_type &a1) {
+f52(const std::flat_multiset<T1, T2, T3> &a0, const T1 &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f53(T4 a0, T4 a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2) {
+std::flat_multiset<T1, T2, T3> f53(T4 a0, T4 a1, const T2 &a2) {
   return std::flat_multiset<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f54(std::sorted_equivalent_t a0, T4 a1, T4 a2,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a3) {
+std::flat_multiset<T1, T2, T3> f54(std::sorted_equivalent_t a0, T4 a1, T4 a2,
+                                   const T2 &a3) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2, a3);
 }
 
@@ -366,9 +326,8 @@ std::flat_multiset<T1, T2, T3> f55(std::from_range_t a0, T4 &&a1) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f56(std::from_range_t a0, T4 &&a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2) {
+std::flat_multiset<T1, T2, T3> f56(std::from_range_t a0, T4 &&a1,
+                                   const T2 &a2) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), std::forward<T4>(a1),
                                         a2);
 }
@@ -379,41 +338,29 @@ std::flat_multiset<T1, T2, T3> f57(const T4 &a0) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f58(const typename std::flat_multiset<T1, T2, T3>::key_compare &a0,
-    const T4 &a1) {
+std::flat_multiset<T1, T2, T3> f58(const T2 &a0, const T4 &a1) {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f59(const typename std::flat_multiset<T1, T2, T3>::container_type &a0,
-    const T4 &a1) {
+std::flat_multiset<T1, T2, T3> f59(const T3 &a0, const T4 &a1) {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f60(const typename std::flat_multiset<T1, T2, T3>::container_type &a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a1,
-    const T4 &a2) {
+std::flat_multiset<T1, T2, T3> f60(const T3 &a0, const T2 &a1, const T4 &a2) {
   return std::flat_multiset<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f61(std::sorted_equivalent_t a0,
-    const typename std::flat_multiset<T1, T2, T3>::container_type &a1,
-    const T4 &a2) {
+std::flat_multiset<T1, T2, T3> f61(std::sorted_equivalent_t a0, const T3 &a1,
+                                   const T4 &a2) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f62(std::sorted_equivalent_t a0,
-    const typename std::flat_multiset<T1, T2, T3>::container_type &a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2,
-    const T4 &a3) {
+std::flat_multiset<T1, T2, T3> f62(std::sorted_equivalent_t a0, const T3 &a1,
+                                   const T2 &a2, const T4 &a3) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2, a3);
 }
 
@@ -435,10 +382,7 @@ std::flat_multiset<T1, T2, T3> f65(T4 a0, T4 a1, const T5 &a2) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::flat_multiset<T1, T2, T3>
-f66(T4 a0, T4 a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2,
-    const T5 &a3) {
+std::flat_multiset<T1, T2, T3> f66(T4 a0, T4 a1, const T2 &a2, const T5 &a3) {
   return std::flat_multiset<T1, T2, T3>(a0, a1, a2, a3);
 }
 
@@ -449,10 +393,8 @@ std::flat_multiset<T1, T2, T3> f67(std::sorted_equivalent_t a0, T4 a1, T4 a2,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::flat_multiset<T1, T2, T3>
-f68(std::sorted_equivalent_t a0, T4 a1, T4 a2,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a3,
-    const T5 &a4) {
+std::flat_multiset<T1, T2, T3> f68(std::sorted_equivalent_t a0, T4 a1, T4 a2,
+                                   const T2 &a3, const T5 &a4) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2, a3, a4);
 }
 
@@ -464,47 +406,33 @@ std::flat_multiset<T1, T2, T3> f69(std::from_range_t a0, T4 &&a1,
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::flat_multiset<T1, T2, T3>
-f70(std::from_range_t a0, T4 &&a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2,
-    const T5 &a3) {
+std::flat_multiset<T1, T2, T3> f70(std::from_range_t a0, T4 &&a1, const T2 &a2,
+                                   const T5 &a3) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), std::forward<T4>(a1), a2,
                                         a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f71(std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a0,
-    const T4 &a1) {
+std::flat_multiset<T1, T2, T3> f71(std::initializer_list<T1> a0, const T4 &a1) {
   return std::flat_multiset<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f72(std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a0,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a1,
-    const T4 &a2) {
+std::flat_multiset<T1, T2, T3> f72(std::initializer_list<T1> a0, const T2 &a1,
+                                   const T4 &a2) {
   return std::flat_multiset<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f73(std::sorted_equivalent_t a0,
-    std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a1,
-    const T4 &a2) {
+std::flat_multiset<T1, T2, T3> f73(std::sorted_equivalent_t a0,
+                                   std::initializer_list<T1> a1, const T4 &a2) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::flat_multiset<T1, T2, T3>
-f74(std::sorted_equivalent_t a0,
-    std::initializer_list<typename std::flat_multiset<T1, T2, T3>::value_type>
-        a1,
-    const typename std::flat_multiset<T1, T2, T3>::key_compare &a2,
-    const T4 &a3) {
+std::flat_multiset<T1, T2, T3> f74(std::sorted_equivalent_t a0,
+                                   std::initializer_list<T1> a1, const T2 &a2,
+                                   const T4 &a3) {
   return std::flat_multiset<T1, T2, T3>(std::move(a0), a1, a2, a3);
 }
 
@@ -655,54 +583,3 @@ using t21 = typename std::flat_multiset<T1, T2, T3>::const_iterator::value_type;
 template <typename T1, typename T2, typename T3>
 using t22 =
     typename std::flat_multiset<T1, T2, T3>::const_iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t23 =
-    typename std::flat_multiset<T1, T2,
-                                T3>::reverse_iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t24 = typename std::flat_multiset<T1, T2, T3>::reverse_iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t25 =
-    typename std::flat_multiset<T1, T2, T3>::reverse_iterator::iterator_concept;
-
-template <typename T1, typename T2, typename T3>
-using t26 =
-    typename std::flat_multiset<T1, T2, T3>::reverse_iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t27 =
-    typename std::flat_multiset<T1, T2, T3>::reverse_iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t28 =
-    typename std::flat_multiset<T1, T2, T3>::reverse_iterator::reference;
-
-template <typename T1, typename T2, typename T3>
-using t29 =
-    typename std::flat_multiset<T1, T2,
-                                T3>::const_reverse_iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t30 =
-    typename std::flat_multiset<T1, T2, T3>::const_reverse_iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t31 =
-    typename std::flat_multiset<T1, T2,
-                                T3>::const_reverse_iterator::iterator_concept;
-
-template <typename T1, typename T2, typename T3>
-using t32 =
-    typename std::flat_multiset<T1, T2, T3>::const_reverse_iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t33 =
-    typename std::flat_multiset<T1, T2,
-                                T3>::const_reverse_iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t34 =
-    typename std::flat_multiset<T1, T2, T3>::const_reverse_iterator::reference;

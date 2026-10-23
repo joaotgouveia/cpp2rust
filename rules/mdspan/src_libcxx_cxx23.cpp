@@ -136,8 +136,7 @@ std::mdspan<T1, T2, T3, T4> f22(std::mdspan<T1, T2, T3, T4> &&a0) {
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::mdspan<T1, T2, T3, T4>
-f23(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
-    const typename std::mdspan<T1, T2, T3, T4>::extents_type &a1) {
+f23(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0, const T2 &a1) {
   return std::mdspan<T1, T2, T3, T4>(a0, a1);
 }
 
@@ -152,7 +151,7 @@ template <typename T1, typename T2, typename T3, typename T4>
 std::mdspan<T1, T2, T3, T4>
 f25(typename std::mdspan<T1, T2, T3, T4>::data_handle_type a0,
     const typename std::mdspan<T1, T2, T3, T4>::mapping_type &a1,
-    const typename std::mdspan<T1, T2, T3, T4>::accessor_type &a2) {
+    const T4 &a2) {
   return std::mdspan<T1, T2, T3, T4>(a0, a1, a2);
 }
 
@@ -180,8 +179,7 @@ bool f29(const std::mdspan<T1, T2, T3, T4> &a0) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-const typename std::mdspan<T1, T2, T3, T4>::extents_type &
-f30(const std::mdspan<T1, T2, T3, T4> &a0) {
+const T2 &f30(const std::mdspan<T1, T2, T3, T4> &a0) {
   return a0.extents();
 }
 
@@ -198,8 +196,7 @@ f32(const std::mdspan<T1, T2, T3, T4> &a0) {
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-const typename std::mdspan<T1, T2, T3, T4>::accessor_type &
-f33(const std::mdspan<T1, T2, T3, T4> &a0) {
+const T4 &f33(const std::mdspan<T1, T2, T3, T4> &a0) {
   return a0.accessor();
 }
 

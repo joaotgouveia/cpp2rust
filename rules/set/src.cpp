@@ -44,241 +44,234 @@ template <typename T1, typename T2, typename T3> std::set<T1, T2, T3> f1() {
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3> f2(const std::set<T1, T2, T3> &a0) {
+std::set<T1, T2, T3> f2(const T2 &a0, const T3 &a1) {
+  return std::set<T1, T2, T3>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+std::set<T1, T2, T3> f3(const std::set<T1, T2, T3> &a0) {
   return std::set<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3> f3(std::set<T1, T2, T3> &&a0) {
+std::set<T1, T2, T3> f4(std::set<T1, T2, T3> &&a0) {
   return std::set<T1, T2, T3>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3>
-f4(const typename std::set<T1, T2, T3>::allocator_type &a0) {
+std::set<T1, T2, T3> f5(std::initializer_list<T1> a0, const T2 &a1,
+                        const T3 &a2) {
+  return std::set<T1, T2, T3>(a0, a1, a2);
+}
+
+template <typename T1, typename T2, typename T3>
+std::set<T1, T2, T3> f6(const T3 &a0) {
   return std::set<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3>
-f5(const std::set<T1, T2, T3> &a0,
-   const typename std::set<T1, T2, T3>::allocator_type &a1) {
+std::set<T1, T2, T3> f7(const std::set<T1, T2, T3> &a0, const T3 &a1) {
   return std::set<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3>
-f6(std::set<T1, T2, T3> &&a0,
-   const typename std::set<T1, T2, T3>::allocator_type &a1) {
+std::set<T1, T2, T3> f8(std::set<T1, T2, T3> &&a0, const T3 &a1) {
   return std::set<T1, T2, T3>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3>
-f7(std::initializer_list<typename std::set<T1, T2, T3>::value_type> a0,
-   const typename std::set<T1, T2, T3>::allocator_type &a1) {
+std::set<T1, T2, T3> f9(std::initializer_list<T1> a0, const T3 &a1) {
   return std::set<T1, T2, T3>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3> &f8(std::set<T1, T2, T3> &a0,
-                         const std::set<T1, T2, T3> &a1) {
+std::set<T1, T2, T3> &f10(std::set<T1, T2, T3> &a0,
+                          const std::set<T1, T2, T3> &a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3> &f9(std::set<T1, T2, T3> &a0, std::set<T1, T2, T3> &&a1) {
+std::set<T1, T2, T3> &f11(std::set<T1, T2, T3> &a0, std::set<T1, T2, T3> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-std::set<T1, T2, T3> &
-f10(std::set<T1, T2, T3> &a0,
-    std::initializer_list<typename std::set<T1, T2, T3>::value_type> a1) {
+std::set<T1, T2, T3> &f12(std::set<T1, T2, T3> &a0,
+                          std::initializer_list<T1> a1) {
   return a0.operator=(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::key_compare f11(const std::set<T1, T2, T3> &a0) {
+T2 f13(const std::set<T1, T2, T3> &a0) {
   return a0.key_comp();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::value_compare
-f12(const std::set<T1, T2, T3> &a0) {
+T2 f14(const std::set<T1, T2, T3> &a0) {
   return a0.value_comp();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::allocator_type
-f13(const std::set<T1, T2, T3> &a0) {
+T3 f15(const std::set<T1, T2, T3> &a0) {
   return a0.get_allocator();
 }
 
 template <typename T1, typename T2, typename T3>
-bool f14(const std::set<T1, T2, T3> &a0) {
+bool f16(const std::set<T1, T2, T3> &a0) {
   return a0.empty();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::size_type f15(const std::set<T1, T2, T3> &a0) {
+typename std::set<T1, T2, T3>::size_type f17(const std::set<T1, T2, T3> &a0) {
   return a0.size();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::size_type f16(const std::set<T1, T2, T3> &a0) {
+typename std::set<T1, T2, T3>::size_type f18(const std::set<T1, T2, T3> &a0) {
   return a0.max_size();
 }
 
 template <typename T1, typename T2, typename T3>
-void f17(std::set<T1, T2, T3> &a0, std::set<T1, T2, T3> &a1) {
+void f19(std::set<T1, T2, T3> &a0, std::set<T1, T2, T3> &a1) {
   return a0.swap(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::set<T1, T2, T3>::iterator, bool>
-f18(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::value_type &a1) {
+f20(std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::set<T1, T2, T3>::iterator, bool>
-f19(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::value_type &&a1) {
+f21(std::set<T1, T2, T3> &a0, T1 &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
-f20(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
-    const typename std::set<T1, T2, T3>::value_type &a2) {
+f22(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
+    const T1 &a2) {
   return a0.insert(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
-f21(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
-    typename std::set<T1, T2, T3>::value_type &&a2) {
+f23(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
+    T1 &&a2) {
   return a0.insert(a1, std::move(a2));
 }
 
 template <typename T1, typename T2, typename T3>
-void f22(std::set<T1, T2, T3> &a0,
-         std::initializer_list<typename std::set<T1, T2, T3>::value_type> a1) {
+void f24(std::set<T1, T2, T3> &a0, std::initializer_list<T1> a1) {
   return a0.insert(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
-f23(std::set<T1, T2, T3> &a0,
+f25(std::set<T1, T2, T3> &a0,
     typename std::set<T1, T2, T3>::const_iterator a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::size_type
-f24(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::size_type f26(std::set<T1, T2, T3> &a0,
+                                             const T1 &a1) {
   return a0.erase(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
-f25(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
+f27(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     typename std::set<T1, T2, T3>::const_iterator a2) {
   return a0.erase(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f26(std::set<T1, T2, T3> &a0) {
+void f28(std::set<T1, T2, T3> &a0) {
   return a0.clear();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::size_type
-f27(const std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::size_type f29(const std::set<T1, T2, T3> &a0,
+                                             const T1 &a1) {
   return a0.count(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::iterator
-f28(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::iterator f30(std::set<T1, T2, T3> &a0,
+                                            const T1 &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::const_iterator
-f29(const std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+f31(const std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.find(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::iterator
-f30(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::iterator f32(std::set<T1, T2, T3> &a0,
+                                            const T1 &a1) {
   return a0.lower_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::const_iterator
-f31(const std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+f33(const std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.lower_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::iterator
-f32(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::iterator f34(std::set<T1, T2, T3> &a0,
+                                            const T1 &a1) {
   return a0.upper_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::const_iterator
-f33(const std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+f35(const std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.upper_bound(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::set<T1, T2, T3>::iterator,
           typename std::set<T1, T2, T3>::iterator>
-f34(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+f36(std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 std::pair<typename std::set<T1, T2, T3>::const_iterator,
           typename std::set<T1, T2, T3>::const_iterator>
-f35(const std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+f37(const std::set<T1, T2, T3> &a0, const T1 &a1) {
   return a0.equal_range(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-std::set<T1, T2, T3>
-f36(T4 a0, T4 a1, const typename std::set<T1, T2, T3>::allocator_type &a2) {
+std::set<T1, T2, T3> f38(T4 a0, T4 a1, const T2 &a2, const T3 &a3) {
+  return std::set<T1, T2, T3>(a0, a1, a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::set<T1, T2, T3> f39(T4 a0, T4 a1, const T3 &a2) {
   return std::set<T1, T2, T3>(a0, a1, a2);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
 std::pair<typename std::set<T1, T2, T3>::iterator, bool>
-f37(std::set<T1, T2, T3> &a0, T4 &&...a1) {
+f40(std::set<T1, T2, T3> &a0, T4 &&...a1) {
   return a0.template emplace<T4...>(std::forward<T4>(a1)...);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
 typename std::set<T1, T2, T3>::iterator
-f38(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
+f41(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     T4 &&...a2) {
   return a0.template emplace_hint<T4...>(a1, std::forward<T4>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-void f39(std::set<T1, T2, T3> &a0, T4 a1, T4 a2) {
+void f42(std::set<T1, T2, T3> &a0, T4 a1, T4 a2) {
   return a0.template insert<T4>(a1, a2);
 }

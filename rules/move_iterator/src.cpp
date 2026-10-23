@@ -20,14 +20,11 @@ template <typename T1> std::move_iterator<T1> f1() {
   return std::move_iterator<T1>();
 }
 
-template <typename T1>
-typename std::move_iterator<T1>::reference
-f2(const std::move_iterator<T1> &a0) {
-  return a0.operator*();
+template <typename T1> std::move_iterator<T1> f2(T1 a0) {
+  return std::move_iterator<T1>(a0);
 }
 
-template <typename T1>
-typename std::move_iterator<T1>::pointer f3(const std::move_iterator<T1> &a0) {
+template <typename T1> T1 f3(const std::move_iterator<T1> &a0) {
   return a0.operator->();
 }
 
@@ -42,37 +39,4 @@ template <typename T1> std::move_iterator<T1> &f5(std::move_iterator<T1> &a0) {
 template <typename T1>
 std::move_iterator<T1> f6(std::move_iterator<T1> &a0, int a1) {
   return a0.operator--(a1);
-}
-
-template <typename T1>
-std::move_iterator<T1> f7(const std::move_iterator<T1> &a0,
-                          typename std::move_iterator<T1>::difference_type a1) {
-  return a0.operator+(a1);
-}
-
-template <typename T1>
-std::move_iterator<T1> &
-f8(std::move_iterator<T1> &a0,
-   typename std::move_iterator<T1>::difference_type a1) {
-  return a0.operator+=(a1);
-}
-
-template <typename T1>
-std::move_iterator<T1> f9(const std::move_iterator<T1> &a0,
-                          typename std::move_iterator<T1>::difference_type a1) {
-  return a0.operator-(a1);
-}
-
-template <typename T1>
-std::move_iterator<T1> &
-f10(std::move_iterator<T1> &a0,
-    typename std::move_iterator<T1>::difference_type a1) {
-  return a0.operator-=(a1);
-}
-
-template <typename T1>
-typename std::move_iterator<T1>::reference
-f11(const std::move_iterator<T1> &a0,
-    typename std::move_iterator<T1>::difference_type a1) {
-  return a0.operator[](a1);
 }

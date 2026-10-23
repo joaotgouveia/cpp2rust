@@ -1,17 +1,19 @@
 #include <iterator>
+#include <ostream>
+#include <streambuf>
 #include <utility>
 
 template <typename T1, typename T2>
-using t12 = typename std::ostreambuf_iterator<T1, T2>::iterator_category;
+using t7 = typename std::ostreambuf_iterator<T1, T2>::iterator_category;
 
 template <typename T1, typename T2>
-using t13 = typename std::ostreambuf_iterator<T1, T2>::value_type;
+using t8 = typename std::ostreambuf_iterator<T1, T2>::value_type;
 
 template <typename T1, typename T2>
-using t14 = typename std::ostreambuf_iterator<T1, T2>::difference_type;
+using t9 = typename std::ostreambuf_iterator<T1, T2>::difference_type;
 
 template <typename T1, typename T2>
-using t15 = typename std::ostreambuf_iterator<T1, T2>::pointer;
+using t10 = typename std::ostreambuf_iterator<T1, T2>::pointer;
 
 template <typename T1, typename T2>
-using t16 = typename std::ostreambuf_iterator<T1, T2>::reference;
+using t11 = typename std::ostreambuf_iterator<T1, T2>::reference;

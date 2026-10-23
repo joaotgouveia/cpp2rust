@@ -4,4 +4,4 @@
 #include <utility>
 
 template <typename T1, typename T2>
-using t12 = typename std::istreambuf_iterator<T1, T2>::pointer;
+using t7 = typename std::istreambuf_iterator<T1, T2>::pointer;

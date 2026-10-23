@@ -9,3 +9,8 @@ template <typename T1>
 std::indirect_array<T1> f1(const std::indirect_array<T1> &a0) {
   return std::indirect_array<T1>(a0);
 }
+
+template <typename T1>
+void f2(const std::indirect_array<T1> &a0, const T1 &a1) {
+  return a0.operator=(a1);
+}

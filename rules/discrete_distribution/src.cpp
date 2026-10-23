@@ -51,15 +51,11 @@ void f7(std::discrete_distribution<T1> &a0,
   return a0.param(a1);
 }
 
-template <typename T1>
-typename std::discrete_distribution<T1>::result_type
-f8(const std::discrete_distribution<T1> &a0) {
+template <typename T1> T1 f8(const std::discrete_distribution<T1> &a0) {
   return a0.min();
 }
 
-template <typename T1>
-typename std::discrete_distribution<T1>::result_type
-f9(const std::discrete_distribution<T1> &a0) {
+template <typename T1> T1 f9(const std::discrete_distribution<T1> &a0) {
   return a0.max();
 }
 
@@ -75,15 +71,13 @@ std::discrete_distribution<T1> f11(std::size_t a0, double a1, double a2,
 }
 
 template <typename T1, typename T2>
-typename std::discrete_distribution<T1>::result_type
-f12(std::discrete_distribution<T1> &a0, T2 &a1) {
+T1 f12(std::discrete_distribution<T1> &a0, T2 &a1) {
   return a0.template operator()<T2>(a1);
 }
 
 template <typename T1, typename T2>
-typename std::discrete_distribution<T1>::result_type
-f13(std::discrete_distribution<T1> &a0, T2 &a1,
-    const typename std::discrete_distribution<T1>::param_type &a2) {
+T1 f13(std::discrete_distribution<T1> &a0, T2 &a1,
+       const typename std::discrete_distribution<T1>::param_type &a2) {
   return a0.template operator()<T2>(a1, a2);
 }
 

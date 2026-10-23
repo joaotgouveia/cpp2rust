@@ -1,4 +1,7 @@
+#include <algorithm>
 #include <array>
+#include <cstddef>
+#include <iterator>
 #include <utility>
 
 template <typename T1, std::size_t T2>

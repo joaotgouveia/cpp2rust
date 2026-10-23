@@ -5,10 +5,10 @@
 #include <utility>
 
 template <typename T1, std::size_t T2>
-using t16 = typename std::span<T1, T2>::const_iterator;
+using t10 = typename std::span<T1, T2>::const_iterator;
 
 template <typename T1, std::size_t T2>
-using t17 = typename std::span<T1, T2>::const_reverse_iterator;
+using t11 = typename std::span<T1, T2>::const_reverse_iterator;
 
 template <typename T1, std::size_t T2>
 typename std::span<T1, T2>::const_iterator f30(const std::span<T1, T2> &a0) {

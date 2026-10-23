@@ -9,27 +9,46 @@ template <typename T1, typename T2> using t14 = std::pmr::set<T1, T2>;
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::node_type
-f40(std::set<T1, T2, T3> &a0,
+f43(std::set<T1, T2, T3> &a0,
     typename std::set<T1, T2, T3>::const_iterator a1) {
   return a0.extract(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::set<T1, T2, T3>::node_type
-f41(std::set<T1, T2, T3> &a0,
-    const typename std::set<T1, T2, T3>::key_type &a1) {
+typename std::set<T1, T2, T3>::node_type f44(std::set<T1, T2, T3> &a0,
+                                             const T1 &a1) {
   return a0.extract(a1);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::insert_return_type
-f42(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::node_type &&a1) {
+f45(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::node_type &&a1) {
   return a0.insert(std::move(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::iterator
-f43(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
+f46(std::set<T1, T2, T3> &a0, typename std::set<T1, T2, T3>::const_iterator a1,
     typename std::set<T1, T2, T3>::node_type &&a2) {
   return a0.insert(a1, std::move(a2));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f47(std::set<T1, T2, T3> &a0, std::set<T1, T4, T3> &a1) {
+  return a0.template merge<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f48(std::set<T1, T2, T3> &a0, std::set<T1, T4, T3> &&a1) {
+  return a0.template merge<T4>(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f49(std::set<T1, T2, T3> &a0, std::multiset<T1, T4, T3> &a1) {
+  return a0.template merge<T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+void f50(std::set<T1, T2, T3> &a0, std::multiset<T1, T4, T3> &&a1) {
+  return a0.template merge<T4>(std::move(a1));
 }

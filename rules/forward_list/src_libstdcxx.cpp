@@ -1,95 +1,43 @@
+#include <algorithm>
 #include <forward_list>
-#include <initializer_list>
 #include <utility>
 
 template <typename T1, typename T2>
-std::forward_list<T1, T2> f62(const T2 &a0) {
-  return std::forward_list<T1, T2>(a0);
-}
-
-template <typename T1, typename T2>
-std::forward_list<T1, T2> f63(const std::forward_list<T1, T2> &a0,
-                              const T2 &a1) {
+std::forward_list<T1, T2> f69(std::size_t a0, const T2 &a1) {
   return std::forward_list<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::forward_list<T1, T2> f64(std::forward_list<T1, T2> &&a0, const T2 &a1) {
-  return std::forward_list<T1, T2>(std::move(a0), a1);
-}
-
-template <typename T1, typename T2>
-std::forward_list<T1, T2> f65(typename std::forward_list<T1, T2>::size_type a0,
-                              const T2 &a1) {
-  return std::forward_list<T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2>
-std::forward_list<T1, T2> f66(typename std::forward_list<T1, T2>::size_type a0,
-                              const T1 &a1, const T2 &a2) {
+std::forward_list<T1, T2> f70(std::size_t a0, const T1 &a1, const T2 &a2) {
   return std::forward_list<T1, T2>(a0, a1, a2);
 }
 
 template <typename T1, typename T2>
-std::forward_list<T1, T2> f67(std::initializer_list<T1> a0, const T2 &a1) {
-  return std::forward_list<T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2>
-std::forward_list<T1, T2> &f68(std::forward_list<T1, T2> &a0,
-                               std::initializer_list<T1> a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1, typename T2>
-void f69(std::forward_list<T1, T2> &a0,
-         typename std::forward_list<T1, T2>::size_type a1, const T1 &a2) {
+void f71(std::forward_list<T1, T2> &a0, std::size_t a1, const T1 &a2) {
   return a0.assign(a1, a2);
 }
 
 template <typename T1, typename T2>
-void f70(std::forward_list<T1, T2> &a0, std::initializer_list<T1> a1) {
-  return a0.assign(a1);
-}
-
-template <typename T1, typename T2>
-void f71(std::forward_list<T1, T2> &a0, const T1 &a1) {
-  return a0.push_front(a1);
-}
-
-template <typename T1, typename T2>
-void f72(std::forward_list<T1, T2> &a0, T1 &&a1) {
-  return a0.push_front(std::move(a1));
+std::size_t f72(const std::forward_list<T1, T2> &a0) {
+  return a0.max_size();
 }
 
 template <typename T1, typename T2>
 typename std::forward_list<T1, T2>::iterator
 f73(std::forward_list<T1, T2> &a0,
-    typename std::forward_list<T1, T2>::const_iterator a1, const T1 &a2) {
-  return a0.insert_after(a1, a2);
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator
-f74(std::forward_list<T1, T2> &a0,
-    typename std::forward_list<T1, T2>::const_iterator a1, T1 &&a2) {
-  return a0.insert_after(a1, std::move(a2));
-}
-
-template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator
-f75(std::forward_list<T1, T2> &a0,
-    typename std::forward_list<T1, T2>::const_iterator a1,
-    typename std::forward_list<T1, T2>::size_type a2, const T1 &a3) {
+    typename std::forward_list<T1, T2>::const_iterator a1, std::size_t a2,
+    const T1 &a3) {
   return a0.insert_after(a1, a2, a3);
 }
 
 template <typename T1, typename T2>
-typename std::forward_list<T1, T2>::iterator
-f76(std::forward_list<T1, T2> &a0,
-    typename std::forward_list<T1, T2>::const_iterator a1,
-    std::initializer_list<T1> a2) {
-  return a0.insert_after(a1, a2);
+void f74(std::forward_list<T1, T2> &a0, std::size_t a1) {
+  return a0.resize(a1);
+}
+
+template <typename T1, typename T2>
+void f75(std::forward_list<T1, T2> &a0, std::size_t a1, const T1 &a2) {
+  return a0.resize(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3,
@@ -98,7 +46,7 @@ template <typename T1, typename T2, typename T3,
                   typename std::iterator_traits<T3>::iterator_category,
                   std::input_iterator_tag>::value,
               void>::type>
-std::forward_list<T1, T2> f77(T3 a0, T3 a1, const T2 &a2) {
+std::forward_list<T1, T2> f76(T3 a0, T3 a1, const T2 &a2) {
   return std::forward_list<T1, T2>(a0, a1, a2);
 }
 
@@ -108,7 +56,7 @@ template <typename T1, typename T2, typename T3,
                   typename std::iterator_traits<T3>::iterator_category,
                   std::input_iterator_tag>::value,
               void>::type>
-void f78(std::forward_list<T1, T2> &a0, T3 a1, T3 a2) {
+void f77(std::forward_list<T1, T2> &a0, T3 a1, T3 a2) {
   return a0.template assign<T3>(a1, a2);
 }
 
@@ -119,7 +67,7 @@ template <typename T1, typename T2, typename T3,
                   std::input_iterator_tag>::value,
               void>::type>
 typename std::forward_list<T1, T2>::iterator
-f79(std::forward_list<T1, T2> &a0,
+f78(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T3 a2, T3 a3) {
   return a0.template insert_after<T3>(a1, a2, a3);
 }

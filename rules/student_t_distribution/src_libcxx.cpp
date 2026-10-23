@@ -16,19 +16,7 @@ std::basic_istream<T1, T2> &f14(std::basic_istream<T1, T2> &a0,
 }
 
 template <typename T1>
-std::student_t_distribution<T1>
-f15(typename std::student_t_distribution<T1>::result_type a0) {
-  return std::student_t_distribution<T1>(a0);
-}
-
-template <typename T1>
-typename std::student_t_distribution<T1>::result_type
-f16(const std::student_t_distribution<T1> &a0) {
-  return a0.n();
-}
-
-template <typename T1>
-bool f17(const std::student_t_distribution<T1> &a0,
+bool f15(const std::student_t_distribution<T1> &a0,
          const std::student_t_distribution<T1> &a1) {
   return operator!=(a0, a1);
 }

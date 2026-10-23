@@ -31,9 +31,8 @@ std::locale f2(const std::basic_streambuf<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-std::basic_streambuf<T1, T2> *
-f3(std::basic_streambuf<T1, T2> &a0,
-   typename std::basic_streambuf<T1, T2>::char_type *a1, std::streamsize a2) {
+std::basic_streambuf<T1, T2> *f3(std::basic_streambuf<T1, T2> &a0, T1 *a1,
+                                 std::streamsize a2) {
   return a0.pubsetbuf(a1, a2);
 }
 
@@ -81,16 +80,14 @@ f10(std::basic_streambuf<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-std::streamsize f11(std::basic_streambuf<T1, T2> &a0,
-                    typename std::basic_streambuf<T1, T2>::char_type *a1,
+std::streamsize f11(std::basic_streambuf<T1, T2> &a0, T1 *a1,
                     std::streamsize a2) {
   return a0.sgetn(a1, a2);
 }
 
 template <typename T1, typename T2>
 typename std::basic_streambuf<T1, T2>::int_type
-f12(std::basic_streambuf<T1, T2> &a0,
-    typename std::basic_streambuf<T1, T2>::char_type a1) {
+f12(std::basic_streambuf<T1, T2> &a0, T1 a1) {
   return a0.sputbackc(a1);
 }
 
@@ -102,14 +99,12 @@ f13(std::basic_streambuf<T1, T2> &a0) {
 
 template <typename T1, typename T2>
 typename std::basic_streambuf<T1, T2>::int_type
-f14(std::basic_streambuf<T1, T2> &a0,
-    typename std::basic_streambuf<T1, T2>::char_type a1) {
+f14(std::basic_streambuf<T1, T2> &a0, T1 a1) {
   return a0.sputc(a1);
 }
 
 template <typename T1, typename T2>
-std::streamsize f15(std::basic_streambuf<T1, T2> &a0,
-                    const typename std::basic_streambuf<T1, T2>::char_type *a1,
+std::streamsize f15(std::basic_streambuf<T1, T2> &a0, const T1 *a1,
                     std::streamsize a2) {
   return a0.sputn(a1, a2);
 }

@@ -1,5 +1,6 @@
 #include <ios>
 #include <iosfwd>
+#include <streambuf>
 #include <syncstream>
 #include <utility>
 
@@ -33,15 +34,13 @@ std::basic_syncbuf<T1, T2, T3> f1() {
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_syncbuf<T1, T2, T3>
-f2(typename std::basic_syncbuf<T1, T2, T3>::streambuf_type *a0) {
+std::basic_syncbuf<T1, T2, T3> f2(std::basic_streambuf<T1, T2> *a0) {
   return std::basic_syncbuf<T1, T2, T3>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_syncbuf<T1, T2, T3>
-f3(typename std::basic_syncbuf<T1, T2, T3>::streambuf_type *a0,
-   const typename std::basic_syncbuf<T1, T2, T3>::allocator_type &a1) {
+std::basic_syncbuf<T1, T2, T3> f3(std::basic_streambuf<T1, T2> *a0,
+                                  const T3 &a1) {
   return std::basic_syncbuf<T1, T2, T3>(a0, a1);
 }
 
@@ -68,14 +67,12 @@ bool f7(std::basic_syncbuf<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_syncbuf<T1, T2, T3>::streambuf_type *
-f8(const std::basic_syncbuf<T1, T2, T3> &a0) {
+std::basic_streambuf<T1, T2> *f8(const std::basic_syncbuf<T1, T2, T3> &a0) {
   return a0.get_wrapped();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_syncbuf<T1, T2, T3>::allocator_type
-f9(const std::basic_syncbuf<T1, T2, T3> &a0) {
+T3 f9(const std::basic_syncbuf<T1, T2, T3> &a0) {
   return a0.get_allocator();
 }
 
@@ -139,16 +136,14 @@ f19(std::basic_syncbuf<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f20(std::basic_syncbuf<T1, T2, T3> &a0,
-                    typename std::basic_syncbuf<T1, T2, T3>::char_type *a1,
+std::streamsize f20(std::basic_syncbuf<T1, T2, T3> &a0, T1 *a1,
                     std::streamsize a2) {
   return a0.sgetn(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_syncbuf<T1, T2, T3>::int_type
-f21(std::basic_syncbuf<T1, T2, T3> &a0,
-    typename std::basic_syncbuf<T1, T2, T3>::char_type a1) {
+f21(std::basic_syncbuf<T1, T2, T3> &a0, T1 a1) {
   return a0.sputbackc(a1);
 }
 
@@ -160,31 +155,12 @@ f22(std::basic_syncbuf<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3>
 typename std::basic_syncbuf<T1, T2, T3>::int_type
-f23(std::basic_syncbuf<T1, T2, T3> &a0,
-    typename std::basic_syncbuf<T1, T2, T3>::char_type a1) {
+f23(std::basic_syncbuf<T1, T2, T3> &a0, T1 a1) {
   return a0.sputc(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize
-f24(std::basic_syncbuf<T1, T2, T3> &a0,
-    const typename std::basic_syncbuf<T1, T2, T3>::char_type *a1,
-    std::streamsize a2) {
+std::streamsize f24(std::basic_syncbuf<T1, T2, T3> &a0, T1 const *a1,
+                    std::streamsize a2) {
   return a0.sputn(a1, a2);
 }
-
-template <typename T1, typename T2, typename T3>
-using t9 = typename std::basic_syncbuf<T1, T2, T3>::streambuf_type::char_type;
-
-template <typename T1, typename T2, typename T3>
-using t10 =
-    typename std::basic_syncbuf<T1, T2, T3>::streambuf_type::traits_type;
-
-template <typename T1, typename T2, typename T3>
-using t11 = typename std::basic_syncbuf<T1, T2, T3>::streambuf_type::int_type;
-
-template <typename T1, typename T2, typename T3>
-using t12 = typename std::basic_syncbuf<T1, T2, T3>::streambuf_type::pos_type;
-
-template <typename T1, typename T2, typename T3>
-using t13 = typename std::basic_syncbuf<T1, T2, T3>::streambuf_type::off_type;

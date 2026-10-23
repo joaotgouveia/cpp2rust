@@ -53,82 +53,63 @@ template <typename T1> std::ctype<T1> f21(std::size_t a0) {
 }
 
 template <typename T1>
-bool f22(const std::ctype<T1> &a0, typename std::ctype<T1>::mask a1,
-         typename std::ctype<T1>::char_type a2) {
+bool f22(const std::ctype<T1> &a0, unsigned short a1, T1 a2) {
   return a0.is(a1, a2);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f23(const std::ctype<T1> &a0, const typename std::ctype<T1>::char_type *a1,
-    const typename std::ctype<T1>::char_type *a2,
-    typename std::ctype<T1>::mask *a3) {
+T1 const *f23(const std::ctype<T1> &a0, T1 const *a1, T1 const *a2,
+              unsigned short *a3) {
   return a0.is(a1, a2, a3);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f24(const std::ctype<T1> &a0, typename std::ctype<T1>::mask a1,
-    const typename std::ctype<T1>::char_type *a2,
-    const typename std::ctype<T1>::char_type *a3) {
+T1 const *f24(const std::ctype<T1> &a0, unsigned short a1, T1 const *a2,
+              T1 const *a3) {
   return a0.scan_is(a1, a2, a3);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f25(const std::ctype<T1> &a0, typename std::ctype<T1>::mask a1,
-    const typename std::ctype<T1>::char_type *a2,
-    const typename std::ctype<T1>::char_type *a3) {
+T1 const *f25(const std::ctype<T1> &a0, unsigned short a1, T1 const *a2,
+              T1 const *a3) {
   return a0.scan_not(a1, a2, a3);
 }
 
-template <typename T1>
-typename std::ctype<T1>::char_type f26(const std::ctype<T1> &a0,
-                                       typename std::ctype<T1>::char_type a1) {
+template <typename T1> T1 f26(const std::ctype<T1> &a0, T1 a1) {
   return a0.toupper(a1);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f27(const std::ctype<T1> &a0, typename std::ctype<T1>::char_type *a1,
-    const typename std::ctype<T1>::char_type *a2) {
+T1 const *f27(const std::ctype<T1> &a0, T1 *a1, T1 const *a2) {
   return a0.toupper(a1, a2);
 }
 
-template <typename T1>
-typename std::ctype<T1>::char_type f28(const std::ctype<T1> &a0,
-                                       typename std::ctype<T1>::char_type a1) {
+template <typename T1> T1 f28(const std::ctype<T1> &a0, T1 a1) {
   return a0.tolower(a1);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f29(const std::ctype<T1> &a0, typename std::ctype<T1>::char_type *a1,
-    const typename std::ctype<T1>::char_type *a2) {
+T1 const *f29(const std::ctype<T1> &a0, T1 *a1, T1 const *a2) {
   return a0.tolower(a1, a2);
 }
 
-template <typename T1>
-typename std::ctype<T1>::char_type f30(const std::ctype<T1> &a0, char a1) {
+template <typename T1> T1 f30(const std::ctype<T1> &a0, char a1) {
   return a0.widen(a1);
 }
 
 template <typename T1>
 const char *f31(const std::ctype<T1> &a0, const char *a1, const char *a2,
-                typename std::ctype<T1>::char_type *a3) {
+                T1 *a3) {
   return a0.widen(a1, a2, a3);
 }
 
-template <typename T1>
-char f32(const std::ctype<T1> &a0, typename std::ctype<T1>::char_type a1,
-         char a2) {
+template <typename T1> char f32(const std::ctype<T1> &a0, T1 a1, char a2) {
   return a0.narrow(a1, a2);
 }
 
 template <typename T1>
-const typename std::ctype<T1>::char_type *
-f33(const std::ctype<T1> &a0, const typename std::ctype<T1>::char_type *a1,
-    const typename std::ctype<T1>::char_type *a2, char a3, char *a4) {
+T1 const *f33(const std::ctype<T1> &a0, T1 const *a1, T1 const *a2, char a3,
+              char *a4) {
   return a0.narrow(a1, a2, a3, a4);
 }
 

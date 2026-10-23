@@ -1,14 +1,6 @@
 #include <stack>
 #include <utility>
 
-template <typename T1, typename T2> std::stack<T1, T2> f13(const T2 &a0) {
-  return std::stack<T1, T2>(a0);
-}
-
-template <typename T1, typename T2> std::stack<T1, T2> f14(T2 &&a0) {
-  return std::stack<T1, T2>(std::move(a0));
-}
-
 template <typename T1, typename T2, typename T3 = T2,
           typename T4 = typename std::enable_if<
               std::is_default_constructible<T2>::value>::type>

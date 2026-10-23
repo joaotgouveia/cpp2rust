@@ -67,14 +67,12 @@ f3(const std::scoped_allocator_adaptor<T1, T2...> &a0) {
 }
 
 template <typename T1, typename... T2>
-typename std::scoped_allocator_adaptor<T1, T2...>::outer_allocator_type &
-f4(std::scoped_allocator_adaptor<T1, T2...> &a0) {
+T1 &f4(std::scoped_allocator_adaptor<T1, T2...> &a0) {
   return a0.outer_allocator();
 }
 
 template <typename T1, typename... T2>
-const typename std::scoped_allocator_adaptor<T1, T2...>::outer_allocator_type &
-f5(const std::scoped_allocator_adaptor<T1, T2...> &a0) {
+const T1 &f5(const std::scoped_allocator_adaptor<T1, T2...> &a0) {
   return a0.outer_allocator();
 }
 

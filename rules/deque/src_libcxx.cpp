@@ -25,71 +25,85 @@ std::deque<T1, T2> f79(typename std::deque<T1, T2>::size_type a0,
 
 template <typename T1, typename T2>
 std::deque<T1, T2> f80(typename std::deque<T1, T2>::size_type a0,
-                       const typename std::deque<T1, T2>::value_type &a1) {
+                       const T1 &a1) {
   return std::deque<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::deque<T1, T2>
-f81(std::initializer_list<typename std::deque<T1, T2>::value_type> a0) {
+std::deque<T1, T2> f81(std::initializer_list<T1> a0) {
   return std::deque<T1, T2>(a0);
 }
 
 template <typename T1, typename T2>
-typename std::deque<T1, T2>::value_type &
-f82(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
+void f82(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1,
+         const T1 &a2) {
+  return a0.assign(a1, a2);
+}
+
+template <typename T1, typename T2>
+typename std::deque<T1, T2>::size_type f83(const std::deque<T1, T2> &a0) {
+  return a0.size();
+}
+
+template <typename T1, typename T2>
+typename std::deque<T1, T2>::size_type f84(const std::deque<T1, T2> &a0) {
+  return a0.max_size();
+}
+
+template <typename T1, typename T2>
+void f85(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
+  return a0.resize(a1);
+}
+
+template <typename T1, typename T2>
+void f86(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1,
+         const T1 &a2) {
+  return a0.resize(a1, a2);
+}
+
+template <typename T1, typename T2>
+T1 &f87(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
   return a0.operator[](a1);
 }
 
 template <typename T1, typename T2>
-const typename std::deque<T1, T2>::value_type &
-f83(const std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
+const T1 &f88(const std::deque<T1, T2> &a0,
+              typename std::deque<T1, T2>::size_type a1) {
   return a0.operator[](a1);
 }
 
 template <typename T1, typename T2>
-typename std::deque<T1, T2>::value_type &
-f84(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
+T1 &f89(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
   return a0.at(a1);
 }
 
 template <typename T1, typename T2>
-const typename std::deque<T1, T2>::value_type &
-f85(const std::deque<T1, T2> &a0, typename std::deque<T1, T2>::size_type a1) {
+const T1 &f90(const std::deque<T1, T2> &a0,
+              typename std::deque<T1, T2>::size_type a1) {
   return a0.at(a1);
 }
 
-template <typename T1, typename T2>
-typename std::deque<T1, T2>::value_type &f86(std::deque<T1, T2> &a0) {
+template <typename T1, typename T2> T1 &f91(std::deque<T1, T2> &a0) {
   return a0.front();
 }
 
 template <typename T1, typename T2>
-const typename std::deque<T1, T2>::value_type &
-f87(const std::deque<T1, T2> &a0) {
+const T1 &f92(const std::deque<T1, T2> &a0) {
   return a0.front();
 }
 
-template <typename T1, typename T2>
-typename std::deque<T1, T2>::value_type &f88(std::deque<T1, T2> &a0) {
+template <typename T1, typename T2> T1 &f93(std::deque<T1, T2> &a0) {
   return a0.back();
 }
 
 template <typename T1, typename T2>
-const typename std::deque<T1, T2>::value_type &
-f89(const std::deque<T1, T2> &a0) {
+const T1 &f94(const std::deque<T1, T2> &a0) {
   return a0.back();
 }
 
 template <typename T1, typename T2>
-using t35 = typename std::deque<T1, T2>::reverse_iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t36 = typename std::deque<T1, T2>::reverse_iterator::value_type;
-
-template <typename T1, typename T2>
-using t37 =
-    typename std::deque<T1, T2>::const_reverse_iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t38 = typename std::deque<T1, T2>::const_reverse_iterator::value_type;
+typename std::deque<T1, T2>::iterator
+f95(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
+    typename std::deque<T1, T2>::size_type a2, const T1 &a3) {
+  return a0.insert(a1, a2, a3);
+}

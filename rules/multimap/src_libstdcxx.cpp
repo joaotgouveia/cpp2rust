@@ -3,32 +3,9 @@
 #include <map>
 #include <utility>
 
-template <typename T1, typename T2, typename T3, typename T4>
-std::multimap<T1, T2, T3, T4>
-f59(const T3 &a0,
-    const typename std::multimap<T1, T2, T3, T4>::allocator_type &a1) {
-  return std::multimap<T1, T2, T3, T4>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4>
-std::multimap<T1, T2, T3, T4>
-f60(std::initializer_list<typename std::multimap<T1, T2, T3, T4>::value_type>
-        a0,
-    const T3 &a1,
-    const typename std::multimap<T1, T2, T3, T4>::allocator_type &a2) {
-  return std::multimap<T1, T2, T3, T4>(a0, a1, a2);
-}
-
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::multimap<T1, T2, T3, T4> f61(T5 a0, T5 a1) {
+std::multimap<T1, T2, T3, T4> f68(T5 a0, T5 a1) {
   return std::multimap<T1, T2, T3, T4>(a0, a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5>
-std::multimap<T1, T2, T3, T4>
-f62(T5 a0, T5 a1, const T3 &a2,
-    const typename std::multimap<T1, T2, T3, T4>::allocator_type &a3) {
-  return std::multimap<T1, T2, T3, T4>(a0, a1, a2, a3);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>

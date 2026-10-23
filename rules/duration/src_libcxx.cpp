@@ -14,9 +14,8 @@ f22(const std::chrono::duration<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2>
-std::chrono::duration<T1, T2> &
-f23(std::chrono::duration<T1, T2> &a0,
-    const typename std::chrono::duration<T1, T2>::rep &a1) {
+std::chrono::duration<T1, T2> &f23(std::chrono::duration<T1, T2> &a0,
+                                   const T1 &a1) {
   return a0.operator%=(a1);
 }
 

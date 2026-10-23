@@ -5,17 +5,73 @@
 #include <utility>
 
 template <typename T1, typename T2>
-std::basic_ostream<typename std::basic_fstream<T1, T2>::char_type,
-                   typename std::basic_fstream<T1, T2>::traits_type> *
-f111(const std::basic_fstream<T1, T2> &a0) {
-  return a0.tie();
+std::basic_fstream<T1, T2> f111(const char *a0, unsigned int a1) {
+  return std::basic_fstream<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::basic_ostream<typename std::basic_fstream<T1, T2>::char_type,
-                   typename std::basic_fstream<T1, T2>::traits_type> *
-f112(std::basic_fstream<T1, T2> &a0,
-     std::basic_ostream<typename std::basic_fstream<T1, T2>::char_type,
-                        typename std::basic_fstream<T1, T2>::traits_type> *a1) {
-  return a0.tie(a1);
+std::basic_fstream<T1, T2> f112(const std::string &a0, unsigned int a1) {
+  return std::basic_fstream<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2>
+void f113(std::basic_fstream<T1, T2> &a0, const char *a1, unsigned int a2) {
+  return a0.open(a1, a2);
+}
+
+template <typename T1, typename T2>
+void f114(std::basic_fstream<T1, T2> &a0, const std::string &a1,
+          unsigned int a2) {
+  return a0.open(a1, a2);
+}
+
+template <typename T1, typename T2>
+unsigned int f115(const std::basic_fstream<T1, T2> &a0) {
+  return a0.rdstate();
+}
+
+template <typename T1, typename T2>
+void f116(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.clear(a1);
+}
+
+template <typename T1, typename T2>
+void f117(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.setstate(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f118(const std::basic_fstream<T1, T2> &a0) {
+  return a0.exceptions();
+}
+
+template <typename T1, typename T2>
+void f119(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.exceptions(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f120(const std::basic_fstream<T1, T2> &a0) {
+  return a0.flags();
+}
+
+template <typename T1, typename T2>
+unsigned int f121(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.flags(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f122(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.setf(a1);
+}
+
+template <typename T1, typename T2>
+unsigned int f123(std::basic_fstream<T1, T2> &a0, unsigned int a1,
+                  unsigned int a2) {
+  return a0.setf(a1, a2);
+}
+
+template <typename T1, typename T2>
+void f124(std::basic_fstream<T1, T2> &a0, unsigned int a1) {
+  return a0.unsetf(a1);
 }

@@ -386,32 +386,25 @@ bool f333(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
 }
 
 template <typename T1>
-bool f334(std::atomic<std::shared_ptr<T1>> &a0,
-          typename std::atomic<std::shared_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::shared_ptr<T1>>::value_type a2,
-          std::memory_order a3) {
+bool f334(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
+          std::shared_ptr<T1> a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 template <typename T1>
-bool f335(std::atomic<std::shared_ptr<T1>> &a0,
-          typename std::atomic<std::shared_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::shared_ptr<T1>>::value_type a2,
-          std::memory_order a3, std::memory_order a4) {
+bool f335(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
+          std::shared_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f336(std::atomic<std::shared_ptr<T1>> &a0,
-          typename std::atomic<std::shared_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::shared_ptr<T1>>::value_type a2,
-          std::memory_order a3) {
+bool f336(std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> &a1,
+          std::shared_ptr<T1> a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
 template <typename T1>
-void f337(const std::atomic<std::shared_ptr<T1>> &a0,
-          typename std::atomic<std::shared_ptr<T1>>::value_type a1,
+void f337(const std::atomic<std::shared_ptr<T1>> &a0, std::shared_ptr<T1> a1,
           std::memory_order a2) {
   return a0.wait(a1, a2);
 }
@@ -424,20 +417,14 @@ template <typename T1> void f339(std::atomic<std::shared_ptr<T1>> &a0) {
   return a0.notify_all();
 }
 
-template <typename T1>
-using t73 = typename std::atomic<std::shared_ptr<T1>>::value_type::element_type;
-
-template <typename T1>
-using t74 = typename std::atomic<std::shared_ptr<T1>>::value_type::weak_type;
-
 template <typename T1> bool f340() {
   return std::atomic<std::shared_ptr<T1>>::is_always_lock_free;
 }
 
-template <typename T1> using t75 = std::atomic<std::weak_ptr<T1>>;
+template <typename T1> using t73 = std::atomic<std::weak_ptr<T1>>;
 
 template <typename T1>
-using t76 = typename std::atomic<std::weak_ptr<T1>>::value_type;
+using t74 = typename std::atomic<std::weak_ptr<T1>>::value_type;
 
 template <typename T1> bool f341(const std::atomic<std::weak_ptr<T1>> &a0) {
   return a0.is_lock_free();
@@ -485,32 +472,25 @@ bool f349(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
 }
 
 template <typename T1>
-bool f350(std::atomic<std::weak_ptr<T1>> &a0,
-          typename std::atomic<std::weak_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::weak_ptr<T1>>::value_type a2,
-          std::memory_order a3) {
+bool f350(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
+          std::weak_ptr<T1> a2, std::memory_order a3) {
   return a0.compare_exchange_strong(a1, a2, a3);
 }
 
 template <typename T1>
-bool f351(std::atomic<std::weak_ptr<T1>> &a0,
-          typename std::atomic<std::weak_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::weak_ptr<T1>>::value_type a2,
-          std::memory_order a3, std::memory_order a4) {
+bool f351(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
+          std::weak_ptr<T1> a2, std::memory_order a3, std::memory_order a4) {
   return a0.compare_exchange_weak(a1, a2, a3, a4);
 }
 
 template <typename T1>
-bool f352(std::atomic<std::weak_ptr<T1>> &a0,
-          typename std::atomic<std::weak_ptr<T1>>::value_type &a1,
-          typename std::atomic<std::weak_ptr<T1>>::value_type a2,
-          std::memory_order a3) {
+bool f352(std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> &a1,
+          std::weak_ptr<T1> a2, std::memory_order a3) {
   return a0.compare_exchange_weak(a1, a2, a3);
 }
 
 template <typename T1>
-void f353(const std::atomic<std::weak_ptr<T1>> &a0,
-          typename std::atomic<std::weak_ptr<T1>>::value_type a1,
+void f353(const std::atomic<std::weak_ptr<T1>> &a0, std::weak_ptr<T1> a1,
           std::memory_order a2) {
   return a0.wait(a1, a2);
 }
@@ -523,44 +503,38 @@ template <typename T1> void f355(std::atomic<std::weak_ptr<T1>> &a0) {
   return a0.notify_all();
 }
 
-template <typename T1>
-std::shared_ptr<T1>
-f356(const typename std::atomic<std::weak_ptr<T1>>::value_type &a0) {
-  return a0.lock();
-}
-
-template <typename T1> bool f357() {
+template <typename T1> bool f356() {
   return std::atomic<std::weak_ptr<T1>>::is_always_lock_free;
 }
 
-using t77 = std::atomic_char8_t;
+using t75 = std::atomic_char8_t;
 
-void f358(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
+void f357(std::atomic_flag *a0) { return std::atomic_flag_notify_all(a0); }
 
-void f359(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
+void f358(std::atomic_flag *a0) { return std::atomic_flag_notify_one(a0); }
 
-bool f360(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
+bool f359(const std::atomic_flag *a0) { return std::atomic_flag_test(a0); }
 
-bool f361(const volatile std::atomic_flag *a0) {
+bool f360(const volatile std::atomic_flag *a0) {
   return std::atomic_flag_test(a0);
 }
 
-bool f362(const std::atomic_flag *a0, std::memory_order a1) {
+bool f361(const std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-bool f363(const volatile std::atomic_flag *a0, std::memory_order a1) {
+bool f362(const volatile std::atomic_flag *a0, std::memory_order a1) {
   return std::atomic_flag_test_explicit(a0, a1);
 }
 
-void f364(std::atomic_flag *a0, bool a1) {
+void f363(std::atomic_flag *a0, bool a1) {
   return std::atomic_flag_wait(a0, a1);
 }
 
-void f365(std::atomic_flag *a0, bool a1, std::memory_order a2) {
+void f364(std::atomic_flag *a0, bool a1, std::memory_order a2) {
   return std::atomic_flag_wait_explicit(a0, a1, a2);
 }
 
-using t78 = std::atomic_signed_lock_free;
+using t76 = std::atomic_signed_lock_free;
 
-using t79 = std::atomic_unsigned_lock_free;
+using t77 = std::atomic_unsigned_lock_free;

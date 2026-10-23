@@ -60,47 +60,31 @@ std::shared_ptr<T1> &f11(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1, typename T2>
-std::shared_ptr<T1> f12(const std::shared_ptr<T2> &a0,
-                        typename std::shared_ptr<T1>::element_type *a1) {
-  return std::shared_ptr<T1>(a0, a1);
-}
+template <typename T1> void f12(std::shared_ptr<T1> &a0) { return a0.reset(); }
 
-template <typename T1> void f13(std::shared_ptr<T1> &a0) { return a0.reset(); }
-
-template <typename T1>
-typename std::shared_ptr<T1>::element_type *f14(const std::shared_ptr<T1> &a0) {
-  return a0.get();
-}
-
-template <typename T1> bool f15(const std::shared_ptr<T1> &a0) {
+template <typename T1> bool f13(const std::shared_ptr<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
-template <typename T1> long f16(const std::shared_ptr<T1> &a0) {
+template <typename T1> long f14(const std::shared_ptr<T1> &a0) {
   return a0.use_count();
 }
 
 template <typename T1>
-void f17(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
+void f15(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1>
-typename std::shared_ptr<T1>::element_type *f18(const std::shared_ptr<T1> &a0) {
-  return a0.operator->();
-}
-
 template <typename T1, typename T2>
-std::shared_ptr<T1> f19(const std::shared_ptr<T2> &a0) {
+std::shared_ptr<T1> f16(const std::shared_ptr<T2> &a0) {
   return std::static_pointer_cast<T1, T2>(a0);
 }
 
 template <typename T1>
-void f20(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
+void f17(std::shared_ptr<T1> &a0, std::shared_ptr<T1> &a1) {
   return std::swap<T1>(a0, a1);
 }
 
-template <typename T1> void f21(std::weak_ptr<T1> &a0, std::weak_ptr<T1> &a1) {
+template <typename T1> void f18(std::weak_ptr<T1> &a0, std::weak_ptr<T1> &a1) {
   return std::swap<T1>(a0, a1);
 }

@@ -62,23 +62,20 @@ std::basic_const_iterator<T1> f11(std::basic_const_iterator<T1> &a0, int a1) {
 }
 
 template <typename T1>
-std::basic_const_iterator<T1> &
-f12(std::basic_const_iterator<T1> &a0,
-    typename std::basic_const_iterator<T1>::difference_type a1) {
+std::basic_const_iterator<T1> &f12(std::basic_const_iterator<T1> &a0,
+                                   std::iter_difference_t<T1> a1) {
   return a0.operator+=(a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1> &
-f13(std::basic_const_iterator<T1> &a0,
-    typename std::basic_const_iterator<T1>::difference_type a1) {
+std::basic_const_iterator<T1> &f13(std::basic_const_iterator<T1> &a0,
+                                   std::iter_difference_t<T1> a1) {
   return a0.operator-=(a1);
 }
 
 template <typename T1>
-std::iter_const_reference_t<T1>
-f14(const std::basic_const_iterator<T1> &a0,
-    typename std::basic_const_iterator<T1>::difference_type a1) {
+std::iter_const_reference_t<T1> f14(const std::basic_const_iterator<T1> &a0,
+                                    std::iter_difference_t<T1> a1) {
   return a0.operator[](a1);
 }
 
@@ -161,28 +158,25 @@ auto f29(const std::basic_const_iterator<T1> &a0, const T2 &a1) {
 }
 
 template <typename T1, typename T2>
-typename std::basic_const_iterator<T1>::difference_type
-f30(const std::basic_const_iterator<T1> &a0, const T2 &a1) {
+std::iter_difference_t<T1> f30(const std::basic_const_iterator<T1> &a0,
+                               const T2 &a1) {
   return a0.template operator- <T2>(a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1>
-f31(const std::basic_const_iterator<T1> &a0,
-    typename std::basic_const_iterator<T1>::difference_type a1) {
+std::basic_const_iterator<T1> f31(const std::basic_const_iterator<T1> &a0,
+                                  std::iter_difference_t<T1> a1) {
   return operator-(a0, a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1>
-f32(typename std::basic_const_iterator<T1>::difference_type a0,
-    const std::basic_const_iterator<T1> &a1) {
+std::basic_const_iterator<T1> f32(std::iter_difference_t<T1> a0,
+                                  const std::basic_const_iterator<T1> &a1) {
   return operator+(a0, a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1>
-f33(const std::basic_const_iterator<T1> &a0,
-    typename std::basic_const_iterator<T1>::difference_type a1) {
+std::basic_const_iterator<T1> f33(const std::basic_const_iterator<T1> &a0,
+                                  std::iter_difference_t<T1> a1) {
   return operator+(a0, a1);
 }

@@ -14,8 +14,7 @@ template <typename T1, typename T2> std::chrono::duration<T1, T2> f1() {
 }
 
 template <typename T1, typename T2>
-typename std::chrono::duration<T1, T2>::rep
-f2(const std::chrono::duration<T1, T2> &a0) {
+T1 f2(const std::chrono::duration<T1, T2> &a0) {
   return a0.count();
 }
 
@@ -52,16 +51,14 @@ std::chrono::duration<T1, T2> &f8(std::chrono::duration<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-std::chrono::duration<T1, T2> &
-f9(std::chrono::duration<T1, T2> &a0,
-   const typename std::chrono::duration<T1, T2>::rep &a1) {
+std::chrono::duration<T1, T2> &f9(std::chrono::duration<T1, T2> &a0,
+                                  const T1 &a1) {
   return a0.operator*=(a1);
 }
 
 template <typename T1, typename T2>
-std::chrono::duration<T1, T2> &
-f10(std::chrono::duration<T1, T2> &a0,
-    const typename std::chrono::duration<T1, T2>::rep &a1) {
+std::chrono::duration<T1, T2> &f10(std::chrono::duration<T1, T2> &a0,
+                                   const T1 &a1) {
   return a0.operator/=(a1);
 }
 

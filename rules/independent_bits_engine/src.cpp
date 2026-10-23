@@ -25,8 +25,7 @@ std::independent_bits_engine<T1, T2, T3> f3(T1 &&a0) {
 }
 
 template <typename T1, std::size_t T2, typename T3>
-std::independent_bits_engine<T1, T2, T3>
-f4(typename std::independent_bits_engine<T1, T2, T3>::result_type a0) {
+std::independent_bits_engine<T1, T2, T3> f4(T3 a0) {
   return std::independent_bits_engine<T1, T2, T3>(a0);
 }
 
@@ -36,8 +35,7 @@ void f5(std::independent_bits_engine<T1, T2, T3> &a0) {
 }
 
 template <typename T1, std::size_t T2, typename T3>
-void f6(std::independent_bits_engine<T1, T2, T3> &a0,
-        typename std::independent_bits_engine<T1, T2, T3>::result_type a1) {
+void f6(std::independent_bits_engine<T1, T2, T3> &a0, T3 a1) {
   return a0.seed(a1);
 }
 
@@ -46,13 +44,11 @@ const T1 &f7(const std::independent_bits_engine<T1, T2, T3> &a0) {
   return a0.base();
 }
 
-template <typename T1, std::size_t T2, typename T3>
-typename std::independent_bits_engine<T1, T2, T3>::result_type f8() {
+template <typename T1, std::size_t T2, typename T3> T3 f8() {
   return std::independent_bits_engine<T1, T2, T3>::min();
 }
 
-template <typename T1, std::size_t T2, typename T3>
-typename std::independent_bits_engine<T1, T2, T3>::result_type f9() {
+template <typename T1, std::size_t T2, typename T3> T3 f9() {
   return std::independent_bits_engine<T1, T2, T3>::max();
 }
 
@@ -62,7 +58,6 @@ void f10(std::independent_bits_engine<T1, T2, T3> &a0, unsigned long long a1) {
 }
 
 template <typename T1, std::size_t T2, typename T3>
-typename std::independent_bits_engine<T1, T2, T3>::result_type
-f11(std::independent_bits_engine<T1, T2, T3> &a0) {
+T3 f11(std::independent_bits_engine<T1, T2, T3> &a0) {
   return a0.operator()();
 }

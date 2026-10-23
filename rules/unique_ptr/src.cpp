@@ -103,40 +103,41 @@ std::unique_ptr<T1[], T2> &f21(std::unique_ptr<T1[], T2> &a0,
 }
 
 template <typename T1, typename T2>
-typename std::unique_ptr<T1[], T2>::pointer
-f22(const std::unique_ptr<T1[], T2> &a0) {
+typename std::add_lvalue_reference<T1>::type
+f22(const std::unique_ptr<T1[], T2> &a0, std::size_t a1) {
+  return a0.operator[](a1);
+}
+
+template <typename T1, typename T2>
+T1 *f23(const std::unique_ptr<T1[], T2> &a0) {
   return a0.get();
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1[], T2>::deleter_type &
-f23(std::unique_ptr<T1[], T2> &a0) {
+template <typename T1, typename T2> T2 &f24(std::unique_ptr<T1[], T2> &a0) {
   return a0.get_deleter();
 }
 
 template <typename T1, typename T2>
-const typename std::unique_ptr<T1[], T2>::deleter_type &
-f24(const std::unique_ptr<T1[], T2> &a0) {
+const T2 &f25(const std::unique_ptr<T1[], T2> &a0) {
   return a0.get_deleter();
 }
 
 template <typename T1, typename T2>
-bool f25(const std::unique_ptr<T1[], T2> &a0) {
+bool f26(const std::unique_ptr<T1[], T2> &a0) {
   return static_cast<bool>(a0);
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1[], T2>::pointer f26(std::unique_ptr<T1[], T2> &a0) {
+template <typename T1, typename T2> T1 *f27(std::unique_ptr<T1[], T2> &a0) {
   return a0.release();
 }
 
 template <typename T1, typename T2>
-void f27(std::unique_ptr<T1[], T2> &a0, std::nullptr_t a1) {
+void f28(std::unique_ptr<T1[], T2> &a0, std::nullptr_t a1) {
   return a0.reset(a1);
 }
 
 template <typename T1, typename T2>
-void f28(std::unique_ptr<T1[], T2> &a0, std::unique_ptr<T1[], T2> &a1) {
+void f29(std::unique_ptr<T1[], T2> &a0, std::unique_ptr<T1[], T2> &a1) {
   return a0.swap(a1);
 }
 
@@ -152,62 +153,53 @@ template <typename T1, typename T2>
 using t8 = typename std::unique_ptr<T1, T2>::deleter_type;
 
 template <typename T1, typename T2>
-std::unique_ptr<T1, T2> f29(std::unique_ptr<T1, T2> &&a0) {
+std::unique_ptr<T1, T2> f30(std::unique_ptr<T1, T2> &&a0) {
   return std::unique_ptr<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2>
-std::unique_ptr<T1, T2> &f30(std::unique_ptr<T1, T2> &a0,
+std::unique_ptr<T1, T2> &f31(std::unique_ptr<T1, T2> &a0,
                              std::unique_ptr<T1, T2> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
 template <typename T1, typename T2>
-std::unique_ptr<T1, T2> &f31(std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
+std::unique_ptr<T1, T2> &f32(std::unique_ptr<T1, T2> &a0, std::nullptr_t a1) {
   return a0.operator=(a1);
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1, T2>::pointer
-f32(const std::unique_ptr<T1, T2> &a0) {
+template <typename T1, typename T2> T1 *f33(const std::unique_ptr<T1, T2> &a0) {
   return a0.operator->();
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1, T2>::pointer
-f33(const std::unique_ptr<T1, T2> &a0) {
+template <typename T1, typename T2> T1 *f34(const std::unique_ptr<T1, T2> &a0) {
   return a0.get();
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1, T2>::deleter_type &
-f34(std::unique_ptr<T1, T2> &a0) {
+template <typename T1, typename T2> T2 &f35(std::unique_ptr<T1, T2> &a0) {
   return a0.get_deleter();
 }
 
 template <typename T1, typename T2>
-const typename std::unique_ptr<T1, T2>::deleter_type &
-f35(const std::unique_ptr<T1, T2> &a0) {
+const T2 &f36(const std::unique_ptr<T1, T2> &a0) {
   return a0.get_deleter();
 }
 
 template <typename T1, typename T2>
-bool f36(const std::unique_ptr<T1, T2> &a0) {
+bool f37(const std::unique_ptr<T1, T2> &a0) {
   return static_cast<bool>(a0);
 }
 
-template <typename T1, typename T2>
-typename std::unique_ptr<T1, T2>::pointer f37(std::unique_ptr<T1, T2> &a0) {
+template <typename T1, typename T2> T1 *f38(std::unique_ptr<T1, T2> &a0) {
   return a0.release();
 }
 
 template <typename T1, typename T2>
-void f38(std::unique_ptr<T1, T2> &a0,
-         typename std::unique_ptr<T1, T2>::pointer a1) {
+void f39(std::unique_ptr<T1, T2> &a0, T1 *a1) {
   return a0.reset(a1);
 }
 
 template <typename T1, typename T2>
-void f39(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
+void f40(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
   return a0.swap(a1);
 }

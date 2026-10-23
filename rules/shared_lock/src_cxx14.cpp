@@ -12,26 +12,19 @@ template <typename T1> std::shared_lock<T1> f1() {
   return std::shared_lock<T1>();
 }
 
-template <typename T1>
-std::shared_lock<T1> f2(typename std::shared_lock<T1>::mutex_type &a0) {
+template <typename T1> std::shared_lock<T1> f2(T1 &a0) {
   return std::shared_lock<T1>(a0);
 }
 
-template <typename T1>
-std::shared_lock<T1> f3(typename std::shared_lock<T1>::mutex_type &a0,
-                        std::defer_lock_t a1) {
+template <typename T1> std::shared_lock<T1> f3(T1 &a0, std::defer_lock_t a1) {
   return std::shared_lock<T1>(a0, std::move(a1));
 }
 
-template <typename T1>
-std::shared_lock<T1> f4(typename std::shared_lock<T1>::mutex_type &a0,
-                        std::try_to_lock_t a1) {
+template <typename T1> std::shared_lock<T1> f4(T1 &a0, std::try_to_lock_t a1) {
   return std::shared_lock<T1>(a0, std::move(a1));
 }
 
-template <typename T1>
-std::shared_lock<T1> f5(typename std::shared_lock<T1>::mutex_type &a0,
-                        std::adopt_lock_t a1) {
+template <typename T1> std::shared_lock<T1> f5(T1 &a0, std::adopt_lock_t a1) {
   return std::shared_lock<T1>(a0, std::move(a1));
 }
 
@@ -59,8 +52,7 @@ void f11(std::shared_lock<T1> &a0, std::shared_lock<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1>
-typename std::shared_lock<T1>::mutex_type *f12(std::shared_lock<T1> &a0) {
+template <typename T1> T1 *f12(std::shared_lock<T1> &a0) {
   return a0.release();
 }
 
@@ -72,20 +64,17 @@ template <typename T1> bool f14(const std::shared_lock<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
-template <typename T1>
-typename std::shared_lock<T1>::mutex_type *f15(const std::shared_lock<T1> &a0) {
+template <typename T1> T1 *f15(const std::shared_lock<T1> &a0) {
   return a0.mutex();
 }
 
 template <typename T1, typename T2, typename T3>
-std::shared_lock<T1> f16(typename std::shared_lock<T1>::mutex_type &a0,
-                         const std::chrono::time_point<T2, T3> &a1) {
+std::shared_lock<T1> f16(T1 &a0, const std::chrono::time_point<T2, T3> &a1) {
   return std::shared_lock<T1>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::shared_lock<T1> f17(typename std::shared_lock<T1>::mutex_type &a0,
-                         const std::chrono::duration<T2, T3> &a1) {
+std::shared_lock<T1> f17(T1 &a0, const std::chrono::duration<T2, T3> &a1) {
   return std::shared_lock<T1>(a0, a1);
 }
 

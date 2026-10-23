@@ -31,8 +31,7 @@ T1 *f28(std::allocator<T1> &a0, std::size_t a1, const void *a2) {
   return a0.allocate(a1, a2);
 }
 
-template <typename T1>
-typename std::allocator<T1>::size_type f29(const std::allocator<T1> &a0) {
+template <typename T1> std::size_t f29(const std::allocator<T1> &a0) {
   return a0.max_size();
 }
 

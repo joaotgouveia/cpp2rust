@@ -177,17 +177,13 @@ std::basic_ospanstream<T1, T2> &f26(std::basic_ospanstream<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-std::basic_ospanstream<T1, T2> &
-f27(std::basic_ospanstream<T1, T2> &a0,
-    typename std::basic_ospanstream<T1, T2>::char_type a1) {
+std::basic_ospanstream<T1, T2> &f27(std::basic_ospanstream<T1, T2> &a0, T1 a1) {
   return a0.put(a1);
 }
 
 template <typename T1, typename T2>
-std::basic_ospanstream<T1, T2> &
-f28(std::basic_ospanstream<T1, T2> &a0,
-    const typename std::basic_ospanstream<T1, T2>::char_type *a1,
-    std::streamsize a2) {
+std::basic_ospanstream<T1, T2> &f28(std::basic_ospanstream<T1, T2> &a0,
+                                    T1 const *a1, std::streamsize a2) {
   return a0.write(a1, a2);
 }
 
@@ -289,15 +285,12 @@ std::basic_ostream<T1, T2> *f45(std::basic_ospanstream<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::char_type
-f46(const std::basic_ospanstream<T1, T2> &a0) {
+T1 f46(const std::basic_ospanstream<T1, T2> &a0) {
   return a0.fill();
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::char_type
-f47(std::basic_ospanstream<T1, T2> &a0,
-    typename std::basic_ospanstream<T1, T2>::char_type a1) {
+T1 f47(std::basic_ospanstream<T1, T2> &a0, T1 a1) {
   return a0.fill(a1);
 }
 
@@ -307,14 +300,12 @@ std::locale f48(std::basic_ospanstream<T1, T2> &a0, const std::locale &a1) {
 }
 
 template <typename T1, typename T2>
-char f49(const std::basic_ospanstream<T1, T2> &a0,
-         typename std::basic_ospanstream<T1, T2>::char_type a1, char a2) {
+char f49(const std::basic_ospanstream<T1, T2> &a0, T1 a1, char a2) {
   return a0.narrow(a1, a2);
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::char_type
-f50(const std::basic_ospanstream<T1, T2> &a0, char a1) {
+T1 f50(const std::basic_ospanstream<T1, T2> &a0, char a1) {
   return a0.widen(a1);
 }
 

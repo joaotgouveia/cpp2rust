@@ -5,8 +5,38 @@
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_set<T1, T2, T3, T4>
-f92(std::from_range_t a0, T5 &&a1,
+f89(std::from_range_t a0, T5 &&a1,
+    typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+    const typename std::unordered_set<T1, T2, T3, T4>::hasher &a3,
+    const typename std::unordered_set<T1, T2, T3, T4>::key_equal &a4,
+    const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a5) {
+  return std::unordered_set<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1),
+                                            a2, a3, a4, a5);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::unordered_set<T1, T2, T3, T4>
+f90(std::from_range_t a0, T5 &&a1,
     const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a2) {
   return std::unordered_set<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1),
                                             a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::unordered_set<T1, T2, T3, T4>
+f91(std::from_range_t a0, T5 &&a1,
+    typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+    const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a3) {
+  return std::unordered_set<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1),
+                                            a2, a3);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::unordered_set<T1, T2, T3, T4>
+f92(std::from_range_t a0, T5 &&a1,
+    typename std::unordered_set<T1, T2, T3, T4>::size_type a2,
+    const typename std::unordered_set<T1, T2, T3, T4>::hasher &a3,
+    const typename std::unordered_set<T1, T2, T3, T4>::allocator_type &a4) {
+  return std::unordered_set<T1, T2, T3, T4>(std::move(a0), std::forward<T5>(a1),
+                                            a2, a3, a4);
 }

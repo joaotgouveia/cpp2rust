@@ -16,14 +16,7 @@ std::basic_istream<T1, T2> &f15(std::basic_istream<T1, T2> &a0,
 }
 
 template <typename T1>
-std::uniform_real_distribution<T1>
-f16(typename std::uniform_real_distribution<T1>::result_type a0,
-    typename std::uniform_real_distribution<T1>::result_type a1) {
-  return std::uniform_real_distribution<T1>(a0, a1);
-}
-
-template <typename T1>
-bool f17(const std::uniform_real_distribution<T1> &a0,
+bool f16(const std::uniform_real_distribution<T1> &a0,
          const std::uniform_real_distribution<T1> &a1) {
   return operator!=(a0, a1);
 }

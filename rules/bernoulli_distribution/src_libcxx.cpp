@@ -62,16 +62,13 @@ std::bernoulli_distribution &f13(std::bernoulli_distribution &a0,
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1>
-std::bernoulli_distribution::result_type f14(std::bernoulli_distribution &a0,
-                                             T1 &a1) {
+template <typename T1> bool f14(std::bernoulli_distribution &a0, T1 &a1) {
   return a0.template operator()<T1>(a1);
 }
 
 template <typename T1>
-std::bernoulli_distribution::result_type
-f15(std::bernoulli_distribution &a0, T1 &a1,
-    const std::bernoulli_distribution::param_type &a2) {
+bool f15(std::bernoulli_distribution &a0, T1 &a1,
+         const std::bernoulli_distribution::param_type &a2) {
   return a0.template operator()<T1>(a1, a2);
 }
 

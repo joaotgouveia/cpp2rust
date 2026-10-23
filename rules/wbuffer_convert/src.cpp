@@ -86,16 +86,14 @@ f13(std::wbuffer_convert<T1, T2, T3> &a0) {
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize f14(std::wbuffer_convert<T1, T2, T3> &a0,
-                    typename std::wbuffer_convert<T1, T2, T3>::char_type *a1,
+std::streamsize f14(std::wbuffer_convert<T1, T2, T3> &a0, T2 *a1,
                     std::streamsize a2) {
   return a0.sgetn(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::wbuffer_convert<T1, T2, T3>::int_type
-f15(std::wbuffer_convert<T1, T2, T3> &a0,
-    typename std::wbuffer_convert<T1, T2, T3>::char_type a1) {
+f15(std::wbuffer_convert<T1, T2, T3> &a0, T2 a1) {
   return a0.sputbackc(a1);
 }
 
@@ -107,15 +105,12 @@ f16(std::wbuffer_convert<T1, T2, T3> &a0) {
 
 template <typename T1, typename T2, typename T3>
 typename std::wbuffer_convert<T1, T2, T3>::int_type
-f17(std::wbuffer_convert<T1, T2, T3> &a0,
-    typename std::wbuffer_convert<T1, T2, T3>::char_type a1) {
+f17(std::wbuffer_convert<T1, T2, T3> &a0, T2 a1) {
   return a0.sputc(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::streamsize
-f18(std::wbuffer_convert<T1, T2, T3> &a0,
-    const typename std::wbuffer_convert<T1, T2, T3>::char_type *a1,
-    std::streamsize a2) {
+std::streamsize f18(std::wbuffer_convert<T1, T2, T3> &a0, T2 const *a1,
+                    std::streamsize a2) {
   return a0.sputn(a1, a2);
 }

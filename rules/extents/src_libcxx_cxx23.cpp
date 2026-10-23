@@ -16,25 +16,20 @@ using t4 = typename std::extents<T1, T2...>::size_type;
 template <typename T1, std::size_t... T2>
 using t5 = typename std::extents<T1, T2...>::rank_type;
 
-template <typename T1, std::size_t... T2>
-typename std::extents<T1, T2...>::rank_type f1() {
+template <typename T1, std::size_t... T2> std::size_t f1() {
   return std::extents<T1, T2...>::rank();
 }
 
-template <typename T1, std::size_t... T2>
-typename std::extents<T1, T2...>::rank_type f2() {
+template <typename T1, std::size_t... T2> std::size_t f2() {
   return std::extents<T1, T2...>::rank_dynamic();
 }
 
 template <typename T1, std::size_t... T2>
-typename std::extents<T1, T2...>::index_type
-f3(const std::extents<T1, T2...> &a0,
-   typename std::extents<T1, T2...>::rank_type a1) {
+T1 f3(const std::extents<T1, T2...> &a0, std::size_t a1) {
   return a0.extent(a1);
 }
 
-template <typename T1, std::size_t... T2>
-std::size_t f4(typename std::extents<T1, T2...>::rank_type a0) {
+template <typename T1, std::size_t... T2> std::size_t f4(std::size_t a0) {
   return std::extents<T1, T2...>::static_extent(a0);
 }
 

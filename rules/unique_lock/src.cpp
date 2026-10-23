@@ -16,26 +16,19 @@ template <typename T1> std::unique_lock<T1> f2() {
   return std::unique_lock<T1>();
 }
 
-template <typename T1>
-std::unique_lock<T1> f3(typename std::unique_lock<T1>::mutex_type &a0) {
+template <typename T1> std::unique_lock<T1> f3(T1 &a0) {
   return std::unique_lock<T1>(a0);
 }
 
-template <typename T1>
-std::unique_lock<T1> f4(typename std::unique_lock<T1>::mutex_type &a0,
-                        std::defer_lock_t a1) {
+template <typename T1> std::unique_lock<T1> f4(T1 &a0, std::defer_lock_t a1) {
   return std::unique_lock<T1>(a0, std::move(a1));
 }
 
-template <typename T1>
-std::unique_lock<T1> f5(typename std::unique_lock<T1>::mutex_type &a0,
-                        std::try_to_lock_t a1) {
+template <typename T1> std::unique_lock<T1> f5(T1 &a0, std::try_to_lock_t a1) {
   return std::unique_lock<T1>(a0, std::move(a1));
 }
 
-template <typename T1>
-std::unique_lock<T1> f6(typename std::unique_lock<T1>::mutex_type &a0,
-                        std::adopt_lock_t a1) {
+template <typename T1> std::unique_lock<T1> f6(T1 &a0, std::adopt_lock_t a1) {
   return std::unique_lock<T1>(a0, std::move(a1));
 }
 
@@ -63,8 +56,7 @@ void f12(std::unique_lock<T1> &a0, std::unique_lock<T1> &a1) {
   return a0.swap(a1);
 }
 
-template <typename T1>
-typename std::unique_lock<T1>::mutex_type *f13(std::unique_lock<T1> &a0) {
+template <typename T1> T1 *f13(std::unique_lock<T1> &a0) {
   return a0.release();
 }
 
@@ -76,20 +68,17 @@ template <typename T1> bool f15(const std::unique_lock<T1> &a0) {
   return static_cast<bool>(a0);
 }
 
-template <typename T1>
-typename std::unique_lock<T1>::mutex_type *f16(const std::unique_lock<T1> &a0) {
+template <typename T1> T1 *f16(const std::unique_lock<T1> &a0) {
   return a0.mutex();
 }
 
 template <typename T1, typename T2, typename T3>
-std::unique_lock<T1> f17(typename std::unique_lock<T1>::mutex_type &a0,
-                         const std::chrono::time_point<T2, T3> &a1) {
+std::unique_lock<T1> f17(T1 &a0, const std::chrono::time_point<T2, T3> &a1) {
   return std::unique_lock<T1>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::unique_lock<T1> f18(typename std::unique_lock<T1>::mutex_type &a0,
-                         const std::chrono::duration<T2, T3> &a1) {
+std::unique_lock<T1> f18(T1 &a0, const std::chrono::duration<T2, T3> &a1) {
   return std::unique_lock<T1>(a0, a1);
 }
 

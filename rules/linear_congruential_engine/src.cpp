@@ -16,25 +16,20 @@ std::linear_congruential_engine<T1, T2, T3, T4> f1() {
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-std::linear_congruential_engine<T1, T2, T3, T4>
-f2(typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type a0) {
+std::linear_congruential_engine<T1, T2, T3, T4> f2(T1 a0) {
   return std::linear_congruential_engine<T1, T2, T3, T4>(a0);
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-void f3(
-    std::linear_congruential_engine<T1, T2, T3, T4> &a0,
-    typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type a1) {
+void f3(std::linear_congruential_engine<T1, T2, T3, T4> &a0, T1 a1) {
   return a0.seed(a1);
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f4() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f4() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::min();
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f5() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f5() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::max();
 }
 
@@ -45,8 +40,7 @@ void f6(std::linear_congruential_engine<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type
-f7(std::linear_congruential_engine<T1, T2, T3, T4> &a0) {
+T1 f7(std::linear_congruential_engine<T1, T2, T3, T4> &a0) {
   return a0.operator()();
 }
 
@@ -56,22 +50,18 @@ bool f8(const std::linear_congruential_engine<T1, T2, T3, T4> &a0,
   return operator==(a0, a1);
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f9() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f9() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::multiplier;
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f10() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f10() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::increment;
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f11() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f11() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::modulus;
 }
 
-template <typename T1, T1 T2, T1 T3, T1 T4>
-typename std::linear_congruential_engine<T1, T2, T3, T4>::result_type f12() {
+template <typename T1, T1 T2, T1 T3, T1 T4> T1 f12() {
   return std::linear_congruential_engine<T1, T2, T3, T4>::default_seed;
 }

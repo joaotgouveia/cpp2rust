@@ -98,108 +98,52 @@ std::complex<float> &f162(std::complex<float> &a0, std::complex<float> &&a1) {
   return a0.operator=(std::move(a1));
 }
 
-template <typename T1>
-std::complex<T1> f163(const typename std::complex<T1>::value_type &a0,
-                      const typename std::complex<T1>::value_type &a1) {
-  return std::complex<T1>(a0, a1);
-}
-
-template <typename T1>
-typename std::complex<T1>::value_type f164(const std::complex<T1> &a0) {
-  return a0.real();
-}
-
-template <typename T1>
-typename std::complex<T1>::value_type f165(const std::complex<T1> &a0) {
-  return a0.imag();
-}
-
-template <typename T1>
-void f166(std::complex<T1> &a0, typename std::complex<T1>::value_type a1) {
-  return a0.real(a1);
-}
-
-template <typename T1>
-void f167(std::complex<T1> &a0, typename std::complex<T1>::value_type a1) {
-  return a0.imag(a1);
-}
-
-template <typename T1>
-std::complex<T1> &f168(std::complex<T1> &a0,
-                       const typename std::complex<T1>::value_type &a1) {
-  return a0.operator=(a1);
-}
-
-template <typename T1>
-std::complex<T1> &f169(std::complex<T1> &a0,
-                       const typename std::complex<T1>::value_type &a1) {
-  return a0.operator+=(a1);
-}
-
-template <typename T1>
-std::complex<T1> &f170(std::complex<T1> &a0,
-                       const typename std::complex<T1>::value_type &a1) {
-  return a0.operator-=(a1);
-}
-
-template <typename T1>
-std::complex<T1> &f171(std::complex<T1> &a0,
-                       const typename std::complex<T1>::value_type &a1) {
-  return a0.operator*=(a1);
-}
-
-template <typename T1>
-std::complex<T1> &f172(std::complex<T1> &a0,
-                       const typename std::complex<T1>::value_type &a1) {
-  return a0.operator/=(a1);
-}
-
-template <typename T1> auto f173(T1 a0) -> decltype(std::imag<T1>(a0)) {
+template <typename T1> auto f163(T1 a0) -> decltype(std::imag<T1>(a0)) {
   return std::imag<T1>(a0);
 }
 
-template <typename T1> auto f174(T1 a0) -> decltype(std::norm<T1>(a0)) {
+template <typename T1> auto f164(T1 a0) -> decltype(std::norm<T1>(a0)) {
   return std::norm<T1>(a0);
 }
 
 template <typename T1,
           typename std::enable_if<!std::is_floating_point<T1>::value, int>::type
               T2 = 0>
-std::complex<T1> f175(const std::complex<T1> &a0, const std::complex<T1> &a1) {
+std::complex<T1> f165(const std::complex<T1> &a0, const std::complex<T1> &a1) {
   return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<
                            std::is_floating_point<T1>::value, int>::type T2 = 0>
-std::complex<T1> f176(const std::complex<T1> &a0, const std::complex<T1> &a1) {
+std::complex<T1> f166(const std::complex<T1> &a0, const std::complex<T1> &a1) {
   return std::operator* <T1>(a0, a1);
 }
 
 template <typename T1,
           typename std::enable_if<!std::is_floating_point<T1>::value, int>::type
               T2 = 0>
-std::complex<T1> f177(const std::complex<T1> &a0, const std::complex<T1> &a1) {
+std::complex<T1> f167(const std::complex<T1> &a0, const std::complex<T1> &a1) {
   return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<
                            std::is_floating_point<T1>::value, int>::type T2 = 0>
-std::complex<T1> f178(const std::complex<T1> &a0, const std::complex<T1> &a1) {
+std::complex<T1> f168(const std::complex<T1> &a0, const std::complex<T1> &a1) {
   return std::operator/ <T1>(a0, a1);
 }
 
 template <typename T1, typename std::enable_if<
                            std::is_floating_point<T1>::value, int>::type T2 = 0>
-auto f179(T1 a0) -> decltype(std::proj<T1>(a0)) {
+auto f169(T1 a0) -> decltype(std::proj<T1>(a0)) {
   return std::proj<T1>(a0);
 }
 
 template <typename T1, typename std::enable_if<std::is_integral<T1>::value,
                                                int>::type T2 = 0>
-auto f180(T1 a0) -> decltype(std::proj<T1>(a0)) {
+auto f170(T1 a0) -> decltype(std::proj<T1>(a0)) {
   return std::proj<T1>(a0);
 }
 
-template <typename T1> auto f181(T1 a0) -> decltype(std::real<T1>(a0)) {
+template <typename T1> auto f171(T1 a0) -> decltype(std::real<T1>(a0)) {
   return std::real<T1>(a0);
 }

@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <locale>
+#include <string>
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>

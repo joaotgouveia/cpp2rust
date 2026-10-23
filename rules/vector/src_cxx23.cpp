@@ -5,35 +5,45 @@
 #include <vector>
 
 template <typename T1, typename T2>
-void f85(std::vector<bool, T1> &a0, T2 &&a1) {
+std::vector<bool, T1> f77(std::from_range_t a0, T2 &&a1, const T1 &a2) {
+  return std::vector<bool, T1>(std::move(a0), std::forward<T2>(a1), a2);
+}
+
+template <typename T1, typename T2>
+void f78(std::vector<bool, T1> &a0, T2 &&a1) {
   return a0.template assign_range<T2>(std::forward<T2>(a1));
 }
 
 template <typename T1, typename T2>
 typename std::vector<bool, T1>::iterator
-f86(std::vector<bool, T1> &a0,
+f79(std::vector<bool, T1> &a0,
     typename std::vector<bool, T1>::const_iterator a1, T2 &&a2) {
   return a0.template insert_range<T2>(a1, std::forward<T2>(a2));
 }
 
 template <typename T1, typename T2>
-void f87(std::vector<bool, T1> &a0, T2 &&a1) {
+void f80(std::vector<bool, T1> &a0, T2 &&a1) {
   return a0.template append_range<T2>(std::forward<T2>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-void f88(std::vector<T1, T2> &a0, T3 &&a1) {
+std::vector<T1, T2> f81(std::from_range_t a0, T3 &&a1, const T2 &a2) {
+  return std::vector<T1, T2>(std::move(a0), std::forward<T3>(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3>
+void f82(std::vector<T1, T2> &a0, T3 &&a1) {
   return a0.template assign_range<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
 typename std::vector<T1, T2>::iterator
-f89(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+f83(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     T3 &&a2) {
   return a0.template insert_range<T3>(a1, std::forward<T3>(a2));
 }
 
 template <typename T1, typename T2, typename T3>
-void f90(std::vector<T1, T2> &a0, T3 &&a1) {
+void f84(std::vector<T1, T2> &a0, T3 &&a1) {
   return a0.template append_range<T3>(std::forward<T3>(a1));
 }

@@ -45,28 +45,22 @@ void f7(std::geometric_distribution<T1> &a0,
   return a0.param(a1);
 }
 
-template <typename T1>
-typename std::geometric_distribution<T1>::result_type
-f8(const std::geometric_distribution<T1> &a0) {
+template <typename T1> T1 f8(const std::geometric_distribution<T1> &a0) {
   return a0.min();
 }
 
-template <typename T1>
-typename std::geometric_distribution<T1>::result_type
-f9(const std::geometric_distribution<T1> &a0) {
+template <typename T1> T1 f9(const std::geometric_distribution<T1> &a0) {
   return a0.max();
 }
 
 template <typename T1, typename T2>
-typename std::geometric_distribution<T1>::result_type
-f10(std::geometric_distribution<T1> &a0, T2 &a1) {
+T1 f10(std::geometric_distribution<T1> &a0, T2 &a1) {
   return a0.template operator()<T2>(a1);
 }
 
 template <typename T1, typename T2>
-typename std::geometric_distribution<T1>::result_type
-f11(std::geometric_distribution<T1> &a0, T2 &a1,
-    const typename std::geometric_distribution<T1>::param_type &a2) {
+T1 f11(std::geometric_distribution<T1> &a0, T2 &a1,
+       const typename std::geometric_distribution<T1>::param_type &a2) {
   return a0.template operator()<T2>(a1, a2);
 }
 

@@ -7,7 +7,7 @@
 #include <vector>
 
 template <typename T1, typename T2, typename T3>
-using t17 = typename std::regex_token_iterator<T1, T2, T3>::iterator_concept;
+using t8 = typename std::regex_token_iterator<T1, T2, T3>::iterator_concept;
 
 template <typename T1, typename T2, typename T3>
 bool f15(const std::regex_token_iterator<T1, T2, T3> &a0,

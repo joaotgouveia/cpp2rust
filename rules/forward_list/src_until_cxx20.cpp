@@ -1,47 +1,53 @@
+#include <algorithm>
 #include <forward_list>
 #include <initializer_list>
 #include <utility>
 
-template <typename T1, typename T2> void f43(std::forward_list<T1, T2> &a0) {
+template <typename T1, typename T2>
+void f51(std::forward_list<T1, T2> &a0, const T1 &a1) {
+  return a0.remove(a1);
+}
+
+template <typename T1, typename T2> void f52(std::forward_list<T1, T2> &a0) {
   return a0.unique();
 }
 
 template <typename T1, typename T2, typename T3>
-void f44(std::forward_list<T1, T2> &a0, T3 a1) {
+void f53(std::forward_list<T1, T2> &a0, T3 a1) {
   return a0.template remove_if<T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-void f45(std::forward_list<T1, T2> &a0, T3 a1) {
+void f54(std::forward_list<T1, T2> &a0, T3 a1) {
   return a0.template unique<T3>(a1);
 }
 
 template <typename T1, typename T2>
-bool f46(const std::forward_list<T1, T2> &a0,
+bool f55(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f47(const std::forward_list<T1, T2> &a0,
+bool f56(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f48(const std::forward_list<T1, T2> &a0,
+bool f57(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f49(const std::forward_list<T1, T2> &a0,
+bool f58(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f50(const std::forward_list<T1, T2> &a0,
+bool f59(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }
