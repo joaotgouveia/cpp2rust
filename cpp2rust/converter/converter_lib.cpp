@@ -293,12 +293,8 @@ bool IsUserDefinedDecl(const clang::Decl *decl) {
 }
 
 static bool
-IsLibraryOnlyInstantiation(clang::ASTContext &ctx,
-                           clang::SourceLocation point_of_instantiation,
+HasUnmappedLibraryArgument(clang::ASTContext &ctx,
                            llvm::ArrayRef<clang::TemplateArgument> args) {
-  if (!ctx.getSourceManager().isInSystemHeader(point_of_instantiation)) {
-    return false;
-  }
   return llvm::any_of(args, [&](const clang::TemplateArgument &arg) {
     if (arg.getKind() != clang::TemplateArgument::Type) {
       return false;
@@ -318,16 +314,14 @@ IsLibraryOnlyInstantiation(clang::ASTContext &ctx,
 
 bool IsLibraryOnlySpecialization(
     const clang::ClassTemplateSpecializationDecl *decl) {
-  return IsLibraryOnlyInstantiation(decl->getASTContext(),
-                                    decl->getPointOfInstantiation(),
+  return HasUnmappedLibraryArgument(decl->getASTContext(),
                                     decl->getTemplateArgs().asArray());
 }
 
 bool IsLibraryOnlySpecialization(const clang::FunctionDecl *decl) {
   auto args = decl->getTemplateSpecializationArgs();
-  return args && IsLibraryOnlyInstantiation(decl->getASTContext(),
-                                            decl->getPointOfInstantiation(),
-                                            args->asArray());
+  return args &&
+         HasUnmappedLibraryArgument(decl->getASTContext(), args->asArray());
 }
 
 bool IsAbstractUserClass(const clang::RecordDecl *decl) {

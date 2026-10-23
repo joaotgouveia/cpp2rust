@@ -57,8 +57,8 @@ bool IsUserDefinedDecl(const clang::Decl *decl);
 
 bool IsAbstractUserClass(const clang::RecordDecl *decl);
 
-// A specialization instantiated by library code with a library argument that
-// has no type rule, e.g. a user allocator rebound to a node type.
+// A specialization with a library template argument that has no type rule,
+// e.g. a user allocator rebound to a library node type.
 bool IsLibraryOnlySpecialization(
     const clang::ClassTemplateSpecializationDecl *decl);
 
