@@ -3,9 +3,6 @@
 #include <stacktrace>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::ostream &f1(std::ostream &a0, const std::stacktrace_entry &a1) {
   return a0 << a1;
 }

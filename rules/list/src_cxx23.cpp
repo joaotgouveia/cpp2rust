@@ -4,9 +4,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 void f70(std::list<T1, T2> &a0, T3 &&a1) {
   return a0.template assign_range<T3>(std::forward<T3>(a1));

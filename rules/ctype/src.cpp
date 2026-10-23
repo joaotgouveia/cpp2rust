@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::ctype<char>;
 
 using t2 = std::ctype<char>::char_type;

@@ -3,9 +3,6 @@
 #include <mdspan>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::layout_left;
 
 std::layout_left f1() { return std::layout_left(); }

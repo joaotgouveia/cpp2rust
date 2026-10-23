@@ -9,9 +9,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 bool f12(const typename std::messages_byname<T1>::string_type &a0,
          std::basic_string_view<T1, std::char_traits<T1>> a1) {

@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::divides<void>;
 
 using t3 = std::divides<>::is_transparent;

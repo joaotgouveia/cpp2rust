@@ -4,9 +4,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::condition_variable;
 
 using t2 = std::condition_variable::native_handle_type;

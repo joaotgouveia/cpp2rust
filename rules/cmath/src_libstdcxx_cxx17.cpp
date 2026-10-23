@@ -1,9 +1,6 @@
 #include <cmath>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 long double f219(long double a0, long double a1, long double a2) {
   return std::hypot(a0, a1, a2);
 }

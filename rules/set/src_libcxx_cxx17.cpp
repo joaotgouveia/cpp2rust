@@ -2,9 +2,6 @@
 #include <set>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3, typename T4>
 void f108(std::set<T1, T2, T3> &a0,
           std::set<typename std::set<T1, T2, T3>::key_type, T4,

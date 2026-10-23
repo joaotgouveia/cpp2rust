@@ -2,9 +2,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::default_delete<T1[]>;
 
 template <typename T1> std::default_delete<T1[]> f1() {

@@ -1,9 +1,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 bool f20(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {

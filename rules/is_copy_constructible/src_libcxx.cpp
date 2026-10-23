@@ -1,9 +1,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::is_copy_constructible<T1>::value_type
 f1(const std::is_copy_constructible<T1> &a0) {

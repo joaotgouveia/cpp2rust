@@ -1,9 +1,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> std::fpos<T1> f9() { return std::fpos<T1>(); }
 
 template <typename T1> std::fpos<T1> f10(const std::fpos<T1> &a0) {

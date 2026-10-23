@@ -2,9 +2,6 @@
 #include <iosfwd>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t15 = std::ios_base::io_state;
 
 using t16 = std::ios_base::open_mode;

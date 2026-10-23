@@ -2,9 +2,6 @@
 #include <iosfwd>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::ios_base &f1(std::ios_base &a0) { return std::boolalpha(a0); }
 
 std::ios_base &f2(std::ios_base &a0) { return std::dec(a0); }

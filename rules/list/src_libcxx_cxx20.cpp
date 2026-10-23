@@ -2,9 +2,6 @@
 #include <list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 typename std::list<T1, T2>::size_type
 f104(std::list<T1, T2> &a0, const typename std::list<T1, T2>::value_type &a1) {

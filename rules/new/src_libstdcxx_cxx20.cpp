@@ -2,9 +2,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t6 = std::destroying_delete_t;
 
 std::destroying_delete_t f29() { return std::destroying_delete_t(); }

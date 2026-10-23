@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 typename std::forward_list<T1, T2>::size_type
 f101(std::forward_list<T1, T2> &a0,

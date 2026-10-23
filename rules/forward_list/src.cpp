@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> using t1 = std::forward_list<T1, T2>;
 
 template <typename T1, typename T2>
@@ -227,72 +224,53 @@ void f32(std::forward_list<T1, T2> &a0,
   return a0.splice_after(a1, a2, a3, a4);
 }
 
-template <typename T1, typename T2> void f33(std::forward_list<T1, T2> &a0) {
-  return a0.unique();
-}
-
 template <typename T1, typename T2>
-void f34(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &&a1) {
+void f33(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &&a1) {
   return a0.merge(std::move(a1));
 }
 
 template <typename T1, typename T2>
-void f35(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
+void f34(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
   return a0.merge(a1);
 }
 
-template <typename T1, typename T2> void f36(std::forward_list<T1, T2> &a0) {
+template <typename T1, typename T2> void f35(std::forward_list<T1, T2> &a0) {
   return a0.sort();
 }
 
-template <typename T1, typename T2> void f37(std::forward_list<T1, T2> &a0) {
+template <typename T1, typename T2> void f36(std::forward_list<T1, T2> &a0) {
   return a0.reverse();
 }
 
 template <typename T1, typename T2, typename... T3>
-void f38(std::forward_list<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
 typename std::forward_list<T1, T2>::iterator
-f39(std::forward_list<T1, T2> &a0,
+f37(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T3 &&...a2) {
   return a0.template emplace_after<T3...>(a1, std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3>
-void f40(std::forward_list<T1, T2> &a0, T3 a1) {
-  return a0.template remove_if<T3>(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f41(std::forward_list<T1, T2> &a0, T3 a1) {
-  return a0.template unique<T3>(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f42(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &&a1, T3 a2) {
+void f38(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &&a1, T3 a2) {
   return a0.template merge<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f43(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1, T3 a2) {
+void f39(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1, T3 a2) {
   return a0.template merge<T3>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f44(std::forward_list<T1, T2> &a0, T3 a1) {
+void f40(std::forward_list<T1, T2> &a0, T3 a1) {
   return a0.template sort<T3>(a1);
 }
 
 template <typename T1, typename T2>
-bool f45(const std::forward_list<T1, T2> &a0,
+bool f41(const std::forward_list<T1, T2> &a0,
          const std::forward_list<T1, T2> &a1) {
   return a0 == a1;
 }
 
 template <typename T1, typename T2>
-void f46(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
+void f42(std::forward_list<T1, T2> &a0, std::forward_list<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }

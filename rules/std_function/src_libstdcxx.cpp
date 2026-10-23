@@ -2,9 +2,6 @@
 #include <functional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_function_call;
 
 const char *f1(const std::bad_function_call &a0) { return a0.what(); }

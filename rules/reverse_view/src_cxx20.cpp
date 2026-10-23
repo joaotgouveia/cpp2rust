@@ -3,9 +3,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::ranges::reverse_view<T1>;
 
 template <typename T1> std::ranges::reverse_view<T1> f1() {

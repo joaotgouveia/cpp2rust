@@ -2,9 +2,6 @@
 #include <cwchar>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 wchar_t *f1(wchar_t *a0, wchar_t a1) { return std::wcschr(a0, a1); }
 
 wchar_t *f2(wchar_t *a0, const wchar_t *a1) { return std::wcspbrk(a0, a1); }

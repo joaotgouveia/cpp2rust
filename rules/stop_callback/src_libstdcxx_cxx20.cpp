@@ -1,9 +1,6 @@
 #include <stop_token>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2,
           std::enable_if_t<std::is_constructible_v<T1, T2>, int> T3 = 0>
 std::stop_callback<T1> f1(const std::stop_token &a0, T2 &&a1) {

@@ -2,14 +2,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
-template <typename T1, typename... T2>
-void f230(std::vector<bool, T1> &a0, T2 &&...a1) {
-  return a0.template emplace_back<T2...>(std::forward<T2>(a1)...);
-}
-
 template <typename T1, typename... T2>
 typename std::vector<bool, T1>::iterator
 f231(std::vector<bool, T1> &a0,

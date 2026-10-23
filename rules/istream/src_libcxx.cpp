@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 std::basic_istream<T1, T2> &f12(std::basic_istream<T1, T2> &&a0,
                                 std::basic_string<T1, T2, T3> &a1) {

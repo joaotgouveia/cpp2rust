@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::logical_not<void>;
 
 using t3 = std::logical_not<>::is_transparent;

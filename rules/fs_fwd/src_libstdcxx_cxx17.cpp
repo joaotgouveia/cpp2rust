@@ -2,9 +2,6 @@
 #include <system_error>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f1(const std::filesystem::path &a0, const std::filesystem::path &a1,
         std::filesystem::copy_options a2) {
   return std::filesystem::copy(a0, a1, a2);

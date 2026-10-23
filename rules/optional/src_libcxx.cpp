@@ -1,9 +1,6 @@
 #include <optional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t5 = std::bad_optional_access;
 
 std::bad_optional_access f90() { return std::bad_optional_access(); }

@@ -1,9 +1,6 @@
 #include <expected>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_expected_access<void>;
 
 const char *f1(const std::bad_expected_access<void> &a0) { return a0.what(); }

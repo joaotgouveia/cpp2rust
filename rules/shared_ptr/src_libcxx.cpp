@@ -3,9 +3,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename... T3,
           typename std::enable_if<!std::is_array<T1>::value, int>::type T4 = 0>
 std::shared_ptr<T1> f66(const T2 &a0, T3 &&...a1) {
@@ -96,18 +93,12 @@ std::shared_ptr<T1> f83(const std::shared_ptr<T2> &a0) {
   return std::reinterpret_pointer_cast<T1, T2>(a0);
 }
 
-template <typename T1>
-typename std::add_lvalue_reference<T1>::type
-f84(const std::shared_ptr<T1> &a0) {
-  return a0.operator*();
-}
-
 template <typename T1, typename T2>
-bool f85(const std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1) {
+bool f84(const std::shared_ptr<T1> &a0, const std::shared_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }
 
 template <typename T1, typename T2>
-bool f86(const std::shared_ptr<T1> &a0, const std::weak_ptr<T2> &a1) {
+bool f85(const std::shared_ptr<T1> &a0, const std::weak_ptr<T2> &a1) {
   return a0.template owner_before<T2>(a1);
 }

@@ -5,9 +5,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 std::basic_ostringstream<T1, T2, T3> &
 f77(std::basic_ostringstream<T1, T2, T3> &a0, const volatile void *a1) {

@@ -1,9 +1,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> void f5(T1 a0, T1 a1) {
   return std::uninitialized_default_construct<T1>(a0, a1);
 }

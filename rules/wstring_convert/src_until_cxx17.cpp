@@ -3,9 +3,6 @@
 #include <locale>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3, typename T4>
 using t1 = std::wstring_convert<T1, T2, T3, T4>;
 

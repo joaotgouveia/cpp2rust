@@ -4,9 +4,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> const T1 *f1(const std::valarray<T1> &a0) {
   return std::begin<T1>(a0);
 }

@@ -1,9 +1,6 @@
 #include <stack>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> std::stack<T1, T2> f13(const T2 &a0) {
   return std::stack<T1, T2>(a0);
 }

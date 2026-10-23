@@ -2,9 +2,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::slice_array<T1>;
 
 template <typename T1> using t2 = typename std::slice_array<T1>::value_type;

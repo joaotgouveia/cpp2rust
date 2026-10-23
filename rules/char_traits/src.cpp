@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::char_traits<char>;
 
 using t2 = std::char_traits<char>::char_type;

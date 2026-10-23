@@ -1,9 +1,6 @@
 #include <limits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t5 = std::numeric_limits<char>;
 
 char f1() { return std::numeric_limits<char>::min(); }

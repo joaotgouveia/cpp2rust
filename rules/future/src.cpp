@@ -3,9 +3,6 @@
 #include <system_error>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2>
 auto f1(std::launch a0, T1 &&a1, T2 &&...a2)
     -> decltype(std::async<T1, T2...>(a0, std::forward<T1>(a1),

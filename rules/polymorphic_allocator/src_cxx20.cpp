@@ -5,9 +5,6 @@
 #include <tuple>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 void *f13(std::pmr::polymorphic_allocator<T1> &a0, std::size_t a1,
           std::size_t a2) {

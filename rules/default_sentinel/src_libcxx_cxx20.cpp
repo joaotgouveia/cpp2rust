@@ -1,9 +1,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::default_sentinel_t;
 
 std::default_sentinel_t f1() { return std::default_sentinel_t(); }

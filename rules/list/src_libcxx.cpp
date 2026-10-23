@@ -2,61 +2,52 @@
 #include <list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
-bool f92(const std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
+bool f93(const std::list<T1, T2> &a0, const std::list<T1, T2> &a1) {
   return a0 == a1;
 }
 
 template <typename T1, typename T2>
-void f93(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
+void f94(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
   return std::swap<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f94(typename std::list<T1, T2>::size_type a0) {
+std::list<T1, T2> f95(typename std::list<T1, T2>::size_type a0) {
   return std::list<T1, T2>(a0);
 }
 
 template <typename T1, typename T2>
-std::list<T1, T2> f95(typename std::list<T1, T2>::size_type a0,
+std::list<T1, T2> f96(typename std::list<T1, T2>::size_type a0,
                       const typename std::list<T1, T2>::value_type &a1) {
   return std::list<T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 std::list<T1, T2>
-f96(std::initializer_list<typename std::list<T1, T2>::value_type> a0) {
+f97(std::initializer_list<typename std::list<T1, T2>::value_type> a0) {
   return std::list<T1, T2>(a0);
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::value_type &f97(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::value_type &f98(std::list<T1, T2> &a0) {
   return a0.front();
 }
 
 template <typename T1, typename T2>
-const typename std::list<T1, T2>::value_type &f98(const std::list<T1, T2> &a0) {
+const typename std::list<T1, T2>::value_type &f99(const std::list<T1, T2> &a0) {
   return a0.front();
 }
 
 template <typename T1, typename T2>
-typename std::list<T1, T2>::value_type &f99(std::list<T1, T2> &a0) {
+typename std::list<T1, T2>::value_type &f100(std::list<T1, T2> &a0) {
   return a0.back();
 }
 
 template <typename T1, typename T2>
 const typename std::list<T1, T2>::value_type &
-f100(const std::list<T1, T2> &a0) {
+f101(const std::list<T1, T2> &a0) {
   return a0.back();
-}
-
-template <typename T1, typename T2>
-void f101(std::list<T1, T2> &a0,
-          const typename std::list<T1, T2>::value_type &a1) {
-  return a0.remove(a1);
 }
 
 template <typename T1, typename T2>

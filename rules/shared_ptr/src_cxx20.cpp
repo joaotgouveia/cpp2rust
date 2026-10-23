@@ -7,9 +7,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::shared_ptr<T1> f38(std::shared_ptr<T2> &&a0) {
   return std::const_pointer_cast<T1, T2>(std::move(a0));

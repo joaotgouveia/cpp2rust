@@ -1,9 +1,6 @@
 #include <stop_token>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::stop_token;
 
 std::stop_token f1() { return std::stop_token(); }

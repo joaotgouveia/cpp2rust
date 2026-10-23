@@ -3,9 +3,6 @@
 #include <tuple>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2> using t1 = std::packaged_task<T1(T2...)>;
 
 template <typename T1, typename... T2> std::packaged_task<T1(T2...)> f1() {

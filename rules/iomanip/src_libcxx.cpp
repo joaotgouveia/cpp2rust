@@ -2,9 +2,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 decltype(std::resetiosflags(std::declval<std::ios_base::fmtflags>()))
 f30(std::ios_base::fmtflags a0) {
   return std::resetiosflags(a0);

@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::identity;
 
 using t2 = std::identity::is_transparent;

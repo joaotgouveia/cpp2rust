@@ -2,9 +2,6 @@
 #include <thread>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f23(std::thread &a0, std::thread &a1) { return std::swap(a0, a1); }
 
 using t4 = std::thread;

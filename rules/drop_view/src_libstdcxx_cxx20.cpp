@@ -2,9 +2,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> bool f11(std::ranges::drop_view<T1> &a0) {
   return a0.empty();
 }

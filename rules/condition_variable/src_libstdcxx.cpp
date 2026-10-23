@@ -3,9 +3,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 __gthread_cond_t *f25(std::condition_variable &a0) {
   return a0.native_handle();
 }

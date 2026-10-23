@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bit_not<void>;
 
 using t2 = std::bit_not<>::is_transparent;

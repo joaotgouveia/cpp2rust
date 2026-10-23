@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::forward_list<T1, T2> f62(const T2 &a0) {
   return std::forward_list<T1, T2>(a0);
@@ -95,18 +92,13 @@ f76(std::forward_list<T1, T2> &a0,
   return a0.insert_after(a1, a2);
 }
 
-template <typename T1, typename T2>
-void f77(std::forward_list<T1, T2> &a0, const T1 &a1) {
-  return a0.remove(a1);
-}
-
 template <typename T1, typename T2, typename T3,
           typename T4 = typename std::enable_if<
               std::is_convertible<
                   typename std::iterator_traits<T3>::iterator_category,
                   std::input_iterator_tag>::value,
               void>::type>
-std::forward_list<T1, T2> f78(T3 a0, T3 a1, const T2 &a2) {
+std::forward_list<T1, T2> f77(T3 a0, T3 a1, const T2 &a2) {
   return std::forward_list<T1, T2>(a0, a1, a2);
 }
 
@@ -116,7 +108,7 @@ template <typename T1, typename T2, typename T3,
                   typename std::iterator_traits<T3>::iterator_category,
                   std::input_iterator_tag>::value,
               void>::type>
-void f79(std::forward_list<T1, T2> &a0, T3 a1, T3 a2) {
+void f78(std::forward_list<T1, T2> &a0, T3 a1, T3 a2) {
   return a0.template assign<T3>(a1, a2);
 }
 
@@ -127,7 +119,7 @@ template <typename T1, typename T2, typename T3,
                   std::input_iterator_tag>::value,
               void>::type>
 typename std::forward_list<T1, T2>::iterator
-f80(std::forward_list<T1, T2> &a0,
+f79(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::const_iterator a1, T3 a2, T3 a3) {
   return a0.template insert_after<T3>(a1, a2, a3);
 }

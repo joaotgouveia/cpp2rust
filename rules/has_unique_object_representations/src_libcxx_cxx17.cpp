@@ -1,9 +1,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::has_unique_object_representations<T1>::value_type
 f1(const std::has_unique_object_representations<T1> &a0) {

@@ -2,9 +2,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::iterator_traits<T1 *>;
 
 template <typename T1>

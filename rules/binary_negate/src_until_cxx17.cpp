@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::binary_negate<T1>;
 
 template <typename T1> std::binary_negate<T1> f1(const T1 &a0) {

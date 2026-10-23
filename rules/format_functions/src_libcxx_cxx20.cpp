@@ -6,9 +6,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename... T1>
 std::string f1(std::locale a0, std::format_string<T1...> a1, T1 &&...a2) {
   return std::format<T1...>(std::move(a0), a1, std::forward<T1>(a2)...);

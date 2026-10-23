@@ -5,9 +5,6 @@
 #include <string.h>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 void f75(std::basic_ofstream<T1, T2> &a0, const std::filesystem::path &a1,
          typename std::basic_ofstream<T1, T2>::openmode a2) {

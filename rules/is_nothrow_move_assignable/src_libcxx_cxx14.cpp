@@ -1,9 +1,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::is_nothrow_move_assignable<T1>::value_type
 f2(const std::is_nothrow_move_assignable<T1> &a0) {

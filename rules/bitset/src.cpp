@@ -4,9 +4,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <std::size_t T1> using t1 = std::bitset<T1>;
 
 template <std::size_t T1> std::bitset<T1> f1() { return std::bitset<T1>(); }

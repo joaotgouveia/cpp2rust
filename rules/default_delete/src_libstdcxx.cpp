@@ -1,9 +1,6 @@
 #include <condition_variable>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2,
           typename T3 = typename std::enable_if<
               std::integral_constant<

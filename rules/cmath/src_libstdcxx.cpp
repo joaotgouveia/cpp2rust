@@ -1,9 +1,6 @@
 #include <cmath>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 long double f4(long double a0) { return std::acos(a0); }
 
 float f5(float a0) { return std::acos(a0); }

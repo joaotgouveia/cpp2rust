@@ -2,9 +2,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::variant_size<const T1>;
 
 template <typename T1> using t2 = std::variant_size<volatile T1>;

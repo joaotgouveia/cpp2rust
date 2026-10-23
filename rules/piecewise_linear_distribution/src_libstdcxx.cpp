@@ -4,9 +4,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::vector<T1> f12(const std::piecewise_linear_distribution<T1> &a0) {
   return a0.intervals();

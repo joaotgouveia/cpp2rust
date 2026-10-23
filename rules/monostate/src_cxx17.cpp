@@ -1,9 +1,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::monostate;
 
 std::monostate f1() { return std::monostate(); }

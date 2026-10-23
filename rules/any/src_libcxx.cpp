@@ -1,9 +1,6 @@
 #include <any>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t3 = std::bad_any_cast;
 
 const char *f27(const std::bad_any_cast &a0) { return a0.what(); }

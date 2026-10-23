@@ -5,9 +5,6 @@
 #include <typeindex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::type_index;
 
 std::type_index f1(const std::type_info &a0) { return std::type_index(a0); }

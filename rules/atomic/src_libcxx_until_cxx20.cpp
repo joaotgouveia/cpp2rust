@@ -2,9 +2,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 void f399(volatile std::atomic<T1> *a0,
           typename std::atomic<T1>::value_type a1) {

@@ -1,9 +1,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2,
           typename T3 = decltype(::new (std::declval<void *>())
                                      T1(std::declval<T2>()...))>

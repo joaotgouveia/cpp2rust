@@ -4,9 +4,6 @@
 #include <random>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, std::size_t T2>
 bool f16(const std::shuffle_order_engine<T1, T2> &a0,
          const std::shuffle_order_engine<T1, T2> &a1) {

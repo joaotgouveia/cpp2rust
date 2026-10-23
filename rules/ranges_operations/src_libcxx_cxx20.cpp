@@ -1,9 +1,6 @@
 #include <functional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::ranges::equal_to;
 
 using t2 = std::ranges::equal_to::is_transparent;

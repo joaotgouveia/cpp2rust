@@ -2,9 +2,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t7 = std::sorted_equivalent_t;
 
 std::sorted_equivalent_t f15() { return std::sorted_equivalent_t(); }

@@ -1,9 +1,6 @@
 #include <queue>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 std::priority_queue<T1, T2, T3> f14(const T3 &a0, const T2 &a1) {
   return std::priority_queue<T1, T2, T3>(a0, a1);

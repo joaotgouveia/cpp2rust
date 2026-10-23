@@ -1,9 +1,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t13 = std::collate_byname<char>;
 
 using t14 = std::collate_byname<char>::char_type;

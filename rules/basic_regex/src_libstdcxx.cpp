@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::basic_regex<T1, T2> f10(const T1 *a0,
                              typename std::basic_regex<T1, T2>::flag_type a1) {

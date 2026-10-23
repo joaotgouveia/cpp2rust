@@ -1,9 +1,6 @@
 #include <complex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> double f98(T1 a0) { return std::arg<T1>(a0); }
 
 std::complex<long double> f99(_Complex long double a0) {

@@ -2,9 +2,6 @@
 #include <list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> using t1 = std::list<T1, T2>;
 
 template <typename T1, typename T2>
@@ -318,67 +315,43 @@ void f51(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
   return a0.splice(a1, a2, a3, a4);
 }
 
-template <typename T1, typename T2> void f52(std::list<T1, T2> &a0) {
-  return a0.unique();
-}
-
 template <typename T1, typename T2>
-void f53(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
+void f52(std::list<T1, T2> &a0, std::list<T1, T2> &&a1) {
   return a0.merge(std::move(a1));
 }
 
 template <typename T1, typename T2>
-void f54(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
+void f53(std::list<T1, T2> &a0, std::list<T1, T2> &a1) {
   return a0.merge(a1);
 }
 
-template <typename T1, typename T2> void f55(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f54(std::list<T1, T2> &a0) {
   return a0.reverse();
 }
 
-template <typename T1, typename T2> void f56(std::list<T1, T2> &a0) {
+template <typename T1, typename T2> void f55(std::list<T1, T2> &a0) {
   return a0.sort();
 }
 
 template <typename T1, typename T2, typename... T3>
-void f57(std::list<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
-void f58(std::list<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_back<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
 typename std::list<T1, T2>::iterator
-f59(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
+f56(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
     T3 &&...a2) {
   return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
 }
 
 template <typename T1, typename T2, typename T3>
-void f60(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template remove_if<T3>(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f61(std::list<T1, T2> &a0, T3 a1) {
-  return a0.template unique<T3>(a1);
-}
-
-template <typename T1, typename T2, typename T3>
-void f62(std::list<T1, T2> &a0, std::list<T1, T2> &&a1, T3 a2) {
+void f57(std::list<T1, T2> &a0, std::list<T1, T2> &&a1, T3 a2) {
   return a0.template merge<T3>(std::move(a1), a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f63(std::list<T1, T2> &a0, std::list<T1, T2> &a1, T3 a2) {
+void f58(std::list<T1, T2> &a0, std::list<T1, T2> &a1, T3 a2) {
   return a0.template merge<T3>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-void f64(std::list<T1, T2> &a0, T3 a1) {
+void f59(std::list<T1, T2> &a0, T3 a1) {
   return a0.template sort<T3>(a1);
 }
 

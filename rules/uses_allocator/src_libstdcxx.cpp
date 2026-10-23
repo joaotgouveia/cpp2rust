@@ -1,9 +1,6 @@
 #include <tuple>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::allocator_arg_t;
 
 std::allocator_arg_t f1() { return std::allocator_arg_t(); }

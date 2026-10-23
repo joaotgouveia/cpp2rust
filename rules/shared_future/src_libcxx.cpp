@@ -2,9 +2,6 @@
 #include <future>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 void f10(std::shared_future<T1> &a0, std::shared_future<T1> &a1) {
   return a0.swap(a1);

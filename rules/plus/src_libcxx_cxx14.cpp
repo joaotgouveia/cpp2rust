@@ -1,9 +1,6 @@
 #include <functional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t4 = std::plus<>;
 
 std::plus<> f8() { return std::plus<>(); }

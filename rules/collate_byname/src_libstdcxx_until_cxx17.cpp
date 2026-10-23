@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::collate_byname<T1>::string_type
 f69(T1 const *a0, const std::allocator<T1> &a1) {

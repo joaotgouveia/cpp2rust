@@ -5,9 +5,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename... T1>
 void f11(std::ostream &a0, std::format_string<T1...> a1, T1 &&...a2) {
   return std::print<T1...>(a0, a1, std::forward<T1>(a2)...);

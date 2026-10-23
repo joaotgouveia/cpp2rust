@@ -2,9 +2,6 @@
 #include <shared_mutex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::shared_mutex;
 
 std::shared_mutex f13() { return {}; }

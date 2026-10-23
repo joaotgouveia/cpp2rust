@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::basic_string_view<T1, std::char_traits<T1>>
 f73(const typename std::numpunct<T1>::string_type &a0) {

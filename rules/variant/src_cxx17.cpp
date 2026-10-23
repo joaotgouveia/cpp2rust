@@ -5,9 +5,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <std::size_t T1, typename... T2>
 const std::variant_alternative_t<T1, std::variant<T2...>> &&
 f1(const std::variant<T2...> &&a0) {

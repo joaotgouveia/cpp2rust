@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t6 = std::contiguous_iterator_tag;
 
 std::contiguous_iterator_tag f26() { return std::contiguous_iterator_tag(); }

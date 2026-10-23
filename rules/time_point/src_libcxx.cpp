@@ -1,9 +1,6 @@
 #include <chrono>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3, typename T4>
 std::chrono::time_point<
     T3, typename std::common_type<std::chrono::duration<T1, T2>, T4>::type>

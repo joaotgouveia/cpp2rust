@@ -1,8 +1,5 @@
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::in_place_t;
 
 std::in_place_t f1() { return std::in_place_t(); }

@@ -5,9 +5,6 @@
 #include <optional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::range_format;
 
 std::range_format f1() { return std::range_format::disabled; }

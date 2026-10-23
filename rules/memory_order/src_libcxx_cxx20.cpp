@@ -1,9 +1,6 @@
 #include <atomic>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::memory_order f7() { return std::memory_order::relaxed; }
 
 std::memory_order f8() { return std::memory_order::consume; }

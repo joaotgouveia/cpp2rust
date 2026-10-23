@@ -3,9 +3,6 @@
 #include <map>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3, typename T4>
 std::map<T1, T2, T3, T4>
 f73(const T3 &a0, const typename std::map<T1, T2, T3, T4>::allocator_type &a1) {

@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::basic_istream<T1, T2> &
 f64(std::basic_istream<T1, T2> &a0,

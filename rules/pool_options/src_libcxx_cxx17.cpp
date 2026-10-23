@@ -1,9 +1,6 @@
 #include <memory_resource>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::pmr::pool_options;
 
 std::pmr::pool_options f1() { return std::pmr::pool_options(); }

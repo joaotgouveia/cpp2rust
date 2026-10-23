@@ -1,9 +1,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t3 = std::common_reference<>;
 
 std::common_reference<> f1() { return std::common_reference<>(); }

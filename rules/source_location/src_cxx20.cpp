@@ -1,9 +1,6 @@
 #include <source_location>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::source_location;
 
 std::source_location f1() { return std::source_location(); }

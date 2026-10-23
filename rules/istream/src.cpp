@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::basic_istream<char, T1> &f1(std::basic_istream<char, T1> &a0,
                                  unsigned char &a1) {

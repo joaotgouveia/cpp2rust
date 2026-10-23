@@ -2,9 +2,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> bool f8(std::ranges::ref_view<T1> &a0) {
   return static_cast<bool>(a0);
 }

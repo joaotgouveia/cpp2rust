@@ -1,9 +1,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t2 = typename std::weak_ptr<T1>::element_type;
 
 template <typename T1> void f10(std::weak_ptr<T1> &a0, std::weak_ptr<T1> &a1) {

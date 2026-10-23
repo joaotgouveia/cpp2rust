@@ -2,9 +2,6 @@
 #include <exception>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::exception_ptr;
 
 std::exception_ptr f4() { return std::exception_ptr(); }

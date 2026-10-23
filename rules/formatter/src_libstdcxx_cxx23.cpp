@@ -9,9 +9,6 @@
 #include <thread>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t38 = std::formatter<std::stacktrace_entry>;
 
 const std::basic_string_view<char>::value_type *

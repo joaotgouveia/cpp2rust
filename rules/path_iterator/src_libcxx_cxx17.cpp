@@ -1,9 +1,6 @@
 #include <filesystem>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 bool f1(const std::filesystem::path::iterator &a0,
         const std::filesystem::path::iterator &a1) {
   return a0 != a1;

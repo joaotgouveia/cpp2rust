@@ -4,9 +4,6 @@
 #include <semaphore>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <std::ptrdiff_t T1> using t1 = std::counting_semaphore<T1>;
 
 template <std::ptrdiff_t T1> std::counting_semaphore<T1> f1(std::ptrdiff_t a0) {

@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 std::basic_stringstream<T1, T2, T3>
 f46(const std::basic_string<T1, T2, T3> &a0,

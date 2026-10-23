@@ -1,9 +1,6 @@
 #include <iomanip>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::money_base;
 
 using t2 = std::money_base::part;

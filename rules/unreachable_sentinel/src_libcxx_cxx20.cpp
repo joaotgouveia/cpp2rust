@@ -1,9 +1,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::unreachable_sentinel_t;
 
 std::unreachable_sentinel_t f1() { return std::unreachable_sentinel_t(); }

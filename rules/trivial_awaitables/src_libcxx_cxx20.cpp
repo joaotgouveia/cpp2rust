@@ -1,9 +1,6 @@
 #include <coroutine>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::suspend_always;
 
 bool f1(const std::suspend_always &a0) { return a0.await_ready(); }

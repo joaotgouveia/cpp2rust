@@ -1,9 +1,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::allocator_traits<T1>::pointer
 f8(typename std::allocator_traits<T1>::allocator_type &a0,

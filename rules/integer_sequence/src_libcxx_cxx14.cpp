@@ -1,9 +1,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <std::size_t... T1> using t3 = std::index_sequence<T1...>;
 
 template <typename... T1> using t4 = std::index_sequence_for<T1...>;

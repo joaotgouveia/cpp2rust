@@ -2,9 +2,6 @@
 #include <atomic>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t4 = std::atomic<char>;
 
 std::atomic<char> f45() { return {}; }

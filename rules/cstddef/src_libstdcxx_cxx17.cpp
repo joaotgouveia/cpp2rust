@@ -2,9 +2,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::byte;
 
 std::byte f1(std::byte a0, std::byte a1) { return a0 & a1; }

@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> T1 f1(T1 a0, T1 a1) {
   return std::max_element<T1>(a0, a1);
 }

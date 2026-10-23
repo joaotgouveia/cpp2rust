@@ -1,9 +1,6 @@
 #include <functional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2 = std::enable_if_t<
                            std::is_constructible_v<std::decay_t<T1>, T1> &&
                            std::is_move_constructible_v<std::decay_t<T1>>>>

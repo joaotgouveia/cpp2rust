@@ -1,9 +1,6 @@
 #include <functional>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t4 = std::bit_not<T1>;
 
 template <typename T1> T1 f8(const std::bit_not<T1> &a0, const T1 &a1) {

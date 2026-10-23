@@ -1,9 +1,6 @@
 #include <exception>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::unexpected_handler f6() { return std::get_unexpected(); }
 
 std::unexpected_handler f7(std::unexpected_handler a0) {

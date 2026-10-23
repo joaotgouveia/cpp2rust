@@ -1,9 +1,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t24 = std::bidirectional_iterator_tag;
 
 std::bidirectional_iterator_tag f1() {

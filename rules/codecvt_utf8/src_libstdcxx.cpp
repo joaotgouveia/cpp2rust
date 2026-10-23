@@ -2,9 +2,6 @@
 #include <codecvt>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, unsigned long T2, std::codecvt_mode T3>
 using t1 = std::codecvt_utf8<T1, T2, T3>;
 

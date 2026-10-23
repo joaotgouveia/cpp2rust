@@ -4,9 +4,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::coroutine_handle<std::noop_coroutine_promise>;
 
 std::coroutine_handle<>

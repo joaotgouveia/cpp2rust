@@ -6,9 +6,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename... T1>
 std::common_comparison_category_t<std::compare_three_way_result_t<T1>...>
 f26(const std::variant<T1...> &a0, const std::variant<T1...> &a1) {

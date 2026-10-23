@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> using t1 = std::deque<T1, T2>;
 
 template <typename T1, typename T2>
@@ -278,18 +275,8 @@ template <typename T1, typename T2> void f45(std::deque<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2, typename... T3>
-void f46(std::deque<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
-void f47(std::deque<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_back<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
 typename std::deque<T1, T2>::iterator
-f48(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
+f46(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
     T3 &&...a2) {
   return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
 }

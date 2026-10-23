@@ -3,9 +3,6 @@
 #include <latch>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::latch;
 
 std::ptrdiff_t f1() { return std::latch::max(); }

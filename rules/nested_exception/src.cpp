@@ -1,9 +1,6 @@
 #include <exception>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::nested_exception;
 
 std::nested_exception f1() { return std::nested_exception(); }

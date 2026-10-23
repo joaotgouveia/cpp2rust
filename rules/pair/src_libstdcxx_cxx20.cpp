@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> std::pair<T1, T2> f13() {
   return std::pair<T1, T2>();
 }

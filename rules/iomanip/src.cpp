@@ -4,9 +4,6 @@
 #include <ostream>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 auto f1(T1 &a0, bool a1) -> decltype(std::get_money<T1>(a0, a1)) {
   return std::get_money<T1>(a0, a1);

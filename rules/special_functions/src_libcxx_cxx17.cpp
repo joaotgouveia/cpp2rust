@@ -1,9 +1,6 @@
 #include <cmath>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 long double f1(unsigned int a0, long double a1) { return std::hermite(a0, a1); }
 
 double f2(unsigned int a0, double a1) { return std::hermite(a0, a1); }

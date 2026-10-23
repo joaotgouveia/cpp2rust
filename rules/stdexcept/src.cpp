@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::domain_error;
 
 std::domain_error f1(const std::string &a0) { return std::domain_error(a0); }

@@ -2,9 +2,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 auto f15(const std::valarray<T1> &a0,
          const typename std::valarray<T1>::value_type &a1)

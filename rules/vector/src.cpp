@@ -3,9 +3,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::vector<bool, T1>;
 
 template <typename T1> using t2 = typename std::vector<bool, T1>::value_type;
@@ -518,13 +515,8 @@ template <typename T1, typename T2> void f81(std::vector<T1, T2> &a0) {
 }
 
 template <typename T1, typename T2, typename... T3>
-void f82(std::vector<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace_back<T3...>(std::forward<T3>(a1)...);
-}
-
-template <typename T1, typename T2, typename... T3>
 typename std::vector<T1, T2>::iterator
-f83(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
+f82(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
     T3 &&...a2) {
   return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
 }

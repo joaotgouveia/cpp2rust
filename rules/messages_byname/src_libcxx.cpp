@@ -8,9 +8,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t13 = typename std::messages_byname<T1>::catalog;
 
 template <typename T1> long f86(const std::messages_byname<T1> &a0) {

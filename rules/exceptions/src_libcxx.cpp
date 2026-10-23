@@ -1,9 +1,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_alloc;
 
 std::bad_alloc f1() { return std::bad_alloc(); }

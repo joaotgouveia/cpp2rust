@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::forward_list<T1, T2>
 f83(const typename std::forward_list<T1, T2>::allocator_type &a0) {
@@ -122,10 +119,4 @@ f99(std::forward_list<T1, T2> &a0,
     typename std::forward_list<T1, T2>::size_type a2,
     const typename std::forward_list<T1, T2>::value_type &a3) {
   return a0.insert_after(a1, a2, a3);
-}
-
-template <typename T1, typename T2>
-void f100(std::forward_list<T1, T2> &a0,
-          const typename std::forward_list<T1, T2>::value_type &a1) {
-  return a0.remove(a1);
 }

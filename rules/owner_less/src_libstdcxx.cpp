@@ -1,9 +1,6 @@
 #include <condition_variable>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t3 = std::owner_less<void>;
 
 std::owner_less<void> f7() { return std::owner_less<void>(); }

@@ -1,9 +1,6 @@
 #include <limits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::float_denorm_style;
 
 std::float_denorm_style f6() { return std::denorm_indeterminate; }

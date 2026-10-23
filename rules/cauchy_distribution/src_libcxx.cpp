@@ -3,9 +3,6 @@
 #include <random>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::cauchy_distribution<T1>
 f14(typename std::cauchy_distribution<T1>::result_type a0,

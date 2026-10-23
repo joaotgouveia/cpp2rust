@@ -4,9 +4,6 @@
 #include <system_error>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::string f78(const std::filesystem::path &a0) { return a0.u8string(); }
 
 std::string f79(const std::filesystem::path &a0) {

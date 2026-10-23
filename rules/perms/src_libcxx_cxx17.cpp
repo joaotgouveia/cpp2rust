@@ -1,9 +1,6 @@
 #include <filesystem>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::filesystem::perms f1(std::filesystem::perms a0,
                           std::filesystem::perms a1) {
   return a0 & a1;

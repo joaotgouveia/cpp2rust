@@ -3,9 +3,6 @@
 #include <random>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::chi_squared_distribution<T1>
 f13(typename std::chi_squared_distribution<T1>::result_type a0) {

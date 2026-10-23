@@ -1,9 +1,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> std::reference_wrapper<const T1> f1(const T1 &a0) {
   return std::cref<T1>(a0);
 }

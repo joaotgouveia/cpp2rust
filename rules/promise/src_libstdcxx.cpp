@@ -2,9 +2,6 @@
 #include <tuple>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::promise<void> f33(std::allocator_arg_t a0, const T1 &a1,
                        std::promise<void> &&a2) {

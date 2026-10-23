@@ -1,9 +1,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t3 = std::plus<void>;
 
 std::plus<void> f2() { return std::plus<void>(); }

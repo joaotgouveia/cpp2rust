@@ -1,9 +1,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::ranges::view_base;
 
 std::ranges::view_base f1() { return std::ranges::view_base(); }

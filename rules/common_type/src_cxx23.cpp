@@ -3,9 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3, typename T4>
 using t3 = std::common_type<std::pair<T1, T2>, std::pair<T3, T4>>;
 

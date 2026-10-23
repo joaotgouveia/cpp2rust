@@ -4,9 +4,6 @@
 #include <typeinfo>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_cast;
 
 std::bad_cast f1() { return std::bad_cast(); }

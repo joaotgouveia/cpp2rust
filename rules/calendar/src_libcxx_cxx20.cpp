@@ -1,9 +1,6 @@
 #include <chrono>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::chrono::last_spec;
 
 std::chrono::last_spec f1() { return std::chrono::last_spec(); }

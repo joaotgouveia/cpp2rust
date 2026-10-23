@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 typename std::messages<T1>::string_type f72(T1 const *a0,
                                             const std::allocator<T1> &a1) {

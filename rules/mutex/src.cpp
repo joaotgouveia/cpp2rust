@@ -4,9 +4,6 @@
 #include <mutex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::recursive_mutex;
 
 using t2 = std::recursive_mutex::native_handle_type;

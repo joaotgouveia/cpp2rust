@@ -4,9 +4,6 @@
 #include <random>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bernoulli_distribution;
 
 using t2 = std::bernoulli_distribution::result_type;

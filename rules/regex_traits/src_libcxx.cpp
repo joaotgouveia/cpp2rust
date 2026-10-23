@@ -2,9 +2,6 @@
 #include <regex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 using t14 = typename std::regex_traits<T1>::char_class_type;
 

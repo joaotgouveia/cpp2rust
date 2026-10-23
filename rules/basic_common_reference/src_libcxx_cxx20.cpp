@@ -2,9 +2,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, template <class> typename T3,
           template <class> typename T4>
 using t5 = std::basic_common_reference<T1, T2, T3, T4>;

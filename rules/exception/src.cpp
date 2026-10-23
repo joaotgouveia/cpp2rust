@@ -2,9 +2,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_exception;
 
 std::bad_exception f1() { return std::bad_exception(); }

@@ -1,9 +1,6 @@
 #include <iosfwd>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t27 = std::osyncstream;
 
 using t28 = std::syncbuf;

@@ -1,9 +1,6 @@
 #include <chrono>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 typename std::common_type<std::chrono::duration<T1, T2>>::type
 f21(const std::chrono::duration<T1, T2> &a0) {

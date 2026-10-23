@@ -2,9 +2,6 @@
 #include <thread>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::jthread;
 
 using t2 = std::jthread::id;

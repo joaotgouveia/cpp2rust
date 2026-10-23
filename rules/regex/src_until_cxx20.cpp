@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 bool f1(const std::sub_match<T1> &a0,
         const typename std::iterator_traits<T1>::value_type &a1) {

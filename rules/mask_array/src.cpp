@@ -1,9 +1,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::mask_array<T1>;
 
 template <typename T1> using t2 = typename std::mask_array<T1>::value_type;

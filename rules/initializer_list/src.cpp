@@ -2,9 +2,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> const T1 *f1(std::initializer_list<T1> a0) {
   return std::begin<T1>(a0);
 }

@@ -2,9 +2,6 @@
 #include <memory_resource>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::pmr::synchronized_pool_resource;
 
 std::pmr::synchronized_pool_resource f1(const std::pmr::pool_options &a0,

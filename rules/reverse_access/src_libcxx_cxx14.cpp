@@ -2,9 +2,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> auto f1(const T1 &a0) { return std::crbegin<T1>(a0); }
 
 template <typename T1> auto f2(const T1 &a0) { return std::crend<T1>(a0); }

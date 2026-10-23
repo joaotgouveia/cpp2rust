@@ -1,9 +1,6 @@
 #include <iosfwd>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t39 = std::streampos;
 
 using t40 = std::u16streampos;

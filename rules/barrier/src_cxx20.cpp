@@ -3,9 +3,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::barrier<T1>;
 
 template <typename T1> using t2 = typename std::barrier<T1>::arrival_token;

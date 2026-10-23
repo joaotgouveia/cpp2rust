@@ -1,9 +1,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2> auto f1(T2 &&...a0) {
   return std::ranges::to<T1, T2...>(std::forward<T2>(a0)...);
 }

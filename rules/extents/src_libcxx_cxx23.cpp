@@ -3,9 +3,6 @@
 #include <mdspan>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, std::size_t T2> using t1 = std::dextents<T1, T2>;
 
 template <typename T1, std::size_t... T2> using t2 = std::extents<T1, T2...>;

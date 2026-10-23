@@ -2,9 +2,6 @@
 #include <memory_resource>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::pmr::monotonic_buffer_resource;
 
 std::pmr::monotonic_buffer_resource f1() { return {}; }

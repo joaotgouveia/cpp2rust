@@ -13,9 +13,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t40 = std::hash<std::stacktrace_entry>;
 
 std::size_t f197(const std::hash<std::stacktrace_entry> &a0,

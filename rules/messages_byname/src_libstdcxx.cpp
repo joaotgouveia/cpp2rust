@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t12 = typename std::messages_byname<T1>::char_type;
 
 template <typename T1>

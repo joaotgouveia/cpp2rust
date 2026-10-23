@@ -3,9 +3,6 @@
 #include <initializer_list>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> auto f19(const T1 &a0) { return std::data<T1>(a0); }
 
 template <typename T1> auto f20(T1 &a0) { return std::data<T1>(a0); }

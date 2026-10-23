@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename... T3>
 T1 f1(const T2 &a0, T3 &&...a1) {
   return std::make_obj_using_allocator<T1, T2, T3...>(a0,

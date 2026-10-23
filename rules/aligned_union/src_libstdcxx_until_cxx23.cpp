@@ -2,9 +2,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <std::size_t T1, typename... T2>
 using t1 = std::aligned_union<T1, T2...>;
 

@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::domain_error f46(std::domain_error &&a0) {
   return std::domain_error(std::move(a0));
 }

@@ -1,9 +1,6 @@
 #include <queue>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2> using t1 = std::queue<T1, T2>;
 
 template <typename T1, typename T2>
@@ -68,9 +65,4 @@ template <typename T1, typename T2> void f9(std::queue<T1, T2> &a0) {
 template <typename T1, typename T2>
 void f10(std::queue<T1, T2> &a0, std::queue<T1, T2> &a1) {
   return a0.swap(a1);
-}
-
-template <typename T1, typename T2, typename... T3>
-void f11(std::queue<T1, T2> &a0, T3 &&...a1) {
-  return a0.template emplace<T3...>(std::forward<T3>(a1)...);
 }

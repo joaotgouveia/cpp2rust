@@ -3,9 +3,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::codecvt_base::result
 f48(const std::codecvt<char, char, std::mbstate_t> &a0,
     std::codecvt<char, char, __mbstate_t>::state_type &a1,

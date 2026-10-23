@@ -4,9 +4,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f224(const std::atomic<char> &a0, char a1, std::memory_order a2) {
   return a0.wait(a1, a2);
 }

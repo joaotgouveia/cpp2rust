@@ -2,9 +2,6 @@
 #include <atomic>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 bool f207() { return std::atomic<char>::is_always_lock_free; }
 
 bool f208() { return std::atomic<int>::is_always_lock_free; }

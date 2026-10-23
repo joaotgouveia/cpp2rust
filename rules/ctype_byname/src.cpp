@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::ctype_byname<char>;
 
 std::ctype<char>::char_type f1(const std::ctype_byname<char> &a0,

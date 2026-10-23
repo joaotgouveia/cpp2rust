@@ -5,9 +5,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::string f71(const std::filesystem::path &a0) { return a0.u8string(); }
 
 std::string f72(const std::filesystem::path &a0) {

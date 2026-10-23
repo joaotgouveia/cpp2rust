@@ -1,9 +1,6 @@
 #include <compare>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::partial_ordering;
 
 std::partial_ordering f1(const std::partial_ordering &a0) {

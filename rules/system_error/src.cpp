@@ -2,9 +2,6 @@
 #include <system_error>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::system_error;
 
 std::system_error f1(std::error_code a0) {

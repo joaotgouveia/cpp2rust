@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> auto f15(std::ranges::view_interface<T1> &a0) {
   return a0.cbegin();
 }

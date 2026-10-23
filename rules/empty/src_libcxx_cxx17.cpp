@@ -2,9 +2,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> auto f1(const T1 &a0) { return std::empty<T1>(a0); }
 
 template <typename T1> bool f2(std::initializer_list<T1> a0) {

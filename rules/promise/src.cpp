@@ -4,9 +4,6 @@
 #include <tuple>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::promise<void>;
 
 std::promise<void> f1() { return std::promise<void>(); }

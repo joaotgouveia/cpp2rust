@@ -1,9 +1,6 @@
 #include <exception>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::exception_ptr f1() { return std::current_exception(); }
 
 std::terminate_handler f2() { return std::get_terminate(); }

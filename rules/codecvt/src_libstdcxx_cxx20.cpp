@@ -5,9 +5,6 @@
 #include <locale>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t25 = std::codecvt<char16_t, char8_t, std::mbstate_t>;
 
 using t26 = std::codecvt<char16_t, char8_t, __mbstate_t>::intern_type;

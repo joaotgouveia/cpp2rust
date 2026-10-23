@@ -1,9 +1,6 @@
 #include <limits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::float_round_style;
 
 std::float_round_style f1() { return std::round_indeterminate; }

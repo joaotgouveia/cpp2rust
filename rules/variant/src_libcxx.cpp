@@ -1,9 +1,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t4 = std::bad_variant_access;
 
 const char *f38(const std::bad_variant_access &a0) { return a0.what(); }

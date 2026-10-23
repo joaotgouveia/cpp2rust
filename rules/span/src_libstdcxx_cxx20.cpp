@@ -4,9 +4,6 @@
 #include <span>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, std::size_t T2>
 std::span<const std::byte,
           T2 == std::dynamic_extent ? std::dynamic_extent : T2 * sizeof(T1)>

@@ -5,9 +5,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <
     typename T1, typename T2,
     typename std::enable_if<std::is_bounded_array<T1>::value, int>::type T3 = 0>

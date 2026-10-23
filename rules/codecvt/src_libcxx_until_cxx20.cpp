@@ -3,9 +3,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t33 = std::codecvt<char16_t, char, std::mbstate_t>;
 
 using t34 = std::codecvt<char16_t, char, __mbstate_t>::intern_type;

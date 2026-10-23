@@ -5,9 +5,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::codecvt<char, char, std::mbstate_t>;
 
 using t2 = std::codecvt<char, char, __mbstate_t>::intern_type;

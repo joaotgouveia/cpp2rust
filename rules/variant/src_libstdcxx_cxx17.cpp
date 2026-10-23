@@ -3,9 +3,6 @@
 #include <utility>
 #include <variant>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t3 = std::bad_variant_access;
 
 std::bad_variant_access f27() { return std::bad_variant_access(); }

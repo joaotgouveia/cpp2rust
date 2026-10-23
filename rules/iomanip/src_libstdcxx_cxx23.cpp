@@ -4,9 +4,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 auto f25(std::ios_base::fmtflags a0) { return std::resetiosflags(a0); }
 
 auto f26(int a0) { return std::setbase(a0); }

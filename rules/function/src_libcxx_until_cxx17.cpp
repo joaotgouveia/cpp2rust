@@ -4,9 +4,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2, typename T3>
 std::function<T1(T2...)> f24(std::allocator_arg_t a0, const T3 &a1) {
   return std::function<T1(T2...)>(std::move(a0), a1);

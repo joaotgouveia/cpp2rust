@@ -2,9 +2,6 @@
 #include <queue>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::compare_three_way_result_t<T2> f46(const std::queue<T1, T2> &a0,
                                         const std::queue<T1, T2> &a1) {

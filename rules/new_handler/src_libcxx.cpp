@@ -1,9 +1,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 std::new_handler f1() { return std::get_new_handler(); }
 
 using t1 = std::new_handler;

@@ -2,9 +2,6 @@
 #include <system_error>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::error_category;
 
 const char *f11(const std::error_category &a0) { return a0.name(); }

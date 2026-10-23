@@ -2,9 +2,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t7 = std::common_type<>;
 
 std::common_type<> f1() { return std::common_type<>(); }

@@ -5,9 +5,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t22 = std::formatter<char, wchar_t>;
 
 std::formatter<char, wchar_t> f2() { return std::formatter<char, wchar_t>(); }

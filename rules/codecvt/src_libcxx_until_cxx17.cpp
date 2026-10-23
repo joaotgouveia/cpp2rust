@@ -3,9 +3,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t41 = std::codecvt_mode;
 
 std::codecvt_mode f76() { return std::consume_header; }

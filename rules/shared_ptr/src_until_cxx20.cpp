@@ -5,9 +5,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 bool f22(const std::shared_ptr<T1> &a0, std::nullptr_t a1) {
   return a0 != a1;

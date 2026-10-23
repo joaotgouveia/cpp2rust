@@ -1,9 +1,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::nothrow_t;
 
 std::nothrow_t f1() { return std::nothrow_t(); }

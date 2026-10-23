@@ -1,9 +1,6 @@
 #include <atomic>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f18(const std::atomic_flag &a0, bool a1, std::memory_order a2) {
   return a0.wait(a1, a2);
 }

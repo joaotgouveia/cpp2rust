@@ -3,9 +3,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f5() { return std::println(); }
 
 void f6(std::FILE *a0) { return std::println(a0); }

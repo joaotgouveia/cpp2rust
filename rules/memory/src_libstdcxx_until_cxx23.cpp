@@ -2,9 +2,6 @@
 #include <memory>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f1(char *a0, std::size_t a1) { return std::declare_no_pointers(a0, a1); }
 
 void f2(void *a0) { return std::declare_reachable(a0); }

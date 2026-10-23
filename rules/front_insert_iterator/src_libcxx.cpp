@@ -1,9 +1,6 @@
 #include <iterator>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 using t4 = typename std::front_insert_iterator<T1>::iterator_category;
 

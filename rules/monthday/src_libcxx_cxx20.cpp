@@ -2,9 +2,6 @@
 #include <compare>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::chrono::month_day;
 
 std::chrono::month_day f1() { return std::chrono::month_day(); }

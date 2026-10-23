@@ -3,9 +3,6 @@
 #include <mutex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2>
 void f17(std::once_flag &a0, T1 &&a1, T2 &&...a2) {
   return std::call_once<T1, T2...>(a0, std::forward<T1>(a1),

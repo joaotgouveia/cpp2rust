@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 bool f19(const std::basic_string<T1, T2, T3> &a0, const T1 *a1) {
   return a0 == a1;

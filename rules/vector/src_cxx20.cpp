@@ -3,9 +3,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 using t37 =
     typename std::vector<bool, T1>::const_reverse_iterator::iterator_concept;

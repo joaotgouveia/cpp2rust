@@ -11,9 +11,6 @@
 #include <utility>
 #include <vector>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::hash<std::error_code>;
 
 std::size_t f1(const std::hash<std::error_code> &a0,

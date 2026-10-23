@@ -2,14 +2,6 @@
 #include <condition_variable>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
-template <typename T1, typename T2>
-void f42(std::unique_ptr<T1, T2> &a0, std::unique_ptr<T1, T2> &a1) {
-  return std::swap<T1, T2>(a0, a1);
-}
-
 template <typename T1, typename T2>
 typename std::add_lvalue_reference<
     typename std::unique_ptr<T1[], T2>::element_type>::type

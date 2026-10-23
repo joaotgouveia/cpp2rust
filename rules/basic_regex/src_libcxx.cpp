@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 std::basic_regex<T1, T2>
 f37(const typename std::basic_regex<T1, T2>::value_type *a0,

@@ -3,9 +3,6 @@
 #include <syncstream>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, typename T3>
 using t1 = std::basic_osyncstream<T1, T2, T3>;
 

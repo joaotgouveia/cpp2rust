@@ -2,9 +2,6 @@
 #include <string.h>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t13 = std::numpunct<char>;
 
 using t14 = std::numpunct<char>::char_type;

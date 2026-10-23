@@ -1,9 +1,6 @@
 #include <ios>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 int f85(const std::collate<T1> &a0,
         const typename std::collate<T1>::char_type *a1,

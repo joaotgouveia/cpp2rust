@@ -1,9 +1,6 @@
 #include <algorithm>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::ranges::borrowed_iterator_t<T1>;
 
 using t2 = std::ranges::dangling;

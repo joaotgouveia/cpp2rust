@@ -1,9 +1,6 @@
 #include <condition_variable>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::bad_weak_ptr;
 
 const char *f1(const std::bad_weak_ptr &a0) { return a0.what(); }

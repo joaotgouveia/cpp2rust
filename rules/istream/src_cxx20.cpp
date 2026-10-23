@@ -3,9 +3,6 @@
 #include <istream>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, std::size_t T2>
 std::basic_istream<char, T1> &f8(std::basic_istream<char, T1> &a0,
                                  unsigned char (&a1)[T2]) {

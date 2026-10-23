@@ -7,9 +7,6 @@
 #include <string_view>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::messages<T1>;
 
 template <typename T1> using t2 = typename std::messages<T1>::char_type;

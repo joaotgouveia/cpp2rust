@@ -3,9 +3,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> void f113(std::valarray<T1> &a0, std::valarray<T1> &a1) {
   return std::swap<T1>(a0, a1);
 }

@@ -2,9 +2,6 @@
 #include <utility>
 #include <valarray>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::gslice;
 
 std::gslice f1() { return std::gslice(); }

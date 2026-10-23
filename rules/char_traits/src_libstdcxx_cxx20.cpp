@@ -3,9 +3,6 @@
 #include <iosfwd>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t28 = std::char_traits<wchar_t>::comparison_category;
 
 using t29 = std::char_traits<char16_t>::comparison_category;

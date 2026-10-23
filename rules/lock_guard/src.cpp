@@ -2,9 +2,6 @@
 #include <mutex>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> using t1 = std::lock_guard<T1>;
 
 template <typename T1> using t2 = typename std::lock_guard<T1>::mutex_type;

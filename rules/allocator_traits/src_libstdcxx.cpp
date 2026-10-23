@@ -1,9 +1,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 using t13 = typename std::allocator_traits<T1>::propagate_on_container_swap;
 

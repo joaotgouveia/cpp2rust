@@ -4,9 +4,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename... T2, typename T3>
 std::function<T1(T2...)> &f14(std::function<T1(T2...)> &a0,
                               std::reference_wrapper<T3> a1) {

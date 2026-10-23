@@ -1,9 +1,6 @@
 #include <ranges>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2>
 bool f7(std::ranges::iota_view<T1, T2> &a0) {
   return static_cast<bool>(a0);

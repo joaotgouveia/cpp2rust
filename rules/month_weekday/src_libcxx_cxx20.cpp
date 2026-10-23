@@ -1,9 +1,6 @@
 #include <chrono>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::chrono::month_weekday;
 
 std::chrono::month_weekday f1(const std::chrono::month &a0,

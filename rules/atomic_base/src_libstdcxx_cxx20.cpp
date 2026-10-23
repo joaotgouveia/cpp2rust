@@ -1,9 +1,6 @@
 #include <atomic>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 bool f14(const std::atomic_flag &a0, std::memory_order a1) {
   return a0.test(a1);
 }

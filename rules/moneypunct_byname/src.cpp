@@ -5,9 +5,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, bool T2> using t1 = std::moneypunct_byname<T1, T2>;
 
 template <typename T1, bool T2>

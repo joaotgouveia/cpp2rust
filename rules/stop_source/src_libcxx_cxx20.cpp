@@ -1,9 +1,6 @@
 #include <stop_token>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t1 = std::nostopstate_t;
 
 std::nostopstate_t f1() { return std::nostopstate_t(); }

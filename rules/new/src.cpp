@@ -3,9 +3,6 @@
 #include <new>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 void f1(void *a0, const std::nothrow_t &a1) { return operator delete(a0, a1); }
 
 void f2(void *a0, void *a1) { return operator delete(a0, a1); }

@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::bit_or<void>;
 
 using t3 = std::bit_or<>::is_transparent;

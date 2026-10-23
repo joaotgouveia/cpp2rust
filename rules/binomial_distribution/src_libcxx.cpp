@@ -3,9 +3,6 @@
 #include <random>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1>
 std::binomial_distribution<T1>
 f14(typename std::binomial_distribution<T1>::result_type a0, double a1) {

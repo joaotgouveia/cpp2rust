@@ -3,9 +3,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 bool f10(const std::ctype_byname<char> &a0, std::ctype_base::mask a1, char a2) {
   return a0.is(a1, a2);
 }

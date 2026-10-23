@@ -1,9 +1,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, unsigned int T2> using t1 = std::extent<T1, T2>;
 
 template <typename T1, unsigned int T2>

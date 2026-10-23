@@ -2,9 +2,6 @@
 #include <string>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 using t2 = std::greater_equal<void>;
 
 using t3 = std::greater_equal<>::is_transparent;

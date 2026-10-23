@@ -2,9 +2,6 @@
 #include <cstddef>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1> std::atomic<T1 *> f366() { return std::atomic<T1 *>(); }
 
 template <typename T1> std::atomic<T1 *> f367(T1 *a0) {

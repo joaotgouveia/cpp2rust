@@ -3,9 +3,6 @@
 #include <type_traits>
 #include <utility>
 
-#include "../common/init.h"
-#include "../common/traits.h"
-
 template <typename T1, typename T2, template <typename> typename T3,
           template <typename> typename T4>
 using t2 = typename std::basic_common_reference<T1, T2, T3, T4>::type;
