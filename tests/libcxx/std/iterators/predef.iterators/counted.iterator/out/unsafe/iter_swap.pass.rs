@@ -535,14 +535,8 @@ pub unsafe fn test_7() -> () {
     {
         let mut iter1: cpp17_input_iterator_int_ptr__int_ptr_ =
             cpp17_input_iterator_int_ptr__int_ptr_::new({ buffer.as_mut_ptr() });
-        let mut commonIter1: () =
-            std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ iter1 }, {
-                8_()
-            });
-        let mut commonIter2: () =
-            std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr__::new_1({ iter1 }, {
-                8_()
-            });
+        let mut commonIter1: () = unimplemented!();
+        let mut commonIter2: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (4_())) {
             unimplemented!();
@@ -567,10 +561,8 @@ pub unsafe fn test_7() -> () {
     {
         let mut iter1: forward_iterator_int_ptr_ =
             forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() });
-        let mut commonIter1: () =
-            std_counted_iterator_forward_iterator_int_ptr__::new_1({ iter1 }, { 8_() });
-        let mut commonIter2: () =
-            std_counted_iterator_forward_iterator_int_ptr__::new_1({ iter1 }, { 8_() });
+        let mut commonIter1: () = unimplemented!();
+        let mut commonIter2: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (4_())) {
             unimplemented!();
@@ -595,10 +587,8 @@ pub unsafe fn test_7() -> () {
     {
         let mut iter1: random_access_iterator_int_ptr_ =
             random_access_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() });
-        let mut commonIter1: () =
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1({ iter1 }, { 8_() });
-        let mut commonIter2: () =
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1({ iter1 }, { 8_() });
+        let mut commonIter1: () = unimplemented!();
+        let mut commonIter2: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (4_())) {
             unimplemented!();

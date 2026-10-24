@@ -108,12 +108,22 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut a: *const (), mut offset
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut arg: *mut () = a;
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_ptr_  = ( unsafe { make_format_args_5 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_5(mut expected: (), mut fmt: (), mut a: *const (), mut offset: ()) {
+    let mut parse_ctx: () = unimplemented!();
+    let mut formatter: () = unimplemented!();
+    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
+    let mut it: () = unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    let mut out: () = unimplemented!();
+    let mut arg: *const () = a;
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
@@ -125,35 +135,13 @@ pub unsafe fn test_6(mut expected: (), mut fmt: (), mut a: *const (), mut offset
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut arg: *const () = a;
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___const_char_ptr_  = ( unsafe { make_format_args_7 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { & mut __tmp_1 } , )
-        })
-    });
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_8(mut expected: (), mut fmt: (), mut a: *const (), mut offset: ()) {
-    let mut parse_ctx: () = unimplemented!();
-    let mut formatter: () = unimplemented!();
-    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () = unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    let mut out: () = unimplemented!();
     let mut arg: *mut () = a;
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___wchar_t_ptr_  = ( unsafe { make_format_args_9 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_2 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_10(mut expected: (), mut fmt: (), mut a: *const (), mut offset: ()) {
+pub unsafe fn test_7(mut expected: (), mut fmt: (), mut a: *const (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -162,44 +150,40 @@ pub unsafe fn test_10(mut expected: (), mut fmt: (), mut a: *const (), mut offse
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut arg: *const () = a;
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___const_wchar_t_ptr_  = ( unsafe { make_format_args_11 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_3 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_termination_condition_12(mut expected: (), mut f: (), mut arg: *const ()) {
+pub unsafe fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: *const ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_13(mut expected: (), mut f: (), mut arg: *const ()) {
+pub unsafe fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: *const ()) {
+    let mut fmt: () = (unsafe { f() });
+    unimplemented!();
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub unsafe fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: *const ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_14(mut expected: (), mut f: (), mut arg: *const ()) {
+pub unsafe fn test_termination_condition_11(mut expected: (), mut f: (), mut arg: *const ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
-    (unsafe { test_8(unimplemented!(), unimplemented!(), arg, 1_()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
-    (unsafe { test_8(unimplemented!(), unimplemented!(), arg, 0_()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_15(mut expected: (), mut f: (), mut arg: *const ()) {
-    let mut fmt: () = (unsafe { f() });
-    unimplemented!();
-    (unsafe { test_10(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    (unsafe { test_10(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub unsafe fn test_set_debug_format_16() -> () {
+pub unsafe fn test_set_debug_format_12() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -212,7 +196,7 @@ pub unsafe fn test_set_debug_format_16() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_set_debug_format_17() -> () {
+pub unsafe fn test_set_debug_format_13() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -225,7 +209,7 @@ pub unsafe fn test_set_debug_format_17() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_set_debug_format_18() -> () {
+pub unsafe fn test_set_debug_format_14() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -238,7 +222,7 @@ pub unsafe fn test_set_debug_format_18() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_set_debug_format_19() -> () {
+pub unsafe fn test_set_debug_format_15() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -251,7 +235,7 @@ pub unsafe fn test_set_debug_format_19() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_char_pointer_20() {
+pub unsafe fn test_char_pointer_16() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -316,13 +300,13 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, unimplemented!())
+        test_termination_condition_8(_expected, _f, unimplemented!())
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -384,7 +368,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -446,7 +430,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -508,7 +492,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -570,7 +554,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -632,7 +616,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -694,7 +678,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -756,7 +740,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -822,7 +806,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -884,7 +868,7 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -950,12 +934,12 @@ pub unsafe fn test_char_pointer_20() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_12(_expected, _f, _arg)
+        test_termination_condition_8(_expected, _f, _arg)
     });
-    (unsafe { test_set_debug_format_16() });
+    (unsafe { test_set_debug_format_12() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub unsafe fn test_char_pointer_21() {
+pub unsafe fn test_char_pointer_17() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -1020,13 +1004,13 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_13(_expected, _f, unimplemented!())
+        test_termination_condition_9(_expected, _f, unimplemented!())
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1088,7 +1072,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1150,7 +1134,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1212,7 +1196,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1274,7 +1258,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1336,7 +1320,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1398,7 +1382,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1460,7 +1444,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1526,7 +1510,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1588,7 +1572,7 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1654,12 +1638,12 @@ pub unsafe fn test_char_pointer_21() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_13(_expected, _f, _arg)
+        test_termination_condition_9(_expected, _f, _arg)
     });
-    (unsafe { test_set_debug_format_17() });
+    (unsafe { test_set_debug_format_13() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub unsafe fn test_char_pointer_22() {
+pub unsafe fn test_char_pointer_18() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -1724,13 +1708,13 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_14(_expected, _f, unimplemented!())
+        test_termination_condition_10(_expected, _f, unimplemented!())
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1792,7 +1776,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1854,7 +1838,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1916,7 +1900,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -1978,7 +1962,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2040,7 +2024,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2102,7 +2086,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2164,7 +2148,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2230,7 +2214,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2292,7 +2276,7 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2358,12 +2342,12 @@ pub unsafe fn test_char_pointer_22() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_14(_expected, _f, _arg)
+        test_termination_condition_10(_expected, _f, _arg)
     });
-    (unsafe { test_set_debug_format_18() });
+    (unsafe { test_set_debug_format_14() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub unsafe fn test_char_pointer_23() {
+pub unsafe fn test_char_pointer_19() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
@@ -2428,13 +2412,13 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     let mut s: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_15(_expected, _f, unimplemented!())
+        test_termination_condition_11(_expected, _f, unimplemented!())
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2496,7 +2480,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2558,7 +2542,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2620,7 +2604,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2682,7 +2666,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2744,7 +2728,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2806,7 +2790,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2868,7 +2852,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2934,7 +2918,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -2996,7 +2980,7 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
@@ -3062,9 +3046,9 @@ pub unsafe fn test_char_pointer_23() {
                 (std::ptr::null() as *const ()).cast::<()>(),
             )
         });
-        test_termination_condition_15(_expected, _f, _arg)
+        test_termination_condition_11(_expected, _f, _arg)
     });
-    (unsafe { test_set_debug_format_19() });
+    (unsafe { test_set_debug_format_15() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
 pub fn main() {
@@ -3083,10 +3067,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_char_pointer_20() });
-    (unsafe { test_char_pointer_21() });
-    (unsafe { test_char_pointer_22() });
-    (unsafe { test_char_pointer_23() });
+    (unsafe { test_char_pointer_16() });
+    (unsafe { test_char_pointer_17() });
+    (unsafe { test_char_pointer_18() });
+    (unsafe { test_char_pointer_19() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

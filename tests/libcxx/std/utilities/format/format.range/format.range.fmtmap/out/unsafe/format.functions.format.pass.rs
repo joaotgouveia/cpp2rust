@@ -188,34 +188,14 @@ pub unsafe fn fmt_invalid_types_14(mut valid: ()) -> () {
     });
     return unimplemented!();
 }
-static mut result_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
+static mut result_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn fmt_invalid_types_15(mut valid: ()) -> () {
     return (unsafe { fmt_invalid_types_12(unimplemented!()) });
 }
@@ -268,60 +248,60 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_0 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_0 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_1 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_1 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_2 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_2 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_3 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_3 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_4 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_4 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_5 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_5 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_6 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_6 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_7 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_7 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_8 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_8 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_9 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_9 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_10 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_10 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -390,12 +370,12 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_11 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_11 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_12 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_12 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -412,8 +392,8 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
             &mut input,
         )
     });
-    let mut __tmp_13: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_13;
+    let mut __tmp_0: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -426,45 +406,45 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_14 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_14 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_15 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_15 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_16 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_16 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_17 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_17 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_18 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_18 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_19 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_19 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_20 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_20 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_21 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_21 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -533,12 +513,12 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_22 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_22 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_23 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_23 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -555,8 +535,8 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
             &mut input,
         )
     });
-    let mut __tmp_24: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_24;
+    let mut __tmp_1: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -569,18 +549,18 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_25 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_25 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(0) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_26 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_26 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(1) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_  = { let mut __tmp_27 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_ :: new ( { & mut __tmp_27 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         let mut _args_4: () = 11_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(2) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -603,60 +583,60 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_28 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_28 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_29 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_29 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_30 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_30 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_31 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_31 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_32 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_32 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_33 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_33 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_34 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_34 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_35 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_35 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_36 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_36 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_37 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_37 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_38 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_38 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -725,12 +705,12 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_39 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_39 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_40 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_40 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -747,8 +727,8 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
             &mut input,
         )
     });
-    let mut __tmp_41: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_41;
+    let mut __tmp_2: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_2;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -761,45 +741,45 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_42 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_42 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_43 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_43 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_44 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_44 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_45 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_45 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_46 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_46 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_47 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_47 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_48 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_48 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_49 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_49 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -868,12 +848,12 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_50 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_50 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_51 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_51 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -890,8 +870,8 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
             &mut input,
         )
     });
-    let mut __tmp_52: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_52;
+    let mut __tmp_3: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_3;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -904,18 +884,18 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = { let mut __tmp_53 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ :: new ( { & mut __tmp_53 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = { let mut __tmp_54 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ :: new ( { & mut __tmp_54 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int__int_  = { let mut __tmp_55 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int__int_ :: new ( { & mut __tmp_55 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         let mut _args_4: () = 11_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_wchar_t__wchar_t__std_less_wchar_t___std_allocator_std_pair_const_wchar_t__wchar_t____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(34) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -941,60 +921,60 @@ pub unsafe fn test_char_to_wchar_28(
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_56 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_56 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_57 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_57 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_58 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_58 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_59 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_59 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_60 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_60 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_61 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_61 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_62 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_62 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_63 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_63 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_64 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_64 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_65 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_65 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_66 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_66 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 35_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -1063,12 +1043,12 @@ pub unsafe fn test_char_to_wchar_28(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_67 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_67 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_68 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_68 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -1085,8 +1065,8 @@ pub unsafe fn test_char_to_wchar_28(
             &mut input,
         )
     });
-    let mut __tmp_69: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_69;
+    let mut __tmp_4: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_4;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1099,45 +1079,45 @@ pub unsafe fn test_char_to_wchar_28(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_70 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_70 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_71 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_71 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_72 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_72 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_73 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_73 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_74 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_74 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_75 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_75 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_76 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_76 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_77 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_77 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -1206,12 +1186,12 @@ pub unsafe fn test_char_to_wchar_28(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_78 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_78 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_79 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_79 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -1228,8 +1208,8 @@ pub unsafe fn test_char_to_wchar_28(
             &mut input,
         )
     });
-    let mut __tmp_80: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_80;
+    let mut __tmp_5: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_5;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1242,18 +1222,18 @@ pub unsafe fn test_char_to_wchar_28(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = { let mut __tmp_81 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ :: new ( { & mut __tmp_81 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref_ ,*mut () ,)>(3) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = { let mut __tmp_82 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ :: new ( { & mut __tmp_82 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int_ ,*mut () ,*mut () ,)>(4) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_  = { let mut __tmp_83 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_ :: new ( { & mut __tmp_83 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 44_();
         let mut _args_4: () = 11_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_char__char__std_less_char___std_allocator_std_pair_const_char__char____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(5) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -1279,70 +1259,70 @@ pub unsafe fn test_bool_29(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_84 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_84 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_85 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_85 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_86 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_86 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_87 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_87 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_88 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_88 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_89 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_89 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_90 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_90 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_91 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_91 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_92 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_92 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_93 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_93 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_94 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_94 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -1412,13 +1392,13 @@ pub unsafe fn test_bool_29(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_95 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_95 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_96 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_96 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
@@ -1436,8 +1416,8 @@ pub unsafe fn test_bool_29(
             .spec::<fn((), (), *mut ())>(4)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_97: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_97;
+    let mut __tmp_6: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_6;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1450,52 +1430,52 @@ pub unsafe fn test_bool_29(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_98 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_98 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_99 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_99 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_100 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_100 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_101 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_101 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_102 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_102 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_103 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_103 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_104 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_104 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_105 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_105 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -1563,8 +1543,8 @@ pub unsafe fn test_bool_29(
             .spec::<fn((), (), *mut ())>(4)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_106: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_106;
+    let mut __tmp_7: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_7;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1577,20 +1557,20 @@ pub unsafe fn test_bool_29(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_107 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_107 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(6) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_108 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_108 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_  = { let mut __tmp_109 : ()  = unimplemented!() ; std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_ :: new ( { & mut __tmp_109 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -1619,70 +1599,70 @@ pub unsafe fn test_bool_30(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_110 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_110 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_111 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_111 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_112 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_112 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_113 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_113 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_114 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_114 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_115 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_115 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_116 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_116 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_117 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_117 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_118 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_118 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_119 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_119 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_120 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_120 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -1752,13 +1732,13 @@ pub unsafe fn test_bool_30(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_121 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_121 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_122 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_122 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
@@ -1776,8 +1756,8 @@ pub unsafe fn test_bool_30(
             .spec::<fn((), (), *mut ())>(6)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_123: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_123;
+    let mut __tmp_8: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_8;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1790,52 +1770,52 @@ pub unsafe fn test_bool_30(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_124 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_124 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_125 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_125 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_126 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_126 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_127 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_127 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_128 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_128 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_129 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_129 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_130 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_130 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_131 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_131 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -1903,8 +1883,8 @@ pub unsafe fn test_bool_30(
             .spec::<fn((), (), *mut ())>(6)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_132: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_132;
+    let mut __tmp_9: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_9;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1917,20 +1897,20 @@ pub unsafe fn test_bool_30(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_133 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_133 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(9) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_134 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_134 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_  = { let mut __tmp_135 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_ :: new ( { & mut __tmp_135 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -1959,70 +1939,70 @@ pub unsafe fn test_bool_31(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_136 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_136 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_137 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_137 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_138 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_138 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_139 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_139 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_140 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_140 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_141 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_141 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_142 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_142 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_143 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_143 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_144 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_144 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_145 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_145 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_146 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_146 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2092,13 +2072,13 @@ pub unsafe fn test_bool_31(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_147 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_147 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_148 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_148 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
@@ -2116,8 +2096,8 @@ pub unsafe fn test_bool_31(
             .spec::<fn((), (), *mut ())>(23)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_149: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_149;
+    let mut __tmp_10: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_10;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2130,52 +2110,52 @@ pub unsafe fn test_bool_31(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_150 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_150 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_151 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_151 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_152 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_152 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_153 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_153 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_154 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_154 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_155 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_155 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_156 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_156 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_157 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_157 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2243,8 +2223,8 @@ pub unsafe fn test_bool_31(
             .spec::<fn((), (), *mut ())>(23)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_158: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_158;
+    let mut __tmp_11: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_11;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2257,20 +2237,20 @@ pub unsafe fn test_bool_31(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = { let mut __tmp_159 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ :: new ( { & mut __tmp_159 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = { let mut __tmp_160 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ :: new ( { & mut __tmp_160 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int_ ,*mut () ,*mut () ,)>(36) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_  = { let mut __tmp_161 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_ :: new ( { & mut __tmp_161 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_multimap_bool__int__std_less_bool___std_allocator_std_pair_const_bool__int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -2299,70 +2279,70 @@ pub unsafe fn test_bool_32(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_162 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_162 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_163 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_163 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_164 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_164 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_165 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_165 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_166 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_166 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_167 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_167 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_168 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_168 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_169 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_169 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_170 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_170 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_171 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_171 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_172 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_172 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 34_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2432,13 +2412,13 @@ pub unsafe fn test_bool_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_173 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_173 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_174 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_174 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
@@ -2456,8 +2436,8 @@ pub unsafe fn test_bool_32(
             .spec::<fn((), (), *mut ())>(25)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_175: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_175;
+    let mut __tmp_12: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_12;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2470,52 +2450,52 @@ pub unsafe fn test_bool_32(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_176 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_176 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_177 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_177 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_178 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_178 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_179 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_179 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_180 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_180 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_181 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_181 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_182 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_182 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_183 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_183 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2583,8 +2563,8 @@ pub unsafe fn test_bool_32(
             .spec::<fn((), (), *mut ())>(25)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_184: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_184;
+    let mut __tmp_13: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_13;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2597,20 +2577,20 @@ pub unsafe fn test_bool_32(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_185 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_185 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(38) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_186 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_186 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(39) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_  = { let mut __tmp_187 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_ :: new ( { & mut __tmp_187 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_multimap_bool__int__std_less_bool___std_deque_bool__std_allocator_bool____std_vector_int__std_allocator_int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -2659,70 +2639,70 @@ pub unsafe fn test_int_35(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_188 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_188 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_189 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_189 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_190 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_190 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_191 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_191 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_192 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_192 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_193 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_193 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_194 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_194 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_195 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_195 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_196 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_196 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_197 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_197 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_198 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_198 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2792,13 +2772,13 @@ pub unsafe fn test_int_35(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_199 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_199 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_200 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_200 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
@@ -2816,8 +2796,8 @@ pub unsafe fn test_int_35(
             .spec::<fn((), (), *mut ())>(8)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_201: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_201;
+    let mut __tmp_14: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_14;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2830,52 +2810,52 @@ pub unsafe fn test_int_35(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_202 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_202 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_203 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_203 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_204 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_204 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_205 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_205 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_206 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_206 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_207 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_207 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_208 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_208 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_209 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_209 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2943,8 +2923,8 @@ pub unsafe fn test_int_35(
             .spec::<fn((), (), *mut ())>(8)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_210: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_210;
+    let mut __tmp_15: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_15;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2957,20 +2937,20 @@ pub unsafe fn test_int_35(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_211 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_211 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_212 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_212 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(13) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_  = { let mut __tmp_213 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_ :: new ( { & mut __tmp_213 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -2999,70 +2979,70 @@ pub unsafe fn test_int_36(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_214 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_214 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_215 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_215 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_216 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_216 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_217 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_217 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_218 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_218 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_219 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_219 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_220 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_220 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_221 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_221 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_222 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_222 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_223 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_223 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_224 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_224 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -3132,13 +3112,13 @@ pub unsafe fn test_int_36(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_225 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_225 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_226 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_226 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
@@ -3156,8 +3136,8 @@ pub unsafe fn test_int_36(
             .spec::<fn((), (), *mut ())>(10)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_227: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_227;
+    let mut __tmp_16: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_16;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -3170,52 +3150,52 @@ pub unsafe fn test_int_36(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_228 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_228 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_229 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_229 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_230 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_230 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_231 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_231 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_232 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_232 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_233 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_233 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_234 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_234 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_235 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_235 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -3283,8 +3263,8 @@ pub unsafe fn test_int_36(
             .spec::<fn((), (), *mut ())>(10)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_236: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_236;
+    let mut __tmp_17: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_17;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -3297,20 +3277,20 @@ pub unsafe fn test_int_36(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_237 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_237 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(15) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_238 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_238 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(16) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_  = { let mut __tmp_239 : ()  = unimplemented!() ; std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_ :: new ( { & mut __tmp_239 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -3339,10 +3319,7 @@ pub unsafe fn test_int_37(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_240: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_240 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3350,10 +3327,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_241: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_241 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3361,10 +3335,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_242: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_242 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3372,10 +3343,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_243: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_243 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3383,10 +3351,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_244: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_244 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3394,10 +3359,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_245: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_245 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3405,10 +3367,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_246: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_246 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3416,10 +3375,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_247: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_247 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check
@@ -3430,10 +3386,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_248: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_248 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check
@@ -3444,10 +3397,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_249: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_249 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check
@@ -3458,10 +3408,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_250: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_250 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check
@@ -3535,10 +3482,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_251: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_251 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3546,10 +3490,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_252: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_252 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3569,8 +3510,8 @@ pub unsafe fn test_int_37(
             .spec::<fn((), (), *mut adaptor)>(19)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_253: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_253;
+    let mut __tmp_18: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_18;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -3585,10 +3526,7 @@ pub unsafe fn test_int_37(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_254: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_254 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3596,10 +3534,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_255: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_255 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3607,10 +3542,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_256: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_256 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3618,10 +3550,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_257: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_257 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3629,10 +3558,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_258: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_258 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check
@@ -3643,10 +3569,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_259: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_259 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check
@@ -3657,10 +3580,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_260: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_260 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check
@@ -3671,10 +3591,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_261: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_261 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check
@@ -3746,8 +3663,8 @@ pub unsafe fn test_int_37(
             .spec::<fn((), (), *mut adaptor)>(19)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_262: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_262;
+    let mut __tmp_19: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_19;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -3762,10 +3679,7 @@ pub unsafe fn test_int_37(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref_ = {
-            let mut __tmp_263: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref_::new({ &mut __tmp_263 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_char__adaptor_ref_, *mut adaptor)>(29)
@@ -3773,10 +3687,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = {
-            let mut __tmp_264: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int_::new({ &mut __tmp_264 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 41_();
         check
@@ -3787,10 +3698,7 @@ pub unsafe fn test_int_37(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__adaptor_ref__int__int_ = {
-            let mut __tmp_265: () = unimplemented!();
-            std_basic_format_string_char__adaptor_ref__int__int_::new({ &mut __tmp_265 })
-        };
+        let _fmt: std_basic_format_string_char__adaptor_ref__int__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -3827,70 +3735,70 @@ pub unsafe fn test_int_38(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_266 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_266 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_267 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_267 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_268 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_268 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_269 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_269 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_270 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_270 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_271 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_271 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_272 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_272 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_273 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_273 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_274 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_274 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_275 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_275 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_276 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_276 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -3960,13 +3868,13 @@ pub unsafe fn test_int_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_277 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_277 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_278 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_278 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
@@ -3984,8 +3892,8 @@ pub unsafe fn test_int_38(
             .spec::<fn((), (), *mut ())>(27)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_279: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_279;
+    let mut __tmp_20: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_20;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -3998,52 +3906,52 @@ pub unsafe fn test_int_38(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_280 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_280 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_281 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_281 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_282 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_282 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_283 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_283 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_284 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_284 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_285 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_285 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_286 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_286 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_287 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_287 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -4111,8 +4019,8 @@ pub unsafe fn test_int_38(
             .spec::<fn((), (), *mut ())>(27)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_288: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_288;
+    let mut __tmp_21: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_21;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -4125,20 +4033,20 @@ pub unsafe fn test_int_38(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = { let mut __tmp_289 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ :: new ( { & mut __tmp_289 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref_ ,*mut () ,)>(41) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = { let mut __tmp_290 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ :: new ( { & mut __tmp_290 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int_ ,*mut () ,*mut () ,)>(42) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_  = { let mut __tmp_291 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_ :: new ( { & mut __tmp_291 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_int__int__std_less_int___std_allocator_std_pair_const_int__int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -4167,70 +4075,70 @@ pub unsafe fn test_int_39(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_292 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_292 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_293 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_293 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_294 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_294 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_295 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_295 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_296 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_296 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_297 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_297 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_298 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_298 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_299 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_299 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_300 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_300 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_301 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_301 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_302 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_302 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -4300,13 +4208,13 @@ pub unsafe fn test_int_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_303 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_303 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_304 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_304 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
@@ -4324,8 +4232,8 @@ pub unsafe fn test_int_39(
             .spec::<fn((), (), *mut ())>(29)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_305: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_305;
+    let mut __tmp_22: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_22;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -4338,52 +4246,52 @@ pub unsafe fn test_int_39(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_306 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_306 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_307 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_307 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_308 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_308 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_309 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_309 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_310 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_310 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_311 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_311 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_312 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_312 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_313 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_313 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -4451,8 +4359,8 @@ pub unsafe fn test_int_39(
             .spec::<fn((), (), *mut ())>(29)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_314: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_314;
+    let mut __tmp_23: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_23;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -4465,20 +4373,20 @@ pub unsafe fn test_int_39(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = { let mut __tmp_315 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ :: new ( { & mut __tmp_315 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = { let mut __tmp_316 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ :: new ( { & mut __tmp_316 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int_ ,*mut () ,*mut () ,)>(45) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_  = { let mut __tmp_317 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_ :: new ( { & mut __tmp_317 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_flat_map_int__int__std_less_int___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -4507,10 +4415,7 @@ pub unsafe fn test_int_40(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_318: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_318 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4518,10 +4423,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_319: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_319 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4529,10 +4431,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_320: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_320 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4540,10 +4439,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_321: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_321 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4551,10 +4447,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_322: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_322 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4562,10 +4455,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_323: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_323 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4573,10 +4463,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_324: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_324 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4584,40 +4471,28 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_325: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_325 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_326: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_326 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_327: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_327 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_328: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_328 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 30_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -4687,10 +4562,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_329: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_329 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4698,10 +4570,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_330: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_330 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4721,8 +4590,8 @@ pub unsafe fn test_int_40(
             .spec::<fn((), (), *mut adaptor)>(38)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_331: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_331;
+    let mut __tmp_24: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_24;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -4737,10 +4606,7 @@ pub unsafe fn test_int_40(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_332: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_332 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4748,10 +4614,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_333: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_333 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4759,10 +4622,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_334: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_334 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4770,10 +4630,7 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_335: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_335 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4781,40 +4638,28 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_336: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_336 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_337: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_337 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_338: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_338 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_339: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_339 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -4882,8 +4727,8 @@ pub unsafe fn test_int_40(
             .spec::<fn((), (), *mut adaptor)>(38)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_340: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_340;
+    let mut __tmp_25: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_25;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -4898,10 +4743,7 @@ pub unsafe fn test_int_40(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = {
-            let mut __tmp_341: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref_::new({ &mut __tmp_341 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref_ = unimplemented!();
         let _args: *mut adaptor = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__adaptor_ref_, *mut adaptor)>(58)
@@ -4909,20 +4751,14 @@ pub unsafe fn test_int_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = {
-            let mut __tmp_342: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int_::new({ &mut __tmp_342 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__adaptor_ref__int_ ,*mut adaptor ,*mut () ,)>(59) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int__int_ = {
-            let mut __tmp_343: () = unimplemented!();
-            std_basic_format_string_wchar_t__adaptor_ref__int__int_::new({ &mut __tmp_343 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__adaptor_ref__int__int_ = unimplemented!();
         let _args_2: *mut adaptor = input;
         let mut _args_3: () = 41_();
         let mut _args_4: () = 10_();
@@ -4979,60 +4815,60 @@ pub unsafe fn test_floating_point_43(
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_344 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_344 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_345 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_345 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_346 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_346 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_347 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_347 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_348 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_348 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_349 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_349 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_350 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_350 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_351 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_351 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_352 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_352 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_353 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_353 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_354 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_354 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5101,12 +4937,12 @@ pub unsafe fn test_floating_point_43(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_355 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_355 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_356 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_356 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -5123,8 +4959,8 @@ pub unsafe fn test_floating_point_43(
             &mut input,
         )
     });
-    let mut __tmp_357: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_357;
+    let mut __tmp_26: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_26;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5137,45 +4973,45 @@ pub unsafe fn test_floating_point_43(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_358 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_358 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_359 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_359 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_360 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_360 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_361 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_361 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_362 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_362 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_363 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_363 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_364 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_364 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_365 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_365 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5242,8 +5078,8 @@ pub unsafe fn test_floating_point_43(
             &mut input,
         )
     });
-    let mut __tmp_366: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_366;
+    let mut __tmp_27: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_27;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5256,18 +5092,18 @@ pub unsafe fn test_floating_point_43(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_367 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_367 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_368 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_368 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 29_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(19) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_  = { let mut __tmp_369 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_ :: new ( { & mut __tmp_369 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 29_();
         let mut _args_4: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(20) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -5293,60 +5129,60 @@ pub unsafe fn test_floating_point_44(
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_370 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_370 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_371 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_371 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_372 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_372 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_373 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_373 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_374 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_374 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_375 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_375 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_376 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_376 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_377 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_377 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_378 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_378 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_379 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_379 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_380 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_380 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5415,12 +5251,12 @@ pub unsafe fn test_floating_point_44(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_381 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_381 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_382 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_382 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -5437,8 +5273,8 @@ pub unsafe fn test_floating_point_44(
             &mut input,
         )
     });
-    let mut __tmp_383: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_383;
+    let mut __tmp_28: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_28;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5451,45 +5287,45 @@ pub unsafe fn test_floating_point_44(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_384 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_384 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_385 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_385 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_386 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_386 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_387 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_387 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_388 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_388 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_389 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_389 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_390 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_390 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_391 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_391 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5556,8 +5392,8 @@ pub unsafe fn test_floating_point_44(
             &mut input,
         )
     });
-    let mut __tmp_392: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_392;
+    let mut __tmp_29: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_29;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5570,18 +5406,18 @@ pub unsafe fn test_floating_point_44(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = { let mut __tmp_393 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ :: new ( { & mut __tmp_393 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref_ ,*mut () ,)>(47) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = { let mut __tmp_394 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ :: new ( { & mut __tmp_394 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 29_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int_ ,*mut () ,*mut () ,)>(48) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_  = { let mut __tmp_395 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_ :: new ( { & mut __tmp_395 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 29_();
         let mut _args_4: () = 10_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_double__double__std_less_double___std_allocator_std_pair_const_double__double____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(49) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -5604,60 +5440,60 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_396 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_396 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_397 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_397 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_398 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_398 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_399 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_399 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_400 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_400 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_401 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_401 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_402 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_402 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_403 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_403 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_404 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_404 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_405 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_405 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_406 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_406 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5712,12 +5548,12 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_407 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_407 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_408 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_408 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -5734,8 +5570,8 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
             &mut input,
         )
     });
-    let mut __tmp_409: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_409;
+    let mut __tmp_30: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_30;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5748,45 +5584,45 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_410 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_410 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_411 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_411 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_412 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_412 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_413 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_413 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_414 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_414 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_415 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_415 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_416 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_416 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_417 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_417 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -5853,8 +5689,8 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
             &mut input,
         )
     });
-    let mut __tmp_418: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_418;
+    let mut __tmp_31: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_31;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -5867,18 +5703,18 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_419 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_419 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(21) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_420 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_420 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 18_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(22) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_  = { let mut __tmp_421 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_ :: new ( { & mut __tmp_421 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 18_();
         let mut _args_4: () = 11_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(23) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -5901,60 +5737,60 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_422 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_422 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_423 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_423 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_424 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_424 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_425 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_425 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_426 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_426 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_427 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_427 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_428 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_428 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_429 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_429 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_430 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_430 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_431 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_431 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_432 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_432 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 15_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6009,12 +5845,12 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_433 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_433 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_434 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_434 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -6031,8 +5867,8 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
             &mut input,
         )
     });
-    let mut __tmp_435: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_435;
+    let mut __tmp_32: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_32;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6045,45 +5881,45 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_436 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_436 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_437 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_437 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_438 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_438 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_439 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_439 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_440 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_440 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_441 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_441 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_442 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_442 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_443 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_443 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6150,8 +5986,8 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
             &mut input,
         )
     });
-    let mut __tmp_444: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_444;
+    let mut __tmp_33: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_33;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6164,18 +6000,18 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = { let mut __tmp_445 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ :: new ( { & mut __tmp_445 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref_ ,*mut () ,)>(50) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = { let mut __tmp_446 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ :: new ( { & mut __tmp_446 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 18_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_  = { let mut __tmp_447 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_ :: new ( { & mut __tmp_447 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 18_();
         let mut _args_4: () = 11_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_map_const_void_ptr__std_nullptr_t__std_hash_const_void_ptr___std_equal_to_const_void_ptr___std_allocator_std_pair_const_void_ptrconst__std_nullptr_t____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(52) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -6198,60 +6034,60 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_448 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_448 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_449 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_449 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_450 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_450 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_451 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_451 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_452 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_452 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_453 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_453 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_454 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_454 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_455 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_455 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_456 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_456 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_457 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_457 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_458 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_458 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6306,12 +6142,12 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_459 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_459 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_460 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_460 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -6328,8 +6164,8 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
             &mut input,
         )
     });
-    let mut __tmp_461: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_461;
+    let mut __tmp_34: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_34;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6342,45 +6178,45 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_462 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_462 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_463 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_463 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_464 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_464 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_465 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_465 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_466 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_466 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_467 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_467 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_468 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_468 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_469 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_469 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6447,8 +6283,8 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
             &mut input,
         )
     });
-    let mut __tmp_470: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_470;
+    let mut __tmp_35: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_35;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6461,18 +6297,18 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = { let mut __tmp_471 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ :: new ( { & mut __tmp_471 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref_ ,*mut () ,)>(24) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = { let mut __tmp_472 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ :: new ( { & mut __tmp_472 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 51_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int_ ,*mut () ,*mut () ,)>(25) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int__int_  = { let mut __tmp_473 : ()  = unimplemented!() ; std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int__int_ :: new ( { & mut __tmp_473 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 51_();
         let mut _args_4: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_map_std_string__std_string__std_less_std_string___std_allocator_std_pair_const_std_string__std_string____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(26) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -6495,60 +6331,60 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_474 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_474 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_475 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_475 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_476 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_476 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_477 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_477 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_478 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_478 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_479 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_479 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_480 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_480 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_481 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_481 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_482 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_482 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_483 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_483 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_484 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_484 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 41_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6603,12 +6439,12 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_485 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_485 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_486 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_486 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -6625,8 +6461,8 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
             &mut input,
         )
     });
-    let mut __tmp_487: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_487;
+    let mut __tmp_36: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_36;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6639,45 +6475,45 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_488 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_488 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_489 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_489 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_490 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_490 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_491 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_491 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_492 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_492 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_493 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_493 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_494 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_494 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_495 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_495 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6744,8 +6580,8 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
             &mut input,
         )
     });
-    let mut __tmp_496: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_496;
+    let mut __tmp_37: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_37;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -6758,18 +6594,18 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = { let mut __tmp_497 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ :: new ( { & mut __tmp_497 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref_ ,*mut () ,)>(53) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = { let mut __tmp_498 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ :: new ( { & mut __tmp_498 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 51_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int_ ,*mut () ,*mut () ,)>(54) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int__int_  = { let mut __tmp_499 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int__int_ :: new ( { & mut __tmp_499 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int__int_  = unimplemented!() ;
         let mut _args_3: () = 51_();
         let mut _args_4: () = 21_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_map_std_wstring__std_wstring__std_less_std_wstring___std_allocator_std_pair_const_std_wstring__std_wstring____ref__int__int_ ,*mut () ,*mut () ,*mut () ,)>(55) .call ( _expected , _fmt , & mut input , & mut _args_3 , & mut _args_4 , )
@@ -6792,60 +6628,60 @@ pub unsafe fn test_status_49(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_500 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_500 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_501 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_501 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_502 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_502 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_503 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_503 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_504 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_504 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_505 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_505 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_506 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_506 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_507 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_507 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(28) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_508 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_508 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(28) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_509 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_509 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(28) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_510 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_510 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(28) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -6914,12 +6750,12 @@ pub unsafe fn test_status_49(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_511 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_511 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_512 : ()  = unimplemented!() ; std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_512 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_char__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(27) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -6941,60 +6777,60 @@ pub unsafe fn test_status_50(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_513 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_513 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_514 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_514 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_515 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_515 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_516 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_516 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_517 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_517 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_518 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_518 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_519 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_519 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_520 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_520 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(57) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_521 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_521 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(57) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_522 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_522 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(57) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = { let mut __tmp_523 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ :: new ( { & mut __tmp_523 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_  = unimplemented!() ;
         let mut _args_3: () = 37_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref__int_ ,*mut () ,*mut () ,)>(57) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -7063,12 +6899,12 @@ pub unsafe fn test_status_50(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_524 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_524 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = { let mut __tmp_525 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ :: new ( { & mut __tmp_525 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_  = unimplemented!() ;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_unordered_multimap_status__status__std_hash_status___std_equal_to_status___std_allocator_std_pair_const_status__status____ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , & mut input , )
     });
     (unsafe {
@@ -7109,8 +6945,8 @@ const _: () = assert!(true, "std::format_kind<adaptor> == std::range_format::map
 pub unsafe fn test_adaptor_51(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let mut _input: adaptor = {
-            let mut __tmp_526: () = unimplemented!();
-            adaptor::new({ &mut __tmp_526 })
+            let mut __tmp_38: () = unimplemented!();
+            adaptor::new({ &mut __tmp_38 })
         };
         test_int_37(check.copy_from(), check_exception.copy_from(), &mut _input)
     });
@@ -7118,8 +6954,8 @@ pub unsafe fn test_adaptor_51(mut check: FnPtr<Generic>, mut check_exception: Fn
 pub unsafe fn test_adaptor_52(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let mut _input: adaptor = {
-            let mut __tmp_527: () = unimplemented!();
-            adaptor::new({ &mut __tmp_527 })
+            let mut __tmp_39: () = unimplemented!();
+            adaptor::new({ &mut __tmp_39 })
         };
         test_int_40(check.copy_from(), check_exception.copy_from(), &mut _input)
     });
@@ -7349,7 +7185,7 @@ pub unsafe fn test_concat_77(stream: *mut (), value: *mut ()) -> *mut () {
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_69(b.clone(), e.clone(), unimplemented!()) });
+        (unsafe { test_transcode_69(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return stream;
 }

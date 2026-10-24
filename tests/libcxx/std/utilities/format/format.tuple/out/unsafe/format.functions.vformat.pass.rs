@@ -6116,7 +6116,7 @@ pub unsafe fn test_concat_70(stream: *mut (), value: *mut ()) -> *mut () {
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_63(b.clone(), e.clone(), unimplemented!()) });
+        (unsafe { test_transcode_63(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return stream;
 }

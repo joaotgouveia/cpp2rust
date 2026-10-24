@@ -260,7 +260,7 @@ pub struct A {}
 pub fn test01_10() -> () {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    write!(buf.as_pointer(), "{:}", (*p.borrow_mut()),);
+    unimplemented!();
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();

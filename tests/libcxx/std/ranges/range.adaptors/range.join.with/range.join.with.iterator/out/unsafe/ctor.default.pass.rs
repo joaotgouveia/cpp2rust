@@ -81,7 +81,7 @@ pub struct forward_iterator_std___wrap_iter_const_char_ptr__ {
 impl forward_iterator_std___wrap_iter_const_char_ptr__ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -100,7 +100,7 @@ pub unsafe fn operator_ne_1(
     return !(unimplemented!());
 }
 pub unsafe fn base_2(i: *const forward_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
@@ -118,7 +118,7 @@ impl forward_iterator_std___wrap_iter_int_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -170,7 +170,7 @@ pub struct forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_alloca
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_1 ( ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn new_2 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn new_2 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return & mut ( * unimplemented!()  )   ;
  } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { unimplemented!()  ;
  return & mut ( * ( self as *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__  )  )  ;
@@ -179,7 +179,7 @@ impl forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_in
 impl std::cmp::PartialEq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { fn eq(&self, other: &Self) -> bool { unsafe { operator_eq_3(self as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__, other as *const forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__) }}}
 impl std::cmp::Eq for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ {}
 impl Default for forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { fn default() -> Self { unsafe { forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ :: new_1 ( )  } } }
-impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_1 ( other : *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ , ) -> Self { let mut this = Self { it_ : std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr_ :: new_1 ( { & ( * unimplemented!()  )  } , )  , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * unimplemented!()  )  } , )  , } ;
+impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_1 ( other : *mut forward_iterator_std___wrap_iter_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: move_from ( { & mut ( * unimplemented!()  )  } , )  , } ;
  unimplemented!()  ;
  this } }
 pub unsafe fn operator_eq_5(
@@ -202,7 +202,7 @@ pub struct forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { pub unsafe fn new_2 ( ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn new_3 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn new_3 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return & ( * unimplemented!()  )   ;
  } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__ { unimplemented!()  ;
  return & mut ( * ( self as *mut forward_iterator_std___wrap_iter_const_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__true___forward_iterator__forward_iterator__ptr__  )  )  ;
@@ -214,7 +214,7 @@ impl Default for forward_iterator_std___wrap_iter_const_BasicView_std_vector_int
 impl forward_iterator_std___wrap_iter_const_int_ptr__ {
     pub unsafe fn new_1(other: *mut forward_iterator_std___wrap_iter_int_ptr__) -> Self {
         let mut this = Self {
-            it_: std___wrap_iter_const_int_ptr_::new_1({ &(*unimplemented!()) }),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
         };
         unimplemented!();
@@ -249,7 +249,7 @@ impl forward_iterator_std___wrap_iter_const_int_ptr__ {
     }
     pub unsafe fn new_3(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -290,7 +290,7 @@ pub unsafe fn operator_eq_9(
 pub unsafe fn base_10(
     i : *const forward_iterator_std___wrap_iter_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
 ) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
@@ -300,7 +300,7 @@ pub struct forward_iterator_std___wrap_iter_BasicView_std_vector_char__std_alloc
     tracker_: support_double_move_tracker,
 }
 impl forward_iterator_std___wrap_iter_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { pub unsafe fn new_1 ( ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
- this } pub unsafe fn new_2 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+ this } pub unsafe fn new_2 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> () { return & mut ( * unimplemented!()  )   ;
  } pub unsafe fn operator_inc_6 ( &mut self , ) -> *mut forward_iterator_std___wrap_iter_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { unimplemented!()  ;
  return & mut ( * ( self as *mut forward_iterator_std___wrap_iter_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__  )  )  ;
@@ -337,7 +337,7 @@ impl forward_iterator_std___wrap_iter_char_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -372,7 +372,7 @@ impl Default for forward_iterator_std___wrap_iter_char_ptr__ {
 pub unsafe fn base_13(
     i : *const forward_iterator_std___wrap_iter_const_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__,
 ) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -381,7 +381,7 @@ pub struct forward_iterator_std___wrap_iter_const_BasicView_std_vector_char__std
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl forward_iterator_std___wrap_iter_const_BasicView_std_vector_char__std_allocator_char____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter__ptr__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -469,7 +469,7 @@ impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_v
  } pub unsafe fn operator_deref ( &self , ) -> std_basic_string_char__std_char_traits_char___std_allocator_char__ { return unimplemented!()   ;
  } }
 pub unsafe fn base_16(i: *const cpp20_input_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -480,7 +480,7 @@ pub struct cpp20_input_iterator_std___wrap_iter_int_ptr__ {
 impl cpp20_input_iterator_std___wrap_iter_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -508,7 +508,7 @@ impl cpp20_input_iterator_std___wrap_iter_int_ptr__ {
     }
 }
 pub unsafe fn base_17(i: *const cpp20_input_iterator_std___wrap_iter_const_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -519,7 +519,7 @@ pub struct cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
 impl cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -579,7 +579,7 @@ impl cpp20_output_iterator_int_ptr_ {
     }
 }
 pub unsafe fn base_18(i: *const cpp20_output_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -590,7 +590,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_int_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -1307,7 +1307,7 @@ impl EqComparableInputIter_int_ptr_ {
     }
 }
 pub unsafe fn base_19(i: *const EqComparableInputIter_std___wrap_iter_char_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 pub unsafe fn operator_eq_29(
     left: *const EqComparableInputIter_std___wrap_iter_char_ptr__,
@@ -1322,7 +1322,9 @@ pub struct EqComparableInputIter_std___wrap_iter_char_ptr__ {
 }
 impl EqComparableInputIter_std___wrap_iter_char_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
-        let mut this = Self { it_: it.clone() };
+        let mut this = Self {
+            it_: unimplemented!(),
+        };
         this
     }
     pub unsafe fn operator_deref(&self) -> *mut () {
@@ -1341,7 +1343,7 @@ impl std::cmp::PartialEq for EqComparableInputIter_std___wrap_iter_char_ptr__ {
 }
 impl std::cmp::Eq for EqComparableInputIter_std___wrap_iter_char_ptr__ {}
 pub unsafe fn base_20(i: *const EqComparableInputIter_std___wrap_iter_const_char_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -1350,7 +1352,9 @@ pub struct EqComparableInputIter_std___wrap_iter_const_char_ptr__ {
 }
 impl EqComparableInputIter_std___wrap_iter_const_char_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
-        let mut this = Self { it_: it.clone() };
+        let mut this = Self {
+            it_: unimplemented!(),
+        };
         this
     }
     pub unsafe fn operator_deref(&self) -> *const () {

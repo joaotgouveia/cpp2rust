@@ -302,69 +302,53 @@ pub unsafe fn test_format_13(mut expected: (), mut arg: test_range_format_string
     let mut formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_9(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___test_range_format_string_std_string__  = ( unsafe { make_format_args_14 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_9(out.clone(), unimplemented!()) });
     (unsafe {
         ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_string___char_ ) . format  ( & arg , & mut format_ctx , )
     });
     unimplemented!();
 }
-pub unsafe fn test_format_15(
+pub unsafe fn test_format_14(
     mut expected: (),
     mut arg: test_range_format_debug_string_std_string_,
 ) {
     let mut formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_9(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___test_range_format_debug_string_std_string__  = ( unsafe { make_format_args_16 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_9(out.clone(), unimplemented!()) });
     (unsafe {
         ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_string___char_ ) . format  ( & arg , & mut format_ctx , )
     });
     unimplemented!();
 }
-pub unsafe fn test_format_17(mut expected: (), mut arg: test_range_format_string_std_wstring_) {
+pub unsafe fn test_format_15(mut expected: (), mut arg: test_range_format_string_std_wstring_) {
     let mut formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_11(out.clone(), {
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___test_range_format_string_std_wstring__  = ( unsafe { make_format_args_18 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_2 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_11(out.clone(), unimplemented!()) });
     (unsafe {
         ( formatter as std___range_default_formatter_std_range_format_string__test_range_format_string_std_wstring___wchar_t_ ) . format  ( & arg , & mut format_ctx , )
     });
     unimplemented!();
 }
-pub unsafe fn test_format_19(
+pub unsafe fn test_format_16(
     mut expected: (),
     mut arg: test_range_format_debug_string_std_wstring_,
 ) {
     let mut formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_11(out.clone(), {
-            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___test_range_format_debug_string_std_wstring__  = ( unsafe { make_format_args_20 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_3 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_11(out.clone(), unimplemented!()) });
     (unsafe {
         ( formatter as std___range_default_formatter_std_range_format_debug_string__test_range_format_debug_string_std_wstring___wchar_t_ ) . format  ( & arg , & mut format_ctx , )
     });
     unimplemented!();
 }
-pub unsafe fn test_fmt_21() {
+pub unsafe fn test_fmt_17() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _arg: test_range_format_string_std_string_ =
@@ -375,26 +359,26 @@ pub unsafe fn test_fmt_21() {
         let _expected: () = unimplemented!();
         let _arg: test_range_format_debug_string_std_string_ =
             test_range_format_debug_string_std_string_::new({ unimplemented!() });
-        test_format_15(_expected, _arg)
+        test_format_14(_expected, _arg)
     });
 }
-pub unsafe fn test_fmt_22() {
+pub unsafe fn test_fmt_18() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _arg: test_range_format_string_std_wstring_ =
             test_range_format_string_std_wstring_::new({ unimplemented!() });
-        test_format_17(_expected, _arg)
+        test_format_15(_expected, _arg)
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _arg: test_range_format_debug_string_std_wstring_ =
             test_range_format_debug_string_std_wstring_::new({ unimplemented!() });
-        test_format_19(_expected, _arg)
+        test_format_16(_expected, _arg)
     });
 }
-pub unsafe fn test_23() {
-    (unsafe { test_fmt_21() });
-    (unsafe { test_fmt_22() });
+pub unsafe fn test_19() {
+    (unsafe { test_fmt_17() });
+    (unsafe { test_fmt_18() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -412,20 +396,20 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_23() });
+    (unsafe { test_19() });
     return 0_();
 }
-pub static mut format_kind_24: std::cell::LazyCell<()> =
+pub static mut format_kind_20: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut format_kind_25: std::cell::LazyCell<()> =
+pub static mut format_kind_21: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut format_kind_26: std::cell::LazyCell<()> =
+pub static mut format_kind_22: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub static mut format_kind_27: std::cell::LazyCell<()> =
+pub static mut format_kind_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const format_kind_24);
-    std::cell::LazyCell::force(&*&raw const format_kind_25);
-    std::cell::LazyCell::force(&*&raw const format_kind_26);
-    std::cell::LazyCell::force(&*&raw const format_kind_27);
+    std::cell::LazyCell::force(&*&raw const format_kind_20);
+    std::cell::LazyCell::force(&*&raw const format_kind_21);
+    std::cell::LazyCell::force(&*&raw const format_kind_22);
+    std::cell::LazyCell::force(&*&raw const format_kind_23);
 }

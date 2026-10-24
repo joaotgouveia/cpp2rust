@@ -18,7 +18,7 @@ pub unsafe fn tests_0() -> () {
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;
     unimplemented!();
     unimplemented!();
-    (unsafe { std_vector_bool__std_allocator_bool__::swap_71(r1.clone(), r2.clone()) });
+    (unsafe { std_vector_bool__std_allocator_bool__::swap_71(unimplemented!(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
     return true;

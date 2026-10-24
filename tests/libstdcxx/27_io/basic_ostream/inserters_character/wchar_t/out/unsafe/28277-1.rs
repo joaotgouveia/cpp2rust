@@ -258,11 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut oss_01: () = unimplemented!();
-    let str_01: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 5000000_() },
-        { ('a' as ()) },
-        None,
-    );
+    let str_01: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

@@ -144,270 +144,39 @@ pub fn test_11(s: (), mut n: (), mut c: (), mut expected: ()) {
 }
 pub fn test_string_12() {
     ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_9(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            100_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 100_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
     ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_9(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
     ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_9(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_9(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
 pub fn test_string_13() {
     ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_10(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            100_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 100_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
     ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_10(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
     ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_10(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_10(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
 pub fn test_string_14() {
     ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_11(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            unimplemented!(),
-            100_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 100_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
     ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_11(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
     ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({
-        test_11(
-            unimplemented!(),
-            1_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 1_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
-    ({
-        test_11(
-            unimplemented!(),
-            10_(),
-            ('a' as ()),
-            std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                { 10_() },
-                { ('a' as ()) },
-                None,
-            ),
-        )
-    });
+    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
 pub fn test_15() -> () {
     ({ test_string_12() });

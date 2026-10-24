@@ -12,7 +12,7 @@ pub unsafe fn is_double_ended_contiguous_container_asan_correct_0(_a0: *const ()
 pub unsafe fn del_at_start_1(mut c: (), mut num: ()) {
     let mut first: () = unimplemented!();
     let mut last: () = unimplemented!();
-    let mut it1: () = last.clone();
+    let mut it1: () = unimplemented!();
     let mut it2: () = unimplemented!();
     unimplemented!();
     let mut it3: () = unimplemented!();

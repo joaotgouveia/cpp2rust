@@ -468,13 +468,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut i: () = unimplemented!();
-        let mut p: () = std_unique_ptr_int__do_nothing_::new({ (&mut i as *mut ()) });
-        (unsafe {
-            test_9(
-                (&mut p as *mut ()),
-                std_unique_ptr_int__do_nothing_::new({ (&mut i as *mut ()) }),
-            )
-        });
+        let mut p: () = unimplemented!();
+        (unsafe { test_9((&mut p as *mut ()), unimplemented!()) });
     }
     {
         let p: *const () = c"123456789".as_ptr();

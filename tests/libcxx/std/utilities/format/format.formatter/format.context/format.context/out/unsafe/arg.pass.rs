@@ -272,8 +272,8 @@ pub unsafe fn test_12() {
     let mut c: () = ('a' as ());
     let mut a: () = 42_();
     let mut string: () = unimplemented!();
-    let mut store : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___bool__char__int__std_string_ = ( unsafe { make_format_args_13 ( & mut b , & mut c , & mut a , & mut string , ) } )  ;
-    let mut args : () = std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & store } , )  ;
+    let mut store: () = unimplemented!();
+    let mut args: () = unimplemented!();
     let mut output: () = unimplemented!();
     let context: () = (unsafe { test_format_context_create_8(unimplemented!(), args.clone()) });
     unimplemented!();
@@ -290,13 +290,13 @@ pub unsafe fn test_12() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_14() {
+pub unsafe fn test_13() {
     let mut b: () = true;
     let mut c: () = ('a' as ());
     let mut a: () = 42_();
     let mut string: () = unimplemented!();
-    let mut store : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___bool__wchar_t__int__std_wstring_ = ( unsafe { make_format_args_15 ( & mut b , & mut c , & mut a , & mut string , ) } )  ;
-    let mut args : () = std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & store } , )  ;
+    let mut store: () = unimplemented!();
+    let mut args: () = unimplemented!();
     let mut output: () = unimplemented!();
     let context: () = (unsafe { test_format_context_create_10(unimplemented!(), args.clone()) });
     unimplemented!();
@@ -330,7 +330,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_12() });
-    (unsafe { test_14() });
+    (unsafe { test_13() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -514,22 +514,8 @@ pub fn test_8() -> () {
         8_(),
     ])));
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                {
-                    random_access_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((4_()) as isize)
-                    })
-                },
-                { 4_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -537,22 +523,8 @@ pub fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                {
-                    random_access_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((4_()) as isize)
-                    })
-                },
-                { 4_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -560,22 +532,8 @@ pub fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                {
-                    contiguous_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -583,22 +541,8 @@ pub fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                {
-                    contiguous_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -606,22 +550,8 @@ pub fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-                { CommonWithForwardIter_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                {
-                    forward_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -629,22 +559,8 @@ pub fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-                { CommonWithForwardIter_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                {
-                    forward_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

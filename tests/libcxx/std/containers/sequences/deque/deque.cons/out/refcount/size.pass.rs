@@ -779,14 +779,8 @@ pub fn test2_35(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-        }));
-        let e: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -802,14 +796,8 @@ pub fn test2_36(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_2.as_pointer() } , )
-        }));
-        let e: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_3.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -825,14 +813,8 @@ pub fn test1_37(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_4.as_pointer() } , )
-        }));
-        let e: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_5.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -848,14 +830,8 @@ pub fn test1_38(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_6.as_pointer() } , )
-        }));
-        let e: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_7.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -871,14 +847,8 @@ pub fn test1_39(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_8.as_pointer() } , )
-        }));
-        let e: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_9.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();

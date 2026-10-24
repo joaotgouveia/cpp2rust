@@ -100,7 +100,7 @@ impl forward_iterator_std___wrap_iter_const_char_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -512,70 +512,30 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut s4: () = unimplemented!();
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_0: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_1: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_1 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_2: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_2 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_3: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_3 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_4: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_4 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_5: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_5 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_6: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_6 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_7: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_7 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, 2_())
     });
     return 0_();

@@ -18,12 +18,7 @@ pub fn tests_0() -> () {
     const _: () = assert!(true, "(noexcept(v.swap(r1, r2)))");;
     unimplemented!();
     unimplemented!();
-    ({
-        std_vector_bool__std_allocator_bool__::swap_71(
-            (*r1.borrow()).clone(),
-            (*r2.borrow()).clone(),
-        )
-    });
+    ({ std_vector_bool__std_allocator_bool__::swap_71(unimplemented!(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
     return true;

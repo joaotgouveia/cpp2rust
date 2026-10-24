@@ -188,34 +188,14 @@ pub unsafe fn fmt_invalid_types_14(mut valid: ()) -> () {
     });
     return unimplemented!();
 }
-static mut result_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
+static mut result_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn fmt_invalid_types_15(mut valid: ()) -> () {
     return (unsafe { fmt_invalid_types_10(unimplemented!()) });
 }
@@ -2157,7 +2137,7 @@ pub unsafe fn test_concat_46(stream: *mut (), value: *mut ()) -> *mut () {
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_39(b.clone(), e.clone(), unimplemented!()) });
+        (unsafe { test_transcode_39(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return stream;
 }

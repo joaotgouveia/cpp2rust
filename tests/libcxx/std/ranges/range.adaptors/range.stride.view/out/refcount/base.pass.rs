@@ -560,31 +560,31 @@ pub fn test_12() -> () {
     ])));
     let mut N: () = 8_();
     {
-        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let __tmp_0 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_1 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
+        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
     }
     {
-        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let __tmp_2 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_3 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { __tmp_2.as_pointer() } , { __tmp_3.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
+        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
     }
     {
-        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let __tmp_4 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_5 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { __tmp_4.as_pointer() } , { __tmp_5.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
+        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . base_3 ( ) } )  )) ;
         unimplemented!();
     }
     {
-        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let __tmp_6 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_7 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { __tmp_6.as_pointer() } , { __tmp_7.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
+        let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ > = Rc::new(RefCell::new(unimplemented!()  )) ;
         unimplemented!();
     }
     {
-        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false__ :: new ( { { let __tmp_8 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_9 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ :: new ( { __tmp_8.as_pointer() } , { __tmp_9.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
+        let view : Value<() > = Rc::new(RefCell::new(std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false__ :: new ( { { let __tmp_0 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> )  } , )  ));let __tmp_1 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( buff .as_pointer()  as Ptr::<()> ) . offset ( ( N ) as isize )  } , )  )); BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ :: new ( { __tmp_0.as_pointer() } , { __tmp_1.as_pointer() } , )  }  } , { 1_()  } , )  )) ;
         const _: () = assert!(true, "!has_lvalue_qualified_base(view)");;
         let s : Value<BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . base_3 ( ) } )  )) ;
         unimplemented!();

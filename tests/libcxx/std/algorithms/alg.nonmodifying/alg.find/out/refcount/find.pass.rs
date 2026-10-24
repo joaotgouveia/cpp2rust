@@ -11033,27 +11033,27 @@ pub fn test_346() -> () {
         }
         {
             let mut in_: () = unimplemented!();
-            unimplemented!() = true;
+            unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
-            unimplemented!() = true;
+            unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
-            unimplemented!() = true;
+            unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
-            unimplemented!() = true;
+            unimplemented!();
             unimplemented!();
         }
         {
             let mut in_: () = unimplemented!();
-            unimplemented!() = true;
+            unimplemented!();
             unimplemented!();
         }
     }

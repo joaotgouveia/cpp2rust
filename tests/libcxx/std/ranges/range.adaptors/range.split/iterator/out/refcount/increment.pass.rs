@@ -740,7 +740,7 @@ pub fn testOne_26() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -774,7 +774,7 @@ pub fn testOne_26() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -800,7 +800,7 @@ pub fn testOne_26() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -858,7 +858,7 @@ pub fn testOne_27() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -892,7 +892,7 @@ pub fn testOne_27() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -918,7 +918,7 @@ pub fn testOne_27() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -976,7 +976,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1010,7 +1010,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1036,7 +1036,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1094,7 +1094,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1128,7 +1128,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1154,7 +1154,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1212,7 +1212,7 @@ pub fn testOne_30() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1246,7 +1246,7 @@ pub fn testOne_30() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1272,7 +1272,7 @@ pub fn testOne_30() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();

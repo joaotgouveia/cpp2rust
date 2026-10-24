@@ -260,12 +260,7 @@ pub fn test04_10() {
     let loc_c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut str: () = unimplemented!();
     let mut ld: () = 1943_f64;
-    let mut x: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { unimplemented!() },
-            { ('x' as ()) },
-            None,
-        );
+    let mut x: () = unimplemented!();
     let mut res: () = unimplemented!();
     let oss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

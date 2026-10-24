@@ -257,11 +257,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn to_string_10(mut val: ()) -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { ((unimplemented!()) + (2_())) },
-        { ('0' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let mut iter: () = unimplemented!();
     'loop_: while ((val) != (0_())) {
         (*unimplemented!()) = ('0' as ()).wrapping_add(((val).wrapping_rem(10_())));

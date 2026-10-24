@@ -14,7 +14,7 @@ pub struct A {
 impl A {
     pub unsafe fn new() -> Self {
         let mut this = Self {
-            ptr_: std_unique_ptr_A__std_default_delete_A__::new({ &raw mut this }),
+            ptr_: unimplemented!(),
         };
         this
     }

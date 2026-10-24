@@ -543,8 +543,8 @@ pub fn test_14(a: Ptr<()>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -557,8 +557,8 @@ pub fn test_15(a: Ptr<()>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -571,8 +571,8 @@ pub fn test_16(a: Ptr<()>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -585,8 +585,8 @@ pub fn test_17(a: Ptr<()>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -599,8 +599,8 @@ pub fn test_18(a: Ptr<()>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -613,8 +613,8 @@ pub fn test_19(a: Ptr<other_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -627,8 +627,8 @@ pub fn test_20(a: Ptr<other_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -641,8 +641,8 @@ pub fn test_21(a: Ptr<other_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -655,8 +655,8 @@ pub fn test_22(a: Ptr<other_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -669,8 +669,8 @@ pub fn test_23(a: Ptr<other_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -683,8 +683,8 @@ pub fn test_24(a: Ptr<min_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -697,8 +697,8 @@ pub fn test_25(a: Ptr<min_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -711,8 +711,8 @@ pub fn test_26(a: Ptr<min_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -725,8 +725,8 @@ pub fn test_27(a: Ptr<min_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -739,8 +739,8 @@ pub fn test_28(a: Ptr<min_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -753,8 +753,8 @@ pub fn test_29(a: Ptr<test_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -767,8 +767,8 @@ pub fn test_30(a: Ptr<test_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -781,8 +781,8 @@ pub fn test_31(a: Ptr<test_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -795,8 +795,8 @@ pub fn test_32(a: Ptr<test_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();
@@ -809,8 +809,8 @@ pub fn test_33(a: Ptr<test_allocator_bool_>) {
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
-        unimplemented!() = true;
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         i = { (i).wrapping_add(2_()) };
     }
     let mut v2: () = unimplemented!();

@@ -67,7 +67,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a1: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
         let mut v1: () = unimplemented!();
-        let mut v2: () = (unsafe { (unimplemented!())[(unimplemented!()) as usize]() });
+        let mut v2: () = (unsafe { unimplemented!()() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

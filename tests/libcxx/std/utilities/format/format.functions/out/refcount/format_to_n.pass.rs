@@ -310,10 +310,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_0.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -323,10 +320,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_1.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -336,10 +330,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_2.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -349,10 +340,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_3.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -362,10 +350,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_4.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -375,10 +360,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_5.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -388,10 +370,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_6.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -401,10 +380,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_7.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -414,10 +390,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_8.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -427,10 +400,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_9.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -440,10 +410,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_10.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -453,10 +420,7 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__status_::new({ __tmp_11.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(29).call(
             _expected,
@@ -464,8 +428,8 @@ pub fn format_test_handle_4(check: FnPtr<Generic>, check_exception: FnPtr<Generi
             _args.as_pointer(),
         )
     });
-    let __tmp_12: Value<()> = Rc::new(RefCell::new(({ invalid_types_2(unimplemented!()) })));
-    let __range1: Ptr<()> = __tmp_12.as_pointer();
+    let __tmp_0: Value<()> = Rc::new(RefCell::new(({ invalid_types_2(unimplemented!()) })));
+    let __range1: Ptr<()> = __tmp_0.as_pointer();
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: Ptr<()> = unimplemented!();
         ({
@@ -483,10 +447,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_13.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -496,10 +457,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_14.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -509,10 +467,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_15.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -522,10 +477,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_16.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foo));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -535,10 +487,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_17.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -548,10 +497,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_18.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -561,10 +507,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_19.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -574,10 +517,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_20.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_bar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -587,10 +527,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_21.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -600,10 +537,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_22.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -613,10 +547,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_23.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -626,10 +557,7 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__status_::new({ __tmp_24.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<status> = Rc::new(RefCell::new(status_foobar));
         (*check.borrow()).spec::<fn((), (), Ptr<status>)>(60).call(
             _expected,
@@ -637,8 +565,8 @@ pub fn format_test_handle_5(check: FnPtr<Generic>, check_exception: FnPtr<Generi
             _args.as_pointer(),
         )
     });
-    let __tmp_25: Value<()> = Rc::new(RefCell::new(({ invalid_types_3(unimplemented!()) })));
-    let __range1: Ptr<()> = __tmp_25.as_pointer();
+    let __tmp_1: Value<()> = Rc::new(RefCell::new(({ invalid_types_3(unimplemented!()) })));
+    let __range1: Ptr<()> = __tmp_1.as_pointer();
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: Ptr<()> = unimplemented!();
         ({
@@ -655,40 +583,28 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_26: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char_::new({ __tmp_26.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(0)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_27: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char_::new({ __tmp_27.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(0)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_28: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char_::new({ __tmp_28.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(0)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_29: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__char_::new({ __tmp_29.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(1)
@@ -696,20 +612,14 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_30: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char_::new({ __tmp_30.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(0)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_31: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__char_::new({ __tmp_31.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(1)
@@ -717,10 +627,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_32: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__bool__bool_::new({ __tmp_32.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -729,10 +636,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_33: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__bool__bool_::new({ __tmp_33.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -741,10 +645,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_34: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ :: new ( { __tmp_34.as_pointer() } , )
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(1_()));
         let _args_3: Value<()> = Rc::new(RefCell::new(2_()));
         let _args_4: Value<()> = Rc::new(RefCell::new(3_()));
@@ -888,12 +789,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_35: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__char__char__char__char__char__char__char_::new({
-                __tmp_35.as_pointer()
-            })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(('0' as ())));
         let _args_3: Value<()> = Rc::new(RefCell::new(('9' as ())));
         let _args_4: Value<()> = Rc::new(RefCell::new(('a' as ())));
@@ -930,10 +826,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<Ptr<()>> = Rc::new(RefCell::new((buffer.as_pointer() as Ptr<()>)));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_36: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__char_ptrref_::new({ __tmp_36.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<Ptr<()>>)>(5).call(
                 _expected,
                 _fmt,
@@ -955,10 +848,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<Ptr<()>> = Rc::new(RefCell::new((buffer.as_pointer() as Ptr<()>)));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_37: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__const_char_ptrref_::new({ __tmp_37.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<Ptr<()>>)>(6).call(
                 _expected,
                 _fmt,
@@ -979,10 +869,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         ])));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_38: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__char__ref_arr8arr_::new({ __tmp_38.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(7).call(
                 _expected,
                 _fmt,
@@ -1000,10 +887,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         ])));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_39: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__char__ref_arr7arr_::new({ __tmp_39.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(8).call(
                 _expected,
                 _fmt,
@@ -1015,10 +899,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_40: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__std_string_ref_::new({ __tmp_40.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(9).call(
                 _expected,
                 _fmt,
@@ -1031,10 +912,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<()> = Rc::new(RefCell::new(({ (*buffer.borrow())() })));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_41: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_char__std_string_view_ref_::new({ __tmp_41.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(10).call(
                 _expected,
                 _fmt,
@@ -1045,10 +923,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_42: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__bool__bool_::new({ __tmp_42.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -1058,10 +933,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_43: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__signed_char_::new({ __tmp_43.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(11)
@@ -1069,10 +941,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_44: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__short_::new({ __tmp_44.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(12)
@@ -1080,10 +949,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_45: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__int_::new({ __tmp_45.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(13)
@@ -1091,10 +957,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_46: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__long_::new({ __tmp_46.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(14)
@@ -1102,10 +965,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_47: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__long_long_::new({ __tmp_47.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(15)
@@ -1113,10 +973,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_48: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char____int128_::new({ __tmp_48.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(16)
@@ -1125,10 +982,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_49: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned_char_::new({ __tmp_49.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(17)
@@ -1136,10 +990,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_50: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned_short_::new({ __tmp_50.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(18)
@@ -1147,10 +998,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_51: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned_int_::new({ __tmp_51.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(19)
@@ -1158,10 +1006,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_52: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned_long_::new({ __tmp_52.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(20)
@@ -1169,10 +1014,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_53: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned_long_long_::new({ __tmp_53.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(21)
@@ -1180,10 +1022,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_54: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__unsigned___int128_::new({ __tmp_54.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(22)
@@ -1192,10 +1031,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_55: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__float_::new({ __tmp_55.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(23)
@@ -1203,10 +1039,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_56: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__double_::new({ __tmp_56.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(24)
@@ -1214,10 +1047,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_57: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__long_double_::new({ __tmp_57.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(25)
@@ -1226,10 +1056,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_58: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__std_nullptr_t_::new({ __tmp_58.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(Default::default()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(26)
@@ -1237,10 +1064,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_59: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__void_ptr_::new({ __tmp_59.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(66_().reinterpret_cast::<()>()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(27)
@@ -1248,10 +1072,7 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_60: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_char__const_void_ptr_::new({ __tmp_60.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(66_().reinterpret_cast::<()>()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(28)
@@ -1271,40 +1092,28 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     let check_exception: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check_exception));
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_61: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t_::new({ __tmp_61.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(31)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_62: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t_::new({ __tmp_62.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(31)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_63: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t_::new({ __tmp_63.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(31)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_64: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__wchar_t_::new({ __tmp_64.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(32)
@@ -1312,20 +1121,14 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_65: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t_::new({ __tmp_65.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         (*check.borrow())
             .spec::<fn((), ())>(31)
             .call(_expected, _fmt)
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_66: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__wchar_t_::new({ __tmp_66.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new((' ' as ())));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(32)
@@ -1333,10 +1136,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_67: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__bool__bool_::new({ __tmp_67.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -1345,10 +1145,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_68: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__bool__bool_::new({ __tmp_68.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -1357,10 +1154,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_69: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ :: new ( { __tmp_69.as_pointer() } , )
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(1_()));
         let _args_3: Value<()> = Rc::new(RefCell::new(2_()));
         let _args_4: Value<()> = Rc::new(RefCell::new(3_()));
@@ -1504,10 +1298,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_70: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_ :: new ( { __tmp_70.as_pointer() } , )
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(('0' as ())));
         let _args_3: Value<()> = Rc::new(RefCell::new(('9' as ())));
         let _args_4: Value<()> = Rc::new(RefCell::new(('a' as ())));
@@ -1544,10 +1335,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<Ptr<()>> = Rc::new(RefCell::new((buffer.as_pointer() as Ptr<()>)));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_71: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__wchar_t_ptrref_::new({ __tmp_71.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<Ptr<()>>)>(36).call(
                 _expected,
                 _fmt,
@@ -1569,12 +1357,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<Ptr<()>> = Rc::new(RefCell::new((buffer.as_pointer() as Ptr<()>)));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_72: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__const_wchar_t_ptrref_::new({
-                    __tmp_72.as_pointer()
-                })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<Ptr<()>>)>(37).call(
                 _expected,
                 _fmt,
@@ -1595,12 +1378,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         ])));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_73: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_::new({
-                    __tmp_73.as_pointer()
-                })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(38).call(
                 _expected,
                 _fmt,
@@ -1618,12 +1396,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         ])));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_74: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_::new({
-                    __tmp_74.as_pointer()
-                })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(39).call(
                 _expected,
                 _fmt,
@@ -1635,10 +1408,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_75: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__std_wstring_ref_::new({ __tmp_75.as_pointer() })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(40).call(
                 _expected,
                 _fmt,
@@ -1651,12 +1421,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         let data: Value<()> = Rc::new(RefCell::new(({ (*buffer.borrow())() })));
         ({
             let _expected: () = unimplemented!();
-            let _fmt: () = {
-                let __tmp_76: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std_basic_format_string_wchar_t__std_wstring_view_ref_::new({
-                    __tmp_76.as_pointer()
-                })
-            };
+            let _fmt: () = unimplemented!();
             (*check.borrow()).spec::<fn((), (), Ptr<()>)>(41).call(
                 _expected,
                 _fmt,
@@ -1667,10 +1432,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_77: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__bool__bool_::new({ __tmp_77.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(false));
         let _args_3: Value<()> = Rc::new(RefCell::new(true));
         (*check.borrow())
@@ -1680,10 +1442,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_78: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__signed_char_::new({ __tmp_78.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(42)
@@ -1691,10 +1450,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_79: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__short_::new({ __tmp_79.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(43)
@@ -1702,10 +1458,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_80: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__int_::new({ __tmp_80.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(44)
@@ -1713,10 +1466,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_81: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__long_::new({ __tmp_81.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(45)
@@ -1724,10 +1474,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_82: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__long_long_::new({ __tmp_82.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(46)
@@ -1735,10 +1482,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_83: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t____int128_::new({ __tmp_83.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(47)
@@ -1747,10 +1491,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_84: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned_char_::new({ __tmp_84.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(48)
@@ -1758,10 +1499,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_85: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned_short_::new({ __tmp_85.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(49)
@@ -1769,10 +1507,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_86: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned_int_::new({ __tmp_86.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(50)
@@ -1780,10 +1515,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_87: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned_long_::new({ __tmp_87.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(51)
@@ -1791,10 +1523,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_88: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned_long_long_::new({ __tmp_88.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(52)
@@ -1802,10 +1531,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_89: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__unsigned___int128_::new({ __tmp_89.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(53)
@@ -1814,10 +1540,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_90: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__float_::new({ __tmp_90.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(54)
@@ -1825,10 +1548,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_91: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__double_::new({ __tmp_91.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(55)
@@ -1836,10 +1556,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_92: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__long_double_::new({ __tmp_92.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(42_()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(56)
@@ -1848,10 +1565,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     {}
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_93: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__std_nullptr_t_::new({ __tmp_93.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(Default::default()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(57)
@@ -1859,10 +1573,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_94: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__void_ptr_::new({ __tmp_94.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(66_().reinterpret_cast::<()>()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(58)
@@ -1870,10 +1581,7 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
     });
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_95: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__const_void_ptr_::new({ __tmp_95.as_pointer() })
-        };
+        let _fmt: () = unimplemented!();
         let _args: Value<()> = Rc::new(RefCell::new(66_().reinterpret_cast::<()>()));
         (*check.borrow())
             .spec::<fn((), (), Ptr<()>)>(59)
@@ -1892,12 +1600,7 @@ pub fn format_tests_char_to_wchar_t_8(check: FnPtr<Generic>) {
     let check: Value<FnPtr<Generic>> = Rc::new(RefCell::new(check));
     ({
         let _expected: () = unimplemented!();
-        let _fmt: () = {
-            let __tmp_96: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_basic_format_string_wchar_t__char__char__char__char__char_::new({
-                __tmp_96.as_pointer()
-            })
-        };
+        let _fmt: () = unimplemented!();
         let _args_2: Value<()> = Rc::new(RefCell::new(('0' as ())));
         let _args_3: Value<()> = Rc::new(RefCell::new(('9' as ())));
         let _args_4: Value<()> = Rc::new(RefCell::new(('a' as ())));
@@ -1947,12 +1650,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -1997,12 +1695,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2047,12 +1740,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2118,12 +1806,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2176,12 +1859,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2226,12 +1904,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2276,12 +1949,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2326,12 +1994,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2376,12 +2039,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2426,12 +2084,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2476,12 +2129,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2526,12 +2174,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2576,12 +2219,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2626,12 +2264,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2676,12 +2309,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2726,12 +2354,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2776,12 +2399,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2826,12 +2444,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2876,12 +2489,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2926,12 +2534,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -2976,12 +2579,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3026,12 +2624,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3076,12 +2669,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3126,12 +2714,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3176,12 +2759,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3226,12 +2804,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3276,12 +2849,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3326,12 +2894,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3376,12 +2939,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3426,12 +2984,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out: () =
-                    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                        { 10_() },
-                        { (' ' as ()) },
-                        None,
-                    );
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3482,7 +3035,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3527,7 +3080,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3572,7 +3125,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3617,7 +3170,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3683,7 +3236,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3736,7 +3289,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3781,7 +3334,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3826,7 +3379,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3871,7 +3424,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3916,7 +3469,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -3961,7 +3514,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4006,7 +3559,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4051,7 +3604,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4096,7 +3649,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4141,7 +3694,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4186,7 +3739,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4231,7 +3784,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4276,7 +3829,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4321,7 +3874,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4366,7 +3919,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4411,7 +3964,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4456,7 +4009,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4501,7 +4054,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4546,7 +4099,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4591,7 +4144,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4636,7 +4189,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4681,7 +4234,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4726,7 +4279,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4771,7 +4324,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4816,7 +4369,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());
@@ -4861,7 +4414,7 @@ thread_local!(
                 unimplemented!();
             }
             {
-                let mut out : ()  = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { 10_()  } , { ( ' ' as ()  )  } , None , )   ;
+                let mut out: () = unimplemented!();
                 let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let mut formatted_size: () = unimplemented!();
                 let mut size: () = ((unimplemented!().read()) as ());

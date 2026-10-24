@@ -94,7 +94,7 @@ pub struct random_access_iterator_std___deque_iterator_int__int_ptr__int_ref__in
 impl random_access_iterator_std___deque_iterator_int__int_ptr__int_ref__int_ptrptr__long__1024__ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -165,7 +165,7 @@ pub struct random_access_iterator_std___deque_iterator_int__const_int_ptr__const
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl random_access_iterator_std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl random_access_iterator_std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> *const () { return & ( * unimplemented!()  )   ;
  } pub unsafe fn operator_dec_8 ( &mut self , ) -> *mut random_access_iterator_std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024__ { unimplemented!()  ;
  return & mut ( * ( self as *mut random_access_iterator_std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024__  )  )  ;
@@ -188,7 +188,7 @@ pub struct random_access_iterator_std___deque_iterator_int__min_pointer_int__std
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl random_access_iterator_std___deque_iterator_int__min_pointer_int__std_integral_constant_unsigned_long__0____int_ref__min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl random_access_iterator_std___deque_iterator_int__min_pointer_int__std_integral_constant_unsigned_long__0____int_ref__min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> *mut () { return & mut ( * unimplemented!()  )   ;
  } pub unsafe fn operator_dec_8 ( &mut self , ) -> *mut random_access_iterator_std___deque_iterator_int__min_pointer_int__std_integral_constant_unsigned_long__0____int_ref__min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { unimplemented!()  ;
  return & mut ( * ( self as *mut random_access_iterator_std___deque_iterator_int__min_pointer_int__std_integral_constant_unsigned_long__0____int_ref__min_pointer_min_pointer_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__  )  )  ;
@@ -229,7 +229,7 @@ pub struct random_access_iterator_std___deque_iterator_int__min_pointer_const_in
     it_: (),
     tracker_: support_double_move_tracker,
 }
-impl random_access_iterator_std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : it .clone() , tracker_ : support_double_move_tracker :: new ( )  , } ;
+impl random_access_iterator_std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { pub unsafe fn new_1 ( mut it : () , ) -> Self { let mut this = Self { it_ : unimplemented!() , tracker_ : support_double_move_tracker :: new ( )  , } ;
  this } pub unsafe fn operator_deref ( &self , ) -> *const () { return & ( * unimplemented!()  )   ;
  } pub unsafe fn operator_dec_8 ( &mut self , ) -> *mut random_access_iterator_std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__ { unimplemented!()  ;
  return & mut ( * ( self as *mut random_access_iterator_std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024__  )  )  ;

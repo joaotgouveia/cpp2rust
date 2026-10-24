@@ -263,11 +263,7 @@ pub unsafe fn test01_11() {
     let mut v: () = unimplemented!();
     (*unimplemented!()) = -0.5_f64;
     (*unimplemented!()) = 0.25_f64;
-    let mut v_abs: () = {
-        let mut __tmp_0: std__Expr_std___detail__UnClos_std__Abs__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_1({ &mut __tmp_0 })
-    };
+    let mut v_abs: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -306,11 +302,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_acos: () = {
-        let mut __tmp_1: std__Expr_std___detail__UnClos_std__Acos__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_2({ &mut __tmp_1 })
-    };
+    let mut v_acos: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -349,11 +341,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_asin: () = {
-        let mut __tmp_2: std__Expr_std___detail__UnClos_std__Asin__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_3({ &mut __tmp_2 })
-    };
+    let mut v_asin: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -392,11 +380,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_atan: () = {
-        let mut __tmp_3: std__Expr_std___detail__UnClos_std__Atan__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_4({ &mut __tmp_3 })
-    };
+    let mut v_atan: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -438,10 +422,7 @@ pub unsafe fn test01_11() {
     let mut v2: () = unimplemented!();
     (*unimplemented!()) = 4_();
     (*unimplemented!()) = 3_();
-    let mut v_atan2: () = {
-        let mut __tmp_4 : std__Expr_std___detail__BinClos_std__Atan2__std__ValArray__std__ValArray__double__double___double_  = unimplemented!()  ;
-        std_valarray_double_::new_5({ &mut __tmp_4 })
-    };
+    let mut v_atan2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -480,7 +461,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    v_atan2 = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -519,7 +500,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    v_atan2 = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -558,11 +539,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_cos: () = {
-        let mut __tmp_5: std__Expr_std___detail__UnClos_std__Cos__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_6({ &mut __tmp_5 })
-    };
+    let mut v_cos: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -601,11 +578,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_cosh: () = {
-        let mut __tmp_6: std__Expr_std___detail__UnClos_std__Cosh__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_7({ &mut __tmp_6 })
-    };
+    let mut v_cosh: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -644,11 +617,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_exp: () = {
-        let mut __tmp_7: std__Expr_std___detail__UnClos_std__Exp__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_8({ &mut __tmp_7 })
-    };
+    let mut v_exp: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -687,11 +656,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_log: () = {
-        let mut __tmp_8: std__Expr_std___detail__UnClos_std__Log__std__ValArray__double___double_ =
-            unimplemented!();
-        std_valarray_double_::new_9({ &mut __tmp_8 })
-    };
+    let mut v_log: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -711,10 +676,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_log10: () = {
-        let mut __tmp_9 : std__Expr_std___detail__UnClos_std__Log10__std__ValArray__double___double_  = unimplemented!()  ;
-        std_valarray_double_::new_10({ &mut __tmp_9 })
-    };
+    let mut v_log10: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -734,10 +696,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    let mut v_pow: () = {
-        let mut __tmp_10 : std__Expr_std___detail__BinClos_std__Pow__std__ValArray__std__ValArray__double__double___double_  = unimplemented!()  ;
-        std_valarray_double_::new_11({ &mut __tmp_10 })
-    };
+    let mut v_pow: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -776,7 +735,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    v_pow = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -815,7 +774,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    v_pow = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

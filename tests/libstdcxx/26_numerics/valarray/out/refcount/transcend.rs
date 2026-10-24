@@ -261,12 +261,7 @@ pub fn test01_11() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!().write(-0.5_f64);
     unimplemented!().write(0.25_f64);
-    let v_abs: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<
-            std__Expr_std___detail__UnClos_std__Abs__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_1({ __tmp_0.as_pointer() })
-    }));
+    let v_abs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -305,12 +300,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_acos: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<
-            std__Expr_std___detail__UnClos_std__Acos__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_2({ __tmp_1.as_pointer() })
-    }));
+    let v_acos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -349,12 +339,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_asin: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<
-            std__Expr_std___detail__UnClos_std__Asin__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_3({ __tmp_2.as_pointer() })
-    }));
+    let v_asin: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -393,12 +378,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_atan: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<
-            std__Expr_std___detail__UnClos_std__Atan__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_4({ __tmp_3.as_pointer() })
-    }));
+    let v_atan: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -440,10 +420,7 @@ pub fn test01_11() {
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!().write(4_());
     unimplemented!().write(3_());
-    let v_atan2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_4 : Value<std__Expr_std___detail__BinClos_std__Atan2__std__ValArray__std__ValArray__double__double___double_ > = Rc::new(RefCell::new(unimplemented!()  ));
-        std_valarray_double_::new_5({ __tmp_4.as_pointer() })
-    }));
+    let v_atan2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -482,7 +459,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    (*v_atan2.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -521,7 +498,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    (*v_atan2.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -560,12 +537,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_cos: Value<()> = Rc::new(RefCell::new({
-        let __tmp_5: Value<
-            std__Expr_std___detail__UnClos_std__Cos__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_6({ __tmp_5.as_pointer() })
-    }));
+    let v_cos: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -604,12 +576,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_cosh: Value<()> = Rc::new(RefCell::new({
-        let __tmp_6: Value<
-            std__Expr_std___detail__UnClos_std__Cosh__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_7({ __tmp_6.as_pointer() })
-    }));
+    let v_cosh: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -648,12 +615,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_exp: Value<()> = Rc::new(RefCell::new({
-        let __tmp_7: Value<
-            std__Expr_std___detail__UnClos_std__Exp__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_8({ __tmp_7.as_pointer() })
-    }));
+    let v_exp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -692,12 +654,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_log: Value<()> = Rc::new(RefCell::new({
-        let __tmp_8: Value<
-            std__Expr_std___detail__UnClos_std__Log__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_9({ __tmp_8.as_pointer() })
-    }));
+    let v_log: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -717,12 +674,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_log10: Value<()> = Rc::new(RefCell::new({
-        let __tmp_9: Value<
-            std__Expr_std___detail__UnClos_std__Log10__std__ValArray__double___double_,
-        > = Rc::new(RefCell::new(unimplemented!()));
-        std_valarray_double_::new_10({ __tmp_9.as_pointer() })
-    }));
+    let v_log10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -742,10 +694,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    let v_pow: Value<()> = Rc::new(RefCell::new({
-        let __tmp_10 : Value<std__Expr_std___detail__BinClos_std__Pow__std__ValArray__std__ValArray__double__double___double_ > = Rc::new(RefCell::new(unimplemented!()  ));
-        std_valarray_double_::new_11({ __tmp_10.as_pointer() })
-    }));
+    let v_pow: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -784,7 +733,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    (*v_pow.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -823,7 +772,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    (*v_pow.borrow_mut()) = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -547,34 +547,21 @@ pub unsafe fn test_18() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr(),
-                }
-            },
-            { (6_() as ()) },
-        );
+        let mut iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
@@ -591,34 +578,21 @@ pub unsafe fn test_18() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 7_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 6_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr(),
-                }
-            },
-            { (6_() as ()) },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;

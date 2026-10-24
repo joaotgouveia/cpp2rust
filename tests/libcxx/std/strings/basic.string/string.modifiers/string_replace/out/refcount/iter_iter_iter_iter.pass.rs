@@ -496,14 +496,8 @@ impl util_iterator_error {
 pub fn test_14(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
-    let first: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_const_char_ptr_::new_1({ __tmp_0.as_pointer() })
-    }));
-    let last: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_const_char_ptr_::new_1({ __tmp_1.as_pointer() })
-    }));
+    let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -514,18 +508,8 @@ pub fn test_14(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, 
 pub fn test_15(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
-    let first: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            __tmp_2.as_pointer()
-        })
-    }));
-    let last: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            __tmp_3.as_pointer()
-        })
-    }));
+    let first: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let last: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();

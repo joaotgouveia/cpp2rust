@@ -262,7 +262,7 @@ pub unsafe fn test01_10() {
     unimplemented!();
     let time1: ::libc::tm =
         (unsafe { test_tm_11(0_(), 0_(), 12_(), 4_(), 3_(), 71_(), 0_(), 93_(), 0_()) });
-    write!(oss, "{:}", unimplemented!(),);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

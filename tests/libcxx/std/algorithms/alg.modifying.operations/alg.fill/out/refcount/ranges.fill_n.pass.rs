@@ -1413,11 +1413,7 @@ pub fn test_vector_bool_22(mut N: ()) -> () {
         {
             let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
                 (*fill_n_15.with(Value::clone).borrow_mut())(
@@ -1431,11 +1427,7 @@ pub fn test_vector_bool_22(mut N: ()) -> () {
         {
             let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
                 (*fill_n_15.with(Value::clone).borrow_mut())(
@@ -1449,19 +1441,7 @@ pub fn test_vector_bool_22(mut N: ()) -> () {
         {
             let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                let __rhs = {
-                    let __rhs = {
-                        unimplemented!() = false;
-                        unimplemented!()
-                    };
-                    unimplemented!() = __rhs;
-                    unimplemented!()
-                };
-                unimplemented!() = __rhs;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
                 (*fill_n_15.with(Value::clone).borrow_mut())(

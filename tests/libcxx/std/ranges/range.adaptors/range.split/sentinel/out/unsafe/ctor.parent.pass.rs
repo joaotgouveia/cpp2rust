@@ -424,7 +424,7 @@ pub unsafe fn test_8() -> () {
     {
         let mut buffer: [(); 3] = [0_(), 1_(), 2_()];
         let mut input: () = unimplemented!();
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         let mut it: () = unimplemented!();
         let mut sent : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel :: new_1 ( { & mut sv } , )  ;
         unimplemented!();

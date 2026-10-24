@@ -35,8 +35,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let mut bindexpr: MyBind = <MyBind>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_32_14__ref__MyBind_ref_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -44,8 +43,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let bindexpr: MyBind = <MyBind>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_38_14__ref__const_MyBind_ref_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -53,8 +51,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let mut bindexpr: MyBind = <MyBind>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_44_14__ref__MyBind_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -62,8 +59,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let bindexpr: MyBind = <MyBind>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_50_14__ref__const_MyBind_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

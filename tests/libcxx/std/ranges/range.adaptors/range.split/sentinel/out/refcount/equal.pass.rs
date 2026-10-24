@@ -620,7 +620,7 @@ pub fn testOne_12() {
                 6_(),
             ])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -633,7 +633,7 @@ pub fn testOne_12() {
             let buffer: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -659,7 +659,7 @@ pub fn testOne_14() {
                 6_(),
             ])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -672,7 +672,7 @@ pub fn testOne_14() {
             let buffer: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -698,7 +698,7 @@ pub fn testOne_16() {
                 6_(),
             ])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -711,7 +711,7 @@ pub fn testOne_16() {
             let buffer: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -737,7 +737,7 @@ pub fn testOne_18() {
                 6_(),
             ])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -750,7 +750,7 @@ pub fn testOne_18() {
             let buffer: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr____std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -776,7 +776,7 @@ pub fn testOne_20() {
                 6_(),
             ])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();
@@ -789,7 +789,7 @@ pub fn testOne_20() {
             let buffer: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
             let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let e : Value<std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(unimplemented!()  )) ;
             unimplemented!();

@@ -258,11 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut ss: () = unimplemented!();
-    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 5_() },
-        { ('0' as ()) },
-        None,
-    );
+    let mut ostr: () = unimplemented!();
     let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -383,11 +379,7 @@ pub unsafe fn test01_10() {
 }
 pub unsafe fn test02_12() {
     let mut ss: () = unimplemented!();
-    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 5_() },
-        { ('0' as ()) },
-        None,
-    );
+    let mut ostr: () = unimplemented!();
     let mut ibfit: () = unimplemented!();
     let mut res: () = unimplemented!();
     let mut __do_while = true;
@@ -430,11 +422,7 @@ pub unsafe fn test02_12() {
     }
 }
 pub unsafe fn test03_13() {
-    let mut ostr: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 5_() },
-        { ('0' as ()) },
-        None,
-    );
+    let mut ostr: () = unimplemented!();
     let mut res: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

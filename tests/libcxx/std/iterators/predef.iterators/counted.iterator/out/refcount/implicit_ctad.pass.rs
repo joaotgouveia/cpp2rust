@@ -34,10 +34,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let array: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     let mut p: Ptr<()> = (array.as_pointer() as Ptr<()>);
-    let iter: Value<()> = Rc::new(RefCell::new(std_counted_iterator_int_ptr_::new_1(
-        { (p).clone() },
-        { 3_() },
-    )));
+    let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     return 0_();
 }

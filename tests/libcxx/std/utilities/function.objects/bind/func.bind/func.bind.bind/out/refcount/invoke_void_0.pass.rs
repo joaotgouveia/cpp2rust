@@ -9,10 +9,79 @@ use std::rc::{Rc, Weak};
 thread_local!(
     pub static count_0: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn f_1() {
+pub fn test_1(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_2(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_3(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_4(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_5(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_6(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_7(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_8(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_9(f: ()) {
+    let f: Value<()> = Rc::new(RefCell::new(f));
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_const_10(f: Ptr<()>) {
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_const_11(f: Ptr<()>) {
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_const_12(f: Ptr<()>) {
+    let mut save_count: () = count_0.with(|rc| *rc.borrow());
+    unimplemented!();
+    unimplemented!();
+}
+pub fn f_13() {
     (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
 }
-pub fn g_2() -> () {
+pub fn g_14() -> () {
     (*count_0.with(Value::clone).borrow_mut()).prefix_inc();
     return 0_();
 }
@@ -42,84 +111,45 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_3(({ bind_4(FnPtr::<fn()>::new(f_1)) })) });
+    ({ test_1(({ bind_15(FnPtr::<fn()>::new(f_13)) })) });
     ({
-        test_5(
+        test_2(
             ({
-                let ___f: Value<FnPtr<fn()>> = Rc::new(RefCell::new((FnPtr::<fn()>::new(f_1))));
-                bind_6(___f.as_pointer())
+                let ___f: Value<FnPtr<fn()>> = Rc::new(RefCell::new((FnPtr::<fn()>::new(f_13))));
+                bind_16(___f.as_pointer())
             }),
         )
     });
     ({
-        test_7(
+        test_3(
             ({
                 let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_8(___f.as_pointer())
+                bind_17(___f.as_pointer())
             }),
         )
     });
     ({
-        let _f: Value<std___bind_A_void_0_> = Rc::new(RefCell::new(
+        let _f: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_8(___f.as_pointer())
+                bind_17(___f.as_pointer())
             }),
         ));
-        test_const_9(_f.as_pointer())
+        test_const_10(_f.as_pointer())
     });
-    ({ test_10(({ bind_11(FnPtr::<fn()>::new(f_1)) })) });
+    ({ test_4(unimplemented!()) });
+    ({ test_5(unimplemented!()) });
+    ({ test_6(unimplemented!()) });
     ({
-        test_12(
-            ({
-                let ___f: Value<FnPtr<fn()>> = Rc::new(RefCell::new((FnPtr::<fn()>::new(f_1))));
-                bind_13(___f.as_pointer())
-            }),
-        )
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_const_11(_f.as_pointer())
     });
+    ({ test_7(unimplemented!()) });
+    ({ test_8(unimplemented!()) });
+    ({ test_9(unimplemented!()) });
     ({
-        test_14(
-            ({
-                let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_15(___f.as_pointer())
-            }),
-        )
-    });
-    ({
-        let _f: Value<std___bind_r_void__A_void_0_> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<A_void_0> = Rc::new(RefCell::new(<A_void_0>::default()));
-                bind_15(___f.as_pointer())
-            }),
-        ));
-        test_const_16(_f.as_pointer())
-    });
-    ({ test_17(({ bind_18(FnPtr::<fn() -> ()>::new(g_2)) })) });
-    ({
-        test_19(
-            ({
-                let ___f: Value<FnPtr<fn() -> ()>> =
-                    Rc::new(RefCell::new((FnPtr::<fn() -> ()>::new(g_2))));
-                bind_20(___f.as_pointer())
-            }),
-        )
-    });
-    ({
-        test_21(
-            ({
-                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_22(___f.as_pointer())
-            }),
-        )
-    });
-    ({
-        let _f: Value<std___bind_r_void__A_int_0_> = Rc::new(RefCell::new(
-            ({
-                let ___f: Value<A_int_0> = Rc::new(RefCell::new(<A_int_0>::default()));
-                bind_22(___f.as_pointer())
-            }),
-        ));
-        test_const_23(_f.as_pointer())
+        let _f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        test_const_12(_f.as_pointer())
     });
     return 0_();
 }

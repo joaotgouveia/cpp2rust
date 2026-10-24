@@ -460,15 +460,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(std_unique_ptr_int__do_nothing_::new({
-            (i.as_pointer())
-        })));
-        ({
-            test_9(
-                (p.as_pointer()),
-                std_unique_ptr_int__do_nothing_::new({ (i.as_pointer()) }),
-            )
-        });
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ test_9((p.as_pointer()), unimplemented!()) });
     }
     {
         let mut p: Ptr<()> = Ptr::<()>::from_string_literal(b"123456789");

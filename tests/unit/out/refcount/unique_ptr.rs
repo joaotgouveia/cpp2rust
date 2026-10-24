@@ -55,8 +55,7 @@ pub fn DoStuffWithSafePointer_0(safe_ptr: Ptr<()>) {
 }
 pub fn Consume_1(mut safe_ptr: ()) -> () {
     let mut x: () = unimplemented!();
-    let mut p: () =
-        std_unique_ptr_Pair__std_default_delete_Pair__::new({ Ptr::alloc(<Pair>::default()) });
+    let mut p: () = unimplemented!();
     return ((unimplemented!().read()) + { unimplemented!().x });
 }
 pub fn RndStuff_2() {
@@ -122,7 +121,7 @@ fn main_0() -> () {
     let safe_ptr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ DoStuffWithSafePointer_0(safe_ptr.as_pointer()) });
     unimplemented!();
-    let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(1_()) });
+    let mut p: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

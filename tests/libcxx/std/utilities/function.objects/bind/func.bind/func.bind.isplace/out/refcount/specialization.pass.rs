@@ -35,8 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 return ((10_() * x) + 9_());
             })));
         let mut place: My2 = <My2>::default();
-        let bound: Value<std___bind__lambda_at_specialization_pass_cpp_30_14__ref__My2_ref_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -45,8 +44,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 return ((10_() * x) + 9_());
             })));
         let mut place: My2 = <My2>::default();
-        let bound: Value<std___bind__lambda_at_specialization_pass_cpp_36_14__ref__const_My2_ref_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -55,8 +53,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 return ((10_() * x) + 9_());
             })));
         let mut place: My2 = <My2>::default();
-        let bound: Value<std___bind__lambda_at_specialization_pass_cpp_42_14__ref__My2_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -65,8 +62,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 return ((10_() * x) + 9_());
             })));
         let mut place: My2 = <My2>::default();
-        let bound: Value<std___bind__lambda_at_specialization_pass_cpp_48_14__ref__const_My2_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let bound: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

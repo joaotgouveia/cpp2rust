@@ -469,31 +469,13 @@ pub fn test_8() -> () {
         );;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_ConvertibleTo_forward_iterator_int_ptr___::new_1(
-                {
-                    ConvertibleTo_forward_iterator_int_ptr__::new_1({
-                        (buffer.as_pointer() as Ptr<()>)
-                    })
-                },
-                { 8_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_ConvertibleTo_forward_iterator_int_ptr___::new_1(
-                {
-                    ConvertibleTo_forward_iterator_int_ptr__::new_1({
-                        (buffer.as_pointer() as Ptr<()>)
-                    })
-                },
-                { 8_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

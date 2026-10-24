@@ -36,20 +36,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut b: std___bind_DummyUnaryFunction__BadUnaryFunction_ = unimplemented!();
-    (unsafe {
-        let mut ___args: () = 0_();
-        b(&mut ___args)
-    });
-    let mut b2: std___bind_r_long__DummyUnaryFunction__BadUnaryFunction_ = (unsafe {
-        let mut ___f: DummyUnaryFunction = <DummyUnaryFunction>::default();
-        let mut ___bound_args: BadUnaryFunction = <BadUnaryFunction>::default();
-        bind_0(&mut ___f, &mut ___bound_args)
-    });
-    (unsafe {
-        let mut ___args: () = 0_();
-        b2(&mut ___args)
-    });
+    let mut b: () = unimplemented!();
+    unimplemented!();
+    let mut b2: () = unimplemented!();
+    unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

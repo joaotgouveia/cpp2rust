@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() {
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
+    let mut i: () = 1_();
     let c: Value<()> = Rc::new(RefCell::new(('c' as ())));
     let p: Value<()> = Rc::new(RefCell::new(Default::default()));
     const _: () = assert!(
@@ -15,49 +15,32 @@ pub fn test_0() {
         "!std::is_default_constructible_v<std::basic_format_args<Context>>"
     );;
     {
-        let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___int_> =
-            Rc::new(RefCell::new(({ make_format_args_1(i.as_pointer()) })));
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_1({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let store: Value<
-            std___format_arg_store_std_basic_format_context_char_ptr__char___int__char_,
-        > = Rc::new(RefCell::new(
-            ({ make_format_args_2(i.as_pointer(), c.as_pointer()) }),
-        ));
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let store : Value<std___format_arg_store_std_basic_format_context_char_ptr__char___int__char__std_nullptr_t_ > = Rc::new(RefCell::new(( { make_format_args_3 ( i .as_pointer()  , c .as_pointer()  , p .as_pointer()  , ) } )  )) ;
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_3({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_4() {
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
+pub fn test_1() {
+    let mut i: () = 1_();
     let c: Value<()> = Rc::new(RefCell::new(('c' as ())));
     let p: Value<()> = Rc::new(RefCell::new(Default::default()));
     const _: () = assert!(
@@ -65,51 +48,33 @@ pub fn test_4() {
         "!std::is_default_constructible_v<std::basic_format_args<Context>>"
     );;
     {
-        let store: Value<
-            std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int_,
-        > = Rc::new(RefCell::new(({ make_format_args_5(i.as_pointer()) })));
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_1({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let store: Value<
-            std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int__char_,
-        > = Rc::new(RefCell::new(
-            ({ make_format_args_6(i.as_pointer(), c.as_pointer()) }),
-        ));
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_2({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let store : Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int__char__std_nullptr_t_ > = Rc::new(RefCell::new(( { make_format_args_7 ( i .as_pointer()  , c .as_pointer()  , p .as_pointer()  , ) } )  )) ;
+        let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        let format_args: Value<()> = Rc::new(RefCell::new(
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_3({
-                store.as_pointer()
-            }),
-        ));
+        let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_8() {
+pub fn test_2() {
     ({ test_0() });
-    ({ test_4() });
+    ({ test_1() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -131,7 +96,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_8() });
+    ({ test_2() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

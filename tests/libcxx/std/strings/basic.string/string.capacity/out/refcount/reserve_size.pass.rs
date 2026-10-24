@@ -102,13 +102,7 @@ pub fn is_string_asan_correct_5(_a0: Ptr<()>) -> () {
     return true;
 }
 pub fn test_6(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { min_cap },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -126,13 +120,7 @@ pub fn test_6(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
     }
 }
 pub fn test_7(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-            { min_cap },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

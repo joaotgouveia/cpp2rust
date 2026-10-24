@@ -155,10 +155,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_0 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -166,10 +163,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_1 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -177,10 +171,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_2: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_2 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -188,10 +179,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_3: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_3 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -199,10 +187,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_4: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_4 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -210,10 +195,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_5: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_5 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -221,10 +203,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_6: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_6 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -232,40 +211,28 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = {
-            let mut __tmp_7: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref__int_::new({ &mut __tmp_7 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = {
-            let mut __tmp_8: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref__int_::new({ &mut __tmp_8 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = {
-            let mut __tmp_9: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref__int_::new({ &mut __tmp_9 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = {
-            let mut __tmp_10: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref__int_::new({ &mut __tmp_10 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(7) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -335,10 +302,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_11: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_11 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
@@ -346,17 +310,14 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = {
-            let mut __tmp_12: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__int__ref_::new({ &mut __tmp_12 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__int__ref_, *mut ())>(6)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_13: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_13;
+    let mut __tmp_0: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -375,10 +336,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_14: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_14 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -386,10 +344,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_15: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_15 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -397,10 +352,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_16: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_16 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -408,10 +360,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_17: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_17 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -419,10 +368,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_18: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_18 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -430,10 +376,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_19: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_19 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -441,10 +384,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_20: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_20 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -452,40 +392,28 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_21: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref__int_::new({ &mut __tmp_21 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_22: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref__int_::new({ &mut __tmp_22 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_23: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref__int_::new({ &mut __tmp_23 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_24: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref__int_::new({ &mut __tmp_24 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(17) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -555,10 +483,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_25: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_25 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
@@ -566,17 +491,14 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = {
-            let mut __tmp_26: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__int__ref_::new({ &mut __tmp_26 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__int__ref_, *mut ())>(16)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_27: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_27;
+    let mut __tmp_1: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_1;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -595,10 +517,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_28: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_28 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -606,10 +525,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_29: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_29 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -617,10 +533,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_30: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_30 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -628,10 +541,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_31: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_31 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -639,10 +549,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_32: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_32 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -650,10 +557,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_33: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_33 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -661,10 +565,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_34: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_34 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -672,40 +573,28 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = {
-            let mut __tmp_35: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref__int_::new({ &mut __tmp_35 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = {
-            let mut __tmp_36: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref__int_::new({ &mut __tmp_36 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = {
-            let mut __tmp_37: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref__int_::new({ &mut __tmp_37 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = {
-            let mut __tmp_38: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref__int_::new({ &mut __tmp_38 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__int__ref__int_ ,*mut () ,*mut () ,)>(43) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -775,10 +664,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_39: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_39 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
@@ -786,17 +672,14 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = {
-            let mut __tmp_40: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__int__ref_::new({ &mut __tmp_40 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_pair_int__int__ref_, *mut ())>(42)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_41: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_41;
+    let mut __tmp_2: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_2;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -815,10 +698,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_42: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_42 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -826,10 +706,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_43: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_43 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -837,10 +714,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_44: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_44 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -848,10 +722,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_45: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_45 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -859,10 +730,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_46: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_46 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -870,10 +738,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_47: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_47 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -881,10 +746,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_48: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_48 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -892,40 +754,28 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_49: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_::new({ &mut __tmp_49 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_50: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_::new({ &mut __tmp_50 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_51: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_::new({ &mut __tmp_51 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = {
-            let mut __tmp_52: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_::new({ &mut __tmp_52 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ = unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 13_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__int__ref__int_ ,*mut () ,*mut () ,)>(53) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -995,10 +845,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_53: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_53 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
@@ -1006,17 +853,14 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = {
-            let mut __tmp_54: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__int__ref_::new({ &mut __tmp_54 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__int__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__int__ref_, *mut ())>(52)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_55: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_55;
+    let mut __tmp_3: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_3;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -1035,89 +879,57 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_56: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_56
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_57: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_57
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_58: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_58
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_59: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_59
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_60: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_60
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_61: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_61
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_62: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_62
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ = {
-            let mut __tmp_63: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref__int_::new({
-                &mut __tmp_63
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1131,12 +943,8 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ = {
-            let mut __tmp_64: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref__int_::new({
-                &mut __tmp_64
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1150,12 +958,8 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ = {
-            let mut __tmp_65: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref__int_::new({
-                &mut __tmp_65
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1169,12 +973,8 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ = {
-            let mut __tmp_66: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref__int_::new({
-                &mut __tmp_66
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1251,28 +1051,20 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_67: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_67
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ = {
-            let mut __tmp_68: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string_view__ref_::new({
-                &mut __tmp_68
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_string_view__ref_ ,*mut () ,)>(8) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_69: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_69;
+    let mut __tmp_4: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_4;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -1291,10 +1083,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_70: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_70 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1304,10 +1093,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_71: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_71 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1317,10 +1103,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_72: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_72 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1330,10 +1113,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_73: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_73 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1343,10 +1123,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_74: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_74 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1356,10 +1133,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_75: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_75 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1369,10 +1143,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_76: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_76 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1382,12 +1153,8 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ = {
-            let mut __tmp_77: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref__int_::new({
-                &mut __tmp_77
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1401,12 +1168,8 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ = {
-            let mut __tmp_78: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref__int_::new({
-                &mut __tmp_78
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1420,12 +1183,8 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ = {
-            let mut __tmp_79: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref__int_::new({
-                &mut __tmp_79
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1439,12 +1198,8 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ = {
-            let mut __tmp_80: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref__int_::new({
-                &mut __tmp_80
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1521,10 +1276,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_81: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_81 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1534,10 +1286,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = {
-            let mut __tmp_82: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__std_string__ref_::new({ &mut __tmp_82 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_int__std_string__ref_, *mut ())>(
@@ -1545,8 +1294,8 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
             )
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_83: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_83;
+    let mut __tmp_5: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_5;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -1565,75 +1314,57 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_84: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_84 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_85: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_85 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_86: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_86 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_87: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_87 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_88: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_88 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_89: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_89 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_90: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_90 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_91: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_91
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1647,12 +1378,8 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_92: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_92
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1666,12 +1393,8 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_93: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_93
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1685,12 +1408,8 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_94: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_94
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1767,24 +1486,20 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_95: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_95 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ = {
-            let mut __tmp_96: () = unimplemented!();
-            std_basic_format_string_char__std_pair_int__const_char_ptr__ref_::new({ &mut __tmp_96 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__const_char_ptr__ref_ ,*mut () ,)>(12) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_97: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_97;
+    let mut __tmp_6: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_6;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -1803,89 +1518,57 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_98: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_98
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_99: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_99
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_100: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_100
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_101: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_101
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_102: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_102
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_103: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_103
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_104: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_104
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ = {
-            let mut __tmp_105: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_::new({
-                &mut __tmp_105
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1899,12 +1582,8 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ = {
-            let mut __tmp_106: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_::new({
-                &mut __tmp_106
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1918,12 +1597,8 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ = {
-            let mut __tmp_107: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_::new({
-                &mut __tmp_107
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -1937,12 +1612,8 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ = {
-            let mut __tmp_108: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_::new({
-                &mut __tmp_108
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2019,28 +1690,20 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_109: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_109
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ = {
-            let mut __tmp_110: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string_view__ref_::new({
-                &mut __tmp_110
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_string_view__ref_ ,*mut () ,)>(18) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_111: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_111;
+    let mut __tmp_7: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_7;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -2059,10 +1722,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_112: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_112 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2072,10 +1732,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_113: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_113 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2085,10 +1742,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_114: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_114 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2098,10 +1752,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_115: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_115 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2111,10 +1762,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_116: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_116 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2124,10 +1772,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_117: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_117 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2137,10 +1782,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_118: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_118 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2150,12 +1792,8 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ = {
-            let mut __tmp_119: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref__int_::new({
-                &mut __tmp_119
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2169,12 +1807,8 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ = {
-            let mut __tmp_120: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref__int_::new({
-                &mut __tmp_120
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2188,12 +1822,8 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ = {
-            let mut __tmp_121: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref__int_::new({
-                &mut __tmp_121
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2207,12 +1837,8 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ = {
-            let mut __tmp_122: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref__int_::new({
-                &mut __tmp_122
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2289,10 +1915,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_123: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_123 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2302,10 +1925,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = {
-            let mut __tmp_124: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__std_string__ref_::new({ &mut __tmp_124 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__std_string__ref_, *mut ())>(
@@ -2313,8 +1933,8 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
             )
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_125: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_125;
+    let mut __tmp_8: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_8;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -2333,89 +1953,57 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_126: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_126
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_127: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_127
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_128: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_128
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_129: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_129
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_130: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_130
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_131: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_131
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_132: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_132
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_133: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_133
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2429,12 +2017,8 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_134: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_134
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2448,12 +2032,8 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_135: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_135
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2467,12 +2047,8 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ = {
-            let mut __tmp_136: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_::new({
-                &mut __tmp_136
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2549,28 +2125,20 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_137: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_137
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ = {
-            let mut __tmp_138: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_::new({
-                &mut __tmp_138
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__const_char_ptr__ref_ ,*mut () ,)>(22) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_139: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_139;
+    let mut __tmp_9: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_9;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -2589,89 +2157,57 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_140: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_140
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_141: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_141
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_142: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_142
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_143: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_143
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_144: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_144
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_145: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_145
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_146: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_146
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_147: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_147
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2685,12 +2221,8 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_148: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_148
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2704,12 +2236,8 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_149: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_149
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2723,12 +2251,8 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_150: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_150
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2805,28 +2329,20 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_151: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_151
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ = {
-            let mut __tmp_152: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_::new({
-                &mut __tmp_152
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring_view__ref_ ,*mut () ,)>(44) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_153: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_153;
+    let mut __tmp_10: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_10;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -2845,89 +2361,57 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_154: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_154
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_155: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_155
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_156: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_156
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_157: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_157
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_158: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_158
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_159: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_159
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_160: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_160
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ = {
-            let mut __tmp_161: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_::new({
-                &mut __tmp_161
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2941,12 +2425,8 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ = {
-            let mut __tmp_162: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_::new({
-                &mut __tmp_162
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2960,12 +2440,8 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ = {
-            let mut __tmp_163: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_::new({
-                &mut __tmp_163
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -2979,12 +2455,8 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ = {
-            let mut __tmp_164: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_::new({
-                &mut __tmp_164
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3061,28 +2533,20 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_165: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_165
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ = {
-            let mut __tmp_166: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_::new({
-                &mut __tmp_166
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_wstring__ref_ ,*mut () ,)>(46) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_167: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_167;
+    let mut __tmp_11: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_11;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -3101,89 +2565,57 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_168: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_168
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_169: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_169
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_170: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_170
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_171: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_171
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_172: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_172
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_173: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_173
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_174: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_174
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_175: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_175
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3197,12 +2629,8 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_176: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_176
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3216,12 +2644,8 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_177: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_177
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3235,12 +2659,8 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_178: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_178
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3317,28 +2737,20 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_179: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_179
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_180: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_180
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(48) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_181: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_181;
+    let mut __tmp_12: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_12;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -3357,89 +2769,57 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_182: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_182
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_183: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_183
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_184: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_184
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_185: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_185
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_186: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_186
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_187: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_187
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_188: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_188
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_189: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_189
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3453,12 +2833,8 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_190: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_190
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3472,12 +2848,8 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_191: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_191
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3491,12 +2863,8 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ = {
-            let mut __tmp_192: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_::new({
-                &mut __tmp_192
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3573,28 +2941,20 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_193: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_193
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ = {
-            let mut __tmp_194: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_::new({
-                &mut __tmp_194
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring_view__ref_ ,*mut () ,)>(54) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_195: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_195;
+    let mut __tmp_13: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_13;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -3613,89 +2973,57 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_196: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_196
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_197: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_197
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_198: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_198
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_199: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_199
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_200: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_200
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_201: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_201
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_202: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_202
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ = {
-            let mut __tmp_203: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_::new({
-                &mut __tmp_203
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3709,12 +3037,8 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ = {
-            let mut __tmp_204: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_::new({
-                &mut __tmp_204
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3728,12 +3052,8 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ = {
-            let mut __tmp_205: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_::new({
-                &mut __tmp_205
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3747,12 +3067,8 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ = {
-            let mut __tmp_206: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_::new({
-                &mut __tmp_206
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3829,28 +3145,20 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_207: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_207
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ = {
-            let mut __tmp_208: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_::new({
-                &mut __tmp_208
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_wstring__ref_ ,*mut () ,)>(56) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_209: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_209;
+    let mut __tmp_14: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_14;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -3869,89 +3177,57 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_210: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_210
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_211: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_211
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_212: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_212
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_213: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_213
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_214: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_214
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_215: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_215
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_216: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_216
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_217: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_217
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3965,12 +3241,8 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_218: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_218
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -3984,12 +3256,8 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_219: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_219
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -4003,12 +3271,8 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ = {
-            let mut __tmp_220: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_::new({
-                &mut __tmp_220
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 18_();
         check
@@ -4085,28 +3349,20 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_221: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_221
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ = {
-            let mut __tmp_222: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_::new({
-                &mut __tmp_222
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__const_wchar_t_ptr__ref_ ,*mut () ,)>(58) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_223: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_223;
+    let mut __tmp_15: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_15;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -4129,10 +3385,7 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = {
-            let mut __tmp_224: () = unimplemented!();
-            std_basic_format_string_char__std_pair_char__std_string__ref_::new({ &mut __tmp_224 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
@@ -4143,10 +3396,7 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     (*(unsafe { get_19(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = {
-            let mut __tmp_225: () = unimplemented!();
-            std_basic_format_string_char__std_pair_char__std_string__ref_::new({ &mut __tmp_225 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
@@ -4157,10 +3407,7 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     (*(unsafe { get_19(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = {
-            let mut __tmp_226: () = unimplemented!();
-            std_basic_format_string_char__std_pair_char__std_string__ref_::new({ &mut __tmp_226 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
@@ -4171,10 +3418,7 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     (*(unsafe { get_19(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = {
-            let mut __tmp_227: () = unimplemented!();
-            std_basic_format_string_char__std_pair_char__std_string__ref_::new({ &mut __tmp_227 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
@@ -4186,10 +3430,7 @@ pub unsafe fn test_escaping_18(mut check: FnPtr<Generic>, input: *mut ()) {
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = {
-            let mut __tmp_228: () = unimplemented!();
-            std_basic_format_string_char__std_pair_char__std_string__ref_::new({ &mut __tmp_228 })
-        };
+        let _fmt: std_basic_format_string_char__std_pair_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn((), std_basic_format_string_char__std_pair_char__std_string__ref_, *mut ())>(
@@ -4209,40 +3450,28 @@ pub unsafe fn test_escaping_20(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = {
-            let mut __tmp_229: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_char__std_string__ref_::new({ &mut __tmp_229 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_21(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = {
-            let mut __tmp_230: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_char__std_string__ref_::new({ &mut __tmp_230 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_21(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = {
-            let mut __tmp_231: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_char__std_string__ref_::new({ &mut __tmp_231 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_21(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = {
-            let mut __tmp_232: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_char__std_string__ref_::new({ &mut __tmp_232 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
@@ -4250,10 +3479,7 @@ pub unsafe fn test_escaping_20(mut check: FnPtr<Generic>, input: *mut ()) {
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = {
-            let mut __tmp_233: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_char__std_string__ref_::new({ &mut __tmp_233 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_char__std_string__ref_ = unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_char__std_string__ref_ ,*mut () ,)>(35) .call ( _expected , _fmt , _args , )
     });
@@ -4269,48 +3495,32 @@ pub unsafe fn test_escaping_22(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_234: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_234
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_23(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_235: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_235
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_23(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_236: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_236
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_23(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_237: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_237
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
     });
@@ -4318,12 +3528,8 @@ pub unsafe fn test_escaping_22(mut check: FnPtr<Generic>, input: *mut ()) {
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_238: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_238
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_wchar_t__std_wstring__ref_ ,*mut () ,)>(70) .call ( _expected , _fmt , _args , )
     });
@@ -4339,48 +3545,32 @@ pub unsafe fn test_escaping_24(mut check: FnPtr<Generic>, input: *mut ()) {
     );;
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_239: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_239
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_25(input) })) = ('\t' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_240: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_240
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_25(input) })) = ('\n' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_241: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_241
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
     });
     (*(unsafe { get_25(input) })) = ('\0' as ());
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_242: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_242
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
     });
@@ -4388,12 +3578,8 @@ pub unsafe fn test_escaping_24(mut check: FnPtr<Generic>, input: *mut ()) {
     unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ = {
-            let mut __tmp_243: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_::new({
-                &mut __tmp_243
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_wchar_t__std_wstring__ref_ ,*mut () ,)>(71) .call ( _expected , _fmt , _args , )
     });
@@ -4460,107 +3646,74 @@ pub unsafe fn test_tuple_int_30(mut check: FnPtr<Generic>, mut check_exception: 
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_244: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_244 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_245: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_245 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_246: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_246 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_247: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_247 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_248: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_248 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_249: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_249 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_250: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_250 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = {
-            let mut __tmp_251: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref__int_::new({ &mut __tmp_251 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = {
-            let mut __tmp_252: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref__int_::new({ &mut __tmp_252 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = {
-            let mut __tmp_253: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref__int_::new({ &mut __tmp_253 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = {
-            let mut __tmp_254: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref__int_::new({ &mut __tmp_254 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(15) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -4636,16 +3789,13 @@ pub unsafe fn test_tuple_int_30(mut check: FnPtr<Generic>, mut check_exception: 
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = {
-            let mut __tmp_255: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__ref_::new({ &mut __tmp_255 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__ref_, *mut ())>(14)
             .call(_expected, _fmt, &mut input)
     });
-    let mut __tmp_256: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_256;
+    let mut __tmp_16: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_16;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -4661,107 +3811,74 @@ pub unsafe fn test_tuple_int_31(mut check: FnPtr<Generic>, mut check_exception: 
     let mut input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_257: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_257 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_258: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_258 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_259: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_259 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_260: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_260 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_261: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_261 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_262: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_262 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_263: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_263 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = {
-            let mut __tmp_264: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref__int_::new({ &mut __tmp_264 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = {
-            let mut __tmp_265: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref__int_::new({ &mut __tmp_265 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = {
-            let mut __tmp_266: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref__int_::new({ &mut __tmp_266 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = {
-            let mut __tmp_267: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref__int_::new({ &mut __tmp_267 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref__int_ = unimplemented!();
         let mut _args_3: () = 9_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__ref__int_ ,*mut () ,*mut () ,)>(51) .call ( _expected , _fmt , & mut input , & mut _args_3 , )
     });
@@ -4837,16 +3954,13 @@ pub unsafe fn test_tuple_int_31(mut check: FnPtr<Generic>, mut check_exception: 
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = {
-            let mut __tmp_268: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__ref_::new({ &mut __tmp_268 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ref_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__ref_, *mut ())>(50)
             .call(_expected, _fmt, &mut input)
     });
-    let mut __tmp_269: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_269;
+    let mut __tmp_17: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_17;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -4865,12 +3979,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     let input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_270: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_270
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4881,12 +3991,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_271: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_271
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4897,12 +4003,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_272: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_272
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4913,12 +4015,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_273: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_273
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4929,12 +4027,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_274: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_274
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4945,12 +4039,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_275: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_275
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4961,12 +4051,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_276: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_276
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -4977,25 +4063,25 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = { let mut __tmp_277 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ :: new ( { & mut __tmp_277 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = { let mut __tmp_278 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ :: new ( { & mut __tmp_278 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = { let mut __tmp_279 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ :: new ( { & mut __tmp_279 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = { let mut __tmp_280 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ :: new ( { & mut __tmp_280 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref__int_ ,*const () ,*mut () ,)>(25) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
@@ -5071,12 +4157,8 @@ pub unsafe fn test_tuple_int_string_color_32(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ = {
-            let mut __tmp_281: () = unimplemented!();
-            std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_::new({
-                &mut __tmp_281
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_tuple_int__std_string_view__color__ref_ =
+            unimplemented!();
         check
             .spec::<fn(
                 (),
@@ -5085,8 +4167,8 @@ pub unsafe fn test_tuple_int_string_color_32(
             )>(24)
             .call(_expected, _fmt, &input)
     });
-    let mut __tmp_282: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_282;
+    let mut __tmp_18: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_18;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -5105,7 +4187,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     let input: () = unimplemented!();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_283 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_283 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5116,7 +4198,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_284 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_284 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5127,7 +4209,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_285 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_285 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5138,7 +4220,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_286 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_286 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5149,7 +4231,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_287 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_287 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5160,7 +4242,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_288 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_288 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5171,7 +4253,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_289 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_289 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5182,25 +4264,25 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = { let mut __tmp_290 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ :: new ( { & mut __tmp_290 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = { let mut __tmp_291 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ :: new ( { & mut __tmp_291 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = { let mut __tmp_292 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ :: new ( { & mut __tmp_292 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = { let mut __tmp_293 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ :: new ( { & mut __tmp_293 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_  = unimplemented!() ;
         let mut _args_3: () = 25_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref__int_ ,*const () ,*mut () ,)>(61) .call ( _expected , _fmt , & input , & mut _args_3 , )
     });
@@ -5276,7 +4358,7 @@ pub unsafe fn test_tuple_int_string_color_33(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = { let mut __tmp_294 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_ :: new ( { & mut __tmp_294 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_tuple_int__std_wstring_view__color__ref_  = unimplemented!() ;
         check
             .spec::<fn(
                 (),
@@ -5285,8 +4367,8 @@ pub unsafe fn test_tuple_int_string_color_33(
             )>(60)
             .call(_expected, _fmt, &input)
     });
-    let mut __tmp_295: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_295;
+    let mut __tmp_19: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_19;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -5377,7 +4459,7 @@ pub unsafe fn test_nested_38(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_296 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_296 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5389,7 +4471,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_297 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_297 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5401,7 +4483,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_298 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_298 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5413,7 +4495,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_299 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_299 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5425,7 +4507,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_300 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_300 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5437,7 +4519,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_301 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_301 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5449,7 +4531,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_302 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_302 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5461,28 +4543,28 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_303 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_303 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_304 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_304 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_305 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_305 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_306 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_306 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(27) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -5552,7 +4634,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_307 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_307 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5564,7 +4646,7 @@ pub unsafe fn test_nested_38(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_308 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_308 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5574,8 +4656,8 @@ pub unsafe fn test_nested_38(
             )>(26)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_309: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_309;
+    let mut __tmp_20: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_20;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -5594,7 +4676,7 @@ pub unsafe fn test_nested_39(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_310 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_310 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5606,7 +4688,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_311 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_311 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5618,7 +4700,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_312 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_312 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5630,7 +4712,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_313 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_313 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5642,7 +4724,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_314 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_314 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5654,7 +4736,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_315 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_315 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5666,7 +4748,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_316 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_316 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5678,28 +4760,28 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_317 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_317 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_318 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_318 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_319 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_319 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_320 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_320 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(29) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -5769,7 +4851,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_321 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_321 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5781,7 +4863,7 @@ pub unsafe fn test_nested_39(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_322 : ()  = unimplemented!() ; std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_322 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_pair_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5791,8 +4873,8 @@ pub unsafe fn test_nested_39(
             )>(28)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_323: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_323;
+    let mut __tmp_21: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_21;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -5811,7 +4893,7 @@ pub unsafe fn test_nested_40(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_324 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_324 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5823,7 +4905,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_325 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_325 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5835,7 +4917,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_326 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_326 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5847,7 +4929,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_327 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_327 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5859,7 +4941,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_328 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_328 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5871,7 +4953,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_329 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_329 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5883,7 +4965,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_330 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_330 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5895,28 +4977,28 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_331 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_331 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_332 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_332 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_333 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_333 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = { let mut __tmp_334 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ :: new ( { & mut __tmp_334 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(31) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -5986,7 +5068,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_335 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_335 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -5998,7 +5080,7 @@ pub unsafe fn test_nested_40(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = { let mut __tmp_336 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_ :: new ( { & mut __tmp_336 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_pair_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -6008,8 +5090,8 @@ pub unsafe fn test_nested_40(
             )>(30)
             .call(_expected, _fmt, _args)
     });
-    let mut __tmp_337: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_337;
+    let mut __tmp_22: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_22;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6028,70 +5110,70 @@ pub unsafe fn test_nested_41(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_338 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_338 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_339 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_339 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_340 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_340 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_341 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_341 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_342 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_342 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_343 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_343 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_344 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_344 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_345 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_345 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_346 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_346 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_347 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_347 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = { let mut __tmp_348 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ :: new ( { & mut __tmp_348 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref__int_ ,*mut () ,*mut () ,)>(33) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -6161,18 +5243,18 @@ pub unsafe fn test_nested_41(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_349 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_349 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = { let mut __tmp_350 : ()  = unimplemented!() ; std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ :: new ( { & mut __tmp_350 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_char__std_tuple_int__std_tuple_std_string_view__color___ref_ ,*mut () ,)>(32) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_351: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_351;
+    let mut __tmp_23: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_23;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6191,70 +5273,70 @@ pub unsafe fn test_nested_42(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_352 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_352 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_353 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_353 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_354 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_354 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_355 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_355 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_356 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_356 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_357 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_357 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_358 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_358 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_359 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_359 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_360 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_360 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_361 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_361 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_362 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_362 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(63) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -6324,18 +5406,18 @@ pub unsafe fn test_nested_42(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_363 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_363 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_364 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_364 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(62) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_365: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_365;
+    let mut __tmp_24: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_24;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6354,70 +5436,70 @@ pub unsafe fn test_nested_43(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_366 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_366 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_367 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_367 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_368 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_368 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_369 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_369 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_370 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_370 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_371 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_371 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_372 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_372 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_373 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_373 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_374 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_374 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_375 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_375 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_376 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_376 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(65) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -6487,18 +5569,18 @@ pub unsafe fn test_nested_43(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_377 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_377 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_378 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_378 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_pair_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(64) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_379: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_379;
+    let mut __tmp_25: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_25;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6517,70 +5599,70 @@ pub unsafe fn test_nested_44(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_380 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_380 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_381 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_381 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_382 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_382 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_383 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_383 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_384 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_384 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_385 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_385 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_386 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_386 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_387 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_387 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_388 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_388 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_389 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_389 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = { let mut __tmp_390 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_390 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(67) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -6650,18 +5732,18 @@ pub unsafe fn test_nested_44(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_391 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_391 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = { let mut __tmp_392 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ :: new ( { & mut __tmp_392 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_pair_std_wstring_view__color___ref_ ,*mut () ,)>(66) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_393: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_393;
+    let mut __tmp_26: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_26;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6680,70 +5762,70 @@ pub unsafe fn test_nested_45(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_394 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_394 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_395 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_395 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_396 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_396 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_397 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_397 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_398 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_398 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_399 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_399 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_400 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_400 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_401 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_401 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_402 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_402 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_403 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_403 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = { let mut __tmp_404 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ :: new ( { & mut __tmp_404 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 27_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref__int_ ,*mut () ,*mut () ,)>(69) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -6813,18 +5895,18 @@ pub unsafe fn test_nested_45(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_405 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_405 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = { let mut __tmp_406 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ :: new ( { & mut __tmp_406 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_  = unimplemented!() ;
         let _args: *mut () = input;
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__std_tuple_int__std_tuple_std_wstring_view__color___ref_ ,*mut () ,)>(68) .call ( _expected , _fmt , _args , )
     });
-    let mut __tmp_407: () = unimplemented!();
-    let __range1: *mut () = &mut __tmp_407;
+    let mut __tmp_27: () = unimplemented!();
+    let __range1: *mut () = &mut __tmp_27;
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
@@ -6869,10 +5951,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int__ = {
-            let mut __tmp_408: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int__::new({ &mut __tmp_408 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int__, *mut ())>(0)
@@ -6880,10 +5959,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int__ = {
-            let mut __tmp_409: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_const_int__::new({ &mut __tmp_409 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_const_int__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_const_int__, *mut ())>(1)
@@ -6892,10 +5968,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut answer: () = 42_();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int_ref__ = {
-            let mut __tmp_410: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int_ref__::new({ &mut __tmp_410 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int_ref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int_ref__, *mut ())>(2)
@@ -6903,10 +5976,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int_ref__ = {
-            let mut __tmp_411: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_const_int_ref__::new({ &mut __tmp_411 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_const_int_ref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_const_int_ref__, *mut ())>(3)
@@ -6914,10 +5984,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_int_refref__ = {
-            let mut __tmp_412: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_int_refref__::new({ &mut __tmp_412 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_int_refref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_int_refref__, *mut ())>(4)
@@ -6925,10 +5992,7 @@ pub unsafe fn run_tests_46(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_tuple_const_int_refref__ = {
-            let mut __tmp_413: () = unimplemented!();
-            std_basic_format_string_char__std_tuple_const_int_refref__::new({ &mut __tmp_413 })
-        };
+        let _fmt: std_basic_format_string_char__std_tuple_const_int_refref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__std_tuple_const_int_refref__, *mut ())>(5)
@@ -6968,10 +6032,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ = {
-            let mut __tmp_414: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int__::new({ &mut __tmp_414 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int__, *mut ())>(36)
@@ -6979,10 +6040,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int__ = {
-            let mut __tmp_415: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_const_int__::new({ &mut __tmp_415 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int__, *mut ())>(37)
@@ -6991,10 +6049,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut answer: () = 42_();
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_ref__ = {
-            let mut __tmp_416: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int_ref__::new({ &mut __tmp_416 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_ref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int_ref__, *mut ())>(38)
@@ -7002,10 +6057,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_ref__ = {
-            let mut __tmp_417: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_const_int_ref__::new({ &mut __tmp_417 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_ref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int_ref__, *mut ())>(39)
@@ -7013,10 +6065,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_refref__ = {
-            let mut __tmp_418: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_int_refref__::new({ &mut __tmp_418 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_int_refref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_int_refref__, *mut ())>(40)
@@ -7024,10 +6073,7 @@ pub unsafe fn run_tests_47(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_refref__ = {
-            let mut __tmp_419: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_tuple_const_int_refref__::new({ &mut __tmp_419 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_tuple_const_int_refref__ = unimplemented!();
         let mut _args: () = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_tuple_const_int_refref__, *mut ())>(
@@ -7237,7 +6283,7 @@ pub unsafe fn test_concat_71(stream: *mut (), value: *mut ()) -> *mut () {
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_63(b.clone(), e.clone(), unimplemented!()) });
+        (unsafe { test_transcode_63(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return stream;
 }

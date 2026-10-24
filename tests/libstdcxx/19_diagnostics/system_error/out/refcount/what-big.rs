@@ -255,11 +255,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let mut xxx: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 10000_() },
-        { ('x' as ()) },
-        None,
-    );
+    let mut xxx: () = unimplemented!();
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

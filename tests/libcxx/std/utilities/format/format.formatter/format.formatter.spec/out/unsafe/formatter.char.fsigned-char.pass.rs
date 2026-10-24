@@ -278,7 +278,7 @@ pub unsafe fn test_concat_23(stream: *mut (), value: *mut ()) -> *mut () {
     let mut e: () = unimplemented!();
     if !(unimplemented!()) {
         {}
-        (unsafe { test_transcode_18(b.clone(), e.clone(), unimplemented!()) });
+        (unsafe { test_transcode_18(unimplemented!(), unimplemented!(), unimplemented!()) });
     }
     return stream;
 }
@@ -413,12 +413,8 @@ pub unsafe fn test_26(mut expected: (), mut fmt: (), mut arg: ()) {
     (unsafe { (formatter as std___formatter_char_char_).parse(&mut parse_ctx) });
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_  = ( unsafe { make_format_args_27 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     (unsafe { (formatter as std___formatter_char_char_).format(arg, &mut format_ctx) });
     (unsafe {
         let _condition: () = unimplemented!();
@@ -444,19 +440,15 @@ pub unsafe fn test_26(mut expected: (), mut fmt: (), mut arg: ()) {
         )
     });
 }
-pub unsafe fn test_28(mut expected: (), mut fmt: (), mut arg: ()) {
+pub unsafe fn test_27(mut expected: (), mut fmt: (), mut arg: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
     (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___char_  = ( unsafe { make_format_args_29 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
     (unsafe {
         let _condition: () = unimplemented!();
@@ -473,7 +465,7 @@ pub unsafe fn test_28(mut expected: (), mut fmt: (), mut arg: ()) {
                 });
             }
         );
-        test_require_30(
+        test_require_28(
             _condition,
             c"result == expected".as_ptr(),
             c"formatter.char.fsigned-char.pass.cpp".as_ptr(),
@@ -482,7 +474,7 @@ pub unsafe fn test_28(mut expected: (), mut fmt: (), mut arg: ()) {
         )
     });
 }
-pub unsafe fn test_31() {
+pub unsafe fn test_29() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
@@ -696,218 +688,218 @@ pub unsafe fn test_31() {
         test_26(_expected, _fmt, 127_())
     });
 }
-pub unsafe fn test_32() {
+pub unsafe fn test_30() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\x80' as ()))
+        test_27(_expected, _fmt, (b'\x80' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\xff' as ()))
+        test_27(_expected, _fmt, (b'\xff' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\x80' as ()))
+        test_27(_expected, _fmt, (b'\x80' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, (b'\xff' as ()))
+        test_27(_expected, _fmt, (b'\xff' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('\0' as ()))
+        test_27(_expected, _fmt, ('\0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, ('a' as ()))
+        test_27(_expected, _fmt, ('a' as ()))
     });
     {
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            test_28(_expected, _fmt, (b'\x80' as ()))
+            test_27(_expected, _fmt, (b'\x80' as ()))
         });
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
-            test_28(_expected, _fmt, (b'\xff' as ()))
+            test_27(_expected, _fmt, (b'\xff' as ()))
         });
     }
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -128_())
+        test_27(_expected, _fmt, -128_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, -1_())
+        test_27(_expected, _fmt, -1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 0_())
+        test_27(_expected, _fmt, 0_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 1_())
+        test_27(_expected, _fmt, 1_())
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _fmt: () = unimplemented!();
-        test_28(_expected, _fmt, 127_())
+        test_27(_expected, _fmt, 127_())
     });
 }
 pub fn main() {
@@ -926,8 +918,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_31() });
-    (unsafe { test_32() });
+    (unsafe { test_29() });
+    (unsafe { test_30() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

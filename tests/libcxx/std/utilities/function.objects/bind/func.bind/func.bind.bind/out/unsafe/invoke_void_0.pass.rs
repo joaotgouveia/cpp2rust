@@ -7,10 +7,70 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub static mut count_0: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn f_1() {
+pub unsafe fn test_1(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_2(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_3(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_4(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_5(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_6(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_7(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_8(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_9(mut f: ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_const_10(f: *const ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_const_11(f: *const ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_const_12(f: *const ()) {
+    let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn f_13() {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
 }
-pub unsafe fn g_2() -> () {
+pub unsafe fn g_14() -> () {
     (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0)).prefix_inc();
     return 0_();
 }
@@ -54,77 +114,43 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_3((unsafe { bind_4(Some(f_1)) })) });
+    (unsafe { test_1((unsafe { bind_15(Some(f_13)) })) });
     (unsafe {
-        test_5(
+        test_2(
             (unsafe {
-                let mut ___f: Option<unsafe fn()> = (Some(f_1));
-                bind_6(&mut ___f)
+                let mut ___f: Option<unsafe fn()> = (Some(f_13));
+                bind_16(&mut ___f)
             }),
         )
     });
     (unsafe {
-        test_7(
-            (unsafe {
-                let mut ___f: A_void_0 = <A_void_0>::default();
-                bind_8(&mut ___f)
-            }),
-        )
-    });
-    (unsafe {
-        let mut _f: std___bind_A_void_0_ = (unsafe {
-            let mut ___f: A_void_0 = <A_void_0>::default();
-            bind_8(&mut ___f)
-        });
-        test_const_9(&mut _f)
-    });
-    (unsafe { test_10((unsafe { bind_11(Some(f_1)) })) });
-    (unsafe {
-        test_12(
-            (unsafe {
-                let mut ___f: Option<unsafe fn()> = (Some(f_1));
-                bind_13(&mut ___f)
-            }),
-        )
-    });
-    (unsafe {
-        test_14(
+        test_3(
             (unsafe {
                 let mut ___f: A_void_0 = <A_void_0>::default();
-                bind_15(&mut ___f)
+                bind_17(&mut ___f)
             }),
         )
     });
     (unsafe {
-        let mut _f: std___bind_r_void__A_void_0_ = (unsafe {
+        let mut _f: () = (unsafe {
             let mut ___f: A_void_0 = <A_void_0>::default();
-            bind_15(&mut ___f)
+            bind_17(&mut ___f)
         });
-        test_const_16(&mut _f)
+        test_const_10(&mut _f)
     });
-    (unsafe { test_17((unsafe { bind_18(Some(g_2)) })) });
+    (unsafe { test_4(unimplemented!()) });
+    (unsafe { test_5(unimplemented!()) });
+    (unsafe { test_6(unimplemented!()) });
     (unsafe {
-        test_19(
-            (unsafe {
-                let mut ___f: Option<unsafe fn() -> ()> = (Some(g_2));
-                bind_20(&mut ___f)
-            }),
-        )
+        let mut _f: () = unimplemented!();
+        test_const_11(&mut _f)
     });
+    (unsafe { test_7(unimplemented!()) });
+    (unsafe { test_8(unimplemented!()) });
+    (unsafe { test_9(unimplemented!()) });
     (unsafe {
-        test_21(
-            (unsafe {
-                let mut ___f: A_int_0 = <A_int_0>::default();
-                bind_22(&mut ___f)
-            }),
-        )
-    });
-    (unsafe {
-        let mut _f: std___bind_r_void__A_int_0_ = (unsafe {
-            let mut ___f: A_int_0 = <A_int_0>::default();
-            bind_22(&mut ___f)
-        });
-        test_const_23(&mut _f)
+        let mut _f: () = unimplemented!();
+        test_const_12(&mut _f)
     });
     return 0_();
 }

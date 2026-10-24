@@ -268,7 +268,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).a) == (1_())) {
+        if !(((*unimplemented!()).a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -287,7 +287,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).b) == (2_())) {
+        if !(((*unimplemented!()).b) == (2_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -307,7 +307,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).a) == (1_())) {
+        if !(((*unimplemented!()).a) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -326,7 +326,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).b) == (0_())) {
+        if !(((*unimplemented!()).b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -346,7 +346,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).a) == (0_())) {
+        if !(((*unimplemented!()).a) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -365,7 +365,7 @@ pub unsafe fn test_emplace_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((*y).b) == (0_())) {
+        if !(((*unimplemented!()).b) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

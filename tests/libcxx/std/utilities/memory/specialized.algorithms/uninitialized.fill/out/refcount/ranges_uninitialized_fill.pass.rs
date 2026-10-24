@@ -1319,10 +1319,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let buf: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({
             (*uninitialized_fill_23.with(Value::clone).borrow_mut())(
-                std_counted_iterator_Counted_ptr_::new_1(
-                    { ({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }) },
-                    { N },
-                ),
+                unimplemented!(),
                 unimplemented!(),
                 x.as_pointer(),
             )

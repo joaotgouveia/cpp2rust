@@ -322,39 +322,9 @@ pub unsafe fn test_13(mut s: (), mut n: (), mut expected: ()) {
 pub unsafe fn test_string_14() {
     {
         (unsafe { test_10(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe {
-            test_10(
-                unimplemented!(),
-                1_(),
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { 1_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_10(
-                unimplemented!(),
-                10_(),
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { 10_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_10(
-                unimplemented!(),
-                100_(),
-                std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                    { 100_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_10(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_10(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_10(unimplemented!(), 100_(), unimplemented!()) });
         (unsafe { test_10(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
@@ -397,39 +367,9 @@ pub unsafe fn test_string_14() {
 pub unsafe fn test_string_15() {
     {
         (unsafe { test_11(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe {
-            test_11(
-                unimplemented!(),
-                1_(),
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { 1_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_11(
-                unimplemented!(),
-                10_(),
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { 10_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_11(
-                unimplemented!(),
-                100_(),
-                std_basic_string_char__std_char_traits_char___min_allocator_char__::new_1(
-                    { 100_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_11(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_11(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_11(unimplemented!(), 100_(), unimplemented!()) });
         (unsafe { test_11(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
@@ -472,39 +412,9 @@ pub unsafe fn test_string_15() {
 pub unsafe fn test_string_16() {
     {
         (unsafe { test_12(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe {
-            test_12(
-                unimplemented!(),
-                1_(),
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { 1_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_12(
-                unimplemented!(),
-                10_(),
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { 10_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_12(
-                unimplemented!(),
-                100_(),
-                std_basic_string_char__std_char_traits_char___safe_allocator_char__::new_1(
-                    { 100_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_12(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_12(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_12(unimplemented!(), 100_(), unimplemented!()) });
         (unsafe { test_12(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
@@ -547,39 +457,9 @@ pub unsafe fn test_string_16() {
 pub unsafe fn test_string_17() {
     {
         (unsafe { test_13(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe {
-            test_13(
-                unimplemented!(),
-                1_(),
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { 1_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_13(
-                unimplemented!(),
-                10_(),
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { 10_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
-        (unsafe {
-            test_13(
-                unimplemented!(),
-                100_(),
-                std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-                    { 100_() },
-                    { ('\0' as ()) },
-                    None,
-                ),
-            )
-        });
+        (unsafe { test_13(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_13(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_13(unimplemented!(), 100_(), unimplemented!()) });
         (unsafe { test_13(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();

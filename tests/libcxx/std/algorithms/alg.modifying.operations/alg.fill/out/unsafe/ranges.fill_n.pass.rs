@@ -1431,10 +1431,7 @@ pub unsafe fn test_vector_bool_22(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___value: () = true;
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_n_15))(
@@ -1448,10 +1445,7 @@ pub unsafe fn test_vector_bool_22(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___value: () = true;
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_n_15))(
@@ -1467,16 +1461,7 @@ pub unsafe fn test_vector_bool_22(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = {
-                    unimplemented!() = {
-                        unimplemented!() = false;
-                        unimplemented!()
-                    };
-                    unimplemented!()
-                };
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___value: () = true;
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_n_15))(

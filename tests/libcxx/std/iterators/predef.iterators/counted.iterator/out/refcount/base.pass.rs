@@ -521,40 +521,21 @@ pub fn test_18() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
@@ -573,40 +554,21 @@ pub fn test_18() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 7_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 6_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;

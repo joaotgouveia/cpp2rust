@@ -76,6 +76,62 @@ pub unsafe fn test_4(rhs: *const ()) {
         i.prefix_inc();
     }
 }
+pub unsafe fn test_5(rhs: *const ()) {
+    let mut input: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut expected: [(); 5] = [7_(), 7_(), 11_(), 13_(), 15_()];
+    let N: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut value: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_6(rhs: *const ()) {
+    let mut input: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut expected: [(); 5] = [7_(), 7_(), 11_(), 13_(), 15_()];
+    let N: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut value: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_7(rhs: *const ()) {
+    let mut input: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut expected: [(); 5] = [7_(), 7_(), 11_(), 13_(), 15_()];
+    let N: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut value: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_8(rhs: *const ()) {
+    let mut input: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut expected: [(); 5] = [7_(), 7_(), 11_(), 13_(), 15_()];
+    let N: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut value: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (unimplemented!())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -119,7 +175,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             test_4(&mut _rhs)
         });
         (unsafe {
-            let mut _rhs : std___val_expr_std__BinaryOp_std_plus_int___std_valarray_int___std_valarray_int___  = unimplemented!()  ;
+            let mut _rhs: () = unimplemented!();
             test_5(&mut _rhs)
         });
     }
@@ -127,27 +183,23 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let value: () = unimplemented!();
         (unsafe { test_0(&value) });
         (unsafe {
-            let mut _rhs: std___val_expr_std___slice_expr_const_std_valarray_int__ref__ =
-                unimplemented!();
+            let mut _rhs: () = unimplemented!();
             test_6(&mut _rhs)
         });
         (unsafe {
-            let mut _rhs: std___val_expr_std___indirect_expr_const_std_valarray_int__ref__ =
-                unimplemented!();
+            let mut _rhs: () = unimplemented!();
             test_7(&mut _rhs)
         });
         (unsafe {
-            let mut _rhs: std___val_expr_std___mask_expr_const_std_valarray_int__ref__ =
-                unimplemented!();
+            let mut _rhs: () = unimplemented!();
             test_8(&mut _rhs)
         });
         (unsafe {
-            let mut _rhs: std___val_expr_std___indirect_expr_const_std_valarray_int__ref__ =
-                unimplemented!();
+            let mut _rhs: () = unimplemented!();
             test_7(&mut _rhs)
         });
         (unsafe {
-            let mut _rhs : std___val_expr_std__BinaryOp_std_plus_int___std_valarray_int___std_valarray_int___  = unimplemented!()  ;
+            let mut _rhs: () = unimplemented!();
             test_5(&mut _rhs)
         });
     }

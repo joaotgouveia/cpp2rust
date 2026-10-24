@@ -218,7 +218,7 @@ impl DestroyTrackerImpl for Ptr<DestroyTracker> {
         return (*self).clone();
     }
     fn destructor(&self) {
-        unimplemented!() = true;
+        unimplemented!();
     }
 }
 pub fn __cpp2rust_init_globals() {}

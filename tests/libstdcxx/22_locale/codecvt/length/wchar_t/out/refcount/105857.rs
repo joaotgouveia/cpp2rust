@@ -259,11 +259,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1050_() },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let cvt: Ptr<()> = ({
         let ___loc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         use_facet_10(___loc.as_pointer())

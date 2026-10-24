@@ -263,11 +263,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1050_() },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let cvt: *const () = (unsafe {
         let mut ___loc: () = unimplemented!();
         use_facet_10(&mut ___loc)

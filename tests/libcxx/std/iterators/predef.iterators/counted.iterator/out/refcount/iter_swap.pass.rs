@@ -495,18 +495,8 @@ pub fn test_7() -> () {
             Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
                 (buffer.as_pointer() as Ptr<()>)
             })));
-        let commonIter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
-        let commonIter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_cpp17_input_iterator_int_ptr__int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
+        let commonIter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let commonIter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 4_()) {
             unimplemented!();
@@ -533,18 +523,8 @@ pub fn test_7() -> () {
             Rc::new(RefCell::new(forward_iterator_int_ptr_::new_2({
                 (buffer.as_pointer() as Ptr<()>)
             })));
-        let commonIter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
-        let commonIter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
+        let commonIter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let commonIter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 4_()) {
             unimplemented!();
@@ -571,18 +551,8 @@ pub fn test_7() -> () {
             Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_2({
                 (buffer.as_pointer() as Ptr<()>)
             })));
-        let commonIter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
-        let commonIter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { (*iter1.borrow()).clone() },
-                { 8_() },
-            ),
-        ));
+        let commonIter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let commonIter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 0_();
         'loop_: while (i < 4_()) {
             unimplemented!();

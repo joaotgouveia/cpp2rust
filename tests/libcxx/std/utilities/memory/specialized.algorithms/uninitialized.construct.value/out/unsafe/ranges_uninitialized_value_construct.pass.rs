@@ -817,10 +817,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut buf: Buffer_Counted__5_ = <Buffer_Counted__5_>::default();
         (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_value_construct_17))(
-                std_counted_iterator_Counted_ptr_::new_1(
-                    { (unsafe { Buffer_Counted__5_::begin(&mut buf) }) },
-                    { N },
-                ),
+                unimplemented!(),
                 unimplemented!(),
             )
         });

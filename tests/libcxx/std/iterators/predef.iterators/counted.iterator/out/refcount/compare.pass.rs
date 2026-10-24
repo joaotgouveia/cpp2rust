@@ -488,18 +488,8 @@ pub fn test_7() -> () {
     ])));
     {
         {
-            let iter1: Value<()> = Rc::new(RefCell::new(
-                std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                    { forward_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                    { 8_() },
-                ),
-            ));
-            let iter2: Value<()> = Rc::new(RefCell::new(
-                std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-                    { CommonWithForwardIter_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                    { 8_() },
-                ),
-            ));
+            let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -519,38 +509,17 @@ pub fn test_7() -> () {
             unimplemented!();
         }
         {
-            let iter: Value<()> = Rc::new(RefCell::new(
-                std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                    { forward_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                    { 8_() },
-                ),
-            ));
+            let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }
         {
-            let iter: Value<()> = Rc::new(RefCell::new(
-                std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                    {
-                        random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) })
-                    },
-                    { 8_() },
-                ),
-            ));
+            let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }
         {
-            let iter: Value<()> = Rc::new(RefCell::new(
-                std_counted_iterator_InputOrOutputArchetype_::new_1(
-                    {
-                        InputOrOutputArchetype {
-                            ptr: (buffer.as_pointer() as Ptr<()>),
-                        }
-                    },
-                    { (8_() as ()) },
-                ),
-            ));
+            let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
         }

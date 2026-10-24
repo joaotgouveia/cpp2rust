@@ -319,1123 +319,745 @@ pub struct min_allocator_char_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_wchar_t_ {}
-pub fn test_8(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___bool_> =
-        Rc::new(RefCell::new(({ make_format_args_9(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_1({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_8(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_10(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___char_> =
-        Rc::new(RefCell::new(({ make_format_args_11(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_9(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_12(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___char_> =
-        Rc::new(RefCell::new(({ make_format_args_11(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_10(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_13(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___char_> =
-        Rc::new(RefCell::new(({ make_format_args_11(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_11(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_14(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___char_> =
-        Rc::new(RefCell::new(({ make_format_args_11(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_12(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_15(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___signed_char_,
-    > = Rc::new(RefCell::new(({ make_format_args_16(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_3({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_13(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_17(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___short_> =
-        Rc::new(RefCell::new(({ make_format_args_18(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_4({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_14(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_19(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___int_> =
-        Rc::new(RefCell::new(({ make_format_args_20(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_5({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_15(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_21(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___long_> =
-        Rc::new(RefCell::new(({ make_format_args_22(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_6({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_16(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_23(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___long_long_> =
-        Rc::new(RefCell::new(({ make_format_args_24(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_7({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_17(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_25(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned_char_,
-    > = Rc::new(RefCell::new(({ make_format_args_26(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_8({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_18(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_19(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_20(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_21(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_22(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_23(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_24(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_25(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_26(mut value: Ptr<()>) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: Ptr<()> = unimplemented!();
     unimplemented!();
 }
 pub fn test_27(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned_short_,
-    > = Rc::new(RefCell::new(({ make_format_args_28(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_9({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_29(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned_int_,
-    > = Rc::new(RefCell::new(({ make_format_args_30(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_10({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_28(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_31(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned_long_,
-    > = Rc::new(RefCell::new(({ make_format_args_32(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_11({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_29(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_33(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned_long_long_,
-    > = Rc::new(RefCell::new(({ make_format_args_34(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_12({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_30(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_35(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___float_> =
-        Rc::new(RefCell::new(({ make_format_args_36(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_13({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_31(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_37(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___double_> =
-        Rc::new(RefCell::new(({ make_format_args_38(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_14({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_32(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_39(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___long_double_,
-    > = Rc::new(RefCell::new(({ make_format_args_40(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_15({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_33(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_41(value: Ptr<()>) {
-    let value: Value<Ptr<()>> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___const_char_ptr_,
-    > = Rc::new(RefCell::new(({ make_format_args_42(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_16({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_34(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_35(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_36(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_37(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_38(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_39(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_40(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_41(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_42(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_43(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_44(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_45(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_46(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_47(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
+pub fn test_48(mut value: Ptr<()>) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: Ptr<()> = unimplemented!();
-    unimplemented!();
-}
-pub fn test_43(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___std_nullptr_t_,
-    > = Rc::new(RefCell::new(({ make_format_args_44(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_17({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_45(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___void_ptr_> =
-        Rc::new(RefCell::new(({ make_format_args_46(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_18({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_47(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___const_void_ptr_,
-    > = Rc::new(RefCell::new(({ make_format_args_48(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_19({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
     unimplemented!();
 }
 pub fn test_49(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___bool_> =
-        Rc::new(RefCell::new(({ make_format_args_50(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_1({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_51(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___wchar_t_,
-    > = Rc::new(RefCell::new(({ make_format_args_52(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_2({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_50(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_53(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___char_> =
-        Rc::new(RefCell::new(({ make_format_args_54(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_3({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_51(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_55(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___char_> =
-        Rc::new(RefCell::new(({ make_format_args_54(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_3({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_56(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___char_> =
-        Rc::new(RefCell::new(({ make_format_args_54(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_3({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_57(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___signed_char_,
-    > = Rc::new(RefCell::new(({ make_format_args_58(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_4({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_59(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___short_,
-    > = Rc::new(RefCell::new(({ make_format_args_60(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_5({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_61(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int_> =
-        Rc::new(RefCell::new(({ make_format_args_62(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_6({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_63(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___long_> =
-        Rc::new(RefCell::new(({ make_format_args_64(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_7({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_65(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___long_long_,
-    > = Rc::new(RefCell::new(({ make_format_args_66(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_8({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_67(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned_char_,
-    > = Rc::new(RefCell::new(({ make_format_args_68(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_9({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_69(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned_short_,
-    > = Rc::new(RefCell::new(({ make_format_args_70(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_10({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_71(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned_int_,
-    > = Rc::new(RefCell::new(({ make_format_args_72(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_11({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_73(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned_long_,
-    > = Rc::new(RefCell::new(({ make_format_args_74(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_12({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_75(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned_long_long_,
-    > = Rc::new(RefCell::new(({ make_format_args_76(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_13({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_77(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___float_,
-    > = Rc::new(RefCell::new(({ make_format_args_78(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_14({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_79(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___double_,
-    > = Rc::new(RefCell::new(({ make_format_args_80(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_15({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_81(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___long_double_,
-    > = Rc::new(RefCell::new(({ make_format_args_82(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_16({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_83(value: Ptr<()>) {
-    let value: Value<Ptr<()>> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___const_wchar_t_ptr_,
-    > = Rc::new(RefCell::new(({ make_format_args_84(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_17({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: Ptr<()> = unimplemented!();
-    unimplemented!();
-}
-pub fn test_85(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_nullptr_t_,
-    > = Rc::new(RefCell::new(({ make_format_args_86(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_18({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_87(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___void_ptr_,
-    > = Rc::new(RefCell::new(({ make_format_args_88(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_19({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_89(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___const_void_ptr_,
-    > = Rc::new(RefCell::new(({ make_format_args_90(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_20({
-            store.as_pointer()
-        }),
-    ));
-    unimplemented!();
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_handle_91(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char_____int128_> =
-        Rc::new(RefCell::new(({ make_format_args_92(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_20({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_handle_52(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_handle_93(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___unsigned___int128_,
-    > = Rc::new(RefCell::new(({ make_format_args_94(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_21({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_handle_53(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_handle_95(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t_____int128_,
-    > = Rc::new(RefCell::new(({ make_format_args_96(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_21({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_handle_54(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_handle_97(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___unsigned___int128_,
-    > = Rc::new(RefCell::new(({ make_format_args_98(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_22({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_handle_55(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_view_99(value: ()) {
+pub fn test_string_view_56(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_char_ptr__char___std_string_view_,
-    > = Rc::new(RefCell::new(({ make_format_args_100(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_22({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_101(value: ()) {
+pub fn test_string_view_57(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_char_ptr__char___std_basic_string_view_char__constexpr_char_traits_char___ > = Rc::new(RefCell::new(( { make_format_args_102 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_23({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_103(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<std___format_arg_store_std_basic_format_context_char_ptr__char___std_string_> =
-        Rc::new(RefCell::new(({ make_format_args_104(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_24({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_58(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_105(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_char_ptr__char___std_basic_string_char__constexpr_char_traits_char___std_allocator_char___ > = Rc::new(RefCell::new(( { make_format_args_106 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_25({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_59(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_107(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_char_ptr__char___std_basic_string_char__std_char_traits_char___min_allocator_char___ > = Rc::new(RefCell::new(( { make_format_args_108 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_26({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_60(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_109(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_char_ptr__char___std_basic_string_char__constexpr_char_traits_char___min_allocator_char___ > = Rc::new(RefCell::new(( { make_format_args_110 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_char_ptr__char__::new_27({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_61(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_111(value: ()) {
+pub fn test_string_view_62(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_wstring_view_,
-    > = Rc::new(RefCell::new(({ make_format_args_112(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_23({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_113(value: ()) {
+pub fn test_string_view_63(value: ()) {
     let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_basic_string_view_wchar_t__constexpr_char_traits_wchar_t___ > = Rc::new(RefCell::new(( { make_format_args_114 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_24({
-            store.as_pointer()
-        }),
-    ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_115(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store: Value<
-        std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_wstring_,
-    > = Rc::new(RefCell::new(({ make_format_args_116(value.as_pointer()) })));
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_25({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_64(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_117(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_basic_string_wchar_t__constexpr_char_traits_wchar_t___std_allocator_wchar_t___ > = Rc::new(RefCell::new(( { make_format_args_118 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_26({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_65(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_119(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_basic_string_wchar_t__std_char_traits_wchar_t___min_allocator_wchar_t___ > = Rc::new(RefCell::new(( { make_format_args_120 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_27({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_66(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_string_view_121(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
-    let store : Value<std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___std_basic_string_wchar_t__constexpr_char_traits_wchar_t___min_allocator_wchar_t___ > = Rc::new(RefCell::new(( { make_format_args_122 ( value .as_pointer()  , ) } )  )) ;
-    let format_args: Value<()> = Rc::new(RefCell::new(
-        std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_28({
-            store.as_pointer()
-        }),
-    ));
+pub fn test_string_view_67(mut value: ()) {
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let result: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_123() {
+pub fn test_68() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
     ({ test_8(true) });
     ({ test_8(false) });
-    ({ test_10(('a' as ())) });
-    ({ test_10(('z' as ())) });
-    ({ test_10(('0' as ())) });
-    ({ test_10(('9' as ())) });
+    ({ test_9(('a' as ())) });
+    ({ test_9(('z' as ())) });
+    ({ test_9(('0' as ())) });
+    ({ test_9(('9' as ())) });
     {
-        ({ test_10(('a' as ())) });
-        ({ test_10(('z' as ())) });
-        ({ test_10(('0' as ())) });
-        ({ test_10(('9' as ())) });
+        ({ test_9(('a' as ())) });
+        ({ test_9(('z' as ())) });
+        ({ test_9(('0' as ())) });
+        ({ test_9(('9' as ())) });
     }
+    ({ test_13(unimplemented!()) });
+    ({ test_13(0_()) });
+    ({ test_13(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
+    ({ test_14(0_()) });
+    ({ test_14(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
     ({ test_15(unimplemented!()) });
     ({ test_15(0_()) });
     ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(0_()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
     ({ test_17(unimplemented!()) });
     ({ test_17(unimplemented!()) });
     ({ test_17(0_()) });
     ({ test_17(unimplemented!()) });
     ({ test_17(unimplemented!()) });
-    ({ test_19(unimplemented!()) });
-    ({ test_19(unimplemented!()) });
-    ({ test_19(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_handle_52(0_()) });
+    ({ test_18(0_()) });
+    ({ test_18(unimplemented!()) });
     ({ test_19(0_()) });
     ({ test_19(unimplemented!()) });
     ({ test_19(unimplemented!()) });
-    ({ test_19(unimplemented!()) });
-    ({ test_21(unimplemented!()) });
-    ({ test_21(unimplemented!()) });
-    ({ test_21(unimplemented!()) });
-    ({ test_21(unimplemented!()) });
+    ({ test_20(0_()) });
+    ({ test_20(unimplemented!()) });
+    ({ test_20(unimplemented!()) });
+    ({ test_20(unimplemented!()) });
     ({ test_21(0_()) });
     ({ test_21(unimplemented!()) });
     ({ test_21(unimplemented!()) });
     ({ test_21(unimplemented!()) });
     ({ test_21(unimplemented!()) });
+    ({ test_22(0_()) });
+    ({ test_22(unimplemented!()) });
+    ({ test_22(unimplemented!()) });
+    ({ test_22(unimplemented!()) });
+    ({ test_22(unimplemented!()) });
+    ({ test_22(unimplemented!()) });
+    ({ test_handle_53(0_()) });
+    ({ test_23(-unimplemented!()) });
+    ({ test_23(-unimplemented!()) });
+    ({ test_23(-0_f64) });
+    ({ test_23(0_f64) });
     ({ test_23(unimplemented!()) });
     ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(0_()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_23(unimplemented!()) });
-    ({ test_handle_91(0_()) });
-    ({ test_25(0_()) });
+    ({ test_24(-unimplemented!()) });
+    ({ test_24(-unimplemented!()) });
+    ({ test_24(-0_f64) });
+    ({ test_24(0_f64) });
+    ({ test_24(unimplemented!()) });
+    ({ test_24(unimplemented!()) });
+    ({ test_25(-unimplemented!()) });
+    ({ test_25(-unimplemented!()) });
+    ({ test_25(-0_f64) });
+    ({ test_25(0_f64) });
     ({ test_25(unimplemented!()) });
-    ({ test_27(0_()) });
-    ({ test_27(unimplemented!()) });
-    ({ test_27(unimplemented!()) });
-    ({ test_29(0_()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_29(unimplemented!()) });
-    ({ test_31(0_()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_31(unimplemented!()) });
-    ({ test_33(0_()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_33(unimplemented!()) });
-    ({ test_handle_93(0_()) });
-    ({ test_35(-unimplemented!()) });
-    ({ test_35(-unimplemented!()) });
-    ({ test_35(-0_f64) });
-    ({ test_35(0_f64) });
-    ({ test_35(unimplemented!()) });
-    ({ test_35(unimplemented!()) });
-    ({ test_37(-unimplemented!()) });
-    ({ test_37(-unimplemented!()) });
-    ({ test_37(-0_f64) });
-    ({ test_37(0_f64) });
-    ({ test_37(unimplemented!()) });
-    ({ test_37(unimplemented!()) });
-    ({ test_39(-unimplemented!()) });
-    ({ test_39(-unimplemented!()) });
-    ({ test_39(-0_f64) });
-    ({ test_39(0_f64) });
-    ({ test_39(unimplemented!()) });
-    ({ test_39(unimplemented!()) });
-    ({ test_41(unimplemented!()) });
-    ({ test_41(unimplemented!()) });
+    ({ test_25(unimplemented!()) });
+    ({ test_26(unimplemented!()) });
+    ({ test_26(unimplemented!()) });
     {
-        ({ test_string_view_99(unimplemented!()) });
-        ({ test_string_view_99(unimplemented!()) });
-        ({ test_string_view_99(unimplemented!()) });
+        ({ test_string_view_56(unimplemented!()) });
+        ({ test_string_view_56(unimplemented!()) });
+        ({ test_string_view_56(unimplemented!()) });
     }
     {
-        ({ test_string_view_101(unimplemented!()) });
-        ({ test_string_view_101(unimplemented!()) });
-        ({ test_string_view_101(unimplemented!()) });
+        ({ test_string_view_57(unimplemented!()) });
+        ({ test_string_view_57(unimplemented!()) });
+        ({ test_string_view_57(unimplemented!()) });
     }
     {
-        ({ test_string_view_103(unimplemented!()) });
-        ({ test_string_view_103(unimplemented!()) });
-        ({ test_string_view_103(unimplemented!()) });
+        ({ test_string_view_58(unimplemented!()) });
+        ({ test_string_view_58(unimplemented!()) });
+        ({ test_string_view_58(unimplemented!()) });
     }
     {
-        ({ test_string_view_105(unimplemented!()) });
-        ({ test_string_view_105(unimplemented!()) });
-        ({ test_string_view_105(unimplemented!()) });
+        ({ test_string_view_59(unimplemented!()) });
+        ({ test_string_view_59(unimplemented!()) });
+        ({ test_string_view_59(unimplemented!()) });
     }
     {
-        ({ test_string_view_107(unimplemented!()) });
-        ({ test_string_view_107(unimplemented!()) });
-        ({ test_string_view_107(unimplemented!()) });
+        ({ test_string_view_60(unimplemented!()) });
+        ({ test_string_view_60(unimplemented!()) });
+        ({ test_string_view_60(unimplemented!()) });
     }
     {
-        ({ test_string_view_109(unimplemented!()) });
-        ({ test_string_view_109(unimplemented!()) });
-        ({ test_string_view_109(unimplemented!()) });
+        ({ test_string_view_61(unimplemented!()) });
+        ({ test_string_view_61(unimplemented!()) });
+        ({ test_string_view_61(unimplemented!()) });
     }
-    ({ test_43(Default::default()) });
+    ({ test_27(Default::default()) });
     let i: Value<()> = Rc::new(RefCell::new(0_()));
-    ({ test_45(((i.as_pointer()) as Ptr<()>).to_any()) });
+    ({ test_28(((i.as_pointer()) as Ptr<()>).to_any()) });
     let ci: Value<()> = Rc::new(RefCell::new(0_()));
-    ({ test_47(((ci.as_pointer()) as Ptr<()>).to_any()) });
+    ({ test_29(((ci.as_pointer()) as Ptr<()>).to_any()) });
 }
-pub fn test_124() {
+pub fn test_69() {
     let mut empty: () = unimplemented!();
     let mut str: () = unimplemented!();
-    ({ test_49(true) });
-    ({ test_49(false) });
-    ({ test_51(('a' as ())) });
-    ({ test_51(('z' as ())) });
-    ({ test_51(('0' as ())) });
-    ({ test_51(('9' as ())) });
+    ({ test_30(true) });
+    ({ test_30(false) });
+    ({ test_31(('a' as ())) });
+    ({ test_31(('z' as ())) });
+    ({ test_31(('0' as ())) });
+    ({ test_31(('9' as ())) });
     {
         {
-            ({ test_53(('a' as ())) });
-            ({ test_53(('z' as ())) });
-            ({ test_53(('0' as ())) });
-            ({ test_53(('9' as ())) });
+            ({ test_32(('a' as ())) });
+            ({ test_32(('z' as ())) });
+            ({ test_32(('0' as ())) });
+            ({ test_32(('9' as ())) });
         }
     }
-    ({ test_57(unimplemented!()) });
-    ({ test_57(0_()) });
-    ({ test_57(unimplemented!()) });
-    ({ test_59(unimplemented!()) });
-    ({ test_59(unimplemented!()) });
-    ({ test_59(0_()) });
-    ({ test_59(unimplemented!()) });
-    ({ test_59(unimplemented!()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_61(0_()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_61(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(0_()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_63(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(0_()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_65(unimplemented!()) });
-    ({ test_handle_95(0_()) });
-    ({ test_67(0_()) });
-    ({ test_67(unimplemented!()) });
-    ({ test_69(0_()) });
-    ({ test_69(unimplemented!()) });
-    ({ test_69(unimplemented!()) });
-    ({ test_71(0_()) });
-    ({ test_71(unimplemented!()) });
-    ({ test_71(unimplemented!()) });
-    ({ test_71(unimplemented!()) });
-    ({ test_73(0_()) });
-    ({ test_73(unimplemented!()) });
-    ({ test_73(unimplemented!()) });
-    ({ test_73(unimplemented!()) });
-    ({ test_73(unimplemented!()) });
-    ({ test_75(0_()) });
-    ({ test_75(unimplemented!()) });
-    ({ test_75(unimplemented!()) });
-    ({ test_75(unimplemented!()) });
-    ({ test_75(unimplemented!()) });
-    ({ test_75(unimplemented!()) });
-    ({ test_handle_97(0_()) });
-    ({ test_77(-unimplemented!()) });
-    ({ test_77(-unimplemented!()) });
-    ({ test_77(-0_f64) });
-    ({ test_77(0_f64) });
-    ({ test_77(unimplemented!()) });
-    ({ test_77(unimplemented!()) });
-    ({ test_79(-unimplemented!()) });
-    ({ test_79(-unimplemented!()) });
-    ({ test_79(-0_f64) });
-    ({ test_79(0_f64) });
-    ({ test_79(unimplemented!()) });
-    ({ test_79(unimplemented!()) });
-    ({ test_81(-unimplemented!()) });
-    ({ test_81(-unimplemented!()) });
-    ({ test_81(-0_f64) });
-    ({ test_81(0_f64) });
-    ({ test_81(unimplemented!()) });
-    ({ test_81(unimplemented!()) });
-    ({ test_83(unimplemented!()) });
-    ({ test_83(unimplemented!()) });
+    ({ test_35(unimplemented!()) });
+    ({ test_35(0_()) });
+    ({ test_35(unimplemented!()) });
+    ({ test_36(unimplemented!()) });
+    ({ test_36(unimplemented!()) });
+    ({ test_36(0_()) });
+    ({ test_36(unimplemented!()) });
+    ({ test_36(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(0_()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_37(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(0_()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_38(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(0_()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_39(unimplemented!()) });
+    ({ test_handle_54(0_()) });
+    ({ test_40(0_()) });
+    ({ test_40(unimplemented!()) });
+    ({ test_41(0_()) });
+    ({ test_41(unimplemented!()) });
+    ({ test_41(unimplemented!()) });
+    ({ test_42(0_()) });
+    ({ test_42(unimplemented!()) });
+    ({ test_42(unimplemented!()) });
+    ({ test_42(unimplemented!()) });
+    ({ test_43(0_()) });
+    ({ test_43(unimplemented!()) });
+    ({ test_43(unimplemented!()) });
+    ({ test_43(unimplemented!()) });
+    ({ test_43(unimplemented!()) });
+    ({ test_44(0_()) });
+    ({ test_44(unimplemented!()) });
+    ({ test_44(unimplemented!()) });
+    ({ test_44(unimplemented!()) });
+    ({ test_44(unimplemented!()) });
+    ({ test_44(unimplemented!()) });
+    ({ test_handle_55(0_()) });
+    ({ test_45(-unimplemented!()) });
+    ({ test_45(-unimplemented!()) });
+    ({ test_45(-0_f64) });
+    ({ test_45(0_f64) });
+    ({ test_45(unimplemented!()) });
+    ({ test_45(unimplemented!()) });
+    ({ test_46(-unimplemented!()) });
+    ({ test_46(-unimplemented!()) });
+    ({ test_46(-0_f64) });
+    ({ test_46(0_f64) });
+    ({ test_46(unimplemented!()) });
+    ({ test_46(unimplemented!()) });
+    ({ test_47(-unimplemented!()) });
+    ({ test_47(-unimplemented!()) });
+    ({ test_47(-0_f64) });
+    ({ test_47(0_f64) });
+    ({ test_47(unimplemented!()) });
+    ({ test_47(unimplemented!()) });
+    ({ test_48(unimplemented!()) });
+    ({ test_48(unimplemented!()) });
     {
-        ({ test_string_view_111(unimplemented!()) });
-        ({ test_string_view_111(unimplemented!()) });
-        ({ test_string_view_111(unimplemented!()) });
+        ({ test_string_view_62(unimplemented!()) });
+        ({ test_string_view_62(unimplemented!()) });
+        ({ test_string_view_62(unimplemented!()) });
     }
     {
-        ({ test_string_view_113(unimplemented!()) });
-        ({ test_string_view_113(unimplemented!()) });
-        ({ test_string_view_113(unimplemented!()) });
+        ({ test_string_view_63(unimplemented!()) });
+        ({ test_string_view_63(unimplemented!()) });
+        ({ test_string_view_63(unimplemented!()) });
     }
     {
-        ({ test_string_view_115(unimplemented!()) });
-        ({ test_string_view_115(unimplemented!()) });
-        ({ test_string_view_115(unimplemented!()) });
+        ({ test_string_view_64(unimplemented!()) });
+        ({ test_string_view_64(unimplemented!()) });
+        ({ test_string_view_64(unimplemented!()) });
     }
     {
-        ({ test_string_view_117(unimplemented!()) });
-        ({ test_string_view_117(unimplemented!()) });
-        ({ test_string_view_117(unimplemented!()) });
+        ({ test_string_view_65(unimplemented!()) });
+        ({ test_string_view_65(unimplemented!()) });
+        ({ test_string_view_65(unimplemented!()) });
     }
     {
-        ({ test_string_view_119(unimplemented!()) });
-        ({ test_string_view_119(unimplemented!()) });
-        ({ test_string_view_119(unimplemented!()) });
+        ({ test_string_view_66(unimplemented!()) });
+        ({ test_string_view_66(unimplemented!()) });
+        ({ test_string_view_66(unimplemented!()) });
     }
     {
-        ({ test_string_view_121(unimplemented!()) });
-        ({ test_string_view_121(unimplemented!()) });
-        ({ test_string_view_121(unimplemented!()) });
+        ({ test_string_view_67(unimplemented!()) });
+        ({ test_string_view_67(unimplemented!()) });
+        ({ test_string_view_67(unimplemented!()) });
     }
-    ({ test_85(Default::default()) });
+    ({ test_49(Default::default()) });
     let i: Value<()> = Rc::new(RefCell::new(0_()));
-    ({ test_87(((i.as_pointer()) as Ptr<()>).to_any()) });
+    ({ test_50(((i.as_pointer()) as Ptr<()>).to_any()) });
     let ci: Value<()> = Rc::new(RefCell::new(0_()));
-    ({ test_89(((ci.as_pointer()) as Ptr<()>).to_any()) });
+    ({ test_51(((ci.as_pointer()) as Ptr<()>).to_any()) });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -1457,8 +1079,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_123() });
-    ({ test_124() });
+    ({ test_68() });
+    ({ test_69() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

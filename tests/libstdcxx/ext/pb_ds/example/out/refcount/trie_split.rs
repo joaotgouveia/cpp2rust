@@ -22,13 +22,7 @@ fn main_0() -> () {
     }
     let larger_r : Value<__gnu_pbds_trie_std_basic_string_char__std_char_traits_char___std_allocator_char____char____gnu_pbds_trie_string_access_traits_std_basic_string_char__std_char_traits_char___std_allocator_char______x80_____x7f___false__std_allocator_char______gnu_pbds_pat_trie_tag____gnu_pbds_null_node_update__std_allocator_char__ > = Rc::new(RefCell::new(<__gnu_pbds_trie_std_basic_string_char__std_char_traits_char___std_allocator_char____char____gnu_pbds_trie_string_access_traits_std_basic_string_char__std_char_traits_char___std_allocator_char______x80_____x7f___false__std_allocator_char______gnu_pbds_pat_trie_tag____gnu_pbds_null_node_update__std_allocator_char__  >::default() )) ;
     ({
-        let _r_key: Value<()> = Rc::new(RefCell::new(
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 1000_() },
-                { ('a' as ()) },
-                None,
-            ),
-        ));
+        let _r_key: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ( (*r.borrow()) as __gnu_pbds_detail_pat_trie_map_std_basic_string_char__std_char_traits_char___std_allocator_char____char____gnu_pbds_detail_trie_traits_std_basic_string_char__std_char_traits_char___std_allocator_char____char____gnu_pbds_trie_string_access_traits_std_basic_string_char__std_char_traits_char___std_allocator_char______x80_____x7f___false__std_allocator_char______gnu_pbds_null_node_update____gnu_pbds_pat_trie_tag__std_allocator_char____std_allocator_char__ ) . split ( _r_key.as_pointer() , larger_r .as_pointer()  , )
     });
     unimplemented!();

@@ -228,7 +228,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_char_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_char_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -264,7 +264,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -300,7 +300,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_char8_t_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_char8_t_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -336,7 +336,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_char16_t_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_char16_t_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -374,7 +374,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_char32_t_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_char32_t_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -833,36 +833,11 @@ pub unsafe fn test_21(mut args: ()) {
     }
 }
 pub unsafe fn test_22() {
-    (unsafe {
-        test_17({
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char_ptr____char__  = ( unsafe { make_format_args_23 ( ) } )  ;
-            std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char_ptr____char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
-    (unsafe {
-        test_18({
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_wchar_t_ptr____wchar_t__  = ( unsafe { make_format_args_24 ( ) } )  ;
-            std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_wchar_t_ptr____wchar_t__ :: new ( { & mut __tmp_1 } , )
-        })
-    });
-    (unsafe {
-        test_19({
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char8_t_ptr____char8_t__  = ( unsafe { make_format_args_25 ( ) } )  ;
-            std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char8_t_ptr____char8_t__ :: new ( { & mut __tmp_2 } , )
-        })
-    });
-    (unsafe {
-        test_20({
-            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char16_t_ptr____char16_t__  = ( unsafe { make_format_args_26 ( ) } )  ;
-            std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char16_t_ptr____char16_t__ :: new ( { & mut __tmp_3 } , )
-        })
-    });
-    (unsafe {
-        test_21({
-            let mut __tmp_4 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char32_t_ptr____char32_t__  = ( unsafe { make_format_args_27 ( ) } )  ;
-            std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char32_t_ptr____char32_t__ :: new ( { & mut __tmp_4 } , )
-        })
-    });
+    (unsafe { test_17(unimplemented!()) });
+    (unsafe { test_18(unimplemented!()) });
+    (unsafe { test_19(unimplemented!()) });
+    (unsafe { test_20(unimplemented!()) });
+    (unsafe { test_21(unimplemented!()) });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()

@@ -30,8 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let mut place: My2 = <My2>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_30_14__ref__My2_ref_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -39,8 +38,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let place: My2 = <My2>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_36_14__ref__const_My2_ref_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -48,8 +46,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let mut place: My2 = <My2>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_42_14__ref__My2_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -57,8 +54,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             return (((10_()) * (x)) + (9_()));
         });
         let place: My2 = <My2>::default();
-        let mut bound: std___bind__lambda_at_specialization_pass_cpp_48_14__ref__const_My2_ =
-            unimplemented!();
+        let mut bound: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

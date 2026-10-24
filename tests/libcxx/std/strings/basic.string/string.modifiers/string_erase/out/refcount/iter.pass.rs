@@ -135,10 +135,7 @@ pub fn is_string_asan_correct_10(_a0: Ptr<()>) -> () {
 }
 pub fn test_11(s: (), mut pos: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
-    let p: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_const_char_ptr_::new_1({ __tmp_0.as_pointer() })
-    }));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -148,12 +145,7 @@ pub fn test_11(s: (), mut pos: (), mut expected: ()) {
 }
 pub fn test_12(s: (), mut pos: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
-    let p: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            __tmp_1.as_pointer()
-        })
-    }));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -163,10 +155,7 @@ pub fn test_12(s: (), mut pos: (), mut expected: ()) {
 }
 pub fn test_13(s: (), mut pos: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
-    let p: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___wrap_iter_const_char_ptr_::new_1({ __tmp_2.as_pointer() })
-    }));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();

@@ -258,11 +258,7 @@ pub fn test09_10() {
     let mut goodbit: () = unimplemented!();
     let mut err: () = goodbit;
     let loc_c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut x: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 50_() },
-        { ('x' as ()) },
-        None,
-    );
+    let mut x: () = unimplemented!();
     let mut res: () = unimplemented!();
     let time_sanity: Value<::libc::tm> = Rc::new(RefCell::new(
         ({ test_tm_11(0_(), 0_(), 12_(), 26_(), 5_(), 97_(), 2_(), 0_(), 0_()) }),

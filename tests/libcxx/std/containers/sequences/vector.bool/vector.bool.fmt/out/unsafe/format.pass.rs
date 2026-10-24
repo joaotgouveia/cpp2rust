@@ -103,39 +103,31 @@ pub unsafe fn test_format_4(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std___bit_reference_std_vector_bool__std_allocator_bool____true__  = ( unsafe { make_format_args_5 ( & mut *(&raw mut arg ).cast::<std___bit_reference_std_vector_bool__std_allocator_bool____true_>() , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_format_6(mut expected: (), mut arg: ()) {
+pub unsafe fn test_format_5(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std___bit_reference_std_vector_bool__std_allocator_bool____true__  = ( unsafe { make_format_args_7 ( & mut *(&raw mut arg ).cast::<std___bit_reference_std_vector_bool__std_allocator_bool____true_>() , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_fmt_8() {
+pub unsafe fn test_fmt_6() {
     (unsafe { test_format_4(unimplemented!(), unimplemented!()) });
     (unsafe { test_format_4(unimplemented!(), unimplemented!()) });
 }
-pub unsafe fn test_fmt_9() {
-    (unsafe { test_format_6(unimplemented!(), unimplemented!()) });
-    (unsafe { test_format_6(unimplemented!(), unimplemented!()) });
+pub unsafe fn test_fmt_7() {
+    (unsafe { test_format_5(unimplemented!(), unimplemented!()) });
+    (unsafe { test_format_5(unimplemented!(), unimplemented!()) });
 }
-pub unsafe fn test_10() {
-    (unsafe { test_fmt_8() });
-    (unsafe { test_fmt_9() });
+pub unsafe fn test_8() {
+    (unsafe { test_fmt_6() });
+    (unsafe { test_fmt_7() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -153,7 +145,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_10() });
+    (unsafe { test_8() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

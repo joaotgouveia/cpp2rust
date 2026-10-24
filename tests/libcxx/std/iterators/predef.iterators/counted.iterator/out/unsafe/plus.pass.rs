@@ -532,19 +532,13 @@ pub unsafe fn test_11() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
         {
-            let mut iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
@@ -552,19 +546,13 @@ pub unsafe fn test_11() -> () {
     }
     {
         {
-            let mut iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
@@ -572,19 +560,13 @@ pub unsafe fn test_11() -> () {
     }
     {
         {
-            let mut iter: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;
         }
         {
-            let mut iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             const _: () = assert!(true, "");;

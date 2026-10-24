@@ -436,10 +436,7 @@ pub fn make_22(mut size: (), mut start: ()) -> () {
 }
 pub fn test_23(mut P: (), c1: Ptr<()>) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_Emplaceable__const_Emplaceable_ptr__const_Emplaceable_ref__const_Emplaceable_ptrconst_ptr__long__256_ :: new_1 ( { __tmp_0.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -448,10 +445,7 @@ pub fn test_23(mut P: (), c1: Ptr<()>) {
 }
 pub fn test_24(mut P: (), c1: Ptr<()>) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_Emplaceable__min_pointer_const_Emplaceable__std_integral_constant_unsigned_long__0____const_Emplaceable_ref__min_pointer_const_min_pointer_const_Emplaceable__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__256_ :: new_1 ( { __tmp_1.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -460,10 +454,7 @@ pub fn test_24(mut P: (), c1: Ptr<()>) {
 }
 pub fn test_25(mut P: (), c1: Ptr<()>) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_Emplaceable__const_Emplaceable_ptr__const_Emplaceable_ref__const_Emplaceable_ptrconst_ptr__long__256_ :: new_1 ( { __tmp_2.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

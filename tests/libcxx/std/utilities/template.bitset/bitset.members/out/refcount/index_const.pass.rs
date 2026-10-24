@@ -286,10 +286,10 @@ pub fn test_22() -> () {
     ({ test_index_const_19() });
     ({ test_index_const_20() });
     let set_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!() = false;
+    unimplemented!();
     let set: Ptr<()> = set_.as_pointer();
     let mut b: () = unimplemented!();
-    unimplemented!() = true;
+    unimplemented!();
     unimplemented!();
     return true;
 }

@@ -230,11 +230,7 @@ pub unsafe fn swallow_6(
 pub unsafe fn test_appending_7(mut k: (), mut N: (), mut new_capacity: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { k },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -244,12 +240,7 @@ pub unsafe fn test_appending_7(mut k: (), mut N: (), mut new_capacity: ()) {
 pub unsafe fn test_appending_8(mut k: (), mut N: (), mut new_capacity: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { k },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -259,12 +250,7 @@ pub unsafe fn test_appending_8(mut k: (), mut N: (), mut new_capacity: ()) {
 pub unsafe fn test_appending_9(mut k: (), mut N: (), mut new_capacity: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { k },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -274,12 +260,7 @@ pub unsafe fn test_appending_9(mut k: (), mut N: (), mut new_capacity: ()) {
 pub unsafe fn test_appending_10(mut k: (), mut N: (), mut new_capacity: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { k },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -289,12 +270,7 @@ pub unsafe fn test_appending_10(mut k: (), mut N: (), mut new_capacity: ()) {
 pub unsafe fn test_appending_11(mut k: (), mut N: (), mut new_capacity: ()) {
     unimplemented!();
     unimplemented!();
-    let mut s: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { k },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -303,11 +279,7 @@ pub unsafe fn test_appending_11(mut k: (), mut N: (), mut new_capacity: ()) {
 }
 pub unsafe fn test_truncating_12(mut o: (), mut N: ()) {
     unimplemented!();
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { o },
-        { ('a' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -316,12 +288,7 @@ pub unsafe fn test_truncating_12(mut o: (), mut N: ()) {
 }
 pub unsafe fn test_truncating_13(mut o: (), mut N: ()) {
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -330,12 +297,7 @@ pub unsafe fn test_truncating_13(mut o: (), mut N: ()) {
 }
 pub unsafe fn test_truncating_14(mut o: (), mut N: ()) {
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -344,12 +306,7 @@ pub unsafe fn test_truncating_14(mut o: (), mut N: ()) {
 }
 pub unsafe fn test_truncating_15(mut o: (), mut N: ()) {
     unimplemented!();
-    let mut s: () =
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();
@@ -358,12 +315,7 @@ pub unsafe fn test_truncating_15(mut o: (), mut N: ()) {
 }
 pub unsafe fn test_truncating_16(mut o: (), mut N: ()) {
     unimplemented!();
-    let mut s: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        );
+    let mut s: () = unimplemented!();
     unimplemented!();
     let expected: () = unimplemented!();
     unimplemented!();

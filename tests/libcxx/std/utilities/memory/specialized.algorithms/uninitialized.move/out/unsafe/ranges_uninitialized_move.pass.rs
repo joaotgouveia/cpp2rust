@@ -1947,7 +1947,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         ];
         let mut out: Buffer_Counted__5_ = <Buffer_Counted__5_>::default();
         (unsafe { Counted::reset() });
-        let mut iter: () = std_counted_iterator_Counted_ptr_::new_1({ in_.as_mut_ptr() }, { N });
+        let mut iter: () = unimplemented!();
         let mut result: () = (unsafe {
             let ___ofirst: *mut Counted = (unsafe { Buffer_Counted__5_::begin(&mut out) });
             let ___olast: *mut Counted = (unsafe { Buffer_Counted__5_::end(&mut out) });

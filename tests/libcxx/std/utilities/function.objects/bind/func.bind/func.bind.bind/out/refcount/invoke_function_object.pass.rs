@@ -32,26 +32,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let b: Value<std___bind_DummyUnaryFunction__BadUnaryFunction_> =
-        Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___args: Value<()> = Rc::new(RefCell::new(0_()));
-        (*b.borrow_mut())(___args.as_pointer())
-    });
-    let b2: Value<std___bind_r_long__DummyUnaryFunction__BadUnaryFunction_> =
-        Rc::new(RefCell::new(
-            ({
-                let ___f: Value<DummyUnaryFunction> =
-                    Rc::new(RefCell::new(<DummyUnaryFunction>::default()));
-                let ___bound_args: Value<BadUnaryFunction> =
-                    Rc::new(RefCell::new(<BadUnaryFunction>::default()));
-                bind_0(___f.as_pointer(), ___bound_args.as_pointer())
-            }),
-        ));
-    ({
-        let ___args: Value<()> = Rc::new(RefCell::new(0_()));
-        (*b2.borrow_mut())(___args.as_pointer())
-    });
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
     return 0_();
 }
 pub trait DummyUnaryFunctionImpl {

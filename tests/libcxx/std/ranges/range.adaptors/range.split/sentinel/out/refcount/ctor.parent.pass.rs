@@ -404,7 +404,7 @@ pub fn test_8() -> () {
     {
         let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
         let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sent : Value<std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel :: new_1 ( { sv .as_pointer()  } , )  )) ;
         unimplemented!();

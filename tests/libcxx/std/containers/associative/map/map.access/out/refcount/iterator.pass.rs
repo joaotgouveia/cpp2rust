@@ -128,7 +128,7 @@ pub fn test_4() -> () {
         'loop_: while (j <= unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            field!((*i.borrow_mut()), second).write(2.5_f64);
+            unimplemented!().second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -141,7 +141,7 @@ pub fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            field!((*i.borrow_mut()), second).write(1_());
+            unimplemented!().second = 1_();
             unimplemented!();
             j.prefix_dec();
         }
@@ -238,7 +238,7 @@ pub fn test_4() -> () {
         'loop_: while (j <= unimplemented!()) {
             unimplemented!();
             unimplemented!();
-            field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(( * (*i.borrow()) .upgrade().deref() ) )).as_pointer() , ) } )  , second) .write( 2.5_f64  ) ;
+            field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  , second) .write( 2.5_f64  ) ;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -251,7 +251,7 @@ pub fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(( * (*i.borrow()) .upgrade().deref() ) )).as_pointer() , ) } )  , second) .write( 1_()  ) ;
+            field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  , second) .write( 1_()  ) ;
             unimplemented!();
             j.prefix_dec();
         }

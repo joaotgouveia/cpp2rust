@@ -29,8 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut c: () = ('c' as ());
     let mut p: () = Default::default();
     let mut b: () = false;
-    let mut store: std___format_arg_store_std_wformat_context__int__std_nullptr_t__bool__char_ =
-        unimplemented!();
+    let mut store: () = unimplemented!();
     const _: () = assert!(
         true,
         "std::same_as<decltype(store), std::__format_arg_store<std::wformat_context, int, nullptr_t, bool, char>>"

@@ -81,14 +81,14 @@ pub struct forward_iterator_std___wrap_iter_const_char_ptr__ {
 impl forward_iterator_std___wrap_iter_const_char_ptr__ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
 }
 pub unsafe fn base_0(i: *const forward_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, Default)]
@@ -99,14 +99,14 @@ pub struct forward_iterator_std___wrap_iter_int_ptr__ {
 impl forward_iterator_std___wrap_iter_int_ptr__ {
     pub unsafe fn new_1(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
     }
 }
 pub unsafe fn base_1(i: *const bidirectional_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
@@ -124,7 +124,7 @@ impl bidirectional_iterator_std___wrap_iter_int_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -146,7 +146,7 @@ impl Default for bidirectional_iterator_std___wrap_iter_int_ptr__ {
     }
 }
 pub unsafe fn base_2(i: *const bidirectional_iterator_std___wrap_iter_const_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(Clone, VaArg, FnPtrArg, MoveCtorUnsafe)]
@@ -164,7 +164,7 @@ impl bidirectional_iterator_std___wrap_iter_const_int_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -273,7 +273,7 @@ impl cpp20_input_iterator_std_ranges_transform_view_std_ranges_owning_view_std_v
  } pub unsafe fn operator_deref ( &self , ) -> std_basic_string_char__std_char_traits_char___std_allocator_char__ { return unimplemented!()   ;
  } }
 pub unsafe fn base_5(i: *const cpp20_input_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -284,7 +284,7 @@ pub struct cpp20_input_iterator_std___wrap_iter_int_ptr__ {
 impl cpp20_input_iterator_std___wrap_iter_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -312,7 +312,7 @@ impl cpp20_input_iterator_std___wrap_iter_int_ptr__ {
     }
 }
 pub unsafe fn base_6(i: *const cpp20_input_iterator_std___wrap_iter_const_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -323,7 +323,7 @@ pub struct cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
 impl cpp20_input_iterator_std___wrap_iter_const_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -383,7 +383,7 @@ impl cpp20_output_iterator_int_ptr_ {
     }
 }
 pub unsafe fn base_7(i: *const cpp20_output_iterator_std___wrap_iter_int_ptr__) -> () {
-    return (*i).it_.clone();
+    return unimplemented!();
 }
 #[repr(C)]
 #[derive(FnPtrArg, MoveCtorUnsafe, MoveAssignUnsafe, Default)]
@@ -394,7 +394,7 @@ pub struct cpp20_output_iterator_std___wrap_iter_int_ptr__ {
 impl cpp20_output_iterator_std___wrap_iter_int_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this

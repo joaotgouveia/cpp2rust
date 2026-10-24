@@ -580,31 +580,31 @@ pub unsafe fn test_12() -> () {
     let mut buff: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     let N: () = 8_();
     {
-        let view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let mut __tmp_0 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_1 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { & mut __tmp_0 } , { & mut __tmp_1 } , )  } } , { 1_() } , )  ;
+        let view: () = unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = unimplemented!()  ;
         unimplemented!();
     }
     {
-        let mut view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let mut __tmp_2 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_3 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { & mut __tmp_2 } , { & mut __tmp_3 } , )  } } , { 1_() } , )  ;
+        let mut view: () = unimplemented!();
         let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = unimplemented!()  ;
         unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
     }
     {
-        let mut view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let mut __tmp_4 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_5 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { & mut __tmp_4 } , { & mut __tmp_5 } , )  } } , { 1_() } , )  ;
+        let mut view: () = unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = ( unsafe { ( * unimplemented!()  )  . base_3  ( ) } )  ;
         unimplemented!();
     }
     {
-        let view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true__ :: new ( { { let mut __tmp_6 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_7 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ :: new ( { & mut __tmp_6 } , { & mut __tmp_7 } , )  } } , { 1_() } , )  ;
+        let view: () = unimplemented!();
         const _: () = assert!(true, "has_lvalue_qualified_base(view)");;
         let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__true_ = unimplemented!()  ;
         unimplemented!();
     }
     {
-        let mut view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false__ :: new ( { { let mut __tmp_8 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_9 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ :: new ( { & mut __tmp_8 } , { & mut __tmp_9 } , )  } } , { 1_() } , )  ;
+        let mut view : () = std_ranges_stride_view_BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false__ :: new ( { { let mut __tmp_0 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() } , )  ;let mut __tmp_1 : cpp17_input_iterator_int_ptr__int_ptr_  = cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { buff .as_mut_ptr() . offset ( ( N ) as isize ) } , )  ; BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ :: new ( { & mut __tmp_0 } , { & mut __tmp_1 } , )  } } , { 1_() } , )  ;
         const _: () = assert!(true, "!has_lvalue_qualified_base(view)");;
         let mut s : BasicTestViewOrRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr____false__true__false_ = ( unsafe { ( * unimplemented!()  )  . base_3  ( ) } )  ;
         unimplemented!();

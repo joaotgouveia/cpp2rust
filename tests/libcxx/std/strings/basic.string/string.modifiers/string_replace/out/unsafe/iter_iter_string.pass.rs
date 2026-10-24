@@ -184,14 +184,8 @@ pub unsafe fn is_string_asan_correct_9(_a0: *const ()) -> () {
 }
 pub unsafe fn test_10(mut s: (), mut pos1: (), mut n1: (), mut str: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
-    let mut first: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-    };
-    let mut last: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_1 })
-    };
+    let mut first: () = unimplemented!();
+    let mut last: () = unimplemented!();
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -202,18 +196,8 @@ pub unsafe fn test_10(mut s: (), mut pos1: (), mut n1: (), mut str: (), mut expe
 }
 pub unsafe fn test_11(mut s: (), mut pos1: (), mut n1: (), mut str: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
-    let mut first: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            &mut __tmp_2
-        })
-    };
-    let mut last: () = {
-        let mut __tmp_3: () = unimplemented!();
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            &mut __tmp_3
-        })
-    };
+    let mut first: () = unimplemented!();
+    let mut last: () = unimplemented!();
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -224,14 +208,8 @@ pub unsafe fn test_11(mut s: (), mut pos1: (), mut n1: (), mut str: (), mut expe
 }
 pub unsafe fn test_12(mut s: (), mut pos1: (), mut n1: (), mut str: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
-    let mut first: () = {
-        let mut __tmp_4: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_4 })
-    };
-    let mut last: () = {
-        let mut __tmp_5: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_5 })
-    };
+    let mut first: () = unimplemented!();
+    let mut last: () = unimplemented!();
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();

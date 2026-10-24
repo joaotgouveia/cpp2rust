@@ -30,12 +30,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut from: () = unimplemented!();
     let mut expected: () = unimplemented!();
-    let mut to: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-            None,
-        );
+    let mut to: () = unimplemented!();
     let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
     let mbs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut from_next: Ptr<()> = Ptr::<()>::null();

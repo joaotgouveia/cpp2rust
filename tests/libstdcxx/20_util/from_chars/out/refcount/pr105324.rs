@@ -11,11 +11,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 512_() },
-        { ('1' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     unimplemented!().write(('.' as ()));
     let mut d: () = unimplemented!();
     unimplemented!();

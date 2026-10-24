@@ -15,11 +15,9 @@ pub struct A {
 }
 impl A {
     pub fn new() -> Self {
-        let __this: Value<A> = Rc::new(RefCell::new(Self {
-            ptr_: std_unique_ptr_A__std_default_delete_A__::new({ (this).clone() }),
-        }));
-        let this: Ptr<A> = __this.as_pointer();
-        Rc::try_unwrap(__this).ok().unwrap().into_inner()
+        Self {
+            ptr_: unimplemented!(),
+        }
     }
     pub fn move_from(_a0: Ptr<A>) -> Self {
         Self {

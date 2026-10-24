@@ -29,10 +29,10 @@ pub fn test_none_2() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -43,10 +43,10 @@ pub fn test_none_3() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -57,10 +57,10 @@ pub fn test_none_4() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -71,10 +71,10 @@ pub fn test_none_5() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -85,10 +85,10 @@ pub fn test_none_6() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -99,10 +99,10 @@ pub fn test_none_7() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -113,10 +113,10 @@ pub fn test_none_8() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
         unimplemented!();
         unimplemented!();
-        unimplemented!() = true;
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
 }

@@ -28,7 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({ (*in_.borrow()).ignore(100_(), (b'\xa1' as ())) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut str: () = unimplemented!();

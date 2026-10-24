@@ -473,12 +473,7 @@ pub fn test_7() -> () {
         8_(),
     ])));
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 1_();
         'loop_: while (i < 9_()) {
             unimplemented!();
@@ -486,12 +481,7 @@ pub fn test_7() -> () {
         }
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 1_();
         'loop_: while (i < 9_()) {
             unimplemented!();
@@ -499,21 +489,11 @@ pub fn test_7() -> () {
         }
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-                { random_access_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

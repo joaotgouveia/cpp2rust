@@ -61,9 +61,7 @@ pub unsafe fn DoStuffWithSafePointer_0(safe_ptr: *mut ()) {
 }
 pub unsafe fn Consume_1(mut safe_ptr: ()) -> () {
     let mut x: () = unimplemented!();
-    let mut p: () = std_unique_ptr_Pair__std_default_delete_Pair__::new({
-        (Box::leak(Box::new(<Pair>::default())) as *mut Pair)
-    });
+    let mut p: () = unimplemented!();
     return ((*unimplemented!()) + ((*unimplemented!()).x));
 }
 pub unsafe fn RndStuff_2() {
@@ -131,9 +129,7 @@ unsafe fn main_0() -> () {
     let mut safe_ptr: () = unimplemented!();
     (unsafe { DoStuffWithSafePointer_0(&mut safe_ptr) });
     unimplemented!();
-    let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({
-        (Box::leak(Box::new(1_())) as *mut ())
-    });
+    let mut p: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

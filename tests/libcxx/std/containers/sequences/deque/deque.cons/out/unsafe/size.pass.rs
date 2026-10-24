@@ -1067,14 +1067,8 @@ pub unsafe fn test2_35(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_0 } , )
-        };
-        let mut e: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_1 } , )
-        };
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -1090,14 +1084,8 @@ pub unsafe fn test2_36(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_2 } , )
-        };
-        let mut e: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_3 } , )
-        };
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -1113,14 +1101,8 @@ pub unsafe fn test1_37(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_4: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_4 } , )
-        };
-        let mut e: () = {
-            let mut __tmp_5: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_5 } , )
-        };
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -1136,14 +1118,8 @@ pub unsafe fn test1_38(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_6: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_6 } , )
-        };
-        let mut e: () = {
-            let mut __tmp_7: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__const_DefaultOnly_ptr__const_DefaultOnly_ref__const_DefaultOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_7 } , )
-        };
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();
@@ -1159,14 +1135,8 @@ pub unsafe fn test1_39(mut n: ()) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_8: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_8 } , )
-        };
-        let mut e: () = {
-            let mut __tmp_9: () = unimplemented!();
-            std___deque_iterator_DefaultOnly__min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____const_DefaultOnly_ref__min_pointer_const_min_pointer_const_DefaultOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_9 } , )
-        };
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while !(unimplemented!()) {
             unimplemented!();
             unimplemented!();

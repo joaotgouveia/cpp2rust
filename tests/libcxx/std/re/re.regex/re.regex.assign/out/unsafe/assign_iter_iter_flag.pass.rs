@@ -86,7 +86,7 @@ pub struct cpp17_input_iterator_std___wrap_iter_const_char_ptr___std___wrap_iter
 impl cpp17_input_iterator_std___wrap_iter_const_char_ptr___std___wrap_iter_const_char_ptr__ {
     pub unsafe fn new(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -140,7 +140,7 @@ impl forward_iterator_std___wrap_iter_const_char_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this

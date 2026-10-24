@@ -379,9 +379,7 @@ pub fn test_18() -> () {
         ({ AssertOrderReturn_4() });
         ({ AssertOrderReturn_5() });
     }
-    let p1: Value<()> = Rc::new(RefCell::new(
-        std_unique_ptr_int__std_default_delete_int__::new_1({ Ptr::alloc(1_()) }),
-    ));
+    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     {

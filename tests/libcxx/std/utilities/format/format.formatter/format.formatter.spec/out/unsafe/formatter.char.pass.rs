@@ -107,13 +107,23 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___char_  = ( unsafe { make_format_args_5 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     (unsafe { (formatter as std___formatter_char_char_).format(arg, &mut format_ctx) });
+    unimplemented!();
+}
+pub unsafe fn test_5(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
+    let mut parse_ctx: () = unimplemented!();
+    let mut formatter: () = unimplemented!();
+    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
+    let mut it: () =
+        (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
+    unimplemented!();
+    let mut result: () = unimplemented!();
+    let mut out: () = unimplemented!();
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
+    (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
     unimplemented!();
 }
 pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
@@ -125,55 +135,33 @@ pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___char_  = ( unsafe { make_format_args_7 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
     unimplemented!();
 }
-pub unsafe fn test_8(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
-    let mut parse_ctx: () = unimplemented!();
-    let mut formatter: () = unimplemented!();
-    const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    let mut it: () =
-        (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
-    unimplemented!();
-    let mut result: () = unimplemented!();
-    let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___wchar_t_  = ( unsafe { make_format_args_9 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_2 } , )
-        })
-    });
-    (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
-    unimplemented!();
-}
-pub unsafe fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: ()) {
+pub unsafe fn test_termination_condition_7(mut expected: (), mut f: (), mut arg: ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_11(mut expected: (), mut f: (), mut arg: ()) {
+pub unsafe fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: ()) {
+    let mut fmt: () = (unsafe { f() });
+    unimplemented!();
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
+    unimplemented!();
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
+}
+pub unsafe fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_12(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
-    unimplemented!();
-    (unsafe { test_8(unimplemented!(), unimplemented!(), arg, 1_()) });
-    unimplemented!();
-    (unsafe { test_8(unimplemented!(), unimplemented!(), arg, 0_()) });
-}
-pub unsafe fn test_set_debug_format_13() -> () {
+pub unsafe fn test_set_debug_format_10() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -186,7 +174,7 @@ pub unsafe fn test_set_debug_format_13() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_set_debug_format_14() -> () {
+pub unsafe fn test_set_debug_format_11() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -199,7 +187,7 @@ pub unsafe fn test_set_debug_format_14() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_set_debug_format_15() -> () {
+pub unsafe fn test_set_debug_format_12() -> () {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -212,106 +200,106 @@ pub unsafe fn test_set_debug_format_15() -> () {
     unimplemented!();
     return true;
 }
-pub unsafe fn test_char_type_16() {
+pub unsafe fn test_char_type_13() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('a' as ()))
+        test_termination_condition_7(_expected, _f, ('a' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('z' as ()))
+        test_termination_condition_7(_expected, _f, ('z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('A' as ()))
+        test_termination_condition_7(_expected, _f, ('A' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('Z' as ()))
+        test_termination_condition_7(_expected, _f, ('Z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('0' as ()))
+        test_termination_condition_7(_expected, _f, ('0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_10(_expected, _f, ('9' as ()))
+        test_termination_condition_7(_expected, _f, ('9' as ()))
     });
-    (unsafe { test_set_debug_format_13() });
+    (unsafe { test_set_debug_format_10() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub unsafe fn test_char_type_17() {
+pub unsafe fn test_char_type_14() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('a' as ()))
+        test_termination_condition_8(_expected, _f, ('a' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('z' as ()))
+        test_termination_condition_8(_expected, _f, ('z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('A' as ()))
+        test_termination_condition_8(_expected, _f, ('A' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('Z' as ()))
+        test_termination_condition_8(_expected, _f, ('Z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('0' as ()))
+        test_termination_condition_8(_expected, _f, ('0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_11(_expected, _f, ('9' as ()))
+        test_termination_condition_8(_expected, _f, ('9' as ()))
     });
-    (unsafe { test_set_debug_format_14() });
+    (unsafe { test_set_debug_format_11() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
-pub unsafe fn test_char_type_18() {
+pub unsafe fn test_char_type_15() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('a' as ()))
+        test_termination_condition_9(_expected, _f, ('a' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('z' as ()))
+        test_termination_condition_9(_expected, _f, ('z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('A' as ()))
+        test_termination_condition_9(_expected, _f, ('A' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('Z' as ()))
+        test_termination_condition_9(_expected, _f, ('Z' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('0' as ()))
+        test_termination_condition_9(_expected, _f, ('0' as ()))
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_12(_expected, _f, ('9' as ()))
+        test_termination_condition_9(_expected, _f, ('9' as ()))
     });
-    (unsafe { test_set_debug_format_15() });
+    (unsafe { test_set_debug_format_12() });
     const _: () = assert!(true, "test_set_debug_format<ArgumentT, CharT>()");;
 }
 pub fn main() {
@@ -330,9 +318,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_char_type_16() });
-    (unsafe { test_char_type_17() });
-    (unsafe { test_char_type_18() });
+    (unsafe { test_char_type_13() });
+    (unsafe { test_char_type_14() });
+    (unsafe { test_char_type_15() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

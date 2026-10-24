@@ -1835,11 +1835,7 @@ pub fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
@@ -1853,11 +1849,7 @@ pub fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
@@ -1871,19 +1863,7 @@ pub fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            let __rhs = {
-                let __rhs = {
-                    let __rhs = {
-                        unimplemented!() = false;
-                        unimplemented!()
-                    };
-                    unimplemented!() = __rhs;
-                    unimplemented!()
-                };
-                unimplemented!() = __rhs;
-                unimplemented!()
-            };
-            unimplemented!() = __rhs;
+            unimplemented!();
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));

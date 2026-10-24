@@ -12,46 +12,46 @@ pub fn test_0() -> () {
     unimplemented!();
     let ref1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ref2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*ref2.borrow_mut()) = (*ref1.borrow()).clone();
+    unimplemented!();
     {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
         unimplemented!();
         unimplemented!();
-    }
-    {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
         unimplemented!();
         unimplemented!();
-    }
-    {
-        unimplemented!() = false;
-        unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        unimplemented!() = true;
-        unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

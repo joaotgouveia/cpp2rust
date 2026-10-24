@@ -260,9 +260,7 @@ impl __gnu_test_semaphore {}
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct A {}
 pub unsafe fn test01_10() {
-    let mut p: () = std_unique_ptr_A__std_default_delete_A__::new({
-        (Box::leak(Box::new(<A>::default())) as *mut A)
-    });
+    let mut p: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

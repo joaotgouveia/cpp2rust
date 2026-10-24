@@ -29,21 +29,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
+    let mut i: () = 1_();
     let c: Value<()> = Rc::new(RefCell::new(('c' as ())));
     let p: Value<()> = Rc::new(RefCell::new(Default::default()));
     let b: Value<()> = Rc::new(RefCell::new(false));
-    let store: Value<std___format_arg_store_std_format_context__int__std_nullptr_t__bool__char_> =
-        Rc::new(RefCell::new(
-            ({
-                make_format_args_0(
-                    i.as_pointer(),
-                    p.as_pointer(),
-                    b.as_pointer(),
-                    c.as_pointer(),
-                )
-            }),
-        ));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(
         true,
         "std::same_as<decltype(store), std::__format_arg_store<std::format_context, int, nullptr_t, bool, char>>"

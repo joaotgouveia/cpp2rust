@@ -542,10 +542,7 @@ pub unsafe fn test_7() -> () {
         }
     }
     {
-        let mut iter: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         let mut i: () = 1_();
         'loop_: while ((i) < (9_())) {
             unimplemented!();
@@ -556,10 +553,7 @@ pub unsafe fn test_7() -> () {
         }
     }
     {
-        let mut iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         let mut i: () = 1_();
         'loop_: while ((i) < (9_())) {
             unimplemented!();
@@ -570,14 +564,7 @@ pub unsafe fn test_7() -> () {
         }
     }
     {
-        let mut iter: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr(),
-                }
-            },
-            { (8_() as ()) },
-        );
+        let mut iter: () = unimplemented!();
         let mut i: () = 1_();
         'loop_: while ((i) < (9_())) {
             unimplemented!();
@@ -595,30 +582,15 @@ pub unsafe fn test_7() -> () {
         unimplemented!();
     }
     {
-        let iter: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((1_()) as isize) }) },
-            { 7_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
     }
     {
-        let iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            {
-                contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) })
-            },
-            { 6_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
     }
     {
-        let iter: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr().offset((2_()) as isize),
-                }
-            },
-            { (6_() as ()) },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
     }
     return true;

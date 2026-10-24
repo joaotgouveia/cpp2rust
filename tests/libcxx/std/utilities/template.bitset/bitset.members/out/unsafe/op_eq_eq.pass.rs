@@ -184,7 +184,7 @@ pub unsafe fn test_equality_13() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -198,7 +198,7 @@ pub unsafe fn test_equality_14() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -212,7 +212,7 @@ pub unsafe fn test_equality_15() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -226,7 +226,7 @@ pub unsafe fn test_equality_16() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -240,7 +240,7 @@ pub unsafe fn test_equality_17() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -254,7 +254,7 @@ pub unsafe fn test_equality_18() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -268,7 +268,7 @@ pub unsafe fn test_equality_19() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();
@@ -282,7 +282,7 @@ pub unsafe fn test_equality_20() {
         let mut v2: () = v1.clone();
         unimplemented!();
         {
-            (unsafe { unimplemented!().flip() });
+            unimplemented!();
             unimplemented!();
         }
         c.prefix_inc();

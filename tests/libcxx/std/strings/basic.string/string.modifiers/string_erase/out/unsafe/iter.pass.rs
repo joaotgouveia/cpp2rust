@@ -205,10 +205,7 @@ pub unsafe fn is_string_asan_correct_10(_a0: *const ()) -> () {
     return true;
 }
 pub unsafe fn test_11(mut s: (), mut pos: (), mut expected: ()) {
-    let mut p: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-    };
+    let mut p: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -217,12 +214,7 @@ pub unsafe fn test_11(mut s: (), mut pos: (), mut expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_12(mut s: (), mut pos: (), mut expected: ()) {
-    let mut p: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            &mut __tmp_1
-        })
-    };
+    let mut p: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -231,10 +223,7 @@ pub unsafe fn test_12(mut s: (), mut pos: (), mut expected: ()) {
     unimplemented!();
 }
 pub unsafe fn test_13(mut s: (), mut pos: (), mut expected: ()) {
-    let mut p: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_2 })
-    };
+    let mut p: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();

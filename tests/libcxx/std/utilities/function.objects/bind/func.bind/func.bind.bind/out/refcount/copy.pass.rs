@@ -30,10 +30,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let fnc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let task: Value<std___bind_std_function_float__float__float___ref__float__float_> =
-        Rc::new(RefCell::new(unimplemented!()));
-    let task2: Value<std___bind_std_function_float__float__float___ref__float__float_> =
-        Rc::new(RefCell::new((*task.borrow()).clone()));
+    let task: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let task2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return 0_();

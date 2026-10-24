@@ -15,36 +15,31 @@ pub unsafe fn test_0() {
         "!std::is_default_constructible_v<std::basic_format_args<Context>>"
     );;
     {
-        let mut store: std___format_arg_store_std_basic_format_context_char_ptr__char___int_ =
-            (unsafe { make_format_args_1(&mut i) });
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_1({ &store });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut store: std___format_arg_store_std_basic_format_context_char_ptr__char___int__char_ =
-            (unsafe { make_format_args_2(&mut i, &mut c) });
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_2({ &store });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut store : std___format_arg_store_std_basic_format_context_char_ptr__char___int__char__std_nullptr_t_ = ( unsafe { make_format_args_3 ( & mut i , & mut c , & mut p , ) } )  ;
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_char_ptr__char__::new_3({ &store });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_4() {
+pub unsafe fn test_1() {
     let mut i: () = 1_();
     let mut c: () = ('c' as ());
     let mut p: () = Default::default();
@@ -53,43 +48,33 @@ pub unsafe fn test_4() {
         "!std::is_default_constructible_v<std::basic_format_args<Context>>"
     );;
     {
-        let mut store: std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int_ =
-            (unsafe { make_format_args_5(&mut i) });
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_1({
-                &store
-            });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut store : std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int__char_ = ( unsafe { make_format_args_6 ( & mut i , & mut c , ) } )  ;
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_2({
-                &store
-            });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut store : std___format_arg_store_std_basic_format_context_wchar_t_ptr__wchar_t___int__char__std_nullptr_t_ = ( unsafe { make_format_args_7 ( & mut i , & mut c , & mut p , ) } )  ;
+        let mut store: () = unimplemented!();
         const _: () = assert!(true, "");;
-        let mut format_args: () =
-            std_basic_format_args_std_basic_format_context_wchar_t_ptr__wchar_t__::new_3({
-                &store
-            });
+        let mut format_args: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_8() {
+pub unsafe fn test_2() {
     (unsafe { test_0() });
-    (unsafe { test_4() });
+    (unsafe { test_1() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -107,7 +92,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_8() });
+    (unsafe { test_2() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

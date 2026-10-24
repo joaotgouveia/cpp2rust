@@ -23,9 +23,7 @@ impl Default for A {
     }
 }
 pub unsafe fn test_0() -> () {
-    let mut p: () = std_unique_ptr_A__std_default_delete_A__::new({
-        (Box::leak(Box::new(A::new())) as *mut A)
-    });
+    let mut p: () = unimplemented!();
     unimplemented!();
     return true;
 }

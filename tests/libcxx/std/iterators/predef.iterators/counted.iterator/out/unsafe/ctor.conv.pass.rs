@@ -491,19 +491,13 @@ pub unsafe fn test_8() -> () {
         );;
     }
     {
-        let mut iter1: () = std_counted_iterator_ConvertibleTo_forward_iterator_int_ptr___::new_1(
-            { ConvertibleTo_forward_iterator_int_ptr__::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let iter1: () = std_counted_iterator_ConvertibleTo_forward_iterator_int_ptr___::new_1(
-            { ConvertibleTo_forward_iterator_int_ptr__::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let iter1: () = unimplemented!();
         let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();

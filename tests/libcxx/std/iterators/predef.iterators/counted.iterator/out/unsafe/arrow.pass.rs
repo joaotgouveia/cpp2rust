@@ -444,10 +444,7 @@ impl util_iterator_error {
 pub unsafe fn test_7() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
-        let mut iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
             unimplemented!();
@@ -459,10 +456,7 @@ pub unsafe fn test_7() -> () {
         const _: () = assert!(true, "noexcept(iter.operator->())");;
     }
     {
-        let iter: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "noexcept(iter.operator->())");;
     }

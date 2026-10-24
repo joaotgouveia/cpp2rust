@@ -804,28 +804,28 @@ pub static mut enable_borrowed_range_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 pub unsafe fn test_24() -> () {
     let mut a: () = unimplemented!();
-    let mut a1: () = (unsafe { a.next_13(None) });
+    let mut a1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut a5: () = (unsafe { a.next_13(Some(5_())) });
+    let mut a5: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut a4: () = (unsafe { a5.prev(None) });
+    let mut a4: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut b: () = unimplemented!();
     let mut b1: () = (unsafe { (*unimplemented!()).next_14(None) });
     unimplemented!();
     let mut c: () = unimplemented!();
-    let mut c1: () = (unsafe { c.prev(None) });
+    let mut c1: () = unimplemented!();
     unimplemented!();
-    let mut c2: () = (unsafe { c.prev(Some(4_())) });
+    let mut c2: () = unimplemented!();
     unimplemented!();
     let mut d: () = unimplemented!();
-    let mut d1: () = (*(unsafe { d.advance(4_()) })).clone();
+    let mut d1: () = (*unimplemented!()).clone();
     unimplemented!();
     unimplemented!();
-    let mut d2: () = (*(unsafe { d1.advance(-4_()) })).clone();
+    let mut d2: () = (*unimplemented!()).clone();
     unimplemented!();
     return true;
 }

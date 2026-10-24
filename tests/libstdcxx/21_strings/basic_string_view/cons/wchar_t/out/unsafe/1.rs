@@ -397,12 +397,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut istr07: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { 10_() },
-            { (122 as ()) },
-            None,
-        );
+    let mut istr07: () = unimplemented!();
     let mut str07: () = (unsafe { istr07() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

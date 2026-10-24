@@ -493,13 +493,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!();
             j.prefix_inc();
         }
-        (unsafe {
-            test_10(
-                p.as_mut_ptr(),
-                3_(),
-                std_unique_ptr_int__do_nothing_::new_1({ i.as_mut_ptr().offset((3_()) as isize) }),
-            )
-        });
+        (unsafe { test_10(p.as_mut_ptr(), 3_(), unimplemented!()) });
     }
     {
         let p: *const () = c"123456789".as_ptr();

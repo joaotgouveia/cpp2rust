@@ -771,14 +771,8 @@ pub unsafe fn test_22(mut n: (), x: *const ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut i: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_0 } , )
-    };
-    let mut e: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_1 } , )
-    };
+    let mut i: () = unimplemented!();
+    let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
         unimplemented!();
         unimplemented!();
@@ -789,14 +783,8 @@ pub unsafe fn test_23(mut n: (), x: *const ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut i: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_2 } , )
-    };
-    let mut e: () = {
-        let mut __tmp_3: () = unimplemented!();
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_3 } , )
-    };
+    let mut i: () = unimplemented!();
+    let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
         unimplemented!();
         unimplemented!();
@@ -807,14 +795,8 @@ pub unsafe fn test_24(mut n: (), x: *const ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut i: () = {
-        let mut __tmp_4: () = unimplemented!();
-        std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_4 } , )
-    };
-    let mut e: () = {
-        let mut __tmp_5: () = unimplemented!();
-        std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_5 } , )
-    };
+    let mut i: () = unimplemented!();
+    let mut e: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
         unimplemented!();
         unimplemented!();

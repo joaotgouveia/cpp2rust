@@ -64,21 +64,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let _c: *mut () = &mut c2;
             let _i: () = unimplemented!();
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         (unsafe {
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             test_0(unimplemented!(), 0_(), _x1, _x2, _x3, &c2)
         });
         unimplemented!();
@@ -96,21 +90,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let _c: *mut () = &mut c2;
             let _i: () = unimplemented!();
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         (unsafe {
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             test_0(unimplemented!(), 1_(), _x1, _x2, _x3, &c2)
         });
         unimplemented!();
@@ -128,21 +116,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let _c: *mut () = &mut c2;
             let _i: () = unimplemented!();
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         (unsafe {
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             test_0(unimplemented!(), 2_(), _x1, _x2, _x3, &c2)
         });
         unimplemented!();
@@ -160,21 +142,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let _c: *mut () = &mut c2;
             let _i: () = unimplemented!();
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             insert3at_1(_c, _i, _x1, _x2, _x3)
         });
         (unsafe {
-            let _x1: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((3_()) as isize) });
-            let _x2: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((4_()) as isize) });
-            let _x3: () =
-                std_unique_ptr_int__do_nothing_::new({ x.as_mut_ptr().offset((5_()) as isize) });
+            let _x1: () = unimplemented!();
+            let _x2: () = unimplemented!();
+            let _x3: () = unimplemented!();
             test_0(unimplemented!(), 3_(), _x1, _x2, _x3, &c2)
         });
     }

@@ -263,8 +263,7 @@ fn main_0() -> () {
     let sum: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let e: Ptr<()> = unimplemented!();
-        let __rhs = unimplemented!();
-        (*sum.borrow_mut()) = __rhs;
+        unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

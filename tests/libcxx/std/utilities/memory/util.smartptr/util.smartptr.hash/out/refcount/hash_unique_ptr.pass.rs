@@ -3028,7 +3028,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut ptr: Ptr<()> = Ptr::alloc(Default::default());
-        let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({ (ptr).clone() });
+        let mut p: () = unimplemented!();
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut h: () = unimplemented!();
         unimplemented!();

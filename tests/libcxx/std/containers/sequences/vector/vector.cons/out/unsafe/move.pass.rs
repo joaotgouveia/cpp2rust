@@ -1159,10 +1159,7 @@ pub unsafe fn tests_46() -> () {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
         let mut c1: () = unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___wrap_iter_const_int_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let mut i: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
@@ -1192,12 +1189,7 @@ pub unsafe fn tests_46() -> () {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
         let mut c1: () = unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_int__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_1 },
-            )
-        };
+        let mut i: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
@@ -1227,10 +1219,7 @@ pub unsafe fn tests_46() -> () {
         let mut a1: [(); 5] = [1_(), 3_(), 7_(), 9_(), 10_()];
         let mut c1: () = unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std___wrap_iter_const_int_ptr_::new_1({ &mut __tmp_2 })
-        };
+        let mut i: () = unimplemented!();
         let mut c2: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
@@ -1244,8 +1233,8 @@ pub unsafe fn tests_46() -> () {
         unimplemented!();
         unimplemented!();
         {
-            let mut __tmp_3: test_allocator_int_ = unimplemented!();
-            let a: *const test_allocator_int_ = &mut __tmp_3;
+            let mut __tmp_0: test_allocator_int_ = unimplemented!();
+            let a: *const test_allocator_int_ = &mut __tmp_0;
             unimplemented!();
             unimplemented!();
         }
@@ -1256,12 +1245,12 @@ pub unsafe fn tests_46() -> () {
         unimplemented!();
         unimplemented!();
         {
-            let mut __tmp_4: test_allocator_int_ = unimplemented!();
-            let a1: *const test_allocator_int_ = &mut __tmp_4;
+            let mut __tmp_1: test_allocator_int_ = unimplemented!();
+            let a1: *const test_allocator_int_ = &mut __tmp_1;
             unimplemented!();
             unimplemented!();
-            let mut __tmp_5: test_allocator_int_ = unimplemented!();
-            let a2: *const test_allocator_int_ = &mut __tmp_5;
+            let mut __tmp_2: test_allocator_int_ = unimplemented!();
+            let a2: *const test_allocator_int_ = &mut __tmp_2;
             unimplemented!();
             unimplemented!();
             unimplemented!();

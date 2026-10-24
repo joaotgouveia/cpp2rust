@@ -262,7 +262,7 @@ pub struct A {}
 pub unsafe fn test01_10() -> () {
     let mut p: () = unimplemented!();
     let mut buf: () = unimplemented!();
-    write!(buf, "{:}", p,);
+    unimplemented!();
     let s: () = unimplemented!();
     unimplemented!();
     unimplemented!();

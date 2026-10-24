@@ -33,7 +33,7 @@ impl DestroyTracker {
         return &mut (*(self as *mut DestroyTracker));
     }
     pub unsafe fn destructor(&mut self) {
-        unimplemented!() = true;
+        unimplemented!();
     }
 }
 impl Clone for DestroyTracker {

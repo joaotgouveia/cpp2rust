@@ -796,7 +796,7 @@ pub unsafe fn testOne_26() {
                 .spec::<fn(*mut [(); 8]) -> ()>(0)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -828,7 +828,7 @@ pub unsafe fn testOne_26() {
                 .spec::<fn(*mut [(); 3]) -> ()>(1)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -852,7 +852,7 @@ pub unsafe fn testOne_26() {
                 .spec::<fn(*mut [(); 4]) -> ()>(2)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -899,7 +899,7 @@ pub unsafe fn testOne_27() {
                 .spec::<fn(*mut [(); 8]) -> ()>(0)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -931,7 +931,7 @@ pub unsafe fn testOne_27() {
                 .spec::<fn(*mut [(); 3]) -> ()>(1)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -955,7 +955,7 @@ pub unsafe fn testOne_27() {
                 .spec::<fn(*mut [(); 4]) -> ()>(2)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1002,7 +1002,7 @@ pub unsafe fn testOne_28() {
                 .spec::<fn(*mut [(); 8]) -> ()>(0)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1034,7 +1034,7 @@ pub unsafe fn testOne_28() {
                 .spec::<fn(*mut [(); 3]) -> ()>(1)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1058,7 +1058,7 @@ pub unsafe fn testOne_28() {
                 .spec::<fn(*mut [(); 4]) -> ()>(2)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1105,7 +1105,7 @@ pub unsafe fn testOne_29() {
                 .spec::<fn(*mut [(); 8]) -> ()>(0)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1137,7 +1137,7 @@ pub unsafe fn testOne_29() {
                 .spec::<fn(*mut [(); 3]) -> ()>(1)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1161,7 +1161,7 @@ pub unsafe fn testOne_29() {
                 .spec::<fn(*mut [(); 4]) -> ()>(2)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1208,7 +1208,7 @@ pub unsafe fn testOne_30() {
                 .spec::<fn(*mut [(); 8]) -> ()>(0)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1240,7 +1240,7 @@ pub unsafe fn testOne_30() {
                 .spec::<fn(*mut [(); 3]) -> ()>(1)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());
@@ -1264,7 +1264,7 @@ pub unsafe fn testOne_30() {
                 .spec::<fn(*mut [(); 4]) -> ()>(2)
                 .call(&mut buffer)
         });
-        let mut sv : () = std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { & mut input } , { ( - 1_()  as () )  } , )  ;
+        let mut sv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it1: *mut () = &mut (*unimplemented!());

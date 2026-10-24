@@ -13,8 +13,7 @@ pub struct multiply {}
 #[byte_size(1)]
 pub struct plus_one {}
 pub fn test_0() -> () {
-    let g: Value<std___bind_multiply__int__const_std_placeholders___ph_1__ref_> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     return true;

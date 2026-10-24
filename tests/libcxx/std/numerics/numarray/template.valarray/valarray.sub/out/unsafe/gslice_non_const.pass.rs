@@ -144,7 +144,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut v1: () = unimplemented!();
         let mut sz: [(); 3] = [2_(), 4_(), 3_()];
         let mut st: [(); 3] = [19_(), 4_(), 1_()];
-        let mut v: () = (unsafe { (unimplemented!())[(unimplemented!()) as usize]() });
+        let mut v: () = (unsafe { unimplemented!()() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

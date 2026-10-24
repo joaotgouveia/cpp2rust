@@ -262,250 +262,157 @@ pub unsafe fn test_string_15() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_1 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_2 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_3 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_4: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_4 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_5: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_5 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_6: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_6 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_7: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_7 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_8: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_8 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_9: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_9 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_10: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_10 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_11: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_11 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_12: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_12 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_13: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_13 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_14: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_14 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_15: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_15 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_16: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_16 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_17: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_17 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_18: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_18 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_19: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_19 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_20: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_20 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_21: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_21 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_22: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_22 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_23: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_23 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_24: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_24 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_25: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_25 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_26: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_26 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_27: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_27 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_28: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_28 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_29: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_29 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_30: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_30 })
-        };
+        let _p: () = unimplemented!();
         test_12(_s, _p, ('x' as ()), unimplemented!())
     });
 }
@@ -513,312 +420,157 @@ pub unsafe fn test_string_16() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_31: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_31 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_32: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_32 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_33: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_33 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_34: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_34 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_35: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_35 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_36: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_36 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_37: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_37 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_38: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_38 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_39: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_39 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_40: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_40 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_41: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_41 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_42: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_42 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_43: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_43 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_44: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_44 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_45: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_45 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_46: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_46 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_47: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_47 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_48: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_48 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_49: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_49 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_50: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_50 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_51: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_51 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_52: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_52 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_53: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_53 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_54: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_54 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_55: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_55 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_56: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_56 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_57: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_57 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_58: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_58 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_59: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_59 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_60: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_60 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_61: () = unimplemented!();
-            std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1(
-                { &mut __tmp_61 },
-            )
-        };
+        let _p: () = unimplemented!();
         test_13(_s, _p, ('x' as ()), unimplemented!())
     });
 }
@@ -826,250 +578,157 @@ pub unsafe fn test_string_17() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_62: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_62 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_63: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_63 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_64: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_64 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_65: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_65 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_66: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_66 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_67: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_67 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_68: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_68 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_69: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_69 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_70: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_70 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_71: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_71 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_72: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_72 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_73: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_73 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_74: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_74 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_75: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_75 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_76: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_76 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_77: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_77 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_78: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_78 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_79: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_79 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_80: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_80 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_81: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_81 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_82: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_82 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_83: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_83 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_84: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_84 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_85: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_85 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_86: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_86 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_87: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_87 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_88: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_88 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_89: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_89 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_90: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_90 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_91: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_91 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
-        let _p: () = {
-            let mut __tmp_92: () = unimplemented!();
-            std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_92 })
-        };
+        let _p: () = unimplemented!();
         test_14(_s, _p, ('x' as ()), unimplemented!())
     });
 }

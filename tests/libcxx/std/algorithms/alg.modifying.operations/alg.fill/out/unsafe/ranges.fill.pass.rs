@@ -1757,10 +1757,7 @@ pub unsafe fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___range: () = unimplemented!();
                 let mut ___value: () = true;
@@ -1774,10 +1771,7 @@ pub unsafe fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = false;
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___range: () = unimplemented!();
                 let mut ___value: () = true;
@@ -1791,16 +1785,7 @@ pub unsafe fn test_vector_bool_26(mut N: ()) -> () {
         {
             let mut in_: () = unimplemented!();
             let mut expected: () = unimplemented!();
-            unimplemented!() = {
-                unimplemented!() = {
-                    unimplemented!() = {
-                        unimplemented!() = false;
-                        unimplemented!()
-                    };
-                    unimplemented!()
-                };
-                unimplemented!()
-            };
+            unimplemented!();
             (unsafe {
                 let mut ___range: () = unimplemented!();
                 let mut ___value: () = true;

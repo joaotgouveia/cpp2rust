@@ -10,9 +10,9 @@ pub fn test_0() -> () {
     let mut vec_: () = unimplemented!();
     unimplemented!();
     let ref_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ref2: Value<()> = Rc::new(RefCell::new((*ref_.borrow()).clone()));
+    let ref2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    ({ (*ref_.borrow()).flip() });
+    unimplemented!();
     unimplemented!();
     return true;
 }

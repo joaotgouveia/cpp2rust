@@ -492,12 +492,7 @@ pub fn test_7() -> () {
         const _: () = assert!(true, "noexcept(iter.count())");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 8_();
         'loop_: while (i != 0_()) {
             unimplemented!();
@@ -509,12 +504,7 @@ pub fn test_7() -> () {
         const _: () = assert!(true, "noexcept(iter.count())");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 8_();
         'loop_: while (i != 0_()) {
             unimplemented!();
@@ -525,16 +515,7 @@ pub fn test_7() -> () {
         }
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -547,42 +528,15 @@ pub fn test_7() -> () {
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                {
-                    forward_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((1_()) as isize)
-                    })
-                },
-                { 7_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                {
-                    contiguous_iterator_int_ptr_::new_2({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return true;

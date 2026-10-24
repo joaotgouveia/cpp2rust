@@ -6,19 +6,24 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0() -> () {
+pub type anon_0 = ();
+pub const anon_0_value: anon_0 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_macros_detail_is_same_std___bit_const_reference_std_vector_bool__std_allocator_bool_____std___bit_const_reference_std_vector_bool__std_allocator_bool____
+{}
+pub fn test_1() -> () {
     const _: () = assert!(true, "");;
     let mut vec_: () = unimplemented!();
     unimplemented!();
     let ref_: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<std___bit_reference_std_vector_bool__std_allocator_bool____true_> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         std___bit_const_reference_std_vector_bool__std_allocator_bool___::new_1({
             __tmp_0.as_pointer()
         })
     }));
     unimplemented!();
-    unimplemented!() = false;
+    unimplemented!();
     unimplemented!();
     return true;
 }
@@ -42,7 +47,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_0() });
+    ({ test_1() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

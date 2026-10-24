@@ -196,12 +196,17 @@ pub unsafe fn test_8(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_tuple_int__  = ( unsafe { make_format_args_9 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_1 ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_9(mut expected: (), mut arg: ()) {
+    let formatter: () = unimplemented!();
+    let mut result: () = unimplemented!();
+    let mut out: () = unimplemented!();
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
@@ -209,12 +214,17 @@ pub unsafe fn test_10(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_tuple_int__char__  = ( unsafe { make_format_args_11 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_2 ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_11(mut expected: (), mut arg: ()) {
+    let formatter: () = unimplemented!();
+    let mut result: () = unimplemented!();
+    let mut out: () = unimplemented!();
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
@@ -222,12 +232,17 @@ pub unsafe fn test_12(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_pair_int__char__  = ( unsafe { make_format_args_13 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_3 ( { & mut __tmp_2 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_13(mut expected: (), mut arg: ()) {
+    let formatter: () = unimplemented!();
+    let mut result: () = unimplemented!();
+    let mut out: () = unimplemented!();
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
@@ -235,152 +250,89 @@ pub unsafe fn test_14(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_tuple_int__char__bool__  = ( unsafe { make_format_args_15 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_4 ( { & mut __tmp_3 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_16(mut expected: (), mut arg: ()) {
+pub unsafe fn test_15(mut expected: (), mut arg: ()) {
     let formatter: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_4 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_tuple_int__  = ( unsafe { make_format_args_17 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_1 ( { & mut __tmp_4 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_18(mut expected: (), mut arg: ()) {
-    let formatter: () = unimplemented!();
-    let mut result: () = unimplemented!();
-    let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_5 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_tuple_int__wchar_t__  = ( unsafe { make_format_args_19 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_2 ( { & mut __tmp_5 } , )
-        })
-    });
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_20(mut expected: (), mut arg: ()) {
-    let formatter: () = unimplemented!();
-    let mut result: () = unimplemented!();
-    let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_6 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_pair_int__wchar_t__  = ( unsafe { make_format_args_21 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_3 ( { & mut __tmp_6 } , )
-        })
-    });
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_22(mut expected: (), mut arg: ()) {
-    let formatter: () = unimplemented!();
-    let mut result: () = unimplemented!();
-    let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_7 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_tuple_int__wchar_t__bool__  = ( unsafe { make_format_args_23 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_4 ( { & mut __tmp_7 } , )
-        })
-    });
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_assure_parse_is_called_24(mut fmt: ()) {
+pub unsafe fn test_assure_parse_is_called_16(mut fmt: ()) {
     let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_8 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_pair_parse_call_validator__parse_call_validator__  = ( unsafe { make_format_args_25 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_5 ( { & mut __tmp_8 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_assure_parse_is_called_26(mut fmt: ()) {
+pub unsafe fn test_assure_parse_is_called_17(mut fmt: ()) {
     let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_9 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_pair_parse_call_validator__parse_call_validator__  = ( unsafe { make_format_args_27 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_5 ( { & mut __tmp_9 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_assure_parse_is_called_28() {
+pub unsafe fn test_assure_parse_is_called_18() {
     let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_4(out.clone(), {
-            let mut __tmp_10 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___std_pair_parse_call_validator__parse_call_validator__  = ( unsafe { make_format_args_25 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new_5 ( { & mut __tmp_10 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
     {
         let formatter: () = unimplemented!();
     }
-    (unsafe { test_assure_parse_is_called_24(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_24(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_24(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_24(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_24(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_16(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_16(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_16(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_16(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_16(unimplemented!()) });
 }
-pub unsafe fn test_assure_parse_is_called_29() {
+pub unsafe fn test_assure_parse_is_called_19() {
     let mut arg: () = unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_6(out.clone(), {
-            let mut __tmp_11 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___std_pair_parse_call_validator__parse_call_validator__  = ( unsafe { make_format_args_27 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new_5 ( { & mut __tmp_11 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     {
         let formatter: () = unimplemented!();
     }
-    (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_26(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_17(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_17(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_17(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_17(unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_17(unimplemented!()) });
 }
-pub unsafe fn test_30() {
+pub unsafe fn test_20() {
     (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_9(unimplemented!(), unimplemented!()) });
     (unsafe { test_10(unimplemented!(), unimplemented!()) });
+    (unsafe { test_11(unimplemented!(), unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_18() });
+}
+pub unsafe fn test_21() {
     (unsafe { test_12(unimplemented!(), unimplemented!()) });
+    (unsafe { test_13(unimplemented!(), unimplemented!()) });
     (unsafe { test_14(unimplemented!(), unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_28() });
+    (unsafe { test_15(unimplemented!(), unimplemented!()) });
+    (unsafe { test_assure_parse_is_called_19() });
 }
-pub unsafe fn test_31() {
-    (unsafe { test_16(unimplemented!(), unimplemented!()) });
-    (unsafe { test_18(unimplemented!(), unimplemented!()) });
-    (unsafe { test_20(unimplemented!(), unimplemented!()) });
-    (unsafe { test_22(unimplemented!(), unimplemented!()) });
-    (unsafe { test_assure_parse_is_called_29() });
-}
-pub unsafe fn test_32() {
-    (unsafe { test_30() });
-    (unsafe { test_31() });
+pub unsafe fn test_22() {
+    (unsafe { test_20() });
+    (unsafe { test_21() });
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -398,7 +350,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_32() });
+    (unsafe { test_22() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -23,18 +23,14 @@ pub unsafe fn test_3(mut expected: (), mut fmt: (), mut arg: color, mut offset: 
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___color_  = ( unsafe { make_format_args_4 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     (unsafe {
         std_formatter_color__char_ :: format_1_class_std_basic_format_context_class_std_back_insert_iterator_std_string___char_ ( & formatter  , arg , & mut format_ctx , )
     });
     unimplemented!();
 }
-pub unsafe fn test_termination_condition_5(mut expected: (), mut f: (), mut arg: color) {
+pub unsafe fn test_termination_condition_4(mut expected: (), mut f: (), mut arg: color) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_3(unimplemented!(), unimplemented!(), arg, 1_()) });
@@ -57,9 +53,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_black) });
-    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_red) });
-    (unsafe { test_termination_condition_5(unimplemented!(), unimplemented!(), color_gold) });
+    (unsafe { test_termination_condition_4(unimplemented!(), unimplemented!(), color_black) });
+    (unsafe { test_termination_condition_4(unimplemented!(), unimplemented!(), color_red) });
+    (unsafe { test_termination_condition_4(unimplemented!(), unimplemented!(), color_gold) });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]

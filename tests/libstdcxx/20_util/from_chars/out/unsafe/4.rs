@@ -1261,11 +1261,7 @@ pub unsafe fn test03_13() {
     }
 }
 pub unsafe fn test04_14() {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1000_() },
-        { ('0' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let mut d: () = 1_f64;
     let mut res: () = unimplemented!();
     unimplemented!();
@@ -1448,11 +1444,7 @@ pub unsafe fn test04_14() {
     }
 }
 pub unsafe fn to_string_15(mut val: ()) -> () {
-    let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { ((unimplemented!()) + (2_())) },
-        { ('0' as ()) },
-        None,
-    );
+    let mut s: () = unimplemented!();
     let mut iter: () = unimplemented!();
     'loop_: while ((val) != (0_())) {
         (*unimplemented!()) = ('0' as ()).wrapping_add(((val).wrapping_rem(10_())));

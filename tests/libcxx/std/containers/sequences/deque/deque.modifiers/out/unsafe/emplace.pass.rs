@@ -598,10 +598,7 @@ pub unsafe fn make_22(mut size: (), mut start: ()) -> () {
 }
 pub unsafe fn test_23(mut P: (), c1: *mut ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___deque_iterator_Emplaceable__const_Emplaceable_ptr__const_Emplaceable_ref__const_Emplaceable_ptrconst_ptr__long__256_ :: new_1 ( { & mut __tmp_0 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -610,10 +607,7 @@ pub unsafe fn test_23(mut P: (), c1: *mut ()) {
 }
 pub unsafe fn test_24(mut P: (), c1: *mut ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___deque_iterator_Emplaceable__min_pointer_const_Emplaceable__std_integral_constant_unsigned_long__0____const_Emplaceable_ref__min_pointer_const_min_pointer_const_Emplaceable__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__256_ :: new_1 ( { & mut __tmp_1 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -622,10 +616,7 @@ pub unsafe fn test_24(mut P: (), c1: *mut ()) {
 }
 pub unsafe fn test_25(mut P: (), c1: *mut ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___deque_iterator_Emplaceable__const_Emplaceable_ptr__const_Emplaceable_ref__const_Emplaceable_ptrconst_ptr__long__256_ :: new_1 ( { & mut __tmp_2 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

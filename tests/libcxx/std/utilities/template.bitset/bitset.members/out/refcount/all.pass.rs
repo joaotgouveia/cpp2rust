@@ -29,7 +29,7 @@ pub fn test_all_2() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -40,7 +40,7 @@ pub fn test_all_3() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -51,7 +51,7 @@ pub fn test_all_4() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -62,7 +62,7 @@ pub fn test_all_5() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -73,7 +73,7 @@ pub fn test_all_6() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -84,7 +84,7 @@ pub fn test_all_7() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }
@@ -95,7 +95,7 @@ pub fn test_all_8() {
     unimplemented!();
     unimplemented!();
     {
-        unimplemented!() = false;
+        unimplemented!();
         unimplemented!();
     }
 }

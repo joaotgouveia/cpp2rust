@@ -479,22 +479,8 @@ pub fn test_11() -> () {
         );;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_AssignableFromIter_::new_1(
-                { AssignableFromIter::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                {
-                    forward_iterator_int_ptr_::new_1({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let result: Ptr<()> = (unimplemented!());
@@ -504,22 +490,8 @@ pub fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_AssignableFromIter_::new_1(
-                { AssignableFromIter::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                {
-                    forward_iterator_int_ptr_::new_1({
-                        (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize)
-                    })
-                },
-                { 6_() },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let result: Ptr<()> = (unimplemented!());
@@ -529,26 +501,8 @@ pub fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>),
-                    }
-                },
-                { (8_() as ()) },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let result: Ptr<()> = ((*iter1.borrow_mut()) = (*iter2.borrow()).clone());
@@ -558,26 +512,8 @@ pub fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>),
-                    }
-                },
-                { (8_() as ()) },
-            ),
-        ));
-        let iter2: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>).offset((2_()) as isize),
-                    }
-                },
-                { (6_() as ()) },
-            ),
-        ));
+        let iter1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let iter2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         let result: Ptr<()> = ((*iter1.borrow_mut()) = (*iter2.borrow()).clone());

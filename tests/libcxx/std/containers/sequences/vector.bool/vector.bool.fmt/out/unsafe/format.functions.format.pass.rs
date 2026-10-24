@@ -188,34 +188,14 @@ pub unsafe fn fmt_invalid_types_14(mut valid: ()) -> () {
     });
     return unimplemented!();
 }
-static mut result_2: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_4: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 1_() },
-        { (':' as ()) },
-        None,
-    )
-});
-static mut result_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe {
-    std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-        { 2_() },
-        { (':' as ()) },
-        None,
-    )
-});
+static mut result_2: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_4: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_6: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
+static mut result_8: std::cell::LazyCell<()> =
+    std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn fmt_invalid_types_15(mut valid: ()) -> () {
     return (unsafe { fmt_invalid_types_10(unimplemented!()) });
 }
@@ -235,12 +215,8 @@ pub unsafe fn format_test_vector_bool_19(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_0
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -252,12 +228,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_1
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -269,12 +241,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_2: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_2
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -286,12 +254,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_3: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_3
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -303,12 +267,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_4: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_4
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -320,12 +280,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_5: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_5
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -337,12 +293,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_6: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_6
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -354,12 +306,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_7: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_7
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -373,12 +321,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_8: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_8
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -392,12 +336,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_9: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_9
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -411,12 +351,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_10: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_10
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -493,12 +429,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_11: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_11
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -529,8 +461,8 @@ pub unsafe fn format_test_vector_bool_19(
             .spec::<fn((), (), *mut ())>(0)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_12: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_12;
+    let mut __tmp_0: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -543,12 +475,8 @@ pub unsafe fn format_test_vector_bool_19(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_13: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_13
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -560,12 +488,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_14: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_14
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -577,12 +501,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_15: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_15
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -594,12 +514,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_16: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_16
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -611,12 +527,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_17: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_17
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -630,12 +542,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_18: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_18
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -649,12 +557,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_19: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_19
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -668,12 +572,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_20: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_20
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -722,12 +622,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_21: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_21
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -739,12 +635,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_22: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_22
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -756,12 +648,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_23: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_23
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -780,12 +668,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_24: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_24
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -804,12 +688,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_25: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_25
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -826,8 +706,8 @@ pub unsafe fn format_test_vector_bool_19(
             .spec::<fn((), (), *mut ())>(0)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_26: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_26;
+    let mut __tmp_1: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -840,12 +720,8 @@ pub unsafe fn format_test_vector_bool_19(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_27: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_27
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -857,12 +733,8 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_28: () = unimplemented!();
-            std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_28
-            })
-        };
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         check
@@ -876,7 +748,7 @@ pub unsafe fn format_test_vector_bool_19(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_  = { let mut __tmp_29 : ()  = unimplemented!() ; std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_ :: new ( { & mut __tmp_29 } , )  } ;
+        let _fmt: std_basic_format_string_char__std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
@@ -913,12 +785,8 @@ pub unsafe fn format_test_vector_bool_20(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_30: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_30
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -930,12 +798,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_31: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_31
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -947,12 +811,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_32: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_32
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -964,12 +824,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_33: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_33
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -981,12 +837,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_34: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_34
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -998,12 +850,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_35: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_35
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1015,12 +863,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_36: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_36
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1032,7 +876,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_37 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_37 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
@@ -1046,7 +890,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_38 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_38 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
@@ -1060,7 +904,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_39 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_39 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
@@ -1074,7 +918,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_40 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_40 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check
@@ -1151,12 +995,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_41: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_41
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1187,8 +1027,8 @@ pub unsafe fn format_test_vector_bool_20(
             .spec::<fn((), (), *const ())>(2)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_42: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_42;
+    let mut __tmp_2: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_2;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1201,12 +1041,8 @@ pub unsafe fn format_test_vector_bool_20(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_43: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_43
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1218,12 +1054,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_44: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_44
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1235,12 +1067,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_45: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_45
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1252,12 +1080,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_46: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_46
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1269,7 +1093,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_47 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_47 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
@@ -1283,7 +1107,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_48 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_48 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
@@ -1297,7 +1121,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_49 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_49 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
@@ -1311,7 +1135,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_50 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_50 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check
@@ -1360,12 +1184,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_51: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_51
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1377,12 +1197,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_52: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_52
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1394,12 +1210,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_53: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_53
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1418,12 +1230,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_54: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_54
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1442,12 +1250,8 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_55: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_55
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1464,8 +1268,8 @@ pub unsafe fn format_test_vector_bool_20(
             .spec::<fn((), (), *const ())>(2)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_56: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_56;
+    let mut __tmp_3: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_3;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1478,12 +1282,8 @@ pub unsafe fn format_test_vector_bool_20(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_57: () = unimplemented!();
-            std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_57
-            })
-        };
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -1495,7 +1295,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_58 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_58 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         check
@@ -1509,7 +1309,7 @@ pub unsafe fn format_test_vector_bool_20(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_  = { let mut __tmp_59 : ()  = unimplemented!() ; std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_ :: new ( { & mut __tmp_59 } , )  } ;
+        let _fmt: std_basic_format_string_char__const_std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
@@ -1538,12 +1338,8 @@ pub unsafe fn format_test_vector_bool_21(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_60: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_60
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1555,12 +1351,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_61: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_61
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1572,12 +1364,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_62: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_62
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1589,12 +1377,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_63: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_63
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1606,12 +1390,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_64: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_64
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1623,12 +1403,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_65: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_65
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1640,12 +1416,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_66: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_66
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1657,12 +1429,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_67: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_67
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -1676,12 +1444,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_68: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_68
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -1695,12 +1459,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_69: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_69
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -1714,12 +1474,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_70: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_70
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 24_();
         check
@@ -1796,12 +1552,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_71: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_71
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1832,8 +1584,8 @@ pub unsafe fn format_test_vector_bool_21(
             .spec::<fn((), (), *mut ())>(4)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_72: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_72;
+    let mut __tmp_4: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_4;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -1846,12 +1598,8 @@ pub unsafe fn format_test_vector_bool_21(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_73: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_73
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1863,12 +1611,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_74: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_74
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1880,12 +1624,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_75: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_75
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1897,12 +1637,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_76: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_76
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -1914,12 +1650,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_77: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_77
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -1933,12 +1665,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_78: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_78
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -1952,12 +1680,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_79: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_79
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -1971,12 +1695,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_80: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_80
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 7_();
         check
@@ -2025,12 +1745,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_81: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_81
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2042,12 +1758,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_82: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_82
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2059,12 +1771,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_83: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_83
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2083,12 +1791,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_84: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_84
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2107,12 +1811,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_85: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_85
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2129,8 +1829,8 @@ pub unsafe fn format_test_vector_bool_21(
             .spec::<fn((), (), *mut ())>(4)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_86: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_86;
+    let mut __tmp_5: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_5;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2143,12 +1843,8 @@ pub unsafe fn format_test_vector_bool_21(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ = {
-            let mut __tmp_87: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_::new({
-                &mut __tmp_87
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref_ =
+            unimplemented!();
         let _args: *mut () = input;
         check
             .spec::<fn(
@@ -2160,12 +1856,8 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ = {
-            let mut __tmp_88: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_::new({
-                &mut __tmp_88
-            })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int_ =
+            unimplemented!();
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         check
@@ -2179,7 +1871,7 @@ pub unsafe fn format_test_vector_bool_21(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_  = { let mut __tmp_89 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_ :: new ( { & mut __tmp_89 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
         let _args_2: *mut () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();
@@ -2208,7 +1900,7 @@ pub unsafe fn format_test_vector_bool_22(
 ) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_90 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_90 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2220,7 +1912,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_91 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_91 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2232,7 +1924,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_92 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_92 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2244,7 +1936,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_93 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_93 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2256,7 +1948,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_94 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_94 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2268,7 +1960,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_95 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_95 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2280,7 +1972,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_96 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_96 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2292,28 +1984,28 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_97 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_97 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_98 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_98 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_99 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_99 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_100 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_100 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 24_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2383,7 +2075,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_101 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_101 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2414,8 +2106,8 @@ pub unsafe fn format_test_vector_bool_22(
             .spec::<fn((), (), *const ())>(6)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_102: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_102;
+    let mut __tmp_6: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_6;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2428,7 +2120,7 @@ pub unsafe fn format_test_vector_bool_22(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_103 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_103 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2440,7 +2132,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_104 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_104 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2452,7 +2144,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_105 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_105 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2464,7 +2156,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_106 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_106 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2476,28 +2168,28 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_107 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_107 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_108 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_108 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_109 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_109 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_110 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_110 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 7_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
@@ -2539,7 +2231,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_111 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_111 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2551,7 +2243,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_112 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_112 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2563,7 +2255,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_113 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_113 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2582,7 +2274,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_114 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_114 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2601,7 +2293,7 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_115 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_115 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2618,8 +2310,8 @@ pub unsafe fn format_test_vector_bool_22(
             .spec::<fn((), (), *const ())>(6)
             .call(unimplemented!(), _arg1, _arg2)
     });
-    let mut __tmp_116: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_116;
+    let mut __tmp_7: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_7;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut fmt: () = (unsafe { (*unimplemented!())() });
         (unsafe {
@@ -2632,7 +2324,7 @@ pub unsafe fn format_test_vector_bool_22(
     }
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = { let mut __tmp_117 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_ :: new ( { & mut __tmp_117 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref_  = unimplemented!() ;
         let _args: *const () = input;
         check
             .spec::<fn(
@@ -2644,14 +2336,14 @@ pub unsafe fn format_test_vector_bool_22(
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = { let mut __tmp_118 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ :: new ( { & mut __tmp_118 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int_ ,*const () ,*mut () ,)>(10) .call ( _expected , _fmt , _args_2 , & mut _args_3 , )
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_  = { let mut __tmp_119 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_ :: new ( { & mut __tmp_119 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__const_std_vector_bool__std_allocator_bool___ref__int__int_  = unimplemented!() ;
         let _args_2: *const () = input;
         let mut _args_3: () = 32_();
         let mut _args_4: () = 7_();

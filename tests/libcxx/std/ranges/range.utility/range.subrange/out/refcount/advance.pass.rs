@@ -759,13 +759,13 @@ thread_local!(
 );
 pub fn test_24() -> () {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a1: Value<()> = Rc::new(RefCell::new(({ (*a.borrow()).next_13(None) })));
+    let a1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let a5: Value<()> = Rc::new(RefCell::new(({ (*a.borrow()).next_13(Some(5_())) })));
+    let a5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let a4: Value<()> = Rc::new(RefCell::new(({ (*a5.borrow()).prev(None) })));
+    let a4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -774,19 +774,15 @@ pub fn test_24() -> () {
     ));
     unimplemented!();
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let c1: Value<()> = Rc::new(RefCell::new(({ (*c.borrow()).prev(None) })));
+    let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let c2: Value<()> = Rc::new(RefCell::new(({ (*c.borrow()).prev(Some(4_())) })));
+    let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d1: Value<()> = Rc::new(RefCell::new(
-        (*({ (*d.borrow()).advance(4_()) }).upgrade().deref()).clone(),
-    ));
+    let d1: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
     unimplemented!();
     unimplemented!();
-    let d2: Value<()> = Rc::new(RefCell::new(
-        (*({ (*d1.borrow()).advance(-4_()) }).upgrade().deref()).clone(),
-    ));
+    let d2: Value<()> = Rc::new(RefCell::new((*unimplemented!().upgrade().deref()).clone()));
     unimplemented!();
     return true;
 }

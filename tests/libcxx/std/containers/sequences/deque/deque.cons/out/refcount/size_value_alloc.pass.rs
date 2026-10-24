@@ -236,14 +236,8 @@ pub fn test_17(mut n: (), x: Ptr<()>, a: Ptr<()>) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-    }));
-    let e: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
         unimplemented!();
         unimplemented!();
@@ -255,14 +249,8 @@ pub fn test_18(mut n: (), x: Ptr<()>, a: Ptr<min_allocator_int_>) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_2.as_pointer() } , )
-    }));
-    let e: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_3.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while !(unimplemented!()) {
         unimplemented!();
         unimplemented!();

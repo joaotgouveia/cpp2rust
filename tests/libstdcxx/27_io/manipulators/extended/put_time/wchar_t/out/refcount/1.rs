@@ -261,7 +261,7 @@ pub fn test01_10() {
     let time1: Value<::libc::tm> = Rc::new(RefCell::new(
         ({ test_tm_11(0_(), 0_(), 12_(), 4_(), 3_(), 71_(), 0_(), 93_(), 0_()) }),
     ));
-    write!(oss.as_pointer(), "{:}", unimplemented!(),);
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

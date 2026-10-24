@@ -243,25 +243,21 @@ pub unsafe fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_5(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -345,7 +341,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -355,7 +351,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -423,7 +419,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_eq_9(a: *const test_equal_to_int_, b: *const test_equal_to_int_) -> () {
+pub unsafe fn operator_eq_8(a: *const test_equal_to_int_, b: *const test_equal_to_int_) -> () {
     return (((*a).data_) == ((*b).data_));
 }
 #[repr(C)]
@@ -443,7 +439,7 @@ impl test_equal_to_int_ {
 impl std::cmp::PartialEq for test_equal_to_int_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_9(
+            operator_eq_8(
                 self as *const test_equal_to_int_,
                 other as *const test_equal_to_int_,
             )
@@ -535,21 +531,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_10: std::cell::LazyCell<()> =
+pub static mut destructed_value_9: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_11: std::cell::LazyCell<()> =
+pub static mut moved_value_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_11(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_13(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_12(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_12(_x, _y)
+        operator_eq_11(_x, _y)
     });
 }
 #[repr(C)]
@@ -613,8 +609,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -635,7 +631,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_12(
+            operator_eq_11(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -659,7 +655,7 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-pub unsafe fn operator_eq_14(x: *const test_allocator_int_, y: *const test_allocator_int_) -> () {
+pub unsafe fn operator_eq_13(x: *const test_allocator_int_, y: *const test_allocator_int_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
 #[repr(C)]
@@ -684,14 +680,14 @@ impl test_allocator_int_ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_10));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_9));
     }
 }
 impl std::cmp::PartialEq for test_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_14(
+            operator_eq_13(
                 self as *const test_allocator_int_,
                 other as *const test_allocator_int_,
             )
@@ -742,24 +738,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_16))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_17))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_15))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_16))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_18)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_15)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_16)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_17)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_17)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_14)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_15)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_16)) = 0_();
     }
 }
-pub static mut outstanding_bytes_15: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_16: std::cell::LazyCell<()> =
+pub static mut alloc_count_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_17: std::cell::LazyCell<()> =
+pub static mut dealloc_count_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_18: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -781,7 +777,7 @@ impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_in
  this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
  } pub unsafe fn operator_index ( &self , mut n : () , ) -> *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_  . offset ( ( n ) as isize ) )  ;
  } }
-pub unsafe fn operator_eq_19(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
+pub unsafe fn operator_eq_18(mut _a0: min_allocator_int_, mut _a1: min_allocator_int_) -> () {
     return true;
 }
 #[repr(C)]
@@ -789,7 +785,7 @@ pub unsafe fn operator_eq_19(mut _a0: min_allocator_int_, mut _a1: min_allocator
 pub struct min_allocator_int_ {}
 impl std::cmp::PartialEq for min_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_19(self.clone(), other.clone()) }
+        unsafe { operator_eq_18(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_int_ {}
@@ -803,7 +799,7 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
  } pub unsafe fn deallocate ( &mut self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
  } }
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { }
-pub unsafe fn operator_eq_20(
+pub unsafe fn operator_eq_19(
     mut _a0: explicit_allocator_int_,
     mut _a1: explicit_allocator_int_,
 ) -> () {
@@ -820,7 +816,7 @@ impl explicit_allocator_int_ {
 }
 impl std::cmp::PartialEq for explicit_allocator_int_ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self.clone(), other.clone()) }
+        unsafe { operator_eq_19(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_int_ {}
@@ -829,7 +825,7 @@ impl Default for explicit_allocator_int_ {
         unsafe { explicit_allocator_int_::new() }
     }
 }
-pub unsafe fn test_21(alloc: *const test_allocator_int_) {
+pub unsafe fn test_20(alloc: *const test_allocator_int_) {
     let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
     let mut c: () = unimplemented!();
     unimplemented!();
@@ -846,7 +842,7 @@ pub unsafe fn test_21(alloc: *const test_allocator_int_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_22(alloc: *const min_allocator_int_) {
+pub unsafe fn test_21(alloc: *const min_allocator_int_) {
     let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
     let mut c: () = unimplemented!();
     unimplemented!();
@@ -863,7 +859,7 @@ pub unsafe fn test_22(alloc: *const min_allocator_int_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_23(alloc: *const explicit_allocator_int_) {
+pub unsafe fn test_22(alloc: *const explicit_allocator_int_) {
     let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 1_(), 2_()];
     let mut c: () = unimplemented!();
     unimplemented!();
@@ -898,25 +894,25 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         let mut _alloc: test_allocator_int_ = test_allocator_int_::new_1({ 10_() });
-        test_21(&mut _alloc)
+        test_20(&mut _alloc)
     });
     (unsafe {
         let mut _alloc: min_allocator_int_ = <min_allocator_int_>::default();
-        test_22(&mut _alloc)
+        test_21(&mut _alloc)
     });
     (unsafe {
         let mut _alloc: explicit_allocator_int_ = explicit_allocator_int_::new();
-        test_23(&mut _alloc)
+        test_22(&mut _alloc)
     });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_10);
-    std::cell::LazyCell::force(&*&raw const moved_value_11);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_15);
-    std::cell::LazyCell::force(&*&raw const alloc_count_16);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_17);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_18);
+    std::cell::LazyCell::force(&*&raw const destructed_value_9);
+    std::cell::LazyCell::force(&*&raw const moved_value_10);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_14);
+    std::cell::LazyCell::force(&*&raw const alloc_count_15);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_16);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_17);
 }

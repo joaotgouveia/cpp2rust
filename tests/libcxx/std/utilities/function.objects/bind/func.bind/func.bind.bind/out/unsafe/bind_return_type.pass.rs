@@ -158,36 +158,16 @@ pub unsafe fn CheckCall_50() -> () {
     return unimplemented!();
 }
 pub unsafe fn do_test_51(mut func: Option<unsafe fn(()) -> ()>) {
-    let mut ret: std___bind_int__ptrref__int___const_std_placeholders___ph_1__ref_ =
-        unimplemented!();
-    let mut ret_r: std___bind_r_int__int__ptrref__int___const_std_placeholders___ph_1__ref_ = (unsafe {
-        bind_52(
-            &mut func,
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)),
-        )
-    });
+    let mut ret: () = unimplemented!();
+    let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let mut exp: () = ((unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    }) as ());
-    let mut exp2: () = ((unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    }) as ());
-    let mut exp_r: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret_r(&mut ___args)
-    });
-    let mut exp_r2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret_r(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = (unimplemented!() as ());
+    let mut exp2: () = (unimplemented!() as ());
+    let mut exp_r: () = unimplemented!();
+    let mut exp_r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -202,29 +182,89 @@ pub unsafe fn do_test_51(mut func: Option<unsafe fn(()) -> ()>) {
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
+pub unsafe fn do_test_52(mut func: Option<unsafe fn(()) -> *mut ()>) {
+    let mut ret: () = unimplemented!();
+    let mut ret_r: () = unimplemented!();
+    const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
+    let exp: *mut () = &mut (*unimplemented!());
+    let exp2: *mut () = &mut (*unimplemented!());
+    let exp_r: *mut () = &mut (unsafe {
+        let mut ___args: () = 100_();
+        ret_r(&mut ___args)
+    });
+    let exp_r2: *mut () = &mut (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret_r(&mut ___args_0, &mut ___args_1)
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "CheckCall<Bind, int>()");;
+        const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
+        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "CheckCall<BindR, int>()");;
+        const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
+    }
+}
+pub unsafe fn do_test_53(mut func: Option<unsafe fn(()) -> *const ()>) {
+    let mut ret: () = unimplemented!();
+    let mut ret_r: () = unimplemented!();
+    const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
+    const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
+    let exp: *const () = &(*unimplemented!());
+    let exp2: *const () = &(*unimplemented!());
+    let exp_r: *const () = &(unsafe {
+        let mut ___args: () = 100_();
+        ret_r(&mut ___args)
+    });
+    let exp_r2: *const () = &(unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret_r(&mut ___args_0, &mut ___args_1)
+    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        const _: () = assert!(true, "!CheckCall<Bind>()");;
+        const _: () = assert!(true, "CheckCall<Bind, int>()");;
+        const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
+        const _: () = assert!(true, "!CheckCall<BindR>()");;
+        const _: () = assert!(true, "CheckCall<BindR, int>()");;
+        const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
+    }
+}
 pub unsafe fn do_test_54(mut func: Option<unsafe fn(()) -> *mut ()>) {
-    let mut ret: std___bind_int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        unimplemented!();
-    let mut ret_r: std___bind_r_int_ref__int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        (unsafe {
-            bind_55(
-                &mut func,
-                &(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)),
-            )
-        });
+    let mut ret: () = unimplemented!();
+    let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *mut () = &mut (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let exp2: *mut () = &mut (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let exp: *mut () = &mut (*unimplemented!());
+    let exp2: *mut () = &mut (*unimplemented!());
     let exp_r: *mut () = &mut (unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -253,23 +293,15 @@ pub unsafe fn do_test_54(mut func: Option<unsafe fn(()) -> *mut ()>) {
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_56(mut func: Option<unsafe fn(()) -> *const ()>) {
-    let mut ret: std___bind_const_int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        unimplemented!();
-    let mut ret_r : std___bind_r_const_int_ref__const_int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ = ( unsafe { bind_57 ( & mut func , & (*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)) , ) } )  ;
+pub unsafe fn do_test_55(mut func: Option<unsafe fn(()) -> *const ()>) {
+    let mut ret: () = unimplemented!();
+    let mut ret_r: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *const () = &(unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let exp2: *const () = &(unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let exp: *const () = &(*unimplemented!());
+    let exp2: *const () = &(*unimplemented!());
     let exp_r: *const () = &(unsafe {
         let mut ___args: () = 100_();
         ret_r(&mut ___args)
@@ -298,114 +330,12 @@ pub unsafe fn do_test_56(mut func: Option<unsafe fn(()) -> *const ()>) {
         const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
     }
 }
-pub unsafe fn do_test_58(mut func: Option<unsafe fn(()) -> *mut ()>) {
-    let mut ret: std___bind_int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        unimplemented!();
-    let mut ret_r : std___bind_r_int_refref__int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ = ( unsafe { bind_59 ( & mut func , & (*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)) , ) } )  ;
+pub unsafe fn do_test_r_56(mut func: Option<unsafe fn(()) -> ()>) {
+    let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *mut () = &mut (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let exp2: *mut () = &mut (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
-    let exp_r: *mut () = &mut (unsafe {
-        let mut ___args: () = 100_();
-        ret_r(&mut ___args)
-    });
-    let exp_r2: *mut () = &mut (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret_r(&mut ___args_0, &mut ___args_1)
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
-        const _: () = assert!(true, "CheckCall<Bind, int>()");;
-        const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
-        const _: () = assert!(true, "CheckCall<BindR, int>()");;
-        const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
-    }
-}
-pub unsafe fn do_test_60(mut func: Option<unsafe fn(()) -> *const ()>) {
-    let mut ret: std___bind_const_int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        unimplemented!();
-    let mut ret_r : std___bind_r_const_int_refref__const_int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ = ( unsafe { bind_61 ( & mut func , & (*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)) , ) } )  ;
-    const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<RetR, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
-    let exp: *const () = &(unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let exp2: *const () = &(unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
-    let exp_r: *const () = &(unsafe {
-        let mut ___args: () = 100_();
-        ret_r(&mut ___args)
-    });
-    let exp_r2: *const () = &(unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret_r(&mut ___args_0, &mut ___args_1)
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        const _: () = assert!(true, "!CheckCall<Bind>()");;
-        const _: () = assert!(true, "CheckCall<Bind, int>()");;
-        const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
-        const _: () = assert!(true, "!CheckCall<BindR>()");;
-        const _: () = assert!(true, "CheckCall<BindR, int>()");;
-        const _: () = assert!(true, "CheckCall<BindR, int, int>()");;
-    }
-}
-pub unsafe fn do_test_r_62(mut func: Option<unsafe fn(()) -> ()>) {
-    let mut ret: std___bind_r_long__int__ptrref__int___const_std_placeholders___ph_1__ref_ = (unsafe {
-        bind_63(
-            &mut func,
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)),
-        )
-    });
-    const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
-    const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let mut exp2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -414,24 +344,12 @@ pub unsafe fn do_test_r_62(mut func: Option<unsafe fn(()) -> ()>) {
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_64(mut func: Option<unsafe fn(()) -> *mut ()>) {
-    let mut ret: std___bind_r_long__int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ = (unsafe {
-        bind_65(
-            &mut func,
-            &(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)),
-        )
-    });
+pub unsafe fn do_test_r_57(mut func: Option<unsafe fn(()) -> *mut ()>) {
+    let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let mut exp2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -440,19 +358,12 @@ pub unsafe fn do_test_r_64(mut func: Option<unsafe fn(()) -> *mut ()>) {
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_66(mut func: Option<unsafe fn(()) -> *const ()>) {
-    let mut ret : std___bind_r_long__const_int_ref_ptrref__int___const_std_placeholders___ph_1__ref_ = ( unsafe { bind_67 ( & mut func , & (*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)) , ) } )  ;
+pub unsafe fn do_test_r_58(mut func: Option<unsafe fn(()) -> *const ()>) {
+    let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let mut exp2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -461,25 +372,12 @@ pub unsafe fn do_test_r_66(mut func: Option<unsafe fn(()) -> *const ()>) {
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_68(mut func: Option<unsafe fn(()) -> *mut ()>) {
-    let mut ret: std___bind_r_long__int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ =
-        (unsafe {
-            bind_69(
-                &mut func,
-                &(*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)),
-            )
-        });
+pub unsafe fn do_test_r_59(mut func: Option<unsafe fn(()) -> *mut ()>) {
+    let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let mut exp2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -488,19 +386,12 @@ pub unsafe fn do_test_r_68(mut func: Option<unsafe fn(()) -> *mut ()>) {
         const _: () = assert!(true, "CheckCall<Bind, int, int>()");;
     }
 }
-pub unsafe fn do_test_r_70(mut func: Option<unsafe fn(()) -> *const ()>) {
-    let mut ret : std___bind_r_long__const_int_refref_ptrref__int___const_std_placeholders___ph_1__ref_ = ( unsafe { bind_71 ( & mut func , & (*std::cell::LazyCell::force_mut(&mut *&raw mut _1_53)) , ) } )  ;
+pub unsafe fn do_test_r_60(mut func: Option<unsafe fn(()) -> *const ()>) {
+    let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = (unsafe {
-        let mut ___args: () = 100_();
-        ret(&mut ___args)
-    });
-    let mut exp2: () = (unsafe {
-        let mut ___args_0: () = 101_();
-        let mut ___args_1: () = 102_();
-        ret(&mut ___args_0, &mut ___args_1)
-    });
+    let mut exp: () = unimplemented!();
+    let mut exp2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -526,15 +417,15 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { do_test_51(Some(return_value_1)) });
-    (unsafe { do_test_54(Some(return_lvalue_2)) });
-    (unsafe { do_test_56(Some(return_const_lvalue_3)) });
-    (unsafe { do_test_58(Some(return_rvalue_4)) });
-    (unsafe { do_test_60(Some(return_const_rvalue_5)) });
-    (unsafe { do_test_r_62(Some(return_value_1)) });
-    (unsafe { do_test_r_64(Some(return_lvalue_2)) });
-    (unsafe { do_test_r_66(Some(return_const_lvalue_3)) });
-    (unsafe { do_test_r_68(Some(return_rvalue_4)) });
-    (unsafe { do_test_r_70(Some(return_const_rvalue_5)) });
+    (unsafe { do_test_52(Some(return_lvalue_2)) });
+    (unsafe { do_test_53(Some(return_const_lvalue_3)) });
+    (unsafe { do_test_54(Some(return_rvalue_4)) });
+    (unsafe { do_test_55(Some(return_const_rvalue_5)) });
+    (unsafe { do_test_r_56(Some(return_value_1)) });
+    (unsafe { do_test_r_57(Some(return_lvalue_2)) });
+    (unsafe { do_test_r_58(Some(return_const_lvalue_3)) });
+    (unsafe { do_test_r_59(Some(return_rvalue_4)) });
+    (unsafe { do_test_r_60(Some(return_const_rvalue_5)) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

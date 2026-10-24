@@ -1089,10 +1089,7 @@ pub fn tests_46() -> () {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___wrap_iter_const_int_ptr_::new_1({ __tmp_0.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1122,12 +1119,7 @@ pub fn tests_46() -> () {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___wrap_iter_min_pointer_const_int__std_integral_constant_unsigned_long__0___::new_1(
-                { __tmp_1.as_pointer() },
-            )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1157,10 +1149,7 @@ pub fn tests_46() -> () {
         let a1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 3_(), 7_(), 9_(), 10_()])));
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___wrap_iter_const_int_ptr_::new_1({ __tmp_2.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1174,8 +1163,8 @@ pub fn tests_46() -> () {
         unimplemented!();
         unimplemented!();
         {
-            let __tmp_3: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a: Ptr<test_allocator_int_> = __tmp_3.as_pointer();
+            let __tmp_0: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let a: Ptr<test_allocator_int_> = __tmp_0.as_pointer();
             unimplemented!();
             unimplemented!();
         }
@@ -1186,12 +1175,12 @@ pub fn tests_46() -> () {
         unimplemented!();
         unimplemented!();
         {
-            let __tmp_4: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a1: Ptr<test_allocator_int_> = __tmp_4.as_pointer();
+            let __tmp_1: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let a1: Ptr<test_allocator_int_> = __tmp_1.as_pointer();
             unimplemented!();
             unimplemented!();
-            let __tmp_5: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
-            let a2: Ptr<test_allocator_int_> = __tmp_5.as_pointer();
+            let __tmp_2: Value<test_allocator_int_> = Rc::new(RefCell::new(unimplemented!()));
+            let a2: Ptr<test_allocator_int_> = __tmp_2.as_pointer();
             unimplemented!();
             unimplemented!();
             unimplemented!();

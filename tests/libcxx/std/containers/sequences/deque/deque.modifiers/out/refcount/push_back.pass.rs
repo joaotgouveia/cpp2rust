@@ -268,10 +268,7 @@ pub fn test_16(mut size: ()) {
     let mut j: () = 0_();
     'loop_: while (j < N) {
         let c: Value<()> = Rc::new(RefCell::new(({ make_14(size, rng[(j) as usize]) })));
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_int__const_int_ptr__const_int_ref__const_int_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < size) {
@@ -303,10 +300,7 @@ pub fn test_17(mut size: ()) {
     let mut j: () = 0_();
     'loop_: while (j < N) {
         let c: Value<()> = Rc::new(RefCell::new(({ make_15(size, rng[(j) as usize]) })));
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_int__min_pointer_const_int__std_integral_constant_unsigned_long__0____const_int_ref__min_pointer_const_min_pointer_const_int__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < size) {

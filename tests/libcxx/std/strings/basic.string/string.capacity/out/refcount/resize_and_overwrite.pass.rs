@@ -203,13 +203,7 @@ pub fn test_appending_7(k: (), N: (), new_capacity: ()) {
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
     unimplemented!();
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (*k.borrow()) },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -222,13 +216,7 @@ pub fn test_appending_8(k: (), N: (), new_capacity: ()) {
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
     unimplemented!();
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { (*k.borrow()) },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -241,13 +229,7 @@ pub fn test_appending_9(k: (), N: (), new_capacity: ()) {
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
     unimplemented!();
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { (*k.borrow()) },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -260,13 +242,7 @@ pub fn test_appending_10(k: (), N: (), new_capacity: ()) {
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
     unimplemented!();
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { (*k.borrow()) },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -279,13 +255,7 @@ pub fn test_appending_11(k: (), N: (), new_capacity: ()) {
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
     unimplemented!();
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { (*k.borrow()) },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -295,13 +265,7 @@ pub fn test_appending_11(k: (), N: (), new_capacity: ()) {
 pub fn test_truncating_12(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -311,13 +275,7 @@ pub fn test_truncating_12(mut o: (), N: ()) {
 pub fn test_truncating_13(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -327,13 +285,7 @@ pub fn test_truncating_13(mut o: (), N: ()) {
 pub fn test_truncating_14(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -343,13 +295,7 @@ pub fn test_truncating_14(mut o: (), N: ()) {
 pub fn test_truncating_15(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();
@@ -359,13 +305,7 @@ pub fn test_truncating_15(mut o: (), N: ()) {
 pub fn test_truncating_16(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
-    let s: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { o },
-            { ('a' as ()) },
-            None,
-        ),
-    ));
+    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut expected: () = unimplemented!();
     unimplemented!();

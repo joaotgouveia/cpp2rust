@@ -286,10 +286,10 @@ pub unsafe fn test_22() -> () {
     (unsafe { test_index_const_19() });
     (unsafe { test_index_const_20() });
     let mut set_: () = unimplemented!();
-    unimplemented!() = false;
+    unimplemented!();
     let set: *const () = &set_;
     let mut b: () = unimplemented!();
-    unimplemented!() = true;
+    unimplemented!();
     unimplemented!();
     return true;
 }

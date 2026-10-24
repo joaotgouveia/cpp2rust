@@ -127,7 +127,7 @@ pub unsafe fn insert3at_4(
     unimplemented!();
     unimplemented!();
     (unsafe {
-        let _pos: () = std___wrap_iter_const_int_ptr_::new_1({ &(*unimplemented!()) });
+        let _pos: () = unimplemented!();
         let _x: *const () = &x3;
         nasty_vector_int_::insert_45(&mut (*c), _pos, _x)
     });

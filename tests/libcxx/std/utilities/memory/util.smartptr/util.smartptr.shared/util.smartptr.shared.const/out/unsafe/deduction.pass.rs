@@ -67,9 +67,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut u: () = std_unique_ptr_A__std_default_delete_A__::new({
-            (Box::leak(Box::new(<A>::default())) as *mut A)
-        });
+        let mut u: () = unimplemented!();
         let mut uPointee: *mut A = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;
@@ -77,9 +75,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut u: () = std_unique_ptr_const_A__std_default_delete_const_A__::new({
-            (Box::leak(Box::new(<A>::default())) as *mut A).cast_const()
-        });
+        let mut u: () = unimplemented!();
         let mut uPointee: *const A = unimplemented!();
         let mut s: () = unimplemented!();
         const _: () = assert!(true, "");;

@@ -1765,12 +1765,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut v: () = unimplemented!();
         let mut short_string: () = unimplemented!();
-        let mut long_string: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { 256_() },
-                { ('x' as ()) },
-                None,
-            );
+        let mut long_string: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) != (10_())) {
             unimplemented!();

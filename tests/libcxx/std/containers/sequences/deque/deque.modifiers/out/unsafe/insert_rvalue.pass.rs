@@ -691,10 +691,7 @@ pub unsafe fn make_36(mut size: (), mut start: ()) -> () {
 }
 pub unsafe fn test_37(mut P: (), c1: *mut (), mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_0 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -721,10 +718,7 @@ pub unsafe fn test_37(mut P: (), c1: *mut (), mut x: ()) {
 }
 pub unsafe fn test_38(mut P: (), c1: *mut (), mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___deque_iterator_MoveOnly__min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____const_MoveOnly_ref__min_pointer_const_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { & mut __tmp_1 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -751,10 +745,7 @@ pub unsafe fn test_38(mut P: (), c1: *mut (), mut x: ()) {
 }
 pub unsafe fn test_39(mut P: (), c1: *mut (), mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let mut i: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { & mut __tmp_2 } , )
-    };
+    let mut i: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

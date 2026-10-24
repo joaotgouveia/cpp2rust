@@ -100,7 +100,7 @@ impl forward_iterator_std___wrap_iter_const_char_ptr__ {
     }
     pub unsafe fn new_2(mut it: ()) -> Self {
         let mut this = Self {
-            it_: it.clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -513,410 +513,170 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut s4: () = unimplemented!();
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_0: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_1: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_1 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 1_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_2: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_2 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_3: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_3 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 1_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_4: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_4 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_5: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_5 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_6: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_6 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_7: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_7 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_8: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_8 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_9: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_9 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_10: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_10 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_11: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_11 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_12: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_12 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_13: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_13 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_14: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_14 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_15: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_15 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_16: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_16 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_17: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_17 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_18: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_18 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_19: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_19 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_20: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_20 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_21: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_21 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_22: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_22 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_23: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_23 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_24: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_24 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_25: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_25 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_26: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_26 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_27: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_27 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_28: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_28 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_29: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_29 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_30: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_30 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_31: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_31 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_32: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_32 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_33: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_33 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 1_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_34: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_34 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_35: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_35 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 1_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_36: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_36 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_37: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_37 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_38: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_38 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_39: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_39 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_40: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_40 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_41: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_41 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_42: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_42 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_43: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_43 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_44: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_44 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_45: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_45 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 0_())
     });
     (unsafe {
         let _first: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_46: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_46 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         let _last: forward_iterator_std___wrap_iter_const_char_ptr__ =
-            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({
-                {
-                    let mut __tmp_47: () = unimplemented!();
-                    std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_47 })
-                }
-            });
+            forward_iterator_std___wrap_iter_const_char_ptr__::new_2({ unimplemented!() });
         test_9(_first, _last, unimplemented!(), 2_())
     });
     return 0_();

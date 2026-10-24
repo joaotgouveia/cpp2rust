@@ -520,10 +520,7 @@ pub fn make_36(mut size: (), mut start: ()) -> () {
 }
 pub fn test_37(mut P: (), c1: Ptr<()>, mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -550,10 +547,7 @@ pub fn test_37(mut P: (), c1: Ptr<()>, mut x: ()) {
 }
 pub fn test_38(mut P: (), c1: Ptr<()>, mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_MoveOnly__min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____const_MoveOnly_ref__min_pointer_const_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -580,10 +574,7 @@ pub fn test_38(mut P: (), c1: Ptr<()>, mut x: ()) {
 }
 pub fn test_39(mut P: (), c1: Ptr<()>, mut x: ()) {
     let mut c1_osize: () = unimplemented!();
-    let i: Value<()> = Rc::new(RefCell::new({
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_2.as_pointer() } , )
-    }));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

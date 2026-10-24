@@ -513,10 +513,7 @@ pub fn test_34(mut size: ()) {
     let mut j: () = 0_();
     'loop_: while (j < N) {
         let c: Value<()> = Rc::new(RefCell::new(({ make_31(size, rng[(j) as usize]) })));
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_0.as_pointer() } , )
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < size) {
@@ -548,10 +545,7 @@ pub fn test_35(mut size: ()) {
     let mut j: () = 0_();
     'loop_: while (j < N) {
         let c: Value<()> = Rc::new(RefCell::new(({ make_32(size, rng[(j) as usize]) })));
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_MoveOnly__min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____const_MoveOnly_ref__min_pointer_const_min_pointer_const_MoveOnly__std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0____long__1024_ :: new_1 ( { __tmp_1.as_pointer() } , )
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < size) {
@@ -583,10 +577,7 @@ pub fn test_36(mut size: ()) {
     let mut j: () = 0_();
     'loop_: while (j < N) {
         let c: Value<()> = Rc::new(RefCell::new(({ make_33(size, rng[(j) as usize]) })));
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___deque_iterator_MoveOnly__const_MoveOnly_ptr__const_MoveOnly_ref__const_MoveOnly_ptrconst_ptr__long__1024_ :: new_1 ( { __tmp_2.as_pointer() } , )
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while (i < size) {

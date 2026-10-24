@@ -518,14 +518,8 @@ pub unsafe fn test_11() -> () {
         );;
     }
     {
-        let mut iter1: () = std_counted_iterator_AssignableFromIter_::new_1(
-            { AssignableFromIter::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let mut iter2: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) }) },
-            { 6_() },
-        );
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
@@ -535,14 +529,8 @@ pub unsafe fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter1: () = std_counted_iterator_AssignableFromIter_::new_1(
-            { AssignableFromIter::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let iter2: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) }) },
-            { 6_() },
-        );
+        let mut iter1: () = unimplemented!();
+        let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let result: *mut () = &mut (*unimplemented!());
@@ -552,22 +540,8 @@ pub unsafe fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter1: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr(),
-                }
-            },
-            { (8_() as ()) },
-        );
-        let mut iter2: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr().offset((2_()) as isize),
-                }
-            },
-            { (6_() as ()) },
-        );
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let result: *mut () = &mut ({
@@ -580,22 +554,8 @@ pub unsafe fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter1: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr(),
-                }
-            },
-            { (8_() as ()) },
-        );
-        let iter2: () = std_counted_iterator_InputOrOutputArchetype_::new_1(
-            {
-                InputOrOutputArchetype {
-                    ptr: buffer.as_mut_ptr().offset((2_()) as isize),
-                }
-            },
-            { (6_() as ()) },
-        );
+        let mut iter1: () = unimplemented!();
+        let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let result: *mut () = &mut ({

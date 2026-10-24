@@ -289,46 +289,31 @@ pub unsafe fn test_concat_message_21(
 }
 pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
-        check.spec::<fn((), std_basic_format_string_char_)>(0).call(
-            unimplemented!(),
-            std_basic_format_string_char_::new_1({ &std::mem::transmute(*b"{{\0") }),
-        )
+        check
+            .spec::<fn((), std_basic_format_string_char_)>(0)
+            .call(unimplemented!(), unimplemented!())
     });
     (unsafe {
-        check.spec::<fn((), std_basic_format_string_char_)>(0).call(
-            unimplemented!(),
-            std_basic_format_string_char_::new_2({ &std::mem::transmute(*b"{{:^}}\0") }),
-        )
+        check
+            .spec::<fn((), std_basic_format_string_char_)>(0)
+            .call(unimplemented!(), unimplemented!())
     });
     (unsafe {
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
-            .call(
-                unimplemented!(),
-                std_basic_format_string_char__char_::new_1({
-                    &std::mem::transmute(*b"{{:{}^}}\0")
-                }),
-                &mut _args,
-            )
+            .call(unimplemented!(), unimplemented!(), &mut _args)
     });
     (unsafe {
-        check.spec::<fn((), std_basic_format_string_char_)>(0).call(
-            unimplemented!(),
-            std_basic_format_string_char_::new_3({ &std::mem::transmute(*b"{{:{{}}^}}\0") }),
-        )
+        check
+            .spec::<fn((), std_basic_format_string_char_)>(0)
+            .call(unimplemented!(), unimplemented!())
     });
     (unsafe {
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
-            .call(
-                unimplemented!(),
-                std_basic_format_string_char__char_::new_2({
-                    &std::mem::transmute(*b"{{:{{{}}}^}}\0")
-                }),
-                &mut _args,
-            )
+            .call(unimplemented!(), unimplemented!(), &mut _args)
     });
     (unsafe {
         let mut _args_2: () = false;
@@ -337,9 +322,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
             .spec::<fn((), std_basic_format_string_char__bool__bool_, *mut (), *mut ())>(2)
             .call(
                 unimplemented!(),
-                std_basic_format_string_char__bool__bool_::new({
-                    &std::mem::transmute(*b"hello {0:} {1:}\0")
-                }),
+                unimplemented!(),
                 &mut _args_2,
                 &mut _args_3,
             )
@@ -351,9 +334,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
             .spec::<fn((), std_basic_format_string_char__bool__bool_, *mut (), *mut ())>(2)
             .call(
                 unimplemented!(),
-                std_basic_format_string_char__bool__bool_::new({
-                    &std::mem::transmute(*b"hello {1:} {0:}\0")
-                }),
+                unimplemented!(),
                 &mut _args_2,
                 &mut _args_3,
             )
@@ -379,7 +360,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut _args_19: () = 8_();
         let mut _args_20: () = 9_();
         let mut _args_21: () = 0_();
-        check  .spec::<fn(() ,std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,)>(3) .call ( unimplemented!() , std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ :: new ( { & std::mem::transmute(*b"{}{}{}{}{}{}{}{}{}{}\t{}{}{}{}{}{}{}{}{}{}\0") } , )  , & mut _args_2 , & mut _args_3 , & mut _args_4 , & mut _args_5 , & mut _args_6 , & mut _args_7 , & mut _args_8 , & mut _args_9 , & mut _args_10 , & mut _args_11 , & mut _args_12 , & mut _args_13 , & mut _args_14 , & mut _args_15 , & mut _args_16 , & mut _args_17 , & mut _args_18 , & mut _args_19 , & mut _args_20 , & mut _args_21 , )
+        check  .spec::<fn(() ,std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,*mut () ,)>(3) .call ( unimplemented!() , unimplemented!() , & mut _args_2 , & mut _args_3 , & mut _args_4 , & mut _args_5 , & mut _args_6 , & mut _args_7 , & mut _args_8 , & mut _args_9 , & mut _args_10 , & mut _args_11 , & mut _args_12 , & mut _args_13 , & mut _args_14 , & mut _args_15 , & mut _args_16 , & mut _args_17 , & mut _args_18 , & mut _args_19 , & mut _args_20 , & mut _args_21 , )
     });
     (unsafe {
         let mut _args_2: () = ('\0' as ());
@@ -411,9 +392,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
                         11_(),
                     )
                 }),
-                std_basic_format_string_char__char__const_char__ref_arr6arr_::new({
-                    &std::mem::transmute(*b"hello{}{}\0")
-                }),
+                unimplemented!(),
                 &mut _args_2,
                 &std::mem::transmute(*b"world\0"),
             )
@@ -439,26 +418,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
                 11_(),
             )
         });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr6arr_ = {
-            let mut __tmp_0: () = (unsafe {
-                operator_literal_sv_23(
-                    (&[
-                        (104 as libc::c_char),
-                        (101 as libc::c_char),
-                        (108 as libc::c_char),
-                        (108 as libc::c_char),
-                        (111 as libc::c_char),
-                        (0 as libc::c_char),
-                        (123 as libc::c_char),
-                        (125 as libc::c_char),
-                        (0 as libc::c_char),
-                    ])
-                        .as_ptr(),
-                    8_(),
-                )
-            });
-            std_basic_format_string_char__const_char__ref_arr6arr_::new({ &mut __tmp_0 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr6arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr6arr_, *const [(); 6])>(
                 5,
@@ -503,20 +463,11 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
         });
         check
             .spec::<fn((), std_basic_format_string_char__std_string_view_, *mut ())>(6)
-            .call(
-                _e,
-                std_basic_format_string_char__std_string_view_::new({
-                    &std::mem::transmute(*b"hello{}\0")
-                }),
-                &mut _args,
-            )
+            .call(_e, unimplemented!(), &mut _args)
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xc2\xa1".as_ptr(), 2_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = {
-            let mut __tmp_1: () = (unsafe { operator_literal_sv_23(c"{}".as_ptr(), 2_()) });
-            std_basic_format_string_char__const_char__ref_arr3arr_::new({ &mut __tmp_1 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr3arr_, *const [(); 3])>(
                 7,
@@ -525,10 +476,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xdf\xbf".as_ptr(), 2_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = {
-            let mut __tmp_2: () = (unsafe { operator_literal_sv_23(c"{:}".as_ptr(), 3_()) });
-            std_basic_format_string_char__const_char__ref_arr3arr_::new({ &mut __tmp_2 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr3arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr3arr_, *const [(); 3])>(
                 7,
@@ -537,10 +485,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xe0\xa0\x80".as_ptr(), 3_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = {
-            let mut __tmp_3: () = (unsafe { operator_literal_sv_23(c"{}".as_ptr(), 2_()) });
-            std_basic_format_string_char__const_char__ref_arr4arr_::new({ &mut __tmp_3 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr4arr_, *const [(); 4])>(
                 8,
@@ -549,10 +494,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xef\xbf\xbd".as_ptr(), 3_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = {
-            let mut __tmp_4: () = (unsafe { operator_literal_sv_23(c"{}".as_ptr(), 2_()) });
-            std_basic_format_string_char__const_char__ref_arr4arr_::new({ &mut __tmp_4 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr4arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr4arr_, *const [(); 4])>(
                 8,
@@ -561,10 +503,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xf0\x90\x80\x80".as_ptr(), 4_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = {
-            let mut __tmp_5: () = (unsafe { operator_literal_sv_23(c"{}".as_ptr(), 2_()) });
-            std_basic_format_string_char__const_char__ref_arr5arr_::new({ &mut __tmp_5 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr5arr_, *const [(); 5])>(
                 9,
@@ -573,10 +512,7 @@ pub unsafe fn print_tests_22(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _e: () = (unsafe { operator_literal_sv_23(c"\xf4\x8f\xbf\xbf".as_ptr(), 4_()) });
-        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = {
-            let mut __tmp_6: () = (unsafe { operator_literal_sv_23(c"{}".as_ptr(), 2_()) });
-            std_basic_format_string_char__const_char__ref_arr5arr_::new({ &mut __tmp_6 })
-        };
+        let _fmt: std_basic_format_string_char__const_char__ref_arr5arr_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char__const_char__ref_arr5arr_, *const [(); 5])>(
                 9,

@@ -512,18 +512,8 @@ impl CommonWithForwardIter_int_ptr_ {
 pub unsafe fn test_8() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
-        let mut iter1: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-            { random_access_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let mut iter2: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-            {
-                random_access_iterator_int_ptr_::new_1({
-                    buffer.as_mut_ptr().offset((4_()) as isize)
-                })
-            },
-            { 4_() },
-        );
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -531,18 +521,8 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-            { random_access_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let iter2: () = std_counted_iterator_random_access_iterator_int_ptr__::new_1(
-            {
-                random_access_iterator_int_ptr_::new_1({
-                    buffer.as_mut_ptr().offset((4_()) as isize)
-                })
-            },
-            { 4_() },
-        );
+        let iter1: () = unimplemented!();
+        let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -550,16 +530,8 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter1: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let mut iter2: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            {
-                contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) })
-            },
-            { 6_() },
-        );
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -567,16 +539,8 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            { contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let iter2: () = std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-            {
-                contiguous_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) })
-            },
-            { 6_() },
-        );
+        let iter1: () = unimplemented!();
+        let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -584,14 +548,8 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter1: () = std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-            { CommonWithForwardIter_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let mut iter2: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) }) },
-            { 6_() },
-        );
+        let mut iter1: () = unimplemented!();
+        let mut iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -599,14 +557,8 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter1: () = std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-            { CommonWithForwardIter_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let iter2: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-            { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr().offset((2_()) as isize) }) },
-            { 6_() },
-        );
+        let iter1: () = unimplemented!();
+        let iter2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

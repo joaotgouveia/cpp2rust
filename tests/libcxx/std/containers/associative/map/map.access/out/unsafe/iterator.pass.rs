@@ -124,7 +124,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            (*i).second = 2.5_f64;
+            (*unimplemented!()).second = 2.5_f64;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -137,7 +137,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (*i).second = 1_();
+            (*unimplemented!()).second = 1_();
             unimplemented!();
             j.prefix_dec();
         }
@@ -234,7 +234,7 @@ pub unsafe fn test_4() -> () {
         'loop_: while ((j) <= (unimplemented!())) {
             unimplemented!();
             unimplemented!();
-            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & i  , ) } )   ) . second   = 2.5_f64  ;
+            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . second   = 2.5_f64  ;
             unimplemented!();
             {
                 j.prefix_inc();
@@ -247,7 +247,7 @@ pub unsafe fn test_4() -> () {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & i  , ) } )   ) . second   = 1_()  ;
+            ( * ( unsafe { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . second   = 1_()  ;
             unimplemented!();
             j.prefix_dec();
         }

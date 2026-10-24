@@ -109,17 +109,13 @@ pub unsafe fn test_setter_4() {
     {
         let mut result: () = unimplemented!();
         let mut out: () = unimplemented!();
-        let mut format_ctx: () = (unsafe {
-            test_format_context_create_0(out.clone(), {
-                let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char__  = ( unsafe { make_format_args_5 ( ) } )  ;
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-            })
-        });
+        let mut format_ctx: () =
+            (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_setter_6() {
+pub unsafe fn test_setter_5() {
     let mut formatter: () = unimplemented!();
     unimplemented!();
     const _: () = assert!(
@@ -129,19 +125,15 @@ pub unsafe fn test_setter_6() {
     {
         let mut result: () = unimplemented!();
         let mut out: () = unimplemented!();
-        let mut format_ctx: () = (unsafe {
-            test_format_context_create_2(out.clone(), {
-                let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__  = ( unsafe { make_format_args_7 ( ) } )  ;
-                std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & mut __tmp_1 } , )
-            })
-        });
+        let mut format_ctx: () =
+            (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_8() -> () {
+pub unsafe fn test_6() -> () {
     (unsafe { test_setter_4() });
-    (unsafe { test_setter_6() });
+    (unsafe { test_setter_5() });
     return true;
 }
 pub fn main() {
@@ -160,7 +152,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_8() });
+    (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

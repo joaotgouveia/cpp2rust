@@ -1894,10 +1894,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ])));
         let out: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({ Counted::reset() });
-        let iter: Value<()> = Rc::new(RefCell::new(std_counted_iterator_Counted_ptr_::new_1(
-            { (in_.as_pointer() as Ptr<Counted>) },
-            { N },
-        )));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___ofirst: Ptr<Counted> =

@@ -129,14 +129,8 @@ impl min_allocator_char_ {
 }
 pub unsafe fn test_5(mut s: (), mut pos1: (), mut n1: (), mut sv: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
-    let mut first: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_0 })
-    };
-    let mut last: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___wrap_iter_const_char_ptr_::new_1({ &mut __tmp_1 })
-    };
+    let mut first: () = unimplemented!();
+    let mut last: () = unimplemented!();
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -146,18 +140,8 @@ pub unsafe fn test_5(mut s: (), mut pos1: (), mut n1: (), mut sv: (), mut expect
 }
 pub unsafe fn test_6(mut s: (), mut pos1: (), mut n1: (), mut sv: (), mut expected: ()) {
     let mut old_size: () = unimplemented!();
-    let mut first: () = {
-        let mut __tmp_2: () = unimplemented!();
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            &mut __tmp_2
-        })
-    };
-    let mut last: () = {
-        let mut __tmp_3: () = unimplemented!();
-        std___wrap_iter_min_pointer_const_char__std_integral_constant_unsigned_long__0___::new_1({
-            &mut __tmp_3
-        })
-    };
+    let mut first: () = unimplemented!();
+    let mut last: () = unimplemented!();
     let mut xlen: () = unimplemented!();
     unimplemented!();
     unimplemented!();

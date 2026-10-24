@@ -130,7 +130,7 @@ pub fn test_4() -> () {
             'loop_: while (d <= 2_()) {
                 unimplemented!();
                 unimplemented!();
-                field!((*i.borrow_mut()), second).write(2.5_f64);
+                unimplemented!().second = 2.5_f64;
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -147,7 +147,7 @@ pub fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                field!((*i.borrow_mut()), second).write(d);
+                unimplemented!().second = d;
                 unimplemented!();
                 d += 0.5_f64;
             }
@@ -256,7 +256,7 @@ pub fn test_4() -> () {
             'loop_: while (d <= 2_()) {
                 unimplemented!();
                 unimplemented!();
-                field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(( * (*i.borrow()) .upgrade().deref() ) )).as_pointer() , ) } )  , second) .write( 2.5_f64  ) ;
+                field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  , second) .write( 2.5_f64  ) ;
                 unimplemented!();
                 {
                     d += 0.5_f64;
@@ -273,7 +273,7 @@ pub fn test_4() -> () {
                 unimplemented!();
                 unimplemented!();
                 unimplemented!();
-                field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(( * (*i.borrow()) .upgrade().deref() ) )).as_pointer() , ) } )  , second) .write( d  ) ;
+                field!(( { min_pointer_std_pair_const_int__double___std_integral_constant_unsigned_long__0__Impl :: operator_arrow ( &Rc::new(RefCell::new(unimplemented!()  )).as_pointer() , ) } )  , second) .write( d  ) ;
                 unimplemented!();
                 d += 0.5_f64;
             }

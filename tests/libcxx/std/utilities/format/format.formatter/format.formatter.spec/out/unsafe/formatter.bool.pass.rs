@@ -107,16 +107,12 @@ pub unsafe fn test_4(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_0(out.clone(), {
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_string___char___bool_  = ( unsafe { make_format_args_5 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_string___char__ :: new ( { & mut __tmp_0 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
+pub unsafe fn test_5(mut expected: (), mut fmt: (), mut arg: (), mut offset: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
@@ -124,51 +120,47 @@ pub unsafe fn test_6(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut format_ctx: () = (unsafe {
-        test_format_context_create_2(out.clone(), {
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___bool_  = ( unsafe { make_format_args_7 ( & mut arg , ) } )  ;
-            std_basic_format_args_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t__ :: new ( { & mut __tmp_1 } , )
-        })
-    });
+    let mut format_ctx: () =
+        (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: ()) {
+pub unsafe fn test_termination_condition_6(mut expected: (), mut f: (), mut arg: ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: ()) {
+pub unsafe fn test_termination_condition_7(mut expected: (), mut f: (), mut arg: ()) {
     let mut fmt: () = (unsafe { f() });
     unimplemented!();
-    (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
-    (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
+    (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
-pub unsafe fn test_boolean_10() {
+pub unsafe fn test_boolean_8() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_8(_expected, _f, true)
+        test_termination_condition_6(_expected, _f, true)
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_8(_expected, _f, false)
+        test_termination_condition_6(_expected, _f, false)
     });
 }
-pub unsafe fn test_boolean_11() {
+pub unsafe fn test_boolean_9() {
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_9(_expected, _f, true)
+        test_termination_condition_7(_expected, _f, true)
     });
     (unsafe {
         let _expected: () = unimplemented!();
         let _f: () = unimplemented!();
-        test_termination_condition_9(_expected, _f, false)
+        test_termination_condition_7(_expected, _f, false)
     });
 }
 pub fn main() {
@@ -187,8 +179,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_boolean_10() });
-    (unsafe { test_boolean_11() });
+    (unsafe { test_boolean_8() });
+    (unsafe { test_boolean_9() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

@@ -340,10 +340,7 @@ pub unsafe fn invalid_types_3(mut valid: ()) -> () {
 pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_0: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_0 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -351,10 +348,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_1: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_1 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -362,10 +356,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_2: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_2 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -373,10 +364,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_3: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_3 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -384,10 +372,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_4: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_4 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -395,10 +380,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_5: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_5 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -406,10 +388,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_6: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_6 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -417,10 +396,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_7: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_7 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -428,10 +404,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_8: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_8 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -439,10 +412,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_9: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_9 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -450,10 +420,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_10: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_10 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
@@ -461,17 +428,14 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__status_ = {
-            let mut __tmp_11: () = unimplemented!();
-            std_basic_format_string_char__status_::new({ &mut __tmp_11 })
-        };
+        let _fmt: std_basic_format_string_char__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_char__status_, *mut status)>(29)
             .call(_expected, _fmt, &mut _args)
     });
-    let mut __tmp_12: () = (unsafe { invalid_types_2(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_12;
+    let mut __tmp_0: () = (unsafe { invalid_types_2(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_0;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: *const () = &(*unimplemented!());
         (unsafe {
@@ -487,10 +451,7 @@ pub unsafe fn format_test_handle_4(mut check: FnPtr<Generic>, mut check_exceptio
 pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_13: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_13 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -498,10 +459,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_14: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_14 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -509,10 +467,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_15: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_15 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -520,10 +475,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_16: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_16 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foo;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -531,10 +483,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_17: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_17 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -542,10 +491,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_18: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_18 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -553,10 +499,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_19: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_19 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -564,10 +507,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_20: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_20 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_bar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -575,10 +515,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_21: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_21 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -586,10 +523,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_22: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_22 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -597,10 +531,7 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_23: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_23 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
@@ -608,17 +539,14 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__status_ = {
-            let mut __tmp_24: () = unimplemented!();
-            std_basic_format_string_wchar_t__status_::new({ &mut __tmp_24 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__status_ = unimplemented!();
         let mut _args: status = status_foobar;
         check
             .spec::<fn((), std_basic_format_string_wchar_t__status_, *mut status)>(60)
             .call(_expected, _fmt, &mut _args)
     });
-    let mut __tmp_25: () = (unsafe { invalid_types_3(unimplemented!()) });
-    let __range1: *mut () = &mut __tmp_25;
+    let mut __tmp_1: () = (unsafe { invalid_types_3(unimplemented!()) });
+    let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
         let fmt: *const () = &(*unimplemented!());
         (unsafe {
@@ -635,40 +563,28 @@ pub unsafe fn format_test_handle_5(mut check: FnPtr<Generic>, mut check_exceptio
 pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char_ = {
-            let mut __tmp_26: () = unimplemented!();
-            std_basic_format_string_char_::new({ &mut __tmp_26 })
-        };
+        let _fmt: std_basic_format_string_char_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char_)>(0)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char_ = {
-            let mut __tmp_27: () = unimplemented!();
-            std_basic_format_string_char_::new({ &mut __tmp_27 })
-        };
+        let _fmt: std_basic_format_string_char_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char_)>(0)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char_ = {
-            let mut __tmp_28: () = unimplemented!();
-            std_basic_format_string_char_::new({ &mut __tmp_28 })
-        };
+        let _fmt: std_basic_format_string_char_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char_)>(0)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__char_ = {
-            let mut __tmp_29: () = unimplemented!();
-            std_basic_format_string_char__char_::new({ &mut __tmp_29 })
-        };
+        let _fmt: std_basic_format_string_char__char_ = unimplemented!();
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
@@ -676,20 +592,14 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char_ = {
-            let mut __tmp_30: () = unimplemented!();
-            std_basic_format_string_char_::new({ &mut __tmp_30 })
-        };
+        let _fmt: std_basic_format_string_char_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_char_)>(0)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__char_ = {
-            let mut __tmp_31: () = unimplemented!();
-            std_basic_format_string_char__char_::new({ &mut __tmp_31 })
-        };
+        let _fmt: std_basic_format_string_char__char_ = unimplemented!();
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_char__char_, *mut ())>(1)
@@ -697,10 +607,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__bool__bool_ = {
-            let mut __tmp_32: () = unimplemented!();
-            std_basic_format_string_char__bool__bool_::new({ &mut __tmp_32 })
-        };
+        let _fmt: std_basic_format_string_char__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -709,10 +616,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__bool__bool_ = {
-            let mut __tmp_33: () = unimplemented!();
-            std_basic_format_string_char__bool__bool_::new({ &mut __tmp_33 })
-        };
+        let _fmt: std_basic_format_string_char__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -721,7 +625,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  = { let mut __tmp_34 : ()  = unimplemented!() ; std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ :: new ( { & mut __tmp_34 } , )  } ;
+        let _fmt: std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  = unimplemented!() ;
         let mut _args_2: () = 1_();
         let mut _args_3: () = 2_();
         let mut _args_4: () = 3_();
@@ -827,12 +731,8 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__char__char__char__char__char__char__char_ = {
-            let mut __tmp_35: () = unimplemented!();
-            std_basic_format_string_char__char__char__char__char__char__char__char_::new({
-                &mut __tmp_35
-            })
-        };
+        let _fmt: std_basic_format_string_char__char__char__char__char__char__char__char_ =
+            unimplemented!();
         let mut _args_2: () = ('0' as ());
         let mut _args_3: () = ('9' as ());
         let mut _args_4: () = ('a' as ());
@@ -879,10 +779,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: *mut () = buffer.as_mut_ptr();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__char_ptrref_ = {
-                let mut __tmp_36: () = unimplemented!();
-                std_basic_format_string_char__char_ptrref_::new({ &mut __tmp_36 })
-            };
+            let _fmt: std_basic_format_string_char__char_ptrref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__char_ptrref_, *mut *mut ())>(5)
                 .call(_expected, _fmt, &mut data)
@@ -902,10 +799,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: *const () = (buffer.as_mut_ptr()).cast_const();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__const_char_ptrref_ = {
-                let mut __tmp_37: () = unimplemented!();
-                std_basic_format_string_char__const_char_ptrref_::new({ &mut __tmp_37 })
-            };
+            let _fmt: std_basic_format_string_char__const_char_ptrref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__const_char_ptrref_, *mut *const ())>(6)
                 .call(_expected, _fmt, &mut data)
@@ -924,10 +818,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         ];
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__char__ref_arr8arr_ = {
-                let mut __tmp_38: () = unimplemented!();
-                std_basic_format_string_char__char__ref_arr8arr_::new({ &mut __tmp_38 })
-            };
+            let _fmt: std_basic_format_string_char__char__ref_arr8arr_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__char__ref_arr8arr_, *mut [(); 8])>(7)
                 .call(_expected, _fmt, &mut buffer)
@@ -943,10 +834,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         ];
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__char__ref_arr7arr_ = {
-                let mut __tmp_39: () = unimplemented!();
-                std_basic_format_string_char__char__ref_arr7arr_::new({ &mut __tmp_39 })
-            };
+            let _fmt: std_basic_format_string_char__char__ref_arr7arr_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__char__ref_arr7arr_, *mut [(); 7])>(8)
                 .call(_expected, _fmt, &mut buffer2)
@@ -956,10 +844,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: () = unimplemented!();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_ref_ = {
-                let mut __tmp_40: () = unimplemented!();
-                std_basic_format_string_char__std_string_ref_::new({ &mut __tmp_40 })
-            };
+            let _fmt: std_basic_format_string_char__std_string_ref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__std_string_ref_, *mut ())>(9)
                 .call(_expected, _fmt, &mut data)
@@ -970,10 +855,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: () = (unsafe { buffer() });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_char__std_string_view_ref_ = {
-                let mut __tmp_41: () = unimplemented!();
-                std_basic_format_string_char__std_string_view_ref_::new({ &mut __tmp_41 })
-            };
+            let _fmt: std_basic_format_string_char__std_string_view_ref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_char__std_string_view_ref_, *mut ())>(10)
                 .call(_expected, _fmt, &mut data)
@@ -982,10 +864,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__bool__bool_ = {
-            let mut __tmp_42: () = unimplemented!();
-            std_basic_format_string_char__bool__bool_::new({ &mut __tmp_42 })
-        };
+        let _fmt: std_basic_format_string_char__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -995,10 +874,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__signed_char_ = {
-            let mut __tmp_43: () = unimplemented!();
-            std_basic_format_string_char__signed_char_::new({ &mut __tmp_43 })
-        };
+        let _fmt: std_basic_format_string_char__signed_char_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__signed_char_, *mut ())>(11)
@@ -1006,10 +882,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__short_ = {
-            let mut __tmp_44: () = unimplemented!();
-            std_basic_format_string_char__short_::new({ &mut __tmp_44 })
-        };
+        let _fmt: std_basic_format_string_char__short_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__short_, *mut ())>(12)
@@ -1017,10 +890,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__int_ = {
-            let mut __tmp_45: () = unimplemented!();
-            std_basic_format_string_char__int_::new({ &mut __tmp_45 })
-        };
+        let _fmt: std_basic_format_string_char__int_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__int_, *mut ())>(13)
@@ -1028,10 +898,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__long_ = {
-            let mut __tmp_46: () = unimplemented!();
-            std_basic_format_string_char__long_::new({ &mut __tmp_46 })
-        };
+        let _fmt: std_basic_format_string_char__long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__long_, *mut ())>(14)
@@ -1039,10 +906,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__long_long_ = {
-            let mut __tmp_47: () = unimplemented!();
-            std_basic_format_string_char__long_long_::new({ &mut __tmp_47 })
-        };
+        let _fmt: std_basic_format_string_char__long_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__long_long_, *mut ())>(15)
@@ -1050,10 +914,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char____int128_ = {
-            let mut __tmp_48: () = unimplemented!();
-            std_basic_format_string_char____int128_::new({ &mut __tmp_48 })
-        };
+        let _fmt: std_basic_format_string_char____int128_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char____int128_, *mut ())>(16)
@@ -1062,10 +923,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned_char_ = {
-            let mut __tmp_49: () = unimplemented!();
-            std_basic_format_string_char__unsigned_char_::new({ &mut __tmp_49 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned_char_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned_char_, *mut ())>(17)
@@ -1073,10 +931,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned_short_ = {
-            let mut __tmp_50: () = unimplemented!();
-            std_basic_format_string_char__unsigned_short_::new({ &mut __tmp_50 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned_short_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned_short_, *mut ())>(18)
@@ -1084,10 +939,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned_int_ = {
-            let mut __tmp_51: () = unimplemented!();
-            std_basic_format_string_char__unsigned_int_::new({ &mut __tmp_51 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned_int_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned_int_, *mut ())>(19)
@@ -1095,10 +947,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned_long_ = {
-            let mut __tmp_52: () = unimplemented!();
-            std_basic_format_string_char__unsigned_long_::new({ &mut __tmp_52 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned_long_, *mut ())>(20)
@@ -1106,10 +955,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned_long_long_ = {
-            let mut __tmp_53: () = unimplemented!();
-            std_basic_format_string_char__unsigned_long_long_::new({ &mut __tmp_53 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned_long_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned_long_long_, *mut ())>(21)
@@ -1117,10 +963,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__unsigned___int128_ = {
-            let mut __tmp_54: () = unimplemented!();
-            std_basic_format_string_char__unsigned___int128_::new({ &mut __tmp_54 })
-        };
+        let _fmt: std_basic_format_string_char__unsigned___int128_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__unsigned___int128_, *mut ())>(22)
@@ -1129,10 +972,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__float_ = {
-            let mut __tmp_55: () = unimplemented!();
-            std_basic_format_string_char__float_::new({ &mut __tmp_55 })
-        };
+        let _fmt: std_basic_format_string_char__float_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__float_, *mut ())>(23)
@@ -1140,10 +980,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__double_ = {
-            let mut __tmp_56: () = unimplemented!();
-            std_basic_format_string_char__double_::new({ &mut __tmp_56 })
-        };
+        let _fmt: std_basic_format_string_char__double_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__double_, *mut ())>(24)
@@ -1151,10 +988,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__long_double_ = {
-            let mut __tmp_57: () = unimplemented!();
-            std_basic_format_string_char__long_double_::new({ &mut __tmp_57 })
-        };
+        let _fmt: std_basic_format_string_char__long_double_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_char__long_double_, *mut ())>(25)
@@ -1163,10 +997,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__std_nullptr_t_ = {
-            let mut __tmp_58: () = unimplemented!();
-            std_basic_format_string_char__std_nullptr_t_::new({ &mut __tmp_58 })
-        };
+        let _fmt: std_basic_format_string_char__std_nullptr_t_ = unimplemented!();
         let mut _args: () = Default::default();
         check
             .spec::<fn((), std_basic_format_string_char__std_nullptr_t_, *mut ())>(26)
@@ -1174,10 +1005,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__void_ptr_ = {
-            let mut __tmp_59: () = unimplemented!();
-            std_basic_format_string_char__void_ptr_::new({ &mut __tmp_59 })
-        };
+        let _fmt: std_basic_format_string_char__void_ptr_ = unimplemented!();
         let mut _args: () = (66_() as ());
         check
             .spec::<fn((), std_basic_format_string_char__void_ptr_, *mut ())>(27)
@@ -1185,10 +1013,7 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_char__const_void_ptr_ = {
-            let mut __tmp_60: () = unimplemented!();
-            std_basic_format_string_char__const_void_ptr_::new({ &mut __tmp_60 })
-        };
+        let _fmt: std_basic_format_string_char__const_void_ptr_ = unimplemented!();
         let mut _args: () = (66_() as ());
         check
             .spec::<fn((), std_basic_format_string_char__const_void_ptr_, *mut ())>(28)
@@ -1201,40 +1026,28 @@ pub unsafe fn format_tests_6(mut check: FnPtr<Generic>, mut check_exception: FnP
 pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t_ = {
-            let mut __tmp_61: () = unimplemented!();
-            std_basic_format_string_wchar_t_::new({ &mut __tmp_61 })
-        };
+        let _fmt: std_basic_format_string_wchar_t_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t_)>(31)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t_ = {
-            let mut __tmp_62: () = unimplemented!();
-            std_basic_format_string_wchar_t_::new({ &mut __tmp_62 })
-        };
+        let _fmt: std_basic_format_string_wchar_t_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t_)>(31)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t_ = {
-            let mut __tmp_63: () = unimplemented!();
-            std_basic_format_string_wchar_t_::new({ &mut __tmp_63 })
-        };
+        let _fmt: std_basic_format_string_wchar_t_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t_)>(31)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__wchar_t_ = {
-            let mut __tmp_64: () = unimplemented!();
-            std_basic_format_string_wchar_t__wchar_t_::new({ &mut __tmp_64 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__wchar_t_ = unimplemented!();
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_wchar_t__wchar_t_, *mut ())>(32)
@@ -1242,20 +1055,14 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t_ = {
-            let mut __tmp_65: () = unimplemented!();
-            std_basic_format_string_wchar_t_::new({ &mut __tmp_65 })
-        };
+        let _fmt: std_basic_format_string_wchar_t_ = unimplemented!();
         check
             .spec::<fn((), std_basic_format_string_wchar_t_)>(31)
             .call(_expected, _fmt)
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__wchar_t_ = {
-            let mut __tmp_66: () = unimplemented!();
-            std_basic_format_string_wchar_t__wchar_t_::new({ &mut __tmp_66 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__wchar_t_ = unimplemented!();
         let mut _args: () = (' ' as ());
         check
             .spec::<fn((), std_basic_format_string_wchar_t__wchar_t_, *mut ())>(32)
@@ -1263,10 +1070,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = {
-            let mut __tmp_67: () = unimplemented!();
-            std_basic_format_string_wchar_t__bool__bool_::new({ &mut __tmp_67 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -1275,10 +1079,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = {
-            let mut __tmp_68: () = unimplemented!();
-            std_basic_format_string_wchar_t__bool__bool_::new({ &mut __tmp_68 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -1287,7 +1088,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  = { let mut __tmp_69 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ :: new ( { & mut __tmp_69 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_  = unimplemented!() ;
         let mut _args_2: () = 1_();
         let mut _args_3: () = 2_();
         let mut _args_4: () = 3_();
@@ -1393,7 +1194,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_  = { let mut __tmp_70 : ()  = unimplemented!() ; std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_ :: new ( { & mut __tmp_70 } , )  } ;
+        let _fmt: std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_  = unimplemented!() ;
         let mut _args_2: () = ('0' as ());
         let mut _args_3: () = ('9' as ());
         let mut _args_4: () = ('a' as ());
@@ -1418,10 +1219,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: *mut () = buffer.as_mut_ptr();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__wchar_t_ptrref_ = {
-                let mut __tmp_71: () = unimplemented!();
-                std_basic_format_string_wchar_t__wchar_t_ptrref_::new({ &mut __tmp_71 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__wchar_t_ptrref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_wchar_t__wchar_t_ptrref_, *mut *mut ())>(36)
                 .call(_expected, _fmt, &mut data)
@@ -1441,10 +1239,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: *const () = (buffer.as_mut_ptr()).cast_const();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__const_wchar_t_ptrref_ = {
-                let mut __tmp_72: () = unimplemented!();
-                std_basic_format_string_wchar_t__const_wchar_t_ptrref_::new({ &mut __tmp_72 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__const_wchar_t_ptrref_ = unimplemented!();
             check  .spec::<fn(() ,std_basic_format_string_wchar_t__const_wchar_t_ptrref_ ,*mut *const () ,)>(37) .call ( _expected , _fmt , & mut data , )
         });
     }
@@ -1461,10 +1256,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         ];
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_ = {
-                let mut __tmp_73: () = unimplemented!();
-                std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_::new({ &mut __tmp_73 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_ = unimplemented!();
             check  .spec::<fn(() ,std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_ ,*mut [ () ; 8] ,)>(38) .call ( _expected , _fmt , & mut buffer , )
         });
         let mut buffer2: [(); 7] = [
@@ -1478,10 +1270,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         ];
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_ = {
-                let mut __tmp_74: () = unimplemented!();
-                std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_::new({ &mut __tmp_74 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_ = unimplemented!();
             check  .spec::<fn(() ,std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_ ,*mut [ () ; 7] ,)>(39) .call ( _expected , _fmt , & mut buffer2 , )
         });
     }
@@ -1489,10 +1278,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: () = unimplemented!();
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__std_wstring_ref_ = {
-                let mut __tmp_75: () = unimplemented!();
-                std_basic_format_string_wchar_t__std_wstring_ref_::new({ &mut __tmp_75 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__std_wstring_ref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_wchar_t__std_wstring_ref_, *mut ())>(40)
                 .call(_expected, _fmt, &mut data)
@@ -1503,10 +1289,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
         let mut data: () = (unsafe { buffer() });
         (unsafe {
             let _expected: () = unimplemented!();
-            let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ref_ = {
-                let mut __tmp_76: () = unimplemented!();
-                std_basic_format_string_wchar_t__std_wstring_view_ref_::new({ &mut __tmp_76 })
-            };
+            let _fmt: std_basic_format_string_wchar_t__std_wstring_view_ref_ = unimplemented!();
             check
                 .spec::<fn((), std_basic_format_string_wchar_t__std_wstring_view_ref_, *mut ())>(41)
                 .call(_expected, _fmt, &mut data)
@@ -1515,10 +1298,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = {
-            let mut __tmp_77: () = unimplemented!();
-            std_basic_format_string_wchar_t__bool__bool_::new({ &mut __tmp_77 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__bool__bool_ = unimplemented!();
         let mut _args_2: () = false;
         let mut _args_3: () = true;
         check
@@ -1528,10 +1308,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__signed_char_ = {
-            let mut __tmp_78: () = unimplemented!();
-            std_basic_format_string_wchar_t__signed_char_::new({ &mut __tmp_78 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__signed_char_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__signed_char_, *mut ())>(42)
@@ -1539,10 +1316,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__short_ = {
-            let mut __tmp_79: () = unimplemented!();
-            std_basic_format_string_wchar_t__short_::new({ &mut __tmp_79 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__short_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__short_, *mut ())>(43)
@@ -1550,10 +1324,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__int_ = {
-            let mut __tmp_80: () = unimplemented!();
-            std_basic_format_string_wchar_t__int_::new({ &mut __tmp_80 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__int_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__int_, *mut ())>(44)
@@ -1561,10 +1332,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__long_ = {
-            let mut __tmp_81: () = unimplemented!();
-            std_basic_format_string_wchar_t__long_::new({ &mut __tmp_81 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__long_, *mut ())>(45)
@@ -1572,10 +1340,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__long_long_ = {
-            let mut __tmp_82: () = unimplemented!();
-            std_basic_format_string_wchar_t__long_long_::new({ &mut __tmp_82 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__long_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__long_long_, *mut ())>(46)
@@ -1583,10 +1348,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t____int128_ = {
-            let mut __tmp_83: () = unimplemented!();
-            std_basic_format_string_wchar_t____int128_::new({ &mut __tmp_83 })
-        };
+        let _fmt: std_basic_format_string_wchar_t____int128_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t____int128_, *mut ())>(47)
@@ -1595,10 +1357,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned_char_ = {
-            let mut __tmp_84: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned_char_::new({ &mut __tmp_84 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned_char_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned_char_, *mut ())>(48)
@@ -1606,10 +1365,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned_short_ = {
-            let mut __tmp_85: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned_short_::new({ &mut __tmp_85 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned_short_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned_short_, *mut ())>(49)
@@ -1617,10 +1373,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned_int_ = {
-            let mut __tmp_86: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned_int_::new({ &mut __tmp_86 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned_int_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned_int_, *mut ())>(50)
@@ -1628,10 +1381,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned_long_ = {
-            let mut __tmp_87: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned_long_::new({ &mut __tmp_87 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned_long_, *mut ())>(51)
@@ -1639,10 +1389,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned_long_long_ = {
-            let mut __tmp_88: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned_long_long_::new({ &mut __tmp_88 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned_long_long_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned_long_long_, *mut ())>(52)
@@ -1650,10 +1397,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__unsigned___int128_ = {
-            let mut __tmp_89: () = unimplemented!();
-            std_basic_format_string_wchar_t__unsigned___int128_::new({ &mut __tmp_89 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__unsigned___int128_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__unsigned___int128_, *mut ())>(53)
@@ -1662,10 +1406,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__float_ = {
-            let mut __tmp_90: () = unimplemented!();
-            std_basic_format_string_wchar_t__float_::new({ &mut __tmp_90 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__float_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__float_, *mut ())>(54)
@@ -1673,10 +1414,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__double_ = {
-            let mut __tmp_91: () = unimplemented!();
-            std_basic_format_string_wchar_t__double_::new({ &mut __tmp_91 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__double_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__double_, *mut ())>(55)
@@ -1684,10 +1422,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__long_double_ = {
-            let mut __tmp_92: () = unimplemented!();
-            std_basic_format_string_wchar_t__long_double_::new({ &mut __tmp_92 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__long_double_ = unimplemented!();
         let mut _args: () = 42_();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__long_double_, *mut ())>(56)
@@ -1696,10 +1431,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     {}
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__std_nullptr_t_ = {
-            let mut __tmp_93: () = unimplemented!();
-            std_basic_format_string_wchar_t__std_nullptr_t_::new({ &mut __tmp_93 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__std_nullptr_t_ = unimplemented!();
         let mut _args: () = Default::default();
         check
             .spec::<fn((), std_basic_format_string_wchar_t__std_nullptr_t_, *mut ())>(57)
@@ -1707,10 +1439,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__void_ptr_ = {
-            let mut __tmp_94: () = unimplemented!();
-            std_basic_format_string_wchar_t__void_ptr_::new({ &mut __tmp_94 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__void_ptr_ = unimplemented!();
         let mut _args: () = (66_() as ());
         check
             .spec::<fn((), std_basic_format_string_wchar_t__void_ptr_, *mut ())>(58)
@@ -1718,10 +1447,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
     });
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__const_void_ptr_ = {
-            let mut __tmp_95: () = unimplemented!();
-            std_basic_format_string_wchar_t__const_void_ptr_::new({ &mut __tmp_95 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__const_void_ptr_ = unimplemented!();
         let mut _args: () = (66_() as ());
         check
             .spec::<fn((), std_basic_format_string_wchar_t__const_void_ptr_, *mut ())>(59)
@@ -1734,10 +1460,7 @@ pub unsafe fn format_tests_7(mut check: FnPtr<Generic>, mut check_exception: FnP
 pub unsafe fn format_tests_char_to_wchar_t_8(mut check: FnPtr<Generic>) {
     (unsafe {
         let _expected: () = unimplemented!();
-        let _fmt: std_basic_format_string_wchar_t__char__char__char__char__char_ = {
-            let mut __tmp_96: () = unimplemented!();
-            std_basic_format_string_wchar_t__char__char__char__char__char_::new({ &mut __tmp_96 })
-        };
+        let _fmt: std_basic_format_string_wchar_t__char__char__char__char__char_ = unimplemented!();
         let mut _args_2: () = ('0' as ());
         let mut _args_3: () = ('9' as ());
         let mut _args_4: () = ('a' as ());
@@ -2243,7 +1966,7 @@ impl util_iterator_error {
     }
 }
 pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCell::new(|| unsafe {
-    lambda_unsafe! ( Generic , { } , | mut expected : () , mut fmt : std_basic_format_string_char_ , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+    lambda_unsafe! ( Generic , { } , | mut expected : () , mut fmt : std_basic_format_string_char_ , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2270,7 +1993,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__char_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__char_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2297,7 +2020,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__bool__bool_ , args_2 : *mut () , args_3 : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__bool__bool_ , args_2 : *mut () , args_3 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2324,7 +2047,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , args_9 : *mut () , args_10 : *mut () , args_11 : *mut () , args_12 : *mut () , args_13 : *mut () , args_14 : *mut () , args_15 : *mut () , args_16 : *mut () , args_17 : *mut () , args_18 : *mut () , args_19 : *mut () , args_20 : *mut () , args_21 : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , args_9 : *mut () , args_10 : *mut () , args_11 : *mut () , args_12 : *mut () , args_13 : *mut () , args_14 : *mut () , args_15 : *mut () , args_16 : *mut () , args_17 : *mut () , args_18 : *mut () , args_19 : *mut () , args_20 : *mut () , args_21 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2351,7 +2074,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__char__char__char__char__char__char_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__char__char__char__char__char__char_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2378,7 +2101,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__char_ptrref_ , args : *mut *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__char_ptrref_ , args : *mut *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2405,7 +2128,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__const_char_ptrref_ , args : *mut *const () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__const_char_ptrref_ , args : *mut *const () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2432,7 +2155,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__ref_arr8arr_ , args : *mut [ () ; 8] , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__ref_arr8arr_ , args : *mut [ () ; 8] , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2459,7 +2182,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__ref_arr7arr_ , args : *mut [ () ; 7] , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__char__ref_arr7arr_ , args : *mut [ () ; 7] , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2486,7 +2209,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_string_ref_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_string_ref_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2513,7 +2236,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_string_view_ref_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_string_view_ref_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2540,7 +2263,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__signed_char_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__signed_char_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2567,7 +2290,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__short_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__short_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2594,7 +2317,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__int_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__int_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2621,7 +2344,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2648,7 +2371,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_long_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2675,7 +2398,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char____int128_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char____int128_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2702,7 +2425,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_char_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_char_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2729,7 +2452,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_short_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_short_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2756,7 +2479,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_int_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_int_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2783,7 +2506,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_long_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2810,7 +2533,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_long_long_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned_long_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2837,7 +2560,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned___int128_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__unsigned___int128_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2864,7 +2587,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__float_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__float_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2891,7 +2614,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__double_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__double_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2918,7 +2641,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_double_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__long_double_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2945,7 +2668,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_nullptr_t_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__std_nullptr_t_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2972,7 +2695,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__void_ptr_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__void_ptr_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -2999,7 +2722,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__const_void_ptr_ , args : *mut () , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__const_void_ptr_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3026,7 +2749,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_char__status_ , args : *mut status , | { { let mut out : () = std_basic_string_char__std_char_traits_char___std_allocator_char__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_char__status_ , args : *mut status , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3053,7 +2776,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__char__char__char__char__char_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__char__char__char__char__char_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3080,7 +2803,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t_ , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t_ , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3107,7 +2830,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3134,7 +2857,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__bool__bool_ , args_2 : *mut () , args_3 : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__bool__bool_ , args_2 : *mut () , args_3 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3161,7 +2884,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , args_9 : *mut () , args_10 : *mut () , args_11 : *mut () , args_12 : *mut () , args_13 : *mut () , args_14 : *mut () , args_15 : *mut () , args_16 : *mut () , args_17 : *mut () , args_18 : *mut () , args_19 : *mut () , args_20 : *mut () , args_21 : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int__int_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , args_9 : *mut () , args_10 : *mut () , args_11 : *mut () , args_12 : *mut () , args_13 : *mut () , args_14 : *mut () , args_15 : *mut () , args_16 : *mut () , args_17 : *mut () , args_18 : *mut () , args_19 : *mut () , args_20 : *mut () , args_21 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3188,7 +2911,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t__wchar_t_ , args_2 : *mut () , args_3 : *mut () , args_4 : *mut () , args_5 : *mut () , args_6 : *mut () , args_7 : *mut () , args_8 : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3215,7 +2938,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t_ptrref_ , args : *mut *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t_ptrref_ , args : *mut *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3242,7 +2965,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_wchar_t_ptrref_ , args : *mut *const () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_wchar_t_ptrref_ , args : *mut *const () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3269,7 +2992,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_ , args : *mut [ () ; 8] , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__ref_arr8arr_ , args : *mut [ () ; 8] , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3296,7 +3019,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_ , args : *mut [ () ; 7] , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__wchar_t__ref_arr7arr_ , args : *mut [ () ; 7] , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3323,7 +3046,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_wstring_ref_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_wstring_ref_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3350,7 +3073,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_wstring_view_ref_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_wstring_view_ref_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3377,7 +3100,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__signed_char_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__signed_char_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3404,7 +3127,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__short_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__short_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3431,7 +3154,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__int_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__int_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3458,7 +3181,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3485,7 +3208,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_long_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3512,7 +3235,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t____int128_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t____int128_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3539,7 +3262,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_char_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_char_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3566,7 +3289,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_short_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_short_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3593,7 +3316,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_int_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_int_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3620,7 +3343,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_long_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3647,7 +3370,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_long_long_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned_long_long_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3674,7 +3397,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned___int128_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__unsigned___int128_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3701,7 +3424,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__float_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__float_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3728,7 +3451,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__double_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__double_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3755,7 +3478,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_double_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__long_double_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3782,7 +3505,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_nullptr_t_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__std_nullptr_t_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3809,7 +3532,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__void_ptr_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__void_ptr_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3836,7 +3559,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_void_ptr_ , args : *mut () , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__const_void_ptr_ , args : *mut () , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;
@@ -3863,7 +3586,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
  ;
  unimplemented!()  ;
  unimplemented!()  ;
- } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__status_ , args : *mut status , | { { let mut out : () = std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__ :: new_1 ( { unimplemented!()  } , { ( ' ' as ()  ) } , None , )  ;
+ } } , | mut expected : () , mut fmt : std_basic_format_string_wchar_t__status_ , args : *mut status , | { { let mut out : () = unimplemented!() ;
   ;
  ;
  let mut it : () = unimplemented!()  ;

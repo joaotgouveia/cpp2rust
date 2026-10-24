@@ -105,7 +105,7 @@ pub fn insert3at_4(c: Ptr<nasty_vector_int_>, i: (), x1: (), x2: (), x3: ()) {
     unimplemented!();
     unimplemented!();
     ({
-        let _pos: () = std___wrap_iter_const_int_ptr_::new_1({ unimplemented!() });
+        let _pos: () = unimplemented!();
         let _x: Ptr<()> = x3.as_pointer();
         nasty_vector_int_Impl::insert_45(&c, _pos, _x)
     });

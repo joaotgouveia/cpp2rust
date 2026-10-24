@@ -117,8 +117,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let mut i: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(1_()) });
-        let mut j: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(2_()) });
+        let mut i: () = unimplemented!();
+        let mut j: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

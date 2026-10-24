@@ -255,11 +255,7 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test04_10(mut size: ()) {
-    let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { size },
-        { ('s' as ()) },
-        None,
-    );
+    let mut str: () = unimplemented!();
     let mut expected_size: () = (2_()).wrapping_mul(((size).wrapping_add(1_())));
     let oss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;

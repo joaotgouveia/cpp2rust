@@ -521,36 +521,17 @@ pub fn test_10() -> () {
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_contiguous_iterator_int_ptr__::new_1(
-                { contiguous_iterator_int_ptr_::new_1({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_InputOrOutputArchetype_::new_1(
-                {
-                    InputOrOutputArchetype {
-                        ptr: (buffer.as_pointer() as Ptr<()>),
-                    }
-                },
-                { (8_() as ()) },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

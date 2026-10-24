@@ -258,12 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut oss_01: () = unimplemented!();
-    let str_01: () =
-        std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
-            { 50_() },
-            { (97 as ()) },
-            None,
-        );
+    let str_01: () = unimplemented!();
     unimplemented!();
     let width: () = unimplemented!();
     unimplemented!();

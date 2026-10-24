@@ -267,7 +267,7 @@ unsafe fn main_0() -> () {
     let mut sum: () = unimplemented!();
     'loop_: for e in IterRange::new(unimplemented!(), unimplemented!()) {
         let e: *const () = &(*unimplemented!());
-        sum = unimplemented!();
+        unimplemented!();
     }
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

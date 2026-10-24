@@ -151,7 +151,7 @@ pub unsafe fn test_6(c: *mut ()) {
     let mut some_key: () = (*unimplemented!()).first;
     let mut first: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
-        let mut key_value: () = (*first).first;
+        let mut key_value: () = (*unimplemented!()).first;
         let mut t: () = unimplemented!();
         sz.prefix_dec();
         unimplemented!();
@@ -168,7 +168,7 @@ pub unsafe fn test_7(c: *mut ()) {
     let _dtor_some_key = ScopedDestructorUnsafe::new(&raw mut some_key, Counter_int_::destructor);
     let mut first: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
-        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*first).first });
+        let mut key_value: Counter_int_ = Counter_int_::copy_from({ &(*unimplemented!()).first });
         let _dtor_key_value =
             ScopedDestructorUnsafe::new(&raw mut key_value, Counter_int_::destructor);
         let mut t: () = unimplemented!();
@@ -186,7 +186,7 @@ pub unsafe fn test_8(c: *mut ()) {
     let mut some_key : () = ( * ( unsafe { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . first  ;
     let mut first: () = unimplemented!();
     'loop_: while !(unimplemented!()) {
-        let mut key_value : () = ( * ( unsafe { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & first  , ) } )   ) . first  ;
+        let mut key_value : () = ( * ( unsafe { min_pointer_const_std_pair_const_int__int___std_integral_constant_unsigned_long__0__ :: operator_arrow ( & unimplemented!()   , ) } )   ) . first  ;
         let mut t: () = unimplemented!();
         sz.prefix_dec();
         unimplemented!();

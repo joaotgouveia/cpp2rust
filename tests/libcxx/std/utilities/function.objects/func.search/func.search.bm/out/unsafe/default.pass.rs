@@ -1467,12 +1467,7 @@ pub unsafe fn test2_22() {
     });
 }
 pub unsafe fn test_custom_pred_23() {
-    let mut long_string: () =
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { 1024_() },
-            { ('0' as ()) },
-            None,
-        );
+    let mut long_string: () = unimplemented!();
     let mut searcher: () = unimplemented!();
     let str: [(); 5] = std::mem::transmute(*b"1234\0");
     let mut ret: () = unimplemented!();

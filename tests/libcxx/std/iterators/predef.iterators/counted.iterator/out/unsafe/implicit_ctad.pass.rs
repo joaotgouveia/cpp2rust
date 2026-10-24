@@ -30,7 +30,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut array: [(); 3] = [1_(), 2_(), 3_()];
     let mut p: *mut () = array.as_mut_ptr();
-    let mut iter: () = std_counted_iterator_int_ptr_::new_1({ p }, { 3_() });
+    let mut iter: () = unimplemented!();
     const _: () = assert!(true, "");;
     return 0_();
 }

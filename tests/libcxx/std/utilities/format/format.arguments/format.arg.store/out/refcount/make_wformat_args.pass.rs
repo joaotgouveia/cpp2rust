@@ -33,8 +33,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let c: Value<()> = Rc::new(RefCell::new(('c' as ())));
     let p: Value<()> = Rc::new(RefCell::new(Default::default()));
     let b: Value<()> = Rc::new(RefCell::new(false));
-    let store: Value<std___format_arg_store_std_wformat_context__int__std_nullptr_t__bool__char_> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(
         true,
         "std::same_as<decltype(store), std::__format_arg_store<std::wformat_context, int, nullptr_t, bool, char>>"

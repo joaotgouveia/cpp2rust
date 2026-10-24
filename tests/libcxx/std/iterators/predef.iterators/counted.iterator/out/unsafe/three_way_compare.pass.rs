@@ -462,14 +462,8 @@ pub unsafe fn test_7() -> () {
     let Greater: *const () = &(*unimplemented!());
     {
         {
-            let mut iter1: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
-            let mut iter2: () = std_counted_iterator_CommonWithForwardIter_int_ptr__::new_1(
-                { CommonWithForwardIter_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter1: () = unimplemented!();
+            let mut iter2: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -477,14 +471,8 @@ pub unsafe fn test_7() -> () {
             unimplemented!();
         }
         {
-            let mut iter1: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
-            let mut iter2: () = std_counted_iterator_forward_iterator_int_ptr__::new_1(
-                { forward_iterator_int_ptr_::new_1({ buffer.as_mut_ptr() }) },
-                { 8_() },
-            );
+            let mut iter1: () = unimplemented!();
+            let mut iter2: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

@@ -23,7 +23,7 @@ impl plus_one {
     }
 }
 pub unsafe fn test_0() -> () {
-    let mut g: std___bind_multiply__int__const_std_placeholders___ph_1__ref_ = unimplemented!();
+    let mut g: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
