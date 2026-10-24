@@ -82,6 +82,24 @@ void AddRequiredClasses(clang::QualType type,
   if (auto array = type->getAsArrayTypeUnsafe()) {
     return AddRequiredClasses(array->getElementType(), required, declared);
   }
+  // an alias template names itself, not what it expands to in one library
+  // (iter_difference_t<T1> is __iter_traits in libstdc++)
+  if (auto spec =
+          llvm::dyn_cast<clang::TemplateSpecializationType>(type.getTypePtr());
+      spec && spec->isTypeAlias()) {
+    for (const auto &arg : spec->template_arguments()) {
+      if (arg.getKind() == clang::TemplateArgument::Type) {
+        AddRequiredClasses(arg.getAsType(), required, declared);
+      }
+    }
+    auto alias = llvm::cast<clang::TypeAliasTemplateDecl>(
+        spec->getTemplateName().getAsTemplateDecl());
+    if (declared) {
+      return DeclareNames(alias, *declared);
+    }
+    required.insert(RulesLoader::DeclKey(alias));
+    return;
+  }
   if (auto fn = type->getAs<clang::FunctionType>()) {
     // the use has the rule's return type
     AddRequiredClasses(fn->getReturnType(), required, declared);
