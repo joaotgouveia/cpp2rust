@@ -30,26 +30,6 @@ namespace cpp2rust::AstMatcher {
 
 namespace {
 
-bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
-                     const clang::Expr *returned) {
-  auto use_call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
-  auto rule_call =
-      llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(returned));
-  if (!use_call || !rule_call) {
-    return true;
-  }
-  if (use_call->getNumArgs() != rule_call->getNumArgs()) {
-    return false;
-  }
-  for (unsigned i = 0; i < use_call->getNumArgs(); ++i) {
-    if (!ctx.hasSameUnqualifiedType(use_call->getArg(i)->getType(),
-                                    rule_call->getArg(i)->getType())) {
-      return false;
-    }
-  }
-  return true;
-}
-
 struct MacroUsage {
   std::string name;
 
@@ -161,7 +141,7 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
     operands.assign(op->arg_begin(), op->arg_end());
     if (!operands.empty() &&
         llvm::isa_and_nonnull<clang::CXXMethodDecl>(op->getDirectCallee())) {
-      operands[0] = operands[0]->IgnoreParenImpCasts();
+      operands[0] = getObject(ctx, operands[0]->IgnoreParenImpCasts());
     }
     // A rule written as a0++ has no parameter for the dummy int of a postfix
     // operator.
