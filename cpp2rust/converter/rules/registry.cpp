@@ -379,6 +379,11 @@ TypeRuleMatch findType(clang::QualType use) {
     return {};
   }
   auto best = most_specialized(use, /*templates=*/true);
+  // an alias template no rule is written for names the type it computes
+  // (conditional_t<is_same_v<CharT, char>, format_string<Args...>, ...>)
+  if (!best.rule_decl && RuleDecls::AliasTemplateOf(use)) {
+    return findType(use.getSingleStepDesugaredType(ctx));
+  }
   if (!best.rule_decl) {
     auto spelled = RuleDecls::SpelledTypedef(ctx, use);
     if (spelled && !IsUserDefinedDecl(spelled)) {
