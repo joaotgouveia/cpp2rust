@@ -12,6 +12,6 @@ template <
         T5 = 0,
     typename std::enable_if<(!(std::is_same<T4, const T1>::value)), int>::type
         T6 = 0>
-std::independent_bits_engine<T1, T2, T3> f20(T4 &a0) {
+std::independent_bits_engine<T1, T2, T3> f21(T4 &a0) {
   return std::independent_bits_engine<T1, T2, T3>(a0);
 }

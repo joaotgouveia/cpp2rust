@@ -135,3 +135,20 @@ template <
 std::pair<T1, T2> f14(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::enable_if<
+    std::__and_<std::is_assignable<T1 &, const T3 &>,
+                std::is_assignable<T2 &, const T4 &>>::value,
+    std::pair<T1, T2> &>::type
+f15(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+  return a0.template operator= <T3, T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+typename std::enable_if<std::__and_<std::is_assignable<T1 &, T3 &&>,
+                                    std::is_assignable<T2 &, T4 &&>>::value,
+                        std::pair<T1, T2> &>::type
+f16(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
+  return a0.template operator= <T3, T4>(std::move(a1));
+}

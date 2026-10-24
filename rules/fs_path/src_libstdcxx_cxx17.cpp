@@ -1,6 +1,7 @@
 #include <algorithm>
 #include <filesystem>
 #include <ios>
+#include <istream>
 #include <string>
 #include <system_error>
 #include <utility>
@@ -338,24 +339,36 @@ bool f79(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator==(a0, a1);
 }
 
-std::filesystem::path::value_type f80() {
+template <typename T1, typename T2>
+std::basic_istream<T1, T2> &f80(std::basic_istream<T1, T2> &a0,
+                                std::filesystem::path &a1) {
+  return operator>>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::basic_ostream<T1, T2> &f81(std::basic_ostream<T1, T2> &a0,
+                                const std::filesystem::path &a1) {
+  return operator<<(a0, a1);
+}
+
+std::filesystem::path::value_type f82() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f81(std::filesystem::path &a0, std::filesystem::path &a1) {
+void f83(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f82(const T1 &a0) {
+std::filesystem::path f84(const T1 &a0) {
   return std::filesystem::u8path<T1>(a0);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f83(T1 a0, T1 a1) {
+std::filesystem::path f85(T1 a0, T1 a1) {
   return std::filesystem::u8path<T1>(a0, a1);
 }

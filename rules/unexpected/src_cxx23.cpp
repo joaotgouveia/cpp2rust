@@ -57,3 +57,8 @@ template <typename T1>
 void f11(std::unexpected<T1> &a0, std::unexpected<T1> &a1) {
   return swap(a0, a1);
 }
+
+template <typename T1, typename T2>
+bool f12(const std::unexpected<T1> &a0, const std::unexpected<T2> &a1) {
+  return operator==(a0, a1);
+}

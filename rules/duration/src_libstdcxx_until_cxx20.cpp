@@ -1,4 +1,5 @@
 #include <chrono>
+#include <type_traits>
 #include <utility>
 
 template <
@@ -10,7 +11,7 @@ template <
     typename std::enable_if<
         (!(std::is_same<T3, std::chrono::duration<T1, T2>>::value)), int>::type
         T5 = 0>
-std::chrono::duration<T1, T2> f18(const T3 &a0) {
+std::chrono::duration<T1, T2> f20(const T3 &a0) {
   return std::chrono::duration<T1, T2>(a0);
 }
 
@@ -35,6 +36,6 @@ template <
     typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                std::is_same<T4, T2>::value)),
                             int>::type T6 = 0>
-std::chrono::duration<T1, T2> f19(const std::chrono::duration<T3, T4> &a0) {
+std::chrono::duration<T1, T2> f21(const std::chrono::duration<T3, T4> &a0) {
   return std::chrono::duration<T1, T2>(a0);
 }

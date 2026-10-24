@@ -283,6 +283,36 @@ std::tuple<T1, T2> f58(std::allocator_arg_t a0, const T3 &a1,
   return std::tuple<T1, T2>(std::move(a0), a1, std::move(a2));
 }
 
+template <typename T1, typename T2, typename T3, typename T4>
+std::__enable_if_t<
+    std::tuple<T1, T2>::template __assignable<const T3 &, const T4 &>(),
+    std::tuple<T1, T2> &>
+f59(std::tuple<T1, T2> &a0, const std::tuple<T3, T4> &a1) {
+  return a0.template operator= <T3, T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::__enable_if_t<std::tuple<T1, T2>::template __assignable<T3, T4>(),
+                   std::tuple<T1, T2> &>
+f60(std::tuple<T1, T2> &a0, std::tuple<T3, T4> &&a1) {
+  return a0.template operator= <T3, T4>(std::move(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::__enable_if_t<
+    std::tuple<T1, T2>::template __assignable<const T3 &, const T4 &>(),
+    std::tuple<T1, T2> &>
+f61(std::tuple<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+  return a0.template operator= <T3, T4>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+std::__enable_if_t<std::tuple<T1, T2>::template __assignable<T3, T4>(),
+                   std::tuple<T1, T2> &>
+f62(std::tuple<T1, T2> &a0, std::pair<T3, T4> &&a1) {
+  return a0.template operator= <T3, T4>(std::move(a1));
+}
+
 template <
     typename... T1, typename T2 = void,
     std::__enable_if_t<
@@ -290,7 +320,7 @@ template <
                                T1...>::__is_implicitly_default_constructible(),
         bool>
         T3 = true>
-std::tuple<T1...> f59() {
+std::tuple<T1...> f63() {
   return std::tuple<T1...>();
 }
 
@@ -301,7 +331,7 @@ template <
                                T1...>::__is_explicitly_default_constructible(),
         bool>
         T3 = false>
-std::tuple<T1...> f60() {
+std::tuple<T1...> f64() {
   return std::tuple<T1...>();
 }
 
@@ -311,7 +341,7 @@ template <typename... T1, typename T2,
                   __is_implicitly_default_constructible(),
               bool>
               T3 = true>
-std::tuple<T1...> f61(std::allocator_arg_t a0, const T2 &a1) {
+std::tuple<T1...> f65(std::allocator_arg_t a0, const T2 &a1) {
   return std::tuple<T1...>(std::move(a0), a1);
 }
 
@@ -321,12 +351,26 @@ template <typename... T1, typename T2,
                   __is_explicitly_default_constructible(),
               bool>
               T3 = false>
-std::tuple<T1...> f62(std::allocator_arg_t a0, const T2 &a1) {
+std::tuple<T1...> f66(std::allocator_arg_t a0, const T2 &a1) {
   return std::tuple<T1...>(std::move(a0), a1);
 }
 
 template <typename... T1, typename T2>
-std::tuple<T1...> f63(std::allocator_arg_t a0, const T2 &a1,
+std::tuple<T1...> f67(std::allocator_arg_t a0, const T2 &a1,
                       std::tuple<T1...> &&a2) {
   return std::tuple<T1...>(std::move(a0), a1, std::move(a2));
+}
+
+template <typename... T1, typename... T2>
+std::__enable_if_t<std::tuple<T1...>::template __assignable<const T2 &...>(),
+                   std::tuple<T1...> &>
+f68(std::tuple<T1...> &a0, const std::tuple<T2...> &a1) {
+  return a0.template operator= <T2...>(a1);
+}
+
+template <typename... T1, typename... T2>
+std::__enable_if_t<std::tuple<T1...>::template __assignable<T2...>(),
+                   std::tuple<T1...> &>
+f69(std::tuple<T1...> &a0, std::tuple<T2...> &&a1) {
+  return a0.template operator= <T2...>(std::move(a1));
 }

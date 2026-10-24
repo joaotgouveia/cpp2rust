@@ -5,17 +5,17 @@
 #include <utility>
 
 template <typename T1, typename... T2>
-bool f17(const std::function<T1(T2...)> &a0, std::nullptr_t a1) {
+bool f19(const std::function<T1(T2...)> &a0, std::nullptr_t a1) {
   return std::operator!= <T1, T2...>(a0, a1);
 }
 
 template <typename T1, typename... T2>
-bool f18(std::nullptr_t a0, const std::function<T1(T2...)> &a1) {
+bool f20(std::nullptr_t a0, const std::function<T1(T2...)> &a1) {
   return std::operator!= <T1, T2...>(a0, a1);
 }
 
 template <typename T1, typename... T2>
-bool f19(std::nullptr_t a0, const std::function<T1(T2...)> &a1) {
+bool f21(std::nullptr_t a0, const std::function<T1(T2...)> &a1) {
   return std::operator== <T1, T2...>(a0, a1);
 }
 
@@ -29,7 +29,7 @@ template <
          !(std::is_same<T3, const std::function<T1(T2...)> &>::value) &&
          !(std::is_same<T3, std::function<T1(T2...)> &&>::value)),
         int>::type T5 = 0>
-std::function<T1(T2...)> f20(T3 a0) {
+std::function<T1(T2...)> f22(T3 a0) {
   return std::function<T1(T2...)>(a0);
 }
 
@@ -43,6 +43,6 @@ template <typename T1, typename... T2, typename T3,
                !(std::is_same<T3, std::function<T1(T2...)>>::value) &&
                !(std::is_same<T3, std::nullptr_t>::value)),
               int>::type T5 = 0>
-std::function<T1(T2...)> &f21(std::function<T1(T2...)> &a0, T3 &&a1) {
+std::function<T1(T2...)> &f23(std::function<T1(T2...)> &a0, T3 &&a1) {
   return a0.template operator= <T3>(std::forward<T3>(a1));
 }

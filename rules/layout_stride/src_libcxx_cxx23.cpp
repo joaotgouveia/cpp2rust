@@ -103,3 +103,13 @@ f15(const std::layout_stride::mapping<T1> &a0, T2... a1)
 {
   return a0.template operator()<T2...>(a1...);
 }
+
+template <typename T1, typename T2>
+bool f16(const std::layout_stride::mapping<T1> &a0, const T2 &a1)
+  requires((std::__mdspan_detail::__layout_mapping_alike<T2> &&
+            (T2::extents_type::rank() ==
+             std::layout_stride::mapping<T1>::__rank_) &&
+            T2::is_always_strided()))
+{
+  return operator==(a0, a1);
+}

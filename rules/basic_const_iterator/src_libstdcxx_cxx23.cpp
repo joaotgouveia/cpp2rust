@@ -224,20 +224,56 @@ std::iter_difference_t<T1> f30(const std::basic_const_iterator<T1> &a0,
   return a0.template operator- <T2>(a1);
 }
 
+template <typename T1, typename T2, typename T3>
+std::iter_difference_t<T1> f31(const T2 &a0,
+                               const std::basic_const_iterator<T3> &a1)
+  requires(std::sized_sentinel_for<T2, T1>)
+{
+  return operator-(a0, a1);
+}
+
 template <typename T1>
-std::basic_const_iterator<T1> f31(const std::basic_const_iterator<T1> &a0,
+std::basic_const_iterator<T1> f32(const std::basic_const_iterator<T1> &a0,
                                   std::iter_difference_t<T1> a1) {
   return operator-(a0, a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1> f32(std::iter_difference_t<T1> a0,
+std::basic_const_iterator<T1> f33(std::iter_difference_t<T1> a0,
                                   const std::basic_const_iterator<T1> &a1) {
   return operator+(a0, a1);
 }
 
 template <typename T1>
-std::basic_const_iterator<T1> f33(const std::basic_const_iterator<T1> &a0,
+std::basic_const_iterator<T1> f34(const std::basic_const_iterator<T1> &a0,
                                   std::iter_difference_t<T1> a1) {
   return operator+(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f35(const T2 &a0, const std::basic_const_iterator<T3> &a1)
+  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+{
+  return operator>=(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f36(const T2 &a0, const std::basic_const_iterator<T3> &a1)
+  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+{
+  return operator<=(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f37(const T2 &a0, const std::basic_const_iterator<T3> &a1)
+  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+{
+  return operator>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f38(const T2 &a0, const std::basic_const_iterator<T3> &a1)
+  requires(std::random_access_iterator<T1> && std::totally_ordered_with<T1, T2>)
+{
+  return operator<(a0, a1);
 }

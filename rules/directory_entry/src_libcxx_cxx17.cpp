@@ -1,4 +1,5 @@
 #include <filesystem>
+#include <ostream>
 #include <system_error>
 #include <utility>
 
@@ -173,4 +174,10 @@ std::filesystem::file_status f41(const std::filesystem::directory_entry &a0,
 bool f42(const std::filesystem::directory_entry &a0,
          const std::filesystem::directory_entry &a1) {
   return a0.operator==(a1);
+}
+
+template <typename T1, typename T2>
+std::basic_ostream<T1, T2> &f43(std::basic_ostream<T1, T2> &a0,
+                                const std::filesystem::directory_entry &a1) {
+  return operator<<(a0, a1);
 }

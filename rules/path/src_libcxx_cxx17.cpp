@@ -1,8 +1,11 @@
 #include <cstddef>
 #include <filesystem>
+#include <istream>
+#include <ostream>
 #include <string.h>
 #include <string>
 #include <string_view>
+#include <type_traits>
 #include <utility>
 
 std::size_t f1(const std::filesystem::path &a0) {
@@ -250,45 +253,78 @@ std::filesystem::path f62(T1 a0, T1 a1, std::filesystem::path::format a2) {
 }
 
 template <typename T1>
-std::filesystem::path &f63(std::filesystem::path &a0, T1 a1, T1 a2) {
-  return a0.template assign<T1>(a1, a2);
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f63(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template assign<T1>(a1);
 }
 
 template <typename T1>
 std::filesystem::path &f64(std::filesystem::path &a0, T1 a1, T1 a2) {
+  return a0.template assign<T1>(a1, a2);
+}
+
+template <typename T1>
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f65(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template append<T1>(a1);
+}
+
+template <typename T1>
+std::filesystem::path &f66(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template append<T1>(a1, a2);
 }
 
 template <typename T1>
-std::filesystem::path &f65(std::filesystem::path &a0, T1 a1, T1 a2) {
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f67(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template concat<T1>(a1);
+}
+
+template <typename T1>
+std::filesystem::path &f68(std::filesystem::path &a0, T1 a1, T1 a2) {
   return a0.template concat<T1>(a1, a2);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f66(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f69(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template string<T1, T2, T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f67(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f70(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template generic_string<T1, T2, T3>(a1);
 }
 
-std::filesystem::path f68(const std::filesystem::path &a0,
+template <typename T1, typename T2>
+std::basic_istream<T1, T2> &f71(std::basic_istream<T1, T2> &a0,
+                                std::filesystem::path &a1) {
+  return operator>>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::basic_ostream<T1, T2> &f72(std::basic_ostream<T1, T2> &a0,
+                                const std::filesystem::path &a1) {
+  return operator<<(a0, a1);
+}
+
+std::filesystem::path f73(const std::filesystem::path &a0,
                           const std::filesystem::path &a1) {
   return operator/(a0, a1);
 }
 
-bool f69(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f74(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator==(a0, a1);
 }
 
-std::filesystem::path::value_type f70() {
+std::filesystem::path::value_type f75() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f71(std::filesystem::path &a0, std::filesystem::path &a1) {
+void f76(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }

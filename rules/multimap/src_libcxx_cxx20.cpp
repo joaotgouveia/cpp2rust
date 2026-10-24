@@ -7,7 +7,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
               std::is_constructible<std::pair<const T1, T2>, T5>::value, int>
               T6 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
-f104(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1)
+f110(std::multimap<T1, T2, T3, T4> &a0, T5 &&a1)
   requires(
       !(std::is_same<
           T5, typename std::multimap<T1, T2, T3, T4>::value_type>::value) &&
@@ -26,7 +26,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
               std::is_constructible<std::pair<const T1, T2>, T5>::value, int>
               T6 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
-f105(std::multimap<T1, T2, T3, T4> &a0,
+f111(std::multimap<T1, T2, T3, T4> &a0,
      typename std::multimap<T1, T2, T3, T4>::const_iterator a1, T5 &&a2)
   requires(
       !(std::is_same<
@@ -46,91 +46,11 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
                            int>
               T7 = 0>
 typename std::multimap<T1, T2, T3, T4>::iterator
-f106(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template find<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3> ||
-                               std::__is_transparently_comparable_v<T3, T1, T5>,
-                           int>
-              T7 = 0>
-typename std::multimap<T1, T2, T3, T4>::const_iterator
-f107(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template find<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3>, int> T7 = 0>
-typename std::multimap<T1, T2, T3, T4>::size_type
-f108(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template count<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3> ||
-                               std::__is_transparently_comparable_v<T3, T1, T5>,
-                           int>
-              T7 = 0>
-bool f109(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template contains<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3> ||
-                               std::__is_transparently_comparable_v<T3, T1, T5>,
-                           int>
-              T7 = 0>
-typename std::multimap<T1, T2, T3, T4>::iterator
-f110(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template lower_bound<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3> ||
-                               std::__is_transparently_comparable_v<T3, T1, T5>,
-                           int>
-              T7 = 0>
-typename std::multimap<T1, T2, T3, T4>::const_iterator
-f111(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
-  requires(!(std::is_same<
-             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
-{
-  return a0.template lower_bound<T5>(a1);
-}
-
-template <typename T1, typename T2, typename T3, typename T4, typename T5,
-          typename T6 = T3,
-          std::enable_if_t<std::__is_transparent_v<T3> ||
-                               std::__is_transparently_comparable_v<T3, T1, T5>,
-                           int>
-              T7 = 0>
-typename std::multimap<T1, T2, T3, T4>::iterator
 f112(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
   requires(!(std::is_same<
              T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
 {
-  return a0.template upper_bound<T5>(a1);
+  return a0.template find<T5>(a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
@@ -144,6 +64,86 @@ f113(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
   requires(!(std::is_same<
              T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
 {
+  return a0.template find<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3>, int> T7 = 0>
+typename std::multimap<T1, T2, T3, T4>::size_type
+f114(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
+  return a0.template count<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3> ||
+                               std::__is_transparently_comparable_v<T3, T1, T5>,
+                           int>
+              T7 = 0>
+bool f115(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
+  return a0.template contains<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3> ||
+                               std::__is_transparently_comparable_v<T3, T1, T5>,
+                           int>
+              T7 = 0>
+typename std::multimap<T1, T2, T3, T4>::iterator
+f116(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
+  return a0.template lower_bound<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3> ||
+                               std::__is_transparently_comparable_v<T3, T1, T5>,
+                           int>
+              T7 = 0>
+typename std::multimap<T1, T2, T3, T4>::const_iterator
+f117(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
+  return a0.template lower_bound<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3> ||
+                               std::__is_transparently_comparable_v<T3, T1, T5>,
+                           int>
+              T7 = 0>
+typename std::multimap<T1, T2, T3, T4>::iterator
+f118(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
+  return a0.template upper_bound<T5>(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5,
+          typename T6 = T3,
+          std::enable_if_t<std::__is_transparent_v<T3> ||
+                               std::__is_transparently_comparable_v<T3, T1, T5>,
+                           int>
+              T7 = 0>
+typename std::multimap<T1, T2, T3, T4>::const_iterator
+f119(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+  requires(!(std::is_same<
+             T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
+{
   return a0.template upper_bound<T5>(a1);
 }
 
@@ -152,7 +152,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           std::enable_if_t<std::__is_transparent_v<T3>, int> T7 = 0>
 std::pair<typename std::multimap<T1, T2, T3, T4>::iterator,
           typename std::multimap<T1, T2, T3, T4>::iterator>
-f114(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+f120(std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
   requires(!(std::is_same<
              T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
 {
@@ -164,7 +164,7 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5,
           std::enable_if_t<std::__is_transparent_v<T3>, int> T7 = 0>
 std::pair<typename std::multimap<T1, T2, T3, T4>::const_iterator,
           typename std::multimap<T1, T2, T3, T4>::const_iterator>
-f115(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
+f121(const std::multimap<T1, T2, T3, T4> &a0, const T5 &a1)
   requires(!(std::is_same<
              T5, typename std::multimap<T1, T2, T3, T4>::key_type>::value))
 {

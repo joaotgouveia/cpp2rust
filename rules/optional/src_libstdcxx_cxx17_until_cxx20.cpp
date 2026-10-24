@@ -109,3 +109,40 @@ std::optional<T1> f63(std::in_place_t a0, std::initializer_list<T2> a1,
                       T3 &&...a2) {
   return std::optional<T1>(std::move(a0), a1, std::forward<T3>(a2)...);
 }
+
+template <typename T1, typename T2,
+          typename std::enable_if<(!(std::is_same<T2, std::nullopt_t>::value)),
+                                  int>::type T3 = 0>
+std::enable_if_t<
+    std::__and_v<
+        std::__not_<std::is_same<std::optional<T1>, std::__remove_cvref_t<T2>>>,
+        std::__not_<std::__and_<std::is_scalar<T1>,
+                                std::is_same<T1, std::decay_t<T2>>>>,
+        std::is_constructible<T1, T2>, std::is_assignable<T1 &, T2>>,
+    std::optional<T1> &>
+f64(std::optional<T1> &a0, T2 &&a1) {
+  return a0.template operator= <T2>(std::forward<T2>(a1));
+}
+
+template <typename T1, typename T2>
+std::enable_if_t<
+    std::__and_v<std::__not_<std::is_same<T1, T2>>,
+                 std::is_constructible<T1, const T2 &>,
+                 std::is_assignable<T1 &, const T2 &>,
+                 std::__not_<std::__converts_from_optional<T1, T2>>,
+                 std::__not_<std::__assigns_from_optional<T1, T2>>>,
+    std::optional<T1> &>
+f65(std::optional<T1> &a0, const std::optional<T2> &a1) {
+  return a0.template operator= <T2>(a1);
+}
+
+template <typename T1, typename T2>
+std::enable_if_t<
+    std::__and_v<std::__not_<std::is_same<T1, T2>>,
+                 std::is_constructible<T1, T2>, std::is_assignable<T1 &, T2>,
+                 std::__not_<std::__converts_from_optional<T1, T2>>,
+                 std::__not_<std::__assigns_from_optional<T1, T2>>>,
+    std::optional<T1> &>
+f66(std::optional<T1> &a0, std::optional<T2> &&a1) {
+  return a0.template operator= <T2>(std::move(a1));
+}

@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <compare>
 #include <iterator>
 #include <utility>
 
@@ -132,25 +133,49 @@ std::counted_iterator<T1> &f19(std::counted_iterator<T1> &a0,
   return a0.template operator= <T2>(a1);
 }
 
-template <typename T1>
-bool f20(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
-  return operator==(a0, std::move(a1));
+template <typename T1, typename T2>
+void f20(const std::counted_iterator<T1> &a0,
+         const std::counted_iterator<T2> &a1) {
+  return iter_swap(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::strong_ordering f21(const std::counted_iterator<T1> &a0,
+                         const std::counted_iterator<T2> &a1) {
+  return operator<=>(a0, a1);
 }
 
 template <typename T1>
-std::iter_difference_t<T1> f21(std::default_sentinel_t a0,
+bool f22(const std::counted_iterator<T1> &a0, std::default_sentinel_t a1) {
+  return operator==(a0, std::move(a1));
+}
+
+template <typename T1, typename T2>
+bool f23(const std::counted_iterator<T1> &a0,
+         const std::counted_iterator<T2> &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1>
+std::iter_difference_t<T1> f24(std::default_sentinel_t a0,
                                const std::counted_iterator<T1> &a1) {
   return operator-(std::move(a0), a1);
 }
 
 template <typename T1>
-std::iter_difference_t<T1> f22(const std::counted_iterator<T1> &a0,
+std::iter_difference_t<T1> f25(const std::counted_iterator<T1> &a0,
                                std::default_sentinel_t a1) {
   return operator-(a0, std::move(a1));
 }
 
+template <typename T1, typename T2>
+std::iter_difference_t<T2> f26(const std::counted_iterator<T1> &a0,
+                               const std::counted_iterator<T2> &a1) {
+  return operator-(a0, a1);
+}
+
 template <typename T1>
-std::counted_iterator<T1> f23(std::iter_difference_t<T1> a0,
+std::counted_iterator<T1> f27(std::iter_difference_t<T1> a0,
                               const std::counted_iterator<T1> &a1) {
   return operator+(a0, a1);
 }

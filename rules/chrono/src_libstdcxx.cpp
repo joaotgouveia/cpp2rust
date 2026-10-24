@@ -1,4 +1,5 @@
 #include <chrono>
+#include <type_traits>
 #include <utility>
 
 using t1 = std::chrono::high_resolution_clock;
@@ -216,3 +217,10 @@ std::chrono::system_clock &f33(std::chrono::system_clock &a0,
 }
 
 bool f34() { return std::chrono::system_clock::is_steady; }
+
+template <typename T1, typename T2, typename T3>
+std::__enable_if_t<std::chrono::__is_duration<T1>::value,
+                   std::chrono::time_point<T2, T1>>
+f35(const std::chrono::time_point<T2, T3> &a0) {
+  return std::chrono::time_point_cast<T1, T2, T3>(a0);
+}

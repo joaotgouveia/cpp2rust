@@ -6,7 +6,7 @@
 #include <variant>
 
 template <typename... T1>
-auto f46(std::variant<T1...> &a0, std::variant<T1...> &a1) {
+auto f52(std::variant<T1...> &a0, std::variant<T1...> &a1) {
   return std::swap<T1...>(a0, a1);
 }
 
@@ -17,7 +17,7 @@ template <
                          std::variant_alternative_t<0, std::variant<T1...>>>,
                      int>
         T3 = 0>
-std::variant<T1...> f47() {
+std::variant<T1...> f53() {
   return std::variant<T1...>();
 }
 
@@ -29,7 +29,7 @@ template <typename... T1, std::size_t T2, typename... T3,
                   std::variant_alternative_t<T2, std::variant<T1...>>, T3...>,
               int>
               T6 = 0>
-std::variant<T1...> f48(std::in_place_index_t<T2> a0, T3 &&...a1) {
+std::variant<T1...> f54(std::in_place_index_t<T2> a0, T3 &&...a1) {
   return std::variant<T1...>(a0, std::forward<T3>(a1)...);
 }
 
@@ -37,7 +37,7 @@ template <typename... T1, typename T2, typename... T3,
           std::size_t T4 = std::__find_detail::__find_unambiguous_index_sfinae<
               T2, T1...>::value,
           std::enable_if_t<std::is_constructible_v<T2, T3...>, int> T5 = 0>
-std::variant<T1...> f49(std::in_place_type_t<T2> a0, T3 &&...a1) {
+std::variant<T1...> f55(std::in_place_type_t<T2> a0, T3 &&...a1) {
   return std::variant<T1...>(a0, std::forward<T3>(a1)...);
 }
 
@@ -48,7 +48,7 @@ template <
     std::enable_if_t<
         std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>, int>
         T6 = 0>
-std::variant<T1...> f50(std::in_place_type_t<T2> a0,
+std::variant<T1...> f56(std::in_place_type_t<T2> a0,
                         std::initializer_list<T3> a1, T4 &&...a2) {
   return std::variant<T1...>(a0, a1, std::forward<T4>(a2)...);
 }
@@ -57,7 +57,7 @@ template <typename... T1, typename T2, typename... T3,
           std::size_t T4 = std::__find_detail::__find_unambiguous_index_sfinae<
               T2, T1...>::value,
           std::enable_if_t<std::is_constructible_v<T2, T3...>, int> T5 = 0>
-T2 &f51(std::variant<T1...> &a0, T3 &&...a1) {
+T2 &f57(std::variant<T1...> &a0, T3 &&...a1) {
   return a0.template emplace<T2, T3...>(std::forward<T3>(a1)...);
 }
 
@@ -68,6 +68,6 @@ template <
     std::enable_if_t<
         std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>, int>
         T6 = 0>
-T2 &f52(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
+T2 &f58(std::variant<T1...> &a0, std::initializer_list<T3> a1, T4 &&...a2) {
   return a0.template emplace<T2, T3, T4...>(a1, std::forward<T4>(a2)...);
 }

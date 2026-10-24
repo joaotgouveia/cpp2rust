@@ -1,14 +1,35 @@
 #include <cstddef>
 #include <filesystem>
+#include <istream>
+#include <ostream>
 #include <string.h>
 #include <string>
 #include <string_view>
+#include <type_traits>
 #include <utility>
 
-std::string f72(const std::filesystem::path &a0) { return a0.u8string(); }
+std::string f77(const std::filesystem::path &a0) { return a0.u8string(); }
 
-std::string f73(const std::filesystem::path &a0) {
+std::string f78(const std::filesystem::path &a0) {
   return a0.generic_u8string();
+}
+
+template <typename T1, typename std::enable_if<
+                           (!(std::is_same<T1, std::filesystem::path>::value)),
+                           int>::type T2 = 0>
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f79(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template operator= <T1>(a1);
+}
+
+template <typename T1, typename std::enable_if<
+                           (!(std::is_same<T1, std::filesystem::path>::value)),
+                           int>::type T2 = 0>
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f80(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template operator/= <T1>(a1);
 }
 
 template <
@@ -24,26 +45,37 @@ template <
                         const std::filesystem::path::value_type *>::value) &&
          !(std::is_same<T1, std::filesystem::path::value_type>::value)),
         int>::type T3 = 0>
-std::filesystem::path &f74(std::filesystem::path &a0, T1 a1) {
+std::filesystem::path &f81(std::filesystem::path &a0, T1 a1) {
   return a0.template operator+= <T1>(a1);
 }
 
-bool f75(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+template <typename T1,
+          typename std::enable_if<
+              (!(std::is_same<T1, std::filesystem::path>::value) &&
+               !(std::is_same<T1, std::filesystem::path::string_type>::value)),
+              int>::type T2 = 0>
+std::__enable_if_t<std::filesystem::__is_pathable<T1>::value,
+                   std::filesystem::path &>
+f82(std::filesystem::path &a0, const T1 &a1) {
+  return a0.template operator+= <T1>(a1);
+}
+
+bool f83(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator>=(a0, a1);
 }
 
-bool f76(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f84(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator>(a0, a1);
 }
 
-bool f77(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f85(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator<=(a0, a1);
 }
 
-bool f78(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f86(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator<(a0, a1);
 }
 
-bool f79(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f87(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator!=(a0, a1);
 }

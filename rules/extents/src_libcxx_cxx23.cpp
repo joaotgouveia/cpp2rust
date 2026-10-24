@@ -79,3 +79,8 @@ template <typename T1, std::size_t... T2, typename T3, std::size_t... T4>
 std::extents<T1, T2...> f9(const std::extents<T3, T4...> &a0) {
   return std::extents<T1, T2...>(a0);
 }
+
+template <typename T1, std::size_t... T2, typename T3, std::size_t... T4>
+bool f10(const std::extents<T1, T2...> &a0, const std::extents<T3, T4...> &a1) {
+  return operator==(a0, a1);
+}

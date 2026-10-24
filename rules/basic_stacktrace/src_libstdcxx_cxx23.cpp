@@ -1,3 +1,4 @@
+#include <compare>
 #include <stacktrace>
 #include <utility>
 
@@ -154,4 +155,16 @@ const std::stacktrace_entry &f25(const std::basic_stacktrace<T1> &a0,
 template <typename T1>
 void f26(std::basic_stacktrace<T1> &a0, std::basic_stacktrace<T1> &a1) {
   return a0.swap(a1);
+}
+
+template <typename T1, typename T2>
+std::strong_ordering f27(const std::basic_stacktrace<T1> &a0,
+                         const std::basic_stacktrace<T2> &a1) {
+  return operator<=>(a0, a1);
+}
+
+template <typename T1, typename T2>
+bool f28(const std::basic_stacktrace<T1> &a0,
+         const std::basic_stacktrace<T2> &a1) {
+  return operator==(a0, a1);
 }

@@ -1,5 +1,6 @@
 #include <algorithm>
 #include <any>
+#include <initializer_list>
 #include <type_traits>
 #include <utility>
 
@@ -8,7 +9,7 @@ std::enable_if_t<
     std::is_copy_constructible<std::enable_if_t<
         !std::is_same_v<std::decay_t<T1>, std::any>, std::decay_t<T1>>>::value,
     std::any &>
-f25(std::any &a0, T1 &&a1)
+f27(std::any &a0, T1 &&a1)
   requires(!(std::is_same<T1, const std::any &>::value) &&
            !(std::is_same<T1, std::any>::value))
 {

@@ -120,3 +120,11 @@ f17(const std::layout_right::mapping<T1> &a0, T2... a1)
 {
   return a0.template operator()<T2...>(a1...);
 }
+
+template <typename T1, typename T2>
+bool f18(const std::layout_right::mapping<T1> &a0,
+         const std::layout_right::mapping<T2> &a1)
+  requires((T2::rank() == std::layout_right::mapping<T1>::extents_type::rank()))
+{
+  return operator==(a0, a1);
+}

@@ -233,109 +233,114 @@ void f31(std::expected<T1, T2> &a0, std::expected<T1, T2> &a1) {
   return swap(a0, a1);
 }
 
+template <typename T1, typename T2, typename T3>
+bool f32(const std::expected<T1, T2> &a0, const std::unexpected<T3> &a1) {
+  return operator==(a0, a1);
+}
+
 template <typename T1, typename T2> using t5 = std::expected<T1, T2>;
 
 template <typename T1, typename T2>
-std::expected<T1, T2> f32()
+std::expected<T1, T2> f33()
   requires(std::is_default_constructible_v<T1>)
 {
   return std::expected<T1, T2>();
 }
 
 template <typename T1, typename T2>
-const T1 *f33(const std::expected<T1, T2> &a0) {
+const T1 *f34(const std::expected<T1, T2> &a0) {
   return a0.operator->();
 }
 
-template <typename T1, typename T2> T1 *f34(std::expected<T1, T2> &a0) {
+template <typename T1, typename T2> T1 *f35(std::expected<T1, T2> &a0) {
   return a0.operator->();
 }
 
 template <typename T1, typename T2>
-const T1 &f35(const std::expected<T1, T2> &a0) {
+const T1 &f36(const std::expected<T1, T2> &a0) {
   return a0.operator*();
 }
 
-template <typename T1, typename T2> T1 &f36(std::expected<T1, T2> &a0) {
+template <typename T1, typename T2> T1 &f37(std::expected<T1, T2> &a0) {
   return a0.operator*();
 }
 
 template <typename T1, typename T2>
-const T1 &&f37(const std::expected<T1, T2> &&a0) {
+const T1 &&f38(const std::expected<T1, T2> &&a0) {
   return std::move(a0).operator*();
 }
 
-template <typename T1, typename T2> T1 &&f38(std::expected<T1, T2> &&a0) {
+template <typename T1, typename T2> T1 &&f39(std::expected<T1, T2> &&a0) {
   return std::move(a0).operator*();
-}
-
-template <typename T1, typename T2> bool f39(const std::expected<T1, T2> &a0) {
-  return static_cast<bool>(a0);
 }
 
 template <typename T1, typename T2> bool f40(const std::expected<T1, T2> &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1, typename T2> bool f41(const std::expected<T1, T2> &a0) {
   return a0.has_value();
 }
 
 template <typename T1, typename T2>
-const T1 &f41(const std::expected<T1, T2> &a0) {
+const T1 &f42(const std::expected<T1, T2> &a0) {
   return a0.value();
 }
 
-template <typename T1, typename T2> T1 &f42(std::expected<T1, T2> &a0) {
+template <typename T1, typename T2> T1 &f43(std::expected<T1, T2> &a0) {
   return a0.value();
 }
 
 template <typename T1, typename T2>
-const T1 &&f43(const std::expected<T1, T2> &&a0) {
+const T1 &&f44(const std::expected<T1, T2> &&a0) {
   return std::move(a0).value();
 }
 
-template <typename T1, typename T2> T1 &&f44(std::expected<T1, T2> &&a0) {
+template <typename T1, typename T2> T1 &&f45(std::expected<T1, T2> &&a0) {
   return std::move(a0).value();
 }
 
 template <typename T1, typename T2>
-const T2 &f45(const std::expected<T1, T2> &a0) {
+const T2 &f46(const std::expected<T1, T2> &a0) {
   return a0.error();
 }
 
-template <typename T1, typename T2> T2 &f46(std::expected<T1, T2> &a0) {
+template <typename T1, typename T2> T2 &f47(std::expected<T1, T2> &a0) {
   return a0.error();
 }
 
 template <typename T1, typename T2>
-const T2 &&f47(const std::expected<T1, T2> &&a0) {
+const T2 &&f48(const std::expected<T1, T2> &&a0) {
   return std::move(a0).error();
 }
 
-template <typename T1, typename T2> T2 &&f48(std::expected<T1, T2> &&a0) {
+template <typename T1, typename T2> T2 &&f49(std::expected<T1, T2> &&a0) {
   return std::move(a0).error();
 }
 
 template <typename T1, typename T2, typename T3>
-std::expected<T1, T2> f49(const std::unexpected<T3> &a0)
+std::expected<T1, T2> f50(const std::unexpected<T3> &a0)
   requires(std::is_constructible_v<T2, const T3 &>)
 {
   return std::expected<T1, T2>(a0);
 }
 
 template <typename T1, typename T2, typename T3>
-std::expected<T1, T2> f50(std::unexpected<T3> &&a0)
+std::expected<T1, T2> f51(std::unexpected<T3> &&a0)
   requires(std::is_constructible_v<T2, T3>)
 {
   return std::expected<T1, T2>(std::move(a0));
 }
 
 template <typename T1, typename T2, typename... T3>
-std::expected<T1, T2> f51(std::in_place_t a0, T3 &&...a1)
+std::expected<T1, T2> f52(std::in_place_t a0, T3 &&...a1)
   requires(std::is_constructible_v<T1, T3...>)
 {
   return std::expected<T1, T2>(std::move(a0), std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
-std::expected<T1, T2> f52(std::in_place_t a0, std::initializer_list<T3> a1,
+std::expected<T1, T2> f53(std::in_place_t a0, std::initializer_list<T3> a1,
                           T4 &&...a2)
   requires(std::is_constructible_v<T1, std::initializer_list<T3> &, T4...>)
 {
@@ -343,14 +348,14 @@ std::expected<T1, T2> f52(std::in_place_t a0, std::initializer_list<T3> a1,
 }
 
 template <typename T1, typename T2, typename... T3>
-std::expected<T1, T2> f53(std::unexpect_t a0, T3 &&...a1)
+std::expected<T1, T2> f54(std::unexpect_t a0, T3 &&...a1)
   requires(std::is_constructible_v<T2, T3...>)
 {
   return std::expected<T1, T2>(std::move(a0), std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
-std::expected<T1, T2> f54(std::unexpect_t a0, std::initializer_list<T3> a1,
+std::expected<T1, T2> f55(std::unexpect_t a0, std::initializer_list<T3> a1,
                           T4 &&...a2)
   requires(std::is_constructible_v<T2, std::initializer_list<T3> &, T4...>)
 {
@@ -358,14 +363,14 @@ std::expected<T1, T2> f54(std::unexpect_t a0, std::initializer_list<T3> a1,
 }
 
 template <typename T1, typename T2, typename... T3>
-T1 &f55(std::expected<T1, T2> &a0, T3 &&...a1)
+T1 &f56(std::expected<T1, T2> &a0, T3 &&...a1)
   requires(std::is_nothrow_constructible_v<T1, T3...>)
 {
   return a0.template emplace<T3...>(std::forward<T3>(a1)...);
 }
 
 template <typename T1, typename T2, typename T3, typename... T4>
-T1 &f56(std::expected<T1, T2> &a0, std::initializer_list<T3> a1, T4 &&...a2)
+T1 &f57(std::expected<T1, T2> &a0, std::initializer_list<T3> a1, T4 &&...a2)
   requires(
       std::is_nothrow_constructible_v<T1, std::initializer_list<T3> &, T4...>)
 {
@@ -373,77 +378,82 @@ T1 &f56(std::expected<T1, T2> &a0, std::initializer_list<T3> a1, T4 &&...a2)
 }
 
 template <typename T1, typename T2, typename T3>
-T1 f57(const std::expected<T1, T2> &a0, T3 &&a1) {
+T1 f58(const std::expected<T1, T2> &a0, T3 &&a1) {
   return a0.template value_or<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-T1 f58(std::expected<T1, T2> &&a0, T3 &&a1) {
+T1 f59(std::expected<T1, T2> &&a0, T3 &&a1) {
   return std::move(a0).template value_or<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f59(const std::expected<T1, T2> &a0, T3 &&a1) {
+T2 f60(const std::expected<T1, T2> &a0, T3 &&a1) {
   return a0.template error_or<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-T2 f60(std::expected<T1, T2> &&a0, T3 &&a1) {
+T2 f61(std::expected<T1, T2> &&a0, T3 &&a1) {
   return std::move(a0).template error_or<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f61(std::expected<T1, T2> &a0, T3 &&a1)
+auto f62(std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T2, T2 &>)
 {
   return a0.template and_then<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f62(const std::expected<T1, T2> &a0, T3 &&a1)
+auto f63(const std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T2, const T2 &>)
 {
   return a0.template and_then<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f63(std::expected<T1, T2> &a0, T3 &&a1)
+auto f64(std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T1, T1 &>)
 {
   return a0.template or_else<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f64(const std::expected<T1, T2> &a0, T3 &&a1)
+auto f65(const std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T1, const T1 &>)
 {
   return a0.template or_else<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f65(std::expected<T1, T2> &a0, T3 &&a1)
+auto f66(std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T2, T2 &>)
 {
   return a0.template transform<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f66(const std::expected<T1, T2> &a0, T3 &&a1)
+auto f67(const std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T2, const T2 &>)
 {
   return a0.template transform<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f67(std::expected<T1, T2> &a0, T3 &&a1)
+auto f68(std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T1, T1 &>)
 {
   return a0.template transform_error<T3>(std::forward<T3>(a1));
 }
 
 template <typename T1, typename T2, typename T3>
-auto f68(const std::expected<T1, T2> &a0, T3 &&a1)
+auto f69(const std::expected<T1, T2> &a0, T3 &&a1)
   requires(std::is_constructible_v<T1, const T1 &>)
 {
   return a0.template transform_error<T3>(std::forward<T3>(a1));
+}
+
+template <typename T1, typename T2, typename T3, typename T4>
+bool f70(const std::expected<T4, T2> &a0, const T3 &a1) {
+  return operator==(a0, a1);
 }

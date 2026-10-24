@@ -5,7 +5,7 @@
 #include <utility>
 
 template <typename T1, typename... T2, typename T3>
-std::function<T1(T2...)> &f15(std::function<T1(T2...)> &a0,
+std::function<T1(T2...)> &f16(std::function<T1(T2...)> &a0,
                               std::reference_wrapper<T3> a1) {
   return a0.template operator= <T3>(a1);
 }

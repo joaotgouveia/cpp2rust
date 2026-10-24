@@ -1,3 +1,4 @@
+#include <istream>
 #include <random>
 #include <utility>
 
