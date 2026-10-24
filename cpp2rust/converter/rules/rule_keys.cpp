@@ -29,7 +29,12 @@ const clang::Decl *getParent(clang::QualType type) {
   if (type->isPointerType()) {
     type = type->getPointeeType();
   }
-  if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
+  auto spec = type->getAs<clang::TemplateSpecializationType>();
+  // through alias templates (id<atomic<float>>)
+  while (spec && spec->isTypeAlias()) {
+    spec = spec->getAliasedType()->getAs<clang::TemplateSpecializationType>();
+  }
+  if (spec) {
     if (auto tmpl = llvm::dyn_cast_or_null<clang::ClassTemplateDecl>(
             spec->getTemplateName().getAsTemplateDecl())) {
       return tmpl->getCanonicalDecl();
