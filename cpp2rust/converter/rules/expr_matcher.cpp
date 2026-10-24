@@ -165,7 +165,8 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
                  llvm::dyn_cast<clang::CXXStdInitializerListExpr>(expr)) {
     operands.push_back(list->getSubExpr()->IgnoreImplicit());
   } else if (auto member = llvm::dyn_cast<clang::MemberExpr>(expr);
-             member && !llvm::isa<clang::VarDecl>(member->getMemberDecl())) {
+             member && !llvm::isa<clang::VarDecl, clang::EnumConstantDecl>(
+                           member->getMemberDecl())) {
     auto macro_base =
         RuleDecls::GetMacroMemberBase(ctx.getSourceManager(), member);
     auto base =
