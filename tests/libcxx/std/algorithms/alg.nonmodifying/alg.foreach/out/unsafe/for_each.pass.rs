@@ -656,11 +656,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: *mut () = ia.as_mut_ptr();
-                let ___last: *mut () = ia.as_mut_ptr().offset((size) as isize);
-                for_each_14(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -677,14 +673,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ ia.as_mut_ptr() });
-                let ___last: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-                    ia.as_mut_ptr().offset((size) as isize)
-                });
-                for_each_15(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -701,15 +690,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ ia.as_mut_ptr() });
-                let ___last: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({
-                        ia.as_mut_ptr().offset((size) as isize)
-                    });
-                for_each_16(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -726,15 +707,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ ia.as_mut_ptr() });
-                let ___last: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({
-                        ia.as_mut_ptr().offset((size) as isize)
-                    });
-                for_each_17(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -751,13 +724,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ ia.as_mut_ptr() });
-                let ___last: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ ia.as_mut_ptr().offset((size) as isize) });
-                for_each_18(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -774,15 +741,7 @@ impl Test {
         ) {
             let size: () = (*size);
             let mut ia: [(); 6] = [0_(), 1_(), 2_(), 3_(), 4_(), 5_()];
-            let mut f: for_each_test = (unsafe {
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ ia.as_mut_ptr() });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({
-                        ia.as_mut_ptr().offset((size) as isize)
-                    });
-                for_each_19(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while ((i) < (size)) {
@@ -792,14 +751,14 @@ impl Test {
         }
     }
 }
-pub unsafe fn test_20() -> () {
+pub unsafe fn test_14() -> () {
     (unsafe {
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__ >::default() , <Test >::default() , )
     });
     {
         let mut vecs: () = unimplemented!();
         let mut v: () =
-            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut join_21))(&mut vecs) });
+            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut join_15))(&mut vecs) });
         unimplemented!();
     }
     return true;
@@ -836,7 +795,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_20() });
+    (unsafe { test_14() });
     const _: () = assert!(true, "test()");;
     let mut sizes: [(); 9] = [
         0_(),

@@ -213,9 +213,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let b: Value<()> = Rc::new(RefCell::new(std_bad_expected_access_MoveOnly_::new({
-        MoveOnly::new({ Some(3_()) })
-    })));
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return 0_();
 }

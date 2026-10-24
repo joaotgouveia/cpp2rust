@@ -1595,11 +1595,11 @@ pub unsafe fn test_66() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         {
-            let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_16 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_16 } , )  } } , )  ;
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_17 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_17 } , )  } } , )  ;
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         const _: () = assert!(
@@ -1614,11 +1614,11 @@ pub unsafe fn test_66() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         {
-            let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_18 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_18 } , )  } } , { 3_() } , )  ;
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         {
-            let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_19 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_19 } , )  } } , { 3_() } , )  ;
+            let mut r: () = unimplemented!();
             unimplemented!();
         }
         const _: () = assert!(

@@ -1482,7 +1482,7 @@ pub unsafe fn test_one_30(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_1 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1520,9 +1520,9 @@ pub unsafe fn test_one_33(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_2: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_1: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_2 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_1 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1539,7 +1539,7 @@ pub unsafe fn test_one_33(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_3 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1577,9 +1577,9 @@ pub unsafe fn test_one_34(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_4: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_2: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_4 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_2 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1596,7 +1596,7 @@ pub unsafe fn test_one_34(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_5 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_5 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1634,9 +1634,9 @@ pub unsafe fn test_one_35(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_6: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_3: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_6 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_3 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1653,7 +1653,7 @@ pub unsafe fn test_one_35(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_7 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_7 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1691,9 +1691,9 @@ pub unsafe fn test_one_36(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_8: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_4: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_8 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_4 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1710,7 +1710,7 @@ pub unsafe fn test_one_36(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_9 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_9 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1748,9 +1748,9 @@ pub unsafe fn test_one_37(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_10: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_5: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_10 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_5 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1767,7 +1767,7 @@ pub unsafe fn test_one_37(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_11 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_11 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1805,9 +1805,9 @@ pub unsafe fn test_one_38(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_12: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_6: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_12 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_6 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -1824,7 +1824,7 @@ pub unsafe fn test_one_38(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_13 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_13 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1862,15 +1862,15 @@ pub unsafe fn test_one_39(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_14: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_7: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_14 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_7 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_15: random_access_iterator_int_ptr_ =
+                    let mut __tmp_8: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_15 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_8 })
                 },
                 None,
                 None,
@@ -1885,7 +1885,7 @@ pub unsafe fn test_one_39(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_16 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_16 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -1905,6 +1905,250 @@ pub unsafe fn test_one_40(mut input: (), mut input_size: (), mut output_size: ()
     unimplemented!();
     unimplemented!();
     let OutputSize: () = (1_() as ()).wrapping_add(1_());
+    let mut result_size: () = (unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
+            &input_size,
+            &output_size,
+            None,
+            None,
+        )
+    });
+    let mut begin: *mut () = unimplemented!();
+    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                cpp20_input_iterator_int_ptr_::new({ begin }),
+                {
+                    let mut __tmp_9: cpp20_input_iterator_int_ptr_ =
+                        cpp20_input_iterator_int_ptr_::new({ end });
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_9 })
+                },
+                random_access_iterator_int_ptr_::new_1({ out_begin }),
+                {
+                    let mut __tmp_10: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ out_end });
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_10 })
+                },
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut in_range: () = unimplemented!();
+        let mut out_range: () = unimplemented!();
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                &mut in_range,
+                &mut out_range,
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_41(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
+    unimplemented!();
+    unimplemented!();
+    let OutputSize: () = (2_() as ()).wrapping_add(1_());
+    let mut result_size: () = (unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
+            &input_size,
+            &output_size,
+            None,
+            None,
+        )
+    });
+    let mut begin: *mut () = unimplemented!();
+    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                cpp20_input_iterator_int_ptr_::new({ begin }),
+                {
+                    let mut __tmp_11: cpp20_input_iterator_int_ptr_ =
+                        cpp20_input_iterator_int_ptr_::new({ end });
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_11 })
+                },
+                random_access_iterator_int_ptr_::new_1({ out_begin }),
+                {
+                    let mut __tmp_12: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ out_end });
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_12 })
+                },
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut in_range: () = unimplemented!();
+        let mut out_range: () = unimplemented!();
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                &mut in_range,
+                &mut out_range,
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_42(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
+    unimplemented!();
+    unimplemented!();
+    let OutputSize: () = (3_() as ()).wrapping_add(1_());
+    let mut result_size: () = (unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
+            &input_size,
+            &output_size,
+            None,
+            None,
+        )
+    });
+    let mut begin: *mut () = unimplemented!();
+    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                cpp20_input_iterator_int_ptr_::new({ begin }),
+                {
+                    let mut __tmp_13: cpp20_input_iterator_int_ptr_ =
+                        cpp20_input_iterator_int_ptr_::new({ end });
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_13 })
+                },
+                random_access_iterator_int_ptr_::new_1({ out_begin }),
+                {
+                    let mut __tmp_14: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ out_end });
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_14 })
+                },
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut in_range: () = unimplemented!();
+        let mut out_range: () = unimplemented!();
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                &mut in_range,
+                &mut out_range,
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_43(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
+    unimplemented!();
+    unimplemented!();
+    let OutputSize: () = (8_() as ()).wrapping_add(1_());
+    let mut result_size: () = (unsafe {
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
+            &input_size,
+            &output_size,
+            None,
+            None,
+        )
+    });
+    let mut begin: *mut () = unimplemented!();
+    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                cpp20_input_iterator_int_ptr_::new({ begin }),
+                {
+                    let mut __tmp_15: cpp20_input_iterator_int_ptr_ =
+                        cpp20_input_iterator_int_ptr_::new({ end });
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_15 })
+                },
+                random_access_iterator_int_ptr_::new_1({ out_begin }),
+                {
+                    let mut __tmp_16: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ out_end });
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_16 })
+                },
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut out: () = unimplemented!();
+        let mut out_begin: *mut () = unimplemented!();
+        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
+        let mut in_range: () = unimplemented!();
+        let mut out_range: () = unimplemented!();
+        let mut result: () = (unsafe {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
+                &mut in_range,
+                &mut out_range,
+                None,
+                None,
+                None,
+            )
+        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_44(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
+    unimplemented!();
+    unimplemented!();
+    let OutputSize: () = (7_() as ()).wrapping_add(1_());
     let mut result_size: () = (unsafe {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
             &input_size,
@@ -1946,251 +2190,7 @@ pub unsafe fn test_one_40(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_19 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_19 } , )  } } , )  ;
-        let mut out_range: () = unimplemented!();
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                &mut in_range,
-                &mut out_range,
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_one_41(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
-    unimplemented!();
-    unimplemented!();
-    let OutputSize: () = (2_() as ()).wrapping_add(1_());
-    let mut result_size: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
-            &input_size,
-            &output_size,
-            None,
-            None,
-        )
-    });
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                cpp20_input_iterator_int_ptr_::new({ begin }),
-                {
-                    let mut __tmp_20: cpp20_input_iterator_int_ptr_ =
-                        cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_20 })
-                },
-                random_access_iterator_int_ptr_::new_1({ out_begin }),
-                {
-                    let mut __tmp_21: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_21 })
-                },
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_22 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_22 } , )  } } , )  ;
-        let mut out_range: () = unimplemented!();
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                &mut in_range,
-                &mut out_range,
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_one_42(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
-    unimplemented!();
-    unimplemented!();
-    let OutputSize: () = (3_() as ()).wrapping_add(1_());
-    let mut result_size: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
-            &input_size,
-            &output_size,
-            None,
-            None,
-        )
-    });
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                cpp20_input_iterator_int_ptr_::new({ begin }),
-                {
-                    let mut __tmp_23: cpp20_input_iterator_int_ptr_ =
-                        cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_23 })
-                },
-                random_access_iterator_int_ptr_::new_1({ out_begin }),
-                {
-                    let mut __tmp_24: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_24 })
-                },
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_25 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_25 } , )  } } , )  ;
-        let mut out_range: () = unimplemented!();
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                &mut in_range,
-                &mut out_range,
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_one_43(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
-    unimplemented!();
-    unimplemented!();
-    let OutputSize: () = (8_() as ()).wrapping_add(1_());
-    let mut result_size: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
-            &input_size,
-            &output_size,
-            None,
-            None,
-        )
-    });
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                cpp20_input_iterator_int_ptr_::new({ begin }),
-                {
-                    let mut __tmp_26: cpp20_input_iterator_int_ptr_ =
-                        cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_26 })
-                },
-                random_access_iterator_int_ptr_::new_1({ out_begin }),
-                {
-                    let mut __tmp_27: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_27 })
-                },
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_28 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_28 } , )  } } , )  ;
-        let mut out_range: () = unimplemented!();
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                &mut in_range,
-                &mut out_range,
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_one_44(mut input: (), mut input_size: (), mut output_size: (), mut sorted: ()) {
-    unimplemented!();
-    unimplemented!();
-    let OutputSize: () = (7_() as ()).wrapping_add(1_());
-    let mut result_size: () = (unsafe {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut min_31))(
-            &input_size,
-            &output_size,
-            None,
-            None,
-        )
-    });
-    let mut begin: *mut () = unimplemented!();
-    let mut end: *mut () = unimplemented!().offset((input_size) as isize);
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
-                cpp20_input_iterator_int_ptr_::new({ begin }),
-                {
-                    let mut __tmp_29: cpp20_input_iterator_int_ptr_ =
-                        cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_29 })
-                },
-                random_access_iterator_int_ptr_::new_1({ out_begin }),
-                {
-                    let mut __tmp_30: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_30 })
-                },
-                None,
-                None,
-                None,
-            )
-        });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut out: () = unimplemented!();
-        let mut out_begin: *mut () = unimplemented!();
-        let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_31 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_31 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -2228,15 +2228,15 @@ pub unsafe fn test_one_45(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 cpp20_input_iterator_int_ptr_::new({ begin }),
                 {
-                    let mut __tmp_32: cpp20_input_iterator_int_ptr_ =
+                    let mut __tmp_19: cpp20_input_iterator_int_ptr_ =
                         cpp20_input_iterator_int_ptr_::new({ end });
-                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_32 })
+                    sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({ &mut __tmp_19 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_33: random_access_iterator_int_ptr_ =
+                    let mut __tmp_20: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_33 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_20 })
                 },
                 None,
                 None,
@@ -2251,7 +2251,7 @@ pub unsafe fn test_one_45(mut input: (), mut input_size: (), mut output_size: ()
         let mut out: () = unimplemented!();
         let mut out_begin: *mut () = unimplemented!();
         let mut out_end: *mut () = unimplemented!().offset((output_size) as isize);
-        let mut in_range : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { begin } , )  } , { { let mut __tmp_34 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { end } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_34 } , )  } } , )  ;
+        let mut in_range: () = unimplemented!();
         let mut out_range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
@@ -2662,9 +2662,9 @@ pub unsafe fn test_one_53(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_35: random_access_iterator_int_ptr_ =
+                    let mut __tmp_21: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_35 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_21 })
                 },
                 None,
                 None,
@@ -2719,9 +2719,9 @@ pub unsafe fn test_one_54(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_36: random_access_iterator_int_ptr_ =
+                    let mut __tmp_22: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_36 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_22 })
                 },
                 None,
                 None,
@@ -2776,9 +2776,9 @@ pub unsafe fn test_one_55(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_37: random_access_iterator_int_ptr_ =
+                    let mut __tmp_23: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_37 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_23 })
                 },
                 None,
                 None,
@@ -2833,9 +2833,9 @@ pub unsafe fn test_one_56(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_38: random_access_iterator_int_ptr_ =
+                    let mut __tmp_24: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_38 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_24 })
                 },
                 None,
                 None,
@@ -2890,9 +2890,9 @@ pub unsafe fn test_one_57(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_39: random_access_iterator_int_ptr_ =
+                    let mut __tmp_25: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_39 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_25 })
                 },
                 None,
                 None,
@@ -2947,9 +2947,9 @@ pub unsafe fn test_one_58(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_40: random_access_iterator_int_ptr_ =
+                    let mut __tmp_26: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_40 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_26 })
                 },
                 None,
                 None,
@@ -3004,9 +3004,9 @@ pub unsafe fn test_one_59(mut input: (), mut input_size: (), mut output_size: ()
                 random_access_iterator_int_ptr_::new_1({ end }),
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_41: random_access_iterator_int_ptr_ =
+                    let mut __tmp_27: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_41 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_27 })
                 },
                 None,
                 None,
@@ -3059,9 +3059,9 @@ pub unsafe fn test_one_60(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_42: random_access_iterator_int_ptr_ =
+                    let mut __tmp_28: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_42 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_28 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3116,9 +3116,9 @@ pub unsafe fn test_one_61(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_43: random_access_iterator_int_ptr_ =
+                    let mut __tmp_29: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_43 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_29 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3173,9 +3173,9 @@ pub unsafe fn test_one_62(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_44: random_access_iterator_int_ptr_ =
+                    let mut __tmp_30: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_44 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_30 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3230,9 +3230,9 @@ pub unsafe fn test_one_63(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_45: random_access_iterator_int_ptr_ =
+                    let mut __tmp_31: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_45 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_31 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3287,9 +3287,9 @@ pub unsafe fn test_one_64(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_46: random_access_iterator_int_ptr_ =
+                    let mut __tmp_32: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_46 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_32 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3344,9 +3344,9 @@ pub unsafe fn test_one_65(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_47: random_access_iterator_int_ptr_ =
+                    let mut __tmp_33: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_47 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_33 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3401,9 +3401,9 @@ pub unsafe fn test_one_66(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_48: random_access_iterator_int_ptr_ =
+                    let mut __tmp_34: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_48 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_34 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -3458,15 +3458,15 @@ pub unsafe fn test_one_67(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_49: random_access_iterator_int_ptr_ =
+                    let mut __tmp_35: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_49 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_35 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_50: random_access_iterator_int_ptr_ =
+                    let mut __tmp_36: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_50 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_36 })
                 },
                 None,
                 None,
@@ -3519,15 +3519,15 @@ pub unsafe fn test_one_68(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_51: random_access_iterator_int_ptr_ =
+                    let mut __tmp_37: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_51 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_37 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_52: random_access_iterator_int_ptr_ =
+                    let mut __tmp_38: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_52 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_38 })
                 },
                 None,
                 None,
@@ -3580,15 +3580,15 @@ pub unsafe fn test_one_69(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_53: random_access_iterator_int_ptr_ =
+                    let mut __tmp_39: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_53 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_39 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_54: random_access_iterator_int_ptr_ =
+                    let mut __tmp_40: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_54 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_40 })
                 },
                 None,
                 None,
@@ -3641,15 +3641,15 @@ pub unsafe fn test_one_70(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_55: random_access_iterator_int_ptr_ =
+                    let mut __tmp_41: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_55 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_41 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_56: random_access_iterator_int_ptr_ =
+                    let mut __tmp_42: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_56 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_42 })
                 },
                 None,
                 None,
@@ -3702,15 +3702,15 @@ pub unsafe fn test_one_71(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_57: random_access_iterator_int_ptr_ =
+                    let mut __tmp_43: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_57 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_43 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_58: random_access_iterator_int_ptr_ =
+                    let mut __tmp_44: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_58 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_44 })
                 },
                 None,
                 None,
@@ -3763,15 +3763,15 @@ pub unsafe fn test_one_72(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_59: random_access_iterator_int_ptr_ =
+                    let mut __tmp_45: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_59 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_45 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_60: random_access_iterator_int_ptr_ =
+                    let mut __tmp_46: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_60 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_46 })
                 },
                 None,
                 None,
@@ -3824,15 +3824,15 @@ pub unsafe fn test_one_73(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 random_access_iterator_int_ptr_::new_1({ begin }),
                 {
-                    let mut __tmp_61: random_access_iterator_int_ptr_ =
+                    let mut __tmp_47: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_61 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_47 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_62: random_access_iterator_int_ptr_ =
+                    let mut __tmp_48: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_62 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_48 })
                 },
                 None,
                 None,
@@ -4258,9 +4258,9 @@ pub unsafe fn test_one_81(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_63: random_access_iterator_int_ptr_ =
+                    let mut __tmp_49: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_63 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_49 })
                 },
                 None,
                 None,
@@ -4315,9 +4315,9 @@ pub unsafe fn test_one_82(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_64: random_access_iterator_int_ptr_ =
+                    let mut __tmp_50: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_64 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_50 })
                 },
                 None,
                 None,
@@ -4372,9 +4372,9 @@ pub unsafe fn test_one_83(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_65: random_access_iterator_int_ptr_ =
+                    let mut __tmp_51: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_65 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_51 })
                 },
                 None,
                 None,
@@ -4429,9 +4429,9 @@ pub unsafe fn test_one_84(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_66: random_access_iterator_int_ptr_ =
+                    let mut __tmp_52: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_66 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_52 })
                 },
                 None,
                 None,
@@ -4486,9 +4486,9 @@ pub unsafe fn test_one_85(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_67: random_access_iterator_int_ptr_ =
+                    let mut __tmp_53: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_67 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_53 })
                 },
                 None,
                 None,
@@ -4543,9 +4543,9 @@ pub unsafe fn test_one_86(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_68: random_access_iterator_int_ptr_ =
+                    let mut __tmp_54: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_68 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_54 })
                 },
                 None,
                 None,
@@ -4600,9 +4600,9 @@ pub unsafe fn test_one_87(mut input: (), mut input_size: (), mut output_size: ()
                 end,
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_69: random_access_iterator_int_ptr_ =
+                    let mut __tmp_55: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_69 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_55 })
                 },
                 None,
                 None,
@@ -4655,8 +4655,8 @@ pub unsafe fn test_one_88(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_70: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_70 })
+                    let mut __tmp_56: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_56 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4711,8 +4711,8 @@ pub unsafe fn test_one_89(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_71: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_71 })
+                    let mut __tmp_57: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_57 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4767,8 +4767,8 @@ pub unsafe fn test_one_90(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_72: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_72 })
+                    let mut __tmp_58: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_58 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4823,8 +4823,8 @@ pub unsafe fn test_one_91(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_73: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_73 })
+                    let mut __tmp_59: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_59 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4879,8 +4879,8 @@ pub unsafe fn test_one_92(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_74: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_74 })
+                    let mut __tmp_60: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_60 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4935,8 +4935,8 @@ pub unsafe fn test_one_93(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_75: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_75 })
+                    let mut __tmp_61: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_61 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -4991,8 +4991,8 @@ pub unsafe fn test_one_94(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_76: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_76 })
+                    let mut __tmp_62: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_62 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 random_access_iterator_int_ptr_::new_1({ out_end }),
@@ -5047,14 +5047,14 @@ pub unsafe fn test_one_95(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_77: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_77 })
+                    let mut __tmp_63: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_63 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_78: random_access_iterator_int_ptr_ =
+                    let mut __tmp_64: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_78 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_64 })
                 },
                 None,
                 None,
@@ -5107,14 +5107,14 @@ pub unsafe fn test_one_96(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_79: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_79 })
+                    let mut __tmp_65: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_65 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_80: random_access_iterator_int_ptr_ =
+                    let mut __tmp_66: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_80 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_66 })
                 },
                 None,
                 None,
@@ -5167,14 +5167,14 @@ pub unsafe fn test_one_97(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_81: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_81 })
+                    let mut __tmp_67: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_67 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_82: random_access_iterator_int_ptr_ =
+                    let mut __tmp_68: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_82 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_68 })
                 },
                 None,
                 None,
@@ -5227,14 +5227,14 @@ pub unsafe fn test_one_98(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_83: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_83 })
+                    let mut __tmp_69: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_69 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_84: random_access_iterator_int_ptr_ =
+                    let mut __tmp_70: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_84 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_70 })
                 },
                 None,
                 None,
@@ -5287,14 +5287,14 @@ pub unsafe fn test_one_99(mut input: (), mut input_size: (), mut output_size: ()
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_85: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_85 })
+                    let mut __tmp_71: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_71 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_86: random_access_iterator_int_ptr_ =
+                    let mut __tmp_72: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_86 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_72 })
                 },
                 None,
                 None,
@@ -5347,14 +5347,14 @@ pub unsafe fn test_one_100(mut input: (), mut input_size: (), mut output_size: (
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_87: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_87 })
+                    let mut __tmp_73: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_73 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_88: random_access_iterator_int_ptr_ =
+                    let mut __tmp_74: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_88 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_74 })
                 },
                 None,
                 None,
@@ -5407,14 +5407,14 @@ pub unsafe fn test_one_101(mut input: (), mut input_size: (), mut output_size: (
             (*std::cell::LazyCell::force_mut(&mut *&raw mut partial_sort_copy_32))(
                 begin,
                 {
-                    let mut __tmp_89: *const () = end;
-                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_89 })
+                    let mut __tmp_75: *const () = end;
+                    sentinel_wrapper_const_int_ptr_::new_1({ &mut __tmp_75 })
                 },
                 random_access_iterator_int_ptr_::new_1({ out_begin }),
                 {
-                    let mut __tmp_90: random_access_iterator_int_ptr_ =
+                    let mut __tmp_76: random_access_iterator_int_ptr_ =
                         random_access_iterator_int_ptr_::new_1({ out_end });
-                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_90 })
+                    sentinel_wrapper_random_access_iterator_int_ptr__::new_1({ &mut __tmp_76 })
                 },
                 None,
                 None,

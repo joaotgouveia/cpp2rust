@@ -232,7 +232,7 @@ const _: () = assert!(
 );
 pub unsafe fn test_5() -> () {
     {
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____std_ranges_owning_view_std_string__ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         unimplemented!();
         let mut it: () = unimplemented!();
         (unsafe {

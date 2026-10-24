@@ -735,9 +735,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut i: () = std_move_iterator_cpp20_input_iterator_int_ptr__::new_1({
-            cpp20_input_iterator_int_ptr_::new({ a.as_mut_ptr() })
-        });
+        let mut i: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

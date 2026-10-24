@@ -21726,11 +21726,8 @@ pub unsafe fn test_with_ranges_impl_101(
     mut input: (),
 ) {
     let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
-        let mut it: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ unimplemented!() }) },
-            { unimplemented!() },
-        );
-        let mut range : () = std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ :: new_1 ( { ( * unimplemented!()  )  } , { unimplemented!() } , )  ;
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
         return range;
     });
     (unsafe {
@@ -21824,11 +21821,8 @@ pub unsafe fn test_with_ranges_impl_110(
     mut input: (),
 ) {
     let mut make_range: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |in_: *mut ()| -> () {
-        let mut it: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ unimplemented!() }) },
-            { unimplemented!() },
-        );
-        let mut range : () = std_ranges_subrange_std_counted_iterator_cpp20_input_iterator_int_ptr____std_default_sentinel_t__std_ranges_subrange_kind_sized_ :: new_1 ( { ( * unimplemented!()  )  } , { unimplemented!() } , )  ;
+        let mut it: () = unimplemented!();
+        let mut range: () = unimplemented!();
         return range;
     });
     (unsafe {

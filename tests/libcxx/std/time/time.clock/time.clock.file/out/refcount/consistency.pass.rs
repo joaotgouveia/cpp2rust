@@ -38,7 +38,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     );;
     const _: () = assert!(true, "(std::is_same<C::time_point::clock, C>::value)");;
     const _: () = assert!(true, "!C::is_steady");;
-    ({ test_0(is_steady_1.with(|v| v.as_pointer())) });
+    ({ test_0(unimplemented!()) });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

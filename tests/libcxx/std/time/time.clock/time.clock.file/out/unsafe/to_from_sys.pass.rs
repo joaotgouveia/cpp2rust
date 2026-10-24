@@ -24,17 +24,17 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let ft: () = (unsafe { std_filesystem__FilesystemClock::now() });
-        let mut st: () = (unsafe { std_filesystem__FilesystemClock::to_sys(&ft) });
+        let ft: () = unimplemented!();
+        let mut st: () = unimplemented!();
         unimplemented!();
     }
     {
         let st: () = unimplemented!();
-        let mut ft: () = (unsafe { std_filesystem__FilesystemClock::from_sys(&st) });
+        let mut ft: () = unimplemented!();
         unimplemented!();
     }
     {
-        let file_now: () = (unsafe { std_filesystem__FilesystemClock::now() });
+        let file_now: () = unimplemented!();
         let sys_now: () = unimplemented!();
         {
             let mut diff: () = unimplemented!();
@@ -46,7 +46,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         }
     }
     {
-        let ft: () = (unsafe { std_filesystem__FilesystemClock::now() });
+        let ft: () = unimplemented!();
         let st: () = unimplemented!();
         let mut sys_diff: () = unimplemented!();
         let mut file_diff: () = unimplemented!();

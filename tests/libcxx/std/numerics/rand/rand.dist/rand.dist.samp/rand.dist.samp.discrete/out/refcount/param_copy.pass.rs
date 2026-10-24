@@ -29,10 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let d0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0.3_f64, 0.1_f64, 0.6_f64])));
-        let p0: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (d0.as_pointer() as Ptr<()>) },
-            { (d0.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p: Value<()> = Rc::new(RefCell::new((*p0.borrow()).clone()));
         unimplemented!();
     }

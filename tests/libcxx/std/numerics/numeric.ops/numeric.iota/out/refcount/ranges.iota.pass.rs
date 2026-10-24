@@ -2282,7 +2282,7 @@ pub fn test_result_41(input: (), mut starting_value: (), expected: ()) {
                     })));
                 sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ __tmp_43.as_pointer() })
             }));
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { unimplemented!()   } , )   } , { ((*unimplemented!() .upgrade().deref()) ).clone()  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({ (*iota_20.with(Value::clone).borrow_mut())(range.as_pointer(), starting_value) }),
         ));
@@ -2329,7 +2329,7 @@ pub fn test_result_42(input: (), mut starting_value: (), expected: ()) {
                     })));
                 sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ __tmp_45.as_pointer() })
             }));
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { unimplemented!()   } , )   } , { ((*unimplemented!() .upgrade().deref()) ).clone()  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({ (*iota_20.with(Value::clone).borrow_mut())(range.as_pointer(), starting_value) }),
         ));
@@ -2376,7 +2376,7 @@ pub fn test_result_43(input: (), mut starting_value: (), expected: ()) {
                     })));
                 sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ __tmp_47.as_pointer() })
             }));
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { unimplemented!()   } , )   } , { ((*unimplemented!() .upgrade().deref()) ).clone()  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
             ({ (*iota_20.with(Value::clone).borrow_mut())(range.as_pointer(), starting_value) }),
         ));

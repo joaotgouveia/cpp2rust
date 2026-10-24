@@ -304,18 +304,13 @@ pub unsafe fn equals_24(mut fmt_arg: (), mut expected: ()) -> () {
     return unimplemented!();
 }
 pub unsafe fn test_empty_25() {
-    let mut args: () = {
-        let mut __tmp_0 : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char__  = ( unsafe { make_format_args_26 ( ) } )  ;
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_1(
-            { &mut __tmp_0 },
-        )
-    };
+    let mut args: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -334,7 +329,7 @@ pub unsafe fn test_empty_25() {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -353,7 +348,7 @@ pub unsafe fn test_empty_25() {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -372,7 +367,7 @@ pub unsafe fn test_empty_25() {
         __do_while = false;
         if !(unsafe { equals_10(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -386,18 +381,13 @@ pub unsafe fn test_empty_25() {
             unimplemented!();
         }
     }
-    let mut cargs: () = {
-        let mut __tmp_1 : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char__  = ( unsafe { make_format_args_26 ( ) } )  ;
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_1(
-            { &mut __tmp_1 },
-        )
-    };
+    let mut cargs: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -416,7 +406,7 @@ pub unsafe fn test_empty_25() {
         __do_while = false;
         if !(unsafe { equals_10(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -430,16 +420,13 @@ pub unsafe fn test_empty_25() {
             unimplemented!();
         }
     }
-    let mut wargs: () = {
-        let mut __tmp_2 : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t__  = unimplemented!()  ;
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t__ :: new_1 ( { & mut __tmp_2 } , )
-    };
+    let mut wargs: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -458,7 +445,7 @@ pub unsafe fn test_empty_25() {
         __do_while = false;
         if !(unsafe { equals_11(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -475,22 +462,19 @@ pub unsafe fn test_empty_25() {
 }
 pub type E = ();
 pub const E_ByGum: E = 0;
-pub unsafe fn test_args_28() {
+pub unsafe fn test_args_27() {
     let mut b: () = false;
     let mut i: () = 1_();
     let mut c: () = ('2' as ());
     let mut d: () = 3.4_f64;
-    let mut store : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char___bool__int__char__double_ = ( unsafe { make_format_args_29 ( & mut b , & mut i , & mut c , & mut d , ) } )  ;
-    let mut args: () =
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_2(
-            { &store },
-        );
+    let mut store: () = (unsafe { make_format_args_28(&mut b, &mut i, &mut c, &mut d) });
+    let mut args: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { equals_12(unimplemented!(), false) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -509,7 +493,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_13(unimplemented!(), 1_()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -528,7 +512,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_14(unimplemented!(), ('2' as ())) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -547,7 +531,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_15(unimplemented!(), 3.4_f64) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -566,7 +550,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -583,18 +567,15 @@ pub unsafe fn test_args_28() {
     let mut l: () = 5_();
     let mut ull: () = 6_();
     let mut f: () = 7.8_f32;
-    let mut cstore : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char___long_long__unsigned_long_long__float_ = ( unsafe { make_format_args_30 ( & mut l , & mut ull , & mut f , ) } )  ;
-    let mut cargs: () =
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_3(
-            { &cstore },
-        );
+    let mut cstore: () = (unsafe { make_format_args_29(&mut l, &mut ull, &mut f) });
+    let mut cargs: () = unimplemented!();
     {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
             if !(unsafe { equals_16(unimplemented!(), 5_()) }) {
                 (unsafe {
-                    __builtin_fprintf_27(
+                    __builtin_fprintf_26(
                         libcc2rs::stderr_unsafe(),
                         c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                         Box::new([
@@ -614,7 +595,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_17(unimplemented!(), 6_()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -633,7 +614,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_18(unimplemented!(), 7.8_f32) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -652,7 +633,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -672,7 +653,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_19(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"args.cc" .as_ptr() ) .into() , ( 86_() ) .into() , ( c"void test_args()" .as_ptr() ) .into() , ( c"equals(std::format_args(std::make_format_args(s)).get(0), std::string_view(\"tenfour\"))" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"args.cc" .as_ptr() ) .into() , ( 86_() ) .into() , ( c"void test_args()" .as_ptr() ) .into() , ( c"equals(std::format_args(std::make_format_args(s)).get(0), std::string_view(\"tenfour\"))" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -684,14 +665,14 @@ pub unsafe fn test_args_28() {
     ];
     let mut twelve13: () = 12.13_f64;
     let mut tenfour: () = unimplemented!();
-    let mut wstore : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t___wchar_t__wchar_t__const_wchar_t_ptr__long_double__std_basic_string_view_wchar_t__std_char_traits_wchar_t___ = unimplemented!()  ;
-    let mut wargs : () = std_basic_format_args_std_basic_format_context_std___format__Sink_iter_wchar_t___wchar_t__ :: new_2 ( { & wstore } , )  ;
+    let mut wstore: () = unimplemented!();
+    let mut wargs: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { equals_20(unimplemented!(), ('9' as ())) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -710,7 +691,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_20(unimplemented!(), (88 as ())) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -729,7 +710,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_21(unimplemented!(), (eleven.as_mut_ptr()).cast_const()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -749,7 +730,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_22(unimplemented!(), 12.13_f64) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -768,7 +749,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unsafe { equals_23(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -787,7 +768,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(!(unimplemented!())) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -803,17 +784,14 @@ pub unsafe fn test_args_28() {
     }
     let mut null: () = unimplemented!();
     let mut eebygum: E = E_ByGum;
-    let mut another_store : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char___const_void_ptr__std_basic_format_arg_std_basic_format_context_std___format__Sink_iter_char___char___handle_ = ( unsafe { make_format_args_31 ( & mut null , & mut eebygum , ) } )  ;
-    args =
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_4(
-            { &another_store },
-        );
+    let mut another_store: () = (unsafe { make_format_args_30(&mut null, &mut eebygum) });
+    args = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !(unsafe { equals_24(unimplemented!(), unimplemented!()) }) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -831,6 +809,9 @@ pub unsafe fn test_args_28() {
         Generic,
         {},
         |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_31));
+        },
+        |mut _a0: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
         },
         |mut _a0: ()| -> () {
@@ -860,17 +841,14 @@ pub unsafe fn test_args_28() {
         |mut _a0: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
         },
-        |mut _a0: ()| -> () {
+        |mut _a0: *const ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
         },
-        |mut _a0: *const ()| -> () {
+        |mut _a0: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
         },
         |mut _a0: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
-        },
-        |mut _a0: ()| -> () {
-            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
         }
     );
     let mut __do_while = true;
@@ -878,7 +856,7 @@ pub unsafe fn test_args_28() {
         __do_while = false;
         if !(unimplemented!()) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -893,17 +871,17 @@ pub unsafe fn test_args_28() {
         }
     }
 }
-pub unsafe fn test_member_visit_46() {}
-pub unsafe fn test_visited_as_handle_47() {
+pub unsafe fn test_member_visit_45() {}
+pub unsafe fn test_visited_as_handle_46() {
     let mut v: () = unimplemented!();
-    let mut store : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char_____int128_ = ( unsafe { make_format_args_48 ( & mut v , ) } )  ;
-    let mut args: () =
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_5(
-            { &store },
-        );
+    let mut store: () = (unsafe { make_format_args_47(&mut v) });
+    let mut args: () = unimplemented!();
     let is_handle: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_31));
+        },
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
         },
@@ -934,17 +912,14 @@ pub unsafe fn test_visited_as_handle_47() {
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
         },
-        |mut arg: ()| -> () {
+        |mut arg: *const ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
         },
-        |mut arg: *const ()| -> () {
+        |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
         },
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
-        },
-        |mut arg: ()| -> () {
-            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
         }
     );
     let mut __do_while = true;
@@ -952,7 +927,7 @@ pub unsafe fn test_visited_as_handle_47() {
         __do_while = false;
         if !(unimplemented!()) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -967,16 +942,16 @@ pub unsafe fn test_visited_as_handle_47() {
         }
     }
 }
-pub unsafe fn test_visited_as_handle_49() {
+pub unsafe fn test_visited_as_handle_48() {
     let mut v: () = unimplemented!();
-    let mut store : std___format__Arg_store_std_basic_format_context_std___format__Sink_iter_char___char___unsigned___int128_ = ( unsafe { make_format_args_50 ( & mut v , ) } )  ;
-    let mut args: () =
-        std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_6(
-            { &store },
-        );
+    let mut store: () = (unsafe { make_format_args_49(&mut v) });
+    let mut args: () = unimplemented!();
     let is_handle: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_31));
+        },
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
         },
@@ -1007,17 +982,14 @@ pub unsafe fn test_visited_as_handle_49() {
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
         },
-        |mut arg: ()| -> () {
+        |mut arg: *const ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
         },
-        |mut arg: *const ()| -> () {
+        |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
         },
         |mut arg: ()| -> () {
             return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
-        },
-        |mut arg: ()| -> () {
-            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
         }
     );
     let mut __do_while = true;
@@ -1025,7 +997,7 @@ pub unsafe fn test_visited_as_handle_49() {
         __do_while = false;
         if !(unimplemented!()) {
             (unsafe {
-                __builtin_fprintf_27(
+                __builtin_fprintf_26(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -1048,10 +1020,10 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     (unsafe { test_empty_25() });
-    (unsafe { test_args_28() });
-    (unsafe { test_member_visit_46() });
-    (unsafe { test_visited_as_handle_47() });
-    (unsafe { test_visited_as_handle_49() });
+    (unsafe { test_args_27() });
+    (unsafe { test_member_visit_45() });
+    (unsafe { test_visited_as_handle_46() });
+    (unsafe { test_visited_as_handle_48() });
     0
 }
 impl __gnu_test_semaphore {
@@ -1060,47 +1032,47 @@ impl __gnu_test_semaphore {
             sem_set_: unimplemented!(),
             pid_: 0 as ::libc::pid_t,
         };
-        this.pid_ = ((unsafe { getpid_51() }) as ::libc::pid_t);
+        this.pid_ = ((unsafe { getpid_50() }) as ::libc::pid_t);
         this.sem_set_ =
-            (unsafe { semget_52(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+            (unsafe { semget_51(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
         if ((this.sem_set_) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_53(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
+        if ((unsafe { semctl_52(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
         {
             (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_54(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_53(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) * (1048576_()));
     (unsafe {
-        getrlimit_55(
+        getrlimit_54(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_56(
+        setrlimit_55(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
     (unsafe {
-        getrlimit_55(
+        getrlimit_54(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_56(
+        setrlimit_55(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
@@ -1108,37 +1080,37 @@ pub unsafe fn set_memory_limits_54(mut size: Option<()>) {
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_55((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    (unsafe { getrlimit_54((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_56(
+        setrlimit_55(
             (__rlimit_resource_RLIMIT_AS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn set_file_limit_57(mut size: ()) {
+pub unsafe fn set_file_limit_56(mut size: ()) {
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) as ());
     (unsafe {
-        getrlimit_55(
+        getrlimit_54(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_56(
+        setrlimit_55(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn verify_demangle_58(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_57(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_59(
+        __cxa_demangle_58(
             mangled,
             std::ptr::null_mut(),
             std::ptr::null_mut(),
@@ -1176,7 +1148,7 @@ pub unsafe fn verify_demangle_58(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_60(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_59(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -1195,7 +1167,7 @@ pub unsafe fn run_tests_wrapped_locale_60(mut name: *const (), l: *const __gnu_t
             __do_while = false;
             if !(unimplemented!()) {
                 (unsafe {
-                    __builtin_fprintf_27 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
+                    __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
                 });
                 unimplemented!();
             }
@@ -1206,7 +1178,7 @@ pub unsafe fn run_tests_wrapped_locale_60(mut name: *const (), l: *const __gnu_t
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub unsafe fn run_tests_wrapped_env_61(
+pub unsafe fn run_tests_wrapped_env_60(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -1254,15 +1226,15 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_51() })) {
-            (unsafe { semctl_53(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unsafe { getpid_50() })) {
+            (unsafe { semctl_52(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_62(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_61(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
         }
     }
@@ -1270,12 +1242,12 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_62(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_61(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
         }
     }
 }
-pub unsafe fn test_tm_63(
+pub unsafe fn test_tm_62(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -1286,18 +1258,18 @@ pub unsafe fn test_tm_63(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_64));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_63));
 }
-static mut tmp_64: std::cell::LazyCell<::libc::tm> =
+static mut tmp_63: std::cell::LazyCell<::libc::tm> =
     std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const count_0);

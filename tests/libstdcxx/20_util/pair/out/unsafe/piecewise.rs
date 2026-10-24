@@ -323,10 +323,7 @@ impl type_two {
     }
 }
 pub unsafe fn test01_10() {
-    let mut pp0: () =
-        std_pair_type_one__type_zero_::new_1({ unimplemented!() }, { unimplemented!() }, {
-            unimplemented!()
-        });
+    let mut pp0: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -365,10 +362,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut pp1: () =
-        std_pair_type_one__type_two_::new_1({ unimplemented!() }, { unimplemented!() }, {
-            unimplemented!()
-        });
+    let mut pp1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -426,10 +420,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut pp2: () =
-        std_pair_type_two__type_two_::new_1({ unimplemented!() }, { unimplemented!() }, {
-            unimplemented!()
-        });
+    let mut pp2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

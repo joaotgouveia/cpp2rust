@@ -498,10 +498,7 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut iter: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -509,10 +506,7 @@ pub unsafe fn test_8() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

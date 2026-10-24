@@ -585,14 +585,14 @@ impl for_each_test {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Test {}
-pub fn test_20() -> () {
+pub fn test_14() -> () {
     ({
         for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr___cpp17_input_iterator_int_ptr__int_ptr__  >::default()  , <Test  >::default()  , )
     });
     {
         let vecs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v: Value<()> = Rc::new(RefCell::new(
-            ({ (*join_21.with(Value::clone).borrow_mut())(vecs.as_pointer()) }),
+            ({ (*join_15.with(Value::clone).borrow_mut())(vecs.as_pointer()) }),
         ));
         unimplemented!();
     }
@@ -636,7 +636,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_20() });
+    ({ test_14() });
     const _: () = assert!(true, "test()");;
     let sizes: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -678,11 +678,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: Ptr<()> = (ia.as_pointer() as Ptr<()>);
-                let ___last: Ptr<()> = (ia.as_pointer() as Ptr<()>).offset((size) as isize);
-                for_each_14(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {
@@ -700,14 +696,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: contiguous_iterator_int_ptr_ =
-                    contiguous_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-                let ___last: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((size) as isize)
-                });
-                for_each_15(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {
@@ -725,15 +714,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-                let ___last: random_access_iterator_int_ptr_ =
-                    random_access_iterator_int_ptr_::new_1({
-                        (ia.as_pointer() as Ptr<()>).offset((size) as isize)
-                    });
-                for_each_16(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {
@@ -751,15 +732,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-                let ___last: bidirectional_iterator_int_ptr_ =
-                    bidirectional_iterator_int_ptr_::new_1({
-                        (ia.as_pointer() as Ptr<()>).offset((size) as isize)
-                    });
-                for_each_17(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {
@@ -777,14 +750,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: forward_iterator_int_ptr_ =
-                    forward_iterator_int_ptr_::new_1({ (ia.as_pointer() as Ptr<()>) });
-                let ___last: forward_iterator_int_ptr_ = forward_iterator_int_ptr_::new_1({
-                    (ia.as_pointer() as Ptr<()>).offset((size) as isize)
-                });
-                for_each_18(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {
@@ -802,15 +768,7 @@ impl TestImpl for Ptr<Test> {
             let mut size: () = (size.read());
             let ia: Value<Box<[()]>> =
                 Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-            let mut f: for_each_test = ({
-                let ___first: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({ (ia.as_pointer() as Ptr<()>) });
-                let ___last: cpp17_input_iterator_int_ptr__int_ptr_ =
-                    cpp17_input_iterator_int_ptr__int_ptr_::new({
-                        (ia.as_pointer() as Ptr<()>).offset((size) as isize)
-                    });
-                for_each_19(___first, ___last, for_each_test::new({ 0_() }))
-            });
+            let mut f: for_each_test = unimplemented!();
             unimplemented!();
             let mut i: () = 0_();
             'loop_: while (i < size) {

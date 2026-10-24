@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();

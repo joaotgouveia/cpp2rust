@@ -809,9 +809,7 @@ pub unsafe fn test_moveonly_22() -> () {
     {
         let mut it: cpp20_input_iterator_char_ptr_ =
             cpp20_input_iterator_char_ptr_::new({ s.as_mut_ptr() });
-        let mut r: () = std_move_iterator_cpp20_input_iterator_char_ptr__::new_1({
-            cpp20_input_iterator_char_ptr_::move_from({ &mut (*unimplemented!()) })
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     return true;

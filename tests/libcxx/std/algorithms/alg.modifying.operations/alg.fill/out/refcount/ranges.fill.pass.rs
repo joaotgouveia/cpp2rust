@@ -1396,7 +1396,7 @@ pub fn test_iterators_20() {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
-            let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_3 : Value<cpp20_output_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_output_iterator_int_ptr__ :: new_1 ( { __tmp_3.as_pointer() } , )  }  } , )  )) ;
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<cpp20_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
@@ -1418,12 +1418,12 @@ pub fn test_iterators_20() {
                     let ___first: cpp20_output_iterator_int_ptr_ =
                         cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
                     let ___last: sentinel_wrapper_cpp20_output_iterator_int_ptr__ = {
-                        let __tmp_4: Value<cpp20_output_iterator_int_ptr_> =
+                        let __tmp_3: Value<cpp20_output_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_::new({
                                 unimplemented!()
                             })));
                         sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({
-                            __tmp_4.as_pointer()
+                            __tmp_3.as_pointer()
                         })
                     };
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
@@ -1439,7 +1439,7 @@ pub fn test_iterators_20() {
         }
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: new ( { unimplemented!()   } , )   } , { { let __tmp_5 : Value<cpp20_output_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_output_iterator_int_ptr_ :: new ( { unimplemented!()   } , )  )); sentinel_wrapper_cpp20_output_iterator_int_ptr__ :: new_1 ( { __tmp_5.as_pointer() } , )  }  } , )  )) ;
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let ret: Value<cpp20_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));

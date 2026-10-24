@@ -16,7 +16,7 @@ pub fn test_trivial_clock_1() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut odr_use: Ptr<()> = (is_steady_2.with(|v| v.as_pointer()));
+    let mut odr_use: Ptr<()> = (unimplemented!());
     (&(odr_use));
 }
 pub fn main() {

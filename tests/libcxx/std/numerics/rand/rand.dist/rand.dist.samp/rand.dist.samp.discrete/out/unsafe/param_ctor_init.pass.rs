@@ -30,35 +30,27 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
-        let mut p: () = (unsafe { pa.probabilities() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
-        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
@@ -66,7 +58,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut pa: () = std_discrete_distribution___param_type::new_1({ unimplemented!() });
+        let mut pa: () = unimplemented!();
+        let mut p: () = (unsafe { pa.probabilities() });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();

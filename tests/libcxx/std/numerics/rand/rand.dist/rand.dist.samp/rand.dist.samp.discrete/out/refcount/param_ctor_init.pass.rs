@@ -34,35 +34,27 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -70,9 +62,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -80,9 +70,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { unimplemented!() },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();

@@ -24,7 +24,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "");;
-    let mut t1: () = (unsafe { std_filesystem__FilesystemClock::now() });
+    let mut t1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

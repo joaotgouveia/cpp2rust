@@ -2265,7 +2265,7 @@ pub unsafe fn test_result_41(mut input: (), mut starting_value: (), expected: ()
                 });
             sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ &mut __tmp_43 })
         };
-        let mut range : () = std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { & mut ( * unimplemented!()  )  } , )  } , { ( * unimplemented!()  )  } , )  ;
+        let mut range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(&mut range, starting_value)
         });
@@ -2306,7 +2306,7 @@ pub unsafe fn test_result_42(mut input: (), mut starting_value: (), expected: ()
                 });
             sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ &mut __tmp_45 })
         };
-        let mut range : () = std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { & mut ( * unimplemented!()  )  } , )  } , { ( * unimplemented!()  )  } , )  ;
+        let mut range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(&mut range, starting_value)
         });
@@ -2347,7 +2347,7 @@ pub unsafe fn test_result_43(mut input: (), mut starting_value: (), expected: ()
                 });
             sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ &mut __tmp_47 })
         };
-        let mut range : () = std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: move_from ( { & mut ( * unimplemented!()  )  } , )  } , { ( * unimplemented!()  )  } , )  ;
+        let mut range: () = unimplemented!();
         let mut result: () = (unsafe {
             (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_20))(&mut range, starting_value)
         });

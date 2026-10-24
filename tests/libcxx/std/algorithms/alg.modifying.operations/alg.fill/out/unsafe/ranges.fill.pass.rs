@@ -1422,7 +1422,7 @@ pub unsafe fn test_iterators_20() {
         }
         {
             let mut a: [(); 3] = [unimplemented!(); 3];
-            let mut range : () = std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_3 : cpp20_output_iterator_int_ptr_  = cpp20_output_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_output_iterator_int_ptr__ :: new_1 ( { & mut __tmp_3 } , )  } } , )  ;
+            let mut range: () = unimplemented!();
             let mut ret: cpp20_output_iterator_int_ptr_ = (unsafe {
                 let mut ___value: () = 1_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_19))(&mut range, &mut ___value)
@@ -1438,9 +1438,9 @@ pub unsafe fn test_iterators_20() {
                 let ___first: cpp20_output_iterator_int_ptr_ =
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
                 let ___last: sentinel_wrapper_cpp20_output_iterator_int_ptr__ = {
-                    let mut __tmp_4: cpp20_output_iterator_int_ptr_ =
+                    let mut __tmp_3: cpp20_output_iterator_int_ptr_ =
                         cpp20_output_iterator_int_ptr_::new({ unimplemented!() });
-                    sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ &mut __tmp_4 })
+                    sentinel_wrapper_cpp20_output_iterator_int_ptr__::new_1({ &mut __tmp_3 })
                 };
                 let mut ___value: () = 1_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_19))(
@@ -1453,7 +1453,7 @@ pub unsafe fn test_iterators_20() {
         }
         {
             let mut a: () = unimplemented!();
-            let mut range : () = std_ranges_subrange_cpp20_output_iterator_int_ptr___sentinel_wrapper_cpp20_output_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_output_iterator_int_ptr_ :: new ( { unimplemented!()  } , )  } , { { let mut __tmp_5 : cpp20_output_iterator_int_ptr_  = cpp20_output_iterator_int_ptr_ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_output_iterator_int_ptr__ :: new_1 ( { & mut __tmp_5 } , )  } } , )  ;
+            let mut range: () = unimplemented!();
             let mut ret: cpp20_output_iterator_int_ptr_ = (unsafe {
                 let mut ___value: () = 1_();
                 (*std::cell::LazyCell::force_mut(&mut *&raw mut fill_19))(&mut range, &mut ___value)

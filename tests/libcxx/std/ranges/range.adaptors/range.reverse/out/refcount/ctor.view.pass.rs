@@ -559,13 +559,7 @@ pub fn test_9() -> () {
         unimplemented!();
     }
     {
-        let rev: Value<()> = Rc::new(RefCell::new(
-            std_ranges_reverse_view_BidirSentRange_MoveOnly__::new_1({
-                BidirSentRange_MoveOnly_::new({ (buffer.as_pointer() as Ptr<()>) }, {
-                    (buffer.as_pointer() as Ptr<()>).offset((8_()) as isize)
-                })
-            }),
-        ));
+        let rev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut moved: BidirSentRange_MoveOnly_ =
             ({ (*unimplemented!().upgrade().deref()).base_4() });
         unimplemented!();

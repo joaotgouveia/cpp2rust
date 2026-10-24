@@ -523,12 +523,7 @@ pub fn test_14() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-                { cpp20_input_iterator_int_ptr_::new({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;

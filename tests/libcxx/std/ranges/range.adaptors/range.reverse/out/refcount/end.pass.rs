@@ -569,13 +569,7 @@ pub fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let rev: Value<()> = Rc::new(RefCell::new(
-            std_ranges_reverse_view_BidirSentRange_MoveOnly__::new_1({
-                BidirSentRange_MoveOnly_::new({ (buffer.as_pointer() as Ptr<()>) }, {
-                    (buffer.as_pointer() as Ptr<()>).offset((8_()) as isize)
-                })
-            }),
-        ));
+        let rev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         const _: () = assert!(true, "");;
     }

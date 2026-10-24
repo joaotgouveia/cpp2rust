@@ -475,12 +475,7 @@ pub fn test_7() -> () {
         8_(),
     ])));
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-                { cpp20_input_iterator_int_ptr_::new({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut i: () = 8_();
         'loop_: while (i != 0_()) {
             unimplemented!();
@@ -519,12 +514,7 @@ pub fn test_7() -> () {
         unimplemented!();
     }
     {
-        let iter: Value<()> = Rc::new(RefCell::new(
-            std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-                { cpp20_input_iterator_int_ptr_::new({ (buffer.as_pointer() as Ptr<()>) }) },
-                { 8_() },
-            ),
-        ));
+        let iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

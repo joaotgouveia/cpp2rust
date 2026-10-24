@@ -16,8 +16,7 @@ pub unsafe fn test_trivial_clock_1() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
-    let mut odr_use: *const () =
-        (&raw const (*std::cell::LazyCell::force_mut(&mut *&raw mut is_steady_2)) as *const ());
+    let mut odr_use: *const () = (&raw const unimplemented!() as *const ());
     (&(odr_use));
 }
 pub fn main() {

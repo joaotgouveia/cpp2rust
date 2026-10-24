@@ -1143,7 +1143,7 @@ pub fn test_one_12(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_1 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_1.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1184,12 +1184,12 @@ pub fn test_one_14(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_2: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_1: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_2.as_pointer()
+                            __tmp_1.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1206,7 +1206,7 @@ pub fn test_one_14(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_3 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_3.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1243,12 +1243,12 @@ pub fn test_one_15(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_4: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_2: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_4.as_pointer()
+                            __tmp_2.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1265,7 +1265,7 @@ pub fn test_one_15(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_5 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_5.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1306,12 +1306,12 @@ pub fn test_one_16(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_6: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_3: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_6.as_pointer()
+                            __tmp_3.as_pointer()
                         })
                     },
                     ___out_true,
@@ -1328,7 +1328,7 @@ pub fn test_one_16(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_7 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_7.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1369,12 +1369,12 @@ pub fn test_one_17(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_8: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_4: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_8.as_pointer()
+                            __tmp_4.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1391,7 +1391,7 @@ pub fn test_one_17(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_9 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_9.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1432,12 +1432,12 @@ pub fn test_one_18(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_10: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_5: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_10.as_pointer()
+                            __tmp_5.as_pointer()
                         })
                     },
                     ___out_true,
@@ -1454,7 +1454,7 @@ pub fn test_one_18(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_11 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_11.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1495,12 +1495,12 @@ pub fn test_one_19(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_12: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_6: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_12.as_pointer()
+                            __tmp_6.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1517,7 +1517,7 @@ pub fn test_one_19(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_13 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_13.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1554,12 +1554,12 @@ pub fn test_one_20(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_14: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_7: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_14.as_pointer()
+                            __tmp_7.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1576,7 +1576,7 @@ pub fn test_one_20(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_15 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_15.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1613,12 +1613,12 @@ pub fn test_one_21(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_16: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_8: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_16.as_pointer()
+                            __tmp_8.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1635,7 +1635,7 @@ pub fn test_one_21(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_17 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_17.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1676,12 +1676,12 @@ pub fn test_one_22(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_18: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_9: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_18.as_pointer()
+                            __tmp_9.as_pointer()
                         })
                     },
                     ___out_true,
@@ -1698,7 +1698,7 @@ pub fn test_one_22(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_19 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_19.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1739,12 +1739,12 @@ pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_20: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_10: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_20.as_pointer()
+                            __tmp_10.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1761,7 +1761,7 @@ pub fn test_one_23(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_21 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_21.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1802,12 +1802,12 @@ pub fn test_one_24(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_22: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_11: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_22.as_pointer()
+                            __tmp_11.as_pointer()
                         })
                     },
                     ___out_true,
@@ -1824,7 +1824,7 @@ pub fn test_one_24(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_23 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_23.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1865,12 +1865,12 @@ pub fn test_one_25(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_24: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_12: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_24.as_pointer()
+                            __tmp_12.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1887,7 +1887,7 @@ pub fn test_one_25(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_25 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_25.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1924,12 +1924,12 @@ pub fn test_one_26(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_26: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_13: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_26.as_pointer()
+                            __tmp_13.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -1946,7 +1946,7 @@ pub fn test_one_26(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_27 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_27.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -1987,12 +1987,12 @@ pub fn test_one_27(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_28: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_14: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_28.as_pointer()
+                            __tmp_14.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2009,7 +2009,7 @@ pub fn test_one_27(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_29 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_29.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2050,12 +2050,12 @@ pub fn test_one_28(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_30: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_15: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_30.as_pointer()
+                            __tmp_15.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2072,7 +2072,7 @@ pub fn test_one_28(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_31 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_31.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2113,12 +2113,12 @@ pub fn test_one_29(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_32: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_16: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_32.as_pointer()
+                            __tmp_16.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2135,7 +2135,7 @@ pub fn test_one_29(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_33 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_33.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2176,12 +2176,12 @@ pub fn test_one_30(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_34: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_17: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_34.as_pointer()
+                            __tmp_17.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2198,7 +2198,7 @@ pub fn test_one_30(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_35 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_35.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2235,12 +2235,12 @@ pub fn test_one_31(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_36: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_18: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_36.as_pointer()
+                            __tmp_18.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2257,7 +2257,7 @@ pub fn test_one_31(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_37 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_37.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2294,12 +2294,12 @@ pub fn test_one_32(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_38: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_19: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_38.as_pointer()
+                            __tmp_19.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2316,7 +2316,7 @@ pub fn test_one_32(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_39 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_39.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2357,12 +2357,12 @@ pub fn test_one_33(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_40: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_20: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_40.as_pointer()
+                            __tmp_20.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2379,7 +2379,7 @@ pub fn test_one_33(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_41 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_41.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2420,12 +2420,12 @@ pub fn test_one_34(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_42: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_21: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_42.as_pointer()
+                            __tmp_21.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2442,7 +2442,7 @@ pub fn test_one_34(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_43 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_43.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2482,12 +2482,12 @@ pub fn test_one_35(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_44: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_22: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_44.as_pointer()
+                            __tmp_22.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2504,7 +2504,7 @@ pub fn test_one_35(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_45 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_45.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2544,12 +2544,12 @@ pub fn test_one_36(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_46: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_23: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_46.as_pointer()
+                            __tmp_23.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2566,7 +2566,7 @@ pub fn test_one_36(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_47 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_47.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2603,12 +2603,12 @@ pub fn test_one_37(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_48: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_24: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_48.as_pointer()
+                            __tmp_24.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2625,7 +2625,7 @@ pub fn test_one_37(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_49 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_49.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2665,12 +2665,12 @@ pub fn test_one_38(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_50: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_25: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_50.as_pointer()
+                            __tmp_25.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2687,7 +2687,7 @@ pub fn test_one_38(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_51 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_51.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2727,12 +2727,12 @@ pub fn test_one_39(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_52: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_26: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_52.as_pointer()
+                            __tmp_26.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2749,7 +2749,7 @@ pub fn test_one_39(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_53 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_53.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2789,12 +2789,12 @@ pub fn test_one_40(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_54: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_27: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_54.as_pointer()
+                            __tmp_27.as_pointer()
                         })
                     },
                     ___out_true,
@@ -2811,7 +2811,7 @@ pub fn test_one_40(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_55 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_55.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2851,12 +2851,12 @@ pub fn test_one_41(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_56: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_28: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_56.as_pointer()
+                            __tmp_28.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2873,7 +2873,7 @@ pub fn test_one_41(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_57 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_57.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2910,12 +2910,12 @@ pub fn test_one_42(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_58: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_29: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_58.as_pointer()
+                            __tmp_29.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2932,7 +2932,7 @@ pub fn test_one_42(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_59 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_59.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -2969,12 +2969,12 @@ pub fn test_one_43(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_60: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_30: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_60.as_pointer()
+                            __tmp_30.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -2991,7 +2991,7 @@ pub fn test_one_43(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_61 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_61.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3031,12 +3031,12 @@ pub fn test_one_44(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_62: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_31: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_62.as_pointer()
+                            __tmp_31.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3053,7 +3053,7 @@ pub fn test_one_44(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_63 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_63.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3093,12 +3093,12 @@ pub fn test_one_45(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_64: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_32: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_64.as_pointer()
+                            __tmp_32.as_pointer()
                         })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3115,7 +3115,7 @@ pub fn test_one_45(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_65 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_65.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3156,12 +3156,12 @@ pub fn test_one_46(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_66: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_33: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_66.as_pointer()
+                            __tmp_33.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3178,7 +3178,7 @@ pub fn test_one_46(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_67 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_67.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3219,12 +3219,12 @@ pub fn test_one_47(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_68: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_34: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_68.as_pointer()
+                            __tmp_34.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3241,7 +3241,7 @@ pub fn test_one_47(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_69 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_69.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3278,12 +3278,12 @@ pub fn test_one_48(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_70: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_35: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_70.as_pointer()
+                            __tmp_35.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3300,7 +3300,7 @@ pub fn test_one_48(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_71 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_71.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3341,12 +3341,12 @@ pub fn test_one_49(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_72: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_36: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_72.as_pointer()
+                            __tmp_36.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3363,7 +3363,7 @@ pub fn test_one_49(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_73 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_73.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3404,12 +3404,12 @@ pub fn test_one_50(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_74: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_37: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_74.as_pointer()
+                            __tmp_37.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3426,7 +3426,7 @@ pub fn test_one_50(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_75 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_75.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3467,12 +3467,12 @@ pub fn test_one_51(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_76: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_38: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_76.as_pointer()
+                            __tmp_38.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3489,7 +3489,7 @@ pub fn test_one_51(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_77 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_77.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3530,12 +3530,12 @@ pub fn test_one_52(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_78: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_39: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_78.as_pointer()
+                            __tmp_39.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3552,7 +3552,7 @@ pub fn test_one_52(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_79 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_79.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3589,12 +3589,12 @@ pub fn test_one_53(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_80: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_40: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_80.as_pointer()
+                            __tmp_40.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3611,7 +3611,7 @@ pub fn test_one_53(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_81 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_81.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3648,12 +3648,12 @@ pub fn test_one_54(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_82: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_41: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_82.as_pointer()
+                            __tmp_41.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3670,7 +3670,7 @@ pub fn test_one_54(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_83 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_83.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3711,12 +3711,12 @@ pub fn test_one_55(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_84: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_42: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_84.as_pointer()
+                            __tmp_42.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3733,7 +3733,7 @@ pub fn test_one_55(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_85 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_85.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3774,12 +3774,12 @@ pub fn test_one_56(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_86: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_43: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_86.as_pointer()
+                            __tmp_43.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3796,7 +3796,7 @@ pub fn test_one_56(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_87 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_87.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3837,12 +3837,12 @@ pub fn test_one_57(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_88: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_44: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_88.as_pointer()
+                            __tmp_44.as_pointer()
                         })
                     },
                     ___out_true,
@@ -3859,7 +3859,7 @@ pub fn test_one_57(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_89 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_89.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3900,12 +3900,12 @@ pub fn test_one_58(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_90: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_45: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_90.as_pointer()
+                            __tmp_45.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3922,7 +3922,7 @@ pub fn test_one_58(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_91 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_91.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -3959,12 +3959,12 @@ pub fn test_one_59(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_92: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_46: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_92.as_pointer()
+                            __tmp_46.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -3981,7 +3981,7 @@ pub fn test_one_59(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_93 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_93.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4022,12 +4022,12 @@ pub fn test_one_60(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_94: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_47: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_94.as_pointer()
+                            __tmp_47.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4044,7 +4044,7 @@ pub fn test_one_60(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_95 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_95.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4085,12 +4085,12 @@ pub fn test_one_61(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_96: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_48: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_96.as_pointer()
+                            __tmp_48.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4107,7 +4107,7 @@ pub fn test_one_61(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_97 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_97.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4148,12 +4148,12 @@ pub fn test_one_62(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_98: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_49: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_98.as_pointer()
+                            __tmp_49.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4170,7 +4170,7 @@ pub fn test_one_62(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_99 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_99.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4211,12 +4211,12 @@ pub fn test_one_63(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_100: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_50: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_100.as_pointer()
+                            __tmp_50.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4233,7 +4233,7 @@ pub fn test_one_63(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_101 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_101.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4270,12 +4270,12 @@ pub fn test_one_64(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_102: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_51: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_102.as_pointer()
+                            __tmp_51.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4292,7 +4292,7 @@ pub fn test_one_64(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_103 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_103.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4329,12 +4329,12 @@ pub fn test_one_65(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_104: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_52: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_104.as_pointer()
+                            __tmp_52.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4351,7 +4351,7 @@ pub fn test_one_65(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_105 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_105.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4392,12 +4392,12 @@ pub fn test_one_66(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_106: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_53: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_106.as_pointer()
+                            __tmp_53.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4414,7 +4414,7 @@ pub fn test_one_66(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_107 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_107.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4455,12 +4455,12 @@ pub fn test_one_67(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_108: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_54: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_108.as_pointer()
+                            __tmp_54.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4477,7 +4477,7 @@ pub fn test_one_67(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_109 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_109.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4517,12 +4517,12 @@ pub fn test_one_68(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_110: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_55: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_110.as_pointer()
+                            __tmp_55.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4539,7 +4539,7 @@ pub fn test_one_68(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_111 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_111.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4579,12 +4579,12 @@ pub fn test_one_69(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_112: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_56: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_112.as_pointer()
+                            __tmp_56.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4601,7 +4601,7 @@ pub fn test_one_69(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_113 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_113.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4638,12 +4638,12 @@ pub fn test_one_70(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_114: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_57: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_114.as_pointer()
+                            __tmp_57.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4660,7 +4660,7 @@ pub fn test_one_70(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_115 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_115.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4700,12 +4700,12 @@ pub fn test_one_71(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_116: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_58: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_116.as_pointer()
+                            __tmp_58.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4722,7 +4722,7 @@ pub fn test_one_71(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_117 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_117.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4762,12 +4762,12 @@ pub fn test_one_72(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_118: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_59: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_118.as_pointer()
+                            __tmp_59.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4784,7 +4784,7 @@ pub fn test_one_72(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_119 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_119.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4824,12 +4824,12 @@ pub fn test_one_73(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_120: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_60: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_120.as_pointer()
+                            __tmp_60.as_pointer()
                         })
                     },
                     ___out_true,
@@ -4846,7 +4846,7 @@ pub fn test_one_73(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_121 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_121.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4886,12 +4886,12 @@ pub fn test_one_74(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_122: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_61: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_122.as_pointer()
+                            __tmp_61.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4908,7 +4908,7 @@ pub fn test_one_74(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_123 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_123.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -4945,12 +4945,12 @@ pub fn test_one_75(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_124: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_62: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_124.as_pointer()
+                            __tmp_62.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -4967,7 +4967,7 @@ pub fn test_one_75(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_125 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_125.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5004,12 +5004,12 @@ pub fn test_one_76(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_126: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_63: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_126.as_pointer()
+                            __tmp_63.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -5026,7 +5026,7 @@ pub fn test_one_76(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_127 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_127.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5066,12 +5066,12 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_128: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_64: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_128.as_pointer()
+                            __tmp_64.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5088,7 +5088,7 @@ pub fn test_one_77(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_129 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_129.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5128,12 +5128,12 @@ pub fn test_one_78(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_130: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_65: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_130.as_pointer()
+                            __tmp_65.as_pointer()
                         })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -5150,7 +5150,7 @@ pub fn test_one_78(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_131 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_131.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5191,12 +5191,12 @@ pub fn test_one_79(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_132: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_66: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_132.as_pointer()
+                            __tmp_66.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5213,7 +5213,7 @@ pub fn test_one_79(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_133 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_133.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5254,12 +5254,12 @@ pub fn test_one_80(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_134: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_67: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_134.as_pointer()
+                            __tmp_67.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5276,7 +5276,7 @@ pub fn test_one_80(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_135 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_135.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5313,12 +5313,12 @@ pub fn test_one_81(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_136: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_68: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_136.as_pointer()
+                            __tmp_68.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5335,7 +5335,7 @@ pub fn test_one_81(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_137 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_137.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5376,12 +5376,12 @@ pub fn test_one_82(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_138: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_69: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_138.as_pointer()
+                            __tmp_69.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5398,7 +5398,7 @@ pub fn test_one_82(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_139 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_139.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5439,12 +5439,12 @@ pub fn test_one_83(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_140: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_70: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_140.as_pointer()
+                            __tmp_70.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5461,7 +5461,7 @@ pub fn test_one_83(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_141 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_141.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5502,12 +5502,12 @@ pub fn test_one_84(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_142: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_71: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_142.as_pointer()
+                            __tmp_71.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5524,7 +5524,7 @@ pub fn test_one_84(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_143 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_143.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5565,12 +5565,12 @@ pub fn test_one_85(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_144: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_72: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_144.as_pointer()
+                            __tmp_72.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5587,7 +5587,7 @@ pub fn test_one_85(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_145 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_145.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5624,12 +5624,12 @@ pub fn test_one_86(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_146: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_73: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_146.as_pointer()
+                            __tmp_73.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5646,7 +5646,7 @@ pub fn test_one_86(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_147 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_147.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5683,12 +5683,12 @@ pub fn test_one_87(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_148: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_74: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_148.as_pointer()
+                            __tmp_74.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5705,7 +5705,7 @@ pub fn test_one_87(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_149 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_149.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5746,12 +5746,12 @@ pub fn test_one_88(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_150: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_75: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_150.as_pointer()
+                            __tmp_75.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5768,7 +5768,7 @@ pub fn test_one_88(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_151 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_151.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5809,12 +5809,12 @@ pub fn test_one_89(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_152: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_76: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_152.as_pointer()
+                            __tmp_76.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5831,7 +5831,7 @@ pub fn test_one_89(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_153 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_153.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5872,12 +5872,12 @@ pub fn test_one_90(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_154: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_77: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_154.as_pointer()
+                            __tmp_77.as_pointer()
                         })
                     },
                     ___out_true,
@@ -5894,7 +5894,7 @@ pub fn test_one_90(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_155 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_155.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5935,12 +5935,12 @@ pub fn test_one_91(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_156: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_78: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_156.as_pointer()
+                            __tmp_78.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -5957,7 +5957,7 @@ pub fn test_one_91(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_157 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_157.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -5994,12 +5994,12 @@ pub fn test_one_92(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_158: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_79: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_158.as_pointer()
+                            __tmp_79.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6016,7 +6016,7 @@ pub fn test_one_92(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_159 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_159.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6057,12 +6057,12 @@ pub fn test_one_93(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_160: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_80: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_160.as_pointer()
+                            __tmp_80.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6079,7 +6079,7 @@ pub fn test_one_93(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_161 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_161.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6120,12 +6120,12 @@ pub fn test_one_94(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_162: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_81: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_162.as_pointer()
+                            __tmp_81.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6142,7 +6142,7 @@ pub fn test_one_94(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_163 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_163.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6183,12 +6183,12 @@ pub fn test_one_95(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_164: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_82: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_164.as_pointer()
+                            __tmp_82.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6205,7 +6205,7 @@ pub fn test_one_95(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_165 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_165.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6246,12 +6246,12 @@ pub fn test_one_96(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_166: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_83: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_166.as_pointer()
+                            __tmp_83.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6268,7 +6268,7 @@ pub fn test_one_96(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_167 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_167.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6305,12 +6305,12 @@ pub fn test_one_97(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_168: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_84: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_168.as_pointer()
+                            __tmp_84.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6327,7 +6327,7 @@ pub fn test_one_97(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_169 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_169.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6364,12 +6364,12 @@ pub fn test_one_98(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_170: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_85: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_170.as_pointer()
+                            __tmp_85.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6386,7 +6386,7 @@ pub fn test_one_98(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_171 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_171.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6427,12 +6427,12 @@ pub fn test_one_99(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_172: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_86: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_172.as_pointer()
+                            __tmp_86.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6449,7 +6449,7 @@ pub fn test_one_99(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), expe
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_173 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_173.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6490,12 +6490,12 @@ pub fn test_one_100(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_174: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_87: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_174.as_pointer()
+                            __tmp_87.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6512,7 +6512,7 @@ pub fn test_one_100(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_175 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_175.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6552,12 +6552,12 @@ pub fn test_one_101(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_176: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_88: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_176.as_pointer()
+                            __tmp_88.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6574,7 +6574,7 @@ pub fn test_one_101(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_177 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_177.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6614,12 +6614,12 @@ pub fn test_one_102(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_178: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_89: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_178.as_pointer()
+                            __tmp_89.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6636,7 +6636,7 @@ pub fn test_one_102(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_179 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_179.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6673,12 +6673,12 @@ pub fn test_one_103(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_180: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_90: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_180.as_pointer()
+                            __tmp_90.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6695,7 +6695,7 @@ pub fn test_one_103(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_181 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_181.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6735,12 +6735,12 @@ pub fn test_one_104(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_182: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_91: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_182.as_pointer()
+                            __tmp_91.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6757,7 +6757,7 @@ pub fn test_one_104(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_183 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_183.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6797,12 +6797,12 @@ pub fn test_one_105(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_184: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_92: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_184.as_pointer()
+                            __tmp_92.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6819,7 +6819,7 @@ pub fn test_one_105(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_185 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_185.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6859,12 +6859,12 @@ pub fn test_one_106(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_186: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_93: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_186.as_pointer()
+                            __tmp_93.as_pointer()
                         })
                     },
                     ___out_true,
@@ -6881,7 +6881,7 @@ pub fn test_one_106(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_187 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_187.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6921,12 +6921,12 @@ pub fn test_one_107(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_188: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_94: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_188.as_pointer()
+                            __tmp_94.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -6943,7 +6943,7 @@ pub fn test_one_107(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_189 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_189.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -6980,12 +6980,12 @@ pub fn test_one_108(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_190: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_95: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_190.as_pointer()
+                            __tmp_95.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -7002,7 +7002,7 @@ pub fn test_one_108(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_191 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_191.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7039,12 +7039,12 @@ pub fn test_one_109(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_192: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_96: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_192.as_pointer()
+                            __tmp_96.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -7061,7 +7061,7 @@ pub fn test_one_109(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_193 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_193.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7101,12 +7101,12 @@ pub fn test_one_110(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_194: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_97: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_194.as_pointer()
+                            __tmp_97.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7123,7 +7123,7 @@ pub fn test_one_110(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_195 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_195.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7163,12 +7163,12 @@ pub fn test_one_111(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_196: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_98: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_196.as_pointer()
+                            __tmp_98.as_pointer()
                         })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -7185,7 +7185,7 @@ pub fn test_one_111(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_197 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_197.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7225,12 +7225,12 @@ pub fn test_one_112(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_198: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_99: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_198.as_pointer()
+                            __tmp_99.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7247,7 +7247,7 @@ pub fn test_one_112(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_199 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_199.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7287,12 +7287,12 @@ pub fn test_one_113(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_200: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_100: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_200.as_pointer()
+                            __tmp_100.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7309,7 +7309,7 @@ pub fn test_one_113(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_201 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_201.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7346,12 +7346,12 @@ pub fn test_one_114(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_202: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_101: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_202.as_pointer()
+                            __tmp_101.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7368,7 +7368,7 @@ pub fn test_one_114(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_203 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_203.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7408,12 +7408,12 @@ pub fn test_one_115(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_204: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_102: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_204.as_pointer()
+                            __tmp_102.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7430,7 +7430,7 @@ pub fn test_one_115(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_205 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_205.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7470,12 +7470,12 @@ pub fn test_one_116(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_206: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_103: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_206.as_pointer()
+                            __tmp_103.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7492,7 +7492,7 @@ pub fn test_one_116(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_207 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_207.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7532,12 +7532,12 @@ pub fn test_one_117(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_208: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_104: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_208.as_pointer()
+                            __tmp_104.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7554,7 +7554,7 @@ pub fn test_one_117(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_209 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_209.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7594,12 +7594,12 @@ pub fn test_one_118(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_210: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_105: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_210.as_pointer()
+                            __tmp_105.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7616,7 +7616,7 @@ pub fn test_one_118(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_211 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_211.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7653,12 +7653,12 @@ pub fn test_one_119(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_212: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_106: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_212.as_pointer()
+                            __tmp_106.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7675,7 +7675,7 @@ pub fn test_one_119(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_213 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_213.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7712,12 +7712,12 @@ pub fn test_one_120(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_214: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_107: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_214.as_pointer()
+                            __tmp_107.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7734,7 +7734,7 @@ pub fn test_one_120(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_215 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_215.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7774,12 +7774,12 @@ pub fn test_one_121(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_216: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_108: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_216.as_pointer()
+                            __tmp_108.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7796,7 +7796,7 @@ pub fn test_one_121(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_217 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_217.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7836,12 +7836,12 @@ pub fn test_one_122(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_218: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_109: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_218.as_pointer()
+                            __tmp_109.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7858,7 +7858,7 @@ pub fn test_one_122(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_219 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_219.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7898,12 +7898,12 @@ pub fn test_one_123(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_220: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_110: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_220.as_pointer()
+                            __tmp_110.as_pointer()
                         })
                     },
                     ___out_true,
@@ -7920,7 +7920,7 @@ pub fn test_one_123(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_221 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_221.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -7960,12 +7960,12 @@ pub fn test_one_124(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_222: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_111: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_222.as_pointer()
+                            __tmp_111.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -7982,7 +7982,7 @@ pub fn test_one_124(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_223 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_223.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8019,12 +8019,12 @@ pub fn test_one_125(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_224: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_112: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_224.as_pointer()
+                            __tmp_112.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8041,7 +8041,7 @@ pub fn test_one_125(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_225 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_225.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8081,12 +8081,12 @@ pub fn test_one_126(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_226: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_113: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_226.as_pointer()
+                            __tmp_113.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8103,7 +8103,7 @@ pub fn test_one_126(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_227 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_227.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8143,12 +8143,12 @@ pub fn test_one_127(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_228: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_114: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_228.as_pointer()
+                            __tmp_114.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8165,7 +8165,7 @@ pub fn test_one_127(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_229 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_229.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8205,12 +8205,12 @@ pub fn test_one_128(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_230: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_115: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_230.as_pointer()
+                            __tmp_115.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8227,7 +8227,7 @@ pub fn test_one_128(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_231 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_231.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8267,12 +8267,12 @@ pub fn test_one_129(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_232: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_116: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_232.as_pointer()
+                            __tmp_116.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8289,7 +8289,7 @@ pub fn test_one_129(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_233 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_233.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8326,12 +8326,12 @@ pub fn test_one_130(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_234: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_117: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_234.as_pointer()
+                            __tmp_117.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8348,7 +8348,7 @@ pub fn test_one_130(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_235 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_235.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8385,12 +8385,12 @@ pub fn test_one_131(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_236: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_118: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_236.as_pointer()
+                            __tmp_118.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8407,7 +8407,7 @@ pub fn test_one_131(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_237 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_237.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8447,12 +8447,12 @@ pub fn test_one_132(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_238: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_119: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_238.as_pointer()
+                            __tmp_119.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8469,7 +8469,7 @@ pub fn test_one_132(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_239 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_239.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8509,12 +8509,12 @@ pub fn test_one_133(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_240: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_120: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_240.as_pointer()
+                            __tmp_120.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8531,7 +8531,7 @@ pub fn test_one_133(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_241 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_241.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8570,12 +8570,12 @@ pub fn test_one_134(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_242: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_121: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_242.as_pointer()
+                            __tmp_121.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8592,7 +8592,7 @@ pub fn test_one_134(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_243 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_243.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8631,12 +8631,12 @@ pub fn test_one_135(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_244: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_122: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_244.as_pointer()
+                            __tmp_122.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8653,7 +8653,7 @@ pub fn test_one_135(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_245 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_245.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8690,12 +8690,12 @@ pub fn test_one_136(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_246: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_123: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_246.as_pointer()
+                            __tmp_123.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8712,7 +8712,7 @@ pub fn test_one_136(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_247 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_247.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8751,12 +8751,12 @@ pub fn test_one_137(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_248: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_124: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_248.as_pointer()
+                            __tmp_124.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8773,7 +8773,7 @@ pub fn test_one_137(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_249 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_249.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8812,12 +8812,12 @@ pub fn test_one_138(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_250: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_125: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_250.as_pointer()
+                            __tmp_125.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8834,7 +8834,7 @@ pub fn test_one_138(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_251 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_251.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8873,12 +8873,12 @@ pub fn test_one_139(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_252: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_126: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_252.as_pointer()
+                            __tmp_126.as_pointer()
                         })
                     },
                     ___out_true,
@@ -8895,7 +8895,7 @@ pub fn test_one_139(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_253 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_253.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8934,12 +8934,12 @@ pub fn test_one_140(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_254: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_127: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_254.as_pointer()
+                            __tmp_127.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -8956,7 +8956,7 @@ pub fn test_one_140(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_255 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_255.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -8993,12 +8993,12 @@ pub fn test_one_141(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_256: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_128: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_256.as_pointer()
+                            __tmp_128.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -9015,7 +9015,7 @@ pub fn test_one_141(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_257 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_257.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -9052,12 +9052,12 @@ pub fn test_one_142(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_258: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_129: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_258.as_pointer()
+                            __tmp_129.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -9074,7 +9074,7 @@ pub fn test_one_142(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_259 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_259.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -9113,12 +9113,12 @@ pub fn test_one_143(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_260: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_130: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_260.as_pointer()
+                            __tmp_130.as_pointer()
                         })
                     },
                     ___out_true,
@@ -9135,7 +9135,7 @@ pub fn test_one_143(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_261 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_261.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -9174,12 +9174,12 @@ pub fn test_one_144(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     cpp20_input_iterator_int_ptr_::new({ (begin).clone() }),
                     {
-                        let __tmp_262: Value<cpp20_input_iterator_int_ptr_> =
+                        let __tmp_131: Value<cpp20_input_iterator_int_ptr_> =
                             Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_::new({
                                 (end).clone()
                             })));
                         sentinel_wrapper_cpp20_input_iterator_int_ptr__::new_1({
-                            __tmp_262.as_pointer()
+                            __tmp_131.as_pointer()
                         })
                     },
                     unimplemented!(),
@@ -9196,7 +9196,7 @@ pub fn test_one_144(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
         unimplemented!();
     }
     {
-        let range : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { (begin ).clone() } , )   } , { { let __tmp_263 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { (end ).clone() } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_263.as_pointer() } , )  }  } , )  )) ;
+        let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let out2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let result: Value<()> = Rc::new(RefCell::new(
@@ -16297,8 +16297,8 @@ pub fn test_one_277(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_264: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_264.as_pointer() })
+                        let __tmp_132: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_132.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -16355,8 +16355,8 @@ pub fn test_one_278(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_265: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_265.as_pointer() })
+                        let __tmp_133: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_133.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16409,8 +16409,8 @@ pub fn test_one_279(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_266: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_266.as_pointer() })
+                        let __tmp_134: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_134.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16467,8 +16467,8 @@ pub fn test_one_280(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_267: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_267.as_pointer() })
+                        let __tmp_135: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_135.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -16525,8 +16525,8 @@ pub fn test_one_281(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_268: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_268.as_pointer() })
+                        let __tmp_136: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_136.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16583,8 +16583,8 @@ pub fn test_one_282(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_269: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_269.as_pointer() })
+                        let __tmp_137: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_137.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -16641,8 +16641,8 @@ pub fn test_one_283(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_270: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_270.as_pointer() })
+                        let __tmp_138: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_138.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16695,8 +16695,8 @@ pub fn test_one_284(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_271: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_271.as_pointer() })
+                        let __tmp_139: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_139.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16749,8 +16749,8 @@ pub fn test_one_285(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_272: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_272.as_pointer() })
+                        let __tmp_140: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_140.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16807,8 +16807,8 @@ pub fn test_one_286(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_273: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_273.as_pointer() })
+                        let __tmp_141: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_141.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -16865,8 +16865,8 @@ pub fn test_one_287(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_274: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_274.as_pointer() })
+                        let __tmp_142: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_142.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -16923,8 +16923,8 @@ pub fn test_one_288(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_275: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_275.as_pointer() })
+                        let __tmp_143: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_143.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -16981,8 +16981,8 @@ pub fn test_one_289(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_276: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_276.as_pointer() })
+                        let __tmp_144: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_144.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17035,8 +17035,8 @@ pub fn test_one_290(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_277: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_277.as_pointer() })
+                        let __tmp_145: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_145.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17093,8 +17093,8 @@ pub fn test_one_291(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_278: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_278.as_pointer() })
+                        let __tmp_146: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_146.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17151,8 +17151,8 @@ pub fn test_one_292(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_279: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_279.as_pointer() })
+                        let __tmp_147: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_147.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17209,8 +17209,8 @@ pub fn test_one_293(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_280: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_280.as_pointer() })
+                        let __tmp_148: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_148.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17267,8 +17267,8 @@ pub fn test_one_294(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_281: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_281.as_pointer() })
+                        let __tmp_149: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_149.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17321,8 +17321,8 @@ pub fn test_one_295(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_282: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_282.as_pointer() })
+                        let __tmp_150: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_150.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17375,8 +17375,8 @@ pub fn test_one_296(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_283: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_283.as_pointer() })
+                        let __tmp_151: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_151.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17433,8 +17433,8 @@ pub fn test_one_297(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_284: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_284.as_pointer() })
+                        let __tmp_152: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_152.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17491,8 +17491,8 @@ pub fn test_one_298(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_285: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_285.as_pointer() })
+                        let __tmp_153: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_153.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -17548,8 +17548,8 @@ pub fn test_one_299(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_286: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_286.as_pointer() })
+                        let __tmp_154: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_154.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17605,8 +17605,8 @@ pub fn test_one_300(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_287: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_287.as_pointer() })
+                        let __tmp_155: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_155.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -17659,8 +17659,8 @@ pub fn test_one_301(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_288: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_288.as_pointer() })
+                        let __tmp_156: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_156.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -17716,8 +17716,8 @@ pub fn test_one_302(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_289: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_289.as_pointer() })
+                        let __tmp_157: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_157.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17773,8 +17773,8 @@ pub fn test_one_303(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_290: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_290.as_pointer() })
+                        let __tmp_158: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_158.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -17830,8 +17830,8 @@ pub fn test_one_304(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_291: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_291.as_pointer() })
+                        let __tmp_159: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_159.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -17887,8 +17887,8 @@ pub fn test_one_305(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_292: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_292.as_pointer() })
+                        let __tmp_160: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_160.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -17941,8 +17941,8 @@ pub fn test_one_306(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_293: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_293.as_pointer() })
+                        let __tmp_161: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_161.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -17995,8 +17995,8 @@ pub fn test_one_307(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_294: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_294.as_pointer() })
+                        let __tmp_162: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_162.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -18052,8 +18052,8 @@ pub fn test_one_308(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_295: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_295.as_pointer() })
+                        let __tmp_163: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_163.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18109,8 +18109,8 @@ pub fn test_one_309(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_296: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_296.as_pointer() })
+                        let __tmp_164: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_164.as_pointer() })
                     },
                     cpp17_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -18167,8 +18167,8 @@ pub fn test_one_310(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_297: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_297.as_pointer() })
+                        let __tmp_165: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_165.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18225,8 +18225,8 @@ pub fn test_one_311(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_298: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_298.as_pointer() })
+                        let __tmp_166: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_166.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18279,8 +18279,8 @@ pub fn test_one_312(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_299: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_299.as_pointer() })
+                        let __tmp_167: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_167.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18337,8 +18337,8 @@ pub fn test_one_313(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_300: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_300.as_pointer() })
+                        let __tmp_168: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_168.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18395,8 +18395,8 @@ pub fn test_one_314(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_301: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_301.as_pointer() })
+                        let __tmp_169: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_169.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18453,8 +18453,8 @@ pub fn test_one_315(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_302: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_302.as_pointer() })
+                        let __tmp_170: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_170.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18511,8 +18511,8 @@ pub fn test_one_316(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_303: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_303.as_pointer() })
+                        let __tmp_171: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_171.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18565,8 +18565,8 @@ pub fn test_one_317(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_304: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_304.as_pointer() })
+                        let __tmp_172: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_172.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18619,8 +18619,8 @@ pub fn test_one_318(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_305: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_305.as_pointer() })
+                        let __tmp_173: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_173.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18677,8 +18677,8 @@ pub fn test_one_319(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_306: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_306.as_pointer() })
+                        let __tmp_174: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_174.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18735,8 +18735,8 @@ pub fn test_one_320(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_307: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_307.as_pointer() })
+                        let __tmp_175: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_175.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -18793,8 +18793,8 @@ pub fn test_one_321(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_308: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_308.as_pointer() })
+                        let __tmp_176: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_176.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -18851,8 +18851,8 @@ pub fn test_one_322(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_309: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_309.as_pointer() })
+                        let __tmp_177: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_177.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -18905,8 +18905,8 @@ pub fn test_one_323(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_310: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_310.as_pointer() })
+                        let __tmp_178: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_178.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -18963,8 +18963,8 @@ pub fn test_one_324(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_311: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_311.as_pointer() })
+                        let __tmp_179: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_179.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19021,8 +19021,8 @@ pub fn test_one_325(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_312: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_312.as_pointer() })
+                        let __tmp_180: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_180.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -19079,8 +19079,8 @@ pub fn test_one_326(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_313: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_313.as_pointer() })
+                        let __tmp_181: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_181.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19137,8 +19137,8 @@ pub fn test_one_327(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_314: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_314.as_pointer() })
+                        let __tmp_182: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_182.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -19191,8 +19191,8 @@ pub fn test_one_328(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_315: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_315.as_pointer() })
+                        let __tmp_183: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_183.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -19245,8 +19245,8 @@ pub fn test_one_329(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_316: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_316.as_pointer() })
+                        let __tmp_184: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_184.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -19303,8 +19303,8 @@ pub fn test_one_330(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_317: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_317.as_pointer() })
+                        let __tmp_185: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_185.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19361,8 +19361,8 @@ pub fn test_one_331(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_318: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_318.as_pointer() })
+                        let __tmp_186: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_186.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -19418,8 +19418,8 @@ pub fn test_one_332(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_319: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_319.as_pointer() })
+                        let __tmp_187: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_187.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19475,8 +19475,8 @@ pub fn test_one_333(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_320: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_320.as_pointer() })
+                        let __tmp_188: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_188.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19529,8 +19529,8 @@ pub fn test_one_334(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_321: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_321.as_pointer() })
+                        let __tmp_189: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_189.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19586,8 +19586,8 @@ pub fn test_one_335(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_322: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_322.as_pointer() })
+                        let __tmp_190: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_190.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19643,8 +19643,8 @@ pub fn test_one_336(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_323: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_323.as_pointer() })
+                        let __tmp_191: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_191.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19700,8 +19700,8 @@ pub fn test_one_337(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_324: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_324.as_pointer() })
+                        let __tmp_192: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_192.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19757,8 +19757,8 @@ pub fn test_one_338(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_325: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_325.as_pointer() })
+                        let __tmp_193: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_193.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19811,8 +19811,8 @@ pub fn test_one_339(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_326: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_326.as_pointer() })
+                        let __tmp_194: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_194.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19865,8 +19865,8 @@ pub fn test_one_340(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_327: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_327.as_pointer() })
+                        let __tmp_195: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_195.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -19922,8 +19922,8 @@ pub fn test_one_341(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_328: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_328.as_pointer() })
+                        let __tmp_196: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_196.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -19979,8 +19979,8 @@ pub fn test_one_342(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_329: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_329.as_pointer() })
+                        let __tmp_197: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_197.as_pointer() })
                     },
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
                     unimplemented!(),
@@ -20037,8 +20037,8 @@ pub fn test_one_343(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_330: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_330.as_pointer() })
+                        let __tmp_198: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_198.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20095,8 +20095,8 @@ pub fn test_one_344(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_331: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_331.as_pointer() })
+                        let __tmp_199: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_199.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20149,8 +20149,8 @@ pub fn test_one_345(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_332: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_332.as_pointer() })
+                        let __tmp_200: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_200.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20207,8 +20207,8 @@ pub fn test_one_346(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_333: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_333.as_pointer() })
+                        let __tmp_201: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_201.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20265,8 +20265,8 @@ pub fn test_one_347(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_334: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_334.as_pointer() })
+                        let __tmp_202: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_202.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20323,8 +20323,8 @@ pub fn test_one_348(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_335: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_335.as_pointer() })
+                        let __tmp_203: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_203.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20381,8 +20381,8 @@ pub fn test_one_349(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_336: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_336.as_pointer() })
+                        let __tmp_204: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_204.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20435,8 +20435,8 @@ pub fn test_one_350(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_337: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_337.as_pointer() })
+                        let __tmp_205: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_205.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20489,8 +20489,8 @@ pub fn test_one_351(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_338: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_338.as_pointer() })
+                        let __tmp_206: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_206.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20547,8 +20547,8 @@ pub fn test_one_352(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_339: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_339.as_pointer() })
+                        let __tmp_207: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_207.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20605,8 +20605,8 @@ pub fn test_one_353(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_340: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_340.as_pointer() })
+                        let __tmp_208: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_208.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -20663,8 +20663,8 @@ pub fn test_one_354(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_341: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_341.as_pointer() })
+                        let __tmp_209: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_209.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20721,8 +20721,8 @@ pub fn test_one_355(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_342: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_342.as_pointer() })
+                        let __tmp_210: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_210.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -20775,8 +20775,8 @@ pub fn test_one_356(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_343: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_343.as_pointer() })
+                        let __tmp_211: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_211.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -20833,8 +20833,8 @@ pub fn test_one_357(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_344: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_344.as_pointer() })
+                        let __tmp_212: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_212.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -20891,8 +20891,8 @@ pub fn test_one_358(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_345: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_345.as_pointer() })
+                        let __tmp_213: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_213.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -20949,8 +20949,8 @@ pub fn test_one_359(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_346: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_346.as_pointer() })
+                        let __tmp_214: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_214.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21007,8 +21007,8 @@ pub fn test_one_360(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_347: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_347.as_pointer() })
+                        let __tmp_215: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_215.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -21061,8 +21061,8 @@ pub fn test_one_361(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_348: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_348.as_pointer() })
+                        let __tmp_216: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_216.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -21115,8 +21115,8 @@ pub fn test_one_362(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_349: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_349.as_pointer() })
+                        let __tmp_217: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_217.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -21173,8 +21173,8 @@ pub fn test_one_363(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_350: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_350.as_pointer() })
+                        let __tmp_218: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_218.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21231,8 +21231,8 @@ pub fn test_one_364(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_351: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_351.as_pointer() })
+                        let __tmp_219: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_219.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -21288,8 +21288,8 @@ pub fn test_one_365(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_352: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_352.as_pointer() })
+                        let __tmp_220: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_220.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21345,8 +21345,8 @@ pub fn test_one_366(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_353: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_353.as_pointer() })
+                        let __tmp_221: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_221.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21399,8 +21399,8 @@ pub fn test_one_367(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_354: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_354.as_pointer() })
+                        let __tmp_222: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_222.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21456,8 +21456,8 @@ pub fn test_one_368(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_355: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_355.as_pointer() })
+                        let __tmp_223: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_223.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21513,8 +21513,8 @@ pub fn test_one_369(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_356: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_356.as_pointer() })
+                        let __tmp_224: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_224.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21570,8 +21570,8 @@ pub fn test_one_370(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_357: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_357.as_pointer() })
+                        let __tmp_225: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_225.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21627,8 +21627,8 @@ pub fn test_one_371(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_358: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_358.as_pointer() })
+                        let __tmp_226: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_226.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21681,8 +21681,8 @@ pub fn test_one_372(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_359: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_359.as_pointer() })
+                        let __tmp_227: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_227.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21735,8 +21735,8 @@ pub fn test_one_373(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_360: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_360.as_pointer() })
+                        let __tmp_228: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_228.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21792,8 +21792,8 @@ pub fn test_one_374(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_361: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_361.as_pointer() })
+                        let __tmp_229: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_229.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21849,8 +21849,8 @@ pub fn test_one_375(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_362: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_362.as_pointer() })
+                        let __tmp_230: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_230.as_pointer() })
                     },
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
                     unimplemented!(),
@@ -21906,8 +21906,8 @@ pub fn test_one_376(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_363: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_363.as_pointer() })
+                        let __tmp_231: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_231.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -21963,8 +21963,8 @@ pub fn test_one_377(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_364: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_364.as_pointer() })
+                        let __tmp_232: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_232.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22017,8 +22017,8 @@ pub fn test_one_378(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_365: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_365.as_pointer() })
+                        let __tmp_233: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_233.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22074,8 +22074,8 @@ pub fn test_one_379(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_366: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_366.as_pointer() })
+                        let __tmp_234: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_234.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22131,8 +22131,8 @@ pub fn test_one_380(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_367: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_367.as_pointer() })
+                        let __tmp_235: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_235.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22188,8 +22188,8 @@ pub fn test_one_381(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_368: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_368.as_pointer() })
+                        let __tmp_236: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_236.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22245,8 +22245,8 @@ pub fn test_one_382(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_369: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_369.as_pointer() })
+                        let __tmp_237: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_237.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22299,8 +22299,8 @@ pub fn test_one_383(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_370: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_370.as_pointer() })
+                        let __tmp_238: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_238.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22353,8 +22353,8 @@ pub fn test_one_384(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_371: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_371.as_pointer() })
+                        let __tmp_239: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_239.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22410,8 +22410,8 @@ pub fn test_one_385(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_372: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_372.as_pointer() })
+                        let __tmp_240: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_240.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22467,8 +22467,8 @@ pub fn test_one_386(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_373: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_373.as_pointer() })
+                        let __tmp_241: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_241.as_pointer() })
                     },
                     unimplemented!(),
                     cpp20_output_iterator_int_ptr_::new({ unimplemented!() }),
@@ -22524,8 +22524,8 @@ pub fn test_one_387(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_374: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_374.as_pointer() })
+                        let __tmp_242: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_242.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22581,8 +22581,8 @@ pub fn test_one_388(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_375: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_375.as_pointer() })
+                        let __tmp_243: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_243.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -22635,8 +22635,8 @@ pub fn test_one_389(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_376: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_376.as_pointer() })
+                        let __tmp_244: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_244.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -22692,8 +22692,8 @@ pub fn test_one_390(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_377: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_377.as_pointer() })
+                        let __tmp_245: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_245.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22749,8 +22749,8 @@ pub fn test_one_391(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_378: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_378.as_pointer() })
+                        let __tmp_246: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_246.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -22806,8 +22806,8 @@ pub fn test_one_392(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_379: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_379.as_pointer() })
+                        let __tmp_247: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_247.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -22863,8 +22863,8 @@ pub fn test_one_393(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_380: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_380.as_pointer() })
+                        let __tmp_248: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_248.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -22917,8 +22917,8 @@ pub fn test_one_394(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_381: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_381.as_pointer() })
+                        let __tmp_249: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_249.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -22971,8 +22971,8 @@ pub fn test_one_395(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_382: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_382.as_pointer() })
+                        let __tmp_250: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_250.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -23028,8 +23028,8 @@ pub fn test_one_396(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_383: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_383.as_pointer() })
+                        let __tmp_251: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_251.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -23085,8 +23085,8 @@ pub fn test_one_397(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_384: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_384.as_pointer() })
+                        let __tmp_252: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_252.as_pointer() })
                     },
                     unimplemented!(),
                     random_access_iterator_int_ptr_::new_1({ unimplemented!() }),
@@ -23141,8 +23141,8 @@ pub fn test_one_398(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_385: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_385.as_pointer() })
+                        let __tmp_253: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_253.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -23197,8 +23197,8 @@ pub fn test_one_399(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_386: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_386.as_pointer() })
+                        let __tmp_254: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_254.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23251,8 +23251,8 @@ pub fn test_one_400(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_387: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_387.as_pointer() })
+                        let __tmp_255: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_255.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23307,8 +23307,8 @@ pub fn test_one_401(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_388: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_388.as_pointer() })
+                        let __tmp_256: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_256.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -23363,8 +23363,8 @@ pub fn test_one_402(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_389: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_389.as_pointer() })
+                        let __tmp_257: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_257.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23419,8 +23419,8 @@ pub fn test_one_403(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_390: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_390.as_pointer() })
+                        let __tmp_258: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_258.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -23475,8 +23475,8 @@ pub fn test_one_404(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_391: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_391.as_pointer() })
+                        let __tmp_259: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_259.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23529,8 +23529,8 @@ pub fn test_one_405(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_392: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_392.as_pointer() })
+                        let __tmp_260: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_260.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23583,8 +23583,8 @@ pub fn test_one_406(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_393: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_393.as_pointer() })
+                        let __tmp_261: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_261.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),
@@ -23639,8 +23639,8 @@ pub fn test_one_407(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_394: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_394.as_pointer() })
+                        let __tmp_262: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_262.as_pointer() })
                     },
                     ___out_true,
                     ___out_false,
@@ -23695,8 +23695,8 @@ pub fn test_one_408(input: (), pred: FnPtr<fn(()) -> ()>, expected_true: (), exp
                 (*partition_copy_13.with(Value::clone).borrow_mut())(
                     (begin).clone(),
                     {
-                        let __tmp_395: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
-                        sentinel_wrapper_int_ptr_::new_1({ __tmp_395.as_pointer() })
+                        let __tmp_263: Value<Ptr<()>> = Rc::new(RefCell::new((end).clone()));
+                        sentinel_wrapper_int_ptr_::new_1({ __tmp_263.as_pointer() })
                     },
                     unimplemented!(),
                     unimplemented!(),

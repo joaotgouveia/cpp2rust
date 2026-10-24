@@ -579,11 +579,7 @@ pub unsafe fn test_9() -> () {
     }
     {
         {
-            let mut rev: () = std_ranges_reverse_view_BidirSentRange_MoveOnly__::new_1({
-                BidirSentRange_MoveOnly_::new({ buffer.as_mut_ptr() }, {
-                    buffer.as_mut_ptr().offset((8_()) as isize)
-                })
-            });
+            let mut rev: () = unimplemented!();
             let mut base: BidirSentRange_MoveOnly_ = (unsafe { (*unimplemented!()).base_4() });
             unimplemented!();
             unimplemented!();

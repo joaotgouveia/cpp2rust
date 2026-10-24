@@ -32,17 +32,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64])));
         let mut Np: () = (::std::mem::size_of::<[(); 3]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_1(
-                { (b.as_pointer() as Ptr<()>) },
-                {
-                    (b.as_pointer() as Ptr<()>)
-                        .offset((Np) as isize)
-                        .offset((1_()) as isize)
-                },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

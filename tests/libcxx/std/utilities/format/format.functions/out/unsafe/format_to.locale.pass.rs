@@ -2086,13 +2086,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    format_to_19(
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() }),
-                        unimplemented!(),
-                        fmt.clone(),
-                    )
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2117,13 +2111,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_20(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2148,14 +2136,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    format_to_21(___out_it, unimplemented!(), ___fmt, ___args_3, ___args_4)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2201,56 +2182,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    let ___args_5: *mut () = args_4;
-                    let ___args_6: *mut () = args_5;
-                    let ___args_7: *mut () = args_6;
-                    let ___args_8: *mut () = args_7;
-                    let ___args_9: *mut () = args_8;
-                    let ___args_10: *mut () = args_9;
-                    let ___args_11: *mut () = args_10;
-                    let ___args_12: *mut () = args_11;
-                    let ___args_13: *mut () = args_12;
-                    let ___args_14: *mut () = args_13;
-                    let ___args_15: *mut () = args_14;
-                    let ___args_16: *mut () = args_15;
-                    let ___args_17: *mut () = args_16;
-                    let ___args_18: *mut () = args_17;
-                    let ___args_19: *mut () = args_18;
-                    let ___args_20: *mut () = args_19;
-                    let ___args_21: *mut () = args_20;
-                    let ___args_22: *mut () = args_21;
-                    format_to_22(
-                        ___out_it,
-                        unimplemented!(),
-                        ___fmt,
-                        ___args_3,
-                        ___args_4,
-                        ___args_5,
-                        ___args_6,
-                        ___args_7,
-                        ___args_8,
-                        ___args_9,
-                        ___args_10,
-                        ___args_11,
-                        ___args_12,
-                        ___args_13,
-                        ___args_14,
-                        ___args_15,
-                        ___args_16,
-                        ___args_17,
-                        ___args_18,
-                        ___args_19,
-                        ___args_20,
-                        ___args_21,
-                        ___args_22,
-                    )
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2283,30 +2215,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    let ___args_5: *mut () = args_4;
-                    let ___args_6: *mut () = args_5;
-                    let ___args_7: *mut () = args_6;
-                    let ___args_8: *mut () = args_7;
-                    let ___args_9: *mut () = args_8;
-                    format_to_23(
-                        ___out_it,
-                        unimplemented!(),
-                        ___fmt,
-                        ___args_3,
-                        ___args_4,
-                        ___args_5,
-                        ___args_6,
-                        ___args_7,
-                        ___args_8,
-                        ___args_9,
-                    )
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2331,13 +2240,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut *mut () = args;
-                    format_to_24(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2362,13 +2265,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut *const () = args;
-                    format_to_25(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2393,13 +2290,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut [(); 8] = args;
-                    format_to_26(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2424,13 +2315,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut [(); 7] = args;
-                    format_to_27(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2455,13 +2340,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_28(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2486,13 +2365,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_29(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2517,13 +2390,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_30(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2548,13 +2415,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_31(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2579,13 +2440,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_32(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2610,13 +2465,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_33(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2641,13 +2490,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_34(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2672,13 +2515,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_35(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2703,13 +2540,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_36(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2734,13 +2565,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_37(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2765,13 +2590,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_38(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2796,13 +2615,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_39(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2827,13 +2640,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_40(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2858,13 +2665,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_41(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2889,13 +2690,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_42(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2920,13 +2715,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_43(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2951,13 +2740,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_44(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -2982,13 +2765,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_45(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3013,13 +2790,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_46(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3044,13 +2815,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_47(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3075,13 +2840,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_char_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_char_ptr_ =
-                        cpp20_output_iterator_char_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut status = args;
-                    format_to_48(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_char_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3112,26 +2871,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    let ___args_5: *mut () = args_4;
-                    let ___args_6: *mut () = args_5;
-                    let ___args_7: *mut () = args_6;
-                    format_to_49(
-                        ___out_it,
-                        unimplemented!(),
-                        ___fmt,
-                        ___args_3,
-                        ___args_4,
-                        ___args_5,
-                        ___args_6,
-                        ___args_7,
-                    )
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3156,13 +2896,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    format_to_50(
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() }),
-                        unimplemented!(),
-                        fmt.clone(),
-                    )
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3187,13 +2921,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_51(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3218,14 +2946,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    format_to_52(___out_it, unimplemented!(), ___fmt, ___args_3, ___args_4)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3271,56 +2992,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    let ___args_5: *mut () = args_4;
-                    let ___args_6: *mut () = args_5;
-                    let ___args_7: *mut () = args_6;
-                    let ___args_8: *mut () = args_7;
-                    let ___args_9: *mut () = args_8;
-                    let ___args_10: *mut () = args_9;
-                    let ___args_11: *mut () = args_10;
-                    let ___args_12: *mut () = args_11;
-                    let ___args_13: *mut () = args_12;
-                    let ___args_14: *mut () = args_13;
-                    let ___args_15: *mut () = args_14;
-                    let ___args_16: *mut () = args_15;
-                    let ___args_17: *mut () = args_16;
-                    let ___args_18: *mut () = args_17;
-                    let ___args_19: *mut () = args_18;
-                    let ___args_20: *mut () = args_19;
-                    let ___args_21: *mut () = args_20;
-                    let ___args_22: *mut () = args_21;
-                    format_to_53(
-                        ___out_it,
-                        unimplemented!(),
-                        ___fmt,
-                        ___args_3,
-                        ___args_4,
-                        ___args_5,
-                        ___args_6,
-                        ___args_7,
-                        ___args_8,
-                        ___args_9,
-                        ___args_10,
-                        ___args_11,
-                        ___args_12,
-                        ___args_13,
-                        ___args_14,
-                        ___args_15,
-                        ___args_16,
-                        ___args_17,
-                        ___args_18,
-                        ___args_19,
-                        ___args_20,
-                        ___args_21,
-                        ___args_22,
-                    )
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3353,30 +3025,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args_3: *mut () = args_2;
-                    let ___args_4: *mut () = args_3;
-                    let ___args_5: *mut () = args_4;
-                    let ___args_6: *mut () = args_5;
-                    let ___args_7: *mut () = args_6;
-                    let ___args_8: *mut () = args_7;
-                    let ___args_9: *mut () = args_8;
-                    format_to_54(
-                        ___out_it,
-                        unimplemented!(),
-                        ___fmt,
-                        ___args_3,
-                        ___args_4,
-                        ___args_5,
-                        ___args_6,
-                        ___args_7,
-                        ___args_8,
-                        ___args_9,
-                    )
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3401,13 +3050,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut *mut () = args;
-                    format_to_55(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3432,13 +3075,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut *const () = args;
-                    format_to_56(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3463,13 +3100,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut [(); 8] = args;
-                    format_to_57(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3494,13 +3125,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut [(); 7] = args;
-                    format_to_58(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3525,13 +3150,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_59(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3556,13 +3175,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_60(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3587,13 +3200,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_61(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3618,13 +3225,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_62(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3649,13 +3250,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_63(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3680,13 +3275,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_64(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3711,13 +3300,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_65(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3742,13 +3325,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_66(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3773,13 +3350,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_67(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3804,13 +3375,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_68(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3835,13 +3400,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_69(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3866,13 +3425,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_70(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3897,13 +3450,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_71(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3928,13 +3475,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_72(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3959,13 +3500,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_73(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -3990,13 +3525,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_74(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -4021,13 +3550,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_75(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -4052,13 +3575,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_76(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -4083,13 +3600,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_77(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -4114,13 +3625,7 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut () = args;
-                    format_to_78(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
@@ -4145,20 +3650,14 @@ pub static mut test_18: std::cell::LazyCell<FnPtr<Generic>> = std::cell::LazyCel
             {
                 unimplemented!();
                 let mut out: [(); 4096] = [unimplemented!(); 4096];
-                let mut it: cpp20_output_iterator_wchar_t_ptr_ = (unsafe {
-                    let ___out_it: cpp20_output_iterator_wchar_t_ptr_ =
-                        cpp20_output_iterator_wchar_t_ptr_::new({ out.as_mut_ptr() });
-                    let ___fmt: () = fmt.clone();
-                    let ___args: *mut status = args;
-                    format_to_79(___out_it, unimplemented!(), ___fmt, ___args)
-                });
+                let mut it: cpp20_output_iterator_wchar_t_ptr_ = unimplemented!();
                 unimplemented!();
                 unimplemented!();
             }
         }
     )
 });
-pub static mut test_exception_80: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut test_exception_19: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe {
         lambda_unsafe!(
             Generic,
@@ -4191,7 +3690,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         format_tests_6(
             (*std::cell::LazyCell::force_mut(&mut *&raw mut test_18)).copy_from(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_80)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_19)).copy_from(),
         )
     });
     (unsafe {
@@ -4202,12 +3701,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         format_tests_7(
             (*std::cell::LazyCell::force_mut(&mut *&raw mut test_18)).copy_from(),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_80)).copy_from(),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut test_exception_19)).copy_from(),
         )
     });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const test_18);
-    std::cell::LazyCell::force(&*&raw const test_exception_80);
+    std::cell::LazyCell::force(&*&raw const test_exception_19);
 }

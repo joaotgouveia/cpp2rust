@@ -618,11 +618,7 @@ pub unsafe fn test_11() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let mut rev: () = std_ranges_reverse_view_BidirSentRange_MoveOnly__::new_1({
-            BidirSentRange_MoveOnly_::new({ buffer.as_mut_ptr() }, {
-                buffer.as_mut_ptr().offset((8_()) as isize)
-            })
-        });
+        let mut rev: () = unimplemented!();
         unimplemented!();
         const _: () = assert!(true, "");;
     }

@@ -28,11 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut p: [(); 4] = [25_(), 62.5_f64, 12.5_f64, 10_()];
         let Np: () = (::std::mem::size_of::<[(); 4]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let mut pa: () = std_piecewise_linear_distribution___param_type::new_1(
-            { b.as_mut_ptr() },
-            { b.as_mut_ptr().offset((Np) as isize) },
-            { p.as_mut_ptr() },
-        );
+        let mut pa: () = unimplemented!();
         let mut d: () = unimplemented!();
         unimplemented!();
     }

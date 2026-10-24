@@ -311,11 +311,7 @@ impl type_two {
     }
 }
 pub fn test01_10() {
-    let pp0: Value<()> = Rc::new(RefCell::new(std_pair_type_one__type_zero_::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-        { unimplemented!() },
-    )));
+    let pp0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -354,11 +350,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let pp1: Value<()> = Rc::new(RefCell::new(std_pair_type_one__type_two_::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-        { unimplemented!() },
-    )));
+    let pp1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -416,11 +408,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let pp2: Value<()> = Rc::new(RefCell::new(std_pair_type_two__type_two_::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-        { unimplemented!() },
-    )));
+    let pp2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -195,7 +195,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut b: () = std_bad_expected_access_MoveOnly_::new({ MoveOnly::new({ Some(3_()) }) });
+    let mut b: () = unimplemented!();
     unimplemented!();
     return 0_();
 }

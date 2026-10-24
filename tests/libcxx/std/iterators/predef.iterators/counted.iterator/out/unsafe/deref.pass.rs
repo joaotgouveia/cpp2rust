@@ -528,20 +528,6 @@ pub unsafe fn test_7() -> () {
         );;
     }
     {
-        let mut iter: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
-        let mut i: () = 1_();
-        'loop_: while ((i) < (9_())) {
-            unimplemented!();
-            {
-                i.prefix_inc();
-                unimplemented!()
-            };
-        }
-    }
-    {
         let mut iter: () = unimplemented!();
         let mut i: () = 1_();
         'loop_: while ((i) < (9_())) {
@@ -575,10 +561,18 @@ pub unsafe fn test_7() -> () {
         }
     }
     {
-        let iter: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
+        let mut i: () = 1_();
+        'loop_: while ((i) < (9_())) {
+            unimplemented!();
+            {
+                i.prefix_inc();
+                unimplemented!()
+            };
+        }
+    }
+    {
+        let iter: () = unimplemented!();
         unimplemented!();
     }
     {

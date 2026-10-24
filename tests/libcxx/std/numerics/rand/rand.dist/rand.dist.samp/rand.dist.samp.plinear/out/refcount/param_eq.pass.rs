@@ -31,40 +31,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 14_(), 16_(), 17_()])));
         let p: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64, 0_()])));
-        let p1: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution___param_type::new_1(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
-        let p2: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution___param_type::new_1(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 14_(), 16_(), 17_()])));
         let p: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64, 0_()])));
-        let p1: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution___param_type::new_1(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
-        let p2: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_linear_distribution___param_type::new_1(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

@@ -858,9 +858,7 @@ pub unsafe fn test_one_19() {
 }
 pub unsafe fn test_one_20() {
     let mut s: [(); 4] = std::mem::transmute(*b"abc\0");
-    let it: () = std_move_iterator_cpp20_input_iterator_char_ptr__::new_1({
-        cpp20_input_iterator_char_ptr_::new({ s.as_mut_ptr() })
-    });
+    let it: () = unimplemented!();
     let sent1: () = unimplemented!();
     let sent2: () = unimplemented!();
     const _: () = assert!(true, "");;

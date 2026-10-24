@@ -29,30 +29,21 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((1_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 30_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -60,10 +51,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 10_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -71,10 +59,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 0_(), 10_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -83,10 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 30_(), 10_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();
@@ -95,10 +77,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 10_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
-            { (p0.as_pointer() as Ptr<()>) },
-            { (p0.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-        )));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut p: () = ({ (*pa.borrow()).probabilities() });
         unimplemented!();
         unimplemented!();

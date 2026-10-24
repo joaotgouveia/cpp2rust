@@ -1273,11 +1273,11 @@ pub fn test_66() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
         {
-            let r : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_16 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_16.as_pointer() } , )  }  } , )  )) ;
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let r : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_17 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_17.as_pointer() } , )  }  } , )  )) ;
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         const _: () = assert!(
@@ -1292,11 +1292,11 @@ pub fn test_66() -> () {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
         {
-            let r : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_18 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_18.as_pointer() } , )  }  } , { 3_()  } , )  )) ;
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         {
-            let r : Value<() > = Rc::new(RefCell::new(std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_19 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( a .as_pointer()  as Ptr::<()> ) . offset ( ( 3_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_19.as_pointer() } , )  }  } , { 3_()  } , )  )) ;
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
         }
         const _: () = assert!(

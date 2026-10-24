@@ -2024,7 +2024,7 @@ pub unsafe fn test_42() -> () {
         const _: () = assert!(true, "CanEq<Iter>");;
         const _: () = assert!(true, "CanEq<CIter>");;
         const _: () = assert!(true, "CanEq<Iter, CIter>");;
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_array_std_array_int__2___3____std_ranges_owning_view_std_array_long__1___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         let mut it1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -2089,7 +2089,7 @@ pub unsafe fn test_42() -> () {
         const _: () = assert!(true, "CanEq<Iter>");;
         const _: () = assert!(true, "CanEq<CIter>");;
         const _: () = assert!(!(false), "!CanEq<CIter, Iter>");;
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_vector_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter___std_allocator_BasicView_std_vector_int__std_allocator_int____ViewProperties_false__false___EqComparableInputIter__EqComparableInputIter______std_ranges_owning_view_std_ranges_empty_view_int___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         {
             let mut it1: () = unimplemented!();
             unimplemented!();

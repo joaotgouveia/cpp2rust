@@ -26,38 +26,26 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut pa: () =
-            std_discrete_distribution___param_type::new_1({ 0_() }, { 0_() }, { 1_() }, {
-                Some(fw_0)
-            });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () =
-            std_discrete_distribution___param_type::new_1({ 1_() }, { 0_() }, { 1_() }, {
-                Some(fw_0)
-            });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () =
-            std_discrete_distribution___param_type::new_1({ 2_() }, { 0.5_f64 }, { 1.5_f64 }, {
-                Some(fw_0)
-            });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: () =
-            std_discrete_distribution___param_type::new_1({ 4_() }, { 0_() }, { 2_() }, {
-                Some(fw_0)
-            });
+        let mut pa: () = unimplemented!();
         let mut p: () = (unsafe { pa.probabilities() });
         unimplemented!();
         unimplemented!();

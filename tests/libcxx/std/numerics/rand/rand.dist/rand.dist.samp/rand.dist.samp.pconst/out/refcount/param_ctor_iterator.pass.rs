@@ -427,25 +427,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_()])));
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([12_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_1(
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (b.as_pointer() as Ptr<()>)
-                    }))
-                },
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (b.as_pointer() as Ptr<()>)
-                    }))
-                },
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (p.as_pointer() as Ptr<()>)
-                    }))
-                },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -457,13 +439,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_()])));
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([12_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_2(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((1_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -475,13 +451,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 15_()])));
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([12_()])));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_2(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -493,13 +463,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 15_(), 16_()])));
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0.25_f64, 0.75_f64])));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_2(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((3_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -513,13 +477,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([10_(), 14_(), 16_(), 17_()])));
         let p: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64])));
-        let pa: Value<()> = Rc::new(RefCell::new(
-            std_piecewise_constant_distribution___param_type::new_2(
-                { (b.as_pointer() as Ptr<()>) },
-                { (b.as_pointer() as Ptr<()>).offset((4_()) as isize) },
-                { (p.as_pointer() as Ptr<()>) },
-            ),
-        ));
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();

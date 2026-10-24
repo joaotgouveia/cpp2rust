@@ -34,7 +34,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     const _: () = assert!(true, "(std::is_same<C::time_point::clock, C>::value)");;
     const _: () = assert!(true, "!C::is_steady");;
-    (unsafe { test_0(&(*std::cell::LazyCell::force_mut(&mut *&raw mut is_steady_1))) });
+    (unsafe { test_0(&unimplemented!()) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

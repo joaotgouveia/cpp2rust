@@ -28,22 +28,17 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let ft: Value<()> = Rc::new(RefCell::new(({ std_filesystem__FilesystemClock::now() })));
-        let st: Value<()> = Rc::new(RefCell::new(
-            ({ std_filesystem__FilesystemClock::to_sys(ft.as_pointer()) }),
-        ));
+        let ft: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let ft: Value<()> = Rc::new(RefCell::new(
-            ({ std_filesystem__FilesystemClock::from_sys(st.as_pointer()) }),
-        ));
+        let ft: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let file_now: Value<()> =
-            Rc::new(RefCell::new(({ std_filesystem__FilesystemClock::now() })));
+        let file_now: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sys_now: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         {
             let diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -55,7 +50,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         }
     }
     {
-        let ft: Value<()> = Rc::new(RefCell::new(({ std_filesystem__FilesystemClock::now() })));
+        let ft: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let st: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sys_diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let file_diff: Value<()> = Rc::new(RefCell::new(unimplemented!()));

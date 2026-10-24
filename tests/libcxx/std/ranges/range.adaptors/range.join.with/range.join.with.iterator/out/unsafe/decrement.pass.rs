@@ -1189,7 +1189,7 @@ pub unsafe fn test_16() -> () {
     {
         const _: () = assert!(true, "CanDecrement<Iter>");;
         const _: () = assert!(true, "CanDecrement<CIter>");;
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_vector_std_string__std_allocator_std_string_____std_ranges_single_view_char__ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             let it_ref: *mut () = &mut (*unimplemented!());
@@ -1223,7 +1223,7 @@ pub unsafe fn test_16() -> () {
         unimplemented!();
     }
     {
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_array_std_array_int__1___3____std_ranges_owning_view_std_array_int__0___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             unimplemented!();
@@ -1246,7 +1246,7 @@ pub unsafe fn test_16() -> () {
         }
     }
     {
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_array_std_vector_int__std_allocator_int____3____std_ranges_single_view_int__ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             unimplemented!();
@@ -1289,7 +1289,7 @@ pub unsafe fn test_16() -> () {
         }
     }
     {
-        let mut jwv : () = std_ranges_join_with_view_std_ranges_owning_view_std_array_std_vector_int__std_allocator_int____3____std_ranges_empty_view_int__ :: new_1 ( { unimplemented!() } , { unimplemented!() } , )  ;
+        let mut jwv: () = unimplemented!();
         {
             let mut it: () = unimplemented!();
             unimplemented!();

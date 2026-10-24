@@ -447,23 +447,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 1] = [10_()];
         let mut p: [(); 1] = [12_()];
-        let mut pa: () = std_piecewise_constant_distribution___param_type::new_1(
-            {
-                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                    (b.as_mut_ptr()).cast_const()
-                }))
-            },
-            {
-                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                    (b.as_mut_ptr()).cast_const()
-                }))
-            },
-            {
-                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                    (p.as_mut_ptr()).cast_const()
-                }))
-            },
-        );
+        let mut pa: () = unimplemented!();
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -475,11 +459,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 1] = [10_()];
         let mut p: [(); 1] = [12_()];
-        let mut pa: () = std_piecewise_constant_distribution___param_type::new_2(
-            { b.as_mut_ptr() },
-            { b.as_mut_ptr().offset((1_()) as isize) },
-            { p.as_mut_ptr() },
-        );
+        let mut pa: () = unimplemented!();
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -491,11 +471,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 2] = [10_(), 15_()];
         let mut p: [(); 1] = [12_()];
-        let mut pa: () = std_piecewise_constant_distribution___param_type::new_2(
-            { b.as_mut_ptr() },
-            { b.as_mut_ptr().offset((2_()) as isize) },
-            { p.as_mut_ptr() },
-        );
+        let mut pa: () = unimplemented!();
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -507,11 +483,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 3] = [10_(), 15_(), 16_()];
         let mut p: [(); 2] = [0.25_f64, 0.75_f64];
-        let mut pa: () = std_piecewise_constant_distribution___param_type::new_2(
-            { b.as_mut_ptr() },
-            { b.as_mut_ptr().offset((3_()) as isize) },
-            { p.as_mut_ptr() },
-        );
+        let mut pa: () = unimplemented!();
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -525,11 +497,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
         let mut p: [(); 3] = [25_(), 62.5_f64, 12.5_f64];
-        let mut pa: () = std_piecewise_constant_distribution___param_type::new_2(
-            { b.as_mut_ptr() },
-            { b.as_mut_ptr().offset((4_()) as isize) },
-            { p.as_mut_ptr() },
-        );
+        let mut pa: () = unimplemented!();
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -518,10 +518,7 @@ impl InputOrOutputArchetype {
 pub unsafe fn test_10() -> () {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
-        let mut iter: () = std_counted_iterator_cpp20_input_iterator_int_ptr__::new_1(
-            { cpp20_input_iterator_int_ptr_::new({ buffer.as_mut_ptr() }) },
-            { 8_() },
-        );
+        let mut iter: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -664,19 +664,11 @@ pub unsafe fn test_17(mut args: ()) {
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char_ptr__::operator_deref(&unimplemented!())
         })) = ('a' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char_ptr__::operator_deref(&unimplemented!())
         })) = ('b' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char_ptr__::operator_deref(&unimplemented!())
         })) = ('c' as ());
@@ -700,19 +692,11 @@ pub unsafe fn test_18(mut args: ()) {
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::operator_deref(&unimplemented!())
         })) = ('a' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::operator_deref(&unimplemented!())
         })) = ('b' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::operator_deref(&unimplemented!())
         })) = ('c' as ());
@@ -736,19 +720,11 @@ pub unsafe fn test_19(mut args: ()) {
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::operator_deref(&unimplemented!())
         })) = ('a' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::operator_deref(&unimplemented!())
         })) = ('b' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::operator_deref(&unimplemented!())
         })) = ('c' as ());
@@ -772,19 +748,11 @@ pub unsafe fn test_20(mut args: ()) {
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::operator_deref(&unimplemented!())
         })) = ('a' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::operator_deref(&unimplemented!())
         })) = ('b' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::operator_deref(&unimplemented!())
         })) = ('c' as ());
@@ -808,19 +776,11 @@ pub unsafe fn test_21(mut args: ()) {
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::operator_deref(&unimplemented!())
         })) = ('a' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::operator_deref(&unimplemented!())
         })) = ('b' as ());
-        (unsafe {
-            context.advance_to(cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::new({
-                unimplemented!()
-            }))
-        });
+        unimplemented!();
         (*(unsafe {
             cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::operator_deref(&unimplemented!())
         })) = ('c' as ());
