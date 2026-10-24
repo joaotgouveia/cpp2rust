@@ -508,8 +508,16 @@ bool sameNamingClass(clang::ASTContext &ctx, const clang::Expr *use,
   };
   auto used = naming(use);
   auto ruled = naming(returned);
-  return used.isNull() || ruled.isNull() ||
-         ctx.hasSameUnqualifiedType(used, ruled);
+  if (used.isNull() || ruled.isNull() ||
+      ctx.hasSameUnqualifiedType(used, ruled)) {
+    return true;
+  }
+  // a static member named through a derived class (std::ios::xalloc of
+  // ios_base)
+  auto used_record = used->getAsCXXRecordDecl();
+  auto ruled_record = ruled->getAsCXXRecordDecl();
+  return used_record && ruled_record && used_record->hasDefinition() &&
+         used_record->isDerivedFrom(ruled_record);
 }
 
 MatchResult matchFunction(clang::Sema &sema, const clang::Expr *use,
