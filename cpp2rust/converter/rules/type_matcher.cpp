@@ -125,11 +125,24 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
     auto args =
         RuleDecls::DeduceFromType(sema, params, clang::QualType(qualifier, 0),
                                   ctx.getCanonicalTagType(owner));
-    if (args && (args = completeArgs(sema, tmpl, *std::move(args))) &&
-        satisfiesConstraints(sema, tmpl, *args)) {
-      return TypeMatch{*std::move(args)};
+    if (!args || !(args = completeArgs(sema, tmpl, *std::move(args))) ||
+        !satisfiesConstraints(sema, tmpl, *args)) {
+      return std::nullopt;
     }
-    return std::nullopt;
+    // the qualifier with the deduced arguments is the class itself, not one
+    // taking fewer of its arguments (common_type<duration<T1, T2>> of
+    // common_type<duration<int>, duration<int>>)
+    RuleDecls::Trial trial(sema);
+    clang::MultiLevelTemplateArgumentList mtal;
+    mtal.addOuterTemplateArguments(const_cast<clang::TypeAliasTemplateDecl *>(tmpl),
+                                   *args, /*Final=*/true);
+    auto qualified = sema.SubstType(clang::QualType(qualifier, 0), mtal,
+                                    tmpl->getLocation(), clang::DeclarationName());
+    if (qualified.isNull() || trial.failed() ||
+        !ctx.hasSameType(qualified, ctx.getCanonicalTagType(owner))) {
+      return std::nullopt;
+    }
+    return TypeMatch{*std::move(args)};
   }
   if (RuleDecls::GetSugar(spelled) &&
       !pattern->getAs<clang::TemplateTypeParmType>()) {
