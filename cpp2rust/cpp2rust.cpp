@@ -142,8 +142,6 @@ int main(int argc, char *argv[]) {
       "rustfmt +" RUST_STABLE_VERSION " --edition 2024 " + RsFile;
   if (std::system(rustfmt_command.c_str()) != 0) {
     llvm::errs() << "ERROR: failed to run rustfmt\n";
-    return EXIT_FAILURE;
   }
-
   return EXIT_SUCCESS;
 }
