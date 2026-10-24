@@ -104,14 +104,21 @@ std::optional<TypeMatch> MatchType(clang::Sema &sema, clang::QualType use,
   auto params = tmpl->getTemplateParameters();
   if (auto member = pattern->getAs<clang::DependentNameType>()) {
     auto qualifier = member->getQualifier().getAsType();
-    auto typedef_type =
-        llvm::dyn_cast<clang::TypedefType>(spelled.getTypePtr());
-    if (!qualifier || !typedef_type ||
-        typedef_type->getDecl()->getIdentifier() != member->getIdentifier()) {
+    // the member type is a typedef or a nested class
+    // (normal_distribution<double>::param_type)
+    const clang::NamedDecl *named = nullptr;
+    if (auto typedef_type =
+            llvm::dyn_cast<clang::TypedefType>(spelled.getTypePtr())) {
+      named = typedef_type->getDecl();
+    } else if (!RuleDecls::GetSugar(spelled)) {
+      named = spelled->getAsCXXRecordDecl();
+    }
+    if (!qualifier || !named ||
+        named->getIdentifier() != member->getIdentifier()) {
       return std::nullopt;
     }
-    auto owner = llvm::dyn_cast<clang::CXXRecordDecl>(
-        typedef_type->getDecl()->getDeclContext());
+    auto owner =
+        llvm::dyn_cast<clang::CXXRecordDecl>(named->getDeclContext());
     if (!owner) {
       return std::nullopt;
     }

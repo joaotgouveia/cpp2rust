@@ -396,6 +396,18 @@ std::vector<TypeKey> GetTypeKeys(clang::ASTContext &ctx, clang::QualType use) {
       }
     }
   }
+  // a class nested in a class has the rules of the outer class's member
+  // types (normal_distribution<double>::param_type)
+  if (auto record = use.getCanonicalType()->getAsCXXRecordDecl();
+      record && !use->isDependentType()) {
+    if (auto owner =
+            llvm::dyn_cast<clang::CXXRecordDecl>(record->getDeclContext())) {
+      auto key = GetTypeKey(ctx.getCanonicalTagType(owner));
+      if (key && !llvm::is_contained(keys, *key)) {
+        keys.push_back(*key);
+      }
+    }
+  }
   return keys;
 }
 
