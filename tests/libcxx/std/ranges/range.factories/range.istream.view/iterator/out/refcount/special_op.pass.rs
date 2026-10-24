@@ -35,7 +35,7 @@ pub fn test_4() {
         let it: Value<std_ranges_basic_istream_view_int__char____iterator> =
             Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new((*it.borrow_mut()).clone()));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -63,7 +63,7 @@ pub fn test_5() {
         let it: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
             Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new((*it.borrow_mut()).clone()));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

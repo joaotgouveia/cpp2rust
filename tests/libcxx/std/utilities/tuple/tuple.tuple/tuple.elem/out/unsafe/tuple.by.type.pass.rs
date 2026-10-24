@@ -24,34 +24,14 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t1: () = {
-            let mut __tmp_0: () = 42_();
-            let mut __tmp_1: () = unimplemented!();
-            let mut __tmp_2: () = unimplemented!();
-            std_tuple_int__std_string__std_complex_float__::new(
-                { &mut __tmp_0 },
-                { &mut __tmp_1 },
-                { &mut __tmp_2 },
-            )
-        };
+        let mut t1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut t2: () = {
-            let mut __tmp_3: () = 42_();
-            let mut __tmp_4: () = unimplemented!();
-            let mut __tmp_5: () = 23_();
-            let mut __tmp_6: () = unimplemented!();
-            std_tuple_int__std_string__int__std_complex_float__::new(
-                { &mut __tmp_3 },
-                { &mut __tmp_4 },
-                { &mut __tmp_5 },
-                { &mut __tmp_6 },
-            )
-        };
+        let mut t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

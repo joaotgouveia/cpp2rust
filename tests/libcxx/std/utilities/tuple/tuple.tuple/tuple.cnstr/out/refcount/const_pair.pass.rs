@@ -35,9 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<()> = Rc::new(RefCell::new(std_tuple_long_long__short_::new_1({
-            p0.as_pointer()
-        })));
+        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "std::get<0>(t1) == std::get<0>(p0)");;
         const _: () = assert!(true, "std::get<1>(t1) == std::get<1>(p0)");;
         const _: () = assert!(true, "std::get<0>(t1) == 2");;

@@ -817,13 +817,7 @@ pub fn test_6() -> () {
     }
     {
         let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<test_allocator_int_> =
-                Rc::new(RefCell::new(<test_allocator_int_>::default()));
-            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { __tmp_0.as_pointer() }, {
-                unimplemented!()
-            })
-        }));
+        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

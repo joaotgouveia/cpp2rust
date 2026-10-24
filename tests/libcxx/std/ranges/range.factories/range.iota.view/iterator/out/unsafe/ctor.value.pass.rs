@@ -226,12 +226,11 @@ pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
 pub unsafe fn test_18() -> () {
     {
-        let mut iter: () = std_ranges_iota_view_int____iterator::new_1({ 42_() });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut iter: () =
-            std_ranges_iota_view_SomeInt____iterator::new_1({ SomeInt::new({ Some(42_()) }) });
+        let mut iter: () = unimplemented!();
         unimplemented!();
     }
     {

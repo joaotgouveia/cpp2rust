@@ -265,9 +265,8 @@ impl Default for Int42_DefaultTo42_ {
     }
 }
 pub fn test_18() -> () {
-    let iter: Value<std_ranges_iota_view_Int42_DefaultTo42_____iterator> = Rc::new(RefCell::new(
-        <std_ranges_iota_view_Int42_DefaultTo42_____iterator>::default(),
-    ));
+    let iter: Value<std_ranges_iota_view_Int42_DefaultTo42_____iterator> =
+        Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     return true;
 }

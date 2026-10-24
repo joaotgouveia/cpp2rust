@@ -862,10 +862,7 @@ pub unsafe fn test_6() -> () {
     }
     {
         let mut t1: () = unimplemented!();
-        let mut t2: () = {
-            let mut __tmp_1: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { &mut __tmp_1 }, { &t1 })
-        };
+        let mut t2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -279,20 +279,12 @@ pub const CtorKind_ValueCtor: CtorKind = 1;
 pub fn test_20() -> () {
     {
         let sent: Value<std_ranges_iota_view_int__IntSentinelWith_int_____sentinel> =
-            Rc::new(RefCell::new(
-                std_ranges_iota_view_int__IntSentinelWith_int_____sentinel::new_1({
-                    IntSentinelWith_int_::new({ Some(42_()) })
-                }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let sent: Value<std_ranges_iota_view_SomeInt__IntSentinelWith_SomeInt_____sentinel> =
-            Rc::new(RefCell::new(
-                std_ranges_iota_view_SomeInt__IntSentinelWith_SomeInt_____sentinel::new_1({
-                    IntSentinelWith_SomeInt_::new({ Some(SomeInt::new({ Some(42_()) })) })
-                }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

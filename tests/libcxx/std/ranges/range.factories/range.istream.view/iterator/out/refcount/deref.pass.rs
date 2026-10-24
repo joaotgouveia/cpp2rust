@@ -35,13 +35,9 @@ pub fn test_4() {
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it1: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(
-                std_ranges_basic_istream_view_int__char____iterator::new({ isv.as_pointer() }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<std_ranges_basic_istream_view_int__char____iterator> =
-            Rc::new(RefCell::new(
-                std_ranges_basic_istream_view_int__char____iterator::new({ isv.as_pointer() }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
@@ -62,13 +58,9 @@ pub fn test_5() {
         ));
         let isv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it1: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(
-                std_ranges_basic_istream_view_int__wchar_t____iterator::new({ isv.as_pointer() }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         let it2: Value<std_ranges_basic_istream_view_int__wchar_t____iterator> =
-            Rc::new(RefCell::new(
-                std_ranges_basic_istream_view_int__wchar_t____iterator::new({ isv.as_pointer() }),
-            ));
+            Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
