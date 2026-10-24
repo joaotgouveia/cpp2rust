@@ -158,10 +158,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         {
-            let mut i: () = {
-                let mut __tmp_0: () = unimplemented!();
-                std___list_const_iterator_B__void_ptr_::new_1({ &mut __tmp_0 })
-            };
+            let mut i: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

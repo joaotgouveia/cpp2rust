@@ -119,10 +119,7 @@ pub unsafe fn test_stable_6(mut N: ()) {
     let mut c: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut j: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___list_const_iterator_Payload__void_ptr_::new_1({ &mut __tmp_0 })
-    };
+    let mut j: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();
@@ -131,10 +128,7 @@ pub unsafe fn test_stable_6(mut N: ()) {
             unimplemented!()
         };
     }
-    let mut it: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std___list_const_iterator_Payload__void_ptr_::new_1({ &mut __tmp_1 })
-    };
+    let mut it: () = unimplemented!();
     'loop_: while unimplemented!() {
         let mut next: () = unimplemented!();
         if (unimplemented!()) && (((*it).val) == ((*next).val)) {

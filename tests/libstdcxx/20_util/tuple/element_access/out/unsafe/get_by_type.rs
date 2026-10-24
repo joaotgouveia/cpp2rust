@@ -265,14 +265,8 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut j: () = 1_();
     let k: () = 2_();
-    let mut a: () = {
-        let mut __tmp_0: () = 0_();
-        std_tuple_int__int_ref__const_int_ref_::new({ &mut __tmp_0 }, { &mut j }, { &k })
-    };
-    let b: () = {
-        let mut __tmp_1: () = 1_();
-        std_tuple_int__int_ref__const_int_ref_::new({ &mut __tmp_1 }, { &mut j }, { &k })
-    };
+    let mut a: () = unimplemented!();
+    let b: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

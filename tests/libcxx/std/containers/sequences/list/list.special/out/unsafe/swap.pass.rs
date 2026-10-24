@@ -356,10 +356,7 @@ pub unsafe fn test_11() -> () {
         let mut c1: () = unimplemented!();
         let mut c2: () = unimplemented!();
         let mut it1: () = unimplemented!();
-        let mut it2: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let mut it2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

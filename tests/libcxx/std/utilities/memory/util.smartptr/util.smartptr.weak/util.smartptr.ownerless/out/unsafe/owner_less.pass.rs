@@ -64,7 +64,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut sp2: () = unimplemented!();
         let mut sp3: () = unimplemented!();
         let mut wp1: () = unimplemented!();
-        let mut cmp: std_owner_less_void_ = unimplemented!();
+        let mut cmp: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

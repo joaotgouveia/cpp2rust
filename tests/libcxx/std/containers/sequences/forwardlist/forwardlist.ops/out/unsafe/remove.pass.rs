@@ -217,10 +217,7 @@ pub unsafe fn test_10() -> () {
             let _value: *const S = unimplemented!();
             do_remove_8(_l, _value, 3_())
         });
-        let mut it: () =
-            std___forward_list_const_iterator_std___forward_list_node_S__void_ptr__ptr_::new_1({
-                unimplemented!()
-            });
+        let mut it: () = unimplemented!();
         let mut ip: *mut () = unimplemented!();
         'loop_: while ((ip) != (unimplemented!())) {
             unimplemented!();

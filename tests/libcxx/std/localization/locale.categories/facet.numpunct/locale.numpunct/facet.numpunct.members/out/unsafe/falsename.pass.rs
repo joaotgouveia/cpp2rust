@@ -25,11 +25,11 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     {
-        let np: *const std_numpunct_char_ = (unsafe { use_facet_0(&l) });
+        let np: *const () = (unsafe { use_facet_0(&l) });
         unimplemented!();
     }
     {
-        let np: *const std_numpunct_wchar_t_ = (unsafe { use_facet_1(&l) });
+        let np: *const () = (unsafe { use_facet_1(&l) });
         unimplemented!();
     }
     return 0_();

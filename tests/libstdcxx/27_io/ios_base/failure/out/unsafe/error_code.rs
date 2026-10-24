@@ -261,7 +261,7 @@ pub unsafe fn test01_10() {
     let mut def_ec: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut e1: () = std_ios_base_failure::new_1({ c"string literal".as_ptr() }, None);
+    let mut e1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -281,10 +281,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut e2: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std_ios_base_failure::new_2({ &mut __tmp_0 })
-    };
+    let mut e2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -304,7 +301,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut e3: () = std_ios_base_failure::new_1({ c"string literal".as_ptr() }, { Some(&ec) });
+    let mut e3: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -324,10 +321,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut e4: () = {
-        let mut __tmp_1: () = unimplemented!();
-        std_ios_base_failure::new_3({ &mut __tmp_1 }, { &ec })
-    };
+    let mut e4: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

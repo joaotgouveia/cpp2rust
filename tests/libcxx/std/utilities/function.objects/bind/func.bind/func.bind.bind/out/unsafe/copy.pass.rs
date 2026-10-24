@@ -25,7 +25,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut fnc: () = std_function_float__float__float__::new_1({ Some(_pow_0) });
+    let mut fnc: () = unimplemented!();
     let mut task: () = unimplemented!();
     let mut task2: () = unimplemented!();
     unimplemented!();

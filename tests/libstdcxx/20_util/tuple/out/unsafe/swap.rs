@@ -307,8 +307,8 @@ pub unsafe fn test01_12() {
     }
 }
 pub unsafe fn test02_13() {
-    let mut t1: () = 1_();
-    let mut t2: () = 2_();
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -380,18 +380,8 @@ pub unsafe fn test03_16() {
     }
 }
 pub unsafe fn test04_19() {
-    let mut t1: () = {
-        let mut __tmp_0: () = 1_();
-        let mut __tmp_1: () = 1_f32;
-        let mut __tmp_2: MoveOnly = (unsafe { make_move_only_11(1_()) });
-        std_tuple_int__float__MoveOnly_::new({ &mut __tmp_0 }, { &mut __tmp_1 }, { &mut __tmp_2 })
-    };
-    let mut t2: () = {
-        let mut __tmp_3: () = 2_();
-        let mut __tmp_4: () = 2_f32;
-        let mut __tmp_5: MoveOnly = (unsafe { make_move_only_11(2_()) });
-        std_tuple_int__float__MoveOnly_::new({ &mut __tmp_3 }, { &mut __tmp_4 }, { &mut __tmp_5 })
-    };
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

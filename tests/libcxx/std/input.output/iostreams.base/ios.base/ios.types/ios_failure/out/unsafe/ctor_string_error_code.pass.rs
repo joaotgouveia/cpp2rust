@@ -29,10 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     {
         let mut what_arg: () = unimplemented!();
-        let mut se: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std_ios_base_failure::new_1({ &what_arg }, { Some(&mut __tmp_0) })
-        };
+        let mut se: () = unimplemented!();
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();
@@ -40,7 +37,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut what_arg: () = unimplemented!();
-        let mut se: () = std_ios_base_failure::new_1({ &what_arg }, None);
+        let mut se: () = unimplemented!();
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();

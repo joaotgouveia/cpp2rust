@@ -274,17 +274,17 @@ pub unsafe fn test04_11() {
     let s: () = unimplemented!();
     let mut strlit1: *const () = c"wish I lived in Palo Alto".as_ptr();
     let mut strlit2: *const () = c"...or Santa Barbara".as_ptr();
-    let mut obj1: () = std_ios_base_failure::new_1({ &s });
+    let mut obj1: () = unimplemented!();
     {
         let s2: () = unimplemented!();
-        let mut obj2: () = std_ios_base_failure::new_1({ &s2 });
-        obj1 = (obj2).clone();
+        let mut obj2: () = unimplemented!();
+        unimplemented!();
     }
     (unsafe { allocate_on_stack_10() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!((unsafe { strstr_12((unsafe { obj1.what() }), strlit1) }).is_null())) {
+        if !(!((unsafe { strstr_12(unimplemented!(), strlit1) }).is_null())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -302,14 +302,14 @@ pub unsafe fn test04_11() {
     }
     {
         let s3: () = unimplemented!();
-        let mut obj3: () = std_ios_base_failure::new_1({ &s3 });
-        obj1 = (obj3).clone();
+        let mut obj3: () = unimplemented!();
+        unimplemented!();
     }
     (unsafe { allocate_on_stack_10() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!((unsafe { strstr_12((unsafe { obj1.what() }), strlit2) }).is_null())) {
+        if !(!((unsafe { strstr_12(unimplemented!(), strlit2) }).is_null())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

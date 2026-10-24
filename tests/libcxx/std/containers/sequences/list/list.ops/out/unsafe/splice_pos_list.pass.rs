@@ -72,10 +72,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -86,28 +83,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_1 })
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_2: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_2 })
-        };
-        unimplemented!();
-        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -120,70 +96,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_3: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_3 })
-        };
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_4: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_4 })
-        };
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_5: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_5 })
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_6: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_6 })
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_7: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_7 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -198,10 +111,55 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_8: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_8 })
-        };
+        let mut i: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -216,10 +174,22 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_9: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_9 })
-        };
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -236,10 +206,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_10: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_10 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -256,10 +223,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_11: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_11 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -272,10 +236,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_12: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_12 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -288,10 +249,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_13: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_13 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -304,10 +262,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_14: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_14 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -322,10 +277,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_15: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_15 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -340,10 +292,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_16: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_16 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -358,10 +307,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_17: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_17 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -378,10 +324,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_18: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_18 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -398,10 +341,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_19: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_19 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -418,10 +358,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_20: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_20 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -442,10 +379,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_21: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_21 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -466,10 +400,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_22: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_22 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -490,10 +421,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_23: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_23 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -523,10 +451,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_24: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_24 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
     }
     {
@@ -537,28 +462,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_25: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_25 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_26: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_26 } , )
-        };
-        unimplemented!();
-        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -571,70 +475,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_27: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_27 } , )
-        };
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_28: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_28 } , )
-        };
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_29: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_29 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_30: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_30 } , )
-        };
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut l1: () = unimplemented!();
-        let mut l2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut i: () = {
-            let mut __tmp_31: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_31 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -649,10 +490,55 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_32: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_32 } , )
-        };
+        let mut i: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -667,10 +553,22 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_33: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_33 } , )
-        };
+        let mut i: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut l1: () = unimplemented!();
+        let mut l2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -687,10 +585,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_34: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_34 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -707,10 +602,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_35: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_35 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -723,10 +615,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_36: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_36 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -739,10 +628,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_37: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_37 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -755,10 +641,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_38: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_38 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -773,10 +656,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_39: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_39 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -791,10 +671,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_40: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_40 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -809,10 +686,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_41: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_41 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -829,10 +703,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_42: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_42 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -849,10 +720,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_43: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_43 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -869,10 +737,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_44: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_44 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -893,10 +758,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_45: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_45 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -917,10 +779,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_46: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_46 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -941,10 +800,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut i: () = {
-            let mut __tmp_47: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_47 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -258,11 +258,11 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let xxx: () = unimplemented!();
-    let mut t: () = std_ios_base_failure::new_1({ &xxx });
+    let mut t: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!((unsafe { strstr_11((unsafe { t.what() }), unimplemented!()) }).is_null())) {
+        if !(!((unsafe { strstr_11(unimplemented!(), unimplemented!()) }).is_null())) {
             (unsafe {
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

@@ -12,7 +12,7 @@ pub unsafe fn test_0() -> () {
             let mut x: () = 91_();
             let mut y: () = 92_();
             let mut a: () = unimplemented!();
-            let p: () = std_pair_int_ref__int_ref_::new_1({ &mut x }, { &mut y });
+            let p: () = unimplemented!();
             let result: *const () = &(*unimplemented!());
             unimplemented!();
             unimplemented!();
@@ -34,7 +34,7 @@ pub unsafe fn test_0() -> () {
             let mut x: () = 91_();
             let mut y: () = 92_();
             let mut a: () = unimplemented!();
-            let p: () = std_pair_int_ref__int_ref_::new_1({ &mut x }, { &mut y });
+            let p: () = unimplemented!();
             let result: *const () = &(*unimplemented!());
             unimplemented!();
             unimplemented!();

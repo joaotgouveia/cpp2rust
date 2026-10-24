@@ -326,12 +326,12 @@ const _: () = assert!(true, "!std::is_trivially_copyable<LocationAware>::value")
 pub unsafe fn test01_11() {
     let mut l: LocationAware = LocationAware::new();
     let _dtor_l = ScopedDestructorUnsafe::new(&raw mut l, LocationAware::destructor);
-    let mut a: () = std_any::new({ &mut l });
+    let mut a: () = unimplemented!();
 }
 pub unsafe fn test02_12() {
     let mut l: LocationAware = LocationAware::new();
     let _dtor_l = ScopedDestructorUnsafe::new(&raw mut l, LocationAware::destructor);
-    let mut a: () = std_any::new({ &mut l });
+    let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     {
         let mut tmp: () = unimplemented!();
@@ -342,7 +342,7 @@ pub unsafe fn test02_12() {
 pub unsafe fn test03_13() {
     let mut l: LocationAware = LocationAware::new();
     let _dtor_l = ScopedDestructorUnsafe::new(&raw mut l, LocationAware::destructor);
-    let mut a: () = std_any::new({ &mut l });
+    let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
     unimplemented!();
 }

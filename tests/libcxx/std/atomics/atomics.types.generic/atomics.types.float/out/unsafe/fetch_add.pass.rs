@@ -154,17 +154,14 @@ pub unsafe fn test_impl_13() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unsafe { a.fetch_add_11(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    let ___op: () = ((new_val) - (old_val));
-                    (*x).fetch_add_11(___op, Some(unimplemented!()))
-                });
+                unimplemented!();
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
@@ -180,19 +177,13 @@ pub unsafe fn test_impl_13() {
     {
         let mut fetch_add: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_value: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    let ___op: () = ((new_val) - (old_value));
-                    (*x).fetch_add_11(___op, None)
-                });
+                unimplemented!();
             },
         );
         let mut fetch_add_with_order: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(
                 |x: *mut (), mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((new_val) - (old_value));
-                        (*x).fetch_add_11(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
@@ -269,17 +260,14 @@ pub unsafe fn test_impl_15() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = (unsafe { a.fetch_add_11(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    let ___op: () = ((new_val) - (old_val));
-                    (*x).fetch_add_11(___op, Some(unimplemented!()))
-                });
+                unimplemented!();
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
@@ -295,19 +283,13 @@ pub unsafe fn test_impl_15() {
     {
         let mut fetch_add: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_value: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    let ___op: () = ((new_val) - (old_value));
-                    (*x).fetch_add_11(___op, None)
-                });
+                unimplemented!();
             },
         );
         let mut fetch_add_with_order: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(
                 |x: *mut (), mut old_value: (), mut new_val: ()| unsafe {
-                    (unsafe {
-                        let ___op: () = ((new_val) - (old_value));
-                        (*x).fetch_add_11(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             );
         let mut load: FnPtr<fn(*mut ()) -> ()> =

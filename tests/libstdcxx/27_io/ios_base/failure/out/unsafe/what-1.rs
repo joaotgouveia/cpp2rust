@@ -258,13 +258,12 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut s: () = unimplemented!();
-    let mut obj1: () = std_ios_base_failure::new_1({ &s });
-    let mut obj2: () = std_ios_base_failure::new_1({ &s });
+    let mut obj1: () = unimplemented!();
+    let mut obj2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!((unsafe { strstr_11((unsafe { obj1.what() }), (unimplemented!()).cast_const()) })
-            .is_null()))
+        if !(!((unsafe { strstr_11(unimplemented!(), (unimplemented!()).cast_const()) }).is_null()))
         {
             (unsafe {
                 __builtin_fprintf_12(
@@ -284,8 +283,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!((unsafe { strstr_11((unsafe { obj2.what() }), (unimplemented!()).cast_const()) })
-            .is_null()))
+        if !(!((unsafe { strstr_11(unimplemented!(), (unimplemented!()).cast_const()) }).is_null()))
         {
             (unsafe {
                 __builtin_fprintf_12(

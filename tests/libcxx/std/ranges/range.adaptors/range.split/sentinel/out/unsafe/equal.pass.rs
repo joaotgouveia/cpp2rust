@@ -717,7 +717,7 @@ pub unsafe fn testOne_12() {
             let mut e : std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_13(&mut b, 2_()) });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
@@ -736,7 +736,7 @@ pub unsafe fn testOne_12() {
         }
     }
 }
-pub unsafe fn testOne_14() {
+pub unsafe fn testOne_13() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -747,7 +747,7 @@ pub unsafe fn testOne_14() {
             let mut e : std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_15(&mut b, 2_()) });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
@@ -757,6 +757,66 @@ pub unsafe fn testOne_14() {
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
             let mut e : std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn testOne_14() {
+    const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
+    {
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn testOne_15() {
+    const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
+    {
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -774,70 +834,10 @@ pub unsafe fn testOne_16() {
             let mut input: () = unimplemented!();
             let mut sv: () = unimplemented!();
             let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
-            unimplemented!();
-            unimplemented!();
-            (unsafe { advance_17(&mut b, 2_()) });
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn testOne_18() {
-    const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
-    {
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
-            unimplemented!();
-            unimplemented!();
-            (unsafe { advance_19(&mut b, 2_()) });
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn testOne_20() {
-    const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
-    {
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
             let mut e : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_21(&mut b, 2_()) });
+            unimplemented!();
             unimplemented!();
             unimplemented!();
         }
@@ -856,12 +856,12 @@ pub unsafe fn testOne_20() {
         }
     }
 }
-pub unsafe fn test_22() -> () {
+pub unsafe fn test_17() -> () {
     (unsafe { testOne_12() });
+    (unsafe { testOne_13() });
     (unsafe { testOne_14() });
+    (unsafe { testOne_15() });
     (unsafe { testOne_16() });
-    (unsafe { testOne_18() });
-    (unsafe { testOne_20() });
     return true;
 }
 pub fn main() {
@@ -880,7 +880,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_22() });
+    (unsafe { test_17() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -258,7 +258,10 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut ns: () = unimplemented!();
-    let mut s : std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_1__1___ = ( unsafe { let mut ___t : ()  = unimplemented!()  ; time_point_cast_11 ( & mut ___t , ) } )  ;
+    let mut s: () = (unsafe {
+        let mut ___t: () = unimplemented!();
+        time_point_cast_11(&mut ___t)
+    });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

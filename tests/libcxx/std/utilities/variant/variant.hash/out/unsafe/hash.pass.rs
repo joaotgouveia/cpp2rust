@@ -924,14 +924,12 @@ pub unsafe fn test_hash_variant_196() {
         let mut str: *const () = c"hello".as_ptr();
         let v0: () = unimplemented!();
         let v0_other: () = unimplemented!();
-        let v1: () = 42_();
-        let v1_other: () = 100_();
-        let mut v2: () = 100_();
-        let mut v2_other: () = 999_();
-        let mut v3: () = std_variant_std_monostate__int__long__const_char_ptr_::new_1({ &mut str });
-        let mut v3_other: () = std_variant_std_monostate__int__long__const_char_ptr_::new_2({
-            &std::mem::transmute(*b"not hello\0")
-        });
+        let v1: () = unimplemented!();
+        let v1_other: () = unimplemented!();
+        let mut v2: () = unimplemented!();
+        let mut v2_other: () = unimplemented!();
+        let mut v3: () = unimplemented!();
+        let mut v3_other: () = unimplemented!();
         let h: () = unimplemented!();
         unimplemented!();
         unimplemented!();

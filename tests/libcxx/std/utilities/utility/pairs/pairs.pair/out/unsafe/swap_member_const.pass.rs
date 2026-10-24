@@ -51,8 +51,8 @@ pub unsafe fn test_1() -> () {
         let mut i2: () = 1_();
         let mut i3: () = 2_();
         let mut i4: () = 3_();
-        let p1: () = std_pair_int_ref__int_ref_::new_1({ &mut i1 }, { &mut i2 });
-        let p2: () = std_pair_int_ref__int_ref_::new_1({ &mut i3 }, { &mut i4 });
+        let p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

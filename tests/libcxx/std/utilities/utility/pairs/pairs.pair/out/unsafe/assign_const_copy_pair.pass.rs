@@ -599,8 +599,8 @@ pub unsafe fn test_6() -> () {
         let mut i2: () = 2_();
         let mut d1: () = 3_f64;
         let mut d2: () = 5_f64;
-        let p1: () = std_pair_int_ref__double_ref_::new_1({ &mut i1 }, { &mut d1 });
-        let p2: () = std_pair_int_ref__double_ref_::new_1({ &mut i2 }, { &mut d2 });
+        let p1: () = unimplemented!();
+        let p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

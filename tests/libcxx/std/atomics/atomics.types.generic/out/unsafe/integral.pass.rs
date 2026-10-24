@@ -550,8 +550,7 @@ pub unsafe fn do_test_32() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_char__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -596,7 +595,7 @@ pub unsafe fn do_test_32() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -683,8 +682,7 @@ pub unsafe fn do_test_34() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_signed_char__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -729,7 +727,7 @@ pub unsafe fn do_test_34() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -816,8 +814,7 @@ pub unsafe fn do_test_36() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_unsigned_char__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -862,7 +859,7 @@ pub unsafe fn do_test_36() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -949,8 +946,7 @@ pub unsafe fn do_test_38() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_short__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -995,7 +991,7 @@ pub unsafe fn do_test_38() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1082,8 +1078,7 @@ pub unsafe fn do_test_40() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_unsigned_short__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1128,7 +1123,7 @@ pub unsafe fn do_test_40() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1215,7 +1210,7 @@ pub unsafe fn do_test_42() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () = (unsafe { (obj as std___atomic_base_int__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1260,7 +1255,7 @@ pub unsafe fn do_test_42() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1347,8 +1342,7 @@ pub unsafe fn do_test_44() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_unsigned_int__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1393,7 +1387,7 @@ pub unsafe fn do_test_44() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1489,8 +1483,7 @@ pub unsafe fn do_test_46() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_long__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1535,7 +1528,7 @@ pub unsafe fn do_test_46() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1640,8 +1633,7 @@ pub unsafe fn do_test_48() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_unsigned_long__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1686,7 +1678,7 @@ pub unsafe fn do_test_48() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1791,8 +1783,7 @@ pub unsafe fn do_test_50() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_long_long__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1837,7 +1828,7 @@ pub unsafe fn do_test_50() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1942,8 +1933,7 @@ pub unsafe fn do_test_52() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_unsigned_long_long__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -1988,7 +1978,7 @@ pub unsafe fn do_test_52() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2084,8 +2074,7 @@ pub unsafe fn do_test_54() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_char8_t__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -2130,7 +2119,7 @@ pub unsafe fn do_test_54() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2217,8 +2206,7 @@ pub unsafe fn do_test_56() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_char16_t__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -2263,7 +2251,7 @@ pub unsafe fn do_test_56() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2350,8 +2338,7 @@ pub unsafe fn do_test_58() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_char32_t__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -2396,7 +2383,7 @@ pub unsafe fn do_test_58() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2483,8 +2470,7 @@ pub unsafe fn do_test_60() {
     let mut obj: () = unimplemented!();
     unimplemented!();
     {
-        let mut lockfree: () =
-            (unsafe { (obj as std___atomic_base_wchar_t__false_).is_lock_free_1() });
+        let mut lockfree: () = unimplemented!();
         &(lockfree);
         {
             unimplemented!();
@@ -2529,7 +2515,7 @@ pub unsafe fn do_test_60() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    obj = 2_();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

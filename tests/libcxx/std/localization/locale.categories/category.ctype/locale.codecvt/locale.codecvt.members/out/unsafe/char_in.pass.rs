@@ -26,7 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     let from: () = unimplemented!();
     let mut to: () = unimplemented!();
-    let f: *const std_codecvt_char__char____mbstate_t_ = (unsafe { use_facet_0(&l) });
+    let f: *const () = (unsafe { use_facet_0(&l) });
     let mut mbs: () = unimplemented!();
     let mut from_next: *const () = std::ptr::null();
     let mut to_next: *mut () = std::ptr::null_mut();

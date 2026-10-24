@@ -226,33 +226,28 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut buffer: std_aligned_storage_12__4__type =
-            unsafe { std::mem::zeroed::<std_aligned_storage_12__4__type>() };
-        let mut it: () = std_raw_storage_iterator_A_ptr__A_::new({
-            ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut A)
-        });
+        let mut buffer: () = unimplemented!();
+        let mut it: () =
+            std_raw_storage_iterator_A_ptr__A_::new({ ((&mut buffer as *mut ()) as *mut A) });
         unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (3_())) {
             unimplemented!();
-            let mut ap: *mut A = ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut A)
-                .offset((i) as isize);
+            let mut ap: *mut A = ((&mut buffer as *mut ()) as *mut A).offset((i) as isize);
             unimplemented!();
             unimplemented!();
             i.prefix_inc();
         }
     }
     {
-        let mut buffer: std_aligned_storage_12__4__type =
-            unsafe { std::mem::zeroed::<std_aligned_storage_12__4__type>() };
+        let mut buffer: () = unimplemented!();
         let mut it: () = std_raw_storage_iterator_MoveOnly_ptr__MoveOnly_::new({
-            ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut MoveOnly)
+            ((&mut buffer as *mut ()) as *mut MoveOnly)
         });
         let mut m: MoveOnly = MoveOnly::new({ Some(1_()) });
         unimplemented!();
         unimplemented!();
-        let mut ap: *mut MoveOnly =
-            ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut MoveOnly);
+        let mut ap: *mut MoveOnly = ((&mut buffer as *mut ()) as *mut MoveOnly);
         unimplemented!();
     }
     return 0_();

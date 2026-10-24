@@ -193,7 +193,7 @@ pub unsafe fn test_4() -> () {
             min_pointer_A__std_integral_constant_unsigned_long__0__::operator_arrow(&i)
         }))
         .first = 3_();
-        let mut j : () = std___list_const_iterator_A__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & i } , )  ;
+        let mut j: () = unimplemented!();
         unimplemented!();
     }
     {

@@ -57,18 +57,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut buffer: std_aligned_storage_12__4__type =
-        unsafe { std::mem::zeroed::<std_aligned_storage_12__4__type>() };
-    let mut it: () = std_raw_storage_iterator_A_ptr__A_::new({
-        ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut A)
-    });
+    let mut buffer: () = unimplemented!();
+    let mut it: () =
+        std_raw_storage_iterator_A_ptr__A_::new({ ((&mut buffer as *mut ()) as *mut A) });
     unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (3_())) {
         unimplemented!();
-        let mut ap: *mut A =
-            ((&mut buffer as *mut std_aligned_storage_12__4__type) as *mut A).offset((i) as isize);
+        let mut ap: *mut A = ((&mut buffer as *mut ()) as *mut A).offset((i) as isize);
         unimplemented!();
         unimplemented!();
         unimplemented!();

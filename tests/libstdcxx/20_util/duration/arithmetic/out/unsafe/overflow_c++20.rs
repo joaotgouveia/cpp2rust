@@ -279,7 +279,7 @@ pub unsafe fn test_overflow_10() {
             unimplemented!();
         }
     }
-    let mut y : std_chrono_time_point_std_chrono_system_clock__std_chrono_duration_long__std_ratio_31556952__1___ = ( unsafe { floor_12 ( & snow , ) } )  ;
+    let mut y: () = (unsafe { floor_12(&snow) });
     let mut y_t: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

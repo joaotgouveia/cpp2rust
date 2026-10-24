@@ -257,9 +257,8 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
-    let mut v1: () = ('c' as ());
-    let mut v2: () =
-        std_variant_void_ptr__const_char_ptr_::new_1({ &std::mem::transmute(*b"chars\0") });
+    let mut v1: () = unimplemented!();
+    let mut v2: () = unimplemented!();
     let mut res: () = unimplemented!();
     const _: () = assert!(true, "std::is_same_v<decltype(res), bool>");;
     let mut __do_while = true;

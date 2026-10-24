@@ -41,7 +41,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut comp: () = std_function_bool__int__int__::new_1({ unimplemented!() });
+        let mut comp: () = unimplemented!();
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

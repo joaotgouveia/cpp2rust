@@ -55,10 +55,7 @@ pub unsafe fn test1_4(mut N: ()) {
     }
     unimplemented!();
     unimplemented!();
-    let mut j: () =
-        std___forward_list_const_iterator_std___forward_list_node_int__void_ptr__ptr_::new_1({
-            unimplemented!()
-        });
+    let mut j: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();
@@ -77,7 +74,7 @@ pub unsafe fn test1_5(mut N: ()) {
     }
     unimplemented!();
     unimplemented!();
-    let mut j : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;
+    let mut j: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
         unimplemented!();

@@ -7,171 +7,843 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_basic_format_arg_0(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_1(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_2(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_3(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = unimplemented!() ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_string___char___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return unimplemented!()   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = unimplemented!();
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return unimplemented!();
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_4(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_5(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_6(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = expected ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return ( ( a ) == ( expected ) )  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = expected;
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return ((a) == (expected));
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_basic_format_arg_7(mut arg: (), mut expected: ()) -> () {
-    let mut visitor : FnPtr<Generic> = lambda_unsafe! ( Generic , { let expected : () = unimplemented!() ;
- } , | mut a : std_basic_format_arg_std_basic_format_context_std_back_insert_iterator_std_wstring___wchar_t___handle , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : *const () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return unimplemented!()   ;
- } panic!("ub: non-void function does not return a value") } , | mut a : () , | -> () { { return false  ;
- } panic!("ub: non-void function does not return a value") } ) ;
+    let mut visitor: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {
+            let expected: () = unimplemented!();
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: *const ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return unimplemented!();
+            }
+            panic!("ub: non-void function does not return a value")
+        },
+        |mut a: ()| -> () {
+            {
+                return false;
+            }
+            panic!("ub: non-void function does not return a value")
+        }
+    );
     return unimplemented!();
 }
 pub unsafe fn test_format_context_create_8(mut out_it: (), mut args: ()) -> () {

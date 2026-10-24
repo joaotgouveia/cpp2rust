@@ -30,7 +30,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "(std::is_same<F::state_type, std::mbstate_t>::value)");;
     let mut l: () = unimplemented!();
     unimplemented!();
-    let f: *const std_codecvt_wchar_t__char____mbstate_t_ = (unsafe { use_facet_0(&l) });
+    let f: *const () = (unsafe { use_facet_0(&l) });
     (&(*f));
     &(*unimplemented!());
     return 0_();

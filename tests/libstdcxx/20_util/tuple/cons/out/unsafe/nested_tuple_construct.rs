@@ -302,56 +302,43 @@ impl Default for X {
 pub unsafe fn f_11() {
     let mut v: X = X::new();
     let _dtor_v = ScopedDestructorUnsafe::new(&raw mut v, X::destructor);
-    let mut t1: () = std_tuple_X_::new_1({ &mut v });
-    let mut t2: () = (*unimplemented!());
-    let mut t3: () = (*unimplemented!());
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub unsafe fn f2_12() {
     let mut v: X = X::new();
     let _dtor_v = ScopedDestructorUnsafe::new(&raw mut v, X::destructor);
-    let mut t1: () = (*unimplemented!());
-    let mut t2: () = (*unimplemented!());
-    let mut t3: () = (*unimplemented!());
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub unsafe fn f3_13() {
-    let mut t1: () = X::new();
-    let mut t2: () = (*unimplemented!());
-    let mut t3: () = (*unimplemented!());
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub unsafe fn f4_14() {
     let mut a: () = unimplemented!();
     let mut v: X = X::new();
     let _dtor_v = ScopedDestructorUnsafe::new(&raw mut v, X::destructor);
-    let mut t1: () = std_tuple_X_::new_2({ unimplemented!() }, { &a }, { &mut v });
-    let mut t2: () = std_tuple_std_tuple_X__refref_::new_1({ unimplemented!() }, { &a }, {
-        &mut (*unimplemented!())
-    });
-    let mut t3: () =
-        std_tuple_std_tuple_X__::new_1({ unimplemented!() }, { &a }, { &mut (*unimplemented!()) });
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub unsafe fn f5_15() {
     let mut a: () = unimplemented!();
     let mut v: X = X::new();
     let _dtor_v = ScopedDestructorUnsafe::new(&raw mut v, X::destructor);
-    let mut t1: () =
-        std_tuple_X_::new_3({ unimplemented!() }, { &a }, { &mut (*unimplemented!()) });
-    let mut t2: () = std_tuple_std_tuple_X__refref_::new_1({ unimplemented!() }, { &a }, {
-        &mut (*unimplemented!())
-    });
-    let mut t3: () =
-        std_tuple_std_tuple_X__::new_1({ unimplemented!() }, { &a }, { &mut (*unimplemented!()) });
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub unsafe fn f6_16() {
     let mut a: () = unimplemented!();
-    let mut t1: () = {
-        let mut __tmp_0: X = X::new();
-        std_tuple_X_::new_3({ unimplemented!() }, { &a }, { &mut __tmp_0 })
-    };
-    let mut t2: () = std_tuple_std_tuple_X__refref_::new_1({ unimplemented!() }, { &a }, {
-        &mut (*unimplemented!())
-    });
-    let mut t3: () =
-        std_tuple_std_tuple_X__::new_1({ unimplemented!() }, { &a }, { &mut (*unimplemented!()) });
+    let mut t1: () = unimplemented!();
+    let mut t2: () = unimplemented!();
+    let mut t3: () = unimplemented!();
 }
 pub fn main() {
     unsafe {

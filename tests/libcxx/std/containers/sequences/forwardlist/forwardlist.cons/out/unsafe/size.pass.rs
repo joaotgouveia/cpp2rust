@@ -152,8 +152,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut N: () = 10_();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
-        let mut i : () = std___forward_list_const_iterator_std___forward_list_node_DefaultOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut e : () = std___forward_list_const_iterator_std___forward_list_node_DefaultOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while unimplemented!() {
             unimplemented!();
             {
@@ -167,8 +167,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut N: () = 10_();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
-        let mut i : () = std___forward_list_const_iterator_std___forward_list_node_DefaultOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut e : () = std___forward_list_const_iterator_std___forward_list_node_DefaultOnly__void_ptr__ptr_ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while unimplemented!() {
             unimplemented!();
             {
@@ -184,8 +184,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut N: () = 10_();
         let mut c: () = unimplemented!();
         let mut n: () = 0_();
-        let mut i : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;
-        let mut e : () = std___forward_list_const_iterator_min_pointer_std___forward_list_node_DefaultOnly__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut i: () = unimplemented!();
+        let mut e: () = unimplemented!();
         'loop_: while unimplemented!() {
             unimplemented!();
             {

@@ -23,8 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let f: *const std_codecvt_char16_t__char8_t____mbstate_t_ =
-        (unsafe { use_facet_0(unimplemented!()) });
+    let f: *const () = (unsafe { use_facet_0(unimplemented!()) });
     let mut mbs: () = unimplemented!();
     let mut to: [(); 3] = [unimplemented!(); 3];
     let mut to_next: *mut () = std::ptr::null_mut();

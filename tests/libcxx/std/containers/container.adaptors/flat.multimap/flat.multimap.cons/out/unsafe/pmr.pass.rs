@@ -871,12 +871,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut m: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut __decomp_15 : std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers = ( unsafe { ( * unimplemented!()  )  . extract  ( ) } )  ;
+        let mut __decomp_15: () = (unsafe { (*unimplemented!()).extract() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut __decomp_16 : std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers = ( unsafe { ( * unimplemented!()  )  . extract  ( ) } )  ;
+        let mut __decomp_16: () = (unsafe { (*unimplemented!()).extract() });
         unimplemented!();
         unimplemented!();
     }

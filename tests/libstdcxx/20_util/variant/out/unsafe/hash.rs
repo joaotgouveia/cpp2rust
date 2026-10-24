@@ -288,7 +288,7 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut x: () = 42_();
-    let mut x2: () = 42_();
+    let mut x2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

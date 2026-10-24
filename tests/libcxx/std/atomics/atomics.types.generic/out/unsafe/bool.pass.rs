@@ -104,8 +104,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut obj: () = unimplemented!();
         unimplemented!();
         {
-            let mut lockfree: () =
-                (unsafe { (obj as std___atomic_base_bool__false_).is_lock_free_1() });
+            let mut lockfree: () = unimplemented!();
             &(lockfree);
             {
                 unimplemented!();

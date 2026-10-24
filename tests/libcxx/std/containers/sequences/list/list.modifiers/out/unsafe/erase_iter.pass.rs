@@ -56,10 +56,7 @@ pub unsafe fn test_4() -> () {
     {
         let mut a1: [(); 3] = [1_(), 2_(), 3_()];
         let mut l1: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___list_const_iterator_int__void_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
         unimplemented!();
@@ -80,10 +77,7 @@ pub unsafe fn test_4() -> () {
     {
         let mut a1: [(); 3] = [1_(), 2_(), 3_()];
         let mut l1: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { & mut __tmp_1 } , )
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
         unimplemented!();

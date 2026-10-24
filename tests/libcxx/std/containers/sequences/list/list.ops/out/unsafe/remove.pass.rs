@@ -149,10 +149,7 @@ pub unsafe fn test_5() -> () {
             ip.prefix_inc();
         }
         unimplemented!();
-        let mut it: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___list_const_iterator_S__void_ptr_::new_1({ &mut __tmp_0 })
-        };
+        let mut it: () = unimplemented!();
         let mut ip: *mut () = a2.as_mut_ptr();
         'loop_: while ((ip) < (a2.as_mut_ptr().offset((5_()) as isize))) {
             unimplemented!();

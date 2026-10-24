@@ -155,41 +155,40 @@ pub struct X_8 {}
 pub struct Y_9 {}
 pub unsafe fn test_T_ctor_basic_10() {
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let mut v: () =
-            std_variant_std_string__const_bool_::new({ &std::mem::transmute(*b"foo\0") });
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = Default::default();
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = true;
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v1: () = 42_();
+        let mut v1: () = unimplemented!();
         unimplemented!();
         let mut x: () = 42_();
-        let mut v2: () = std_variant_RValueConvertibleFrom_int___AnyConstructible_::new({ &mut x });
+        let mut v2: () = unimplemented!();
         unimplemented!();
     }
 }
@@ -197,7 +196,7 @@ pub unsafe fn test_T_ctor_basic_10() {
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct BoomOnAnything {}
 pub unsafe fn test_no_narrowing_check_for_class_types_11() {
-    let mut v: () = 42_();
+    let mut v: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

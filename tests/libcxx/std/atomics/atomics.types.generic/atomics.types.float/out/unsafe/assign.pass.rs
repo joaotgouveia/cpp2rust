@@ -74,17 +74,14 @@ pub unsafe fn test_impl_5() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = ({
-            a = 1.2_f64;
-            (a).clone()
-        });
+        let mut r: () = (unimplemented!());
         unimplemented!();
         unimplemented!();
     }
     {
         let mut assign: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (*x) = new_val;
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
@@ -135,17 +132,14 @@ pub unsafe fn test_impl_7() {
     );;
     {
         let mut a: () = unimplemented!();
-        let mut r: () = ({
-            a = 1.2_f64;
-            (a).clone()
-        });
+        let mut r: () = (unimplemented!());
         unimplemented!();
         unimplemented!();
     }
     {
         let mut assign: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (*x) = new_val;
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
