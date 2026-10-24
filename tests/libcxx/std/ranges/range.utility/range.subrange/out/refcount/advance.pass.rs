@@ -789,10 +789,14 @@ pub fn test_25() -> () {
     let c2: Value<()> = Rc::new(RefCell::new(({ (*c.borrow()).prev(Some(4_())) })));
     unimplemented!();
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let d1: Value<()> = Rc::new(RefCell::new(
+        (*({ (*d.borrow()).advance(4_()) }).upgrade().deref()).clone(),
+    ));
     unimplemented!();
     unimplemented!();
-    let d2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let d2: Value<()> = Rc::new(RefCell::new(
+        (*({ (*d1.borrow()).advance(-4_()) }).upgrade().deref()).clone(),
+    ));
     unimplemented!();
     return true;
 }

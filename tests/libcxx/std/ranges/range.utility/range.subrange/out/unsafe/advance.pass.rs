@@ -834,10 +834,10 @@ pub unsafe fn test_25() -> () {
     let mut c2: () = (unsafe { c.prev(Some(4_())) });
     unimplemented!();
     let mut d: () = unimplemented!();
-    let mut d1: () = unimplemented!();
+    let mut d1: () = (*(unsafe { d.advance(4_()) })).clone();
     unimplemented!();
     unimplemented!();
-    let mut d2: () = unimplemented!();
+    let mut d2: () = (*(unsafe { d1.advance(-4_()) })).clone();
     unimplemented!();
     return true;
 }
