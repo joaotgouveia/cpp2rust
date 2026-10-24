@@ -6,7 +6,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-void f100(std::basic_ifstream<T1, T2> &a0, const std::filesystem::path &a1,
+void f102(std::basic_ifstream<T1, T2> &a0, const std::filesystem::path &a1,
           unsigned int a2) {
   return a0.open(a1, a2);
 }

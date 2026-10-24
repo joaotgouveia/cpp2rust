@@ -163,18 +163,48 @@ std::complex<T1> f178(const std::complex<T1> &a0, const std::complex<T1> &a1) {
   return std::operator/ <T1>(a0, a1);
 }
 
+template <
+    typename T1, typename T2,
+    std::__enable_if_t<
+        std::is_arithmetic<T1>::value && std::is_floating_point<T2>::value, int>
+        T3 = 0>
+std::complex<std::__promote_t<T1, T2>> f179(const T1 &a0,
+                                            const std::complex<T2> &a1) {
+  return std::pow<T1, T2>(a0, a1);
+}
+
+template <
+    typename T1, typename T2,
+    std::__enable_if_t<
+        std::is_floating_point<T1>::value && std::is_arithmetic<T2>::value, int>
+        T3 = 0>
+std::complex<std::__promote_t<T1, T2>> f180(const std::complex<T1> &a0,
+                                            const T2 &a1) {
+  return std::pow<T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2,
+          std::__enable_if_t<std::is_floating_point<T1>::value &&
+                                 std::is_floating_point<T2>::value,
+                             int>
+              T3 = 0>
+std::complex<std::__promote_t<T1, T2>> f181(const std::complex<T1> &a0,
+                                            const std::complex<T2> &a1) {
+  return std::pow<T1, T2>(a0, a1);
+}
+
 template <typename T1,
           std::__enable_if_t<std::is_floating_point<T1>::value, int> T2 = 0>
-auto f179(T1 a0) -> decltype(std::proj<T1>(a0)) {
+auto f182(T1 a0) -> decltype(std::proj<T1>(a0)) {
   return std::proj<T1>(a0);
 }
 
 template <typename T1,
           std::__enable_if_t<std::is_integral<T1>::value, int> T2 = 0>
-auto f180(T1 a0) -> decltype(std::proj<T1>(a0)) {
+auto f183(T1 a0) -> decltype(std::proj<T1>(a0)) {
   return std::proj<T1>(a0);
 }
 
-template <typename T1> auto f181(T1 a0) -> decltype(std::real<T1>(a0)) {
+template <typename T1> auto f184(T1 a0) -> decltype(std::real<T1>(a0)) {
   return std::real<T1>(a0);
 }

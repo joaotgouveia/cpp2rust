@@ -1,5 +1,6 @@
 #include <barrier>
 #include <complex>
+#include <type_traits>
 #include <utility>
 
 template <typename T1>

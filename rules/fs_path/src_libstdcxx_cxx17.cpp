@@ -318,57 +318,93 @@ std::filesystem::path f75(T1 a0, T1 a1, const std::locale &a2,
   return std::filesystem::path(a0, a1, a2, a3);
 }
 
+template <typename T1>
+std::filesystem::__detail::_Path<T1> &f76(std::filesystem::path &a0,
+                                          const T1 &a1) {
+  return a0.template assign<T1>(a1);
+}
+
+template <typename T1>
+std::filesystem::__detail::_Path2<T1> &f77(std::filesystem::path &a0, T1 a1,
+                                           T1 a2) {
+  return a0.template assign<T1>(a1, a2);
+}
+
+template <typename T1>
+std::filesystem::__detail::_Path<T1> &f78(std::filesystem::path &a0,
+                                          const T1 &a1) {
+  return a0.template append<T1>(a1);
+}
+
+template <typename T1>
+std::filesystem::__detail::_Path2<T1> &f79(std::filesystem::path &a0, T1 a1,
+                                           T1 a2) {
+  return a0.template append<T1>(a1, a2);
+}
+
+template <typename T1>
+std::filesystem::__detail::_Path<T1> &f80(std::filesystem::path &a0,
+                                          const T1 &a1) {
+  return a0.template concat<T1>(a1);
+}
+
+template <typename T1>
+std::filesystem::__detail::_Path2<T1> &f81(std::filesystem::path &a0, T1 a1,
+                                           T1 a2) {
+  return a0.template concat<T1>(a1, a2);
+}
+
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f76(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f82(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template string<T1, T2, T3>(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-std::basic_string<T1, T2, T3> f77(const std::filesystem::path &a0,
+std::basic_string<T1, T2, T3> f83(const std::filesystem::path &a0,
                                   const T3 &a1) {
   return a0.template generic_string<T1, T2, T3>(a1);
 }
 
-std::filesystem::path f78(const std::filesystem::path &a0,
+std::filesystem::path f84(const std::filesystem::path &a0,
                           const std::filesystem::path &a1) {
   return operator/(a0, a1);
 }
 
-bool f79(const std::filesystem::path &a0, const std::filesystem::path &a1) {
+bool f85(const std::filesystem::path &a0, const std::filesystem::path &a1) {
   return operator==(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::basic_istream<T1, T2> &f80(std::basic_istream<T1, T2> &a0,
+std::basic_istream<T1, T2> &f86(std::basic_istream<T1, T2> &a0,
                                 std::filesystem::path &a1) {
   return operator>>(a0, a1);
 }
 
 template <typename T1, typename T2>
-std::basic_ostream<T1, T2> &f81(std::basic_ostream<T1, T2> &a0,
+std::basic_ostream<T1, T2> &f87(std::basic_ostream<T1, T2> &a0,
                                 const std::filesystem::path &a1) {
   return operator<<(a0, a1);
 }
 
-std::filesystem::path::value_type f82() {
+std::filesystem::path::value_type f88() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f83(std::filesystem::path &a0, std::filesystem::path &a1) {
+void f89(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f84(const T1 &a0) {
+std::filesystem::path f90(const T1 &a0) {
   return std::filesystem::u8path<T1>(a0);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f85(T1 a0, T1 a1) {
+std::filesystem::path f91(T1 a0, T1 a1) {
   return std::filesystem::u8path<T1>(a0, a1);
 }

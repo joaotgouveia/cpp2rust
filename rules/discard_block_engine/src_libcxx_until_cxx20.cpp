@@ -12,6 +12,6 @@ template <typename T1, std::size_t T2, std::size_t T3, typename T4,
               T5 = 0,
           typename std::enable_if<(!(std::is_same<T4, const T1>::value)),
                                   int>::type T6 = 0>
-std::discard_block_engine<T1, T2, T3> f22(T4 &a0) {
+std::discard_block_engine<T1, T2, T3> f23(T4 &a0) {
   return std::discard_block_engine<T1, T2, T3>(a0);
 }
