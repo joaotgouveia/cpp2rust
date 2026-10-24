@@ -192,6 +192,14 @@ std::optional<ExprKey> GetExprKey(clang::ASTContext &ctx,
                                    rewritten->getOperator()));
   }
   if (auto cast = llvm::dyn_cast<clang::ExplicitCastExpr>(expr)) {
+    // a dependent cast of an object of a class calls a conversion function
+    // of that class (static_cast<T1>(a0) of const atomic<T1> &)
+    auto operand = RuleDecls::SkipImplicit(cast->getSubExpr());
+    if (operand->isTypeDependent() && llvm::isa<clang::DeclRefExpr>(operand)) {
+      if (auto parent = getParent(operand->getType())) {
+        return getConstructorKey(parent);
+      }
+    }
     return GetExprKey(ctx, cast->getSubExpr());
   }
   if (auto construct = llvm::dyn_cast<clang::CXXConstructExpr>(expr)) {
