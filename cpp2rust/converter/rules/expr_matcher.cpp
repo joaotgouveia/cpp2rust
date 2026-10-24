@@ -336,6 +336,32 @@ deduceFromQualifier(clang::Sema &sema, clang::FunctionTemplateDecl *rule,
                                      clang::QualType(qualifier, 0),
                                      sema.Context.getCanonicalTagType(owner));
   }
+  // an operand of a class nested in the rule's class
+  // (const typename regex_traits<T1>::_RegexMask & of regex_traits<char>)
+  auto params = rule->getTemplatedDecl()->parameters();
+  auto operands = getOperands(sema.Context, use, params.size());
+  for (unsigned i = 0; i < params.size() && i < operands.size(); ++i) {
+    auto param = params[i]->getType().getNonReferenceType();
+    auto member = param->getAs<clang::DependentNameType>();
+    auto qualifier = member ? member->getQualifier().getAsType() : nullptr;
+    auto record = operands[i]
+                      ->getType()
+                      .getNonReferenceType()
+                      .getCanonicalType()
+                      ->getAsCXXRecordDecl();
+    auto owner = record ? llvm::dyn_cast<clang::CXXRecordDecl>(
+                              record->getDeclContext())
+                        : nullptr;
+    if (!qualifier || !owner ||
+        record->getIdentifier() != member->getIdentifier()) {
+      continue;
+    }
+    if (auto deduced = RuleDecls::DeduceFromType(
+            sema, rule->getTemplateParameters(), clang::QualType(qualifier, 0),
+            sema.Context.getCanonicalTagType(owner))) {
+      return deduced;
+    }
+  }
   if (auto call = llvm::dyn_cast<clang::CallExpr>(returned)) {
     returned = call->getCallee()->IgnoreParenImpCasts();
   }
