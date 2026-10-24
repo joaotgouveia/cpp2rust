@@ -61,48 +61,71 @@ std::string ClassOf(clang::QualType type) {
   return {};
 }
 
+void DeclareNames(clang::QualType type, std::set<std::string> &declared);
+
+void DeclareNames(const clang::NamedDecl *decl,
+                  std::set<std::string> &declared);
+
+// The classes the operands of a use carry. With declared, the classes a type
+// names only where no operand carries them (a qualifier, a member typedef, an
+// alias template) go to declared instead: the rule needs them declared, not
+// used.
 void AddRequiredClasses(clang::QualType type,
-                        std::unordered_set<std::string> &required) {
+                        std::unordered_set<std::string> &required,
+                        std::set<std::string> *declared = nullptr) {
   if (type.isNull()) {
     return;
   }
   if (type->isPointerType() || type->isReferenceType()) {
-    return AddRequiredClasses(type->getPointeeType(), required);
+    return AddRequiredClasses(type->getPointeeType(), required, declared);
   }
   if (auto array = type->getAsArrayTypeUnsafe()) {
-    return AddRequiredClasses(array->getElementType(), required);
+    return AddRequiredClasses(array->getElementType(), required, declared);
   }
   if (auto fn = type->getAs<clang::FunctionType>()) {
-    AddRequiredClasses(fn->getReturnType(), required);
+    if (declared) {
+      DeclareNames(fn->getReturnType(), *declared);
+    } else {
+      AddRequiredClasses(fn->getReturnType(), required);
+    }
     if (auto proto = llvm::dyn_cast<clang::FunctionProtoType>(fn)) {
       for (auto param : proto->param_types()) {
-        AddRequiredClasses(param, required);
+        AddRequiredClasses(param, required, declared);
       }
     }
     return;
   }
   if (auto name = type->getAs<clang::DependentNameType>()) {
     auto qualifier = name->getQualifier();
-    if (qualifier.getKind() == clang::NestedNameSpecifier::Kind::Type) {
-      AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0), required);
+    if (qualifier.getKind() != clang::NestedNameSpecifier::Kind::Type) {
+      return;
     }
-    return;
+    if (declared) {
+      return DeclareNames(clang::QualType(qualifier.getAsType(), 0),
+                          *declared);
+    }
+    return AddRequiredClasses(clang::QualType(qualifier.getAsType(), 0),
+                              required);
   }
   if (auto alias = type->getAs<clang::TypedefType>()) {
     if (auto record = llvm::dyn_cast<clang::RecordDecl>(
             alias->getDecl()->getDeclContext())) {
+      if (declared) {
+        return DeclareNames(record, *declared);
+      }
       if (auto key = RulesLoader::ClassKey(record); !key.empty()) {
         required.insert(key);
       }
       return;
     }
-    return AddRequiredClasses(alias->desugar().getCanonicalType(), required);
+    return AddRequiredClasses(alias->desugar().getCanonicalType(), required,
+                              declared);
   }
   const clang::NamedDecl *decl = type->getAsTagDecl();
   if (auto spec = type->getAs<clang::TemplateSpecializationType>()) {
     for (const auto &arg : spec->template_arguments()) {
       if (arg.getKind() == clang::TemplateArgument::Type) {
-        AddRequiredClasses(arg.getAsType(), required);
+        AddRequiredClasses(arg.getAsType(), required, declared);
       }
     }
     if (auto tmpl = spec->getTemplateName().getAsTemplateDecl();
@@ -110,6 +133,9 @@ void AddRequiredClasses(clang::QualType type,
       decl = tmpl;
     } else if (auto alias =
                    llvm::dyn_cast_or_null<clang::TypeAliasTemplateDecl>(tmpl)) {
+      if (declared) {
+        return DeclareNames(type, *declared);
+      }
       required.insert(RulesLoader::DeclKey(alias));
       return;
     }
@@ -125,12 +151,13 @@ void AddRequiredClasses(clang::QualType type,
 const clang::Expr *RuleExpr(const clang::Decl *decl);
 
 std::unordered_set<std::string>
-RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
+RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias,
+                std::set<std::string> &declared) {
   std::unordered_set<std::string> required;
   if (alias) {
     AddRequiredClasses(alias->getUnderlyingType(), required);
   } else if (auto fn = rule->getAsFunction()) {
-    AddRequiredClasses(fn->getType(), required);
+    AddRequiredClasses(fn->getType(), required, &declared);
     // a static member named through a class (std::istrstream::xalloc())
     // needs that class, which no parameter mentions
     if (auto expr = RuleExpr(rule)) {
@@ -156,9 +183,9 @@ RequiredClasses(const clang::Decl *rule, const clang::TypedefNameDecl *alias) {
   return required;
 }
 
-// Names the rule's template parameters (its SFINAE) refer to. They come from
-// library headers the user may not include, and the rule only parses where
-// they are declared.
+// Names the rule's template parameters (its SFINAE) and the parts of its
+// signature no operand carries refer to. They come from library headers the
+// user may not include, and the rule only parses where they are declared.
 class DeclaredNames : public clang::RecursiveASTVisitor<DeclaredNames> {
 public:
   bool VisitTemplateSpecializationType(clang::TemplateSpecializationType *type) {
@@ -188,6 +215,8 @@ public:
     return true;
   }
 
+  void AddDecl(const clang::NamedDecl *decl) { Add(decl); }
+
   std::set<std::string> names;
 
 private:
@@ -208,6 +237,25 @@ private:
     names.insert(name + decl->getName().str());
   }
 };
+
+void DeclareNames(clang::QualType type, std::set<std::string> &declared) {
+  DeclaredNames visitor;
+  visitor.TraverseType(type);
+  declared.insert(visitor.names.begin(), visitor.names.end());
+}
+
+void DeclareNames(const clang::NamedDecl *decl,
+                  std::set<std::string> &declared) {
+  if (auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl)) {
+    if (auto spec =
+            llvm::dyn_cast<clang::ClassTemplateSpecializationDecl>(record)) {
+      decl = spec->getSpecializedTemplate();
+    }
+  }
+  DeclaredNames visitor;
+  visitor.AddDecl(decl);
+  declared.insert(visitor.names.begin(), visitor.names.end());
+}
 
 std::set<std::string> TemplateParameterNames(const clang::Decl *rule) {
   DeclaredNames visitor;
@@ -411,13 +459,14 @@ void IndexRuleFile(clang::ASTContext &ctx, const std::string &dir_name,
     auto range = clang::tooling::getExtendedRange(*decl, clang::tok::semi, ctx);
     auto text = clang::tooling::getText(range, ctx).str() + '\n';
     llvm::json::Object rule{{"dir", dir_name}, {"name", name}, {"text", text}};
+    auto declared = TemplateParameterNames(decl);
     if (any_class) {
       rule["requires"] = llvm::json::Array{RulesLoader::kAnyIteratorKey};
-    } else if (auto required = RequiredClasses(decl, alias);
+    } else if (auto required = RequiredClasses(decl, alias, declared);
                !required.empty()) {
       rule["requires"] = llvm::json::Array(required);
     }
-    if (auto declared = TemplateParameterNames(decl); !declared.empty()) {
+    if (!declared.empty()) {
       rule["declares"] = llvm::json::Array(declared);
     }
     AddRule(rules, key, std::move(rule));
