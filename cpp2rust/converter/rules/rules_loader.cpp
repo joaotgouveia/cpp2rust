@@ -349,7 +349,9 @@ unsigned CxxStandard(const clang::LangOptions &opts) {
   return 11;
 }
 
-// Whether a qualified name (std::__is_val_expr) is declared in the TU.
+// Whether a qualified name (std::__is_val_expr) is declared in the TU. A class
+// must be defined: rules name its members (std::_Bit_iterator::difference_type)
+// and some headers only declare it.
 bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
   clang::DeclContext *scope = sema.Context.getTranslationUnitDecl();
   llvm::SmallVector<llvm::StringRef, 4> parts;
@@ -364,7 +366,14 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
       return false;
     }
     if (last) {
-      return true;
+      return llvm::all_of(result, [](clang::NamedDecl *found) {
+        auto decl = found->getUnderlyingDecl();
+        if (auto tmpl = llvm::dyn_cast<clang::ClassTemplateDecl>(decl)) {
+          decl = tmpl->getTemplatedDecl();
+        }
+        auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
+        return !record || record->hasDefinition();
+      });
     }
     auto ns = result.getAsSingle<clang::NamespaceDecl>();
     if (!ns) {
