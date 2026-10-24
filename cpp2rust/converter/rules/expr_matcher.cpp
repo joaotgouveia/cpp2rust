@@ -205,10 +205,21 @@ bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
   if (use_operands.size() != rule_operands.size()) {
     return false;
   }
-  // Both call the same member, the object of the use may be of a derived class
+  // The object of the use may be of a class derived from the object of the
+  // rule (codecvt_utf16 calling codecvt::in)
   auto method =
       llvm::dyn_cast_or_null<clang::CXXMethodDecl>(use_call->getDirectCallee());
-  unsigned first = method && !method->isStatic() ? 1 : 0;
+  unsigned first = 0;
+  if (method && !method->isStatic()) {
+    auto use_object = use_operands[0]->getType()->getAsCXXRecordDecl();
+    auto rule_object = rule_operands[0]->getType()->getAsCXXRecordDecl();
+    if (!use_object || !rule_object ||
+        (use_object->getCanonicalDecl() != rule_object->getCanonicalDecl() &&
+         !use_object->isDerivedFrom(rule_object))) {
+      return false;
+    }
+    first = 1;
+  }
   for (unsigned i = first; i < use_operands.size(); ++i) {
     if (!ctx.hasSameUnqualifiedType(use_operands[i]->getType(),
                                     rule_operands[i]->getType())) {
