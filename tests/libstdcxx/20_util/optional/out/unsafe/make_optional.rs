@@ -293,7 +293,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { o() }) && ((*unimplemented!()) == (42_()))) {
+        if !((unimplemented!()) && ((*unimplemented!()) == (42_()))) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -340,7 +340,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { o2() }) && ((*(unsafe { get_12(&mut (*unimplemented!())) })) == (1_())))
+        if !(((unimplemented!()) && ((*(unsafe { get_12(&mut (*unimplemented!())) })) == (1_())))
             && ((*(unsafe { get_13(&mut (*unimplemented!())) })) == (2_())))
         {
             (unsafe {
@@ -366,7 +366,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe { o3() }) && ((*unimplemented!()) == (42_())))
+        if !(((unimplemented!()) && ((*unimplemented!()) == (42_())))
             && ((*unimplemented!()) == (666_())))
         {
             (unsafe {
@@ -392,7 +392,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((((unsafe { o4() }) && ((*unimplemented!()) == (42_())))
+        if !(((((unimplemented!()) && ((*unimplemented!()) == (42_())))
             && ((*unimplemented!()) == (666_())))
             && ((*(unsafe { get_12(&mut (*unimplemented!()).t) })) == (0_())))
             && ((*(unsafe { get_13(&mut (*unimplemented!()).t) })) == (0_())))
@@ -415,7 +415,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((((unsafe { o4() }) && ((*unimplemented!()) == (1_())))
+        if !(((((unimplemented!()) && ((*unimplemented!()) == (1_())))
             && ((*unimplemented!()) == (2_())))
             && ((*(unsafe { get_12(&mut (*unimplemented!()).t) })) == (3_())))
             && ((*(unsafe { get_13(&mut (*unimplemented!()).t) })) == (4_())))

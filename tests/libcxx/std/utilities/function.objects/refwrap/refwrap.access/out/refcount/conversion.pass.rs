@@ -11,27 +11,27 @@ use std::rc::{Rc, Weak};
 pub struct functor1 {}
 pub fn test_0(t: Ptr<FnPtr<fn()>>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<FnPtr<fn()>> = ({ (*r.borrow())() });
+    let r2: Ptr<FnPtr<fn()>> = unimplemented!();
     unimplemented!();
 }
 pub fn test_1(t: FnPtr<fn()>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: FnPtr<fn()> = ({ (*r.borrow())() });
+    let r2: FnPtr<fn()> = unimplemented!();
     unimplemented!();
 }
 pub fn test_2(t: Ptr<functor1>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<functor1> = ({ (*r.borrow())() });
+    let r2: Ptr<functor1> = (unimplemented!() as functor1);
     unimplemented!();
 }
 pub fn test_3(t: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<()> = ({ (*r.borrow())() });
+    let r2: Ptr<()> = unimplemented!();
     unimplemented!();
 }
 pub fn test_4(t: Ptr<()>) {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let r2: Ptr<()> = ({ (*r.borrow())() });
+    let r2: Ptr<()> = unimplemented!();
     unimplemented!();
 }
 pub fn f_5() {}

@@ -295,7 +295,7 @@ pub unsafe fn test05_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((r1) == (std_codecvt_base_result_ok)) {
+        if !((r1) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_15(
                     libcc2rs::stderr_unsafe(),

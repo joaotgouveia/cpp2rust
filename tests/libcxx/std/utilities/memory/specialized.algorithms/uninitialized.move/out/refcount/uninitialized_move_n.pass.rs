@@ -915,7 +915,7 @@ pub fn test_copy_elision_35() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*ret.borrow_mut()) = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -963,7 +963,7 @@ pub fn test_counted_36() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*ret.borrow_mut()) = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

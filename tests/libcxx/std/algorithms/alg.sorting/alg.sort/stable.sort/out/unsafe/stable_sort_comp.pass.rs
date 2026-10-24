@@ -32,7 +32,7 @@ pub unsafe fn generate_sawtooth_0(mut N: (), mut M: ()) -> () {
     let mut ver: () = 0_();
     let mut i: () = 0_();
     'loop_: while ((i) < (N)) {
-        (*unimplemented!()) = unimplemented!();
+        unimplemented!();
         if ((x.prefix_inc()) == (M)) {
             x = 0_();
             ver.prefix_inc();

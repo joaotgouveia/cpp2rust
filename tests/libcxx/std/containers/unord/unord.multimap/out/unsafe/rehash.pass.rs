@@ -112,7 +112,7 @@ pub unsafe fn test_6(c: *const ()) {
             n.prefix_inc();
         }
     }
-    eq = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -128,12 +128,12 @@ pub unsafe fn test_6(c: *const ()) {
             n.prefix_inc();
         }
     }
-    eq = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    eq = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -160,7 +160,7 @@ pub unsafe fn test_7(c: *const ()) {
             n.prefix_inc();
         }
     }
-    eq = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -176,12 +176,12 @@ pub unsafe fn test_7(c: *const ()) {
             n.prefix_inc();
         }
     }
-    eq = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    eq = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

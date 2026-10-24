@@ -195,9 +195,9 @@ pub fn test_transparent_equal_range_5(c: ()) {
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -206,9 +206,9 @@ pub fn test_transparent_equal_range_6(c: ()) {
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -217,9 +217,9 @@ pub fn test_transparent_equal_range_7(c: ()) {
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -228,9 +228,9 @@ pub fn test_transparent_equal_range_8(c: ()) {
     let conversions: Value<()> = Rc::new(RefCell::new(0_()));
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -240,10 +240,10 @@ pub fn test_non_transparent_equal_range_9(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -253,10 +253,10 @@ pub fn test_non_transparent_equal_range_10(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -266,10 +266,10 @@ pub fn test_non_transparent_equal_range_11(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -279,10 +279,10 @@ pub fn test_non_transparent_equal_range_12(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -292,10 +292,10 @@ pub fn test_non_transparent_equal_range_13(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -305,10 +305,10 @@ pub fn test_non_transparent_equal_range_14(c: ()) {
     let iters: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*iters.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

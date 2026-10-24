@@ -1271,7 +1271,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "std::is_same_v<decltype(fwl)::value_type, unsigned>");;
         unimplemented!();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ advance_18(it.as_pointer(), 2_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -1283,7 +1283,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         );;
         unimplemented!();
         let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ advance_19(it.as_pointer(), 3_()) });
+        unimplemented!();
         unimplemented!();
     }
     {

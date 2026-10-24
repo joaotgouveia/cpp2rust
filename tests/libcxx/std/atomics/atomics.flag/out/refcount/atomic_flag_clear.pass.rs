@@ -36,8 +36,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*f.borrow()).clear_5(None) });
-        ({ (*f.borrow()).test_and_set_3(None) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -252,6 +252,9 @@ pub struct limited_allocator_char__10_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
 }
 impl limited_allocator_char__10_ {}
+pub unsafe fn is_string_asan_correct_4(_a0: *const ()) -> () {
+    return true;
+}
 const _: () = assert!(
     true,
     "std::is_nothrow_default_constructible<std::string>::value"
@@ -264,7 +267,7 @@ const _: () = assert!(
     true,
     "!std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, limited_allocator<char, 10>>>::value"
 );
-pub unsafe fn test_4() -> () {
+pub unsafe fn test_5() -> () {
     let mut str: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -286,7 +289,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_4() });
+    (unsafe { test_5() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -53,54 +53,30 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut f: () = unimplemented!();
-        (unsafe { f.clear_5(None) });
         unimplemented!();
-        (unsafe { f.clear_5(None) });
         unimplemented!();
-    }
-    {
-        let mut f: () = unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_0)),
-            ))
-        });
         unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_0)),
-            ))
-        });
         unimplemented!();
     }
     {
         let mut f: () = unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_1)),
-            ))
-        });
         unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_1)),
-            ))
-        });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut f: () = unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_2)),
-            ))
-        });
         unimplemented!();
-        (unsafe {
-            f.clear_5(Some(
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_seq_cst_2)),
-            ))
-        });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut f: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -305,12 +305,12 @@ const _: () = assert!(true, "!std::is_trivially_copyable<LocationAware>::value")
 pub fn test01_11() {
     let l: Value<LocationAware> = Rc::new(RefCell::new(LocationAware::new()));
     let _dtor_l = ScopedDestructor::new(&l, |__p| __p.destructor());
-    let a: Value<()> = Rc::new(RefCell::new(std_any::new({ l.as_pointer() })));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 }
 pub fn test02_12() {
     let l: Value<LocationAware> = Rc::new(RefCell::new(LocationAware::new()));
     let _dtor_l = ScopedDestructor::new(&l, |__p| __p.destructor());
-    let a: Value<()> = Rc::new(RefCell::new(std_any::new({ l.as_pointer() })));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
         let tmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -321,7 +321,7 @@ pub fn test02_12() {
 pub fn test03_13() {
     let l: Value<LocationAware> = Rc::new(RefCell::new(LocationAware::new()));
     let _dtor_l = ScopedDestructor::new(&l, |__p| __p.destructor());
-    let a: Value<()> = Rc::new(RefCell::new(std_any::new({ l.as_pointer() })));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }

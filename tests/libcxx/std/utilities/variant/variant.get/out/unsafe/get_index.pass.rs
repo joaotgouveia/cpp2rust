@@ -91,25 +91,25 @@ pub struct ReturnFirst {}
 pub struct ReturnArity {}
 pub unsafe fn test_const_lvalue_get_11() {
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -117,39 +117,39 @@ pub unsafe fn test_const_lvalue_get_11() {
 }
 pub unsafe fn test_lvalue_get_12() {
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
 pub unsafe fn test_rvalue_get_13() {
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
 pub unsafe fn test_const_rvalue_get_14() {
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
     }

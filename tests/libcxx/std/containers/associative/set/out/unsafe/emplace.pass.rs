@@ -353,7 +353,7 @@ pub unsafe fn test_21() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -370,12 +370,12 @@ pub unsafe fn test_21() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

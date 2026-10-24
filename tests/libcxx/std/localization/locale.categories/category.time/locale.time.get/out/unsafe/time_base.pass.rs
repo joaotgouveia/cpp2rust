@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut d: () = std_time_base_dateorder_no_order;
+    let mut d: () = unimplemented!();
     (&(d));
     unimplemented!();
     unimplemented!();

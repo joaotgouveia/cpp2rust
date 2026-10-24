@@ -1229,6 +1229,12 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
+pub unsafe fn is_string_asan_correct_18(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_19(_a0: *const ()) -> () {
+    return true;
+}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -1263,7 +1269,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct BadAlloc_18 {}
+pub struct BadAlloc_20 {}
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_7);
     std::cell::LazyCell::force(&*&raw const SFINAEs_away_8);

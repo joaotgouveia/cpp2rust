@@ -29,10 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let mut what_arg: () = unimplemented!();
-        let se: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_ios_base_failure::new_1({ unimplemented!() }, { Some(__tmp_0.as_pointer()) })
-        }));
+        let se: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();
@@ -40,10 +37,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let mut what_arg: () = unimplemented!();
-        let se: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1(
-            { unimplemented!() },
-            None,
-        )));
+        let se: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();

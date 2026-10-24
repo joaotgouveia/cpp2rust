@@ -70,9 +70,8 @@ pub fn test_0(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -165,9 +164,8 @@ pub fn test_1(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -260,9 +258,8 @@ pub fn test_2(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -355,9 +352,8 @@ pub fn test_3(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -450,9 +446,8 @@ pub fn test_4(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -545,9 +540,8 @@ pub fn test_5(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -640,9 +634,8 @@ pub fn test_6(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -735,9 +728,8 @@ pub fn test_7(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -830,9 +822,8 @@ pub fn test_8(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -925,9 +916,8 @@ pub fn test_9(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1020,9 +1010,8 @@ pub fn test_10(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1115,9 +1104,8 @@ pub fn test_11(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1210,9 +1198,8 @@ pub fn test_12(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1305,9 +1292,8 @@ pub fn test_13(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1400,9 +1386,8 @@ pub fn test_14(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1495,9 +1480,8 @@ pub fn test_15(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1590,9 +1574,8 @@ pub fn test_16(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1685,9 +1668,8 @@ pub fn test_17(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1780,9 +1762,8 @@ pub fn test_18(mut value: Ptr<()>) {
         {
             let v: Value<Ptr<()>> = Rc::new(RefCell::new((value).clone()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1876,9 +1857,8 @@ pub fn test_19(value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -1963,18 +1943,16 @@ pub fn test_19(value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_20(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
+pub fn test_20(mut value: ()) {
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(({ (*value.borrow())() })));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2068,9 +2046,8 @@ pub fn test_21(value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2163,10 +2140,8 @@ pub fn test_22(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2259,10 +2234,8 @@ pub fn test_23(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2355,10 +2328,8 @@ pub fn test_24(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2451,10 +2422,8 @@ pub fn test_25(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2547,10 +2516,8 @@ pub fn test_26(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2643,10 +2610,8 @@ pub fn test_27(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2739,10 +2704,8 @@ pub fn test_28(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2835,10 +2798,8 @@ pub fn test_29(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -2931,10 +2892,8 @@ pub fn test_30(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3027,10 +2986,8 @@ pub fn test_31(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3123,10 +3080,8 @@ pub fn test_32(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3219,10 +3174,8 @@ pub fn test_33(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3315,10 +3268,8 @@ pub fn test_34(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3411,10 +3362,8 @@ pub fn test_35(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3507,10 +3456,8 @@ pub fn test_36(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3603,10 +3550,8 @@ pub fn test_37(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3699,10 +3644,8 @@ pub fn test_38(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3795,10 +3738,8 @@ pub fn test_39(mut value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(value));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3891,10 +3832,8 @@ pub fn test_40(mut value: Ptr<()>) {
         {
             let v: Value<Ptr<()>> = Rc::new(RefCell::new((value).clone()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -3988,10 +3927,8 @@ pub fn test_41(value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4076,19 +4013,16 @@ pub fn test_41(value: ()) {
     )));
     unimplemented!();
 }
-pub fn test_42(value: ()) {
-    let value: Value<()> = Rc::new(RefCell::new(value));
+pub fn test_42(mut value: ()) {
     let store: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let format_args: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {
-            let v: Value<()> = Rc::new(RefCell::new(({ (*value.borrow())() })));
+            let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4182,10 +4116,8 @@ pub fn test_43(value: ()) {
         {
             let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         },
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             {
                 unimplemented!();
             }
@@ -4276,9 +4208,8 @@ pub fn test_handle_44(mut value: ()) {
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
@@ -4337,9 +4268,8 @@ pub fn test_handle_45(mut value: ()) {
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |a: std_basic_format_arg_std_basic_format_context_char_ptr__char___handle| {
-            let a: Value<std_basic_format_arg_std_basic_format_context_char_ptr__char___handle> =
-                Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
@@ -4398,10 +4328,8 @@ pub fn test_handle_46(mut value: ()) {
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
@@ -4460,10 +4388,8 @@ pub fn test_handle_47(mut value: ()) {
     let visitor: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
-        |a: std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle| {
-            let a: Value<
-                std_basic_format_arg_std_basic_format_context_wchar_t_ptr__wchar_t___handle,
-            > = Rc::new(RefCell::new(a));
+        |a: ()| {
+            let a: Value<()> = Rc::new(RefCell::new(a));
             unimplemented!();
         },
         |a: ()| {
@@ -4517,8 +4443,8 @@ pub fn test_handle_47(mut value: ()) {
     unimplemented!();
 }
 pub fn test_48() {
-    let empty: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut empty: () = unimplemented!();
+    let mut str: () = unimplemented!();
     ({ test_0(true) });
     ({ test_0(false) });
     ({ test_1(('a' as ())) });
@@ -4609,16 +4535,16 @@ pub fn test_48() {
     ({ test_18(unimplemented!()) });
     ({ test_18(unimplemented!()) });
     ({ test_19(unimplemented!()) });
-    ({ test_19(({ (*empty.borrow())() })) });
-    ({ test_19(({ (*str.borrow())() })) });
+    ({ test_19(unimplemented!()) });
+    ({ test_19(unimplemented!()) });
     ({ test_20(unimplemented!()) });
     ({ test_20(unimplemented!()) });
     ({ test_20(unimplemented!()) });
     ({ test_21(Default::default()) });
 }
 pub fn test_49() {
-    let empty: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut empty: () = unimplemented!();
+    let mut str: () = unimplemented!();
     ({ test_22(true) });
     ({ test_22(false) });
     ({ test_23(('a' as ())) });
@@ -4711,8 +4637,8 @@ pub fn test_49() {
     ({ test_40(unimplemented!()) });
     ({ test_40(unimplemented!()) });
     ({ test_41(unimplemented!()) });
-    ({ test_41(({ (*empty.borrow())() })) });
-    ({ test_41(({ (*str.borrow())() })) });
+    ({ test_41(unimplemented!()) });
+    ({ test_41(unimplemented!()) });
     ({ test_42(unimplemented!()) });
     ({ test_42(unimplemented!()) });
     ({ test_42(unimplemented!()) });

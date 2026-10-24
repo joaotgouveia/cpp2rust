@@ -278,8 +278,8 @@ pub unsafe fn test01_10() {
     let mut neg1: () = unimplemented!();
     let mut pos2: () = unimplemented!();
     let mut neg2: () = unimplemented!();
-    neg1 = (neg1).clone();
-    neg2 = (neg2).clone();
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

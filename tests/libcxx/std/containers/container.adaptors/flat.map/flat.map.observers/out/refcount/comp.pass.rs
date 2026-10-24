@@ -15,19 +15,37 @@ pub type anon_1 = ();
 pub const anon_1_value: anon_1 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_bool__bool_ {}
+pub struct test_macros_detail_is_same_std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____value_compare__std_flat_map_int__char__std_less_int___std_vector_int__std_allocator_int____std_vector_char__std_allocator_char____value_compare_
+{}
 pub type anon_2 = ();
 pub const anon_2_value: anon_2 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
-{}
+pub struct test_macros_detail_is_same_bool__bool_ {}
 pub type anon_3 = ();
 pub const anon_3_value: anon_3 = 1;
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
+pub struct test_macros_detail_is_same_std_function_bool__int__int____std_function_bool__int__int___
+{}
+pub type anon_4 = ();
+pub const anon_4_value: anon_4 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_macros_detail_is_same_std_flat_map_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare__std_flat_map_int__int__std_function_bool__int__int____std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare_
+{}
+pub type anon_5 = ();
+pub const anon_5_value: anon_5 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
 pub struct test_macros_detail_is_same_std_less_void___std_less_void__ {}
-pub fn test_4() -> () {
+pub type anon_6 = ();
+pub const anon_6_value: anon_6 = 1;
+#[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
+#[byte_size(1)]
+pub struct test_macros_detail_is_same_std_flat_map_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare__std_flat_map_int__int__std_less_void___std_vector_int__std_allocator_int____std_vector_int__std_allocator_int____value_compare_
+{}
+pub fn test_7() -> () {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -37,16 +55,13 @@ pub fn test_4() -> () {
         let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<std_flat_map_int__char__value_compare> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let comp: Value<()> = Rc::new(RefCell::new(std_function_bool__int__int__::new_1({
-            unimplemented!()
-        })));
+        let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -54,8 +69,7 @@ pub fn test_4() -> () {
         let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<std_flat_map_int__int__std_function_bool__int__int____value_compare> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "!noexcept(vc(a, a))");;
@@ -70,8 +84,7 @@ pub fn test_4() -> () {
         let kc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let vc: Value<std_flat_map_int__int__std_less_void___value_compare> =
-            Rc::new(RefCell::new(unimplemented!()));
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -88,7 +101,7 @@ pub fn test_4() -> () {
             }
         )));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let vc : Value<std_flat_map_std_vector_int___int__std_function_bool__const_std_vector_int__ref__const_std_vector_int__ref____value_compare > = Rc::new(RefCell::new(unimplemented!()  )) ;
+        let vc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!((48usize >= 48usize), "sizeof(vc) >= sizeof(Comp)");;
         unimplemented!();
         unimplemented!();
@@ -123,7 +136,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_4() });
+    ({ test_7() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

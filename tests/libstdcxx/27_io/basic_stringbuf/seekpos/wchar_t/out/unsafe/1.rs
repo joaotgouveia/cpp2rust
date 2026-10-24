@@ -270,7 +270,7 @@ pub unsafe fn test04_12() {
     let mut off_2: () = 0_();
     unimplemented!();
     unimplemented!();
-    off_1 = (unsafe { pt_1() });
+    off_1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -291,7 +291,7 @@ pub unsafe fn test04_12() {
         }
     }
     unimplemented!();
-    off_1 = (unsafe { pt_1() });
+    off_1 = unimplemented!();
     c1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -335,7 +335,7 @@ pub unsafe fn test04_12() {
     }
     unimplemented!();
     unimplemented!();
-    off_2 = (unsafe { pt_2() });
+    off_2 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

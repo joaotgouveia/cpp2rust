@@ -260,8 +260,8 @@ pub fn test01_10() {
     unimplemented!();
 }
 pub fn test02_11() {
-    let v1: Value<()> = Rc::new(RefCell::new(1_()));
-    let v2: Value<()> = Rc::new(RefCell::new(2_()));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -303,8 +303,8 @@ pub fn test02_11() {
     }
 }
 pub fn test03_14() {
-    let v1: Value<()> = Rc::new(RefCell::new(1_()));
-    let v2: Value<()> = Rc::new(RefCell::new(0.5_f64));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

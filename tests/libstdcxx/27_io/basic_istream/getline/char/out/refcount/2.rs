@@ -283,7 +283,7 @@ pub fn test05_10() {
             unimplemented!();
         }
     }
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) || (unimplemented!() != 0) {
+    'loop_: while (unimplemented!()) || (unimplemented!() != 0) {
         br += unimplemented!();
         if unimplemented!() {
             let mut __do_while = true;

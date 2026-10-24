@@ -266,20 +266,10 @@ unsafe fn main_0() -> () {
     let mut i: () = 0_();
     let mut j: () = 0_();
     let mut k: () = 2_();
-    let mut a: () = {
-        let mut __tmp_0: () = 0_();
-        let mut __tmp_1: () = 0_();
-        let mut __tmp_2: () = 0_();
-        std_tuple_int__int__int_::new({ &mut __tmp_0 }, { &mut __tmp_1 }, { &mut __tmp_2 })
-    };
-    let mut b: () = {
-        let mut __tmp_3: () = 0_();
-        let mut __tmp_4: () = 0_();
-        let mut __tmp_5: () = 1_();
-        std_tuple_int__int__int_::new({ &mut __tmp_3 }, { &mut __tmp_4 }, { &mut __tmp_5 })
-    };
-    let mut c: () = std_tuple_int_ref__int_ref__int_ref_::new({ &mut i }, { &mut j }, { &mut k });
-    let mut d: () = std_tuple_const_int_ref__const_int_ref__const_int_ref_::new({ &c });
+    let mut a: () = unimplemented!();
+    let mut b: () = unimplemented!();
+    let mut c: () = unimplemented!();
+    let mut d: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

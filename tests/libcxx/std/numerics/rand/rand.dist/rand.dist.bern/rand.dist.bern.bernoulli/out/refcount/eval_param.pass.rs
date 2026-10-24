@@ -46,7 +46,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
-            let mut dbl: () = (({ unimplemented!()() }) - mean);
+            let mut dbl: () = (unimplemented!() - mean);
             let mut d2: () = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);
@@ -58,13 +58,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         skew /= ((unimplemented!() * dev) * var);
         kurtosis /= ((unimplemented!() * var) * var);
         kurtosis -= 3_();
-        let mut x_mean: () = ({ (*p.borrow()).p() });
-        let mut x_var: () = (({ (*p.borrow()).p() }) * (1_() - ({ (*p.borrow()).p() })));
-        let mut x_skew: () = ((1_() - (2_() * ({ (*p.borrow()).p() }))) / ({ sqrt_1(x_var) }));
-        let mut x_kurtosis: () = ((((6_() * ({ sqr_0(({ (*p.borrow()).p() })) }))
-            - (6_() * ({ (*p.borrow()).p() })))
-            + 1_())
-            / x_var);
+        let mut x_mean: () = unimplemented!();
+        let mut x_var: () = (unimplemented!() * (1_() - unimplemented!()));
+        let mut x_skew: () = ((1_() - (2_() * unimplemented!())) / ({ sqrt_1(x_var) }));
+        let mut x_kurtosis: () =
+            ((((6_() * ({ sqr_0(unimplemented!()) })) - (6_() * unimplemented!())) + 1_()) / x_var);
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -87,7 +85,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while (i < unimplemented!()) {
-            let mut dbl: () = (({ unimplemented!()() }) - mean);
+            let mut dbl: () = (unimplemented!() - mean);
             let mut d2: () = ({ sqr_0(dbl) });
             var += d2;
             skew += (dbl * d2);
@@ -99,13 +97,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         skew /= ((unimplemented!() * dev) * var);
         kurtosis /= ((unimplemented!() * var) * var);
         kurtosis -= 3_();
-        let mut x_mean: () = ({ (*p.borrow()).p() });
-        let mut x_var: () = (({ (*p.borrow()).p() }) * (1_() - ({ (*p.borrow()).p() })));
-        let mut x_skew: () = ((1_() - (2_() * ({ (*p.borrow()).p() }))) / ({ sqrt_1(x_var) }));
-        let mut x_kurtosis: () = ((((6_() * ({ sqr_0(({ (*p.borrow()).p() })) }))
-            - (6_() * ({ (*p.borrow()).p() })))
-            + 1_())
-            / x_var);
+        let mut x_mean: () = unimplemented!();
+        let mut x_var: () = (unimplemented!() * (1_() - unimplemented!()));
+        let mut x_skew: () = ((1_() - (2_() * unimplemented!())) / ({ sqrt_1(x_var) }));
+        let mut x_kurtosis: () =
+            ((((6_() * ({ sqr_0(unimplemented!()) })) - (6_() * unimplemented!())) + 1_()) / x_var);
         unimplemented!();
         unimplemented!();
         unimplemented!();

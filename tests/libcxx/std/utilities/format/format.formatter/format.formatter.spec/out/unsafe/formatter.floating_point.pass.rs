@@ -203,7 +203,7 @@ pub unsafe fn test_9(mut fmt: (), mut arg: (), mut expected: (), mut offset: ())
 }
 pub unsafe fn test_termination_condition_10(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_4(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
@@ -211,7 +211,7 @@ pub unsafe fn test_termination_condition_10(mut f: (), mut arg: (), mut expected
 }
 pub unsafe fn test_termination_condition_11(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_5(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
@@ -219,7 +219,7 @@ pub unsafe fn test_termination_condition_11(mut f: (), mut arg: (), mut expected
 }
 pub unsafe fn test_termination_condition_12(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_6(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
@@ -227,7 +227,7 @@ pub unsafe fn test_termination_condition_12(mut f: (), mut arg: (), mut expected
 }
 pub unsafe fn test_termination_condition_13(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_7(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
@@ -235,7 +235,7 @@ pub unsafe fn test_termination_condition_13(mut f: (), mut arg: (), mut expected
 }
 pub unsafe fn test_termination_condition_14(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_8(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();
@@ -243,7 +243,7 @@ pub unsafe fn test_termination_condition_14(mut f: (), mut arg: (), mut expected
 }
 pub unsafe fn test_termination_condition_15(mut f: (), mut arg: (), mut expected: Option<()>) {
     let mut expected: () = expected.unwrap_or_else(|| unsafe { unimplemented!() });
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_9(unimplemented!(), arg, unimplemented!(), 1_()) });
     unimplemented!();

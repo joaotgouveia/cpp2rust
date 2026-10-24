@@ -256,7 +256,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test02_10() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s2: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

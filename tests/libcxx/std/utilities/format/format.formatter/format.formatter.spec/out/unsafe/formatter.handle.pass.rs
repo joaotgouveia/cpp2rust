@@ -31,7 +31,7 @@ pub unsafe fn test_3(mut expected: (), mut fmt: (), mut arg: color, mut offset: 
     unimplemented!();
 }
 pub unsafe fn test_termination_condition_4(mut expected: (), mut f: (), mut arg: color) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_3(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();

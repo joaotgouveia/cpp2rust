@@ -258,7 +258,7 @@ pub fn functionAcceptingStringView_10(_a0: ()) {
     let _a0: Value<()> = Rc::new(RefCell::new(_a0));
 }
 pub fn test01_11() {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     let fs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
@@ -609,7 +609,7 @@ pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_64_15__> {
 fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy___ ( &self , a : Ptr< ()  > , ) -> ()  { { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) { { ( { let _arg0: Ptr< ()  >  = ( { (*a_0.upgrade().deref()) ( ) } )   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _arg0 , _arg1 , ) } ) ;
+ } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_unique_ptr_struct_Thingy____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) { { ( { let _arg0: Ptr< ()  >  = unimplemented!()   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _arg0 , _arg1 , ) } ) ;
  return ;
  ;
  } } }
@@ -627,7 +627,7 @@ pub trait PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function
 }
 impl PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__Impl for Ptr<PartialApply__lambda_at__app_cpp2rust_tests_libstdcxx_20_util_function_objects_bind_front_2_cc_72_15__> {
 fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char___ ( &self , a : Ptr< ()  > , ) -> ()  { { return unimplemented!()    ;
- } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) -> Ptr< ()  > { { return (( { let _s: Ptr< ()  >  = ( { (*a_0.upgrade().deref()) ( ) } )   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _s , _arg1 , ) } ) ).clone()  ;
+ } panic!("ub: non-void function does not return a value") } fn operator_call_2_class_std_reference_wrapper_class_std_basic_string_char____int ( &self , a_0 : Ptr< ()  > , a_1 : Ptr< ()  > , ) -> Ptr< ()  > { { return (( { let _s: Ptr< ()  >  = unimplemented!()   ; let _arg1: ()   = (a_1.read())  ; (*(* self ) .upgrade().deref()) . f   .call ( _s , _arg1 , ) } ) ).clone()  ;
  } panic!("ub: non-void function does not return a value") } }
 pub trait __gnu_test_copy_trackerImpl {
     fn copy_assign(&self, rhs: Ptr<__gnu_test_copy_tracker>) -> Ptr<__gnu_test_copy_tracker>;

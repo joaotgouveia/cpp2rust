@@ -240,8 +240,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let buffer: Value<std_aligned_storage_12__4__type> =
-            Rc::new(RefCell::new(<std_aligned_storage_12__4__type>::default()));
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(std_raw_storage_iterator_A_ptr__A_::new({
             (buffer.as_pointer()).reinterpret_cast::<A>()
         })));
@@ -258,8 +257,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         }
     }
     {
-        let buffer: Value<std_aligned_storage_12__4__type> =
-            Rc::new(RefCell::new(<std_aligned_storage_12__4__type>::default()));
+        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it: Value<()> = Rc::new(RefCell::new(
             std_raw_storage_iterator_MoveOnly_ptr__MoveOnly_::new({
                 (buffer.as_pointer()).reinterpret_cast::<MoveOnly>()

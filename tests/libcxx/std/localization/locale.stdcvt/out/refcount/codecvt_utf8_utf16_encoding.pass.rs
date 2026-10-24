@@ -29,19 +29,17 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*c.borrow()) as std_codecvt_wchar_t__char____mbstate_t_).encoding() });
+        let mut r: () = ({ (*c.borrow()).encoding() });
         unimplemented!();
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () =
-            ({ ((*c.borrow()) as std_codecvt_char16_t__char____mbstate_t_).encoding() });
+        let mut r: () = ({ (*c.borrow()).encoding() });
         unimplemented!();
     }
     {
         let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () =
-            ({ ((*c.borrow()) as std_codecvt_char32_t__char____mbstate_t_).encoding() });
+        let mut r: () = ({ (*c.borrow()).encoding() });
         unimplemented!();
     }
     return 0_();

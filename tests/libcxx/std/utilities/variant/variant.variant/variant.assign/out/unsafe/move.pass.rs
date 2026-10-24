@@ -318,16 +318,16 @@ pub struct Result_long_ {
 }
 pub unsafe fn test_move_assignment_same_index_10() {
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -369,8 +369,8 @@ pub unsafe fn test_move_assignment_same_index_10() {
 pub struct anon_11 {}
 impl anon_11 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
@@ -383,8 +383,8 @@ impl anon_11 {
 pub struct anon_13 {}
 impl anon_13 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
@@ -408,8 +408,8 @@ impl anon_15 {
 }
 pub unsafe fn test_move_assignment_different_index_17() {
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -445,8 +445,8 @@ pub unsafe fn test_move_assignment_different_index_17() {
 pub struct anon_18 {}
 impl anon_18 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
@@ -470,42 +470,42 @@ impl anon_19 {
 }
 pub unsafe fn test_assignment_throw_20() {}
 pub unsafe fn test_constexpr_assign_imp_21(v: *mut (), new_value: *mut ()) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_22(v: *mut (), new_value: *mut ()) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_23(v: *mut (), new_value: *mut ()) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_24(v: *mut (), new_value: *mut ()) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_25(v: *mut (), new_value: *mut ()) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_26(v: *mut (), new_value: *mut NonTrivialMoveAssign) {
-    let mut v2: () = (*new_value);
+    let mut v2: () = unimplemented!();
     let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -515,22 +515,22 @@ pub unsafe fn test_constexpr_move_assignment_trivial_27() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_move_assignable<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
         test_constexpr_assign_imp_22(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
     });
@@ -580,27 +580,27 @@ pub unsafe fn test_constexpr_move_assignment_non_trivial_29() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_move_assignable<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_24(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
         test_constexpr_assign_imp_25(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialMoveAssign = NonTrivialMoveAssign::new({ 5_() });
         test_constexpr_assign_imp_26(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = NonTrivialMoveAssign::new({ 3_() });
+        let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialMoveAssign = NonTrivialMoveAssign::new({ 5_() });
         test_constexpr_assign_imp_26(&mut _v, &mut _new_value)
     });

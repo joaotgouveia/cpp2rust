@@ -292,7 +292,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(res == std_codecvt_base_result_ok) {
+        if !(res == unimplemented!()) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -387,7 +387,7 @@ pub fn test_12(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(res == std_codecvt_base_result_ok) {
+        if !(res == unimplemented!()) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -498,7 +498,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(res == std_codecvt_base_result_ok) {
+        if !(res == unimplemented!()) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),
@@ -593,7 +593,7 @@ pub fn test_15(mut from: Ptr<()>) {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(res == std_codecvt_base_result_ok) {
+        if !(res == unimplemented!()) {
             ({
                 __builtin_fprintf_14(
                     libcc2rs::stderr_unsafe(),

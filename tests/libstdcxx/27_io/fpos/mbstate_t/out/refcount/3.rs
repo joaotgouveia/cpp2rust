@@ -257,7 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test03_10() {
     let mut off01: () = unimplemented!();
     let pos01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    off01 = ({ (*pos01.borrow())() });
+    off01 = unimplemented!();
     off01 = { off01 };
     let pos02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pos03: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -341,7 +341,7 @@ pub fn test03_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*pos04.borrow())() }) == 0_()) {
+        if !(unimplemented!() == 0_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

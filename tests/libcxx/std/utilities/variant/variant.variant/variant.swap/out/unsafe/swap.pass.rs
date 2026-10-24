@@ -365,7 +365,7 @@ pub unsafe fn test_swap_same_alternative_13() {
         let mut swap_called: () = 0_();
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -382,7 +382,7 @@ pub unsafe fn test_swap_same_alternative_13() {
         let mut swap_called: () = 0_();
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -407,7 +407,7 @@ pub unsafe fn test_swap_different_alternatives_15() {
         let mut swap_called: () = 0_();
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -505,7 +505,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -513,7 +513,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -521,7 +521,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -529,7 +529,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -537,7 +537,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -545,7 +545,7 @@ pub unsafe fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
-        (unsafe { v1.swap(&mut v2) });
+        unimplemented!();
         unimplemented!();
     }
     {

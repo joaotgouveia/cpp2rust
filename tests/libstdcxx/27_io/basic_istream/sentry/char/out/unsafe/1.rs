@@ -263,8 +263,7 @@ pub unsafe fn test01_10() {
     let mut strbuf02: () = unimplemented!();
     let mut istr01: () = unimplemented!();
     let mut istr02: () = unimplemented!();
-    let mut sentry01: std_basic_istream_char__sentry =
-        std_basic_istream_char__sentry::new({ &mut istr01 }, None);
+    let mut sentry01: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -284,8 +283,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut sentry02: std_basic_istream_char__sentry =
-        std_basic_istream_char__sentry::new({ &mut istr01 }, { Some(true) });
+    let mut sentry02: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -305,8 +303,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut sentry03: std_basic_istream_char__sentry =
-        std_basic_istream_char__sentry::new({ &mut istr02 }, None);
+    let mut sentry03: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -326,8 +323,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut sentry04: std_basic_istream_char__sentry =
-        std_basic_istream_char__sentry::new({ &mut istr02 }, { Some(true) });
+    let mut sentry04: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

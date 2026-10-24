@@ -267,7 +267,7 @@ pub unsafe fn test_constructors_10() {
     let mut tb: () = unimplemented!();
     let mut tc: () = unimplemented!();
     let mut td: () = unimplemented!();
-    let mut te: () = std_tuple_const_int_ref_::new({ z1 });
+    let mut te: () = unimplemented!();
     x1 = 1_();
     x2 = 1_();
     let mut __do_while = true;
@@ -311,80 +311,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0() -> () {
-    let mut a: () = {
-        let mut __tmp_0: () = 0_();
-        let mut __tmp_1: () = 0_();
-        let mut __tmp_2: () = 0_();
-        let mut __tmp_3: () = 0_();
-        let mut __tmp_4: () = 0_();
-        let mut __tmp_5: () = 0_();
-        let mut __tmp_6: () = 0_();
-        let mut __tmp_7: () = 0_();
-        let mut __tmp_8: () = 0_();
-        let mut __tmp_9: () = 1_();
-        std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
-            { &mut __tmp_0 },
-            { &mut __tmp_1 },
-            { &mut __tmp_2 },
-            { &mut __tmp_3 },
-            { &mut __tmp_4 },
-            { &mut __tmp_5 },
-            { &mut __tmp_6 },
-            { &mut __tmp_7 },
-            { &mut __tmp_8 },
-            { &mut __tmp_9 },
-        )
-    };
-    let mut b: () = {
-        let mut __tmp_10: () = 0_();
-        let mut __tmp_11: () = 0_();
-        let mut __tmp_12: () = 0_();
-        let mut __tmp_13: () = 0_();
-        let mut __tmp_14: () = 0_();
-        let mut __tmp_15: () = 0_();
-        let mut __tmp_16: () = 0_();
-        let mut __tmp_17: () = 0_();
-        let mut __tmp_18: () = 0_();
-        let mut __tmp_19: () = 2_();
-        std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
-            { &mut __tmp_10 },
-            { &mut __tmp_11 },
-            { &mut __tmp_12 },
-            { &mut __tmp_13 },
-            { &mut __tmp_14 },
-            { &mut __tmp_15 },
-            { &mut __tmp_16 },
-            { &mut __tmp_17 },
-            { &mut __tmp_18 },
-            { &mut __tmp_19 },
-        )
-    };
+    let mut a: () = unimplemented!();
+    let mut b: () = unimplemented!();
     let mut c: () = unimplemented!();
-    let mut d: () = {
-        let mut __tmp_20: () = 0_();
-        let mut __tmp_21: () = 0_();
-        let mut __tmp_22: () = 0_();
-        let mut __tmp_23: () = 0_();
-        let mut __tmp_24: () = 0_();
-        let mut __tmp_25: () = 0_();
-        let mut __tmp_26: () = 0_();
-        let mut __tmp_27: () = 0_();
-        let mut __tmp_28: () = 0_();
-        let mut __tmp_29: () = 3_();
-        std_tuple_int__int__int__int__int__int__int__int__int__char_::new(
-            { &mut __tmp_20 },
-            { &mut __tmp_21 },
-            { &mut __tmp_22 },
-            { &mut __tmp_23 },
-            { &mut __tmp_24 },
-            { &mut __tmp_25 },
-            { &mut __tmp_26 },
-            { &mut __tmp_27 },
-            { &mut __tmp_28 },
-            { &mut __tmp_29 },
-        )
-    };
-    let mut e: () = std_tuple_int__int__int__int__int__int__int__int__int__int_::new_2({ &d });
+    let mut d: () = unimplemented!();
+    let mut e: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

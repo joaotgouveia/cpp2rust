@@ -24,7 +24,7 @@ pub unsafe fn test_path_method_0() {
     }
     {
         let mut e: () = unimplemented!();
-        let pref: *const () = (unsafe { e.path() });
+        let pref: *const () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -77,12 +77,12 @@ pub unsafe fn test_path_conversion_1() {
     }
     {
         let e: () = unimplemented!();
-        let pref: *const () = (unsafe { e() });
+        let pref: *const () = unimplemented!();
         unimplemented!();
     }
     {
         let mut e: () = unimplemented!();
-        let pref: *const () = (unsafe { e() });
+        let pref: *const () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

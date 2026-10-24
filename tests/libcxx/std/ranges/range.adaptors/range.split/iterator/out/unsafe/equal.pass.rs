@@ -775,7 +775,54 @@ pub unsafe fn testOne_21() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_22(&mut b, 2_()) });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut i1: () = unimplemented!();
+            let mut i2: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn testOne_22() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -822,7 +869,54 @@ pub unsafe fn testOne_23() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_24(&mut b, 2_()) });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut i1: () = unimplemented!();
+            let mut i2: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub unsafe fn testOne_24() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
+            let mut input: () = unimplemented!();
+            let mut sv: () = unimplemented!();
+            let mut b: () = unimplemented!();
+            let mut e: () = unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -869,54 +963,7 @@ pub unsafe fn testOne_25() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_26(&mut b, 2_()) });
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut i1: () = unimplemented!();
-            let mut i2: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn testOne_27() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            (unsafe { advance_28(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -948,59 +995,12 @@ pub unsafe fn testOne_27() {
         }
     }
 }
-pub unsafe fn testOne_29() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            (unsafe { advance_30(&mut b, 2_()) });
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 4] = [0_(), 1_(), 2_(), -1_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut b: () = unimplemented!();
-            let mut e: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut buffer: [(); 7] = [0_(), 1_(), 2_(), -1_(), 4_(), 5_(), 6_()];
-            let mut input: () = unimplemented!();
-            let mut sv: () = unimplemented!();
-            let mut i1: () = unimplemented!();
-            let mut i2: () = unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub unsafe fn test_31() -> () {
+pub unsafe fn test_26() -> () {
     (unsafe { testOne_21() });
+    (unsafe { testOne_22() });
     (unsafe { testOne_23() });
+    (unsafe { testOne_24() });
     (unsafe { testOne_25() });
-    (unsafe { testOne_27() });
-    (unsafe { testOne_29() });
     return true;
 }
 pub fn main() {
@@ -1019,7 +1019,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_31() });
+    (unsafe { test_26() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

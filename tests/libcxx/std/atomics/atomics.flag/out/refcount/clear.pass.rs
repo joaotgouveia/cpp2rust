@@ -57,30 +57,30 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*f.borrow()).clear_5(None) });
         unimplemented!();
-        ({ (*f.borrow()).clear_5(None) });
         unimplemented!();
-    }
-    {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*f.borrow()).clear_5(Some(memory_order_relaxed_0.with(|rc| *rc.borrow()))) });
         unimplemented!();
-        ({ (*f.borrow()).clear_5(Some(memory_order_relaxed_0.with(|rc| *rc.borrow()))) });
         unimplemented!();
     }
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*f.borrow()).clear_5(Some(memory_order_release_1.with(|rc| *rc.borrow()))) });
         unimplemented!();
-        ({ (*f.borrow()).clear_5(Some(memory_order_release_1.with(|rc| *rc.borrow()))) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
         let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*f.borrow()).clear_5(Some(memory_order_seq_cst_2.with(|rc| *rc.borrow()))) });
         unimplemented!();
-        ({ (*f.borrow()).clear_5(Some(memory_order_seq_cst_2.with(|rc| *rc.borrow()))) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

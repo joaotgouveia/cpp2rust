@@ -261,7 +261,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*nested_element.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -312,7 +312,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ service_result_int_::get_result() })() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -332,7 +332,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ service_result_std_optional_int__::get_result() })() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -354,7 +354,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ service_result_int_::get_result_with_cond(true) })() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -376,7 +376,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ ({ service_result_std_optional_int__::get_result_with_cond(true) })() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -398,7 +398,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ ({ service_result_int_::get_result_with_cond(false) })() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -420,7 +420,7 @@ pub fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ ({ service_result_std_optional_int__::get_result_with_cond(false) })() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -458,7 +458,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -482,7 +482,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -506,7 +506,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -526,7 +526,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w3.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -546,7 +546,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w4.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -570,7 +570,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w6.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -590,7 +590,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -610,7 +610,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -634,7 +634,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w10.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -654,7 +654,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w11.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -674,7 +674,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w12.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -694,7 +694,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w13.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -715,7 +715,7 @@ pub fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w14.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -750,7 +750,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -770,7 +770,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*w.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -790,7 +790,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -810,7 +810,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -831,7 +831,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w2.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -851,7 +851,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w3.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -871,7 +871,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w4.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -892,7 +892,7 @@ pub fn test04_14() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*w5.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -938,7 +938,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -958,7 +958,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ot2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -982,7 +982,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot3.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1002,7 +1002,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot4.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1022,7 +1022,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot5.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1046,7 +1046,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1066,7 +1066,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1098,7 +1098,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot9.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1118,7 +1118,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot10.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1138,7 +1138,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot11.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1159,7 +1159,7 @@ pub fn test05_15() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot12.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1198,7 +1198,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ori.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1223,7 +1223,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1251,7 +1251,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ori2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1271,7 +1271,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ori3.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1299,7 +1299,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori6.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1319,7 +1319,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1339,7 +1339,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1359,7 +1359,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori9.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1379,7 +1379,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori10.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1400,7 +1400,7 @@ pub fn test06_16() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ori11.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1437,7 +1437,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ot.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1461,7 +1461,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ot2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1485,7 +1485,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot3.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1509,7 +1509,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot4.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1533,7 +1533,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot5.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1553,7 +1553,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot6.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1590,7 +1590,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1610,7 +1610,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1630,7 +1630,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot9.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1650,7 +1650,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot10.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1671,7 +1671,7 @@ pub fn test07_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot11.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1714,7 +1714,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ot.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1738,7 +1738,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*ot2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1762,7 +1762,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot3.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1786,7 +1786,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot4.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1810,7 +1810,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot5.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1830,7 +1830,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot6.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1867,7 +1867,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1887,7 +1887,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1907,7 +1907,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot9.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1927,7 +1927,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot10.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1948,7 +1948,7 @@ pub fn test08_18() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot11.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1966,12 +1966,12 @@ pub fn test08_18() {
     }
 }
 pub fn test09_19() {
-    let a: Value<()> = Rc::new(RefCell::new(42_()));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let oa2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*oa2.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2010,7 +2010,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*oa3.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2049,7 +2049,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*oa4.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2088,7 +2088,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*oa5.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2127,7 +2127,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*oa6.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2147,7 +2147,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*oa7.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2167,7 +2167,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*oa8.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -2187,7 +2187,7 @@ pub fn test09_19() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*oa9.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

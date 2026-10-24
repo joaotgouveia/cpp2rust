@@ -32,8 +32,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut f: () = unimplemented!();
-        (unsafe { f.clear_5(None) });
-        (unsafe { f.test_and_set_3(None) });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -498,7 +498,19 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn test_13(mut n: (), mut c: ()) {
+pub unsafe fn is_string_asan_correct_13(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_14(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_15(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_16(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn test_17(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -511,7 +523,7 @@ pub unsafe fn test_13(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_14(mut n: (), mut c: ()) {
+pub unsafe fn test_18(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -524,7 +536,7 @@ pub unsafe fn test_14(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_15(mut n: (), mut c: ()) {
+pub unsafe fn test_19(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -537,7 +549,7 @@ pub unsafe fn test_15(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_16(mut n: (), mut c: ()) {
+pub unsafe fn test_20(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -550,7 +562,7 @@ pub unsafe fn test_16(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_17(mut n: (), mut c: (), a: *const ()) {
+pub unsafe fn test_21(mut n: (), mut c: (), a: *const ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -563,7 +575,7 @@ pub unsafe fn test_17(mut n: (), mut c: (), a: *const ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_18(mut n: (), mut c: (), a: *const test_allocator_char_) {
+pub unsafe fn test_22(mut n: (), mut c: (), a: *const test_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -576,7 +588,7 @@ pub unsafe fn test_18(mut n: (), mut c: (), a: *const test_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_19(mut n: (), mut c: (), a: *const min_allocator_char_) {
+pub unsafe fn test_23(mut n: (), mut c: (), a: *const min_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -589,7 +601,7 @@ pub unsafe fn test_19(mut n: (), mut c: (), a: *const min_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_20(mut n: (), mut c: (), a: *const safe_allocator_char_) {
+pub unsafe fn test_24(mut n: (), mut c: (), a: *const safe_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -602,7 +614,7 @@ pub unsafe fn test_20(mut n: (), mut c: (), a: *const safe_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_21(mut n: (), mut c: ()) {
+pub unsafe fn test_25(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -614,7 +626,7 @@ pub unsafe fn test_21(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_22(mut n: (), mut c: ()) {
+pub unsafe fn test_26(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -626,7 +638,7 @@ pub unsafe fn test_22(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_23(mut n: (), mut c: ()) {
+pub unsafe fn test_27(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -638,7 +650,7 @@ pub unsafe fn test_23(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_24(mut n: (), mut c: ()) {
+pub unsafe fn test_28(mut n: (), mut c: ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -650,7 +662,7 @@ pub unsafe fn test_24(mut n: (), mut c: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_25(mut n: (), mut c: (), a: *const ()) {
+pub unsafe fn test_29(mut n: (), mut c: (), a: *const ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -662,7 +674,7 @@ pub unsafe fn test_25(mut n: (), mut c: (), a: *const ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_26(mut n: (), mut c: (), a: *const test_allocator_char_) {
+pub unsafe fn test_30(mut n: (), mut c: (), a: *const test_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -674,7 +686,7 @@ pub unsafe fn test_26(mut n: (), mut c: (), a: *const test_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_27(mut n: (), mut c: (), a: *const min_allocator_char_) {
+pub unsafe fn test_31(mut n: (), mut c: (), a: *const min_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -686,7 +698,7 @@ pub unsafe fn test_27(mut n: (), mut c: (), a: *const min_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_28(mut n: (), mut c: (), a: *const safe_allocator_char_) {
+pub unsafe fn test_32(mut n: (), mut c: (), a: *const safe_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -698,122 +710,122 @@ pub unsafe fn test_28(mut n: (), mut c: (), a: *const safe_allocator_char_) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_29(a: *const ()) {
-    (unsafe { test_13(0_(), ('a' as ())) });
+pub unsafe fn test_string_33(a: *const ()) {
+    (unsafe { test_17(0_(), ('a' as ())) });
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_17(0_(), ('a' as ()), &mut _a)
+        test_21(0_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_13(1_(), ('a' as ())) });
+    (unsafe { test_17(1_(), ('a' as ())) });
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_17(1_(), ('a' as ()), &mut _a)
+        test_21(1_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_13(10_(), ('a' as ())) });
+    (unsafe { test_17(10_(), ('a' as ())) });
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_17(10_(), ('a' as ()), &mut _a)
+        test_21(10_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_13(100_(), ('a' as ())) });
+    (unsafe { test_17(100_(), ('a' as ())) });
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_17(100_(), ('a' as ()), &mut _a)
+        test_21(100_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_21(100_(), 65_()) });
-    (unsafe { test_25(100_(), 65_(), a) });
+    (unsafe { test_25(100_(), 65_()) });
+    (unsafe { test_29(100_(), 65_(), a) });
 }
-pub unsafe fn test_string_30(a: *const test_allocator_char_) {
-    (unsafe { test_14(0_(), ('a' as ())) });
+pub unsafe fn test_string_34(a: *const test_allocator_char_) {
+    (unsafe { test_18(0_(), ('a' as ())) });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_18(0_(), ('a' as ()), &mut _a)
+        test_22(0_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_14(1_(), ('a' as ())) });
+    (unsafe { test_18(1_(), ('a' as ())) });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_18(1_(), ('a' as ()), &mut _a)
+        test_22(1_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_14(10_(), ('a' as ())) });
+    (unsafe { test_18(10_(), ('a' as ())) });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_18(10_(), ('a' as ()), &mut _a)
+        test_22(10_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_14(100_(), ('a' as ())) });
+    (unsafe { test_18(100_(), ('a' as ())) });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_18(100_(), ('a' as ()), &mut _a)
+        test_22(100_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_22(100_(), 65_()) });
-    (unsafe { test_26(100_(), 65_(), a) });
+    (unsafe { test_26(100_(), 65_()) });
+    (unsafe { test_30(100_(), 65_(), a) });
 }
-pub unsafe fn test_string_31(a: *const min_allocator_char_) {
-    (unsafe { test_15(0_(), ('a' as ())) });
+pub unsafe fn test_string_35(a: *const min_allocator_char_) {
+    (unsafe { test_19(0_(), ('a' as ())) });
     (unsafe {
         let mut _a: min_allocator_char_ = (*a);
-        test_19(0_(), ('a' as ()), &mut _a)
+        test_23(0_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_15(1_(), ('a' as ())) });
+    (unsafe { test_19(1_(), ('a' as ())) });
     (unsafe {
         let mut _a: min_allocator_char_ = (*a);
-        test_19(1_(), ('a' as ()), &mut _a)
+        test_23(1_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_15(10_(), ('a' as ())) });
+    (unsafe { test_19(10_(), ('a' as ())) });
     (unsafe {
         let mut _a: min_allocator_char_ = (*a);
-        test_19(10_(), ('a' as ()), &mut _a)
+        test_23(10_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_15(100_(), ('a' as ())) });
+    (unsafe { test_19(100_(), ('a' as ())) });
     (unsafe {
         let mut _a: min_allocator_char_ = (*a);
-        test_19(100_(), ('a' as ()), &mut _a)
+        test_23(100_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_23(100_(), 65_()) });
-    (unsafe { test_27(100_(), 65_(), a) });
+    (unsafe { test_27(100_(), 65_()) });
+    (unsafe { test_31(100_(), 65_(), a) });
 }
-pub unsafe fn test_string_32(a: *const safe_allocator_char_) {
-    (unsafe { test_16(0_(), ('a' as ())) });
+pub unsafe fn test_string_36(a: *const safe_allocator_char_) {
+    (unsafe { test_20(0_(), ('a' as ())) });
     (unsafe {
         let mut _a: safe_allocator_char_ = (*a);
-        test_20(0_(), ('a' as ()), &mut _a)
+        test_24(0_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_16(1_(), ('a' as ())) });
+    (unsafe { test_20(1_(), ('a' as ())) });
     (unsafe {
         let mut _a: safe_allocator_char_ = (*a);
-        test_20(1_(), ('a' as ()), &mut _a)
+        test_24(1_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_16(10_(), ('a' as ())) });
+    (unsafe { test_20(10_(), ('a' as ())) });
     (unsafe {
         let mut _a: safe_allocator_char_ = (*a);
-        test_20(10_(), ('a' as ()), &mut _a)
+        test_24(10_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_16(100_(), ('a' as ())) });
+    (unsafe { test_20(100_(), ('a' as ())) });
     (unsafe {
         let mut _a: safe_allocator_char_ = (*a);
-        test_20(100_(), ('a' as ()), &mut _a)
+        test_24(100_(), ('a' as ()), &mut _a)
     });
-    (unsafe { test_24(100_(), 65_()) });
-    (unsafe { test_28(100_(), 65_(), a) });
+    (unsafe { test_28(100_(), 65_()) });
+    (unsafe { test_32(100_(), 65_(), a) });
 }
-pub unsafe fn test_33() -> () {
+pub unsafe fn test_37() -> () {
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_string_29(&mut _a)
+        test_string_33(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_char_ = <test_allocator_char_>::default();
-        test_string_30(&mut _a)
+        test_string_34(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::new_1({ 2_() });
-        test_string_30(&mut _a)
+        test_string_34(&mut _a)
     });
     (unsafe {
         let mut _a: min_allocator_char_ = <min_allocator_char_>::default();
-        test_string_31(&mut _a)
+        test_string_35(&mut _a)
     });
     (unsafe {
         let mut _a: safe_allocator_char_ = safe_allocator_char_::new();
-        test_string_32(&mut _a)
+        test_string_36(&mut _a)
     });
     return true;
 }
@@ -833,7 +845,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_33() });
+    (unsafe { test_37() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

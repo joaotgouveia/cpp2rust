@@ -114,9 +114,7 @@ pub unsafe fn test_impl_12() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_8(store.copy_from(), load.copy_from()) });
@@ -162,9 +160,7 @@ pub unsafe fn test_impl_13() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_9(store.copy_from(), load.copy_from()) });
@@ -210,9 +206,7 @@ pub unsafe fn test_impl_14() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_10(store.copy_from(), load.copy_from()) });
@@ -258,9 +252,7 @@ pub unsafe fn test_impl_15() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_11(store.copy_from(), load.copy_from()) });

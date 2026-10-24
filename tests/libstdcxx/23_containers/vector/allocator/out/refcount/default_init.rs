@@ -384,16 +384,7 @@ pub fn test01_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            ({
-                (*(tmp as *const std__Vector_base_int____gnu_test_default_init_allocator_int__)
-                    .upgrade()
-                    .deref())
-                .get_allocator()
-            })
-            .state
-        } == 0_())
-        {
+        if !({ unimplemented!().state } == 0_()) {
             ({
                 __builtin_fprintf_19(
                     libcc2rs::stderr_unsafe(),
@@ -417,16 +408,7 @@ pub fn test02_20() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({
-            ({
-                (*(tmp as *const std__Vector_base_int____gnu_test_default_init_allocator_int__)
-                    .upgrade()
-                    .deref())
-                .get_allocator()
-            })
-            .state
-        } == 0_())
-        {
+        if !({ unimplemented!().state } == 0_()) {
             ({
                 __builtin_fprintf_19(
                     libcc2rs::stderr_unsafe(),

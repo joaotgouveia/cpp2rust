@@ -407,7 +407,7 @@ pub fn test_6() {
     let a: Value<test_allocator_char_> =
         Rc::new(RefCell::new(test_allocator_char_::new_1({ 1_() })));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -416,7 +416,7 @@ pub fn test_7() {
     let a: Value<test_allocator_wchar_t_> =
         Rc::new(RefCell::new(test_allocator_wchar_t_::new_1({ 1_() })));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
 }

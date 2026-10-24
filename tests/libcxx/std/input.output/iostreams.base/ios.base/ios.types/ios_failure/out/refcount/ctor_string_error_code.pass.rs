@@ -32,22 +32,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         "(std::is_base_of<std::system_error, std::ios_base::failure>::value)"
     );;
     {
-        let what_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let se: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std_ios_base_failure::new_1({ what_arg.as_pointer() }, { Some(__tmp_0.as_pointer()) })
-        }));
+        let mut what_arg: () = unimplemented!();
+        let se: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let what_arg: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let se: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1(
-            { what_arg.as_pointer() },
-            None,
-        )));
+        let mut what_arg: () = unimplemented!();
+        let se: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let mut what_message: () = unimplemented!();
         unimplemented!();

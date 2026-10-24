@@ -29,28 +29,23 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 10_()])));
-        let p1: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
-            std_discrete_distribution___param_type::new_1({ (p0.as_pointer() as Ptr<()>) }, {
-                (p0.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            }),
-        ));
-        let p2: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
-            std_discrete_distribution___param_type::new_1({ (p0.as_pointer() as Ptr<()>) }, {
-                (p0.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            }),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
+            { (p0.as_pointer() as Ptr<()>) },
+            { (p0.as_pointer() as Ptr<()>).offset((2_()) as isize) },
+        )));
+        let p2: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
+            { (p0.as_pointer() as Ptr<()>) },
+            { (p0.as_pointer() as Ptr<()>).offset((2_()) as isize) },
+        )));
         unimplemented!();
     }
     {
         let p0: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([30_(), 10_()])));
-        let p1: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
-            std_discrete_distribution___param_type::new_1({ (p0.as_pointer() as Ptr<()>) }, {
-                (p0.as_pointer() as Ptr<()>).offset((2_()) as isize)
-            }),
-        ));
-        let p2: Value<std_discrete_distribution___param_type> = Rc::new(RefCell::new(
-            <std_discrete_distribution___param_type>::default(),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(std_discrete_distribution___param_type::new_1(
+            { (p0.as_pointer() as Ptr<()>) },
+            { (p0.as_pointer() as Ptr<()>).offset((2_()) as isize) },
+        )));
+        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     return 0_();

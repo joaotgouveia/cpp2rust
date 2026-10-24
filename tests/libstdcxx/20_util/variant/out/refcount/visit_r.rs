@@ -255,10 +255,8 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let v1: Value<()> = Rc::new(RefCell::new(('c' as ())));
-    let v2: Value<()> = Rc::new(RefCell::new(std_variant_void_ptr__const_char_ptr_::new_1(
-        { Ptr::<()>::from_string_literal(b"chars") },
-    )));
+    let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same_v<decltype(res), bool>");;
     let mut __do_while = true;

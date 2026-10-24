@@ -138,39 +138,39 @@ pub struct X_8 {}
 pub struct Y_9 {}
 pub fn test_T_assignment_basic_10() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(43_()));
-        (*v.borrow_mut()) = 42_();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-    }
-    {
-        let v: Value<()> = Rc::new(RefCell::new(43_()));
-        (*v.borrow_mut()) = 42_();
-        unimplemented!();
-        unimplemented!();
-        (*v.borrow_mut()) = 43_();
         unimplemented!();
         unimplemented!();
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*v.borrow_mut()) = 42_();
         unimplemented!();
         unimplemented!();
-        (*v.borrow_mut()) = 43_();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(true));
-        (*v.borrow_mut()) = b"bar";
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub fn test_T_assignment_basic_no_constexpr_11() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*v.borrow_mut()) = Default::default();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -294,19 +294,8 @@ impl Trace_true__true_ {
 pub fn test_T_assignment_performs_construction_12() {
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow_mut()) = (stat.as_pointer());
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow_mut()) = (stat.as_pointer());
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -316,8 +305,8 @@ pub fn test_T_assignment_performs_construction_12() {
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow_mut()) = (stat.as_pointer());
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -327,8 +316,19 @@ pub fn test_T_assignment_performs_construction_12() {
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new(1_()));
-        (*v.borrow_mut()) = (stat.as_pointer());
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -340,8 +340,8 @@ pub fn test_T_assignment_performs_construction_12() {
 pub fn test_T_assignment_performs_assignment_13() {
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new((stat.as_pointer())));
-        (*v.borrow_mut()) = <Trace_false__false__T>::default();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -353,10 +353,9 @@ pub fn test_T_assignment_performs_assignment_13() {
     }
     {
         let stat: Value<TraceStat> = Rc::new(RefCell::new(<TraceStat>::default()));
-        let v: Value<()> = Rc::new(RefCell::new((stat.as_pointer())));
-        let t: Value<Trace_false__false__T> =
-            Rc::new(RefCell::new(<Trace_false__false__T>::default()));
-        (*v.borrow_mut()) = (*t.borrow()).clone();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut t: Trace_false__false__T = <Trace_false__false__T>::default();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -372,7 +371,7 @@ pub fn test_T_assignment_performs_assignment_throw_15() {}
 pub fn test_T_assignment_vector_bool_16() {
     let mut vec_: () = unimplemented!();
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*v.borrow_mut()) = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

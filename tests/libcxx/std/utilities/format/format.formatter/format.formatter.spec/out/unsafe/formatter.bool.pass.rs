@@ -126,14 +126,14 @@ pub unsafe fn test_5(mut expected: (), mut fmt: (), mut arg: (), mut offset: ())
     unimplemented!();
 }
 pub unsafe fn test_termination_condition_6(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
 pub unsafe fn test_termination_condition_7(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();

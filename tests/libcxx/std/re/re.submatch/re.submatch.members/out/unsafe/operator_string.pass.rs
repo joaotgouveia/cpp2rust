@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut sm: () = unimplemented!();
-        let mut str: () = (unsafe { sm() });
+        let mut str: () = unimplemented!();
         unimplemented!();
         let s: [(); 4] = [('1' as ()), ('2' as ()), ('3' as ()), 0_()];
         sm.first = s.as_ptr();
@@ -36,7 +36,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let mut sm: () = unimplemented!();
-        let mut str: () = (unsafe { sm() });
+        let mut str: () = unimplemented!();
         unimplemented!();
         let s: [(); 4] = [('1' as ()), ('2' as ()), ('3' as ()), 0_()];
         sm.first = s.as_ptr();

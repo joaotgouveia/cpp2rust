@@ -160,7 +160,16 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn test_6(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
+pub unsafe fn is_string_asan_correct_6(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn test_9(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
     if ((pos) <= (unimplemented!())) {
         unimplemented!();
         unimplemented!();
@@ -168,7 +177,7 @@ pub unsafe fn test_6(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected
         unimplemented!();
     }
 }
-pub unsafe fn test_7(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_10(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
     if ((pos) <= (unimplemented!())) {
         unimplemented!();
         unimplemented!();
@@ -176,7 +185,7 @@ pub unsafe fn test_7(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected
         unimplemented!();
     }
 }
-pub unsafe fn test_8(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_11(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected: ()) {
     if ((pos) <= (unimplemented!())) {
         unimplemented!();
         unimplemented!();
@@ -184,16 +193,16 @@ pub unsafe fn test_8(mut s: (), mut sv: (), mut pos: (), mut n: (), mut expected
         unimplemented!();
     }
 }
-pub unsafe fn test_npos_9(mut s: (), mut sv: (), mut pos: (), mut expected: ()) {
+pub unsafe fn test_npos_12(mut s: (), mut sv: (), mut pos: (), mut expected: ()) {
     if ((pos) <= (unimplemented!())) {
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_string_10() {
+pub unsafe fn test_string_13() {
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -202,7 +211,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -211,7 +220,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -220,7 +229,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -229,7 +238,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -238,7 +247,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -247,7 +256,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -256,7 +265,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -265,7 +274,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -274,7 +283,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -283,7 +292,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -292,7 +301,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -301,7 +310,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -310,7 +319,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -319,7 +328,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -328,7 +337,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -337,7 +346,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -346,7 +355,7 @@ pub unsafe fn test_string_10() {
         )
     });
     (unsafe {
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -355,9 +364,9 @@ pub unsafe fn test_string_10() {
         )
     });
 }
-pub unsafe fn test_string_11() {
+pub unsafe fn test_string_14() {
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -366,7 +375,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -375,7 +384,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -384,7 +393,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -393,7 +402,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -402,7 +411,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -411,7 +420,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -420,7 +429,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -429,7 +438,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -438,7 +447,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -447,7 +456,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -456,7 +465,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -465,7 +474,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -474,7 +483,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -483,7 +492,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -492,7 +501,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -501,7 +510,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -510,7 +519,7 @@ pub unsafe fn test_string_11() {
         )
     });
     (unsafe {
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -519,9 +528,9 @@ pub unsafe fn test_string_11() {
         )
     });
 }
-pub unsafe fn test_string_12() {
+pub unsafe fn test_string_15() {
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -530,7 +539,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -539,7 +548,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -548,7 +557,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -557,7 +566,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -566,7 +575,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -575,7 +584,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -584,7 +593,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -593,7 +602,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -602,7 +611,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -611,7 +620,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -620,7 +629,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -629,7 +638,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -638,7 +647,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -647,7 +656,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -656,7 +665,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -665,7 +674,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -674,7 +683,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -683,18 +692,18 @@ pub unsafe fn test_string_12() {
         )
     });
 }
-pub unsafe fn test_13() -> () {
-    (unsafe { test_string_10() });
-    (unsafe { test_string_11() });
-    (unsafe { test_string_12() });
+pub unsafe fn test_16() -> () {
+    (unsafe { test_string_13() });
+    (unsafe { test_string_14() });
+    (unsafe { test_string_15() });
     {
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 3_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 5_(), unimplemented!()) });
-        (unsafe { test_npos_9(unimplemented!(), unimplemented!(), 6_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 3_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 5_(), unimplemented!()) });
+        (unsafe { test_npos_12(unimplemented!(), unimplemented!(), 6_(), unimplemented!()) });
     }
     {
         let mut s: () = unimplemented!();
@@ -724,7 +733,7 @@ pub unsafe fn test_13() -> () {
     }
     {
         let mut s: () = unimplemented!();
-        let mut sv: () = (unsafe { s() });
+        let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -733,7 +742,7 @@ pub unsafe fn test_13() -> () {
     }
     {
         let mut s: () = unimplemented!();
-        let mut sv: () = (unsafe { s() });
+        let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -758,7 +767,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_13() });
+    (unsafe { test_16() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

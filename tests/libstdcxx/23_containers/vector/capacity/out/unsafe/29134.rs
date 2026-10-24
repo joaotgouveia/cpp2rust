@@ -378,7 +378,7 @@ static mut alloc_map_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn test01_18() {
     let mut v: () = unimplemented!();
-    let mut a: () = (unsafe { (v as std__Vector_base_int__std_allocator_int__).get_allocator() });
+    let mut a: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -396,8 +396,8 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let istr07: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let str07: Value<()> = Rc::new(RefCell::new(({ (*istr07.borrow())() })));
+    let mut istr07: () = unimplemented!();
+    let str07: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

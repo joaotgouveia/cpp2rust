@@ -536,35 +536,35 @@ impl util_iterator_error {
 }
 pub unsafe fn test_13() {
     let mut val: () = unimplemented!();
-    let mut sv: () = (unsafe { val() });
+    let mut sv: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_14() {
     let mut val: () = unimplemented!();
-    let mut sv: () = (unsafe { val() });
+    let mut sv: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_15() {
     let mut val: () = unimplemented!();
-    let mut sv: () = (unsafe { val() });
+    let mut sv: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_16() {
     let mut val: () = unimplemented!();
-    let mut sv: () = (unsafe { val() });
+    let mut sv: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_17() {
     let mut val: () = unimplemented!();
-    let mut sv: () = (unsafe { val() });
+    let mut sv: () = unimplemented!();
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

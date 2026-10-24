@@ -259,10 +259,7 @@ pub fn test01_10() {
     let def_ec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let e1: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1(
-        { Ptr::<()>::from_string_literal(b"string literal") },
-        None,
-    )));
+    let e1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -282,10 +279,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let e2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_ios_base_failure::new_2({ __tmp_0.as_pointer() })
-    }));
+    let e2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -305,10 +299,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let e3: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1(
-        { Ptr::<()>::from_string_literal(b"string literal") },
-        { Some(ec.as_pointer()) },
-    )));
+    let e3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -328,10 +319,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let e4: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std_ios_base_failure::new_3({ __tmp_1.as_pointer() }, { ec.as_pointer() })
-    }));
+    let e4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

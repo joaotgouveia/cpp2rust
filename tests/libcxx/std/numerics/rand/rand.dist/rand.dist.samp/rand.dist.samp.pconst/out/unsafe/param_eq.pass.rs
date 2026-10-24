@@ -26,35 +26,31 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
         let mut p: [(); 3] = [25_(), 62.5_f64, 12.5_f64];
-        let mut p1: std_piecewise_constant_distribution___param_type =
-            std_piecewise_constant_distribution___param_type::new_1(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((4_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut p2: std_piecewise_constant_distribution___param_type =
-            std_piecewise_constant_distribution___param_type::new_1(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((4_()) as isize) },
-                { p.as_mut_ptr() },
-            );
+        let mut p1: () = std_piecewise_constant_distribution___param_type::new_1(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((4_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut p2: () = std_piecewise_constant_distribution___param_type::new_1(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((4_()) as isize) },
+            { p.as_mut_ptr() },
+        );
         unimplemented!();
     }
     {
         let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
         let mut p: [(); 3] = [25_(), 62.5_f64, 12.5_f64];
-        let mut p1: std_piecewise_constant_distribution___param_type =
-            std_piecewise_constant_distribution___param_type::new_1(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((3_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut p2: std_piecewise_constant_distribution___param_type =
-            std_piecewise_constant_distribution___param_type::new_1(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((4_()) as isize) },
-                { p.as_mut_ptr() },
-            );
+        let mut p1: () = std_piecewise_constant_distribution___param_type::new_1(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((3_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut p2: () = std_piecewise_constant_distribution___param_type::new_1(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((4_()) as isize) },
+            { p.as_mut_ptr() },
+        );
         unimplemented!();
     }
     return 0_();

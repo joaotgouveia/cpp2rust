@@ -261,7 +261,7 @@ pub unsafe fn test07_10() {
     let mut iss: () = unimplemented!();
     let mut i: () = 0_();
     let mut s: () = unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         i.prefix_inc();
     }
     let mut __do_while = true;

@@ -10,6 +10,18 @@ pub fn DoNotOptimize_0(value: Ptr<()>) -> Ptr<()> {
     b"";
     return (value).clone();
 }
+pub fn is_string_asan_correct_1(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_2(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_3(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
+    return true;
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(80)]
 pub struct MultiStringType {
@@ -72,28 +84,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_2.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
+        return ((alloc_count_6.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_7.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_8.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_5.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_7.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_1: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_5: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_3: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_7: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_4: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_8: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -180,71 +192,71 @@ pub struct tiny_size_allocator_32__wchar_t__rebind_wchar_t_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct tiny_size_allocator_32__wchar_t_ {}
-pub fn test_6(s: (), mut n: (), mut expected: ()) {
+pub fn test_10(s: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7(s: (), mut n: (), mut expected: ()) {
+pub fn test_11(s: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(s: (), mut n: (), mut expected: ()) {
+pub fn test_12(s: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_9(s: (), mut n: (), mut expected: ()) {
+pub fn test_13(s: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_10() {
+pub fn test_string_14() {
     {
-        ({ test_6(unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_6(unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_6(unimplemented!(), 10_(), unimplemented!()) });
-        ({ test_6(unimplemented!(), 100_(), unimplemented!()) });
-        ({ test_6(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 10_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 100_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_6(_s, 2_(), _expected)
+            test_10(_s, 2_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_6(_s, 5_(), _expected)
+            test_10(_s, 5_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_6(_s, 15_(), _expected)
+            test_10(_s, 15_(), _expected)
         });
-        ({ test_6(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_10(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_6(_s, 10_(), _expected)
-        });
-        ({
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_6(_s, 50_(), _expected)
+            test_10(_s, 10_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_6(_s, 60_(), _expected)
+            test_10(_s, 50_(), _expected)
+        });
+        ({
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_10(_s, 60_(), _expected)
         });
     }
     {
@@ -253,43 +265,43 @@ pub fn test_string_10() {
         unimplemented!();
     }
 }
-pub fn test_string_11() {
+pub fn test_string_15() {
     {
-        ({ test_7(unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_7(unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_7(unimplemented!(), 10_(), unimplemented!()) });
-        ({ test_7(unimplemented!(), 100_(), unimplemented!()) });
-        ({ test_7(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 10_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 100_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_7(_s, 2_(), _expected)
+            test_11(_s, 2_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_7(_s, 5_(), _expected)
+            test_11(_s, 5_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_7(_s, 15_(), _expected)
+            test_11(_s, 15_(), _expected)
         });
-        ({ test_7(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_11(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_7(_s, 10_(), _expected)
-        });
-        ({
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_7(_s, 50_(), _expected)
+            test_11(_s, 10_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_7(_s, 60_(), _expected)
+            test_11(_s, 50_(), _expected)
+        });
+        ({
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_11(_s, 60_(), _expected)
         });
     }
     {
@@ -298,43 +310,43 @@ pub fn test_string_11() {
         unimplemented!();
     }
 }
-pub fn test_string_12() {
+pub fn test_string_16() {
     {
-        ({ test_8(unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_8(unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_8(unimplemented!(), 10_(), unimplemented!()) });
-        ({ test_8(unimplemented!(), 100_(), unimplemented!()) });
-        ({ test_8(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 10_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 100_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_8(_s, 2_(), _expected)
+            test_12(_s, 2_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_8(_s, 5_(), _expected)
+            test_12(_s, 5_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_8(_s, 15_(), _expected)
+            test_12(_s, 15_(), _expected)
         });
-        ({ test_8(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_12(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_8(_s, 10_(), _expected)
-        });
-        ({
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_8(_s, 50_(), _expected)
+            test_12(_s, 10_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_8(_s, 60_(), _expected)
+            test_12(_s, 50_(), _expected)
+        });
+        ({
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_12(_s, 60_(), _expected)
         });
     }
     {
@@ -343,43 +355,43 @@ pub fn test_string_12() {
         unimplemented!();
     }
 }
-pub fn test_string_13() {
+pub fn test_string_17() {
     {
-        ({ test_9(unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_9(unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_9(unimplemented!(), 10_(), unimplemented!()) });
-        ({ test_9(unimplemented!(), 100_(), unimplemented!()) });
-        ({ test_9(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 10_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 100_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_9(_s, 2_(), _expected)
+            test_13(_s, 2_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_9(_s, 5_(), _expected)
+            test_13(_s, 5_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_9(_s, 15_(), _expected)
+            test_13(_s, 15_(), _expected)
         });
-        ({ test_9(unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_13(unimplemented!(), 0_(), unimplemented!()) });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_9(_s, 10_(), _expected)
-        });
-        ({
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_9(_s, 50_(), _expected)
+            test_13(_s, 10_(), _expected)
         });
         ({
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_9(_s, 60_(), _expected)
+            test_13(_s, 50_(), _expected)
+        });
+        ({
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_13(_s, 60_(), _expected)
         });
     }
     {
@@ -388,11 +400,11 @@ pub fn test_string_13() {
         unimplemented!();
     }
 }
-pub fn test_14() -> () {
-    ({ test_string_10() });
-    ({ test_string_11() });
-    ({ test_string_12() });
-    ({ test_string_13() });
+pub fn test_18() -> () {
+    ({ test_string_14() });
+    ({ test_string_15() });
+    ({ test_string_16() });
+    ({ test_string_17() });
     return true;
 }
 pub fn main() {
@@ -415,7 +427,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_14() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -655,7 +667,7 @@ impl safe_allocator_char_Impl for Ptr<safe_allocator_char_> {
         let memory: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
         {
             ({
-                memset_5(
+                memset_9(
                     (*memory.borrow()).to_any(),
                     0_(),
                     (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -669,7 +681,7 @@ impl safe_allocator_char_Impl for Ptr<safe_allocator_char_> {
             ({
                 let _value: Value<()> = Rc::new(RefCell::new(
                     ({
-                        memset_5(
+                        memset_9(
                             (p).to_any(),
                             0_(),
                             (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -717,8 +729,8 @@ impl tiny_size_allocator_32__wchar_t_Impl for Ptr<tiny_size_allocator_32__wchar_
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_1.with(|_| ());
-    let _ = alloc_count_2.with(|_| ());
-    let _ = dealloc_count_3.with(|_| ());
-    let _ = disable_default_constructor_4.with(|_| ());
+    let _ = outstanding_bytes_5.with(|_| ());
+    let _ = alloc_count_6.with(|_| ());
+    let _ = dealloc_count_7.with(|_| ());
+    let _ = disable_default_constructor_8.with(|_| ());
 }

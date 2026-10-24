@@ -112,7 +112,16 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn test_6(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
+pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_9(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
@@ -123,7 +132,7 @@ pub fn test_6(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_7(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
+pub fn test_10(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
@@ -134,7 +143,7 @@ pub fn test_7(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_8(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
+pub fn test_11(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
@@ -145,9 +154,9 @@ pub fn test_8(s: (), mut pos: (), mut str: Ptr<()>, mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_string_9() {
+pub fn test_string_12() {
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -155,7 +164,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -163,7 +172,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -171,7 +180,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -179,7 +188,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -187,7 +196,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -195,7 +204,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -203,7 +212,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -211,7 +220,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -219,7 +228,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -227,7 +236,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -235,7 +244,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -243,7 +252,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -251,7 +260,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -259,7 +268,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -267,7 +276,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -275,7 +284,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b""),
@@ -283,7 +292,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -291,7 +300,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -299,7 +308,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -307,7 +316,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b""),
@@ -315,7 +324,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -323,7 +332,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -331,7 +340,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -339,7 +348,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b""),
@@ -347,7 +356,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -355,7 +364,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -363,7 +372,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -371,7 +380,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b""),
@@ -379,7 +388,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -387,7 +396,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -395,7 +404,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -403,7 +412,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -411,7 +420,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -419,7 +428,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -427,7 +436,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -435,7 +444,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -443,7 +452,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -451,7 +460,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -459,7 +468,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -467,7 +476,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b""),
@@ -475,7 +484,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -483,7 +492,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -491,7 +500,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -499,7 +508,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b""),
@@ -507,7 +516,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -515,7 +524,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -523,7 +532,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -531,7 +540,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b""),
@@ -539,7 +548,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -547,7 +556,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -555,7 +564,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -563,7 +572,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b""),
@@ -571,7 +580,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -579,7 +588,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -587,7 +596,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -595,7 +604,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -603,7 +612,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -611,7 +620,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -619,7 +628,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -627,7 +636,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -635,7 +644,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -643,7 +652,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -651,7 +660,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -659,7 +668,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b""),
@@ -667,7 +676,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -675,7 +684,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -683,7 +692,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -691,7 +700,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b""),
@@ -699,7 +708,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -707,7 +716,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -715,7 +724,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -723,7 +732,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b""),
@@ -731,7 +740,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -739,7 +748,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -747,7 +756,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -755,7 +764,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b""),
@@ -763,7 +772,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -771,7 +780,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -779,649 +788,7 @@ pub fn test_string_9() {
         )
     });
     ({
-        test_6(
-            unimplemented!(),
-            21_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-}
-pub fn test_string_10() {
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            2_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            2_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            2_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            2_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            4_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            4_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            4_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            4_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            6_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            6_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            6_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            6_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            5_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            9_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            9_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            9_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            9_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            11_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            11_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            11_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            11_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            0_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            1_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            10_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            19_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            19_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            19_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            19_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            20_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            20_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            20_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            20_(),
-            Ptr::<()>::from_string_literal(b"12345678901234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            21_(),
-            Ptr::<()>::from_string_literal(b""),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            21_(),
-            Ptr::<()>::from_string_literal(b"12345"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
-            unimplemented!(),
-            21_(),
-            Ptr::<()>::from_string_literal(b"1234567890"),
-            unimplemented!(),
-        )
-    });
-    ({
-        test_7(
+        test_9(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1429,9 +796,9 @@ pub fn test_string_10() {
         )
     });
 }
-pub fn test_string_11() {
+pub fn test_string_13() {
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1439,7 +806,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1447,7 +814,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1455,7 +822,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1463,7 +830,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1471,7 +838,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1479,7 +846,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1487,7 +854,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1495,7 +862,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1503,7 +870,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1511,7 +878,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1519,7 +886,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1527,7 +894,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1535,7 +902,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1543,7 +910,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1551,7 +918,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1559,7 +926,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1567,7 +934,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1575,7 +942,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1583,7 +950,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             2_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1591,7 +958,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1599,7 +966,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1607,7 +974,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1615,7 +982,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             4_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1623,7 +990,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1631,7 +998,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1639,7 +1006,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1647,7 +1014,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1655,7 +1022,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1663,7 +1030,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1671,7 +1038,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1679,7 +1046,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             6_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1687,7 +1054,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1695,7 +1062,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1703,7 +1070,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1711,7 +1078,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1719,7 +1086,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1727,7 +1094,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1735,7 +1102,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1743,7 +1110,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1751,7 +1118,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1759,7 +1126,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1767,7 +1134,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1775,7 +1142,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             5_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1783,7 +1150,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1791,7 +1158,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1799,7 +1166,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1807,7 +1174,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             9_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1815,7 +1182,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1823,7 +1190,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1831,7 +1198,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1839,7 +1206,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1847,7 +1214,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1855,7 +1222,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1863,7 +1230,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1871,7 +1238,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             11_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1879,7 +1246,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1887,7 +1254,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1895,7 +1262,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1903,7 +1270,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             0_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1911,7 +1278,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1919,7 +1286,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1927,7 +1294,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1935,7 +1302,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             1_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1943,7 +1310,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1951,7 +1318,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1959,7 +1326,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1967,7 +1334,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             10_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -1975,7 +1342,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b""),
@@ -1983,7 +1350,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -1991,7 +1358,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -1999,7 +1366,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             19_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -2007,7 +1374,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b""),
@@ -2015,7 +1382,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -2023,7 +1390,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -2031,7 +1398,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             20_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -2039,7 +1406,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b""),
@@ -2047,7 +1414,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"12345"),
@@ -2055,7 +1422,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"1234567890"),
@@ -2063,7 +1430,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_8(
+        test_10(
             unimplemented!(),
             21_(),
             Ptr::<()>::from_string_literal(b"12345678901234567890"),
@@ -2071,10 +1438,652 @@ pub fn test_string_11() {
         )
     });
 }
-pub fn test_12() -> () {
-    ({ test_string_9() });
-    ({ test_string_10() });
-    ({ test_string_11() });
+pub fn test_string_14() {
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            2_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            2_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            2_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            2_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            4_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            4_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            4_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            4_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            6_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            6_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            6_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            6_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            5_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            9_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            9_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            9_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            9_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            11_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            11_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            11_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            11_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            0_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            1_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            10_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            19_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            19_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            19_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            19_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            20_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            20_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            20_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            20_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            21_(),
+            Ptr::<()>::from_string_literal(b""),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            21_(),
+            Ptr::<()>::from_string_literal(b"12345"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            21_(),
+            Ptr::<()>::from_string_literal(b"1234567890"),
+            unimplemented!(),
+        )
+    });
+    ({
+        test_11(
+            unimplemented!(),
+            21_(),
+            Ptr::<()>::from_string_literal(b"12345678901234567890"),
+            unimplemented!(),
+        )
+    });
+}
+pub fn test_15() -> () {
+    ({ test_string_12() });
+    ({ test_string_13() });
+    ({ test_string_14() });
     {
         let mut s_short: () = unimplemented!();
         let mut s_long: () = unimplemented!();
@@ -2109,7 +2118,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_12() });
+    ({ test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

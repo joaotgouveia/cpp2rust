@@ -31,21 +31,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut uPtr: () = unimplemented!();
         let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<()>> = ({ (*oPtr.borrow())() });
+        let mut pPtr: Ptr<Ptr<()>> = unimplemented!();
         unimplemented!();
     }
     {
         let uPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: Ptr<Ptr<()>> = ({ (*oPtr.borrow())() });
+        let mut pPtr: Ptr<Ptr<()>> = unimplemented!();
         unimplemented!();
     }
     {
         let mut uPtr: () = unimplemented!();
         let oPtr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "noexcept(oPtr.operator void**())");;
-        let mut pPtr: Ptr<()> = ({ (*oPtr.borrow()).to_pmut_4() });
+        let mut pPtr: Ptr<()> = unimplemented!();
         unimplemented!();
     }
     return 0_();

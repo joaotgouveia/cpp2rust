@@ -1361,7 +1361,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::is_same_v<decltype(fwl)::value_type, unsigned>");;
         unimplemented!();
         let mut it: () = unimplemented!();
-        (unsafe { advance_18(&mut it, 2_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -1373,7 +1373,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         );;
         unimplemented!();
         let mut it: () = unimplemented!();
-        (unsafe { advance_19(&mut it, 3_()) });
+        unimplemented!();
         unimplemented!();
     }
     {

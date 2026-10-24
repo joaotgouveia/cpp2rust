@@ -274,7 +274,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*os.borrow())() }) && (unimplemented!())) {
+        if !((unimplemented!()) && (unimplemented!())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -305,7 +305,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*os2.borrow())() }) && (unimplemented!())) {
+        if !((unimplemented!()) && (unimplemented!())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

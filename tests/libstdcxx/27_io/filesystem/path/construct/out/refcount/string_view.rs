@@ -462,14 +462,14 @@ pub fn test01_18() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let sv: Value<()> = Rc::new(RefCell::new(({ (*s.borrow())() })));
+        let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p1.as_pointer(), p2.as_pointer()) });
-        let ws: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut ws: () = unimplemented!();
         let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let wsv: Value<()> = Rc::new(RefCell::new(({ (*ws.borrow())() })));
+        let wsv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({ compare_paths_0(p1.as_pointer(), p4.as_pointer()) });
     }

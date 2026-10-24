@@ -257,10 +257,7 @@ impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let strbuf01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let strm1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sentry1: Value<std_basic_ostream_char__sentry> =
-        Rc::new(RefCell::new(std_basic_ostream_char__sentry::new({
-            strm1.as_pointer()
-        })));
+    let sentry1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

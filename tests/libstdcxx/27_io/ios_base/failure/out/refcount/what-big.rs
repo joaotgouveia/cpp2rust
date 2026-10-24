@@ -255,14 +255,12 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let xxx: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-        xxx.as_pointer()
-    })));
+    let mut xxx: () = unimplemented!();
+    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(({ strstr_11(({ (*t.borrow()).what() }), unimplemented!()) }).is_null())) {
+        if !(!(({ strstr_11(unimplemented!(), unimplemented!()) }).is_null())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

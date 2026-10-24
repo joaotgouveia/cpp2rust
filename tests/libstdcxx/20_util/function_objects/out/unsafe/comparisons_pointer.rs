@@ -269,7 +269,7 @@ pub unsafe fn test01_12() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -301,7 +301,7 @@ pub unsafe fn test01_12() {
         .offset((8_()) as isize);
     let mut gt2: () = unimplemented!();
     unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -335,7 +335,7 @@ pub unsafe fn test02_14() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -367,7 +367,7 @@ pub unsafe fn test02_14() {
         .offset((8_()) as isize);
     let mut lt2: () = unimplemented!();
     unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -401,7 +401,7 @@ pub unsafe fn test03_15() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -434,7 +434,7 @@ pub unsafe fn test03_15() {
         .offset((8_()) as isize);
     let mut ge2: () = unimplemented!();
     unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -469,7 +469,7 @@ pub unsafe fn test04_16() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -502,7 +502,7 @@ pub unsafe fn test04_16() {
         .offset((8_()) as isize);
     let mut le2: () = unimplemented!();
     unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -549,7 +549,7 @@ pub unsafe fn test05_19() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -581,7 +581,7 @@ pub unsafe fn test05_19() {
         .offset((4_()) as isize);
     let mut lt2: () = unimplemented!();
     unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;

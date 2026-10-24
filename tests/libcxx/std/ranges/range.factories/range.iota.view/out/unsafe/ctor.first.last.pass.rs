@@ -279,25 +279,17 @@ const _: () = assert!(
 pub unsafe fn test_26() -> () {
     {
         let mut commonView: () = unimplemented!();
-        let mut io: () = std_ranges_iota_view_SomeInt__SomeInt_::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+        let mut io: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut unreachableSent: () = unimplemented!();
-        let mut io: () = std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        );
+        let mut io: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut differentTypes: () = unimplemented!();
-        let mut io: () = std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt__::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        );
+        let mut io: () = unimplemented!();
         unimplemented!();
     }
     {

@@ -94,14 +94,10 @@ fn main_0() -> () {
     unimplemented!();
     let pdb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut i: () = unimplemented!();
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pi: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::null()));
-    let to: Value<()> = Rc::new(RefCell::new(
-        std_tuple_int_ref__double_ref__int_ptrref_::new({ i.as_pointer() }, { d.as_pointer() }, {
-            pi.as_pointer()
-        }),
-    ));
+    let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();

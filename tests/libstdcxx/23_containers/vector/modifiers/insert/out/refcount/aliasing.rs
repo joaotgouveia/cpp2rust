@@ -276,7 +276,7 @@ impl T {
             child: unimplemented!(),
             value: t.with(|__s| __s.value),
         };
-        if ({ t.with(|__s| __s.child.clone())() }) {
+        if unimplemented!() {
             unimplemented!();
         }
         __this
@@ -627,8 +627,8 @@ impl TImpl for Ptr<T> {
     }
     fn copy_assign(&self, t: Ptr<T>) -> Ptr<T> {
         field!((*self), value).write({ t.with(|__s| __s.value) });
-        if ({ t.with(|__s| __s.child.clone())() }) {
-            if ({ (*self).with(|__s| __s.child.clone())() }) {
+        if unimplemented!() {
+            if unimplemented!() {
                 ({
                     let _t: Ptr<T> = unimplemented!();
                     TImpl::copy_assign(&unimplemented!(), _t)

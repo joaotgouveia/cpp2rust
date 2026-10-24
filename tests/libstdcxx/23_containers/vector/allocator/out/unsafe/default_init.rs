@@ -396,13 +396,7 @@ pub unsafe fn test01_17() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe {
-            (*(tmp as *const std__Vector_base_int____gnu_test_default_init_allocator_int__))
-                .get_allocator()
-        })
-        .state)
-            == (0_()))
-        {
+        if !((unimplemented!().state) == (0_())) {
             (unsafe {
                 __builtin_fprintf_19(
                     libcc2rs::stderr_unsafe(),
@@ -432,13 +426,7 @@ pub unsafe fn test02_20() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unsafe {
-            (*(tmp as *const std__Vector_base_int____gnu_test_default_init_allocator_int__))
-                .get_allocator()
-        })
-        .state)
-            == (0_()))
-        {
+        if !((unimplemented!().state) == (0_())) {
             (unsafe {
                 __builtin_fprintf_19(
                     libcc2rs::stderr_unsafe(),

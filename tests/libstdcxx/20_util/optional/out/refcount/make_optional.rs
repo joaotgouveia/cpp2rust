@@ -293,7 +293,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*o.borrow())() }) && ((unimplemented!().read()) == 42_())) {
+        if !((unimplemented!()) && ((unimplemented!().read()) == 42_())) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -342,7 +342,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*o2.borrow())() }) && ((({ get_12(unimplemented!()) }).read()) == 1_()))
+        if !(((unimplemented!()) && ((({ get_12(unimplemented!()) }).read()) == 1_()))
             && ((({ get_13(unimplemented!()) }).read()) == 2_()))
         {
             ({
@@ -371,7 +371,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ (*o3.borrow())() }) && ((unimplemented!().read()) == 42_()))
+        if !(((unimplemented!()) && ((unimplemented!().read()) == 42_()))
             && ((unimplemented!().read()) == 666_()))
         {
             ({
@@ -400,7 +400,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((({ (*o4.borrow())() }) && ((unimplemented!().read()) == 42_()))
+        if !(((((unimplemented!()) && ((unimplemented!().read()) == 42_()))
             && ((unimplemented!().read()) == 666_()))
             && ((({ get_12(field_ptr!(unimplemented!(), t)) }).read()) == 0_()))
             && ((({ get_13(field_ptr!(unimplemented!(), t)) }).read()) == 0_()))
@@ -429,7 +429,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((({ (*o4.borrow())() }) && ((unimplemented!().read()) == 1_()))
+        if !(((((unimplemented!()) && ((unimplemented!().read()) == 1_()))
             && ((unimplemented!().read()) == 2_()))
             && ((({ get_12(field_ptr!(unimplemented!(), t)) }).read()) == 3_()))
             && ((({ get_13(field_ptr!(unimplemented!(), t)) }).read()) == 4_()))

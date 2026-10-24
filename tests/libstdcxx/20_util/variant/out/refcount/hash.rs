@@ -284,7 +284,7 @@ pub fn main() {
 }
 fn main_0() -> () {
     let mut x: () = 42_();
-    let x2: Value<()> = Rc::new(RefCell::new(42_()));
+    let x2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -474,12 +474,12 @@ pub unsafe fn test01_18() {
     ) {
         let mut s: () = unimplemented!();
         let mut p1: () = unimplemented!();
-        let mut sv: () = (unsafe { s() });
+        let mut sv: () = unimplemented!();
         let mut p2: () = unimplemented!();
         (unsafe { compare_paths_0(&p1, &p2) });
         let mut ws: () = unimplemented!();
         let mut p3: () = unimplemented!();
-        let mut wsv: () = (unsafe { ws() });
+        let mut wsv: () = unimplemented!();
         let mut p4: () = unimplemented!();
         (unsafe { compare_paths_0(&p1, &p4) });
     }

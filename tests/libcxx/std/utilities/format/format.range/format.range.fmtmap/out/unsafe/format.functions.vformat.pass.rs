@@ -433,7 +433,7 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut __tmp_0: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_0;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(0).call(
                 unimplemented!(),
@@ -608,7 +608,7 @@ pub unsafe fn test_char_26(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut __tmp_1: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(0).call(
                 unimplemented!(),
@@ -851,7 +851,7 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut __tmp_2: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_2;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(21).call(
                 unimplemented!(),
@@ -1026,7 +1026,7 @@ pub unsafe fn test_char_27(mut check: FnPtr<Generic>, mut check_exception: FnPtr
     let mut __tmp_3: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_3;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(21).call(
                 unimplemented!(),
@@ -1268,7 +1268,7 @@ pub unsafe fn test_char_to_wchar_28(
     let mut __tmp_4: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_4;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(2).call(
                 unimplemented!(),
@@ -1443,7 +1443,7 @@ pub unsafe fn test_char_to_wchar_28(
     let mut __tmp_5: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_5;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(2).call(
                 unimplemented!(),
@@ -1690,7 +1690,7 @@ pub unsafe fn test_bool_29(
     let mut __tmp_6: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_6;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -1833,7 +1833,7 @@ pub unsafe fn test_bool_29(
     let mut __tmp_7: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_7;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -2082,7 +2082,7 @@ pub unsafe fn test_bool_30(
     let mut __tmp_8: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_8;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -2225,7 +2225,7 @@ pub unsafe fn test_bool_30(
     let mut __tmp_9: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_9;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -2470,7 +2470,7 @@ pub unsafe fn test_bool_31(
     let mut __tmp_10: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_10;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -2613,7 +2613,7 @@ pub unsafe fn test_bool_31(
     let mut __tmp_11: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_11;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -2858,7 +2858,7 @@ pub unsafe fn test_bool_32(
     let mut __tmp_12: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_12;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -3001,7 +3001,7 @@ pub unsafe fn test_bool_32(
     let mut __tmp_13: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_13;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -3266,7 +3266,7 @@ pub unsafe fn test_int_35(
     let mut __tmp_14: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_14;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -3409,7 +3409,7 @@ pub unsafe fn test_int_35(
     let mut __tmp_15: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_15;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -3654,7 +3654,7 @@ pub unsafe fn test_int_36(
     let mut __tmp_16: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_16;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -3797,7 +3797,7 @@ pub unsafe fn test_int_36(
     let mut __tmp_17: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_17;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -4054,7 +4054,7 @@ pub unsafe fn test_int_37(
     let mut __tmp_18: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_18;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut adaptor = input;
@@ -4209,7 +4209,7 @@ pub unsafe fn test_int_37(
     let mut __tmp_19: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_19;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut adaptor = input;
@@ -4457,7 +4457,7 @@ pub unsafe fn test_int_38(
     let mut __tmp_20: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_20;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -4600,7 +4600,7 @@ pub unsafe fn test_int_38(
     let mut __tmp_21: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_21;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -4845,7 +4845,7 @@ pub unsafe fn test_int_39(
     let mut __tmp_22: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_22;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -4988,7 +4988,7 @@ pub unsafe fn test_int_39(
     let mut __tmp_23: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_23;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut () = input;
@@ -5245,7 +5245,7 @@ pub unsafe fn test_int_40(
     let mut __tmp_24: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_24;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut adaptor = input;
@@ -5400,7 +5400,7 @@ pub unsafe fn test_int_40(
     let mut __tmp_25: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_25;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _fmt: () = unimplemented!();
             let _args: *mut adaptor = input;
@@ -5667,7 +5667,7 @@ pub unsafe fn test_floating_point_43(
     let mut __tmp_26: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_26;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(12).call(
                 unimplemented!(),
@@ -5814,7 +5814,7 @@ pub unsafe fn test_floating_point_43(
     let mut __tmp_27: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_27;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(12).call(
                 unimplemented!(),
@@ -6056,7 +6056,7 @@ pub unsafe fn test_floating_point_44(
     let mut __tmp_28: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_28;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(31).call(
                 unimplemented!(),
@@ -6203,7 +6203,7 @@ pub unsafe fn test_floating_point_44(
     let mut __tmp_29: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_29;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(31).call(
                 unimplemented!(),
@@ -6428,7 +6428,7 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut __tmp_30: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_30;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(14).call(
                 unimplemented!(),
@@ -6575,7 +6575,7 @@ pub unsafe fn test_pointer_45(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut __tmp_31: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_31;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(14).call(
                 unimplemented!(),
@@ -6800,7 +6800,7 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut __tmp_32: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_32;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(33).call(
                 unimplemented!(),
@@ -6947,7 +6947,7 @@ pub unsafe fn test_pointer_46(mut check: FnPtr<Generic>, mut check_exception: Fn
     let mut __tmp_33: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_33;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(33).call(
                 unimplemented!(),
@@ -7172,7 +7172,7 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut __tmp_34: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_34;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(16).call(
                 unimplemented!(),
@@ -7319,7 +7319,7 @@ pub unsafe fn test_string_47(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut __tmp_35: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_35;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(16).call(
                 unimplemented!(),
@@ -7544,7 +7544,7 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut __tmp_36: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_36;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(35).call(
                 unimplemented!(),
@@ -7691,7 +7691,7 @@ pub unsafe fn test_string_48(mut check: FnPtr<Generic>, mut check_exception: FnP
     let mut __tmp_37: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_37;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(35).call(
                 unimplemented!(),

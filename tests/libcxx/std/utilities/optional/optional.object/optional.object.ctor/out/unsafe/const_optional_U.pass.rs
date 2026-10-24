@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_0(rhs: *const (), mut is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| unsafe { false });
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -20,7 +20,7 @@ pub unsafe fn test_0(rhs: *const (), mut is_going_to_throw: Option<()>) {
 }
 pub unsafe fn test_1(rhs: *const (), mut is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| unsafe { false });
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -32,7 +32,7 @@ pub unsafe fn test_1(rhs: *const (), mut is_going_to_throw: Option<()>) {
 }
 pub unsafe fn test_2(rhs: *const (), mut is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| unsafe { false });
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -44,7 +44,7 @@ pub unsafe fn test_2(rhs: *const (), mut is_going_to_throw: Option<()>) {
 }
 pub unsafe fn test_3(rhs: *const (), mut is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| unsafe { false });
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }

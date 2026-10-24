@@ -94,9 +94,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -121,9 +121,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

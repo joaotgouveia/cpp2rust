@@ -432,7 +432,7 @@ pub fn test_read_24(policy: LibraryDefaultBuffer, payload_sizes: Ptr<()>) {
         });
         unimplemented!();
         unimplemented!();
-        let in_sz: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -577,7 +577,7 @@ pub fn test_read_26(policy: LibraryManagedBuffer, payload_sizes: Ptr<()>) {
         });
         unimplemented!();
         unimplemented!();
-        let in_sz: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(
@@ -720,7 +720,7 @@ pub fn test_read_30(policy: UserManagedBuffer, payload_sizes: Ptr<()>) {
         ({ UserManagedBufferImpl::operator_call_5(&policy.as_pointer(), ifs.as_pointer()) });
         unimplemented!();
         unimplemented!();
-        let in_sz: Value<()> = Rc::new(RefCell::new(({ unimplemented!()() })));
+        let in_sz: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _condition: () = ((*in_sz.borrow()) == (*total_size.borrow()));
             let _arg: Value<FnPtr<fn()>> = Rc::new(RefCell::new(lambda!(

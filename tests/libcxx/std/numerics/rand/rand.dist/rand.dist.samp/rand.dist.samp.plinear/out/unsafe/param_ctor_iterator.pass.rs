@@ -447,29 +447,28 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 1] = [10_()];
         let mut p: [(); 1] = [12_()];
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_1(
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (b.as_mut_ptr()).cast_const()
-                    }))
-                },
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (b.as_mut_ptr()).cast_const()
-                    }))
-                },
-                {
-                    (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
-                        (p.as_mut_ptr()).cast_const()
-                    }))
-                },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = std_piecewise_linear_distribution___param_type::new_1(
+            {
+                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
+                    (b.as_mut_ptr()).cast_const()
+                }))
+            },
+            {
+                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
+                    (b.as_mut_ptr()).cast_const()
+                }))
+            },
+            {
+                (cpp17_input_iterator_const_double_ptr__const_double_ptr_::new({
+                    (p.as_mut_ptr()).cast_const()
+                }))
+            },
+        );
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -477,17 +476,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 1] = [10_()];
         let mut p: [(); 1] = [12_()];
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_2(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((1_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = std_piecewise_linear_distribution___param_type::new_2(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((1_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -495,17 +493,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 2] = [10_(), 15_()];
         let mut p: [(); 2] = [12_(), 12_()];
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_2(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((2_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = std_piecewise_linear_distribution___param_type::new_2(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((2_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -513,18 +510,17 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 3] = [10_(), 15_(), 16_()];
         let mut p: [(); 3] = [0.25_f64, 0.75_f64, 0.25_f64];
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_2(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((3_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = std_piecewise_linear_distribution___param_type::new_2(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((3_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -533,19 +529,18 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut b: [(); 4] = [10_(), 14_(), 16_(), 17_()];
         let mut p: [(); 4] = [0_(), 1_(), 1_(), 0_()];
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_2(
-                { b.as_mut_ptr() },
-                { b.as_mut_ptr().offset((4_()) as isize) },
-                { p.as_mut_ptr() },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = std_piecewise_linear_distribution___param_type::new_2(
+            { b.as_mut_ptr() },
+            { b.as_mut_ptr().offset((4_()) as isize) },
+            { p.as_mut_ptr() },
+        );
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -169,10 +169,7 @@ pub fn test_5() -> () {
             ip.prefix_inc();
         }
         unimplemented!();
-        let it: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_S__void_ptr_::new_1({ __tmp_0.as_pointer() })
-        }));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut ip: Ptr<()> = (a2.as_pointer() as Ptr<()>);
         'loop_: while ({ (ip).clone() } < { (a2.as_pointer() as Ptr<()>).offset((5_()) as isize) })
         {

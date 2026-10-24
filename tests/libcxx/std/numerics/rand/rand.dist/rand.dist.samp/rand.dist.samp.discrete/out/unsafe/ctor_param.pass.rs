@@ -25,10 +25,9 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 2] = [10_(), 30_()];
-        let mut pa: std_discrete_distribution___param_type =
-            std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
-                p0.as_mut_ptr().offset((2_()) as isize)
-            });
+        let mut pa: () = std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
+            p0.as_mut_ptr().offset((2_()) as isize)
+        });
         let mut d: () = unimplemented!();
         let mut p: () = unimplemented!();
         unimplemented!();

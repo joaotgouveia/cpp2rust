@@ -16,7 +16,7 @@ pub unsafe fn set_0(mut ref_: (), mut val: ()) {
     (*unimplemented!()) = val;
 }
 pub unsafe fn read_1(mut ref_: ()) -> () {
-    let r: *mut () = (unsafe { ref_() });
+    let r: *mut () = unimplemented!();
     return (*r);
 }
 pub fn main() {
@@ -27,23 +27,23 @@ pub fn main() {
 }
 unsafe fn main_0() -> () {
     let mut i1: () = 10_();
-    let mut ref_1: () = std_reference_wrapper_int_::new({ &mut i1 });
+    let mut ref_1: () = unimplemented!();
     (*unimplemented!()) = 20_();
-    let i2: *mut () = (unsafe { ref_1() });
+    let i2: *mut () = unimplemented!();
     (*i2) += 5_();
     unimplemented!();
     let mut i3: () = 1_();
     let mut i4: () = 2_();
-    let mut ref_3: () = std_reference_wrapper_int_::new({ &mut i3 });
-    let mut ref_4: () = std_reference_wrapper_int_::new({ &mut i4 });
+    let mut ref_3: () = unimplemented!();
+    let mut ref_4: () = unimplemented!();
     (*unimplemented!()) = (*unimplemented!());
     unimplemented!();
     (unsafe { set_0(unimplemented!(), 99_()) });
     unimplemented!();
     let mut point: Point = Point { x: 3_(), y: 4_() };
-    let mut point_ref: () = std_reference_wrapper_Point_::new({ &mut point });
+    let mut point_ref: () = unimplemented!();
     (*unimplemented!()).x = 30_();
-    (*(unsafe { point_ref() })).y = 40_();
+    (*unimplemented!()).y = 40_();
     unimplemented!();
     return 0_();
 }

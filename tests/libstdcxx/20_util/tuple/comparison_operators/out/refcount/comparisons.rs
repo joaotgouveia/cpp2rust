@@ -259,33 +259,13 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut i: () = 0_();
     let j: Value<()> = Rc::new(RefCell::new(0_()));
     let k: Value<()> = Rc::new(RefCell::new(2_()));
-    let a: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
-        std_tuple_int__int__int_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() }, {
-            __tmp_2.as_pointer()
-        })
-    }));
-    let b: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_4: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_5: Value<()> = Rc::new(RefCell::new(1_()));
-        std_tuple_int__int__int_::new({ __tmp_3.as_pointer() }, { __tmp_4.as_pointer() }, {
-            __tmp_5.as_pointer()
-        })
-    }));
-    let c: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref__int_ref__int_ref_::new(
-        { i.as_pointer() },
-        { j.as_pointer() },
-        { k.as_pointer() },
-    )));
-    let d: Value<()> = Rc::new(RefCell::new(
-        std_tuple_const_int_ref__const_int_ref__const_int_ref_::new({ c.as_pointer() }),
-    ));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -38,10 +38,9 @@ pub fn test_pr34298_2() {
     {
         let X: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
-        (*X.borrow_mut()).fn_ = test_fn_1;
+        unimplemented!();
         let CX: Ptr<IncompleteReturnType> = X.as_pointer();
-        let X2: Value<IncompleteReturnType> =
-            Rc::new(RefCell::new((*CX.upgrade().deref()).clone()));
+        let mut X2: IncompleteReturnType = (*CX.upgrade().deref()).clone();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -50,7 +49,7 @@ pub fn test_pr34298_2() {
     {
         let Empty: Value<IncompleteReturnType> =
             Rc::new(RefCell::new(<IncompleteReturnType>::default()));
-        let X2: Value<IncompleteReturnType> = Rc::new(RefCell::new((*Empty.borrow()).clone()));
+        let mut X2: IncompleteReturnType = (*Empty.borrow()).clone();
         unimplemented!();
     }
 }

@@ -37,26 +37,21 @@ pub fn test_impl_4() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_float__false_).to__8() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .store_4(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let op_float: Value<FnPtr<fn(Ptr<()>) -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                 |x: Ptr<()>| -> () {
                     {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_base_float__false_).to__8()
-                        });
+                        return unimplemented!();
                     }
                 },
             )));
@@ -75,26 +70,21 @@ pub fn test_impl_5() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_float__false_).to__7() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .store_3(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let op_float: Value<FnPtr<fn(Ptr<()>) -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                 |x: Ptr<()>| -> () {
                     {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_base_float__false_).to__7()
-                        });
+                        return unimplemented!();
                     }
                 },
             )));
@@ -113,26 +103,21 @@ pub fn test_impl_6() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_double__false_).to__8() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .store_4(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let op_float: Value<FnPtr<fn(Ptr<()>) -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                 |x: Ptr<()>| -> () {
                     {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_base_double__false_).to__8()
-                        });
+                        return unimplemented!();
                     }
                 },
             )));
@@ -151,26 +136,21 @@ pub fn test_impl_7() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ ((*a.borrow()) as std___atomic_base_double__false_).to__7() });
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .store_3(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let op_float: Value<FnPtr<fn(Ptr<()>) -> ()>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>) -> ()>::new(
                 |x: Ptr<()>| -> () {
                     {
-                        return ({
-                            ((*x.upgrade().deref()) as std___atomic_base_double__false_).to__7()
-                        });
+                        return unimplemented!();
                     }
                 },
             )));

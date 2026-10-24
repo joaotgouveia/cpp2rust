@@ -258,7 +258,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let x: () = unimplemented!();
-    let mut test: () = (unsafe { x() });
+    let mut test: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -278,7 +278,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    if (unsafe { x() }) {
+    if unimplemented!() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

@@ -398,7 +398,7 @@ pub unsafe fn test01_10() {
         }
     }
     let mut istr07: () = unimplemented!();
-    let mut str07: () = (unsafe { istr07() });
+    let mut str07: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

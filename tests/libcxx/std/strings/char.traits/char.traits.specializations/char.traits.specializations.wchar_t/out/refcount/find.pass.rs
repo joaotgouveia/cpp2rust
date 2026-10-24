@@ -8,33 +8,10 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> () {
     let mut p: Ptr<()> = Ptr::<()>::from_string_literal(&[49 as (), 50 as (), 51 as (), 0 as ()]);
-    return ((({
-        ({
-            let ___s: Ptr<()> = (p).clone();
-            let ___a: Value<()> = Rc::new(RefCell::new((49 as ())));
-            std_char_traits_wchar_t_::find(___s, 3_(), ___a.as_pointer())
-        })
-    } == { (p).clone() })
-        && ({
-            ({
-                let ___s: Ptr<()> = (p).clone();
-                let ___a: Value<()> = Rc::new(RefCell::new((50 as ())));
-                std_char_traits_wchar_t_::find(___s, 3_(), ___a.as_pointer())
-            })
-        } == { p.offset((1_()) as isize) }))
-        && ({
-            ({
-                let ___s: Ptr<()> = (p).clone();
-                let ___a: Value<()> = Rc::new(RefCell::new((51 as ())));
-                std_char_traits_wchar_t_::find(___s, 3_(), ___a.as_pointer())
-            })
-        } == { p.offset((2_()) as isize) }))
-        && (({
-            let ___s: Ptr<()> = (p).clone();
-            let ___a: Value<()> = Rc::new(RefCell::new((52 as ())));
-            std_char_traits_wchar_t_::find(___s, 3_(), ___a.as_pointer())
-        })
-        .is_null());
+    return ((({ unimplemented!() } == { (p).clone() })
+        && ({ unimplemented!() } == { p.offset((1_()) as isize) }))
+        && ({ unimplemented!() } == { p.offset((2_()) as isize) }))
+        && ((unimplemented!()).is_null());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();

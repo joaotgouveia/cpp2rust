@@ -49,12 +49,9 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let x: Value<()> = Rc::new(RefCell::new(42_()));
-        let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let p: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__const_int_ref_::new_1(
-            { x.as_pointer() },
-            { y.as_pointer() },
-        )));
+        let mut x: () = 42_();
+        let mut y: () = 43_();
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(
             true,
             "std::is_same<int&, decltype(std::get<int&>(std::move(p)))>::value"

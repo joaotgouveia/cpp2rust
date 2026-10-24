@@ -36,7 +36,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     );;
     let mut p: () = unimplemented!();
     &(p);
-    p.field[(0_()) as usize] = std_money_base_part_none;
+    p.field[(0_()) as usize] = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

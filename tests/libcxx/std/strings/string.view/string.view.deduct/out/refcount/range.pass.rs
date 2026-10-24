@@ -486,36 +486,36 @@ impl util_iterator_error {
     }
 }
 pub fn test_13() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv: Value<()> = Rc::new(RefCell::new(({ (*val.borrow())() })));
+    let mut val: () = unimplemented!();
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub fn test_14() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv: Value<()> = Rc::new(RefCell::new(({ (*val.borrow())() })));
+    let mut val: () = unimplemented!();
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub fn test_15() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv: Value<()> = Rc::new(RefCell::new(({ (*val.borrow())() })));
+    let mut val: () = unimplemented!();
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub fn test_16() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv: Value<()> = Rc::new(RefCell::new(({ (*val.borrow())() })));
+    let mut val: () = unimplemented!();
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();
 }
 pub fn test_17() {
-    let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sv: Value<()> = Rc::new(RefCell::new(({ (*val.borrow())() })));
+    let mut val: () = unimplemented!();
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     unimplemented!();
     unimplemented!();

@@ -1137,6 +1137,12 @@ impl Tag_X {
         Self {}
     }
 }
+pub fn is_string_asan_correct_18(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_19(_a0: Ptr<()>) -> () {
+    return true;
+}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -1175,7 +1181,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct BadAlloc_18 {}
+pub struct BadAlloc_20 {}
 pub trait BidirectionalIteratorNotDecrementableImpl {
     fn operator_inc_1(&self) -> Ptr<BidirectionalIteratorNotDecrementable> {
         unimplemented!()

@@ -35,10 +35,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let b2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___args: Value<()> = Rc::new(RefCell::new(0_()));
-        (*b2.borrow_mut())(___args.as_pointer())
-    });
+    unimplemented!();
     return 0_();
 }
 pub trait DummyUnaryFunctionImpl {

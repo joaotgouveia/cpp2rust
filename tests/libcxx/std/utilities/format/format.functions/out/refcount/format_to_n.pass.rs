@@ -908,8 +908,8 @@ pub fn format_tests_6(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         });
     }
     {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let data: Value<()> = Rc::new(RefCell::new(({ (*buffer.borrow())() })));
+        let mut buffer: () = unimplemented!();
+        let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
@@ -1417,8 +1417,8 @@ pub fn format_tests_7(check: FnPtr<Generic>, check_exception: FnPtr<Generic>) {
         });
     }
     {
-        let buffer: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let data: Value<()> = Rc::new(RefCell::new(({ (*buffer.borrow())() })));
+        let mut buffer: () = unimplemented!();
+        let data: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();

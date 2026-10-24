@@ -896,13 +896,9 @@ pub unsafe fn check_tuple_cat_30(mut t1: (), mut t2: ()) {
 pub unsafe fn test01_31() {
     let mut i: () = 0_();
     let mut t0: () = unimplemented!();
-    let mut t1: () = std_tuple_int_ref_::new({ &mut i });
+    let mut t1: () = unimplemented!();
     let mut t2: () = unimplemented!();
-    let mut t3: () = {
-        let mut __tmp_0: () = 0_();
-        let mut __tmp_1: () = 0_();
-        std_tuple_const_int_ref__int__double_::new_1({ &mut i }, { &mut __tmp_0 }, { &mut __tmp_1 })
-    };
+    let mut t3: () = unimplemented!();
     (unsafe {
         let _t1: () = unimplemented!();
         let _t2: () = unimplemented!();

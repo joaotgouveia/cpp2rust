@@ -25,8 +25,8 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut g: () = unimplemented!();
     let mut d: () = unimplemented!();
-    let p1: std_lognormal_distribution___param_type = unimplemented!();
-    let p2: std_lognormal_distribution___param_type = unimplemented!();
+    let p1: () = unimplemented!();
+    let p2: () = unimplemented!();
     unimplemented!();
     &(unimplemented!());
     unimplemented!();

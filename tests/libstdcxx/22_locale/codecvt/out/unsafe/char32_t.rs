@@ -404,7 +404,7 @@ pub unsafe fn test01_10() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_12(
                         libcc2rs::stderr_unsafe(),
@@ -491,7 +491,7 @@ pub unsafe fn test01_10() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_12(
                         libcc2rs::stderr_unsafe(),

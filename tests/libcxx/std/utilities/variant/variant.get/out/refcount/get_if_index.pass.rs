@@ -88,14 +88,14 @@ pub fn test_const_get_if_8() {
         const _: () = assert!(true, "std::get_if<0>(v) == nullptr");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<0>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<1>(&v) == nullptr");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<1>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<0>(&v) == nullptr");;
@@ -107,14 +107,14 @@ pub fn test_get_if_9() {
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

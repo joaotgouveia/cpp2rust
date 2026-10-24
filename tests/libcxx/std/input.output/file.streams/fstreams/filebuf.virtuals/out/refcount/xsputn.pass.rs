@@ -35,13 +35,13 @@ pub fn sputn_seekoff_0(
         unimplemented!();
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut c: () = unimplemented!();
-        if (({ (*p1.borrow())() }) < 0_()) {
+        if (unimplemented!() < 0_()) {
             (*p1.borrow_mut()) = unimplemented!();
             unimplemented!();
             c = ('^' as ());
         } else {
             unimplemented!();
-            if (({ (*p1.borrow())() }) > data_size) {
+            if (unimplemented!() > data_size) {
                 c = ('_' as ());
             } else {
                 c = (unimplemented!().read());

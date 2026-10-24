@@ -101,9 +101,7 @@ pub unsafe fn test_format_context_create_2(mut out_it: (), mut args: ()) -> () {
 }
 pub unsafe fn test_setter_4() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____char_ ) . set_separator  ( unimplemented!() , )
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_separator(std::basic_string_view<CharT>{{}}))"
@@ -113,18 +111,13 @@ pub unsafe fn test_setter_4() {
         let mut out: () = unimplemented!();
         let mut format_ctx: () =
             (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
-        (unsafe {
-            let mut ___range: () = unimplemented!();
-            ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____char_ ) . format  ( & mut ___range , & mut format_ctx , )
-        });
+        unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_setter_5() {
     let mut formatter: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____wchar_t_ ) . set_separator  ( unimplemented!() , )
-    });
+    unimplemented!();
     const _: () = assert!(
         true,
         "noexcept(formatter.set_separator(std::basic_string_view<CharT>{{}}))"
@@ -134,10 +127,7 @@ pub unsafe fn test_setter_5() {
         let mut out: () = unimplemented!();
         let mut format_ctx: () =
             (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
-        (unsafe {
-            let mut ___range: () = unimplemented!();
-            ( formatter as std___range_default_formatter_std_range_format_sequence__std_vector_int__std_allocator_int____wchar_t_ ) . format  ( & mut ___range , & mut format_ctx , )
-        });
+        unimplemented!();
         unimplemented!();
     }
 }

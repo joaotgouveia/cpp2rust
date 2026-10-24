@@ -8,7 +8,7 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -20,7 +20,7 @@ pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
 }
 pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -32,7 +32,7 @@ pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
 }
 pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -44,7 +44,7 @@ pub fn test_2(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
 }
 pub fn test_3(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
     let mut is_going_to_throw: () = is_going_to_throw.unwrap_or_else(|| false);
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }

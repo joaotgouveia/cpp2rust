@@ -329,7 +329,7 @@ pub unsafe fn test_tuple_or_pair_int_int_2(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(0)
@@ -518,7 +518,7 @@ pub unsafe fn test_tuple_or_pair_int_int_3(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(5)
@@ -707,7 +707,7 @@ pub unsafe fn test_tuple_or_pair_int_int_4(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(14)
@@ -896,7 +896,7 @@ pub unsafe fn test_tuple_or_pair_int_int_5(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(19)
@@ -1085,7 +1085,7 @@ pub unsafe fn test_tuple_or_pair_int_string_6(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(1)
@@ -1274,7 +1274,7 @@ pub unsafe fn test_tuple_or_pair_int_string_7(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(2)
@@ -1463,7 +1463,7 @@ pub unsafe fn test_tuple_or_pair_int_string_8(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(3)
@@ -1652,7 +1652,7 @@ pub unsafe fn test_tuple_or_pair_int_string_9(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(6)
@@ -1841,7 +1841,7 @@ pub unsafe fn test_tuple_or_pair_int_string_10(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(7)
@@ -2030,7 +2030,7 @@ pub unsafe fn test_tuple_or_pair_int_string_11(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(8)
@@ -2219,7 +2219,7 @@ pub unsafe fn test_tuple_or_pair_int_string_12(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(15)
@@ -2408,7 +2408,7 @@ pub unsafe fn test_tuple_or_pair_int_string_13(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(16)
@@ -2597,7 +2597,7 @@ pub unsafe fn test_tuple_or_pair_int_string_14(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(17)
@@ -2786,7 +2786,7 @@ pub unsafe fn test_tuple_or_pair_int_string_15(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(20)
@@ -2975,7 +2975,7 @@ pub unsafe fn test_tuple_or_pair_int_string_16(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(21)
@@ -3164,7 +3164,7 @@ pub unsafe fn test_tuple_or_pair_int_string_17(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(22)
@@ -3629,7 +3629,7 @@ pub unsafe fn test_tuple_int_30(mut check: FnPtr<Generic>, mut check_exception: 
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(4).call(
                 unimplemented!(),
-                (unsafe { unimplemented!()() }),
+                unimplemented!(),
                 &mut input,
             )
         });
@@ -3814,7 +3814,7 @@ pub unsafe fn test_tuple_int_31(mut check: FnPtr<Generic>, mut check_exception: 
         (unsafe {
             check_exception.spec::<fn((), (), *mut ())>(18).call(
                 unimplemented!(),
-                (unsafe { unimplemented!()() }),
+                unimplemented!(),
                 &mut input,
             )
         });
@@ -3990,7 +3990,7 @@ pub unsafe fn test_tuple_int_string_color_32(
         (unsafe {
             check_exception.spec::<fn((), (), *const ())>(9).call(
                 unimplemented!(),
-                (unsafe { unimplemented!()() }),
+                unimplemented!(),
                 &input,
             )
         });
@@ -4166,7 +4166,7 @@ pub unsafe fn test_tuple_int_string_color_33(
         (unsafe {
             check_exception.spec::<fn((), (), *const ())>(23).call(
                 unimplemented!(),
-                (unsafe { unimplemented!()() }),
+                unimplemented!(),
                 &input,
             )
         });
@@ -4425,7 +4425,7 @@ pub unsafe fn test_nested_38(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(10)
@@ -4614,7 +4614,7 @@ pub unsafe fn test_nested_39(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(11)
@@ -4803,7 +4803,7 @@ pub unsafe fn test_nested_40(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(12)
@@ -4992,7 +4992,7 @@ pub unsafe fn test_nested_41(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(13)
@@ -5181,7 +5181,7 @@ pub unsafe fn test_nested_42(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(24)
@@ -5370,7 +5370,7 @@ pub unsafe fn test_nested_43(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(25)
@@ -5559,7 +5559,7 @@ pub unsafe fn test_nested_44(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(26)
@@ -5748,7 +5748,7 @@ pub unsafe fn test_nested_45(
     'loop_: for c in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut c: () = (*c);
         (unsafe {
-            let _fmt: () = (unsafe { unimplemented!()() });
+            let _fmt: () = unimplemented!();
             let _args: *mut () = input;
             check_exception
                 .spec::<fn((), (), *mut ())>(27)

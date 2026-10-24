@@ -275,7 +275,7 @@ pub fn test01_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(r3 == std_codecvt_base_result_noconv) {
+        if !(r3 == unimplemented!()) {
             ({
                 __builtin_fprintf_16(
                     libcc2rs::stderr_unsafe(),

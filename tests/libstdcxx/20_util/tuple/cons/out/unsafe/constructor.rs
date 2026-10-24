@@ -270,7 +270,7 @@ unsafe fn main_0() -> () {
     let mut tb: () = unimplemented!();
     let mut tc: () = unimplemented!();
     let mut td: () = unimplemented!();
-    let mut te: () = std_tuple_const_int_ref_::new({ z1 });
+    let mut te: () = unimplemented!();
     x1 = 1_();
     x2 = 1_();
     let mut __do_while = true;

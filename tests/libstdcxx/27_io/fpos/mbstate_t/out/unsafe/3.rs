@@ -259,7 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test03_10() {
     let mut off01: () = unimplemented!();
     let pos01: () = unimplemented!();
-    off01 = (unsafe { pos01() });
+    off01 = unimplemented!();
     off01 = off01;
     let pos02: () = unimplemented!();
     let mut pos03: () = unimplemented!();
@@ -343,7 +343,7 @@ pub unsafe fn test03_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { pos04() }) == (0_())) {
+        if !((unimplemented!()) == (0_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

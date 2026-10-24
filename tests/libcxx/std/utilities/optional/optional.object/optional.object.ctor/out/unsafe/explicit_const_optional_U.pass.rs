@@ -12,7 +12,7 @@ pub unsafe fn test_0(rhs: *const (), mut is_going_to_throw: Option<()>) {
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -28,7 +28,7 @@ pub unsafe fn test_1(rhs: *const (), mut is_going_to_throw: Option<()>) {
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -44,7 +44,7 @@ pub unsafe fn test_2(rhs: *const (), mut is_going_to_throw: Option<()>) {
         true,
         "!(std::is_convertible<const optional<U>&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = (unsafe { (*rhs)() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }

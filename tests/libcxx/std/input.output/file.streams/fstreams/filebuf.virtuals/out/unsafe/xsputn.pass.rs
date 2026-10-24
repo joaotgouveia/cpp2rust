@@ -35,13 +35,13 @@ pub unsafe fn sputn_seekoff_0(
         unimplemented!();
         let mut p1: () = unimplemented!();
         let mut c: () = unimplemented!();
-        if ((unsafe { p1() }) < (0_())) {
+        if ((unimplemented!()) < (0_())) {
             p1 = unimplemented!();
             unimplemented!();
             c = ('^' as ());
         } else {
             unimplemented!();
-            if ((unsafe { p1() }) > (data_size)) {
+            if ((unimplemented!()) > (data_size)) {
                 c = ('_' as ());
             } else {
                 c = (*unimplemented!());

@@ -377,24 +377,28 @@ pub unsafe fn test_14() {
     let mut expected: Expected_1_ = Expected_1_::new({ S_1_::new({ 17_() }) });
     unimplemented!();
     unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_1___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_1_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_1___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_1_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_15() {
+    let mut a: () = unimplemented!();
+    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ 17_() }) });
+    unimplemented!();
+    unimplemented!();
+    let mut r1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -402,27 +406,15 @@ pub unsafe fn test_14() {
 }
 pub unsafe fn test_16() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_2_ = Expected_2_::new({ S_2_::new({ 17_() }) });
+    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ 17_() }) });
     unimplemented!();
     unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_2___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_2_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_2___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_2_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -430,27 +422,15 @@ pub unsafe fn test_16() {
 }
 pub unsafe fn test_17() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_3_ = Expected_3_::new({ S_3_::new({ 17_() }) });
+    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ 17_() }) });
     unimplemented!();
     unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_3___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_3_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_3___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_3_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -458,27 +438,15 @@ pub unsafe fn test_17() {
 }
 pub unsafe fn test_18() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_4_ = Expected_4_::new({ S_4_::new({ 17_() }) });
+    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ 17_() }) });
     unimplemented!();
     unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_4___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_4_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_4___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_4_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -486,55 +454,15 @@ pub unsafe fn test_18() {
 }
 pub unsafe fn test_19() {
     let mut a: () = unimplemented!();
-    let mut expected: Expected_5_ = Expected_5_::new({ S_5_::new({ 17_() }) });
-    unimplemented!();
-    unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_5___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_5_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_5___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_5_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_20() {
-    let mut a: () = unimplemented!();
     let mut expected: Expected_6_ = Expected_6_::new({ S_6_::new({ 17_() }) });
     unimplemented!();
     unimplemented!();
-    let mut r1: () = (unsafe {
-        (a as std___atomic_base_S_6___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_6_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r1: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    let mut r2: () = (unsafe {
-        (a as std___atomic_base_S_6___false_).compare_exchange_strong_18(
-            &mut expected.s,
-            S_6_::new({ 18_() }),
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_15)),
-        )
-    });
+    let mut r2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -557,11 +485,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_14() });
+    (unsafe { test_15() });
     (unsafe { test_16() });
     (unsafe { test_17() });
     (unsafe { test_18() });
     (unsafe { test_19() });
-    (unsafe { test_20() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

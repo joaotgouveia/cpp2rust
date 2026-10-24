@@ -24,20 +24,17 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: std_fisher_f_distribution___param_type =
-            <std_fisher_f_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: std_fisher_f_distribution___param_type =
-            <std_fisher_f_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: std_fisher_f_distribution___param_type =
-            <std_fisher_f_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

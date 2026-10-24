@@ -521,7 +521,7 @@ pub unsafe fn test_write_25(mut policy: LibraryDefaultBuffer, payload_sizes: *co
     }
     {
         let mut ifs: () = unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(
@@ -648,7 +648,7 @@ pub unsafe fn test_write_27(mut policy: LibraryManagedBuffer, payload_sizes: *co
     }
     {
         let mut ifs: () = unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(
@@ -775,7 +775,7 @@ pub unsafe fn test_write_31(mut policy: UserManagedBuffer, payload_sizes: *const
     }
     {
         let mut ifs: () = unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(

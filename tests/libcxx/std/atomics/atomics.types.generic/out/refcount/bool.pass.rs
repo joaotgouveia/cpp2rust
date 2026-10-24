@@ -9,13 +9,7 @@ use std::rc::{Rc, Weak};
 pub fn cmpxchg_weak_loop_0(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (({
-            let ___e: Ptr<()> = (expected).clone();
-            let ___d: () = desired;
-            ((*atomic.upgrade().deref()) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_15(___e, ___d, None)
-        }) == true)
-        {
+        if (unimplemented!() == true) {
             return true;
         }
         i.postfix_inc();
@@ -25,13 +19,7 @@ pub fn cmpxchg_weak_loop_0(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) 
 pub fn cmpxchg_weak_loop_1(atomic: Ptr<()>, expected: Ptr<()>, mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (({
-            let ___e: Ptr<()> = (expected).clone();
-            let ___d: () = desired;
-            ((*atomic.upgrade().deref()) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_16(___e, ___d, None)
-        }) == true)
-        {
+        if (unimplemented!() == true) {
             return true;
         }
         i.postfix_inc();
@@ -47,15 +35,7 @@ pub fn cmpxchg_weak_loop_2(
 ) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (({
-            let ___e: Ptr<()> = (expected).clone();
-            let ___d: () = desired;
-            let ___s: () = success;
-            let ___f: () = failure;
-            ((*atomic.upgrade().deref()) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_11(___e, ___d, ___s, ___f)
-        }) == true)
-        {
+        if (unimplemented!() == true) {
             return true;
         }
         i.postfix_inc();
@@ -71,15 +51,7 @@ pub fn cmpxchg_weak_loop_3(
 ) -> () {
     let mut i: () = 0_();
     'loop_: while (i < 10_()) {
-        if (({
-            let ___e: Ptr<()> = (expected).clone();
-            let ___d: () = desired;
-            let ___s: () = success;
-            let ___f: () = failure;
-            ((*atomic.upgrade().deref()) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_12(___e, ___d, ___s, ___f)
-        }) == true)
-        {
+        if (unimplemented!() == true) {
             return true;
         }
         i.postfix_inc();
@@ -110,19 +82,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let obj: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         {
-            let mut lockfree: () =
-                ({ ((*obj.borrow()) as std___atomic_base_bool__false_).is_lock_free_1() });
+            let mut lockfree: () = unimplemented!();
             &(lockfree);
             {
                 unimplemented!();
             }
         }
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_3(false, None) });
-        unimplemented!();
-        ({
-            ((*obj.borrow()) as std___atomic_base_bool__false_)
-                .store_3(true, Some(memory_order_release_4.with(|rc| *rc.borrow())))
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -130,22 +95,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(
-            ({ ((*obj.borrow()) as std___atomic_base_bool__false_).to__7() }),
-        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_3(true, None) });
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_3(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -153,7 +107,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_3(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -172,12 +138,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 unimplemented!();
             }
         }
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(false, None) });
-        unimplemented!();
-        ({
-            ((*obj.borrow()) as std___atomic_base_bool__false_)
-                .store_4(true, Some(memory_order_release_4.with(|rc| *rc.borrow())))
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -185,22 +145,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(
-            ({ ((*obj.borrow()) as std___atomic_base_bool__false_).to__8() }),
-        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -208,7 +157,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -227,12 +188,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
                 unimplemented!();
             }
         }
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(false, None) });
-        unimplemented!();
-        ({
-            ((*obj.borrow()) as std___atomic_base_bool__false_)
-                .store_4(true, Some(memory_order_release_4.with(|rc| *rc.borrow())))
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -240,22 +195,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(
-            ({ ((*obj.borrow()) as std___atomic_base_bool__false_).to__8() }),
-        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
-        (*x.borrow_mut()) = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -263,7 +207,19 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         (*x.borrow_mut()) = true;
-        ({ ((*obj.borrow()) as std___atomic_base_bool__false_).store_4(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        (*x.borrow_mut()) = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

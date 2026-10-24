@@ -160,7 +160,16 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn test_6(mut min_cap: (), mut erased_index: ()) {
+pub unsafe fn is_string_asan_correct_6(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn test_9(mut min_cap: (), mut erased_index: ()) {
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -174,7 +183,7 @@ pub unsafe fn test_6(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_7(mut min_cap: (), mut erased_index: ()) {
+pub unsafe fn test_10(mut min_cap: (), mut erased_index: ()) {
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -188,7 +197,7 @@ pub unsafe fn test_7(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_8(mut min_cap: (), mut erased_index: ()) {
+pub unsafe fn test_11(mut min_cap: (), mut erased_index: ()) {
     let mut s: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -202,28 +211,28 @@ pub unsafe fn test_8(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_9() {
-    (unsafe { test_6(0_(), 0_()) });
-    (unsafe { test_6(10_(), 5_()) });
-    (unsafe { test_6(100_(), 5_()) });
-    (unsafe { test_6(100_(), 50_()) });
+pub unsafe fn test_string_12() {
+    (unsafe { test_9(0_(), 0_()) });
+    (unsafe { test_9(10_(), 5_()) });
+    (unsafe { test_9(100_(), 5_()) });
+    (unsafe { test_9(100_(), 50_()) });
 }
-pub unsafe fn test_string_10() {
-    (unsafe { test_7(0_(), 0_()) });
-    (unsafe { test_7(10_(), 5_()) });
-    (unsafe { test_7(100_(), 5_()) });
-    (unsafe { test_7(100_(), 50_()) });
+pub unsafe fn test_string_13() {
+    (unsafe { test_10(0_(), 0_()) });
+    (unsafe { test_10(10_(), 5_()) });
+    (unsafe { test_10(100_(), 5_()) });
+    (unsafe { test_10(100_(), 50_()) });
 }
-pub unsafe fn test_string_11() {
-    (unsafe { test_8(0_(), 0_()) });
-    (unsafe { test_8(10_(), 5_()) });
-    (unsafe { test_8(100_(), 5_()) });
-    (unsafe { test_8(100_(), 50_()) });
+pub unsafe fn test_string_14() {
+    (unsafe { test_11(0_(), 0_()) });
+    (unsafe { test_11(10_(), 5_()) });
+    (unsafe { test_11(100_(), 5_()) });
+    (unsafe { test_11(100_(), 50_()) });
 }
-pub unsafe fn test_12() -> () {
-    (unsafe { test_string_9() });
-    (unsafe { test_string_10() });
-    (unsafe { test_string_11() });
+pub unsafe fn test_15() -> () {
+    (unsafe { test_string_12() });
+    (unsafe { test_string_13() });
+    (unsafe { test_string_14() });
     return true;
 }
 pub fn main() {
@@ -242,7 +251,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_12() });
+    (unsafe { test_15() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

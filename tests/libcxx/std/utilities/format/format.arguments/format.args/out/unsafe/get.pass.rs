@@ -1919,7 +1919,7 @@ pub unsafe fn test_20(mut value: ()) {
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: () = (unsafe { value() });
+            let v: () = unimplemented!();
         },
         |mut a: ()| {
             {
@@ -3921,7 +3921,7 @@ pub unsafe fn test_42(mut value: ()) {
     let mut visitor: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {
-            let v: () = (unsafe { value() });
+            let v: () = unimplemented!();
         },
         |mut a: ()| {
             {
@@ -4418,8 +4418,8 @@ pub unsafe fn test_48() {
     (unsafe { test_18(unimplemented!()) });
     (unsafe { test_18(unimplemented!()) });
     (unsafe { test_19(unimplemented!()) });
-    (unsafe { test_19((unsafe { empty() })) });
-    (unsafe { test_19((unsafe { str() })) });
+    (unsafe { test_19(unimplemented!()) });
+    (unsafe { test_19(unimplemented!()) });
     (unsafe { test_20(unimplemented!()) });
     (unsafe { test_20(unimplemented!()) });
     (unsafe { test_20(unimplemented!()) });
@@ -4520,8 +4520,8 @@ pub unsafe fn test_49() {
     (unsafe { test_40(unimplemented!()) });
     (unsafe { test_40(unimplemented!()) });
     (unsafe { test_41(unimplemented!()) });
-    (unsafe { test_41((unsafe { empty() })) });
-    (unsafe { test_41((unsafe { str() })) });
+    (unsafe { test_41(unimplemented!()) });
+    (unsafe { test_41(unimplemented!()) });
     (unsafe { test_42(unimplemented!()) });
     (unsafe { test_42(unimplemented!()) });
     (unsafe { test_42(unimplemented!()) });

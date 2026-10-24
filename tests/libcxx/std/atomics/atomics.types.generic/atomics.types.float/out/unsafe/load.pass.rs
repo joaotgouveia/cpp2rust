@@ -97,25 +97,19 @@ pub unsafe fn test_impl_12() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe { (a as std___atomic_base_float__false_).store_4(1.2_f64, None) });
-        let mut r: () =
-            (unsafe { (a as std___atomic_base_float__false_).load_6(Some(unimplemented!())) });
+        unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_)
-                        .store_4(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_8(store.copy_from(), load.copy_from()) });
@@ -123,20 +117,18 @@ pub unsafe fn test_impl_12() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_float__false_).store_4(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_float__false_).load_6(None) });
+                    return unimplemented!();
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_0(store.copy_from(), load_no_arg.copy_from()) });
@@ -150,25 +142,19 @@ pub unsafe fn test_impl_13() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe { (a as std___atomic_base_float__false_).store_3(1.2_f64, None) });
-        let mut r: () =
-            (unsafe { (a as std___atomic_base_float__false_).load_5(Some(unimplemented!())) });
+        unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_)
-                        .store_3(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_9(store.copy_from(), load.copy_from()) });
@@ -176,20 +162,18 @@ pub unsafe fn test_impl_13() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_float__false_).store_3(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_float__false_).load_5(None) });
+                    return unimplemented!();
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_2(store.copy_from(), load_no_arg.copy_from()) });
@@ -203,25 +187,19 @@ pub unsafe fn test_impl_14() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe { (a as std___atomic_base_double__false_).store_4(1.2_f64, None) });
-        let mut r: () =
-            (unsafe { (a as std___atomic_base_double__false_).load_6(Some(unimplemented!())) });
+        unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_)
-                        .store_4(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_10(store.copy_from(), load.copy_from()) });
@@ -229,20 +207,18 @@ pub unsafe fn test_impl_14() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_double__false_).store_4(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_double__false_).load_6(None) });
+                    return unimplemented!();
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_4(store.copy_from(), load_no_arg.copy_from()) });
@@ -256,25 +232,19 @@ pub unsafe fn test_impl_15() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe { (a as std___atomic_base_double__false_).store_3(1.2_f64, None) });
-        let mut r: () =
-            (unsafe { (a as std___atomic_base_double__false_).load_5(Some(unimplemented!())) });
+        unimplemented!();
+        let mut r: () = unimplemented!();
         unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_)
-                        .store_3(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_11(store.copy_from(), load.copy_from()) });
@@ -282,20 +252,18 @@ pub unsafe fn test_impl_15() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_double__false_).store_3(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_double__false_).load_5(None) });
+                    return unimplemented!();
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_6(store.copy_from(), load_no_arg.copy_from()) });

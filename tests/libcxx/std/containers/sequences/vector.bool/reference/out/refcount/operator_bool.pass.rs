@@ -13,7 +13,7 @@ pub fn test_0() -> () {
     unimplemented!();
     let true_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let false_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut b: () = ({ (*true_ref.borrow())() });
+    let mut b: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

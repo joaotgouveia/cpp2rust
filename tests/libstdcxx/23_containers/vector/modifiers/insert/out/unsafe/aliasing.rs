@@ -276,7 +276,7 @@ impl T {
             child: unimplemented!(),
             value: (*t).value,
         };
-        if (unsafe { (*t).child() }) {
+        if unimplemented!() {
             unimplemented!();
         }
         this
@@ -299,8 +299,8 @@ impl T {}
 impl T {
     pub unsafe fn copy_assign(&mut self, t: *const T) -> *mut T {
         self.value = (*t).value;
-        if (unsafe { (*t).child() }) {
-            if (unsafe { self.child() }) {
+        if unimplemented!() {
+            if unimplemented!() {
                 (unsafe {
                     let _t: *const T = &(*unimplemented!());
                     T::copy_assign(&mut (*unimplemented!()), _t)

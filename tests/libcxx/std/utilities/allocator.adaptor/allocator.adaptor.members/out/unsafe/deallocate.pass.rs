@@ -20,7 +20,7 @@ impl A1_int_ {
         this
     }
     pub unsafe fn deallocate(&mut self, mut p: *mut (), mut n: ()) {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut deallocate_called_3)) = unimplemented!();
+        unimplemented!();
     }
 }
 impl Default for A1_int_ {
@@ -80,17 +80,17 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: () = unimplemented!();
-        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: () = unimplemented!();
-        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let mut a: () = unimplemented!();
-        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -262,8 +262,8 @@ pub unsafe fn test01_10() {
     unimplemented!();
 }
 pub unsafe fn test02_11() {
-    let mut v1: () = 1_();
-    let mut v2: () = 2_();
+    let mut v1: () = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -305,8 +305,8 @@ pub unsafe fn test02_11() {
     }
 }
 pub unsafe fn test03_14() {
-    let mut v1: () = 1_();
-    let mut v2: () = 0.5_f64;
+    let mut v1: () = unimplemented!();
+    let mut v2: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

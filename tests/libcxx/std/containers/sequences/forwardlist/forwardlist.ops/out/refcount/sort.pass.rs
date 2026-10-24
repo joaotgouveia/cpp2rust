@@ -68,11 +68,7 @@ pub fn test_5(mut N: ()) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let j: Value<()> = Rc::new(RefCell::new(
-        std___forward_list_const_iterator_std___forward_list_node_int__void_ptr__ptr_::new_1({
-            unimplemented!()
-        }),
-    ));
+    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -93,7 +89,7 @@ pub fn test_6(mut N: ()) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let j : Value<() > = Rc::new(RefCell::new(std___forward_list_const_iterator_min_pointer_std___forward_list_node_int__min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ :: new_1 ( { unimplemented!()   } , )  )) ;
+    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -206,11 +202,7 @@ pub fn test_stable_7(mut N: ()) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let j: Value<()> = Rc::new(RefCell::new(
-        std___forward_list_const_iterator_std___forward_list_node_Payload__void_ptr__ptr_::new_1({
-            unimplemented!()
-        }),
-    ));
+    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -219,11 +211,7 @@ pub fn test_stable_7(mut N: ()) {
             unimplemented!()
         };
     }
-    let it: Value<()> = Rc::new(RefCell::new(
-        std___forward_list_const_iterator_std___forward_list_node_Payload__void_ptr__ptr_::new_1({
-            unimplemented!()
-        }),
-    ));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while unimplemented!() {
         let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if (unimplemented!())

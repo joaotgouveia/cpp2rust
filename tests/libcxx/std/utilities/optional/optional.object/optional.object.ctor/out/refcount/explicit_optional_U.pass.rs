@@ -12,7 +12,7 @@ pub fn test_0(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
         true,
         "!(std::is_convertible<optional<U>&&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }
@@ -25,7 +25,7 @@ pub fn test_1(rhs: Ptr<()>, is_going_to_throw: Option<()>) {
         true,
         "!(std::is_convertible<optional<U>&&, optional<T>>::value)"
     );;
-    let mut rhs_engaged: () = ({ (*rhs.upgrade().deref())() });
+    let mut rhs_engaged: () = unimplemented!();
     if is_going_to_throw {
         return;
     }

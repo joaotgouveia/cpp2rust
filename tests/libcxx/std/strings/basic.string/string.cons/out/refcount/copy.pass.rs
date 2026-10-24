@@ -387,7 +387,19 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn test_13(s1: ()) {
+pub fn is_string_asan_correct_13(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_17(s1: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -397,7 +409,7 @@ pub fn test_13(s1: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_14(s1: ()) {
+pub fn test_18(s1: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -407,7 +419,7 @@ pub fn test_14(s1: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_15(s1: ()) {
+pub fn test_19(s1: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -417,7 +429,7 @@ pub fn test_15(s1: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_16(s1: ()) {
+pub fn test_20(s1: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -427,49 +439,49 @@ pub fn test_16(s1: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_17(a: Ptr<()>) {
-    ({ test_13(unimplemented!()) });
-    ({ test_13(unimplemented!()) });
-    ({ test_13(unimplemented!()) });
+pub fn test_string_21(a: Ptr<()>) {
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
+    ({ test_17(unimplemented!()) });
 }
-pub fn test_string_18(a: Ptr<test_allocator_char_>) {
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
-    ({ test_14(unimplemented!()) });
+pub fn test_string_22(a: Ptr<test_allocator_char_>) {
+    ({ test_18(unimplemented!()) });
+    ({ test_18(unimplemented!()) });
+    ({ test_18(unimplemented!()) });
 }
-pub fn test_string_19(a: Ptr<min_allocator_char_>) {
-    ({ test_15(unimplemented!()) });
-    ({ test_15(unimplemented!()) });
-    ({ test_15(unimplemented!()) });
+pub fn test_string_23(a: Ptr<min_allocator_char_>) {
+    ({ test_19(unimplemented!()) });
+    ({ test_19(unimplemented!()) });
+    ({ test_19(unimplemented!()) });
 }
-pub fn test_string_20(a: Ptr<safe_allocator_char_>) {
-    ({ test_16(unimplemented!()) });
-    ({ test_16(unimplemented!()) });
-    ({ test_16(unimplemented!()) });
+pub fn test_string_24(a: Ptr<safe_allocator_char_>) {
+    ({ test_20(unimplemented!()) });
+    ({ test_20(unimplemented!()) });
+    ({ test_20(unimplemented!()) });
 }
-pub fn test_21() -> () {
+pub fn test_25() -> () {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_string_17(_a.as_pointer())
+        test_string_21(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(<test_allocator_char_>::default()));
-        test_string_18(_a.as_pointer())
+        test_string_22(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 3_() })));
-        test_string_18(_a.as_pointer())
+        test_string_22(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));
-        test_string_19(_a.as_pointer())
+        test_string_23(_a.as_pointer())
     });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new(safe_allocator_char_::new()));
-        test_string_20(_a.as_pointer())
+        test_string_24(_a.as_pointer())
     });
     return true;
 }
@@ -493,7 +505,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_21() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

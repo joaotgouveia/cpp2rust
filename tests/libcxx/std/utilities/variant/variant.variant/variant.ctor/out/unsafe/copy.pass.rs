@@ -248,15 +248,15 @@ pub unsafe fn test_constexpr_copy_ctor_trivial_9() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_constructible<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_3(&mut _v)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_4(&mut _v)
     });
     (unsafe {
-        let mut _v: () = 101_();
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_5(&mut _v)
     });
 }
@@ -306,15 +306,15 @@ impl Default for NonTrivialCopyCtor {
 pub unsafe fn test_constexpr_copy_ctor_non_trivial_11() {
     const _: () = assert!(true, "!std::is_trivially_copy_constructible<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_6(&mut _v)
     });
     (unsafe {
-        let mut _v: () = NonTrivialCopyCtor::new({ 5_() });
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_7(&mut _v)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         test_constexpr_copy_ctor_imp_8(&mut _v)
     });
 }

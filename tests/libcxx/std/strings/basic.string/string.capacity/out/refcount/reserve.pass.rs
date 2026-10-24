@@ -112,7 +112,16 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn test_6(mut min_cap: (), mut erased_index: ()) {
+pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_9(mut min_cap: (), mut erased_index: ()) {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -126,7 +135,7 @@ pub fn test_6(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7(mut min_cap: (), mut erased_index: ()) {
+pub fn test_10(mut min_cap: (), mut erased_index: ()) {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -140,7 +149,7 @@ pub fn test_7(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(mut min_cap: (), mut erased_index: ()) {
+pub fn test_11(mut min_cap: (), mut erased_index: ()) {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -154,28 +163,28 @@ pub fn test_8(mut min_cap: (), mut erased_index: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_9() {
-    ({ test_6(0_(), 0_()) });
-    ({ test_6(10_(), 5_()) });
-    ({ test_6(100_(), 5_()) });
-    ({ test_6(100_(), 50_()) });
+pub fn test_string_12() {
+    ({ test_9(0_(), 0_()) });
+    ({ test_9(10_(), 5_()) });
+    ({ test_9(100_(), 5_()) });
+    ({ test_9(100_(), 50_()) });
 }
-pub fn test_string_10() {
-    ({ test_7(0_(), 0_()) });
-    ({ test_7(10_(), 5_()) });
-    ({ test_7(100_(), 5_()) });
-    ({ test_7(100_(), 50_()) });
+pub fn test_string_13() {
+    ({ test_10(0_(), 0_()) });
+    ({ test_10(10_(), 5_()) });
+    ({ test_10(100_(), 5_()) });
+    ({ test_10(100_(), 50_()) });
 }
-pub fn test_string_11() {
-    ({ test_8(0_(), 0_()) });
-    ({ test_8(10_(), 5_()) });
-    ({ test_8(100_(), 5_()) });
-    ({ test_8(100_(), 50_()) });
+pub fn test_string_14() {
+    ({ test_11(0_(), 0_()) });
+    ({ test_11(10_(), 5_()) });
+    ({ test_11(100_(), 5_()) });
+    ({ test_11(100_(), 50_()) });
 }
-pub fn test_12() -> () {
-    ({ test_string_9() });
-    ({ test_string_10() });
-    ({ test_string_11() });
+pub fn test_15() -> () {
+    ({ test_string_12() });
+    ({ test_string_13() });
+    ({ test_string_14() });
     return true;
 }
 pub fn main() {
@@ -198,7 +207,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_12() });
+    ({ test_15() });
     return 0_();
 }
 pub trait min_allocator_char_Impl {

@@ -99,25 +99,25 @@ pub struct ReturnFirst {}
 pub struct ReturnArity {}
 pub fn test_const_lvalue_get_11() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
@@ -125,39 +125,39 @@ pub fn test_const_lvalue_get_11() {
 }
 pub fn test_lvalue_get_12() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
 pub fn test_rvalue_get_13() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }
 }
 pub fn test_const_rvalue_get_14() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
     }

@@ -374,7 +374,7 @@ pub fn test_swap_same_alternative_13() {
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -391,7 +391,7 @@ pub fn test_swap_same_alternative_13() {
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -416,7 +416,7 @@ pub fn test_swap_different_alternatives_15() {
         let swap_called: Value<()> = Rc::new(RefCell::new(0_()));
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -514,7 +514,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -522,7 +522,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -530,7 +530,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -538,7 +538,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "!std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -546,7 +546,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -554,7 +554,7 @@ pub fn test_swap_noexcept_36() {
         const _: () = assert!(true, "std::is_nothrow_swappable_v<V>");;
         let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*v1.borrow()).swap(v2.as_pointer()) });
+        unimplemented!();
         unimplemented!();
     }
     {

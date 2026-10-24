@@ -262,8 +262,8 @@ fn main_0() -> () {
     let ta: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let tc: Value<()> = Rc::new(RefCell::new(1_()));
-    let td: Value<()> = Rc::new(RefCell::new(0_()));
+    let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let td: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*td.borrow_mut()) = (*tc.borrow()).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -284,13 +284,13 @@ fn main_0() -> () {
             unimplemented!();
         }
     }
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
-    let te: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref_::new({ i.as_pointer() })));
+    let mut i: () = 0_();
+    let te: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((*i.borrow()) == 1_()) {
+        if !(i == 1_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -306,9 +306,7 @@ fn main_0() -> () {
             unimplemented!();
         }
     }
-    let tf: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
-        tc.as_pointer()
-    })));
+    let tf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ get_10(tc.as_pointer()) }).write(2_());
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

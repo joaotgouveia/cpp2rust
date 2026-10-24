@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut str: () = ({ (*sm.borrow())() });
+        let mut str: () = unimplemented!();
         unimplemented!();
         let s: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
             ('1' as ()),
@@ -45,7 +45,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     }
     {
         let sm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut str: () = ({ (*sm.borrow())() });
+        let mut str: () = unimplemented!();
         unimplemented!();
         let s: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
             ('1' as ()),

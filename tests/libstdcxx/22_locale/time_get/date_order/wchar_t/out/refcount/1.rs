@@ -269,7 +269,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(do1 == std_time_base_dateorder_no_order) {
+        if !(do1 == unimplemented!()) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

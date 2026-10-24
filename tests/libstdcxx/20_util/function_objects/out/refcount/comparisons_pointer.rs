@@ -271,7 +271,7 @@ pub fn test01_12() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -301,7 +301,7 @@ pub fn test01_12() {
     let mut p2: Ptr<()> = (a_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     let gt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -333,7 +333,7 @@ pub fn test02_14() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -363,7 +363,7 @@ pub fn test02_14() {
     let mut p2: Ptr<()> = (a_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     let lt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -395,7 +395,7 @@ pub fn test03_15() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -426,7 +426,7 @@ pub fn test03_15() {
     let mut p2: Ptr<()> = (a_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     let ge2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -459,7 +459,7 @@ pub fn test04_16() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -490,7 +490,7 @@ pub fn test04_16() {
     let mut p2: Ptr<()> = (a_11.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     let le2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -534,7 +534,7 @@ pub fn test05_19() {
     unimplemented!();
     let mut sum: () = 0_();
     let mut n: () = 0_();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;
@@ -564,7 +564,7 @@ pub fn test05_19() {
     let mut p2: Ptr<X> = (y_18.with(|v| v.as_pointer()) as Ptr<X>).offset((4_()) as isize);
     let lt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         sum += n;
     }
     let mut __do_while = true;

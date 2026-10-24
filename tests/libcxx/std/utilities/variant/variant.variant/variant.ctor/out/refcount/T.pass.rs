@@ -159,44 +159,40 @@ pub struct X_8 {}
 pub struct Y_9 {}
 pub fn test_T_ctor_basic_10() {
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 0");;
         const _: () = assert!(true, "std::get<0>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(42_()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "v.index() == 1");;
         const _: () = assert!(true, "std::get<1>(v) == 42");;
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(std_variant_std_string__const_bool_::new({
-            Ptr::<()>::from_string_literal(b"foo")
-        })));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(Default::default()));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v: Value<()> = Rc::new(RefCell::new(true));
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let v1: Value<()> = Rc::new(RefCell::new(42_()));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
-        let x: Value<()> = Rc::new(RefCell::new(42_()));
-        let v2: Value<()> = Rc::new(RefCell::new(
-            std_variant_RValueConvertibleFrom_int___AnyConstructible_::new({ x.as_pointer() }),
-        ));
+        let mut x: () = 42_();
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
@@ -204,7 +200,7 @@ pub fn test_T_ctor_basic_10() {
 #[byte_size(1)]
 pub struct BoomOnAnything {}
 pub fn test_no_narrowing_check_for_class_types_11() {
-    let v: Value<()> = Rc::new(RefCell::new(42_()));
+    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
 }

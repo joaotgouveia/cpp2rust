@@ -28,12 +28,12 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut v1: () = 3_();
+        let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         const _: () = assert!(true, "");;
     }
     {
-        let mut v1: () = 3_();
+        let mut v1: () = unimplemented!();
         let mut v2: () = unimplemented!();
         const _: () = assert!(true, "");;
     }

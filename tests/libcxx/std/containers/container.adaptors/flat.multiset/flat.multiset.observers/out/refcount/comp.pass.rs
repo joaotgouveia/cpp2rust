@@ -41,9 +41,7 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let comp: Value<()> = Rc::new(RefCell::new(std_function_bool__int__int__::new_1({
-            unimplemented!()
-        })));
+        let comp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;

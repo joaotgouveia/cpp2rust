@@ -270,7 +270,7 @@ pub fn test04_12() {
     let mut off_2: () = 0_();
     unimplemented!();
     unimplemented!();
-    off_1 = ({ (*pt_1.borrow())() });
+    off_1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -291,7 +291,7 @@ pub fn test04_12() {
         }
     }
     unimplemented!();
-    off_1 = ({ (*pt_1.borrow())() });
+    off_1 = unimplemented!();
     c1 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -335,7 +335,7 @@ pub fn test04_12() {
     }
     unimplemented!();
     unimplemented!();
-    off_2 = ({ (*pt_2.borrow())() });
+    off_2 = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

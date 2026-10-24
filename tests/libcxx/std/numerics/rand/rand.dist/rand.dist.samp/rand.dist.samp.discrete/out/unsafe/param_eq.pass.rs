@@ -25,24 +25,20 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut p0: [(); 2] = [30_(), 10_()];
-        let mut p1: std_discrete_distribution___param_type =
-            std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
-                p0.as_mut_ptr().offset((2_()) as isize)
-            });
-        let mut p2: std_discrete_distribution___param_type =
-            std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
-                p0.as_mut_ptr().offset((2_()) as isize)
-            });
+        let mut p1: () = std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
+            p0.as_mut_ptr().offset((2_()) as isize)
+        });
+        let mut p2: () = std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
+            p0.as_mut_ptr().offset((2_()) as isize)
+        });
         unimplemented!();
     }
     {
         let mut p0: [(); 2] = [30_(), 10_()];
-        let mut p1: std_discrete_distribution___param_type =
-            std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
-                p0.as_mut_ptr().offset((2_()) as isize)
-            });
-        let mut p2: std_discrete_distribution___param_type =
-            <std_discrete_distribution___param_type>::default();
+        let mut p1: () = std_discrete_distribution___param_type::new_1({ p0.as_mut_ptr() }, {
+            p0.as_mut_ptr().offset((2_()) as isize)
+        });
+        let mut p2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

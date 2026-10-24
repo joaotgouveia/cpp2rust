@@ -36,7 +36,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     p = unimplemented!();
     p = unimplemented!();
     p = unimplemented!();
-    (unsafe { advance_0(&mut p, <Intable_Holder_Incomplete__>::default()) });
+    unimplemented!();
     &(unimplemented!());
     return 0_();
 }

@@ -266,9 +266,7 @@ pub fn test01_10() {
     let strbuf02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let istr01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let istr02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let sentry01: Value<std_basic_istream_wchar_t__sentry> = Rc::new(RefCell::new(
-        std_basic_istream_wchar_t__sentry::new({ istr01.as_pointer() }, None),
-    ));
+    let sentry01: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -288,9 +286,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let sentry02: Value<std_basic_istream_wchar_t__sentry> = Rc::new(RefCell::new(
-        std_basic_istream_wchar_t__sentry::new({ istr01.as_pointer() }, { Some(true) }),
-    ));
+    let sentry02: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -310,9 +306,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let sentry03: Value<std_basic_istream_wchar_t__sentry> = Rc::new(RefCell::new(
-        std_basic_istream_wchar_t__sentry::new({ istr02.as_pointer() }, None),
-    ));
+    let sentry03: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -332,9 +326,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    let sentry04: Value<std_basic_istream_wchar_t__sentry> = Rc::new(RefCell::new(
-        std_basic_istream_wchar_t__sentry::new({ istr02.as_pointer() }, { Some(true) }),
-    ));
+    let sentry04: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

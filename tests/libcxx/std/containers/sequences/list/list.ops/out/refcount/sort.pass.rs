@@ -168,10 +168,7 @@ pub fn test_stable_5(mut N: ()) {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
-    let j: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___list_const_iterator_Payload__void_ptr_::new_1({ __tmp_0.as_pointer() })
-    }));
+    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         unimplemented!();
@@ -180,10 +177,7 @@ pub fn test_stable_5(mut N: ()) {
             unimplemented!()
         };
     }
-    let it: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        std___list_const_iterator_Payload__void_ptr_::new_1({ __tmp_1.as_pointer() })
-    }));
+    let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while unimplemented!() {
         let next: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if (unimplemented!())

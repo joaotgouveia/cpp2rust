@@ -112,6 +112,18 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
+pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_9(_a0: Ptr<()>) -> () {
+    return true;
+}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct operator_hijacker {}
@@ -157,7 +169,7 @@ const _: () = assert!(
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct operator_hijacker_allocator_char_ {}
-pub fn test_6(s1: (), s2: ()) {
+pub fn test_10(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let mut s1_: () = unimplemented!();
@@ -170,7 +182,7 @@ pub fn test_6(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7(s1: (), s2: ()) {
+pub fn test_11(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let mut s1_: () = unimplemented!();
@@ -183,7 +195,7 @@ pub fn test_7(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(s1: (), s2: ()) {
+pub fn test_12(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let mut s1_: () = unimplemented!();
@@ -196,7 +208,7 @@ pub fn test_8(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_9(s1: (), s2: ()) {
+pub fn test_13(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let mut s1_: () = unimplemented!();
@@ -209,103 +221,103 @@ pub fn test_9(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_10() {
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
-    ({ test_6(unimplemented!(), unimplemented!()) });
+pub fn test_string_14() {
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
+    ({ test_10(unimplemented!(), unimplemented!()) });
 }
-pub fn test_string_11() {
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
-    ({ test_7(unimplemented!(), unimplemented!()) });
+pub fn test_string_15() {
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
+    ({ test_11(unimplemented!(), unimplemented!()) });
 }
-pub fn test_string_12() {
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
-    ({ test_8(unimplemented!(), unimplemented!()) });
+pub fn test_string_16() {
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
+    ({ test_12(unimplemented!(), unimplemented!()) });
 }
-pub fn test_string_13() {
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
-    ({ test_9(unimplemented!(), unimplemented!()) });
+pub fn test_string_17() {
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
+    ({ test_13(unimplemented!(), unimplemented!()) });
 }
-pub fn test_14() -> () {
-    ({ test_string_10() });
-    ({ test_string_11() });
-    ({ test_string_12() });
-    ({ test_string_13() });
+pub fn test_18() -> () {
+    ({ test_string_14() });
+    ({ test_string_15() });
+    ({ test_string_16() });
+    ({ test_string_17() });
     return true;
 }
 pub fn main() {
@@ -328,7 +340,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_14() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

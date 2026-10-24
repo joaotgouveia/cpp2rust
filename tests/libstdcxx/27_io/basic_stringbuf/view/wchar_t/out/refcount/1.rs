@@ -259,7 +259,7 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     let sbuf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

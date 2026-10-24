@@ -109,9 +109,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -143,9 +143,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

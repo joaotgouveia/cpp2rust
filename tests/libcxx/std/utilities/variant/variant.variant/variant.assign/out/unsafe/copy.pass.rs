@@ -243,16 +243,16 @@ pub struct Result_long_ {
 }
 pub unsafe fn test_copy_assignment_same_index_5() {
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -304,8 +304,8 @@ pub unsafe fn test_copy_assignment_same_index_5() {
 pub struct anon_6 {}
 impl anon_6 {
     pub unsafe fn operator_call(&self) -> Result_int_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
@@ -318,8 +318,8 @@ impl anon_6 {
 pub struct anon_8 {}
 impl anon_8 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
@@ -357,8 +357,8 @@ impl anon_12 {
 }
 pub unsafe fn test_copy_assignment_different_index_14() {
     {
-        let mut v1: () = 43_();
-        let mut v2: () = 42_();
+        let mut v1: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         let vref: *mut () = &mut (*unimplemented!());
         unimplemented!();
         unimplemented!();
@@ -402,8 +402,8 @@ pub unsafe fn test_copy_assignment_different_index_14() {
 pub struct anon_15 {}
 impl anon_15 {
     pub unsafe fn operator_call(&self) -> Result_long_ {
-        let mut v: () = 43_();
-        let mut v2: () = 42_();
+        let mut v: () = unimplemented!();
+        let mut v2: () = unimplemented!();
         unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
@@ -427,37 +427,37 @@ impl anon_16 {
 }
 pub unsafe fn test_assignment_throw_17() {}
 pub unsafe fn test_constexpr_assign_imp_18(v: *mut (), new_value: *mut ()) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_19(v: *mut (), new_value: *mut ()) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_20(v: *mut (), new_value: *mut ()) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_21(v: *mut (), new_value: *mut ()) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_22(v: *mut (), new_value: *mut ()) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_constexpr_assign_imp_23(v: *mut (), new_value: *mut NonTrivialCopyAssign) {
-    let cp: () = (*new_value);
+    let cp: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -466,22 +466,22 @@ pub unsafe fn test_constexpr_copy_assignment_trivial_24() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_assignable<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_18(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_18(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
         test_constexpr_assign_imp_19(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_20(&mut _v, &mut _new_value)
     });
@@ -536,27 +536,27 @@ pub unsafe fn test_constexpr_copy_assignment_non_trivial_26() {
     const _: () = assert!(true, "!std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "!std::is_trivially_copy_assignable<V>::value");;
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = Default::default();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = 101_();
         test_constexpr_assign_imp_21(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: () = Default::default();
         test_constexpr_assign_imp_22(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = 42_();
+        let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialCopyAssign = NonTrivialCopyAssign::new({ 5_() });
         test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
     });
     (unsafe {
-        let mut _v: () = NonTrivialCopyAssign::new({ 3_() });
+        let mut _v: () = unimplemented!();
         let mut _new_value: NonTrivialCopyAssign = NonTrivialCopyAssign::new({ 5_() });
         test_constexpr_assign_imp_23(&mut _v, &mut _new_value)
     });

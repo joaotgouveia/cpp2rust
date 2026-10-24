@@ -26,47 +26,35 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_1({ 0_() }, { 0_() }, { 1_() }, {
-                Some(fw_0)
-            });
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = unimplemented!();
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_1(
-                { 1_() },
-                { 10_() },
-                { 12_() },
-                { Some(fw_0) },
-            );
-        let mut iv: () = (unsafe { pa.intervals() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut pa: std_piecewise_linear_distribution___param_type =
-            std_piecewise_linear_distribution___param_type::new_1({ 2_() }, { 6_() }, { 14_() }, {
-                Some(fw_0)
-            });
-        let mut iv: () = (unsafe { pa.intervals() });
+        let mut pa: () = unimplemented!();
+        let mut iv: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut dn: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut pa: () = unimplemented!();
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = (unsafe { pa.densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

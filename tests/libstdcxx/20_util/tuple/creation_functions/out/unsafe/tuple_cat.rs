@@ -99,8 +99,7 @@ unsafe fn main_0() -> () {
     let mut i: () = unimplemented!();
     let mut d: () = unimplemented!();
     let mut pi: *mut () = std::ptr::null_mut();
-    let mut to: () =
-        std_tuple_int_ref__double_ref__int_ptrref_::new({ &mut i }, { &mut d }, { &mut pi });
+    let mut to: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

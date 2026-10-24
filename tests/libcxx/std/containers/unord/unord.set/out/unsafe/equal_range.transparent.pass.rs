@@ -170,9 +170,9 @@ pub unsafe fn test_transparent_equal_range_5(mut c: ()) {
     let mut conversions: () = 0_();
     let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -180,9 +180,9 @@ pub unsafe fn test_transparent_equal_range_6(c: ()) {
     let mut conversions: () = 0_();
     let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -190,9 +190,9 @@ pub unsafe fn test_transparent_equal_range_7(mut c: ()) {
     let mut conversions: () = 0_();
     let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -200,9 +200,9 @@ pub unsafe fn test_transparent_equal_range_8(c: ()) {
     let mut conversions: () = 0_();
     let mut iters: () = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -211,10 +211,10 @@ pub unsafe fn test_non_transparent_equal_range_9(mut c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -223,10 +223,10 @@ pub unsafe fn test_non_transparent_equal_range_10(c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -235,10 +235,10 @@ pub unsafe fn test_non_transparent_equal_range_11(mut c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -247,10 +247,10 @@ pub unsafe fn test_non_transparent_equal_range_12(c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -259,10 +259,10 @@ pub unsafe fn test_non_transparent_equal_range_13(mut c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -271,10 +271,10 @@ pub unsafe fn test_non_transparent_equal_range_14(c: ()) {
     let mut iters: () = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
     unimplemented!();
     unimplemented!();
-    iters = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

@@ -688,10 +688,7 @@ pub fn test06_20() {
         })
         .clone(),
     ));
-    let w1: Value<()> = Rc::new(RefCell::new(std_ranges_iota_view_int__int_::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-    )));
+    let w1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -726,11 +723,7 @@ pub fn test06_20() {
         })
         .clone(),
     ));
-    let w2: Value<()> = Rc::new(RefCell::new(
-        std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ unimplemented!() }, {
-            unimplemented!()
-        }),
-    ));
+    let w2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(
         true,
         "std::same_as<decltype(w2.end()), std::unreachable_sentinel_t>"
@@ -762,10 +755,7 @@ pub fn test06_20() {
         })
         .clone(),
     ));
-    let w3: Value<()> = Rc::new(RefCell::new(std_ranges_iota_view_int__long_::new_1(
-        { unimplemented!() },
-        { unimplemented!() },
-    )));
+    let w3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(!(false), "!std::ranges::common_range<decltype(w3)>");;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

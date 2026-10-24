@@ -20,7 +20,7 @@ pub fn set_0(ref_: (), mut val: ()) {
 }
 pub fn read_1(ref_: ()) -> () {
     let ref_: Value<()> = Rc::new(RefCell::new(ref_));
-    let r: Ptr<()> = ({ (*ref_.borrow())() });
+    let r: Ptr<()> = unimplemented!();
     return (r.read());
 }
 pub fn main() {
@@ -28,35 +28,27 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let i1: Value<()> = Rc::new(RefCell::new(10_()));
-    let ref_1: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-        i1.as_pointer()
-    })));
+    let mut i1: () = 10_();
+    let ref_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!().write(20_());
-    let i2: Ptr<()> = ({ (*ref_1.borrow())() });
+    let i2: Ptr<()> = unimplemented!();
     {
         i2.with_mut(|__v| *__v = *__v + 5_())
     };
     unimplemented!();
-    let i3: Value<()> = Rc::new(RefCell::new(1_()));
-    let i4: Value<()> = Rc::new(RefCell::new(2_()));
-    let ref_3: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-        i3.as_pointer()
-    })));
-    let ref_4: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_int_::new({
-        i4.as_pointer()
-    })));
+    let mut i3: () = 1_();
+    let mut i4: () = 2_();
+    let ref_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ref_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let __rhs = (unimplemented!().read());
     unimplemented!().write(__rhs);
     unimplemented!();
     ({ set_0(unimplemented!(), 99_()) });
     unimplemented!();
-    let point: Value<Point> = Rc::new(RefCell::new(Point { x: 3_(), y: 4_() }));
-    let point_ref: Value<()> = Rc::new(RefCell::new(std_reference_wrapper_Point_::new({
-        point.as_pointer()
-    })));
+    let mut point: Point = Point { x: 3_(), y: 4_() };
+    let point_ref: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     field!(unimplemented!(), x).write(30_());
-    field!(({ (*point_ref.borrow())() }), y).write(40_());
+    field!(unimplemented!(), y).write(40_());
     unimplemented!();
     return 0_();
 }

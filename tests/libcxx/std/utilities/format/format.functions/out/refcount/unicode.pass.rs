@@ -65,7 +65,7 @@ impl MultiStringType {
 pub fn check_0(expected: (), fmt: (), args: Ptr<()>) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut out: () = unimplemented!();
     {
         if !(unimplemented!()) {
             unimplemented!();
@@ -76,7 +76,7 @@ pub fn check_0(expected: (), fmt: (), args: Ptr<()>) {
 pub fn check_1(expected: (), fmt: (), args: Ptr<()>) {
     let expected: Value<()> = Rc::new(RefCell::new(expected));
     let fmt: Value<()> = Rc::new(RefCell::new(fmt));
-    let out: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut out: () = unimplemented!();
     {}
     unimplemented!();
 }

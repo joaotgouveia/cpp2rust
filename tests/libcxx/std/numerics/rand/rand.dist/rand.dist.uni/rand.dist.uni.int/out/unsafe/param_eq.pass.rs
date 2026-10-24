@@ -24,17 +24,13 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p1: std_uniform_int_distribution_long__param_type =
-            <std_uniform_int_distribution_long__param_type>::default();
-        let mut p2: std_uniform_int_distribution_long__param_type =
-            <std_uniform_int_distribution_long__param_type>::default();
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p1: std_uniform_int_distribution_long__param_type =
-            <std_uniform_int_distribution_long__param_type>::default();
-        let mut p2: std_uniform_int_distribution_long__param_type =
-            <std_uniform_int_distribution_long__param_type>::default();
+        let mut p1: () = unimplemented!();
+        let mut p2: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

@@ -943,7 +943,7 @@ pub unsafe fn test_copy_elision_35() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ret = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -991,7 +991,7 @@ pub unsafe fn test_counted_36() {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ret = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

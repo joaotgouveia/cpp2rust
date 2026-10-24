@@ -32,9 +32,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<std_uniform_real_distribution___param_type> = Rc::new(RefCell::new(
-            <std_uniform_real_distribution___param_type>::default(),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut N: () = 100000_();
         let mut u: () = unimplemented!();
         let mut i: () = 0_();
@@ -62,9 +60,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         skew /= ((unimplemented!() * dev) * var);
         kurtosis /= ((unimplemented!() * var) * var);
         kurtosis -= 3_();
-        let mut x_mean: () = ((({ (*p.borrow()).a() }) + ({ (*p.borrow()).b() })) / 2_());
-        let mut x_var: () =
-            (({ sqr_0((({ (*p.borrow()).b() }) - ({ (*p.borrow()).a() }))) }) / 12_());
+        let mut x_mean: () = ((unimplemented!() + unimplemented!()) / 2_());
+        let mut x_var: () = (({ sqr_0((unimplemented!() - unimplemented!())) }) / 12_());
         let mut x_skew: () = 0_();
         let mut x_kurtosis: () = (-6_f64 / 5_());
         unimplemented!();

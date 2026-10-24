@@ -557,7 +557,7 @@ pub unsafe fn test_9() -> () {
     }
     {
         let mut s: () = unimplemented!();
-        let mut sv: () = (unsafe { s() });
+        let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -569,7 +569,7 @@ pub unsafe fn test_9() -> () {
     }
     {
         let mut s: () = unimplemented!();
-        let mut sv: () = (unsafe { s() });
+        let mut sv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

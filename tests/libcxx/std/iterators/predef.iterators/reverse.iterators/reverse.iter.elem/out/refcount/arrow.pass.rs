@@ -165,10 +165,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         {
-            let i: Value<()> = Rc::new(RefCell::new({
-                let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                std___list_const_iterator_B__void_ptr_::new_1({ __tmp_0.as_pointer() })
-            }));
+            let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();
             unimplemented!();

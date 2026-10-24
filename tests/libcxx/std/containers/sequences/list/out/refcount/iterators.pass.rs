@@ -206,7 +206,7 @@ pub fn test_4() -> () {
             first
         )
         .write(3_());
-        let j : Value<() > = Rc::new(RefCell::new(std___list_const_iterator_A__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { i .as_pointer()  } , )  )) ;
+        let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

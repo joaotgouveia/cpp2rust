@@ -156,28 +156,28 @@ pub unsafe fn test_7(mut expected: (), mut fmt: (), mut a: *const (), mut offset
     unimplemented!();
 }
 pub unsafe fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: *const ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
 pub unsafe fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: *const ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_5(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
 pub unsafe fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: *const ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), arg, 0_()) });
 }
 pub unsafe fn test_termination_condition_11(mut expected: (), mut f: (), mut arg: *const ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_7(unimplemented!(), unimplemented!(), arg, 1_()) });
     unimplemented!();

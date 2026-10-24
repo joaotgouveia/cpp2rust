@@ -435,7 +435,7 @@ pub unsafe fn utf8_to_utf32_in_ok_25(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 75_() ) .into() , ( c"void utf8_to_utf32_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -547,7 +547,7 @@ pub unsafe fn utf8_to_utf32_in_ok_25(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 100_() ) .into() , ( c"void utf8_to_utf32_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -806,7 +806,7 @@ pub unsafe fn utf8_to_utf32_in_partial_27(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 168_() ) .into() , ( c"void utf8_to_utf32_in_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -1277,7 +1277,7 @@ pub unsafe fn utf8_to_utf32_in_error_28(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 312_() ) .into() , ( c"void utf8_to_utf32_in_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -1454,7 +1454,7 @@ pub unsafe fn utf32_to_utf8_out_ok_30(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 369_() ) .into() , ( c"void utf32_to_utf8_out_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -1661,7 +1661,7 @@ pub unsafe fn utf32_to_utf8_out_partial_31(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 425_() ) .into() , ( c"void utf32_to_utf8_out_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -1876,7 +1876,7 @@ pub unsafe fn utf32_to_utf8_out_error_32(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 484_() ) .into() , ( c"void utf32_to_utf8_out_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -2037,7 +2037,7 @@ pub unsafe fn utf8_to_utf16_in_ok_35(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 544_() ) .into() , ( c"void utf8_to_utf16_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -2150,7 +2150,7 @@ pub unsafe fn utf8_to_utf16_in_ok_35(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 569_() ) .into() , ( c"void utf8_to_utf16_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -2321,7 +2321,7 @@ pub unsafe fn utf8_to_utf16_in_ok_36(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 544_() ) .into() , ( c"void utf8_to_utf16_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -2434,7 +2434,7 @@ pub unsafe fn utf8_to_utf16_in_ok_36(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 569_() ) .into() , ( c"void utf8_to_utf16_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -2725,7 +2725,7 @@ pub unsafe fn utf8_to_utf16_in_partial_37(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 642_() ) .into() , ( c"void utf8_to_utf16_in_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -3018,7 +3018,7 @@ pub unsafe fn utf8_to_utf16_in_partial_38(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 642_() ) .into() , ( c"void utf8_to_utf16_in_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -3497,7 +3497,7 @@ pub unsafe fn utf8_to_utf16_in_error_39(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 786_() ) .into() , ( c"void utf8_to_utf16_in_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -3977,7 +3977,7 @@ pub unsafe fn utf8_to_utf16_in_error_40(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 786_() ) .into() , ( c"void utf8_to_utf16_in_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -4166,7 +4166,7 @@ pub unsafe fn utf16_to_utf8_out_ok_43(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 843_() ) .into() , ( c"void utf16_to_utf8_out_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -4320,7 +4320,7 @@ pub unsafe fn utf16_to_utf8_out_ok_44(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 843_() ) .into() , ( c"void utf16_to_utf8_out_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -4564,7 +4564,7 @@ pub unsafe fn utf16_to_utf8_out_partial_45(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 906_() ) .into() , ( c"void utf16_to_utf8_out_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -4810,7 +4810,7 @@ pub unsafe fn utf16_to_utf8_out_partial_46(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 906_() ) .into() , ( c"void utf16_to_utf8_out_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -5104,7 +5104,7 @@ pub unsafe fn utf16_to_utf8_out_error_47(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 981_() ) .into() , ( c"void utf16_to_utf8_out_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -5399,7 +5399,7 @@ pub unsafe fn utf16_to_utf8_out_error_48(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 981_() ) .into() , ( c"void utf16_to_utf8_out_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char32_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -5552,7 +5552,7 @@ pub unsafe fn utf8_to_ucs2_in_ok_53(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1041_() ) .into() , ( c"void utf8_to_ucs2_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -5663,7 +5663,7 @@ pub unsafe fn utf8_to_ucs2_in_ok_53(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1066_() ) .into() , ( c"void utf8_to_ucs2_in_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -5875,7 +5875,7 @@ pub unsafe fn utf8_to_ucs2_in_partial_54(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1126_() ) .into() , ( c"void utf8_to_ucs2_in_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -6418,7 +6418,7 @@ pub unsafe fn utf8_to_ucs2_in_error_55(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1280_() ) .into() , ( c"void utf8_to_ucs2_in_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -6587,7 +6587,7 @@ pub unsafe fn ucs2_to_utf8_out_ok_57(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1337_() ) .into() , ( c"void ucs2_to_utf8_out_ok(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -6766,7 +6766,7 @@ pub unsafe fn ucs2_to_utf8_out_partial_58(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1388_() ) .into() , ( c"void ucs2_to_utf8_out_partial(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -7124,7 +7124,7 @@ pub unsafe fn ucs2_to_utf8_out_error_59(cvt: *const ()) {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1472_() ) .into() , ( c"void ucs2_to_utf8_out_error(const std::codecvt<InternT, ExternT, mbstate_t> &) [InternT = char16_t, ExternT = char]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -7313,7 +7313,7 @@ pub unsafe fn utf16_to_utf32_in_ok_64(cvt: *const (), mut endianess: utf16_endia
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1555_() ) .into() , ( c"void utf16_to_utf32_in_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -7425,7 +7425,7 @@ pub unsafe fn utf16_to_utf32_in_ok_64(cvt: *const (), mut endianess: utf16_endia
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1580_() ) .into() , ( c"void utf16_to_utf32_in_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -7675,7 +7675,7 @@ pub unsafe fn utf16_to_utf32_in_partial_65(cvt: *const (), mut endianess: utf16_
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1646_() ) .into() , ( c"void utf16_to_utf32_in_partial(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -7969,7 +7969,7 @@ pub unsafe fn utf16_to_utf32_in_error_66(cvt: *const (), mut endianess: utf16_en
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1724_() ) .into() , ( c"void utf16_to_utf32_in_error(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -8132,7 +8132,7 @@ pub unsafe fn utf32_to_utf16_out_ok_67(cvt: *const (), mut endianess: utf16_endi
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1770_() ) .into() , ( c"void utf32_to_utf16_out_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -8330,7 +8330,7 @@ pub unsafe fn utf32_to_utf16_out_partial_68(cvt: *const (), mut endianess: utf16
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1824_() ) .into() , ( c"void utf32_to_utf16_out_partial(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -8536,7 +8536,7 @@ pub unsafe fn utf32_to_utf16_out_error_69(cvt: *const (), mut endianess: utf16_e
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1880_() ) .into() , ( c"void utf32_to_utf16_out_error(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char32_t]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -8687,7 +8687,7 @@ pub unsafe fn utf16_to_ucs2_in_ok_71(cvt: *const (), mut endianess: utf16_endian
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1933_() ) .into() , ( c"void utf16_to_ucs2_in_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -8798,7 +8798,7 @@ pub unsafe fn utf16_to_ucs2_in_ok_71(cvt: *const (), mut endianess: utf16_endian
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 1958_() ) .into() , ( c"void utf16_to_ucs2_in_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -8994,7 +8994,7 @@ pub unsafe fn utf16_to_ucs2_in_partial_72(cvt: *const (), mut endianess: utf16_e
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 2016_() ) .into() , ( c"void utf16_to_ucs2_in_partial(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -9344,7 +9344,7 @@ pub unsafe fn utf16_to_ucs2_in_error_73(cvt: *const (), mut endianess: utf16_end
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 2105_() ) .into() , ( c"void utf16_to_ucs2_in_error(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });
@@ -9492,7 +9492,7 @@ pub unsafe fn ucs2_to_utf16_out_ok_74(cvt: *const (), mut endianess: utf16_endia
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_ok)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 2151_() ) .into() , ( c"void ucs2_to_utf16_out_ok(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.ok" .as_ptr() ) .into() , ] ) )
                 });
@@ -9655,7 +9655,7 @@ pub unsafe fn ucs2_to_utf16_out_partial_75(cvt: *const (), mut endianess: utf16_
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_partial)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 2200_() ) .into() , ( c"void ucs2_to_utf16_out_partial(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.partial" .as_ptr() ) .into() , ] ) )
                 });
@@ -9988,7 +9988,7 @@ pub unsafe fn ucs2_to_utf16_out_error_76(cvt: *const (), mut endianess: utf16_en
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
-            if !((res) == (std_codecvt_base_result_error)) {
+            if !((res) == (unimplemented!())) {
                 (unsafe {
                     __builtin_fprintf_26 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"codecvt_unicode.cc" .as_ptr() ) .into() , ( 2280_() ) .into() , ( c"void ucs2_to_utf16_out_error(const std::codecvt<InternT, char, mbstate_t> &, utf16_endianess) [InternT = char16_t]" .as_ptr() ) .into() , ( c"res == cvt.error" .as_ptr() ) .into() , ] ) )
                 });

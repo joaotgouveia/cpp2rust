@@ -24,9 +24,8 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p0: std_normal_distribution___param_type =
-            <std_normal_distribution___param_type>::default();
-        let mut p: std_normal_distribution___param_type = p0;
+        let mut p0: () = unimplemented!();
+        let mut p: () = p0.clone();
         unimplemented!();
         unimplemented!();
     }

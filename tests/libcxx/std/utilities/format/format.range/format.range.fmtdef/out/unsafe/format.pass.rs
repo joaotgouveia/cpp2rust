@@ -198,11 +198,7 @@ pub unsafe fn test_format_8(mut expected: (), mut arg: ()) {
     let mut out: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
-    (unsafe {
-        (formatter
-            as std___range_default_formatter_std_range_format_sequence__std_array_int__2___char_)
-            .format(&arg, &mut format_ctx)
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_format_9(mut expected: (), mut arg: ()) {
@@ -211,11 +207,7 @@ pub unsafe fn test_format_9(mut expected: (), mut arg: ()) {
     let mut out: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
-    (unsafe {
-        (formatter
-            as std___range_default_formatter_std_range_format_sequence__std_array_int__2___wchar_t_)
-            .format(&arg, &mut format_ctx)
-    });
+    unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_10(mut fmt: ()) {
@@ -226,12 +218,8 @@ pub unsafe fn test_assure_parse_is_called_10(mut fmt: ()) {
         (unsafe { test_format_context_create_4(out.clone(), unimplemented!()) });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_array_parse_call_validator__2___char_ ) . parse  ( & mut ctx , )
-    });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_array_parse_call_validator__2___char_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_11(mut fmt: ()) {
     let mut arg: () = unimplemented!();
@@ -241,12 +229,8 @@ pub unsafe fn test_assure_parse_is_called_11(mut fmt: ()) {
         (unsafe { test_format_context_create_6(out.clone(), unimplemented!()) });
     let mut formatter: () = unimplemented!();
     let mut ctx: () = unimplemented!();
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_array_parse_call_validator__2___wchar_t_ ) . parse  ( & mut ctx , )
-    });
-    (unsafe {
-        ( formatter as std___range_default_formatter_std_range_format_sequence__std_array_parse_call_validator__2___wchar_t_ ) . format  ( & arg , & mut format_ctx , )
-    });
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test_assure_parse_is_called_12() {
     let mut arg: () = unimplemented!();

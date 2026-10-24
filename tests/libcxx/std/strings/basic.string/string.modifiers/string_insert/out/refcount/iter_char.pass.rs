@@ -136,7 +136,16 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn test_9(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
+pub fn is_string_asan_correct_9(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_10(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_11(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_12(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     let p: Value<()> = Rc::new(RefCell::new(p));
     unimplemented!();
     let mut sufficient_cap: () = ({ unimplemented!() } < { unimplemented!() });
@@ -151,7 +160,7 @@ pub fn test_9(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub fn test_10(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
+pub fn test_13(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     let p: Value<()> = Rc::new(RefCell::new(p));
     unimplemented!();
     let mut sufficient_cap: () = ({ unimplemented!() } < { unimplemented!() });
@@ -166,7 +175,7 @@ pub fn test_10(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub fn test_11(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
+pub fn test_14(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     let p: Value<()> = Rc::new(RefCell::new(p));
     unimplemented!();
     let mut sufficient_cap: () = ({ unimplemented!() } < { unimplemented!() });
@@ -181,484 +190,484 @@ pub fn test_11(s: Ptr<()>, p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub fn test_string_12() {
+pub fn test_string_15() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('1' as ()), unimplemented!())
+        test_12(_s, _p, ('1' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('a' as ()), unimplemented!())
+        test_12(_s, _p, ('a' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('b' as ()), unimplemented!())
+        test_12(_s, _p, ('b' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('c' as ()), unimplemented!())
+        test_12(_s, _p, ('c' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('d' as ()), unimplemented!())
+        test_12(_s, _p, ('d' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('2' as ()), unimplemented!())
+        test_12(_s, _p, ('2' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('3' as ()), unimplemented!())
+        test_12(_s, _p, ('3' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('4' as ()), unimplemented!())
+        test_12(_s, _p, ('4' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('5' as ()), unimplemented!())
+        test_12(_s, _p, ('5' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('6' as ()), unimplemented!())
+        test_12(_s, _p, ('6' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('7' as ()), unimplemented!())
+        test_12(_s, _p, ('7' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('A' as ()), unimplemented!())
+        test_12(_s, _p, ('A' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('B' as ()), unimplemented!())
+        test_12(_s, _p, ('B' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('C' as ()), unimplemented!())
+        test_12(_s, _p, ('C' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_9(_s, _p, ('x' as ()), unimplemented!())
+        test_12(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub fn test_string_13() {
+pub fn test_string_16() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('1' as ()), unimplemented!())
+        test_13(_s, _p, ('1' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('a' as ()), unimplemented!())
+        test_13(_s, _p, ('a' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('b' as ()), unimplemented!())
+        test_13(_s, _p, ('b' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('c' as ()), unimplemented!())
+        test_13(_s, _p, ('c' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('d' as ()), unimplemented!())
+        test_13(_s, _p, ('d' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('2' as ()), unimplemented!())
+        test_13(_s, _p, ('2' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('3' as ()), unimplemented!())
+        test_13(_s, _p, ('3' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('4' as ()), unimplemented!())
+        test_13(_s, _p, ('4' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('5' as ()), unimplemented!())
+        test_13(_s, _p, ('5' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('6' as ()), unimplemented!())
+        test_13(_s, _p, ('6' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('7' as ()), unimplemented!())
+        test_13(_s, _p, ('7' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('A' as ()), unimplemented!())
+        test_13(_s, _p, ('A' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('B' as ()), unimplemented!())
+        test_13(_s, _p, ('B' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('C' as ()), unimplemented!())
+        test_13(_s, _p, ('C' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_10(_s, _p, ('x' as ()), unimplemented!())
+        test_13(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub fn test_string_14() {
+pub fn test_string_17() {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('1' as ()), unimplemented!())
+        test_14(_s, _p, ('1' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('a' as ()), unimplemented!())
+        test_14(_s, _p, ('a' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('b' as ()), unimplemented!())
+        test_14(_s, _p, ('b' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('c' as ()), unimplemented!())
+        test_14(_s, _p, ('c' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('d' as ()), unimplemented!())
+        test_14(_s, _p, ('d' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('2' as ()), unimplemented!())
+        test_14(_s, _p, ('2' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('3' as ()), unimplemented!())
+        test_14(_s, _p, ('3' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('4' as ()), unimplemented!())
+        test_14(_s, _p, ('4' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('5' as ()), unimplemented!())
+        test_14(_s, _p, ('5' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('6' as ()), unimplemented!())
+        test_14(_s, _p, ('6' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('7' as ()), unimplemented!())
+        test_14(_s, _p, ('7' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('A' as ()), unimplemented!())
+        test_14(_s, _p, ('A' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('B' as ()), unimplemented!())
+        test_14(_s, _p, ('B' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('C' as ()), unimplemented!())
+        test_14(_s, _p, ('C' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
     ({
         let _s: Ptr<()> = s.as_pointer();
         let _p: () = unimplemented!();
-        test_11(_s, _p, ('x' as ()), unimplemented!())
+        test_14(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub fn test_15() -> () {
-    ({ test_string_12() });
-    ({ test_string_13() });
-    ({ test_string_14() });
+pub fn test_18() -> () {
+    ({ test_string_15() });
+    ({ test_string_16() });
+    ({ test_string_17() });
     return true;
 }
 pub fn main() {
@@ -681,7 +690,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_15() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

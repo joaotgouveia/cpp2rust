@@ -28,12 +28,8 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p0: Value<std_negative_binomial_distribution___param_type> = Rc::new(RefCell::new(
-            <std_negative_binomial_distribution___param_type>::default(),
-        ));
-        let p: Value<std_negative_binomial_distribution___param_type> = Rc::new(RefCell::new(
-            <std_negative_binomial_distribution___param_type>::default(),
-        ));
+        let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*p.borrow_mut()) = (*p0.borrow()).clone();
         unimplemented!();
         unimplemented!();

@@ -265,9 +265,7 @@ pub fn test_constructors_10() {
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let td: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let te: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
-        (z1).clone()
-    })));
+    let te: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*x1.borrow_mut()) = 1_();
     x2 = 1_();
     let mut __do_while = true;
@@ -312,82 +310,11 @@ pub fn main() {
     std::process::exit(main_0());
 }
 fn main_0() -> () {
-    let a: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_2: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_4: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_5: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_6: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_7: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_8: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_9: Value<()> = Rc::new(RefCell::new(1_()));
-        std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
-            { __tmp_0.as_pointer() },
-            { __tmp_1.as_pointer() },
-            { __tmp_2.as_pointer() },
-            { __tmp_3.as_pointer() },
-            { __tmp_4.as_pointer() },
-            { __tmp_5.as_pointer() },
-            { __tmp_6.as_pointer() },
-            { __tmp_7.as_pointer() },
-            { __tmp_8.as_pointer() },
-            { __tmp_9.as_pointer() },
-        )
-    }));
-    let b: Value<()> = Rc::new(RefCell::new({
-        let __tmp_10: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_11: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_12: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_13: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_14: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_15: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_16: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_17: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_18: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_19: Value<()> = Rc::new(RefCell::new(2_()));
-        std_tuple_int__int__int__int__int__int__int__int__int__int_::new_1(
-            { __tmp_10.as_pointer() },
-            { __tmp_11.as_pointer() },
-            { __tmp_12.as_pointer() },
-            { __tmp_13.as_pointer() },
-            { __tmp_14.as_pointer() },
-            { __tmp_15.as_pointer() },
-            { __tmp_16.as_pointer() },
-            { __tmp_17.as_pointer() },
-            { __tmp_18.as_pointer() },
-            { __tmp_19.as_pointer() },
-        )
-    }));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let d: Value<()> = Rc::new(RefCell::new({
-        let __tmp_20: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_21: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_22: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_23: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_24: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_25: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_26: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_27: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_28: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_29: Value<()> = Rc::new(RefCell::new(3_()));
-        std_tuple_int__int__int__int__int__int__int__int__int__char_::new(
-            { __tmp_20.as_pointer() },
-            { __tmp_21.as_pointer() },
-            { __tmp_22.as_pointer() },
-            { __tmp_23.as_pointer() },
-            { __tmp_24.as_pointer() },
-            { __tmp_25.as_pointer() },
-            { __tmp_26.as_pointer() },
-            { __tmp_27.as_pointer() },
-            { __tmp_28.as_pointer() },
-            { __tmp_29.as_pointer() },
-        )
-    }));
-    let e: Value<()> = Rc::new(RefCell::new(
-        std_tuple_int__int__int__int__int__int__int__int__int__int_::new_2({ d.as_pointer() }),
-    ));
+    let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

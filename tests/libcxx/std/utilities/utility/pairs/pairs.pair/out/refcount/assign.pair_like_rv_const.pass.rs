@@ -9,13 +9,10 @@ use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     {
         {
-            let x: Value<()> = Rc::new(RefCell::new(91_()));
-            let y: Value<()> = Rc::new(RefCell::new(92_()));
+            let mut x: () = 91_();
+            let mut y: () = 92_();
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
-                { x.as_pointer() },
-                { y.as_pointer() },
-            )));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let result: Ptr<()> = (unimplemented!());
             unimplemented!();
             unimplemented!();
@@ -34,13 +31,10 @@ pub fn test_0() -> () {
             );;
         }
         {
-            let x: Value<()> = Rc::new(RefCell::new(91_()));
-            let y: Value<()> = Rc::new(RefCell::new(92_()));
+            let mut x: () = 91_();
+            let mut y: () = 92_();
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let p: Value<()> = Rc::new(RefCell::new(std_pair_int_ref__int_ref_::new_1(
-                { x.as_pointer() },
-                { y.as_pointer() },
-            )));
+            let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let result: Ptr<()> = (unimplemented!());
             unimplemented!();
             unimplemented!();

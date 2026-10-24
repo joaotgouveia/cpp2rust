@@ -266,8 +266,8 @@ unsafe fn main_0() -> () {
     let mut ta: () = unimplemented!();
     let mut tb: () = unimplemented!();
     unimplemented!();
-    let mut tc: () = 1_();
-    let mut td: () = 0_();
+    let mut tc: () = unimplemented!();
+    let mut td: () = unimplemented!();
     td = (tc).clone();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -289,7 +289,7 @@ unsafe fn main_0() -> () {
         }
     }
     let mut i: () = 0_();
-    let mut te: () = std_tuple_int_ref_::new({ &mut i });
+    let mut te: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -310,7 +310,7 @@ unsafe fn main_0() -> () {
             unimplemented!();
         }
     }
-    let mut tf: () = std_tuple_const_int_ref_::new({ &tc });
+    let mut tf: () = unimplemented!();
     (*(unsafe { get_10(&mut tc) })) = 2_();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

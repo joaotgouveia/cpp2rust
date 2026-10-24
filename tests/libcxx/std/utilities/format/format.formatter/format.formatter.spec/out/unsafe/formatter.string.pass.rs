@@ -129,7 +129,7 @@ pub unsafe fn test_5(mut expected: (), mut fmt: (), mut a: (), mut offset: ()) {
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut arg: () = (unsafe { a() });
+    let mut arg: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
     unimplemented!();
@@ -165,35 +165,35 @@ pub unsafe fn test_7(mut expected: (), mut fmt: (), mut a: (), mut offset: ()) {
     unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
-    let mut arg: () = (unsafe { a() });
+    let mut arg: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
     unimplemented!();
     unimplemented!();
 }
 pub unsafe fn test_termination_condition_8(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
     unimplemented!();
     (unsafe { test_4(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_termination_condition_9(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_5(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
     unimplemented!();
     (unsafe { test_5(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_termination_condition_10(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
     unimplemented!();
     (unsafe { test_6(unimplemented!(), unimplemented!(), unimplemented!(), 0_()) });
 }
 pub unsafe fn test_termination_condition_11(mut expected: (), mut f: (), mut arg: ()) {
-    let mut fmt: () = (unsafe { f() });
+    let mut fmt: () = unimplemented!();
     unimplemented!();
     (unsafe { test_7(unimplemented!(), unimplemented!(), unimplemented!(), 1_()) });
     unimplemented!();

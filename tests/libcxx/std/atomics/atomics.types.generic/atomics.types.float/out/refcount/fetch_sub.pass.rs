@@ -115,10 +115,7 @@ pub fn test_impl_12() {
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -162,7 +159,7 @@ pub fn test_impl_13() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ (*a.borrow()).fetch_sub_13(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -170,19 +167,13 @@ pub fn test_impl_13() {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    ({
-                        let ___op: () = (old_val - new_val);
-                        (*x.upgrade().deref()).fetch_sub_13(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -192,18 +183,12 @@ pub fn test_impl_13() {
         let fetch_sub: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut old_value: (), mut new_val: ()| {
-                    ({
-                        let ___op: () = (old_value - new_val);
-                        (*x.upgrade().deref()).fetch_sub_13(___op, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut old_value: (), mut new_val: ()| {
-                ({
-                    let ___op: () = (old_value - new_val);
-                    (*x.upgrade().deref()).fetch_sub_13(___op, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
@@ -246,10 +231,7 @@ pub fn test_impl_14() {
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -293,7 +275,7 @@ pub fn test_impl_15() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({ (*a.borrow()).fetch_sub_13(1.2_f64, Some(unimplemented!())) });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -301,19 +283,13 @@ pub fn test_impl_15() {
         let store: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut old_val: (), mut new_val: ()| {
-                    ({
-                        let ___op: () = (old_val - new_val);
-                        (*x.upgrade().deref()).fetch_sub_13(___op, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -323,18 +299,12 @@ pub fn test_impl_15() {
         let fetch_sub: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut old_value: (), mut new_val: ()| {
-                    ({
-                        let ___op: () = (old_value - new_val);
-                        (*x.upgrade().deref()).fetch_sub_13(___op, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let fetch_sub_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut old_value: (), mut new_val: ()| {
-                ({
-                    let ___op: () = (old_value - new_val);
-                    (*x.upgrade().deref()).fetch_sub_13(___op, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));

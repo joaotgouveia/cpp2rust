@@ -400,7 +400,7 @@ pub unsafe fn format_test_vector_bool_19(
     let mut __tmp_0: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_0;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *mut () = input;
@@ -576,7 +576,7 @@ pub unsafe fn format_test_vector_bool_19(
     let mut __tmp_1: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_1;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *mut () = input;
@@ -824,7 +824,7 @@ pub unsafe fn format_test_vector_bool_20(
     let mut __tmp_2: () = (unsafe { fmt_invalid_types_15(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_2;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *const () = input;
@@ -1000,7 +1000,7 @@ pub unsafe fn format_test_vector_bool_20(
     let mut __tmp_3: () = (unsafe { fmt_invalid_nested_types_17(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_3;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *const () = input;
@@ -1244,7 +1244,7 @@ pub unsafe fn format_test_vector_bool_21(
     let mut __tmp_4: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_4;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *mut () = input;
@@ -1420,7 +1420,7 @@ pub unsafe fn format_test_vector_bool_21(
     let mut __tmp_5: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_5;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *mut () = input;
@@ -1680,7 +1680,7 @@ pub unsafe fn format_test_vector_bool_22(
     let mut __tmp_6: () = (unsafe { fmt_invalid_types_16(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_6;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *const () = input;
@@ -1868,7 +1868,7 @@ pub unsafe fn format_test_vector_bool_22(
     let mut __tmp_7: () = (unsafe { fmt_invalid_nested_types_18(unimplemented!()) });
     let __range1: *mut () = &mut __tmp_7;
     'loop_: for fmt in IterRange::new(unimplemented!(), unimplemented!()) {
-        let mut fmt: () = (unsafe { (*unimplemented!())() });
+        let mut fmt: () = unimplemented!();
         (unsafe {
             let _arg1: () = unimplemented!();
             let _arg2: *const () = input;

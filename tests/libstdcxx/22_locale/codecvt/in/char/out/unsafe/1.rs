@@ -274,7 +274,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((r1) == (std_codecvt_base_result_noconv)) {
+        if !((r1) == (unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

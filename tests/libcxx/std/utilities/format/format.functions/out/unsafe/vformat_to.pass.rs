@@ -955,7 +955,7 @@ pub unsafe fn format_tests_15(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     {
         let mut buffer: () = unimplemented!();
-        let mut data: () = (unsafe { buffer() });
+        let mut data: () = unimplemented!();
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();
@@ -1456,7 +1456,7 @@ pub unsafe fn format_tests_16(mut check: FnPtr<Generic>, mut check_exception: Fn
     }
     {
         let mut buffer: () = unimplemented!();
-        let mut data: () = (unsafe { buffer() });
+        let mut data: () = unimplemented!();
         (unsafe {
             let _expected: () = unimplemented!();
             let _fmt: () = unimplemented!();

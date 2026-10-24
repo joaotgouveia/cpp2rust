@@ -376,7 +376,16 @@ impl std::cmp::PartialEq for min_allocator_char_ {
     }
 }
 impl std::cmp::Eq for min_allocator_char_ {}
-pub fn test_10(s0: ()) {
+pub fn is_string_asan_correct_10(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_11(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_12(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_13(s0: ()) {
     let s0: Value<()> = Rc::new(RefCell::new(s0));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -389,7 +398,7 @@ pub fn test_10(s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_11(s0: ()) {
+pub fn test_14(s0: ()) {
     let s0: Value<()> = Rc::new(RefCell::new(s0));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -402,7 +411,7 @@ pub fn test_11(s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_12(s0: ()) {
+pub fn test_15(s0: ()) {
     let s0: Value<()> = Rc::new(RefCell::new(s0));
     let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -415,40 +424,40 @@ pub fn test_12(s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_13(a: Ptr<()>) {
-    ({ test_10(unimplemented!()) });
-    ({ test_10(unimplemented!()) });
-    ({ test_10(unimplemented!()) });
+pub fn test_string_16(a: Ptr<()>) {
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
 }
-pub fn test_string_14(a: Ptr<test_allocator_char_>) {
-    ({ test_11(unimplemented!()) });
-    ({ test_11(unimplemented!()) });
-    ({ test_11(unimplemented!()) });
+pub fn test_string_17(a: Ptr<test_allocator_char_>) {
+    ({ test_14(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
 }
-pub fn test_string_15(a: Ptr<min_allocator_char_>) {
-    ({ test_12(unimplemented!()) });
-    ({ test_12(unimplemented!()) });
-    ({ test_12(unimplemented!()) });
+pub fn test_string_18(a: Ptr<min_allocator_char_>) {
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
 }
-pub fn test_16() -> () {
+pub fn test_19() -> () {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_string_13(_a.as_pointer())
+        test_string_16(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(<test_allocator_char_>::default()));
-        test_string_14(_a.as_pointer())
+        test_string_17(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 3_() })));
-        test_string_14(_a.as_pointer())
+        test_string_17(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));
-        test_string_15(_a.as_pointer())
+        test_string_18(_a.as_pointer())
     });
     return true;
 }
@@ -472,7 +481,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_16() });
+    ({ test_19() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -276,8 +276,8 @@ pub fn test01_10() {
     let neg1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let pos2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let neg2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*neg1.borrow_mut()) = { (*neg1.borrow()).clone() };
-    (*neg2.borrow_mut()) = { (*neg2.borrow()).clone() };
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

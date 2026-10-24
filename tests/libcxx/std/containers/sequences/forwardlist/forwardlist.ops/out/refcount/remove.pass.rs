@@ -218,11 +218,7 @@ pub fn test_10() -> () {
             let _value: Ptr<S> = unimplemented!();
             do_remove_8(_l, _value, 3_())
         });
-        let it: Value<()> = Rc::new(RefCell::new(
-            std___forward_list_const_iterator_std___forward_list_node_S__void_ptr__ptr_::new_1({
-                unimplemented!()
-            }),
-        ));
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut ip: Ptr<()> = unimplemented!();
         'loop_: while ({ (ip).clone() } != { unimplemented!() }) {
             unimplemented!();

@@ -24,13 +24,11 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p: std_student_t_distribution___param_type =
-            <std_student_t_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     {
-        let mut p: std_student_t_distribution___param_type =
-            <std_student_t_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

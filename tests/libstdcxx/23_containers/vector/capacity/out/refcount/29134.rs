@@ -376,9 +376,7 @@ thread_local!(
 );
 pub fn test01_18() {
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let a: Value<()> = Rc::new(RefCell::new(
-        ({ ((*v.borrow()) as std__Vector_base_int__std_allocator_int__).get_allocator() }),
-    ));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

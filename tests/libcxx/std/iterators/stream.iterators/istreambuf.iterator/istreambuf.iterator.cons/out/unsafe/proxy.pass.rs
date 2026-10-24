@@ -26,20 +26,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut inf: () = unimplemented!();
         let mut j: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: std_istreambuf_iterator_char____proxy = unimplemented!();
-            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ &mut __tmp_0 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut inf: () = unimplemented!();
         let mut j: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_1: std_istreambuf_iterator_wchar_t____proxy = unimplemented!();
-            std_istreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({ &mut __tmp_1 })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }

@@ -359,10 +359,7 @@ pub fn test_11() -> () {
         let c1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let c2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it2: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_0.as_pointer() })
-        }));
+        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

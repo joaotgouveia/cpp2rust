@@ -26,7 +26,7 @@ pub fn make_move_only_0() -> MoveOnly {
     return MoveOnly::new();
 }
 pub fn test01_1() {
-    let t1: Value<()> = Rc::new(RefCell::new(({ make_move_only_0() })));
+    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*t1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();

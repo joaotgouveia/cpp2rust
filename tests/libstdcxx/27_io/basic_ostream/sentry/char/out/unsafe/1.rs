@@ -259,8 +259,7 @@ impl __gnu_test_semaphore {}
 pub unsafe fn test01_10() {
     let mut strbuf01: () = unimplemented!();
     let mut strm1: () = unimplemented!();
-    let sentry1: std_basic_ostream_char__sentry =
-        std_basic_ostream_char__sentry::new({ &mut strm1 });
+    let sentry1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -282,7 +282,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { ot() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -303,7 +303,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { ot() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -324,7 +324,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { ot3() })
+        if !((unimplemented!())
             && ((unsafe { NonTransferable::to_(&mut (*unimplemented!())) }) == (42_())))
         {
             (unsafe {
@@ -347,7 +347,7 @@ unsafe fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { ot4() })
+        if !((unimplemented!())
             && ((unsafe { NonTransferable::to_(&mut (*unimplemented!())) }) == (666_())))
         {
             (unsafe {

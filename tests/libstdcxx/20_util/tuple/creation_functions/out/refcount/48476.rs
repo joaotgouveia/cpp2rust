@@ -924,19 +924,11 @@ pub fn check_tuple_cat_30(t1: (), t2: ()) {
     }
 }
 pub fn test01_31() {
-    let i: Value<()> = Rc::new(RefCell::new(0_()));
+    let mut i: () = 0_();
     let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t1: Value<()> = Rc::new(RefCell::new(std_tuple_int_ref_::new({ i.as_pointer() })));
+    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let t3: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(0_()));
-        std_tuple_const_int_ref__int__double_::new_1(
-            { i.as_pointer() },
-            { __tmp_0.as_pointer() },
-            { __tmp_1.as_pointer() },
-        )
-    }));
+    let t3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _t1: () = unimplemented!();
         let _t2: () = unimplemented!();

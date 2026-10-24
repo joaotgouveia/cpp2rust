@@ -954,21 +954,15 @@ pub fn test_hash_variant_196() {
         }
     }
     {
-        let str: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(b"hello")));
+        let mut str: Ptr<()> = Ptr::<()>::from_string_literal(b"hello");
         let v0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let v0_other: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let v1: Value<()> = Rc::new(RefCell::new(42_()));
-        let v1_other: Value<()> = Rc::new(RefCell::new(100_()));
-        let v2: Value<()> = Rc::new(RefCell::new(100_()));
-        let v2_other: Value<()> = Rc::new(RefCell::new(999_()));
-        let v3: Value<()> = Rc::new(RefCell::new(
-            std_variant_std_monostate__int__long__const_char_ptr_::new_1({ str.as_pointer() }),
-        ));
-        let v3_other: Value<()> = Rc::new(RefCell::new(
-            std_variant_std_monostate__int__long__const_char_ptr_::new_2({
-                Ptr::<()>::from_string_literal(b"not hello")
-            }),
-        ));
+        let v1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v1_other: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v2_other: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let v3_other: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let h: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

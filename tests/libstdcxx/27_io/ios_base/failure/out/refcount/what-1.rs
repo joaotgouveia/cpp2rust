@@ -255,17 +255,13 @@ pub struct __gnu_test_semaphore {
 }
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let obj1: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-        s.as_pointer()
-    })));
-    let obj2: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-        s.as_pointer()
-    })));
+    let mut s: () = unimplemented!();
+    let obj1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let obj2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(({ strstr_11(({ (*obj1.borrow()).what() }), unimplemented!()) }).is_null())) {
+        if !(!(({ strstr_11(unimplemented!(), unimplemented!()) }).is_null())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
@@ -287,7 +283,7 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(({ strstr_11(({ (*obj2.borrow()).what() }), unimplemented!()) }).is_null())) {
+        if !(!(({ strstr_11(unimplemented!(), unimplemented!()) }).is_null())) {
             ({
                 __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),

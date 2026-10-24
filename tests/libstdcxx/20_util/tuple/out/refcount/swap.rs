@@ -301,8 +301,8 @@ pub fn test01_12() {
     }
 }
 pub fn test02_13() {
-    let t1: Value<()> = Rc::new(RefCell::new(1_()));
-    let t2: Value<()> = Rc::new(RefCell::new(2_()));
+    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
@@ -383,22 +383,8 @@ pub fn test03_16() {
     }
 }
 pub fn test04_19() {
-    let t1: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(1_()));
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_f32));
-        let __tmp_2: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_11(1_()) })));
-        std_tuple_int__float__MoveOnly_::new({ __tmp_0.as_pointer() }, { __tmp_1.as_pointer() }, {
-            __tmp_2.as_pointer()
-        })
-    }));
-    let t2: Value<()> = Rc::new(RefCell::new({
-        let __tmp_3: Value<()> = Rc::new(RefCell::new(2_()));
-        let __tmp_4: Value<()> = Rc::new(RefCell::new(2_f32));
-        let __tmp_5: Value<MoveOnly> = Rc::new(RefCell::new(({ make_move_only_11(2_()) })));
-        std_tuple_int__float__MoveOnly_::new({ __tmp_3.as_pointer() }, { __tmp_4.as_pointer() }, {
-            __tmp_5.as_pointer()
-        })
-    }));
+    let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

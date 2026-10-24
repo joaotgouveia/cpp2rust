@@ -37,7 +37,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!((4usize == 4_()), "sizeof(std::money_base::pattern) == 4");;
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     &(*p.borrow_mut());
-    array_elem!(p.as_pointer(), field, 0_()).write(std_money_base_part_none);
+    array_elem!(p.as_pointer(), field, 0_()).write(unimplemented!());
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

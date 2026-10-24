@@ -30,24 +30,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<std_istreambuf_iterator_char____proxy> =
-                Rc::new(RefCell::new(unimplemented!()));
-            std_istreambuf_iterator_char__std_char_traits_char__::new_1({ __tmp_0.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
         let inf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<std_istreambuf_iterator_wchar_t____proxy> =
-                Rc::new(RefCell::new(unimplemented!()));
-            std_istreambuf_iterator_wchar_t__std_char_traits_wchar_t__::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }

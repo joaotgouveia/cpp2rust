@@ -880,41 +880,11 @@ impl std::cmp::PartialEq for min_allocator_char_ {
     }
 }
 impl std::cmp::Eq for min_allocator_char_ {}
-pub unsafe fn test_18(mut first: *const (), mut last: *const ()) {
-    let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 0_();
-    let mut it: *const () = first;
-    'loop_: while ((it) != (last)) {
-        unimplemented!();
-        it.prefix_inc();
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn is_string_asan_correct_18(_a0: *const ()) -> () {
+    return true;
 }
-pub unsafe fn test_19(
-    mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
-    mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
-) {
-    let mut s2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i: () = 0_();
-    let mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_ = first;
-    'loop_: while (unsafe {
-        let _x: *const cpp17_input_iterator_const_char_ptr__const_char_ptr_ = &it;
-        operator_ne_5(_x, &last)
-    }) {
-        unimplemented!();
-        (unsafe { cpp17_input_iterator_const_char_ptr__const_char_ptr_::operator_inc_5(&mut it) });
-        i.prefix_inc();
-    }
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn is_string_asan_correct_19(_a0: *const ()) -> () {
+    return true;
 }
 pub unsafe fn test_20(mut first: *const (), mut last: *const ()) {
     let mut s2: () = unimplemented!();
@@ -952,7 +922,7 @@ pub unsafe fn test_21(
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_22(mut first: *const (), mut last: *const (), a: *const test_allocator_char_) {
+pub unsafe fn test_22(mut first: *const (), mut last: *const ()) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -968,6 +938,42 @@ pub unsafe fn test_22(mut first: *const (), mut last: *const (), a: *const test_
     unimplemented!();
 }
 pub unsafe fn test_23(
+    mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
+    mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
+) {
+    let mut s2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    let mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_ = first;
+    'loop_: while (unsafe {
+        let _x: *const cpp17_input_iterator_const_char_ptr__const_char_ptr_ = &it;
+        operator_ne_5(_x, &last)
+    }) {
+        unimplemented!();
+        (unsafe { cpp17_input_iterator_const_char_ptr__const_char_ptr_::operator_inc_5(&mut it) });
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_24(mut first: *const (), mut last: *const (), a: *const test_allocator_char_) {
+    let mut s2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    let mut it: *const () = first;
+    'loop_: while ((it) != (last)) {
+        unimplemented!();
+        it.prefix_inc();
+        i.prefix_inc();
+    }
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_25(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     a: *const test_allocator_char_,
@@ -989,7 +995,7 @@ pub unsafe fn test_23(
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_24(mut first: *const (), mut last: *const (), a: *const min_allocator_char_) {
+pub unsafe fn test_26(mut first: *const (), mut last: *const (), a: *const min_allocator_char_) {
     let mut s2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1004,7 +1010,7 @@ pub unsafe fn test_24(mut first: *const (), mut last: *const (), a: *const min_a
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_25(
+pub unsafe fn test_27(
     mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     a: *const min_allocator_char_,
@@ -1026,126 +1032,7 @@ pub unsafe fn test_25(
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_26(a: *const test_allocator_char_) {
-    let mut s: *const () = c"12345678901234567890123456789012345678901234567890".as_ptr();
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s;
-        test_18(_first, _last)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s;
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_22(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((1_()) as isize);
-        test_18(_first, _last)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((1_()) as isize);
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_22(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((10_()) as isize);
-        test_18(_first, _last)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((10_()) as isize);
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_22(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((50_()) as isize);
-        test_18(_first, _last)
-    });
-    (unsafe {
-        let _first: *const () = s;
-        let _last: *const () = s.offset((50_()) as isize);
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_22(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        test_19(_first, _last)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_23(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((1_()) as isize)
-            });
-        test_19(_first, _last)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((1_()) as isize)
-            });
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_23(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((10_()) as isize)
-            });
-        test_19(_first, _last)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((10_()) as isize)
-            });
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_23(_first, _last, &mut _a)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((50_()) as isize)
-            });
-        test_19(_first, _last)
-    });
-    (unsafe {
-        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                s.offset((50_()) as isize)
-            });
-        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
-        test_23(_first, _last, &mut _a)
-    });
-}
-pub unsafe fn test_string_27(a: *const min_allocator_char_) {
+pub unsafe fn test_string_28(a: *const test_allocator_char_) {
     let mut s: *const () = c"12345678901234567890123456789012345678901234567890".as_ptr();
     (unsafe {
         let _first: *const () = s;
@@ -1155,7 +1042,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
     (unsafe {
         let _first: *const () = s;
         let _last: *const () = s;
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_24(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1166,7 +1053,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
     (unsafe {
         let _first: *const () = s;
         let _last: *const () = s.offset((1_()) as isize);
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_24(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1177,7 +1064,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
     (unsafe {
         let _first: *const () = s;
         let _last: *const () = s.offset((10_()) as isize);
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_24(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1188,7 +1075,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
     (unsafe {
         let _first: *const () = s;
         let _last: *const () = s.offset((50_()) as isize);
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_24(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1203,7 +1090,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
         let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_25(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1222,7 +1109,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((1_()) as isize)
             });
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_25(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1241,7 +1128,7 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((10_()) as isize)
             });
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_25(_first, _last, &mut _a)
     });
     (unsafe {
@@ -1260,22 +1147,141 @@ pub unsafe fn test_string_27(a: *const min_allocator_char_) {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((50_()) as isize)
             });
-        let mut _a: min_allocator_char_ = (*a);
+        let mut _a: test_allocator_char_ = test_allocator_char_::copy_from({ a });
         test_25(_first, _last, &mut _a)
     });
 }
-pub unsafe fn test_28() -> () {
+pub unsafe fn test_string_29(a: *const min_allocator_char_) {
+    let mut s: *const () = c"12345678901234567890123456789012345678901234567890".as_ptr();
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s;
+        test_22(_first, _last)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s;
+        let mut _a: min_allocator_char_ = (*a);
+        test_26(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((1_()) as isize);
+        test_22(_first, _last)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((1_()) as isize);
+        let mut _a: min_allocator_char_ = (*a);
+        test_26(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((10_()) as isize);
+        test_22(_first, _last)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((10_()) as isize);
+        let mut _a: min_allocator_char_ = (*a);
+        test_26(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((50_()) as isize);
+        test_22(_first, _last)
+    });
+    (unsafe {
+        let _first: *const () = s;
+        let _last: *const () = s.offset((50_()) as isize);
+        let mut _a: min_allocator_char_ = (*a);
+        test_26(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        test_23(_first, _last)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let mut _a: min_allocator_char_ = (*a);
+        test_27(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((1_()) as isize)
+            });
+        test_23(_first, _last)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((1_()) as isize)
+            });
+        let mut _a: min_allocator_char_ = (*a);
+        test_27(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((10_()) as isize)
+            });
+        test_23(_first, _last)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((10_()) as isize)
+            });
+        let mut _a: min_allocator_char_ = (*a);
+        test_27(_first, _last, &mut _a)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((50_()) as isize)
+            });
+        test_23(_first, _last)
+    });
+    (unsafe {
+        let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ s });
+        let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+            cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                s.offset((50_()) as isize)
+            });
+        let mut _a: min_allocator_char_ = (*a);
+        test_27(_first, _last, &mut _a)
+    });
+}
+pub unsafe fn test_30() -> () {
     (unsafe {
         let mut _a: test_allocator_char_ = <test_allocator_char_>::default();
-        test_string_26(&mut _a)
+        test_string_28(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::new_1({ 2_() });
-        test_string_26(&mut _a)
+        test_string_28(&mut _a)
     });
     (unsafe {
         let mut _a: min_allocator_char_ = <min_allocator_char_>::default();
-        test_string_27(&mut _a)
+        test_string_29(&mut _a)
     });
     {
         const _: () = assert!(
@@ -1305,7 +1311,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_28() });
+    (unsafe { test_30() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

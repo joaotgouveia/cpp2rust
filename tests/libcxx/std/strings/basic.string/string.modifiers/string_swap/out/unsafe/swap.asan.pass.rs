@@ -6,7 +6,22 @@ use std::collections::BTreeMap;
 use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
-pub unsafe fn test_0(val: ()) {
+pub unsafe fn is_string_asan_correct_0(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_1(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_2(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_3(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_4(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn test_5(val: ()) {
     let mut empty_s: () = unimplemented!();
     let mut short_s: () = unimplemented!();
     let mut long_s: () = unimplemented!();
@@ -46,7 +61,7 @@ pub unsafe fn test_0(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_1(val: ()) {
+pub unsafe fn test_6(val: ()) {
     let mut empty_s: () = unimplemented!();
     let mut short_s: () = unimplemented!();
     let mut long_s: () = unimplemented!();
@@ -86,7 +101,7 @@ pub unsafe fn test_1(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_2(val: ()) {
+pub unsafe fn test_7(val: ()) {
     let mut empty_s: () = unimplemented!();
     let mut short_s: () = unimplemented!();
     let mut long_s: () = unimplemented!();
@@ -126,7 +141,7 @@ pub unsafe fn test_2(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_3(val: ()) {
+pub unsafe fn test_8(val: ()) {
     let mut empty_s: () = unimplemented!();
     let mut short_s: () = unimplemented!();
     let mut long_s: () = unimplemented!();
@@ -166,7 +181,7 @@ pub unsafe fn test_3(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_4(val: ()) {
+pub unsafe fn test_9(val: ()) {
     let mut empty_s: () = unimplemented!();
     let mut short_s: () = unimplemented!();
     let mut long_s: () = unimplemented!();
@@ -222,11 +237,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_0(('x' as ())) });
-    (unsafe { test_1((120 as ())) });
-    (unsafe { test_2((120 as ())) });
-    (unsafe { test_3((120 as ())) });
-    (unsafe { test_4((120 as ())) });
+    (unsafe { test_5(('x' as ())) });
+    (unsafe { test_6((120 as ())) });
+    (unsafe { test_7((120 as ())) });
+    (unsafe { test_8((120 as ())) });
+    (unsafe { test_9((120 as ())) });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

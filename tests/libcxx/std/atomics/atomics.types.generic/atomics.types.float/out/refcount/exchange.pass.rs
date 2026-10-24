@@ -97,10 +97,7 @@ pub fn test_impl_12() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({
-            ((*a.borrow()) as std___atomic_base_float__false_)
-                .exchange_10(1.2_f64, Some(unimplemented!()))
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -108,19 +105,13 @@ pub fn test_impl_12() {
         let exchange: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .exchange_10(new_val, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -135,26 +126,18 @@ pub fn test_impl_12() {
         let exchange_no_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .exchange_10(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let exchange_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                ({
-                    ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                        .exchange_10(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_).load_6(None)
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -179,10 +162,7 @@ pub fn test_impl_13() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({
-            ((*a.borrow()) as std___atomic_base_float__false_)
-                .exchange_9(1.2_f64, Some(unimplemented!()))
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -190,19 +170,13 @@ pub fn test_impl_13() {
         let exchange: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .exchange_9(new_val, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -217,26 +191,18 @@ pub fn test_impl_13() {
         let exchange_no_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                            .exchange_9(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let exchange_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                ({
-                    ((*x.upgrade().deref()) as std___atomic_base_float__false_)
-                        .exchange_9(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_float__false_).load_5(None)
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -261,10 +227,7 @@ pub fn test_impl_14() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({
-            ((*a.borrow()) as std___atomic_base_double__false_)
-                .exchange_10(1.2_f64, Some(unimplemented!()))
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -272,19 +235,13 @@ pub fn test_impl_14() {
         let exchange: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .exchange_10(new_val, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -299,26 +256,18 @@ pub fn test_impl_14() {
         let exchange_no_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .exchange_10(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let exchange_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                ({
-                    ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                        .exchange_10(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_).load_6(None)
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -343,10 +292,7 @@ pub fn test_impl_15() {
     );;
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = ({
-            ((*a.borrow()) as std___atomic_base_double__false_)
-                .exchange_9(1.2_f64, Some(unimplemented!()))
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -354,19 +300,13 @@ pub fn test_impl_15() {
         let exchange: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .exchange_9(new_val, Some(unimplemented!()))
-                    });
+                    unimplemented!();
                 },
             )));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             }),
         ));
@@ -381,26 +321,18 @@ pub fn test_impl_15() {
         let exchange_no_arg: Value<FnPtr<fn(Ptr<()>, (), ())>> =
             Rc::new(RefCell::new(FnPtr::<fn(Ptr<()>, (), ())>::new(
                 |x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                    ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                            .exchange_9(new_val, None)
-                    });
+                    unimplemented!();
                 },
             )));
         let exchange_with_order: Value<FnPtr<fn(Ptr<()>, (), ())>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>, (), ())>::new(|x: Ptr<()>, mut _a1: (), mut new_val: ()| {
-                ({
-                    ((*x.upgrade().deref()) as std___atomic_base_double__false_)
-                        .exchange_9(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             }),
         ));
         let load: Value<FnPtr<fn(Ptr<()>) -> ()>> = Rc::new(RefCell::new(
             FnPtr::<fn(Ptr<()>) -> ()>::new(|x: Ptr<()>| -> () {
                 {
-                    return ({
-                        ((*x.upgrade().deref()) as std___atomic_base_double__false_).load_5(None)
-                    });
+                    return unimplemented!();
                 }
             }),
         ));

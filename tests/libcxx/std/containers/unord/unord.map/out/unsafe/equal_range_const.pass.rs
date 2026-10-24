@@ -120,7 +120,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -139,7 +139,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     return 0_();

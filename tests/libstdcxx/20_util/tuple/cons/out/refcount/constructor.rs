@@ -266,9 +266,7 @@ fn main_0() -> () {
     let tb: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let tc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let td: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let te: Value<()> = Rc::new(RefCell::new(std_tuple_const_int_ref_::new({
-        (z1).clone()
-    })));
+    let te: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*x1.borrow_mut()) = 1_();
     x2 = 1_();
     let mut __do_while = true;

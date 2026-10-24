@@ -349,15 +349,15 @@ pub fn test_constexpr_move_ctor_trivial_22() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_move_constructible<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(42_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_16(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_17(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(101_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_18(_v.as_pointer())
     });
 }
@@ -399,15 +399,15 @@ impl Default for NonTrivialMoveCtor {
 pub fn test_constexpr_move_ctor_non_trivial_24() {
     const _: () = assert!(true, "!std::is_trivially_move_constructible<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(42_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_19(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(NonTrivialMoveCtor::new({ 5_() })));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_20(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_ctor_imp_21(_v.as_pointer())
     });
 }

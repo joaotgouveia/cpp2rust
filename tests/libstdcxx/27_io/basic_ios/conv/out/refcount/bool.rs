@@ -256,7 +256,7 @@ pub struct __gnu_test_semaphore {
 impl __gnu_test_semaphore {}
 pub fn test01_10() {
     let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut test: () = ({ (*x.borrow())() });
+    let mut test: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -276,7 +276,7 @@ pub fn test01_10() {
             unimplemented!();
         }
     }
-    if ({ (*x.borrow())() }) {
+    if unimplemented!() {
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

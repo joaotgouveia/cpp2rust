@@ -248,15 +248,15 @@ pub fn test_constexpr_copy_ctor_trivial_9() {
     const _: () = assert!(true, "std::is_trivially_copyable<V>::value");;
     const _: () = assert!(true, "std::is_trivially_copy_constructible<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(42_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_3(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_4(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(101_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_5(_v.as_pointer())
     });
 }
@@ -310,15 +310,15 @@ impl Default for NonTrivialCopyCtor {
 pub fn test_constexpr_copy_ctor_non_trivial_11() {
     const _: () = assert!(true, "!std::is_trivially_copy_constructible<V>::value");;
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(42_()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_6(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(NonTrivialCopyCtor::new({ 5_() })));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_7(_v.as_pointer())
     });
     ({
-        let _v: Value<()> = Rc::new(RefCell::new(Default::default()));
+        let _v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_constexpr_copy_ctor_imp_8(_v.as_pointer())
     });
 }

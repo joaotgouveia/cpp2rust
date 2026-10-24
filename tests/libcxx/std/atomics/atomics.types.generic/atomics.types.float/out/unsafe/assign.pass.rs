@@ -57,7 +57,7 @@ pub unsafe fn test_impl_4() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_float__false_).load_6(None) });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_0(assign.copy_from(), load.copy_from()) });
@@ -86,7 +86,7 @@ pub unsafe fn test_impl_5() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_float__false_).load_5(None) });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_1(assign.copy_from(), load.copy_from()) });
@@ -115,7 +115,7 @@ pub unsafe fn test_impl_6() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_double__false_).load_6(None) });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_2(assign.copy_from(), load.copy_from()) });
@@ -144,7 +144,7 @@ pub unsafe fn test_impl_7() {
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe { ((*x) as std___atomic_base_double__false_).load_5(None) });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_seq_cst_3(assign.copy_from(), load.copy_from()) });

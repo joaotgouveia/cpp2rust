@@ -24,7 +24,7 @@ pub fn test_path_method_0() {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = ({ (*e.borrow()).path() });
+        let pref: Ptr<()> = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -77,12 +77,12 @@ pub fn test_path_conversion_1() {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = ({ (*e.borrow())() });
+        let pref: Ptr<()> = unimplemented!();
         unimplemented!();
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let pref: Ptr<()> = ({ (*e.borrow())() });
+        let pref: Ptr<()> = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

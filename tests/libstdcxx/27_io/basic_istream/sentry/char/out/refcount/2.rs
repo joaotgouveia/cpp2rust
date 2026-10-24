@@ -258,7 +258,7 @@ pub fn test02_10() {
     let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     let mut x: () = unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         i.prefix_inc();
         if (i > 3_()) {
             break;

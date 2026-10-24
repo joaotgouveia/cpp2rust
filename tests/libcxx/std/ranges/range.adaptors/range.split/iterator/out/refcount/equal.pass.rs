@@ -715,7 +715,71 @@ pub fn testOne_21() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_22(b.as_pointer(), 2_()) });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let buffer: Value<Box<[()]>> =
+                Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                0_(),
+                1_(),
+                2_(),
+                -1_(),
+                4_(),
+                5_(),
+                6_(),
+            ])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn testOne_22() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                0_(),
+                1_(),
+                2_(),
+                -1_(),
+                4_(),
+                5_(),
+                6_(),
+            ])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -779,7 +843,71 @@ pub fn testOne_23() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_24(b.as_pointer(), 2_()) });
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let buffer: Value<Box<[()]>> =
+                Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                0_(),
+                1_(),
+                2_(),
+                -1_(),
+                4_(),
+                5_(),
+                6_(),
+            ])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn testOne_24() {
+    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
+    {
+        {
+            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+                0_(),
+                1_(),
+                2_(),
+                -1_(),
+                4_(),
+                5_(),
+                6_(),
+            ])));
+            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -843,71 +971,7 @@ pub fn testOne_25() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_26(b.as_pointer(), 2_()) });
             unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let buffer: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                0_(),
-                1_(),
-                2_(),
-                -1_(),
-                4_(),
-                5_(),
-                6_(),
-            ])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn testOne_27() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                0_(),
-                1_(),
-                2_(),
-                -1_(),
-                4_(),
-                5_(),
-                6_(),
-            ])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            ({ advance_28(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -948,76 +1012,12 @@ pub fn testOne_27() {
         }
     }
 }
-pub fn testOne_29() {
-    const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
-    {
-        {
-            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                0_(),
-                1_(),
-                2_(),
-                -1_(),
-                4_(),
-                5_(),
-                6_(),
-            ])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            ({ advance_30(b.as_pointer(), 2_()) });
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let buffer: Value<Box<[()]>> =
-                Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-                0_(),
-                1_(),
-                2_(),
-                -1_(),
-                4_(),
-                5_(),
-                6_(),
-            ])));
-            let input: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let i2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn test_31() -> () {
+pub fn test_26() -> () {
     ({ testOne_21() });
+    ({ testOne_22() });
     ({ testOne_23() });
+    ({ testOne_24() });
     ({ testOne_25() });
-    ({ testOne_27() });
-    ({ testOne_29() });
     return true;
 }
 pub fn main() {
@@ -1040,7 +1040,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_31() });
+    ({ test_26() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -498,7 +498,7 @@ pub unsafe fn test_read_24(mut policy: LibraryDefaultBuffer, payload_sizes: *con
         (unsafe { LibraryDefaultBuffer::operator_call_3_char(&policy, &mut ifs) });
         unimplemented!();
         unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(
@@ -627,7 +627,7 @@ pub unsafe fn test_read_26(mut policy: LibraryManagedBuffer, payload_sizes: *con
         (unsafe { LibraryManagedBuffer::operator_call_3_char(&policy, &mut ifs) });
         unimplemented!();
         unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(
@@ -756,7 +756,7 @@ pub unsafe fn test_read_30(mut policy: UserManagedBuffer, payload_sizes: *const 
         (unsafe { UserManagedBuffer::operator_call_5(&mut policy, &mut ifs) });
         unimplemented!();
         unimplemented!();
-        let in_sz: () = (unsafe { unimplemented!()() });
+        let in_sz: () = unimplemented!();
         (unsafe {
             let _condition: () = ((in_sz) == (total_size));
             let mut _arg: FnPtr<fn()> = lambda_unsafe!(

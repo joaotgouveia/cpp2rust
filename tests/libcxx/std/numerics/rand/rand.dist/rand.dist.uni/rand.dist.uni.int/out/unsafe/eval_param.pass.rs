@@ -28,8 +28,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut g: () = unimplemented!();
         let mut d: () = unimplemented!();
-        let mut p: std_uniform_int_distribution___param_type =
-            <std_uniform_int_distribution___param_type>::default();
+        let mut p: () = unimplemented!();
         let N: () = 100000_();
         let mut u: () = unimplemented!();
         let mut i: () = 0_();
@@ -57,15 +56,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();
-        let mut x_mean: () = (((unsafe { p.a() }) + (unsafe { p.b() })) / (2_()));
+        let mut x_mean: () = (((unimplemented!()) + (unimplemented!())) / (2_()));
         let mut x_var: () =
-            (((unsafe { sqr_0((((unsafe { p.b() }) - (unsafe { p.a() })) + (1_()))) }) - (1_()))
+            (((unsafe { sqr_0((((unimplemented!()) - (unimplemented!())) + (1_()))) }) - (1_()))
                 / (12_()));
         let mut x_skew: () = 0_();
         let mut x_kurtosis: () = (((-6_f64)
-            * ((unsafe { sqr_0((((unsafe { p.b() }) - (unsafe { p.a() })) + (1_()))) }) + (1_())))
+            * ((unsafe { sqr_0((((unimplemented!()) - (unimplemented!())) + (1_()))) }) + (1_())))
             / ((5_f64)
-                * ((unsafe { sqr_0((((unsafe { p.b() }) - (unsafe { p.a() })) + (1_()))) })
+                * ((unsafe { sqr_0((((unimplemented!()) - (unimplemented!())) + (1_()))) })
                     - (1_()))));
         unimplemented!();
         unimplemented!();

@@ -7,15 +7,9 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_constexpr_0() -> () {
-    let c: Value<()> = Rc::new(RefCell::new((49 as ())));
-    ({
-        let ___rhs: Value<()> = Rc::new(RefCell::new((97 as ())));
-        std___char_traits_base_char16_t__unsigned_short__65535_::assign_1(
-            c.as_pointer(),
-            ___rhs.as_pointer(),
-        )
-    });
-    return ((*c.borrow()) == (97 as ()));
+    let mut c: () = (49 as ());
+    unimplemented!();
+    return (c == (97 as ()));
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -37,14 +31,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let c: Value<()> = Rc::new(RefCell::new((0 as ())));
-    ({
-        let ___rhs: Value<()> = Rc::new(RefCell::new((97 as ())));
-        std___char_traits_base_char16_t__unsigned_short__65535_::assign_1(
-            c.as_pointer(),
-            ___rhs.as_pointer(),
-        )
-    });
+    let mut c: () = (0 as ());
+    unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();

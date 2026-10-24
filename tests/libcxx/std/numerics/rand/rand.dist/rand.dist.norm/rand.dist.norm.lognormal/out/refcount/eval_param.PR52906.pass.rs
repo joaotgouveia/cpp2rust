@@ -29,10 +29,8 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let g: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let p1: Value<std_lognormal_distribution___param_type> =
-        Rc::new(RefCell::new(unimplemented!()));
-    let p2: Value<std_lognormal_distribution___param_type> =
-        Rc::new(RefCell::new(unimplemented!()));
+    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     &(unimplemented!());
     unimplemented!();

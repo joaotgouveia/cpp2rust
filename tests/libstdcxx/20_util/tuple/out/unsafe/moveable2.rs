@@ -31,7 +31,7 @@ pub unsafe fn make_move_only_0() -> MoveOnly {
     return MoveOnly::new();
 }
 pub unsafe fn test01_1() {
-    let mut t1: () = (unsafe { make_move_only_0() });
+    let mut t1: () = unimplemented!();
     let mut t2: () = unimplemented!();
     let mut t3: () = unimplemented!();
     t1 = (*unimplemented!()).clone();

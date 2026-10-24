@@ -270,7 +270,7 @@ unsafe fn main_0() -> () {
     sm.first = unimplemented!();
     sm.second = unimplemented!().offset(-((1_()) as isize));
     sm.matched = true;
-    let mut sm_string: () = (unsafe { sm() });
+    let mut sm_string: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -421,7 +421,7 @@ pub fn test_21() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -438,12 +438,12 @@ pub fn test_21() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

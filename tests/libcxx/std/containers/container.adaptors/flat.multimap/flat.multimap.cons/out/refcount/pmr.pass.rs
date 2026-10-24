@@ -797,12 +797,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
-        let __decomp_15 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . extract ( ) } )  )) ;
+        let __decomp_15: Value<()> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).extract() }),
+        ));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let __decomp_16 : Value<std_flat_multimap_int__int__test_less_int___std_vector_int__std_pmr_polymorphic_allocator_int____std_vector_int__std_pmr_polymorphic_allocator_int____containers > = Rc::new(RefCell::new(( { (*unimplemented!() .upgrade().deref()) . extract ( ) } )  )) ;
+        let __decomp_16: Value<()> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).extract() }),
+        ));
         unimplemented!();
         unimplemented!();
     }

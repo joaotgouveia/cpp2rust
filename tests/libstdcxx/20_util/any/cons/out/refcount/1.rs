@@ -355,7 +355,7 @@ pub fn test01_10() {
     }
 }
 pub fn test02_12() {
-    let x: Value<()> = Rc::new(RefCell::new(1_()));
+    let x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

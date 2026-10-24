@@ -73,10 +73,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_0.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -87,26 +84,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_1.as_pointer() })
-        }));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_2.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -119,10 +97,20 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_3.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -137,10 +125,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_4.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -155,10 +140,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_5: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_5.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -170,10 +152,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_6.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -184,10 +163,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_7.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -200,10 +176,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_8.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -213,10 +186,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_9: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_9.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -226,10 +196,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_10: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_10.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -239,10 +206,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_11: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_11.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -252,10 +216,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_12: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__void_ptr_::new_1({ __tmp_12.as_pointer() })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -268,10 +229,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_13: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_13.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -282,26 +240,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_14: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_14.as_pointer() } , )
-        }));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_15: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_15.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -314,10 +253,20 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_16: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_16.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let l1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let l2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -332,10 +281,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_17: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_17.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -350,10 +296,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_18: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_18.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -365,10 +308,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_19: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_19.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
@@ -379,10 +319,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_20: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_20.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -395,10 +332,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_21: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_21.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -408,10 +342,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_22: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_22.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -421,10 +352,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_23: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_23.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -434,10 +362,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_24.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -447,10 +372,7 @@ pub fn test_4() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___list_const_iterator_int__min_pointer_void__std_integral_constant_unsigned_long__0___ :: new_1 ( { __tmp_25.as_pointer() } , )
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

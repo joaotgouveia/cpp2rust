@@ -28,9 +28,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let p: Value<std_poisson_distribution___param_type> = Rc::new(RefCell::new(
-            <std_poisson_distribution___param_type>::default(),
-        ));
+        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let d: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

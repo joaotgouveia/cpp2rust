@@ -97,28 +97,18 @@ pub unsafe fn test_impl_12() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe {
-            (a as std___atomic_base_float__false_).wait_20(1.1_f64, Some(unimplemented!()))
-        });
+        unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_)
-                        .store_4(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_)
-                            .wait_20(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -127,30 +117,21 @@ pub unsafe fn test_impl_12() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_float__false_).store_4(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_).wait_20(9999.999_f64, None)
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_)
-                            .wait_20(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -165,28 +146,18 @@ pub unsafe fn test_impl_13() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe {
-            (a as std___atomic_base_float__false_).wait_19(1.1_f64, Some(unimplemented!()))
-        });
+        unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_)
-                        .store_3(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_)
-                            .wait_19(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -195,30 +166,21 @@ pub unsafe fn test_impl_13() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_float__false_).store_3(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_).wait_19(9999.999_f64, None)
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_float__false_)
-                            .wait_19(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -233,28 +195,18 @@ pub unsafe fn test_impl_14() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe {
-            (a as std___atomic_base_double__false_).wait_20(1.1_f64, Some(unimplemented!()))
-        });
+        unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_)
-                        .store_4(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_)
-                            .wait_20(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -263,30 +215,21 @@ pub unsafe fn test_impl_14() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_double__false_).store_4(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_).wait_20(9999.999_f64, None)
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_)
-                            .wait_20(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -301,28 +244,18 @@ pub unsafe fn test_impl_15() {
     );;
     {
         let mut a: () = unimplemented!();
-        (unsafe {
-            (a as std___atomic_base_double__false_).wait_19(1.1_f64, Some(unimplemented!()))
-        });
+        unimplemented!();
     }
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_)
-                        .store_3(new_val, Some(unimplemented!()))
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_)
-                            .wait_19(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
@@ -331,30 +264,21 @@ pub unsafe fn test_impl_15() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe { ((*x) as std___atomic_base_double__false_).store_3(new_val, None) });
+                unimplemented!();
             });
         let mut load_no_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_).wait_19(9999.999_f64, None)
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });
         let mut load_with_order: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(unimplemented!())
-                    });
-                    (unsafe {
-                        ((*x) as std___atomic_base_double__false_)
-                            .wait_19(9999.999_f64, Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
+                    unimplemented!();
                     return result;
                 }
             });

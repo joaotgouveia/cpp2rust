@@ -116,7 +116,7 @@ pub fn test_0() -> () {
             let mv: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ (i + 1_()) }, {
                 (i + 1_())
             })));
-            (*r.borrow_mut()) = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -125,21 +125,21 @@ pub fn test_0() -> () {
             i += 2_();
         }
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5_() }, { 5_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 9_() }, { 9_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_() }, { 5_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -157,7 +157,7 @@ pub fn test_0() -> () {
         unimplemented!();
         let mvkey1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 2_() }, { 2_f64 })));
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 4_() }, { 4_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -166,7 +166,7 @@ pub fn test_0() -> () {
         unimplemented!();
         let mvkey2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
         let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5_() }, { 5_f64 })));
-        (*r.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

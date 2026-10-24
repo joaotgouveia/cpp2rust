@@ -351,13 +351,7 @@ pub unsafe fn testBasic_48() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -367,13 +361,7 @@ pub unsafe fn testBasic_48() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -390,13 +378,7 @@ pub unsafe fn testBasic_49(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -406,13 +388,7 @@ pub unsafe fn testBasic_49(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -429,14 +405,7 @@ pub unsafe fn testBasic_50(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_12(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -446,14 +415,7 @@ pub unsafe fn testBasic_50(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_12(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -470,13 +432,7 @@ pub unsafe fn testBasic_51() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -486,13 +442,7 @@ pub unsafe fn testBasic_51() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -509,13 +459,7 @@ pub unsafe fn testBasic_52(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -525,13 +469,7 @@ pub unsafe fn testBasic_52(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -548,14 +486,7 @@ pub unsafe fn testBasic_53(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_11(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -565,14 +496,7 @@ pub unsafe fn testBasic_53(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_float__false_).compare_exchange_weak_11(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -589,13 +513,7 @@ pub unsafe fn testBasic_54() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -605,13 +523,7 @@ pub unsafe fn testBasic_54() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -628,13 +540,7 @@ pub unsafe fn testBasic_55(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -644,13 +550,7 @@ pub unsafe fn testBasic_55(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_16(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -667,14 +567,7 @@ pub unsafe fn testBasic_56(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_12(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -684,14 +577,7 @@ pub unsafe fn testBasic_56(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_12(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -708,13 +594,7 @@ pub unsafe fn testBasic_57() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -724,13 +604,7 @@ pub unsafe fn testBasic_57() {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                None,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -747,13 +621,7 @@ pub unsafe fn testBasic_58(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -763,13 +631,7 @@ pub unsafe fn testBasic_58(mut memory_order: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_15(
-                &mut expected,
-                desired,
-                Some(memory_order),
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -786,14 +648,7 @@ pub unsafe fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.2_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_11(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         if r {
             unimplemented!();
         }
@@ -803,14 +658,7 @@ pub unsafe fn testBasic_59(mut memory_order_0: (), mut memory_order_1: ()) {
         let mut a: () = unimplemented!();
         let mut expected: () = 1.5_f64;
         let desired: () = 2.3_f64;
-        let mut r: () = (unsafe {
-            (a as std___atomic_base_double__false_).compare_exchange_weak_11(
-                &mut expected,
-                desired,
-                memory_order_0,
-                memory_order_1,
-            )
-        });
+        let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         {
@@ -830,34 +678,19 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_12(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         (unsafe { test_acquire_release_13(store_one_arg.copy_from(), load.copy_from()) });
@@ -865,28 +698,13 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -894,18 +712,8 @@ pub unsafe fn test_impl_60() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -914,64 +722,28 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_acquire_release_16(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -980,64 +752,28 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_seq_cst_0(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1046,31 +782,14 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_acquire_62,
-                            )),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1079,23 +798,9 @@ pub unsafe fn test_impl_60() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acquire_62,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1104,23 +809,9 @@ pub unsafe fn test_impl_60() {
         let mut load_one_arg_acq_rel: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acq_rel_63,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1130,29 +821,14 @@ pub unsafe fn test_impl_60() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            unimplemented!(),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1160,7 +836,7 @@ pub unsafe fn test_impl_60() {
         (unsafe { test_seq_cst_2(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_64() {
+pub unsafe fn test_impl_62() {
     (unsafe { testBasic_51() });
     (unsafe { testBasic_52(unimplemented!()) });
     (unsafe {
@@ -1172,34 +848,19 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_21(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         (unsafe { test_acquire_release_22(store_one_arg.copy_from(), load.copy_from()) });
@@ -1207,28 +868,13 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1236,18 +882,8 @@ pub unsafe fn test_impl_64() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1256,64 +892,28 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_acquire_release_25(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1322,64 +922,28 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_seq_cst_3(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1388,31 +952,14 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_acquire_62,
-                            )),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1421,23 +968,9 @@ pub unsafe fn test_impl_64() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acquire_62,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1446,23 +979,9 @@ pub unsafe fn test_impl_64() {
         let mut load_one_arg_acq_rel: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acq_rel_63,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1472,29 +991,14 @@ pub unsafe fn test_impl_64() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_float__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_float__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_float__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            unimplemented!(),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1502,7 +1006,7 @@ pub unsafe fn test_impl_64() {
         (unsafe { test_seq_cst_5(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_65() {
+pub unsafe fn test_impl_63() {
     (unsafe { testBasic_54() });
     (unsafe { testBasic_55(unimplemented!()) });
     (unsafe {
@@ -1514,34 +1018,19 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_30(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         (unsafe { test_acquire_release_31(store_one_arg.copy_from(), load.copy_from()) });
@@ -1549,28 +1038,13 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1578,18 +1052,8 @@ pub unsafe fn test_impl_65() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1598,64 +1062,28 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_acquire_release_34(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1664,64 +1092,28 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_seq_cst_6(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1730,31 +1122,14 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_acquire_62,
-                            )),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1763,23 +1138,9 @@ pub unsafe fn test_impl_65() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acquire_62,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1788,23 +1149,9 @@ pub unsafe fn test_impl_65() {
         let mut load_one_arg_acq_rel: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_16(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acq_rel_63,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1814,29 +1161,14 @@ pub unsafe fn test_impl_65() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_4(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_6(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_12(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            unimplemented!(),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -1844,7 +1176,7 @@ pub unsafe fn test_impl_65() {
         (unsafe { test_seq_cst_8(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_impl_66() {
+pub unsafe fn test_impl_64() {
     (unsafe { testBasic_57() });
     (unsafe { testBasic_58(unimplemented!()) });
     (unsafe {
@@ -1856,34 +1188,19 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    return (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    return unimplemented!();
                 }
             });
         (unsafe { test_acquire_release_39(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         (unsafe { test_acquire_release_40(store_one_arg.copy_from(), load.copy_from()) });
@@ -1891,28 +1208,13 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1920,18 +1222,8 @@ pub unsafe fn test_impl_66() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -1940,64 +1232,28 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_acquire_release_43(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -2006,64 +1262,28 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                        &mut old_val,
-                        new_val,
-                        unimplemented!(),
-                        (*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_relaxed_61)),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            unimplemented!(),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
         (unsafe { test_seq_cst_9(store.copy_from(), load.copy_from()) });
         let mut store_one_arg: FnPtr<fn(*mut (), (), ())> = FnPtr::<fn(*mut (), (), ())>::new(
             |x: *mut (), mut old_val: (), mut new_val: ()| unsafe {
-                'loop_: while !(unsafe {
-                    ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                        &mut old_val,
-                        new_val,
-                        Some(unimplemented!()),
-                    )
-                }) {}
+                'loop_: while !(unimplemented!()) {}
             },
         );
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut val: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
-                    'loop_: while !(unsafe {
-                        let ___e: *mut () = &mut val;
-                        let ___d: () = val;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(unimplemented!()),
-                        )
-                    }) {}
+                    let mut val: () = unimplemented!();
+                    'loop_: while !(unimplemented!()) {}
                     return val;
                 }
             });
@@ -2072,31 +1292,14 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_acquire_62,
-                            )),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -2105,23 +1308,9 @@ pub unsafe fn test_impl_66() {
         let mut load_one_arg: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acquire_62,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -2130,23 +1319,9 @@ pub unsafe fn test_impl_66() {
         let mut load_one_arg_acq_rel: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_15(
-                            ___e,
-                            ___d,
-                            Some(
-                                (*std::cell::LazyCell::force_mut(
-                                    &mut *&raw mut memory_order_acq_rel_63,
-                                )),
-                            ),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -2156,29 +1331,14 @@ pub unsafe fn test_impl_66() {
     {
         let mut store: FnPtr<fn(*mut (), (), ())> =
             FnPtr::<fn(*mut (), (), ())>::new(|x: *mut (), mut _a1: (), mut new_val: ()| unsafe {
-                (unsafe {
-                    ((*x) as std___atomic_base_double__false_).store_3(new_val, unimplemented!())
-                });
+                unimplemented!();
             });
         let mut load: FnPtr<fn(*mut ()) -> ()> =
             FnPtr::<fn(*mut ()) -> ()>::new(|x: *mut ()| -> () {
                 unsafe {
-                    let mut result: () = (unsafe {
-                        ((*x) as std___atomic_base_double__false_).load_5(Some(unimplemented!()))
-                    });
+                    let mut result: () = unimplemented!();
                     let mut unexpected: () = -9999.99_f64;
-                    let mut r: () = (unsafe {
-                        let ___e: *mut () = &mut unexpected;
-                        let ___d: () = unexpected;
-                        ((*x) as std___atomic_base_double__false_).compare_exchange_weak_11(
-                            ___e,
-                            ___d,
-                            (*std::cell::LazyCell::force_mut(
-                                &mut *&raw mut memory_order_relaxed_61,
-                            )),
-                            unimplemented!(),
-                        )
-                    });
+                    let mut r: () = unimplemented!();
                     unimplemented!();
                     return result;
                 }
@@ -2186,16 +1346,16 @@ pub unsafe fn test_impl_66() {
         (unsafe { test_seq_cst_11(store.copy_from(), load.copy_from()) });
     }
 }
-pub unsafe fn test_67() {
+pub unsafe fn test_65() {
     (unsafe { test_impl_60() });
     {
-        (unsafe { test_impl_64() });
+        (unsafe { test_impl_62() });
     }
 }
-pub unsafe fn test_68() {
-    (unsafe { test_impl_65() });
+pub unsafe fn test_66() {
+    (unsafe { test_impl_63() });
     {
-        (unsafe { test_impl_66() });
+        (unsafe { test_impl_64() });
     }
 }
 pub fn main() {
@@ -2214,8 +1374,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_67() });
-    (unsafe { test_68() });
+    (unsafe { test_65() });
+    (unsafe { test_66() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

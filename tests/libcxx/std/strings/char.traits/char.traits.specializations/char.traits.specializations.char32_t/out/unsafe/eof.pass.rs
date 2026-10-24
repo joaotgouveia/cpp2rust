@@ -23,7 +23,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let mut i: () = (unsafe { std___char_traits_base_char32_t__unsigned_int__4294967295_::eof() });
+    let mut i: () = unimplemented!();
     (&(i));
     return 0_();
 }

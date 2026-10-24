@@ -259,7 +259,7 @@ pub fn test07_10() {
     let iss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut i: () = 0_();
     let mut s: () = unimplemented!();
-    'loop_: while ({ (*unimplemented!().upgrade().deref())() }) {
+    'loop_: while unimplemented!() {
         i.prefix_inc();
     }
     let mut __do_while = true;

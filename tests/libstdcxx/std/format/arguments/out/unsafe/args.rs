@@ -313,7 +313,7 @@ pub unsafe fn test_empty_25() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -332,7 +332,7 @@ pub unsafe fn test_empty_25() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -351,7 +351,7 @@ pub unsafe fn test_empty_25() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -395,7 +395,7 @@ pub unsafe fn test_empty_25() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -437,7 +437,7 @@ pub unsafe fn test_empty_25() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -564,7 +564,7 @@ pub unsafe fn test_args_28() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -650,7 +650,7 @@ pub unsafe fn test_args_28() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -766,7 +766,7 @@ pub unsafe fn test_args_28() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { equals_23(unimplemented!(), (unsafe { tenfour() })) }) {
+        if !(unsafe { equals_23(unimplemented!(), unimplemented!()) }) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -785,7 +785,7 @@ pub unsafe fn test_args_28() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(unsafe { unimplemented!()() })) {
+        if !(!(unimplemented!())) {
             (unsafe {
                 __builtin_fprintf_27(
                     libcc2rs::stderr_unsafe(),
@@ -827,21 +827,52 @@ pub unsafe fn test_args_28() {
             unimplemented!();
         }
     }
-    let mut is_handle : FnPtr<Generic> = lambda_unsafe! ( Generic , { } , | mut _a0 : std_basic_format_arg_std_basic_format_context_std___format__Sink_iter_char___char___handle , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42))  ;
- } , | mut _a0 : *const () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44))  ;
- } , | mut _a0 : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45))  ;
- } ) ;
+    let mut is_handle: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
+        },
+        |mut _a0: *const ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
+        },
+        |mut _a0: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
+        }
+    );
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -870,21 +901,52 @@ pub unsafe fn test_visited_as_handle_47() {
         std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_5(
             { &store },
         );
-    let is_handle : FnPtr<Generic> = lambda_unsafe! ( Generic , { } , | mut arg : std_basic_format_arg_std_basic_format_context_std___format__Sink_iter_char___char___handle , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42))  ;
- } , | mut arg : *const () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45))  ;
- } ) ;
+    let is_handle: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
+        },
+        |mut arg: *const ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
+        }
+    );
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -912,21 +974,52 @@ pub unsafe fn test_visited_as_handle_49() {
         std_basic_format_args_std_basic_format_context_std___format__Sink_iter_char___char__::new_6(
             { &store },
         );
-    let is_handle : FnPtr<Generic> = lambda_unsafe! ( Generic , { } , | mut arg : std_basic_format_arg_std_basic_format_context_std___format__Sink_iter_char___char___handle , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42))  ;
- } , | mut arg : *const () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44))  ;
- } , | mut arg : () , | -> () { return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45))  ;
- } ) ;
+    let is_handle: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_32));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_33));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_34));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_35));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_36));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_37));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_38));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_39));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_40));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_41));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_42));
+        },
+        |mut arg: *const ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_43));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_44));
+        },
+        |mut arg: ()| -> () {
+            return (*std::cell::LazyCell::force_mut(&mut *&raw mut is_same_v_45));
+        }
+    );
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

@@ -33,16 +33,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(Box::new([25_(), 62.5_f64, 12.5_f64, 2_()])));
         let mut Np: () = (::std::mem::size_of::<[(); 4]>() as ())
             .wrapping_div((::std::mem::size_of::<()>() as ()));
-        let p0: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
+        let p0: Value<()> = Rc::new(RefCell::new(
             std_piecewise_linear_distribution___param_type::new_1(
                 { (b.as_pointer() as Ptr<()>) },
                 { (b.as_pointer() as Ptr<()>).offset((Np) as isize) },
                 { (p.as_pointer() as Ptr<()>) },
             ),
         ));
-        let p1: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
-            <std_piecewise_linear_distribution___param_type>::default(),
-        ));
+        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*p1.borrow_mut()) = (*p0.borrow()).clone();
         unimplemented!();
     }

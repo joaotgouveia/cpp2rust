@@ -142,39 +142,39 @@ pub struct X_8 {}
 pub struct Y_9 {}
 pub unsafe fn test_T_assignment_basic_10() {
     {
-        let mut v: () = 43_();
-        v = 42_();
+        let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut v: () = 43_();
-        v = 42_();
-        unimplemented!();
-        unimplemented!();
-        v = 43_();
         unimplemented!();
         unimplemented!();
     }
     {
         let mut v: () = unimplemented!();
-        v = 42_();
         unimplemented!();
         unimplemented!();
-        v = 43_();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = true;
-        v = c"bar";
+        let mut v: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut v: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
 }
 pub unsafe fn test_T_assignment_basic_no_constexpr_11() {
     let mut v: () = unimplemented!();
-    v = Default::default();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }
@@ -325,19 +325,8 @@ impl Trace_true__true_ {
 pub unsafe fn test_T_assignment_performs_construction_12() {
     {
         let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = 1_();
-        v = (&mut stat as *mut TraceStat);
+        let mut v: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = 1_();
-        v = (&mut stat as *mut TraceStat);
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -347,8 +336,8 @@ pub unsafe fn test_T_assignment_performs_construction_12() {
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = 1_();
-        v = (&mut stat as *mut TraceStat);
+        let mut v: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -358,8 +347,19 @@ pub unsafe fn test_T_assignment_performs_construction_12() {
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = 1_();
-        v = (&mut stat as *mut TraceStat);
+        let mut v: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut stat: TraceStat = <TraceStat>::default();
+        let mut v: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -371,8 +371,8 @@ pub unsafe fn test_T_assignment_performs_construction_12() {
 pub unsafe fn test_T_assignment_performs_assignment_13() {
     {
         let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = (&mut stat as *mut TraceStat);
-        v = <Trace_false__false__T>::default();
+        let mut v: () = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -384,9 +384,9 @@ pub unsafe fn test_T_assignment_performs_assignment_13() {
     }
     {
         let mut stat: TraceStat = <TraceStat>::default();
-        let mut v: () = (&mut stat as *mut TraceStat);
+        let mut v: () = unimplemented!();
         let mut t: Trace_false__false__T = <Trace_false__false__T>::default();
-        v = t;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -402,7 +402,7 @@ pub unsafe fn test_T_assignment_performs_assignment_throw_15() {}
 pub unsafe fn test_T_assignment_vector_bool_16() {
     let mut vec_: () = unimplemented!();
     let mut v: () = unimplemented!();
-    v = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
 }

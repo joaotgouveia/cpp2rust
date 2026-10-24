@@ -275,7 +275,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -296,7 +296,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!({ (*ot.borrow())() })) {
+        if !(!(unimplemented!())) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -317,9 +317,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*ot3.borrow())() })
-            && (({ NonTransferableImpl::to_(&unimplemented!()) }) == 42_()))
-        {
+        if !((unimplemented!()) && (({ NonTransferableImpl::to_(&unimplemented!()) }) == 42_())) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),
@@ -340,9 +338,7 @@ fn main_0() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*ot4.borrow())() })
-            && (({ NonTransferableImpl::to_(&unimplemented!()) }) == 666_()))
-        {
+        if !((unimplemented!()) && (({ NonTransferableImpl::to_(&unimplemented!()) }) == 666_())) {
             ({
                 __builtin_fprintf_10(
                     libcc2rs::stderr_unsafe(),

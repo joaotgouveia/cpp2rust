@@ -28,14 +28,12 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let pa: Value<std_piecewise_linear_distribution___param_type> = Rc::new(RefCell::new(
-            <std_piecewise_linear_distribution___param_type>::default(),
-        ));
-        let mut iv: () = ({ (*pa.borrow()).intervals() });
+        let pa: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut dn: () = ({ (*pa.borrow()).densities() });
+        let mut dn: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

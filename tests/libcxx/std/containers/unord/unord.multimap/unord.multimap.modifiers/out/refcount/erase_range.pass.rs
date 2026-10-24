@@ -167,7 +167,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -176,12 +176,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 2_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -190,7 +184,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -199,12 +199,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -288,7 +288,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -297,12 +297,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 2_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -311,7 +305,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -320,12 +320,12 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 1_(), s.as_pointer())
         });
-        (*eq.borrow_mut()) = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (*eq.borrow_mut()) = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

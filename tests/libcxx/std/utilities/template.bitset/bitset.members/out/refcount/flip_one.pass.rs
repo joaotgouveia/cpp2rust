@@ -182,7 +182,7 @@ pub fn test_flip_one_13() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -200,7 +200,7 @@ pub fn test_flip_one_14() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -218,7 +218,7 @@ pub fn test_flip_one_15() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -236,7 +236,7 @@ pub fn test_flip_one_16() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -254,7 +254,7 @@ pub fn test_flip_one_17() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -272,7 +272,7 @@ pub fn test_flip_one_18() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -290,7 +290,7 @@ pub fn test_flip_one_19() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -308,7 +308,7 @@ pub fn test_flip_one_20() {
         {
             let mut middle: () = (unimplemented!() as ()).wrapping_div(2_());
             unimplemented!();
-            let mut b: () = ({ unimplemented!()() });
+            let mut b: () = unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();

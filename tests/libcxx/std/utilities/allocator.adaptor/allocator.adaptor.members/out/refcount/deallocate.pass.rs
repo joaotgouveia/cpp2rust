@@ -82,17 +82,17 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
+        unimplemented!();
         unimplemented!();
     }
     return 0_();
@@ -117,7 +117,7 @@ pub trait A1_int_Impl {
 }
 impl A1_int_Impl for Ptr<A1_int_> {
     fn deallocate(&self, mut p: Ptr<()>, mut n: ()) {
-        deallocate_called_3.with(|rc| *rc.borrow_mut() = unimplemented!());
+        unimplemented!();
     }
 }
 pub trait A2_int_Impl {

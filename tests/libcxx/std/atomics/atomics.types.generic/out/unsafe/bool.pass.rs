@@ -9,12 +9,7 @@ use std::rc::Rc;
 pub unsafe fn cmpxchg_weak_loop_0(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unsafe {
-            let ___e: *mut () = expected;
-            let ___d: () = desired;
-            ((*atomic) as std___atomic_base_bool__false_).compare_exchange_weak_15(___e, ___d, None)
-        }) == (true))
-        {
+        if ((unimplemented!()) == (true)) {
             return true;
         }
         i.postfix_inc();
@@ -24,12 +19,7 @@ pub unsafe fn cmpxchg_weak_loop_0(atomic: *mut (), expected: *mut (), mut desire
 pub unsafe fn cmpxchg_weak_loop_1(atomic: *mut (), expected: *mut (), mut desired: ()) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unsafe {
-            let ___e: *mut () = expected;
-            let ___d: () = desired;
-            ((*atomic) as std___atomic_base_bool__false_).compare_exchange_weak_16(___e, ___d, None)
-        }) == (true))
-        {
+        if ((unimplemented!()) == (true)) {
             return true;
         }
         i.postfix_inc();
@@ -45,15 +35,7 @@ pub unsafe fn cmpxchg_weak_loop_2(
 ) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unsafe {
-            let ___e: *mut () = expected;
-            let ___d: () = desired;
-            let ___s: () = success;
-            let ___f: () = failure;
-            ((*atomic) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_11(___e, ___d, ___s, ___f)
-        }) == (true))
-        {
+        if ((unimplemented!()) == (true)) {
             return true;
         }
         i.postfix_inc();
@@ -69,15 +51,7 @@ pub unsafe fn cmpxchg_weak_loop_3(
 ) -> () {
     let mut i: () = 0_();
     'loop_: while ((i) < (10_())) {
-        if ((unsafe {
-            let ___e: *mut () = expected;
-            let ___d: () = desired;
-            let ___s: () = success;
-            let ___f: () = failure;
-            ((*atomic) as std___atomic_base_bool__false_)
-                .compare_exchange_weak_12(___e, ___d, ___s, ___f)
-        }) == (true))
-        {
+        if ((unimplemented!()) == (true)) {
             return true;
         }
         i.postfix_inc();
@@ -110,14 +84,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 unimplemented!();
             }
         }
-        (unsafe { (obj as std___atomic_base_bool__false_).store_3(false, None) });
-        unimplemented!();
-        (unsafe {
-            (obj as std___atomic_base_bool__false_).store_3(
-                true,
-                Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_4))),
-            )
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -125,20 +91,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut x: () = (unsafe { (obj as std___atomic_base_bool__false_).to__7() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let mut x: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { (obj as std___atomic_base_bool__false_).store_3(true, None) });
-        x = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_3(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -146,7 +103,19 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_3(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -165,14 +134,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 unimplemented!();
             }
         }
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(false, None) });
-        unimplemented!();
-        (unsafe {
-            (obj as std___atomic_base_bool__false_).store_4(
-                true,
-                Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_4))),
-            )
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -180,20 +141,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut x: () = (unsafe { (obj as std___atomic_base_bool__false_).to__8() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let mut x: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
-        x = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -201,7 +153,19 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -220,14 +184,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 unimplemented!();
             }
         }
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(false, None) });
-        unimplemented!();
-        (unsafe {
-            (obj as std___atomic_base_bool__false_).store_4(
-                true,
-                Some((*std::cell::LazyCell::force_mut(&mut *&raw mut memory_order_release_4))),
-            )
-        });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -235,20 +191,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut x: () = (unsafe { (obj as std___atomic_base_bool__false_).to__8() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
+        let mut x: () = unimplemented!();
         unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
-        x = true;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -256,7 +203,19 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         x = true;
-        (unsafe { (obj as std___atomic_base_bool__false_).store_4(true, None) });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        x = true;
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

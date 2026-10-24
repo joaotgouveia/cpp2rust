@@ -8,10 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_constexpr_0() -> () {
     let mut c: () = (49 as ());
-    (unsafe {
-        let mut ___rhs: () = (97 as ());
-        std___char_traits_base_char16_t__unsigned_short__65535_::assign_1(&mut c, &mut ___rhs)
-    });
+    unimplemented!();
     return ((c) == (97 as ()));
 }
 pub fn main() {
@@ -31,10 +28,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut c: () = (0 as ());
-    (unsafe {
-        let mut ___rhs: () = (97 as ());
-        std___char_traits_base_char16_t__unsigned_short__65535_::assign_1(&mut c, &mut ___rhs)
-    });
+    unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();

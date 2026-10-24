@@ -52,10 +52,7 @@ pub unsafe fn test_0() -> () {
             let mut data: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
             let mut a: () = unimplemented!();
             let mut p: () = unimplemented!();
-            let result: *mut () = &mut ({
-                p = (unsafe { a() });
-                (p).clone()
-            });
+            let result: *mut () = &mut (*unimplemented!());
             unimplemented!();
             unimplemented!();
             unimplemented!();

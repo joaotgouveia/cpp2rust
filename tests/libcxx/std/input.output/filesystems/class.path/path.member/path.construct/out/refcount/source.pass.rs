@@ -2977,45 +2977,45 @@ pub fn RunTestCase_45(MS: Ptr<MultiStringType>) {
     ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_auto_format) });
     ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_native_format) });
     ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_36((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_36((MS).clone(), unimplemented!()) });
 }
 pub fn RunTestCase_46(MS: Ptr<MultiStringType>) {
     ({ RunTestCaseImpl_37((MS).clone()) });
     ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_auto_format) });
     ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_native_format) });
     ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_38((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_38((MS).clone(), unimplemented!()) });
 }
 pub fn RunTestCase_47(MS: Ptr<MultiStringType>) {
     ({ RunTestCaseImpl_39((MS).clone()) });
     ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_auto_format) });
     ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_native_format) });
     ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_40((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_40((MS).clone(), unimplemented!()) });
 }
 pub fn RunTestCase_48(MS: Ptr<MultiStringType>) {
     ({ RunTestCaseImpl_41((MS).clone()) });
     ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_auto_format) });
     ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_native_format) });
     ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_42((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_42((MS).clone(), unimplemented!()) });
 }
 pub fn RunTestCase_49(MS: Ptr<MultiStringType>) {
     ({ RunTestCaseImpl_43((MS).clone()) });
     ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_auto_format) });
     ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_native_format) });
     ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_44((MS).clone(), unimplemented!()) });
+    ({ RunTestCaseImpl_44((MS).clone(), unimplemented!()) });
 }
 pub fn test_sfinae_50() {
     {

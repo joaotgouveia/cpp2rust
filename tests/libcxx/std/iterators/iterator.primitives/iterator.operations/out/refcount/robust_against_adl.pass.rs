@@ -33,18 +33,16 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         Ptr::<Holder_Incomplete_>::null(),
         Ptr::<Holder_Incomplete_>::null(),
     ])));
-    let p: Value<Ptr<Ptr<Holder_Incomplete_>>> = Rc::new(RefCell::new(
-        (a.as_pointer() as Ptr<Ptr<Holder_Incomplete_>>),
-    ));
+    let mut p: Ptr<Ptr<Holder_Incomplete_>> = (a.as_pointer() as Ptr<Ptr<Holder_Incomplete_>>);
     let __rhs = unimplemented!();
-    (*p.borrow_mut()) = __rhs;
+    p = __rhs;
     let __rhs = unimplemented!();
-    (*p.borrow_mut()) = __rhs;
+    p = __rhs;
     let __rhs = unimplemented!();
-    (*p.borrow_mut()) = __rhs;
+    p = __rhs;
     let __rhs = unimplemented!();
-    (*p.borrow_mut()) = __rhs;
-    ({ advance_0(p.as_pointer(), <Intable_Holder_Incomplete__>::default()) });
+    p = __rhs;
+    unimplemented!();
     &(unimplemented!());
     return 0_();
 }

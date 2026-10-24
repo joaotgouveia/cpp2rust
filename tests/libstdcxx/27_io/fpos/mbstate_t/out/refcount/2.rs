@@ -300,7 +300,7 @@ pub fn test02_10() {
             unimplemented!();
         }
     }
-    let mut off03: () = ({ (*pos04.borrow())() });
+    let mut off03: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

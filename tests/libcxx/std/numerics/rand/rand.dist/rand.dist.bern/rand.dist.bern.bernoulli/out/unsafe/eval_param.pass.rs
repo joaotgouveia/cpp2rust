@@ -42,7 +42,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unsafe { unimplemented!()() }) - (mean));
+            let mut dbl: () = ((unimplemented!()) - (mean));
             let mut d2: () = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));
@@ -54,12 +54,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();
-        let mut x_mean: () = (unsafe { p.p() });
-        let mut x_var: () = ((unsafe { p.p() }) * ((1_()) - (unsafe { p.p() })));
+        let mut x_mean: () = unimplemented!();
+        let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
         let mut x_skew: () =
-            (((1_()) - ((2_()) * (unsafe { p.p() }))) / (unsafe { sqrt_1(x_var) }));
-        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0((unsafe { p.p() })) }))
-            - ((6_()) * (unsafe { p.p() })))
+            (((1_()) - ((2_()) * (unimplemented!()))) / (unsafe { sqrt_1(x_var) }));
+        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
+            - ((6_()) * (unimplemented!())))
             + (1_()))
             / (x_var));
         unimplemented!();
@@ -84,7 +84,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut kurtosis: () = 0_();
         let mut i: () = 0_();
         'loop_: while ((i) < (unimplemented!())) {
-            let mut dbl: () = ((unsafe { unimplemented!()() }) - (mean));
+            let mut dbl: () = ((unimplemented!()) - (mean));
             let mut d2: () = (unsafe { sqr_0(dbl) });
             var += d2;
             skew += ((dbl) * (d2));
@@ -96,12 +96,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         skew /= (((unimplemented!()) * (dev)) * (var));
         kurtosis /= (((unimplemented!()) * (var)) * (var));
         kurtosis -= 3_();
-        let mut x_mean: () = (unsafe { p.p() });
-        let mut x_var: () = ((unsafe { p.p() }) * ((1_()) - (unsafe { p.p() })));
+        let mut x_mean: () = unimplemented!();
+        let mut x_var: () = ((unimplemented!()) * ((1_()) - (unimplemented!())));
         let mut x_skew: () =
-            (((1_()) - ((2_()) * (unsafe { p.p() }))) / (unsafe { sqrt_1(x_var) }));
-        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0((unsafe { p.p() })) }))
-            - ((6_()) * (unsafe { p.p() })))
+            (((1_()) - ((2_()) * (unimplemented!()))) / (unsafe { sqrt_1(x_var) }));
+        let mut x_kurtosis: () = (((((6_()) * (unsafe { sqr_0(unimplemented!()) }))
+            - ((6_()) * (unimplemented!())))
             + (1_()))
             / (x_var));
         unimplemented!();

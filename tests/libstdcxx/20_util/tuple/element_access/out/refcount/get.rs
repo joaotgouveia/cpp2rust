@@ -261,18 +261,8 @@ pub fn main() {
 fn main_0() -> () {
     let j: Value<()> = Rc::new(RefCell::new(1_()));
     let k: Value<()> = Rc::new(RefCell::new(2_()));
-    let a: Value<()> = Rc::new(RefCell::new({
-        let __tmp_0: Value<()> = Rc::new(RefCell::new(0_()));
-        std_tuple_int__int_ref__const_int_ref_::new({ __tmp_0.as_pointer() }, { j.as_pointer() }, {
-            k.as_pointer()
-        })
-    }));
-    let b: Value<()> = Rc::new(RefCell::new({
-        let __tmp_1: Value<()> = Rc::new(RefCell::new(1_()));
-        std_tuple_int__int_ref__const_int_ref_::new({ __tmp_1.as_pointer() }, { j.as_pointer() }, {
-            k.as_pointer()
-        })
-    }));
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

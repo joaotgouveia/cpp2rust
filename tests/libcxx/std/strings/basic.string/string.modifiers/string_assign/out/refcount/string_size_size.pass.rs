@@ -112,7 +112,16 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn test_6(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
+pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
+    return true;
+}
+pub fn test_9(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     if (pos <= unimplemented!()) {
         unimplemented!();
@@ -121,7 +130,7 @@ pub fn test_6(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_7(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
+pub fn test_10(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     if (pos <= unimplemented!()) {
         unimplemented!();
@@ -130,7 +139,7 @@ pub fn test_7(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_8(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
+pub fn test_11(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     if (pos <= unimplemented!()) {
         unimplemented!();
@@ -139,7 +148,7 @@ pub fn test_8(s: (), mut str: (), mut pos: (), mut n: (), mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_npos_9(s: (), mut str: (), mut pos: (), mut expected: ()) {
+pub fn test_npos_12(s: (), mut str: (), mut pos: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     if (pos <= unimplemented!()) {
         unimplemented!();
@@ -147,9 +156,9 @@ pub fn test_npos_9(s: (), mut str: (), mut pos: (), mut expected: ()) {
         unimplemented!();
     }
 }
-pub fn test_string_10() {
+pub fn test_string_13() {
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -158,7 +167,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -167,7 +176,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -176,7 +185,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -185,7 +194,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -194,7 +203,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -203,7 +212,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -212,7 +221,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -221,7 +230,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -230,7 +239,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -239,7 +248,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -248,7 +257,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -257,7 +266,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -266,7 +275,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -275,7 +284,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -284,7 +293,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -293,7 +302,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -302,7 +311,7 @@ pub fn test_string_10() {
         )
     });
     ({
-        test_6(
+        test_9(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -311,9 +320,9 @@ pub fn test_string_10() {
         )
     });
 }
-pub fn test_string_11() {
+pub fn test_string_14() {
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -322,7 +331,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -331,7 +340,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -340,7 +349,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -349,7 +358,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -358,7 +367,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -367,7 +376,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -376,7 +385,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -385,7 +394,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -394,7 +403,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -403,7 +412,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -412,7 +421,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -421,7 +430,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -430,7 +439,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -439,7 +448,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -448,7 +457,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -457,7 +466,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -466,7 +475,7 @@ pub fn test_string_11() {
         )
     });
     ({
-        test_7(
+        test_10(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -475,9 +484,9 @@ pub fn test_string_11() {
         )
     });
 }
-pub fn test_string_12() {
+pub fn test_string_15() {
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -486,7 +495,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -495,7 +504,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -504,7 +513,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -513,7 +522,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             3_(),
@@ -522,7 +531,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -531,7 +540,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             6_(),
@@ -540,7 +549,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -549,7 +558,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -558,7 +567,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -567,7 +576,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             12_(),
@@ -576,7 +585,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             21_(),
@@ -585,7 +594,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -594,7 +603,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             2_(),
@@ -603,7 +612,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -612,7 +621,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             0_(),
@@ -621,7 +630,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             1_(),
@@ -630,7 +639,7 @@ pub fn test_string_12() {
         )
     });
     ({
-        test_8(
+        test_11(
             unimplemented!(),
             unimplemented!(),
             5_(),
@@ -639,18 +648,18 @@ pub fn test_string_12() {
         )
     });
 }
-pub fn test_13() -> () {
-    ({ test_string_10() });
-    ({ test_string_11() });
-    ({ test_string_12() });
+pub fn test_16() -> () {
+    ({ test_string_13() });
+    ({ test_string_14() });
+    ({ test_string_15() });
     {
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 3_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 5_(), unimplemented!()) });
-        ({ test_npos_9(unimplemented!(), unimplemented!(), 6_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 0_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 1_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 3_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 5_(), unimplemented!()) });
+        ({ test_npos_12(unimplemented!(), unimplemented!(), 6_(), unimplemented!()) });
     }
     return true;
 }
@@ -674,7 +683,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_13() });
+    ({ test_16() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

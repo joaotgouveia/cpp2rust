@@ -463,7 +463,19 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn test_14() {
+pub unsafe fn is_string_asan_correct_14(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_15(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_16(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn is_string_asan_correct_17(_a0: *const ()) -> () {
+    return true;
+}
+pub unsafe fn test_18() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let mut s: () = unimplemented!();
@@ -485,7 +497,7 @@ pub unsafe fn test_14() {
         unimplemented!();
     }
 }
-pub unsafe fn test2_15() {
+pub unsafe fn test2_19() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let mut s: () = unimplemented!();
@@ -507,7 +519,7 @@ pub unsafe fn test2_15() {
         unimplemented!();
     }
 }
-pub unsafe fn test2_16() {
+pub unsafe fn test2_20() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let mut s: () = unimplemented!();
@@ -529,7 +541,7 @@ pub unsafe fn test2_16() {
         unimplemented!();
     }
 }
-pub unsafe fn test2_17() {
+pub unsafe fn test2_21() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let mut s: () = unimplemented!();
@@ -551,11 +563,11 @@ pub unsafe fn test2_17() {
         unimplemented!();
     }
 }
-pub unsafe fn test_18() -> () {
-    (unsafe { test_14() });
-    (unsafe { test2_15() });
-    (unsafe { test2_16() });
-    (unsafe { test2_17() });
+pub unsafe fn test_22() -> () {
+    (unsafe { test_18() });
+    (unsafe { test2_19() });
+    (unsafe { test2_20() });
+    (unsafe { test2_21() });
     return true;
 }
 pub fn main() {
@@ -574,7 +586,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_22() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -292,30 +292,17 @@ const _: () = assert!(
 pub fn test_26() -> () {
     {
         let commonView: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let io: Value<()> = Rc::new(RefCell::new(std_ranges_iota_view_SomeInt__SomeInt_::new_1(
-            { unimplemented!() },
-            { unimplemented!() },
-        )));
+        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let unreachableSent: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let io: Value<()> = Rc::new(RefCell::new(
-            std_ranges_iota_view_SomeInt__std_unreachable_sentinel_t_::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
         let differentTypes: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let io: Value<()> = Rc::new(RefCell::new(
-            std_ranges_iota_view_SomeInt__IntComparableWith_SomeInt__::new_1(
-                { unimplemented!() },
-                { unimplemented!() },
-            ),
-        ));
+        let io: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {

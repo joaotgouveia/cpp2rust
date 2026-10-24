@@ -266,7 +266,7 @@ fn main_0() -> () {
     (*sm.borrow_mut()).first = unimplemented!();
     (*sm.borrow_mut()).second = unimplemented!().offset(-((1_()) as isize));
     (*sm.borrow_mut()).matched = true;
-    let mut sm_string: () = ({ (*sm.borrow())() });
+    let mut sm_string: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

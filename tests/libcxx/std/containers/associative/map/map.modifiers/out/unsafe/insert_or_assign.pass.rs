@@ -99,7 +99,7 @@ pub unsafe fn test_0() -> () {
         let mut i: () = 0_();
         'loop_: while ((i) < (20_())) {
             let mut mv: Moveable = Moveable::new_2({ ((i) + (1_())) }, { ((i) + (1_())) });
-            r = unimplemented!();
+            unimplemented!();
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -108,21 +108,21 @@ pub unsafe fn test_0() -> () {
             i += 2_();
         }
         let mut mv1: Moveable = Moveable::new_2({ 5_() }, { 5_f64 });
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut mv2: Moveable = Moveable::new_2({ 9_() }, { 9_f64 });
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut mv3: Moveable = Moveable::new_2({ -1_() }, { 5_f64 });
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -140,7 +140,7 @@ pub unsafe fn test_0() -> () {
         unimplemented!();
         let mut mvkey1: Moveable = Moveable::new_2({ 2_() }, { 2_f64 });
         let mut mv1: Moveable = Moveable::new_2({ 4_() }, { 4_f64 });
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -149,7 +149,7 @@ pub unsafe fn test_0() -> () {
         unimplemented!();
         let mut mvkey2: Moveable = Moveable::new_2({ 3_() }, { 3_f64 });
         let mut mv2: Moveable = Moveable::new_2({ 5_() }, { 5_f64 });
-        r = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

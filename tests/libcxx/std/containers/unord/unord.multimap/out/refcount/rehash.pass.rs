@@ -113,7 +113,7 @@ pub fn test_6(c: Ptr<()>) {
             n.prefix_inc();
         }
     }
-    (*eq.borrow_mut()) = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -129,12 +129,12 @@ pub fn test_6(c: Ptr<()>) {
             n.prefix_inc();
         }
     }
-    (*eq.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*eq.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -161,7 +161,7 @@ pub fn test_7(c: Ptr<()>) {
             n.prefix_inc();
         }
     }
-    (*eq.borrow_mut()) = unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     {
@@ -177,12 +177,12 @@ pub fn test_7(c: Ptr<()>) {
             n.prefix_inc();
         }
     }
-    (*eq.borrow_mut()) = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*eq.borrow_mut()) = unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

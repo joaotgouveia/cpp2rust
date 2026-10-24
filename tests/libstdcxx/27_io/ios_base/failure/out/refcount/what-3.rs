@@ -269,24 +269,20 @@ pub fn allocate_on_stack_10() {
     }
 }
 pub fn test04_11() {
-    let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut s: () = unimplemented!();
     let mut strlit1: Ptr<()> = Ptr::<()>::from_string_literal(b"wish I lived in Palo Alto");
     let mut strlit2: Ptr<()> = Ptr::<()>::from_string_literal(b"...or Santa Barbara");
-    let obj1: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-        s.as_pointer()
-    })));
+    let obj1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let obj2: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-            s2.as_pointer()
-        })));
-        (*obj1.borrow_mut()) = (*obj2.borrow()).clone();
+        let mut s2: () = unimplemented!();
+        let obj2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
     }
     ({ allocate_on_stack_10() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(({ strstr_12(({ (*obj1.borrow()).what() }), (strlit1).clone()) }).is_null())) {
+        if !(!(({ strstr_12(unimplemented!(), (strlit1).clone()) }).is_null())) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),
@@ -306,17 +302,15 @@ pub fn test04_11() {
         }
     }
     {
-        let s3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let obj3: Value<()> = Rc::new(RefCell::new(std_ios_base_failure::new_1({
-            s3.as_pointer()
-        })));
-        (*obj1.borrow_mut()) = (*obj3.borrow()).clone();
+        let mut s3: () = unimplemented!();
+        let obj3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
     }
     ({ allocate_on_stack_10() });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(!(({ strstr_12(({ (*obj1.borrow()).what() }), (strlit2).clone()) }).is_null())) {
+        if !(!(({ strstr_12(unimplemented!(), (strlit2).clone()) }).is_null())) {
             ({
                 __builtin_fprintf_13(
                     libcc2rs::stderr_unsafe(),

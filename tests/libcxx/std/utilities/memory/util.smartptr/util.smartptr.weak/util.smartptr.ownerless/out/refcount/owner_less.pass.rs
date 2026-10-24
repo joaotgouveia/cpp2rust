@@ -68,7 +68,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let sp2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let sp3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let wp1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let cmp: Value<std_owner_less_void_> = Rc::new(RefCell::new(unimplemented!()));
+        let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

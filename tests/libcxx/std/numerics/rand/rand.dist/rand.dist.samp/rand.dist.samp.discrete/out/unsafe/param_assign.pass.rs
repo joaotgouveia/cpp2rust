@@ -25,12 +25,10 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut d0: [(); 3] = [0.3_f64, 0.1_f64, 0.6_f64];
-        let mut p0: std_discrete_distribution___param_type =
-            std_discrete_distribution___param_type::new_1({ d0.as_mut_ptr() }, {
-                d0.as_mut_ptr().offset((3_()) as isize)
-            });
-        let mut p: std_discrete_distribution___param_type =
-            <std_discrete_distribution___param_type>::default();
+        let mut p0: () = std_discrete_distribution___param_type::new_1({ d0.as_mut_ptr() }, {
+            d0.as_mut_ptr().offset((3_()) as isize)
+        });
+        let mut p: () = unimplemented!();
         p = (p0).clone();
         unimplemented!();
     }

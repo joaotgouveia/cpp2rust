@@ -27,21 +27,21 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut uPtr: () = unimplemented!();
         let oPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: *mut *mut () = (unsafe { oPtr() });
+        let mut pPtr: *mut *mut () = unimplemented!();
         unimplemented!();
     }
     {
         let mut uPtr: () = unimplemented!();
         let oPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(oPtr.operator int**())");;
-        let mut pPtr: *mut *mut () = (unsafe { oPtr() });
+        let mut pPtr: *mut *mut () = unimplemented!();
         unimplemented!();
     }
     {
         let mut uPtr: () = unimplemented!();
         let oPtr: () = unimplemented!();
         const _: () = assert!(true, "noexcept(oPtr.operator void**())");;
-        let mut pPtr: *mut () = (unsafe { oPtr.to_pmut_4() });
+        let mut pPtr: *mut () = unimplemented!();
         unimplemented!();
     }
     return 0_();

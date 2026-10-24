@@ -260,7 +260,7 @@ pub unsafe fn test02_10() {
     let mut in_: () = unimplemented!();
     let mut i: () = 0_();
     let mut x: () = unimplemented!();
-    'loop_: while (unsafe { (*unimplemented!())() }) {
+    'loop_: while unimplemented!() {
         i.prefix_inc();
         if ((i) > (3_())) {
             break;

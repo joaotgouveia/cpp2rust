@@ -162,7 +162,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -171,12 +171,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        eq = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -185,7 +179,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -194,12 +194,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -283,7 +283,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -292,12 +292,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 2_(), &mut s)
         });
-        eq = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        eq = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -306,7 +300,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -315,12 +315,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 1_(), &mut s)
         });
-        eq = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        eq = unimplemented!();
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

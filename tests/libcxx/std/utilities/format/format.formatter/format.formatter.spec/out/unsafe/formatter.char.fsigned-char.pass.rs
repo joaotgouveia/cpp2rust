@@ -410,12 +410,12 @@ pub unsafe fn test_26(mut expected: (), mut fmt: (), mut arg: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    (unsafe { (formatter as std___formatter_char_char_).parse(&mut parse_ctx) });
+    unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_0(out.clone(), unimplemented!()) });
-    (unsafe { (formatter as std___formatter_char_char_).format(arg, &mut format_ctx) });
+    unimplemented!();
     (unsafe {
         let _condition: () = unimplemented!();
         let mut _arg: FnPtr<fn()> = lambda_unsafe!(
@@ -444,12 +444,12 @@ pub unsafe fn test_27(mut expected: (), mut fmt: (), mut arg: ()) {
     let mut parse_ctx: () = unimplemented!();
     let mut formatter: () = unimplemented!();
     const _: () = assert!(true, "std::semiregular<decltype(formatter)>");;
-    (unsafe { (formatter as std___formatter_char_wchar_t_).parse(&mut parse_ctx) });
+    unimplemented!();
     let mut result: () = unimplemented!();
     let mut out: () = unimplemented!();
     let mut format_ctx: () =
         (unsafe { test_format_context_create_2(out.clone(), unimplemented!()) });
-    (unsafe { (formatter as std___formatter_char_wchar_t_).format(arg, &mut format_ctx) });
+    unimplemented!();
     (unsafe {
         let _condition: () = unimplemented!();
         let mut _arg: FnPtr<fn()> = lambda_unsafe!(

@@ -24,11 +24,9 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut p0: std_exponential_distribution___param_type =
-            <std_exponential_distribution___param_type>::default();
-        let mut p: std_exponential_distribution___param_type =
-            <std_exponential_distribution___param_type>::default();
-        p = p0;
+        let mut p0: () = unimplemented!();
+        let mut p: () = unimplemented!();
+        p = (p0).clone();
         unimplemented!();
     }
     return 0_();

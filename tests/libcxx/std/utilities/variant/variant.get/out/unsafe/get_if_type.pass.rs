@@ -80,14 +80,14 @@ pub unsafe fn test_const_get_if_8() {
         const _: () = assert!(true, "std::get_if<int>(v) == nullptr");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<int>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<const long>(&v) == nullptr");;
     }
     {
-        let v: () = 42_();
+        let v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "*std::get_if<const long>(&v) == 42");;
         const _: () = assert!(true, "std::get_if<int>(&v) == nullptr");;
@@ -99,14 +99,14 @@ pub unsafe fn test_get_if_9() {
         unimplemented!();
     }
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut v: () = 42_();
+        let mut v: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

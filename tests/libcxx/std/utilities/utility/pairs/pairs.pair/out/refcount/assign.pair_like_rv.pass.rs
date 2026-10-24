@@ -53,7 +53,7 @@ pub fn test_0() -> () {
                 Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_(), 4_(), 5_()])));
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let result: Ptr<()> = ((*p.borrow_mut()) = ({ (*a.borrow())() }));
+            let result: Ptr<()> = (unimplemented!());
             unimplemented!();
             unimplemented!();
             unimplemented!();

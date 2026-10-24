@@ -669,8 +669,7 @@ pub unsafe fn test06_20() {
         let mut ___f: () = 5_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_13))(&mut ___e, &mut ___f)
     });
-    let mut w1: () =
-        std_ranges_iota_view_int__int_::new_1({ unimplemented!() }, { unimplemented!() });
+    let mut w1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -698,10 +697,7 @@ pub unsafe fn test06_20() {
         let mut ___e: () = 0_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_13))(&mut ___e)
     });
-    let mut w2: () =
-        std_ranges_iota_view_int__std_unreachable_sentinel_t_::new_1({ unimplemented!() }, {
-            unimplemented!()
-        });
+    let mut w2: () = unimplemented!();
     const _: () = assert!(
         true,
         "std::same_as<decltype(w2.end()), std::unreachable_sentinel_t>"
@@ -730,8 +726,7 @@ pub unsafe fn test06_20() {
         let mut ___f: () = 5_();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_13))(&mut ___e, &mut ___f)
     });
-    let mut w3: () =
-        std_ranges_iota_view_int__long_::new_1({ unimplemented!() }, { unimplemented!() });
+    let mut w3: () = unimplemented!();
     const _: () = assert!(!(false), "!std::ranges::common_range<decltype(w3)>");;
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
