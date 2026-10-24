@@ -10,51 +10,42 @@ pub fn DoNotOptimize_0(value: Ptr<()>) -> Ptr<()> {
     b"";
     return (value).clone();
 }
-pub fn is_string_asan_correct_1(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_2(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_3(_a0: Ptr<()>) -> () {
-    return true;
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_5.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_6.with(|rc| *rc.borrow())));
+        return ((alloc_count_2.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_3.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_7.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_4.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_5.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_6.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_4.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_1.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_2.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_3.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_4: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_1: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_5: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_2: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_6: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_7: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_4: Value<()> = Rc::new(RefCell::new(false));
 );
-pub fn operator_sub_8(
+pub fn operator_sub_5(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_eq_9(
+pub fn operator_eq_6(
     mut x: min_pointer_char__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_char__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -79,7 +70,7 @@ impl min_pointer_char__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_char__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_9(self.clone(), other.clone()) }
+        { operator_eq_6(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_char__std_integral_constant_unsigned_long__0__ {}
@@ -203,7 +194,7 @@ pub struct cpp17_input_iterator_int_ptr__int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_int_ptr__int_ptr_ {}
-pub fn operator_ne_11(
+pub fn operator_ne_8(
     x: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
     y: Ptr<cpp17_input_iterator_const_char_ptr__const_char_ptr_>,
 ) -> () {
@@ -314,7 +305,7 @@ impl Default for IteratorOpCounts {
         }
     }
 }
-pub fn operator_eq_12(
+pub fn operator_eq_9(
     _a0: Ptr<forward_sized_iterator_int_ptr_>,
     _a1: Ptr<forward_sized_iterator_int_ptr_>,
 ) -> () {
@@ -331,7 +322,7 @@ impl forward_sized_iterator_int_ptr_ {}
 impl std::cmp::PartialEq for forward_sized_iterator_int_ptr_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_9(
                 Rc::new(RefCell::new(forward_sized_iterator_int_ptr_ {
                     it_: self.it_.clone(),
                 }))
@@ -359,36 +350,36 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<forward_sized_iterator<>, forward_sized_iterator<>>"
 );
-pub fn operator_add_13(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
+pub fn operator_add_10(mut i: adl_Iterator, mut n: ()) -> adl_Iterator {
     return adl_Iterator::new_1(
         { i.ptr_.offset((n) as isize) },
         { (i.iter_moves_).clone() },
         { (i.iter_swaps_).clone() },
     );
 }
-pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
+pub fn operator_add_11(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     return ({
         let _i: adl_Iterator = i;
-        operator_add_13(_i, n)
+        operator_add_10(_i, n)
     });
 }
-pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+pub fn iter_swap_12(mut a: adl_Iterator, mut b: adl_Iterator) {
     unimplemented!();
     if !(a.iter_swaps_).is_null() {
         a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_13(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
     return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_15(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -434,7 +425,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_18(
+            operator_cmp_15(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -459,7 +450,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_14(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -543,6 +534,32 @@ impl util_iterator_error {
         Self {}
     }
 }
+pub fn test_16(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
+    let s: Value<()> = Rc::new(RefCell::new(s));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_17(
+    s: (),
+    mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
+    mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
+    mut expected: (),
+) {
+    let s: Value<()> = Rc::new(RefCell::new(s));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_18(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
+    let s: Value<()> = Rc::new(RefCell::new(s));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub fn test_19(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
@@ -595,33 +612,260 @@ pub fn test_24(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_25(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub fn test_string_25() {
+    {
+        let mut s: Ptr<()> =
+            Ptr::<()>::from_string_literal(b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = (s).clone();
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((1_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((10_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((52_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = (s).clone();
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((1_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((10_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((52_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = (s).clone();
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((1_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((10_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((52_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = (s).clone();
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((1_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((10_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: Ptr<()> = (s).clone();
+            let _last: Ptr<()> = s.offset((52_()) as isize);
+            test_16(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((1_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((10_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((52_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((1_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((10_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((52_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((1_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((10_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((52_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((1_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((10_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+        ({
+            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
+            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
+                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
+                    s.offset((52_()) as isize)
+                });
+            test_17(unimplemented!(), _first, _last, unimplemented!())
+        });
+    }
+    {
+        let mut s_short: () = unimplemented!();
+        let mut s_long: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let p: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"ABCD\0")));
+        let mut s: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut sneaky: () = unimplemented!();
+        unimplemented!();
+        let mut expected: () = unimplemented!();
+        ({
+            let _s: () = unimplemented!();
+            let _first: Ptr<()> = unimplemented!();
+            let _last: Ptr<()> = unimplemented!()
+                .offset((unimplemented!()) as isize)
+                .offset((1_()) as isize);
+            test_18(_s, _first, _last, unimplemented!())
+        });
+    }
 }
-pub fn test_26(
-    s: (),
-    mut first: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
-    mut last: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
-    mut expected: (),
-) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_27(s: (), mut first: Ptr<()>, mut last: Ptr<()>, mut expected: ()) {
-    let s: Value<()> = Rc::new(RefCell::new(s));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_string_28() {
+pub fn test_string_26() {
     {
         let mut s: Ptr<()> =
             Ptr::<()>::from_string_literal(b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
@@ -874,7 +1118,7 @@ pub fn test_string_28() {
         });
     }
 }
-pub fn test_string_29() {
+pub fn test_string_27() {
     {
         let mut s: Ptr<()> =
             Ptr::<()>::from_string_literal(b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
@@ -1127,263 +1371,10 @@ pub fn test_string_29() {
         });
     }
 }
-pub fn test_string_30() {
-    {
-        let mut s: Ptr<()> =
-            Ptr::<()>::from_string_literal(b"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = (s).clone();
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((1_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((10_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((52_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = (s).clone();
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((1_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((10_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((52_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = (s).clone();
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((1_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((10_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((52_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = (s).clone();
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((1_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((10_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: Ptr<()> = (s).clone();
-            let _last: Ptr<()> = s.offset((52_()) as isize);
-            test_25(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((1_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((10_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((52_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((1_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((10_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((52_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((1_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((10_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((52_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((1_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((10_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-        ({
-            let _first: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({ (s).clone() });
-            let _last: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
-                cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
-                    s.offset((52_()) as isize)
-                });
-            test_26(unimplemented!(), _first, _last, unimplemented!())
-        });
-    }
-    {
-        let mut s_short: () = unimplemented!();
-        let mut s_long: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let p: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"ABCD\0")));
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut sneaky: () = unimplemented!();
-        unimplemented!();
-        let mut expected: () = unimplemented!();
-        ({
-            let _s: () = unimplemented!();
-            let _first: Ptr<()> = unimplemented!();
-            let _last: Ptr<()> = unimplemented!()
-                .offset((unimplemented!()) as isize)
-                .offset((1_()) as isize);
-            test_27(_s, _first, _last, unimplemented!())
-        });
-    }
-}
-pub fn test_31() -> () {
-    ({ test_string_28() });
-    ({ test_string_29() });
-    ({ test_string_30() });
+pub fn test_28() -> () {
+    ({ test_string_25() });
+    ({ test_string_26() });
+    ({ test_string_27() });
     return true;
 }
 pub fn main() {
@@ -1406,7 +1397,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_31() });
+    ({ test_28() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -1873,7 +1864,7 @@ impl safe_allocator_char_Impl for Ptr<safe_allocator_char_> {
         let memory: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
         {
             ({
-                memset_10(
+                memset_7(
                     (*memory.borrow()).to_any(),
                     0_(),
                     (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -1887,7 +1878,7 @@ impl safe_allocator_char_Impl for Ptr<safe_allocator_char_> {
             ({
                 let _value: Value<()> = Rc::new(RefCell::new(
                     ({
-                        memset_10(
+                        memset_7(
                             (p).to_any(),
                             0_(),
                             (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -1918,8 +1909,8 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_4.with(|_| ());
-    let _ = alloc_count_5.with(|_| ());
-    let _ = dealloc_count_6.with(|_| ());
-    let _ = disable_default_constructor_7.with(|_| ());
+    let _ = outstanding_bytes_1.with(|_| ());
+    let _ = alloc_count_2.with(|_| ());
+    let _ = dealloc_count_3.with(|_| ());
+    let _ = disable_default_constructor_4.with(|_| ());
 }

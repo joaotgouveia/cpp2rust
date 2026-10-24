@@ -9,8 +9,7 @@ use std::rc::Rc;
 pub unsafe fn test_conversion_0(mut src_exts: ()) {
     let mut strides: () = unimplemented!();
     {}
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -29,10 +28,7 @@ pub unsafe fn test_conversion_1(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -50,10 +46,7 @@ pub unsafe fn test_conversion_2(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -71,8 +64,7 @@ pub unsafe fn test_conversion_3(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -90,7 +82,7 @@ pub unsafe fn test_conversion_4(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -108,7 +100,7 @@ pub unsafe fn test_conversion_5(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -126,10 +118,7 @@ pub unsafe fn test_conversion_6(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () = std_layout_stride_mapping_std_extents_int__18446744073709551615__7__::new_1(
-        { &src_exts },
-        { &strides },
-    );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -147,8 +136,7 @@ pub unsafe fn test_conversion_7(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__7__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -166,7 +154,7 @@ pub unsafe fn test_conversion_8(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -184,7 +172,7 @@ pub unsafe fn test_conversion_9(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -202,11 +190,7 @@ pub unsafe fn test_conversion_10(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__8__9__1__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -224,10 +208,7 @@ pub unsafe fn test_conversion_11(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__7__8__9__1__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -238,8 +219,7 @@ pub unsafe fn test_conversion_11(mut src_exts: ()) {
 pub unsafe fn test_conversion_12(mut src_exts: ()) {
     let mut strides: () = unimplemented!();
     {}
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -258,11 +238,7 @@ pub unsafe fn test_conversion_13(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -280,11 +256,7 @@ pub unsafe fn test_conversion_14(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -302,10 +274,7 @@ pub unsafe fn test_conversion_15(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__5__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -323,7 +292,7 @@ pub unsafe fn test_conversion_16(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -341,7 +310,7 @@ pub unsafe fn test_conversion_17(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -359,11 +328,7 @@ pub unsafe fn test_conversion_18(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__7__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -381,10 +346,7 @@ pub unsafe fn test_conversion_19(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_unsigned_long__5__7__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -402,7 +364,7 @@ pub unsafe fn test_conversion_20(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -420,7 +382,7 @@ pub unsafe fn test_conversion_21(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -438,7 +400,7 @@ pub unsafe fn test_conversion_22(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__7__8__9__1__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -456,10 +418,7 @@ pub unsafe fn test_conversion_23(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () = std_layout_stride_mapping_std_extents_unsigned_long__5__7__8__9__1__::new_1(
-        { &src_exts },
-        { &strides },
-    );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -470,8 +429,7 @@ pub unsafe fn test_conversion_23(mut src_exts: ()) {
 pub unsafe fn test_conversion_24(mut src_exts: ()) {
     let mut strides: () = unimplemented!();
     {}
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -490,10 +448,7 @@ pub unsafe fn test_conversion_25(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -511,10 +466,7 @@ pub unsafe fn test_conversion_26(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -532,8 +484,7 @@ pub unsafe fn test_conversion_27(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -551,7 +502,7 @@ pub unsafe fn test_conversion_28(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -569,7 +520,7 @@ pub unsafe fn test_conversion_29(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -587,10 +538,7 @@ pub unsafe fn test_conversion_30(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () = std_layout_stride_mapping_std_extents_int__18446744073709551615__7__::new_1(
-        { &src_exts },
-        { &strides },
-    );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -608,8 +556,7 @@ pub unsafe fn test_conversion_31(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__7__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -627,7 +574,7 @@ pub unsafe fn test_conversion_32(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -645,7 +592,7 @@ pub unsafe fn test_conversion_33(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -663,11 +610,7 @@ pub unsafe fn test_conversion_34(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__8__9__1__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -685,10 +628,7 @@ pub unsafe fn test_conversion_35(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_int__5__7__8__9__1__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -699,8 +639,7 @@ pub unsafe fn test_conversion_35(mut src_exts: ()) {
 pub unsafe fn test_conversion_36(mut src_exts: ()) {
     let mut strides: () = unimplemented!();
     {}
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -719,10 +658,7 @@ pub unsafe fn test_conversion_37(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -740,10 +676,7 @@ pub unsafe fn test_conversion_38(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -761,8 +694,7 @@ pub unsafe fn test_conversion_39(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__5__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -780,7 +712,7 @@ pub unsafe fn test_conversion_40(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -798,7 +730,7 @@ pub unsafe fn test_conversion_41(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -816,10 +748,7 @@ pub unsafe fn test_conversion_42(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () = std_layout_stride_mapping_std_extents_long__18446744073709551615__7__::new_1(
-        { &src_exts },
-        { &strides },
-    );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -837,8 +766,7 @@ pub unsafe fn test_conversion_43(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__5__7__::new_1({ &src_exts }, { &strides });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -856,7 +784,7 @@ pub unsafe fn test_conversion_44(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -874,7 +802,7 @@ pub unsafe fn test_conversion_45(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src : () = std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { & src_exts } , { & strides } , )  ;
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -892,11 +820,7 @@ pub unsafe fn test_conversion_46(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__7__8__9__1__::new_1(
-            { &src_exts },
-            { &strides },
-        );
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();
@@ -914,10 +838,7 @@ pub unsafe fn test_conversion_47(mut src_exts: ()) {
             r.postfix_inc();
         }
     }
-    let mut src: () =
-        std_layout_stride_mapping_std_extents_long__5__7__8__9__1__::new_1({ &src_exts }, {
-            &strides
-        });
+    let mut src: () = unimplemented!();
     const _: () = assert!(true, "");;
     let mut dest: () = unimplemented!();
     unimplemented!();

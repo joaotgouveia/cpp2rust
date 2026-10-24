@@ -95,13 +95,7 @@ impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_char_ {}
-pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_5(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_6(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
+pub fn test_4(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -119,7 +113,7 @@ pub fn test_6(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
         unimplemented!();
     }
 }
-pub fn test_7(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
+pub fn test_5(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -137,44 +131,20 @@ pub fn test_7(mut min_cap: (), mut erased_index: (), mut res_arg: ()) {
         unimplemented!();
     }
 }
-pub fn test_string_8() {
+pub fn test_string_6() {
     {
-        ({ test_6(0_(), 0_(), 5_()) });
-        ({ test_6(0_(), 0_(), 10_()) });
-        ({ test_6(0_(), 0_(), 50_()) });
+        ({ test_4(0_(), 0_(), 5_()) });
+        ({ test_4(0_(), 0_(), 10_()) });
+        ({ test_4(0_(), 0_(), 50_()) });
     }
     {
-        ({ test_6(100_(), 1_(), 5_()) });
-        ({ test_6(100_(), 50_(), 5_()) });
-        ({ test_6(100_(), 50_(), 10_()) });
-        ({ test_6(100_(), 50_(), 50_()) });
-        ({ test_6(100_(), 50_(), 100_()) });
-        ({ test_6(100_(), 50_(), 1000_()) });
-        ({ test_6(100_(), 50_(), unimplemented!()) });
-    }
-    {
-        let mut str: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut old_cap: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_string_9() {
-    {
-        ({ test_7(0_(), 0_(), 5_()) });
-        ({ test_7(0_(), 0_(), 10_()) });
-        ({ test_7(0_(), 0_(), 50_()) });
-    }
-    {
-        ({ test_7(100_(), 1_(), 5_()) });
-        ({ test_7(100_(), 50_(), 5_()) });
-        ({ test_7(100_(), 50_(), 10_()) });
-        ({ test_7(100_(), 50_(), 50_()) });
-        ({ test_7(100_(), 50_(), 100_()) });
-        ({ test_7(100_(), 50_(), 1000_()) });
-        ({ test_7(100_(), 50_(), unimplemented!()) });
+        ({ test_4(100_(), 1_(), 5_()) });
+        ({ test_4(100_(), 50_(), 5_()) });
+        ({ test_4(100_(), 50_(), 10_()) });
+        ({ test_4(100_(), 50_(), 50_()) });
+        ({ test_4(100_(), 50_(), 100_()) });
+        ({ test_4(100_(), 50_(), 1000_()) });
+        ({ test_4(100_(), 50_(), unimplemented!()) });
     }
     {
         let mut str: () = unimplemented!();
@@ -185,9 +155,33 @@ pub fn test_string_9() {
         unimplemented!();
     }
 }
-pub fn test_10() -> () {
-    ({ test_string_8() });
-    ({ test_string_9() });
+pub fn test_string_7() {
+    {
+        ({ test_5(0_(), 0_(), 5_()) });
+        ({ test_5(0_(), 0_(), 10_()) });
+        ({ test_5(0_(), 0_(), 50_()) });
+    }
+    {
+        ({ test_5(100_(), 1_(), 5_()) });
+        ({ test_5(100_(), 50_(), 5_()) });
+        ({ test_5(100_(), 50_(), 10_()) });
+        ({ test_5(100_(), 50_(), 50_()) });
+        ({ test_5(100_(), 50_(), 100_()) });
+        ({ test_5(100_(), 50_(), 1000_()) });
+        ({ test_5(100_(), 50_(), unimplemented!()) });
+    }
+    {
+        let mut str: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut old_cap: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_8() -> () {
+    ({ test_string_6() });
+    ({ test_string_7() });
     return true;
 }
 pub fn main() {
@@ -210,7 +204,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_8() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

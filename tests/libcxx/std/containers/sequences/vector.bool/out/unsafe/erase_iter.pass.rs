@@ -206,12 +206,7 @@ pub unsafe fn tests_8() -> () {
     let mut a1: [(); 3] = [(1_() != 0), (0_() != 0), (1_() != 0)];
     {
         let mut l1: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_0: () = unimplemented!();
-            std___bit_iterator_std_vector_bool__std_allocator_bool____true__0_::new_1({
-                &mut __tmp_0
-            })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
         unimplemented!();
@@ -231,12 +226,7 @@ pub unsafe fn tests_8() -> () {
     }
     {
         let mut l1: () = unimplemented!();
-        let mut i: () = {
-            let mut __tmp_1: () = unimplemented!();
-            std___bit_iterator_std_vector_bool__min_allocator_bool____true__0_::new_1({
-                &mut __tmp_1
-            })
-        };
+        let mut i: () = unimplemented!();
         unimplemented!();
         let mut j: () = unimplemented!();
         unimplemented!();

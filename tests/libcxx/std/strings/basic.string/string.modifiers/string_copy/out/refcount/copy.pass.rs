@@ -112,16 +112,7 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_9(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
+pub fn test_6(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
     let str: Value<()> = Rc::new(RefCell::new(str));
     let cs: Ptr<()> = str.as_pointer();
     if ({ pos } <= { unimplemented!() }) {
@@ -137,7 +128,7 @@ pub fn test_9(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
         }
     }
 }
-pub fn test_10(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
+pub fn test_7(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
     let str: Value<()> = Rc::new(RefCell::new(str));
     let cs: Ptr<()> = str.as_pointer();
     if ({ pos } <= { unimplemented!() }) {
@@ -153,7 +144,7 @@ pub fn test_10(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
         }
     }
 }
-pub fn test_11(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
+pub fn test_8(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
     let str: Value<()> = Rc::new(RefCell::new(str));
     let cs: Ptr<()> = str.as_pointer();
     if ({ pos } <= { unimplemented!() }) {
@@ -169,205 +160,205 @@ pub fn test_11(str: (), mut s: Ptr<()>, mut n: (), mut pos: ()) {
         }
     }
 }
-pub fn test_string_12() {
+pub fn test_string_9() {
     let s: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..50).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
-    ({ test_9(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
+    ({ test_6(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
 }
-pub fn test_string_13() {
+pub fn test_string_10() {
     let s: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..50).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
-    ({ test_10(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
+    ({ test_7(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
 }
-pub fn test_string_14() {
+pub fn test_string_11() {
     let s: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..50).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
-    ({ test_11(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 4_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 5_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 6_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 4_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 5_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 4_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 4_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 5_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 6_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 10_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 19_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 20_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 0_(), 21_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 9_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 18_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 19_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 1_(), 20_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 9_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 17_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 18_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 2_(), 19_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 5_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 9_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 10_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 10_(), 11_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 19_(), 2_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 20_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 21_(), 0_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 1_()) });
+    ({ test_8(unimplemented!(), (s.as_pointer() as Ptr<()>), 40_(), 0_()) });
 }
-pub fn test_15() -> () {
-    ({ test_string_12() });
-    ({ test_string_13() });
-    ({ test_string_14() });
+pub fn test_12() -> () {
+    ({ test_string_9() });
+    ({ test_string_10() });
+    ({ test_string_11() });
     return true;
 }
 pub fn main() {
@@ -390,7 +381,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_15() });
+    ({ test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

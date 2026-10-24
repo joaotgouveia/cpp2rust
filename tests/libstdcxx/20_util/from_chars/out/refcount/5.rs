@@ -882,11 +882,7 @@ pub fn test03_13() {
 }
 pub fn test04_14() {
     let res: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut z: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 2000_() },
-        { ('0' as ()) },
-        None,
-    );
+    let mut z: () = unimplemented!();
     'loop_: for s in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut s: Ptr<()> = (s.read());
         'loop_: for len in IterRange::new(unimplemented!(), unimplemented!()) {

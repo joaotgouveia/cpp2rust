@@ -283,8 +283,8 @@ pub fn test01_10() {
 pub struct service_result_int_ {}
 impl service_result_int_ {
     pub fn get_result() -> () {
-        let mut sr: () = unimplemented!();
-        return unimplemented!();
+        let sr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        return (*sr.borrow_mut());
     }
     pub fn get_result_with_cond(mut cond: ()) -> () {
         if cond {
@@ -299,7 +299,7 @@ pub struct service_result_std_optional_int__ {}
 impl service_result_std_optional_int__ {
     pub fn get_result() -> () {
         let sr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        return unimplemented!();
+        return (*sr.borrow_mut()).clone();
     }
     pub fn get_result_with_cond(mut cond: ()) -> () {
         if cond {

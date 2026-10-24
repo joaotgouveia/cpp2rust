@@ -30,37 +30,37 @@ pub fn test_3(f: ()) {
 pub fn test_4(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_5(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_6(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_7(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_8(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_9(f: ()) {
     let f: Value<()> = Rc::new(RefCell::new(f));
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.borrow_mut())() });
     unimplemented!();
 }
 pub fn test_const_10(f: Ptr<()>) {
@@ -70,12 +70,12 @@ pub fn test_const_10(f: Ptr<()>) {
 }
 pub fn test_const_11(f: Ptr<()>) {
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.upgrade().deref())() });
     unimplemented!();
 }
 pub fn test_const_12(f: Ptr<()>) {
     let mut save_count: () = count_0.with(|rc| *rc.borrow());
-    unimplemented!();
+    ({ (*f.upgrade().deref())() });
     unimplemented!();
 }
 pub fn f_13() {

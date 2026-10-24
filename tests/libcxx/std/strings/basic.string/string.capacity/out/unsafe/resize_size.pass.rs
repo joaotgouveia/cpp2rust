@@ -10,18 +10,6 @@ pub unsafe fn DoNotOptimize_0(value: *const ()) -> *const () {
     c"";
     return value;
 }
-pub unsafe fn is_string_asan_correct_1(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_2(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_3(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_4(_a0: *const ()) -> () {
-    return true;
-}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct MultiStringType {
@@ -115,24 +103,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_2))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_3))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_8)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_5)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_6)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_7)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_4)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_1)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_2)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_3)) = 0_();
     }
 }
-pub static mut outstanding_bytes_5: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_1: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_6: std::cell::LazyCell<()> =
+pub static mut alloc_count_2: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_7: std::cell::LazyCell<()> =
+pub static mut dealloc_count_3: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_8: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_4: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -229,7 +217,7 @@ impl safe_allocator_char_ {
         let mut memory: *mut () = unimplemented!();
         {
             (unsafe {
-                memset_9(
+                memset_5(
                     (memory as ()),
                     0_(),
                     (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -242,7 +230,7 @@ impl safe_allocator_char_ {
         {
             (unsafe {
                 let mut _value: () = (unsafe {
-                    memset_9(
+                    memset_5(
                         (p as ()),
                         0_(),
                         (::std::mem::size_of::<()>() as ()).wrapping_mul(n),
@@ -295,67 +283,67 @@ impl tiny_size_allocator_32__wchar_t_ {
         return 32_();
     }
 }
-pub unsafe fn test_10(mut s: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_6(mut s: (), mut n: (), mut expected: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_11(mut s: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_7(mut s: (), mut n: (), mut expected: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_12(mut s: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_8(mut s: (), mut n: (), mut expected: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_13(mut s: (), mut n: (), mut expected: ()) {
+pub unsafe fn test_9(mut s: (), mut n: (), mut expected: ()) {
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_14() {
+pub unsafe fn test_string_10() {
     {
-        (unsafe { test_10(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_10(unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_10(unimplemented!(), 10_(), unimplemented!()) });
-        (unsafe { test_10(unimplemented!(), 100_(), unimplemented!()) });
-        (unsafe { test_10(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 100_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_10(_s, 2_(), _expected)
+            test_6(_s, 2_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_10(_s, 5_(), _expected)
+            test_6(_s, 5_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_10(_s, 15_(), _expected)
+            test_6(_s, 15_(), _expected)
         });
-        (unsafe { test_10(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_6(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_10(_s, 10_(), _expected)
-        });
-        (unsafe {
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_10(_s, 50_(), _expected)
+            test_6(_s, 10_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_10(_s, 60_(), _expected)
+            test_6(_s, 50_(), _expected)
+        });
+        (unsafe {
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_6(_s, 60_(), _expected)
         });
     }
     {
@@ -364,43 +352,43 @@ pub unsafe fn test_string_14() {
         unimplemented!();
     }
 }
-pub unsafe fn test_string_15() {
+pub unsafe fn test_string_11() {
     {
-        (unsafe { test_11(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_11(unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_11(unimplemented!(), 10_(), unimplemented!()) });
-        (unsafe { test_11(unimplemented!(), 100_(), unimplemented!()) });
-        (unsafe { test_11(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 100_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_11(_s, 2_(), _expected)
+            test_7(_s, 2_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_11(_s, 5_(), _expected)
+            test_7(_s, 5_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_11(_s, 15_(), _expected)
+            test_7(_s, 15_(), _expected)
         });
-        (unsafe { test_11(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_7(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_11(_s, 10_(), _expected)
-        });
-        (unsafe {
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_11(_s, 50_(), _expected)
+            test_7(_s, 10_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_11(_s, 60_(), _expected)
+            test_7(_s, 50_(), _expected)
+        });
+        (unsafe {
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_7(_s, 60_(), _expected)
         });
     }
     {
@@ -409,43 +397,43 @@ pub unsafe fn test_string_15() {
         unimplemented!();
     }
 }
-pub unsafe fn test_string_16() {
+pub unsafe fn test_string_12() {
     {
-        (unsafe { test_12(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_12(unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_12(unimplemented!(), 10_(), unimplemented!()) });
-        (unsafe { test_12(unimplemented!(), 100_(), unimplemented!()) });
-        (unsafe { test_12(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 100_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_12(_s, 2_(), _expected)
+            test_8(_s, 2_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_12(_s, 5_(), _expected)
+            test_8(_s, 5_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_12(_s, 15_(), _expected)
+            test_8(_s, 15_(), _expected)
         });
-        (unsafe { test_12(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_8(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_12(_s, 10_(), _expected)
-        });
-        (unsafe {
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_12(_s, 50_(), _expected)
+            test_8(_s, 10_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_12(_s, 60_(), _expected)
+            test_8(_s, 50_(), _expected)
+        });
+        (unsafe {
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_8(_s, 60_(), _expected)
         });
     }
     {
@@ -454,43 +442,43 @@ pub unsafe fn test_string_16() {
         unimplemented!();
     }
 }
-pub unsafe fn test_string_17() {
+pub unsafe fn test_string_13() {
     {
-        (unsafe { test_13(unimplemented!(), 0_(), unimplemented!()) });
-        (unsafe { test_13(unimplemented!(), 1_(), unimplemented!()) });
-        (unsafe { test_13(unimplemented!(), 10_(), unimplemented!()) });
-        (unsafe { test_13(unimplemented!(), 100_(), unimplemented!()) });
-        (unsafe { test_13(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 1_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 10_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 100_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_13(_s, 2_(), _expected)
+            test_9(_s, 2_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_13(_s, 5_(), _expected)
+            test_9(_s, 5_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_13(_s, 15_(), _expected)
+            test_9(_s, 15_(), _expected)
         });
-        (unsafe { test_13(unimplemented!(), 0_(), unimplemented!()) });
+        (unsafe { test_9(unimplemented!(), 0_(), unimplemented!()) });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_13(_s, 10_(), _expected)
-        });
-        (unsafe {
-            let _s: () = unimplemented!();
-            let _expected: () = unimplemented!();
-            test_13(_s, 50_(), _expected)
+            test_9(_s, 10_(), _expected)
         });
         (unsafe {
             let _s: () = unimplemented!();
             let _expected: () = unimplemented!();
-            test_13(_s, 60_(), _expected)
+            test_9(_s, 50_(), _expected)
+        });
+        (unsafe {
+            let _s: () = unimplemented!();
+            let _expected: () = unimplemented!();
+            test_9(_s, 60_(), _expected)
         });
     }
     {
@@ -499,11 +487,11 @@ pub unsafe fn test_string_17() {
         unimplemented!();
     }
 }
-pub unsafe fn test_18() -> () {
-    (unsafe { test_string_14() });
-    (unsafe { test_string_15() });
-    (unsafe { test_string_16() });
-    (unsafe { test_string_17() });
+pub unsafe fn test_14() -> () {
+    (unsafe { test_string_10() });
+    (unsafe { test_string_11() });
+    (unsafe { test_string_12() });
+    (unsafe { test_string_13() });
     return true;
 }
 pub fn main() {
@@ -522,13 +510,13 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_14() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_5);
-    std::cell::LazyCell::force(&*&raw const alloc_count_6);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_7);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_8);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_1);
+    std::cell::LazyCell::force(&*&raw const alloc_count_2);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_3);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_4);
 }

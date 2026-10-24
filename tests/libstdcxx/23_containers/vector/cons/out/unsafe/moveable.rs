@@ -330,7 +330,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((unimplemented!()) == (1_())) && ((unsafe { unimplemented!()() }) == (1_())))
+        if !((((unimplemented!()) == (1_())) && ((unimplemented!()) == (1_())))
             && ((unimplemented!()) == (0_())))
         {
             (unsafe {
@@ -352,7 +352,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!()) == (1_())) && ((unsafe { unimplemented!()() }) == (1_()))) {
+        if !(((unimplemented!()) == (1_())) && ((unimplemented!()) == (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

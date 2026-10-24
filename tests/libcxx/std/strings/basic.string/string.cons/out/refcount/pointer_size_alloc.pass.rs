@@ -387,19 +387,7 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_13(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_17(mut s: Ptr<()>, mut n: ()) {
+pub fn test_13(mut s: Ptr<()>, mut n: ()) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -408,7 +396,7 @@ pub fn test_17(mut s: Ptr<()>, mut n: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_18(mut s: Ptr<()>, mut n: ()) {
+pub fn test_14(mut s: Ptr<()>, mut n: ()) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -417,7 +405,7 @@ pub fn test_18(mut s: Ptr<()>, mut n: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_19(mut s: Ptr<()>, mut n: ()) {
+pub fn test_15(mut s: Ptr<()>, mut n: ()) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -426,7 +414,7 @@ pub fn test_19(mut s: Ptr<()>, mut n: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_20(mut s: Ptr<()>, mut n: ()) {
+pub fn test_16(mut s: Ptr<()>, mut n: ()) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -435,7 +423,7 @@ pub fn test_20(mut s: Ptr<()>, mut n: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_21(mut s: Ptr<()>, mut n: (), a: Ptr<()>) {
+pub fn test_17(mut s: Ptr<()>, mut n: (), a: Ptr<()>) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -444,7 +432,7 @@ pub fn test_21(mut s: Ptr<()>, mut n: (), a: Ptr<()>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_22(mut s: Ptr<()>, mut n: (), a: Ptr<test_allocator_char_>) {
+pub fn test_18(mut s: Ptr<()>, mut n: (), a: Ptr<test_allocator_char_>) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -453,7 +441,7 @@ pub fn test_22(mut s: Ptr<()>, mut n: (), a: Ptr<test_allocator_char_>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_23(mut s: Ptr<()>, mut n: (), a: Ptr<min_allocator_char_>) {
+pub fn test_19(mut s: Ptr<()>, mut n: (), a: Ptr<min_allocator_char_>) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -462,7 +450,7 @@ pub fn test_23(mut s: Ptr<()>, mut n: (), a: Ptr<min_allocator_char_>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_24(mut s: Ptr<()>, mut n: (), a: Ptr<safe_allocator_char_>) {
+pub fn test_20(mut s: Ptr<()>, mut n: (), a: Ptr<safe_allocator_char_>) {
     let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -471,157 +459,157 @@ pub fn test_24(mut s: Ptr<()>, mut n: (), a: Ptr<safe_allocator_char_>) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_25(a: Ptr<()>) {
-    ({ test_17(Ptr::<()>::from_string_literal(b""), 0_()) });
+pub fn test_21(a: Ptr<()>) {
+    ({ test_13(Ptr::<()>::from_string_literal(b""), 0_()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
+        test_17(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
     });
-    ({ test_17(Ptr::<()>::from_string_literal(b"1"), 1_()) });
+    ({ test_13(Ptr::<()>::from_string_literal(b"1"), 1_()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
+        test_17(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
     });
-    ({ test_17(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
+    ({ test_13(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(
+        test_17(
             Ptr::<()>::from_string_literal(b"1234567980"),
             10_(),
             _a.as_pointer(),
         )
     });
     ({
+        test_13(
+            Ptr::<()>::from_string_literal(
+                b"123456798012345679801234567980123456798012345679801234567980",
+            ),
+            60_(),
+        )
+    });
+    ({
+        let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         test_17(
             Ptr::<()>::from_string_literal(
                 b"123456798012345679801234567980123456798012345679801234567980",
             ),
             60_(),
-        )
-    });
-    ({
-        let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(
-            Ptr::<()>::from_string_literal(
-                b"123456798012345679801234567980123456798012345679801234567980",
-            ),
-            60_(),
             _a.as_pointer(),
         )
     });
 }
-pub fn test_26(a: Ptr<test_allocator_char_>) {
-    ({ test_18(Ptr::<()>::from_string_literal(b""), 0_()) });
+pub fn test_22(a: Ptr<test_allocator_char_>) {
+    ({ test_14(Ptr::<()>::from_string_literal(b""), 0_()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
+        test_18(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
     });
-    ({ test_18(Ptr::<()>::from_string_literal(b"1"), 1_()) });
+    ({ test_14(Ptr::<()>::from_string_literal(b"1"), 1_()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
+        test_18(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
     });
-    ({ test_18(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
+    ({ test_14(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(
+        test_18(
             Ptr::<()>::from_string_literal(b"1234567980"),
             10_(),
             _a.as_pointer(),
         )
     });
     ({
+        test_14(
+            Ptr::<()>::from_string_literal(
+                b"123456798012345679801234567980123456798012345679801234567980",
+            ),
+            60_(),
+        )
+    });
+    ({
+        let _a: Value<test_allocator_char_> =
+            Rc::new(RefCell::new(test_allocator_char_::copy_from({
+                (a).clone()
+            })));
         test_18(
             Ptr::<()>::from_string_literal(
                 b"123456798012345679801234567980123456798012345679801234567980",
             ),
             60_(),
-        )
-    });
-    ({
-        let _a: Value<test_allocator_char_> =
-            Rc::new(RefCell::new(test_allocator_char_::copy_from({
-                (a).clone()
-            })));
-        test_22(
-            Ptr::<()>::from_string_literal(
-                b"123456798012345679801234567980123456798012345679801234567980",
-            ),
-            60_(),
             _a.as_pointer(),
         )
     });
 }
-pub fn test_27(a: Ptr<min_allocator_char_>) {
-    ({ test_19(Ptr::<()>::from_string_literal(b""), 0_()) });
+pub fn test_23(a: Ptr<min_allocator_char_>) {
+    ({ test_15(Ptr::<()>::from_string_literal(b""), 0_()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
+        test_19(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
     });
-    ({ test_19(Ptr::<()>::from_string_literal(b"1"), 1_()) });
+    ({ test_15(Ptr::<()>::from_string_literal(b"1"), 1_()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
+        test_19(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
     });
-    ({ test_19(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
+    ({ test_15(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(
+        test_19(
             Ptr::<()>::from_string_literal(b"1234567980"),
             10_(),
             _a.as_pointer(),
         )
     });
     ({
+        test_15(
+            Ptr::<()>::from_string_literal(
+                b"123456798012345679801234567980123456798012345679801234567980",
+            ),
+            60_(),
+        )
+    });
+    ({
+        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
         test_19(
             Ptr::<()>::from_string_literal(
                 b"123456798012345679801234567980123456798012345679801234567980",
             ),
             60_(),
-        )
-    });
-    ({
-        let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(
-            Ptr::<()>::from_string_literal(
-                b"123456798012345679801234567980123456798012345679801234567980",
-            ),
-            60_(),
             _a.as_pointer(),
         )
     });
 }
-pub fn test_28(a: Ptr<safe_allocator_char_>) {
-    ({ test_20(Ptr::<()>::from_string_literal(b""), 0_()) });
+pub fn test_24(a: Ptr<safe_allocator_char_>) {
+    ({ test_16(Ptr::<()>::from_string_literal(b""), 0_()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
+        test_20(Ptr::<()>::from_string_literal(b""), 0_(), _a.as_pointer())
     });
-    ({ test_20(Ptr::<()>::from_string_literal(b"1"), 1_()) });
+    ({ test_16(Ptr::<()>::from_string_literal(b"1"), 1_()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
+        test_20(Ptr::<()>::from_string_literal(b"1"), 1_(), _a.as_pointer())
     });
-    ({ test_20(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
+    ({ test_16(Ptr::<()>::from_string_literal(b"1234567980"), 10_()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(
+        test_20(
             Ptr::<()>::from_string_literal(b"1234567980"),
             10_(),
             _a.as_pointer(),
         )
     });
     ({
-        test_20(
+        test_16(
             Ptr::<()>::from_string_literal(
                 b"123456798012345679801234567980123456798012345679801234567980",
             ),
@@ -630,7 +618,7 @@ pub fn test_28(a: Ptr<safe_allocator_char_>) {
     });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(
+        test_20(
             Ptr::<()>::from_string_literal(
                 b"123456798012345679801234567980123456798012345679801234567980",
             ),
@@ -639,29 +627,29 @@ pub fn test_28(a: Ptr<safe_allocator_char_>) {
         )
     });
 }
-pub fn test_29() -> () {
+pub fn test_25() -> () {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_25(_a.as_pointer())
+        test_21(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(<test_allocator_char_>::default()));
-        test_26(_a.as_pointer())
+        test_22(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 2_() })));
-        test_26(_a.as_pointer())
+        test_22(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));
-        test_27(_a.as_pointer())
+        test_23(_a.as_pointer())
     });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new(safe_allocator_char_::new()));
-        test_28(_a.as_pointer())
+        test_24(_a.as_pointer())
     });
     {
         let mut s: () = unimplemented!();
@@ -690,7 +678,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_29() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

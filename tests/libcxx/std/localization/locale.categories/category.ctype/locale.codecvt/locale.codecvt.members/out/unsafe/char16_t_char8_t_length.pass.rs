@@ -23,7 +23,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    let f: *const () = (unsafe { use_facet_0(unimplemented!()) });
+    let f: *const std_codecvt_char16_t__char8_t____mbstate_t_ =
+        (unsafe { use_facet_0(unimplemented!()) });
     let mut mbs: () = unimplemented!();
     let from: [(); 10] = [
         115 as (), 111 as (), 109 as (), 101 as (), 32 as (), 116 as (), 101 as (), 120 as (),

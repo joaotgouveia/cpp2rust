@@ -130,14 +130,6 @@ pub unsafe fn test_30() {
     let mut p: *mut () = std::ptr::null_mut();
     (&(p));
 }
-pub unsafe fn test_31() {
-    let mut p: *mut () = std::ptr::null_mut();
-    (&(p));
-}
-pub unsafe fn test_32() {
-    let mut p: *mut () = std::ptr::null_mut();
-    (&(p));
-}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -154,6 +146,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_31() });
+    (unsafe { test_32() });
     (unsafe { test_0() });
     (unsafe { test_1() });
     (unsafe { test_2() });
@@ -184,10 +178,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_27() });
     (unsafe { test_28() });
     (unsafe { test_29() });
-    (unsafe { test_30() });
-    (unsafe { test_31() });
+    (unsafe { test_0() });
+    (unsafe { test_1() });
     (unsafe { test_2() });
-    (unsafe { test_3() });
     (unsafe { test_4() });
     (unsafe { test_6() });
     (unsafe { test_8() });
@@ -199,7 +192,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_20() });
     (unsafe { test_22() });
     (unsafe { test_24() });
-    (unsafe { test_26() });
+    (unsafe { test_3() });
     (unsafe { test_5() });
     (unsafe { test_7() });
     (unsafe { test_9() });
@@ -211,10 +204,9 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_21() });
     (unsafe { test_23() });
     (unsafe { test_25() });
-    (unsafe { test_27() });
-    (unsafe { test_32() });
-    (unsafe { test_32() });
-    (unsafe { test_32() });
+    (unsafe { test_30() });
+    (unsafe { test_30() });
+    (unsafe { test_30() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

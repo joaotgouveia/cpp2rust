@@ -10,11 +10,7 @@ pub fn test_conversion_0(src_exts: ()) {
     let src_exts: Value<()> = Rc::new(RefCell::new(src_exts));
     let strides: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {}
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -35,12 +31,7 @@ pub fn test_conversion_1(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -60,12 +51,7 @@ pub fn test_conversion_2(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -85,11 +71,7 @@ pub fn test_conversion_3(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -109,7 +91,7 @@ pub fn test_conversion_4(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -129,7 +111,7 @@ pub fn test_conversion_5(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -149,12 +131,7 @@ pub fn test_conversion_6(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -174,11 +151,7 @@ pub fn test_conversion_7(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__7__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -198,7 +171,7 @@ pub fn test_conversion_8(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -218,7 +191,7 @@ pub fn test_conversion_9(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -238,12 +211,7 @@ pub fn test_conversion_10(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -263,12 +231,7 @@ pub fn test_conversion_11(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -280,11 +243,7 @@ pub fn test_conversion_12(src_exts: ()) {
     let src_exts: Value<()> = Rc::new(RefCell::new(src_exts));
     let strides: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {}
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -305,12 +264,7 @@ pub fn test_conversion_13(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -330,12 +284,7 @@ pub fn test_conversion_14(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -355,12 +304,7 @@ pub fn test_conversion_15(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__5__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -380,7 +324,7 @@ pub fn test_conversion_16(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -400,7 +344,7 @@ pub fn test_conversion_17(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -420,12 +364,7 @@ pub fn test_conversion_18(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__7__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -445,12 +384,7 @@ pub fn test_conversion_19(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__5__7__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -470,7 +404,7 @@ pub fn test_conversion_20(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -490,7 +424,7 @@ pub fn test_conversion_21(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -510,7 +444,7 @@ pub fn test_conversion_22(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_unsigned_long__18446744073709551615__7__8__9__1__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -530,12 +464,7 @@ pub fn test_conversion_23(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_unsigned_long__5__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -547,11 +476,7 @@ pub fn test_conversion_24(src_exts: ()) {
     let src_exts: Value<()> = Rc::new(RefCell::new(src_exts));
     let strides: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {}
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -572,12 +497,7 @@ pub fn test_conversion_25(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -597,12 +517,7 @@ pub fn test_conversion_26(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -622,11 +537,7 @@ pub fn test_conversion_27(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -646,7 +557,7 @@ pub fn test_conversion_28(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -666,7 +577,7 @@ pub fn test_conversion_29(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -686,12 +597,7 @@ pub fn test_conversion_30(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -711,11 +617,7 @@ pub fn test_conversion_31(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__7__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -735,7 +637,7 @@ pub fn test_conversion_32(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -755,7 +657,7 @@ pub fn test_conversion_33(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_int__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -775,12 +677,7 @@ pub fn test_conversion_34(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__18446744073709551615__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -800,12 +697,7 @@ pub fn test_conversion_35(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_int__5__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -817,11 +709,7 @@ pub fn test_conversion_36(src_exts: ()) {
     let src_exts: Value<()> = Rc::new(RefCell::new(src_exts));
     let strides: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {}
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -842,12 +730,7 @@ pub fn test_conversion_37(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -867,12 +750,7 @@ pub fn test_conversion_38(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -892,11 +770,7 @@ pub fn test_conversion_39(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__5__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -916,7 +790,7 @@ pub fn test_conversion_40(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -936,7 +810,7 @@ pub fn test_conversion_41(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -956,12 +830,7 @@ pub fn test_conversion_42(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__7__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -981,11 +850,7 @@ pub fn test_conversion_43(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__5__7__::new_1({ src_exts.as_pointer() }, {
-            strides.as_pointer()
-        }),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1005,7 +870,7 @@ pub fn test_conversion_44(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__8__9__1__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1025,7 +890,7 @@ pub fn test_conversion_45(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src : Value<() > = Rc::new(RefCell::new(std_layout_stride_mapping_std_extents_long__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__18446744073709551615__ :: new_1 ( { src_exts .as_pointer()  } , { strides .as_pointer()  } , )  )) ;
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1045,12 +910,7 @@ pub fn test_conversion_46(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__18446744073709551615__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -1070,12 +930,7 @@ pub fn test_conversion_47(src_exts: ()) {
             r.prefix_dec();
         }
     }
-    let src: Value<()> = Rc::new(RefCell::new(
-        std_layout_stride_mapping_std_extents_long__5__7__8__9__1__::new_1(
-            { src_exts.as_pointer() },
-            { strides.as_pointer() },
-        ),
-    ));
+    let src: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     let dest: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

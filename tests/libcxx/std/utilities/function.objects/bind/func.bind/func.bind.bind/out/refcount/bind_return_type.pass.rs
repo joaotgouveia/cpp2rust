@@ -168,8 +168,21 @@ pub fn do_test_51(mut func: FnPtr<fn(()) -> ()>) {
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
     let exp: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
     let exp2: Value<()> = Rc::new(RefCell::new((unimplemented!() as ())));
-    let exp_r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let exp_r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let exp_r: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+            (*ret_r.borrow_mut())(___args.as_pointer())
+        })
+        .clone(),
+    ));
+    let exp_r2: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+            let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+            (*ret_r.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+        })
+        .clone(),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -344,8 +357,17 @@ pub fn do_test_r_56(mut func: FnPtr<fn(()) -> ()>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
@@ -358,8 +380,17 @@ pub fn do_test_r_57(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
@@ -372,8 +403,17 @@ pub fn do_test_r_58(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
@@ -386,8 +426,17 @@ pub fn do_test_r_59(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {
@@ -400,8 +449,17 @@ pub fn do_test_r_60(mut func: FnPtr<fn(()) -> Ptr<()>>) {
     let ret: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = ({
+        let ___args: Value<()> = Rc::new(RefCell::new(100_()));
+        (*ret.borrow_mut())(___args.as_pointer())
+    })
+    .clone();
+    let mut exp2: () = ({
+        let ___args_0: Value<()> = Rc::new(RefCell::new(101_()));
+        let ___args_1: Value<()> = Rc::new(RefCell::new(102_()));
+        (*ret.borrow_mut())(___args_0.as_pointer(), ___args_1.as_pointer())
+    })
+    .clone();
     unimplemented!();
     unimplemented!();
     {

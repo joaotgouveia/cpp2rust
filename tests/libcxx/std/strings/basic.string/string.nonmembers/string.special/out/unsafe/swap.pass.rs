@@ -160,16 +160,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_6(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_9(mut s1: (), mut s2: ()) {
+pub unsafe fn test_6(mut s1: (), mut s2: ()) {
     let mut s1_: () = unimplemented!();
     let mut s2_: () = unimplemented!();
     unimplemented!();
@@ -180,7 +171,7 @@ pub unsafe fn test_9(mut s1: (), mut s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_10(mut s1: (), mut s2: ()) {
+pub unsafe fn test_7(mut s1: (), mut s2: ()) {
     let mut s1_: () = unimplemented!();
     let mut s2_: () = unimplemented!();
     unimplemented!();
@@ -191,7 +182,7 @@ pub unsafe fn test_10(mut s1: (), mut s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_11(mut s1: (), mut s2: ()) {
+pub unsafe fn test_8(mut s1: (), mut s2: ()) {
     let mut s1_: () = unimplemented!();
     let mut s2_: () = unimplemented!();
     unimplemented!();
@@ -202,76 +193,76 @@ pub unsafe fn test_11(mut s1: (), mut s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_12() {
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), unimplemented!()) });
+pub unsafe fn test_string_9() {
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), unimplemented!()) });
 }
-pub unsafe fn test_string_13() {
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), unimplemented!()) });
+pub unsafe fn test_string_10() {
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), unimplemented!()) });
 }
-pub unsafe fn test_string_14() {
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), unimplemented!()) });
+pub unsafe fn test_string_11() {
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), unimplemented!()) });
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_string_12() });
-    (unsafe { test_string_13() });
-    (unsafe { test_string_14() });
+pub unsafe fn test_12() -> () {
+    (unsafe { test_string_9() });
+    (unsafe { test_string_10() });
+    (unsafe { test_string_11() });
     return true;
 }
 pub fn main() {
@@ -290,7 +281,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

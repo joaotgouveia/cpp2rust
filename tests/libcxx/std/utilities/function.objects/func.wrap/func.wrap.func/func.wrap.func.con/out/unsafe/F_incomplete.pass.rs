@@ -33,7 +33,7 @@ pub unsafe fn test_pr34298_2() {
     const _: () = assert!(true, "std::is_copy_assignable<IncompleteReturnType>::value");;
     {
         let mut X: IncompleteReturnType = <IncompleteReturnType>::default();
-        unimplemented!();
+        X.fn_ = test_fn_1;
         let CX: *const IncompleteReturnType = &X;
         let mut X2: IncompleteReturnType = (*CX).clone();
         unimplemented!();

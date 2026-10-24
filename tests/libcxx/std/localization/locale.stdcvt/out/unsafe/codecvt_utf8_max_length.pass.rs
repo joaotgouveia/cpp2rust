@@ -13,12 +13,14 @@ impl TestHelper_wchar_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_wchar_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_wchar_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
     }
@@ -30,12 +32,14 @@ impl TestHelper_char16_t__2_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
     }
@@ -47,12 +51,14 @@ impl TestHelper_char32_t__4_ {
     pub unsafe fn test() {
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
         {
             let mut c: () = unimplemented!();
-            let mut r: () = (unsafe { c.max_length() });
+            let mut r: () =
+                (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).max_length() });
             unimplemented!();
         }
     }

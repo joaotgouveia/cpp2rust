@@ -1,0 +1,50 @@
+extern crate libc;
+use libc::*;
+extern crate libcc2rs;
+use libcc2rs::*;
+use std::collections::BTreeMap;
+use std::io::{Read, Seek, Write};
+use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
+use std::rc::Rc;
+
+pub fn main() {
+    let mut args: Vec<Vec<u8>> = std::env::args()
+        .map(|arg| arg.as_bytes().to_vec())
+        .collect();
+    args.iter_mut().for_each(|v| v.push(0));
+    let mut argv: Vec<*mut libc::c_char> = args
+        .iter()
+        .map(|arg| arg.as_ptr() as *mut libc::c_char)
+        .collect();
+    argv.push(::std::ptr::null_mut());
+    unsafe {
+        __cpp2rust_init_globals();
+        ::std::process::exit(main_0((argv.len() - 1) as i32, argv.as_mut_ptr()) as i32)
+    }
+}
+unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    {
+        let mut v : () = std_ranges_zip_view_std_ranges_owning_view_std_array_int__2____std_ranges_owning_view_std_vector_int__std_allocator_int_____std_ranges_owning_view_std_array_int__1___ :: new_1 ( { unimplemented!() } , { unimplemented!() } , { unimplemented!() } , )  ;
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut v: () = unimplemented!();
+        let mut a: () = unimplemented!();
+        let mut view: () =
+            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_0))(&mut v, &mut a) });
+        let mut it: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return 0_();
+}
+pub unsafe fn __cpp2rust_init_globals() {}

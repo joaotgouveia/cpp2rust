@@ -184,16 +184,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_6(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_9(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
+pub unsafe fn test_6(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
     let cs: *const () = &str;
     if ((pos) <= (unimplemented!())) {
         let mut r: () = unimplemented!();
@@ -208,7 +199,7 @@ pub unsafe fn test_9(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
         }
     }
 }
-pub unsafe fn test_10(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
+pub unsafe fn test_7(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
     let cs: *const () = &str;
     if ((pos) <= (unimplemented!())) {
         let mut r: () = unimplemented!();
@@ -223,7 +214,7 @@ pub unsafe fn test_10(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
         }
     }
 }
-pub unsafe fn test_11(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
+pub unsafe fn test_8(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
     let cs: *const () = &str;
     if ((pos) <= (unimplemented!())) {
         let mut r: () = unimplemented!();
@@ -238,199 +229,199 @@ pub unsafe fn test_11(mut str: (), mut s: *mut (), mut n: (), mut pos: ()) {
         }
     }
 }
-pub unsafe fn test_string_12() {
+pub unsafe fn test_string_9() {
     let mut s: [(); 50] = [unimplemented!(); 50];
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
-    (unsafe { test_9(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
+    (unsafe { test_6(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
 }
-pub unsafe fn test_string_13() {
+pub unsafe fn test_string_10() {
     let mut s: [(); 50] = [unimplemented!(); 50];
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
-    (unsafe { test_10(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
+    (unsafe { test_7(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
 }
-pub unsafe fn test_string_14() {
+pub unsafe fn test_string_11() {
     let mut s: [(); 50] = [unimplemented!(); 50];
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
-    (unsafe { test_11(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 4_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 5_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 6_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 4_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 5_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 4_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 4_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 4_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 4_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 5_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 5_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 6_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 10_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 19_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 20_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 0_(), 21_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 9_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 18_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 19_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 1_(), 20_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 9_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 17_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 18_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 2_(), 19_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 5_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 9_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 10_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 10_(), 11_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 19_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 19_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 19_(), 2_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 20_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 20_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 21_(), 0_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 40_(), 1_()) });
+    (unsafe { test_8(unimplemented!(), s.as_mut_ptr(), 40_(), 0_()) });
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_string_12() });
-    (unsafe { test_string_13() });
-    (unsafe { test_string_14() });
+pub unsafe fn test_12() -> () {
+    (unsafe { test_string_9() });
+    (unsafe { test_string_10() });
+    (unsafe { test_string_11() });
     return true;
 }
 pub fn main() {
@@ -449,7 +440,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

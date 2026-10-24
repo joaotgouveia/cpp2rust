@@ -18,7 +18,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -33,7 +37,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -48,7 +56,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -63,7 +75,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -89,7 +105,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -115,7 +135,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -141,155 +165,11 @@ pub unsafe fn test_char_pointer_ctor_0() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-}
-pub unsafe fn test_char_pointer_ctor_1() {
-    const _: () = assert!(
-        true,
-        "!std::is_convertible<const char*, std::bitset<N> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_constructible<std::bitset<N>, const char*>::value"
-    );;
-    {
-        let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let not_null_terminated: [(); 10] = [
-            ('1' as ()),
-            ('0' as ()),
-            ('1' as ()),
-            ('0' as ()),
-            ('1' as ()),
-            ('0' as ()),
-            ('1' as ()),
-            ('0' as ()),
-            ('1' as ()),
-            ('0' as ()),
-        ];
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let not_null_terminated: [(); 10] = [
-            ('1' as ()),
-            ('a' as ()),
-            ('1' as ()),
-            ('a' as ()),
-            ('1' as ()),
-            ('a' as ()),
-            ('1' as ()),
-            ('a' as ()),
-            ('1' as ()),
-            ('a' as ()),
-        ];
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
-        let mut i: () = 0_();
-        'loop_: while ((i) < (M)) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while ((i) < (unimplemented!())) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let not_null_terminated: [(); 10] = [
-            ('b' as ()),
-            ('a' as ()),
-            ('b' as ()),
-            ('a' as ()),
-            ('b' as ()),
-            ('a' as ()),
-            ('b' as ()),
-            ('a' as ()),
-            ('b' as ()),
-            ('a' as ()),
-        ];
-        let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -314,7 +194,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -329,7 +213,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -344,7 +232,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -359,7 +251,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -385,7 +281,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -411,7 +311,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -437,7 +341,11 @@ pub unsafe fn test_char_pointer_ctor_2() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -462,7 +370,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -477,7 +389,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -492,7 +408,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -507,7 +427,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -533,7 +457,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -559,7 +487,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -585,7 +517,11 @@ pub unsafe fn test_char_pointer_ctor_3() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -610,7 +546,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -625,7 +565,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -640,7 +584,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -655,7 +603,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -681,7 +633,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -707,7 +663,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -733,7 +693,11 @@ pub unsafe fn test_char_pointer_ctor_4() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -758,7 +722,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -773,7 +741,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -788,7 +760,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -803,7 +779,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -829,7 +809,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -855,7 +839,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -881,7 +869,11 @@ pub unsafe fn test_char_pointer_ctor_5() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -906,7 +898,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -921,7 +917,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -936,7 +936,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -951,7 +955,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -977,7 +985,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1003,7 +1015,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1029,7 +1045,11 @@ pub unsafe fn test_char_pointer_ctor_6() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1054,7 +1074,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1069,7 +1093,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1084,7 +1112,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1099,7 +1131,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1125,7 +1161,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1151,7 +1191,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1177,7 +1221,11 @@ pub unsafe fn test_char_pointer_ctor_7() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1202,7 +1250,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1217,7 +1269,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1232,7 +1288,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
     {
         let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1247,7 +1307,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
     {
         let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1273,7 +1337,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
             ('0' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1299,7 +1367,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1325,7 +1397,11 @@ pub unsafe fn test_char_pointer_ctor_8() {
             ('a' as ()),
         ];
         let mut v: () = unimplemented!();
-        let mut M: () = (*unimplemented!());
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
         let mut i: () = 0_();
         'loop_: while ((i) < (M)) {
             unimplemented!();
@@ -1338,9 +1414,184 @@ pub unsafe fn test_char_pointer_ctor_8() {
         }
     }
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_char_pointer_ctor_9() {
+    const _: () = assert!(
+        true,
+        "!std::is_convertible<const char*, std::bitset<N> >::value"
+    );;
+    const _: () = assert!(
+        true,
+        "std::is_constructible<std::bitset<N>, const char*>::value"
+    );;
+    {
+        let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let s: [(); 11] = std::mem::transmute(*b"1010101010\0");
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let s: [(); 11] = std::mem::transmute(*b"1a1a1a1a1a\0");
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let s: [(); 11] = std::mem::transmute(*b"bababababa\0");
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let not_null_terminated: [(); 10] = [
+            ('1' as ()),
+            ('0' as ()),
+            ('1' as ()),
+            ('0' as ()),
+            ('1' as ()),
+            ('0' as ()),
+            ('1' as ()),
+            ('0' as ()),
+            ('1' as ()),
+            ('0' as ()),
+        ];
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let not_null_terminated: [(); 10] = [
+            ('1' as ()),
+            ('a' as ()),
+            ('1' as ()),
+            ('a' as ()),
+            ('1' as ()),
+            ('a' as ()),
+            ('1' as ()),
+            ('a' as ()),
+            ('1' as ()),
+            ('a' as ()),
+        ];
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let not_null_terminated: [(); 10] = [
+            ('b' as ()),
+            ('a' as ()),
+            ('b' as ()),
+            ('a' as ()),
+            ('b' as ()),
+            ('a' as ()),
+            ('b' as ()),
+            ('a' as ()),
+            ('b' as ()),
+            ('a' as ()),
+        ];
+        let mut v: () = unimplemented!();
+        let mut M: () = (*(unsafe {
+            let mut ___a: () = unimplemented!();
+            let mut ___b: () = 10_();
+            min_1(&mut ___a, &mut ___b)
+        }));
+        let mut i: () = 0_();
+        'loop_: while ((i) < (M)) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while ((i) < (unimplemented!())) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+}
+pub unsafe fn test_10() -> () {
     (unsafe { test_char_pointer_ctor_0() });
-    (unsafe { test_char_pointer_ctor_1() });
     (unsafe { test_char_pointer_ctor_2() });
     (unsafe { test_char_pointer_ctor_3() });
     (unsafe { test_char_pointer_ctor_4() });
@@ -1348,6 +1599,7 @@ pub unsafe fn test_9() -> () {
     (unsafe { test_char_pointer_ctor_6() });
     (unsafe { test_char_pointer_ctor_7() });
     (unsafe { test_char_pointer_ctor_8() });
+    (unsafe { test_char_pointer_ctor_9() });
     return true;
 }
 pub fn main() {
@@ -1366,7 +1618,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_9() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

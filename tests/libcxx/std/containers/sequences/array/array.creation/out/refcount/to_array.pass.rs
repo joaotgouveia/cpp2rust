@@ -299,7 +299,15 @@ pub fn tests_22() -> () {
         unimplemented!();
     }
     {
-        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let arr: Value<()> = Rc::new(RefCell::new(
+            ({
+                let ___arr: Value<Box<[A_23]>> = Rc::new(RefCell::new(Box::new([A_23 {
+                    a: 3_(),
+                    b: 0.1_f64,
+                }])));
+                to_array_24(___arr.as_pointer())
+            }),
+        ));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();

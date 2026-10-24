@@ -72,53 +72,53 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut a: () = unimplemented!();
+        let mut a: () = std_function_R____::new_1({ Some(f0_4) });
         const _: () = assert!(true, "");;
-        let mut b: () = unimplemented!();
+        let mut b: () = std_function_R____::new_1({ (Some(f0_4)) });
         const _: () = assert!(true, "");;
-        let mut c: () = unimplemented!();
+        let mut c: () = std_function_R____::new_1({ Some(f0_4) });
         const _: () = assert!(true, "");;
-        let mut d: () = unimplemented!();
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut a: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut b: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut c: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut d: () = unimplemented!();
+        let mut d: () = std_function_R____::new_1({ (Some(f0_4)) });
         const _: () = assert!(true, "");;
     }
     {
-        let mut a: () = unimplemented!();
+        let mut a: () = std_function_R__A1__::new_1({ Some(f1_5) });
         const _: () = assert!(true, "");;
-        let mut b: () = unimplemented!();
+        let mut b: () = std_function_R__A1__::new_1({ (Some(f1_5)) });
         const _: () = assert!(true, "");;
-        let mut c: () = unimplemented!();
+        let mut c: () = std_function_R__A1__::new_1({ Some(f1_5) });
         const _: () = assert!(true, "");;
-        let mut d: () = unimplemented!();
-        const _: () = assert!(true, "");;
-    }
-    {
-        let mut a: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut b: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut c: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        let mut d: () = unimplemented!();
+        let mut d: () = std_function_R__A1__::new_1({ (Some(f1_5)) });
         const _: () = assert!(true, "");;
     }
     {
-        let mut a: () = unimplemented!();
+        let mut a: () = std_function_R__A1__A2__::new_1({ Some(f2_6) });
         const _: () = assert!(true, "");;
-        let mut b: () = unimplemented!();
+        let mut b: () = std_function_R__A1__A2__::new_1({ (Some(f2_6)) });
         const _: () = assert!(true, "");;
-        let mut c: () = unimplemented!();
+        let mut c: () = std_function_R__A1__A2__::new_1({ Some(f2_6) });
         const _: () = assert!(true, "");;
-        let mut d: () = unimplemented!();
+        let mut d: () = std_function_R__A1__A2__::new_1({ (Some(f2_6)) });
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut a: () = std_function_R__A1__A2__A3__::new_1({ Some(f3_7) });
+        const _: () = assert!(true, "");;
+        let mut b: () = std_function_R__A1__A2__A3__::new_1({ (Some(f3_7)) });
+        const _: () = assert!(true, "");;
+        let mut c: () = std_function_R__A1__A2__A3__::new_1({ Some(f3_7) });
+        const _: () = assert!(true, "");;
+        let mut d: () = std_function_R__A1__A2__A3__::new_1({ (Some(f3_7)) });
+        const _: () = assert!(true, "");;
+    }
+    {
+        let mut a: () = std_function_R__A1__::new_1({ Some(f4_8) });
+        const _: () = assert!(true, "");;
+        let mut b: () = std_function_R__A1__::new_1({ (Some(f4_8)) });
+        const _: () = assert!(true, "");;
+        let mut c: () = std_function_R__A1__::new_1({ Some(f4_8) });
+        const _: () = assert!(true, "");;
+        let mut d: () = std_function_R__A1__::new_1({ (Some(f4_8)) });
         const _: () = assert!(true, "");;
     }
     return 0_();

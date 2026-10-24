@@ -75,7 +75,7 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let f: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let f: Value<()> = Rc::new(RefCell::new(std_function_int__int__::new_1({ A::new() })));
         unimplemented!();
     }
     {

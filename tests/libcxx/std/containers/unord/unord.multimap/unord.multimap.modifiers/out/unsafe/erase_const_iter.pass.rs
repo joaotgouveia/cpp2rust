@@ -168,7 +168,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
         ];
         let mut c: () = unimplemented!();
-        let mut i : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut i: () = unimplemented!();
         let mut i_next: () = i.clone();
         unimplemented!();
         let mut es: () = unimplemented!();
@@ -181,8 +181,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         (unsafe {
-            let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-            let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
+            let _pos: () = unimplemented!();
+            let _end: () = unimplemented!();
             CheckConsecutiveKeys_0(_pos, _end, 1_(), &mut s)
         });
         unimplemented!();
@@ -213,7 +213,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             unimplemented!(),
         ];
         let mut c: () = unimplemented!();
-        let mut i : () = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut i: () = unimplemented!();
         let mut i_next: () = i.clone();
         unimplemented!();
         let mut es: () = unimplemented!();
@@ -226,8 +226,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
         unimplemented!();
         (unsafe {
-            let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-            let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
+            let _pos: () = unimplemented!();
+            let _end: () = unimplemented!();
             CheckConsecutiveKeys_1(_pos, _end, 1_(), &mut s)
         });
         unimplemented!();

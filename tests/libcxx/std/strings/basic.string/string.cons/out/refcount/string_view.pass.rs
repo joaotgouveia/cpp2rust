@@ -387,18 +387,6 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn is_string_asan_correct_13(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
-    return true;
-}
 const _: () = assert!(
     true,
     "!std::is_convertible<std::string_view, std::string const&>::value"
@@ -407,7 +395,7 @@ const _: () = assert!(
     true,
     "!std::is_convertible<std::string_view, std::string>::value"
 );
-pub fn test_17(sv: ()) {
+pub fn test_13(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -429,7 +417,7 @@ pub fn test_17(sv: ()) {
         unimplemented!();
     }
 }
-pub fn test_18(sv: ()) {
+pub fn test_14(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -451,7 +439,7 @@ pub fn test_18(sv: ()) {
         unimplemented!();
     }
 }
-pub fn test_19(sv: ()) {
+pub fn test_15(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -473,7 +461,7 @@ pub fn test_19(sv: ()) {
         unimplemented!();
     }
 }
-pub fn test_20(sv: ()) {
+pub fn test_16(sv: ()) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -495,7 +483,7 @@ pub fn test_20(sv: ()) {
         unimplemented!();
     }
 }
-pub fn test_21(sv: (), a: Ptr<()>) {
+pub fn test_17(sv: (), a: Ptr<()>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -517,7 +505,7 @@ pub fn test_21(sv: (), a: Ptr<()>) {
         unimplemented!();
     }
 }
-pub fn test_22(sv: (), a: Ptr<test_allocator_char_>) {
+pub fn test_18(sv: (), a: Ptr<test_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -539,7 +527,7 @@ pub fn test_22(sv: (), a: Ptr<test_allocator_char_>) {
         unimplemented!();
     }
 }
-pub fn test_23(sv: (), a: Ptr<min_allocator_char_>) {
+pub fn test_19(sv: (), a: Ptr<min_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -561,7 +549,7 @@ pub fn test_23(sv: (), a: Ptr<min_allocator_char_>) {
         unimplemented!();
     }
 }
-pub fn test_24(sv: (), a: Ptr<safe_allocator_char_>) {
+pub fn test_20(sv: (), a: Ptr<safe_allocator_char_>) {
     let sv: Value<()> = Rc::new(RefCell::new(sv));
     {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -583,129 +571,129 @@ pub fn test_24(sv: (), a: Ptr<safe_allocator_char_>) {
         unimplemented!();
     }
 }
-pub fn test_string_25(a: Ptr<()>) {
-    ({ test_17(unimplemented!()) });
+pub fn test_string_21(a: Ptr<()>) {
+    ({ test_13(unimplemented!()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(unimplemented!(), _a.as_pointer())
+        test_17(unimplemented!(), _a.as_pointer())
     });
-    ({ test_17(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(unimplemented!(), _a.as_pointer())
+        test_17(unimplemented!(), _a.as_pointer())
     });
-    ({ test_17(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(unimplemented!(), _a.as_pointer())
+        test_17(unimplemented!(), _a.as_pointer())
     });
-    ({ test_17(unimplemented!()) });
+    ({ test_13(unimplemented!()) });
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_21(unimplemented!(), _a.as_pointer())
+        test_17(unimplemented!(), _a.as_pointer())
     });
 }
-pub fn test_string_26(a: Ptr<test_allocator_char_>) {
-    ({ test_18(unimplemented!()) });
+pub fn test_string_22(a: Ptr<test_allocator_char_>) {
+    ({ test_14(unimplemented!()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(unimplemented!(), _a.as_pointer())
+        test_18(unimplemented!(), _a.as_pointer())
     });
-    ({ test_18(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(unimplemented!(), _a.as_pointer())
+        test_18(unimplemented!(), _a.as_pointer())
     });
-    ({ test_18(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(unimplemented!(), _a.as_pointer())
+        test_18(unimplemented!(), _a.as_pointer())
     });
-    ({ test_18(unimplemented!()) });
+    ({ test_14(unimplemented!()) });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::copy_from({
                 (a).clone()
             })));
-        test_22(unimplemented!(), _a.as_pointer())
+        test_18(unimplemented!(), _a.as_pointer())
     });
 }
-pub fn test_string_27(a: Ptr<min_allocator_char_>) {
-    ({ test_19(unimplemented!()) });
+pub fn test_string_23(a: Ptr<min_allocator_char_>) {
+    ({ test_15(unimplemented!()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(unimplemented!(), _a.as_pointer())
+        test_19(unimplemented!(), _a.as_pointer())
     });
-    ({ test_19(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(unimplemented!(), _a.as_pointer())
+        test_19(unimplemented!(), _a.as_pointer())
     });
-    ({ test_19(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(unimplemented!(), _a.as_pointer())
+        test_19(unimplemented!(), _a.as_pointer())
     });
-    ({ test_19(unimplemented!()) });
+    ({ test_15(unimplemented!()) });
     ({
         let _a: Value<min_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_23(unimplemented!(), _a.as_pointer())
+        test_19(unimplemented!(), _a.as_pointer())
     });
 }
-pub fn test_string_28(a: Ptr<safe_allocator_char_>) {
-    ({ test_20(unimplemented!()) });
+pub fn test_string_24(a: Ptr<safe_allocator_char_>) {
+    ({ test_16(unimplemented!()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(unimplemented!(), _a.as_pointer())
+        test_20(unimplemented!(), _a.as_pointer())
     });
-    ({ test_20(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(unimplemented!(), _a.as_pointer())
+        test_20(unimplemented!(), _a.as_pointer())
     });
-    ({ test_20(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(unimplemented!(), _a.as_pointer())
+        test_20(unimplemented!(), _a.as_pointer())
     });
-    ({ test_20(unimplemented!()) });
+    ({ test_16(unimplemented!()) });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new((*a.upgrade().deref()).clone()));
-        test_24(unimplemented!(), _a.as_pointer())
+        test_20(unimplemented!(), _a.as_pointer())
     });
 }
-pub fn test_29() -> () {
+pub fn test_25() -> () {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_string_25(_a.as_pointer())
+        test_string_21(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(<test_allocator_char_>::default()));
-        test_string_26(_a.as_pointer())
+        test_string_22(_a.as_pointer())
     });
     ({
         let _a: Value<test_allocator_char_> =
             Rc::new(RefCell::new(test_allocator_char_::new_1({ 2_() })));
-        test_string_26(_a.as_pointer())
+        test_string_22(_a.as_pointer())
     });
     ({
         let _a: Value<min_allocator_char_> =
             Rc::new(RefCell::new(<min_allocator_char_>::default()));
-        test_string_27(_a.as_pointer())
+        test_string_23(_a.as_pointer())
     });
     ({
         let _a: Value<safe_allocator_char_> = Rc::new(RefCell::new(safe_allocator_char_::new()));
-        test_string_28(_a.as_pointer())
+        test_string_24(_a.as_pointer())
     });
     return true;
 }
@@ -729,7 +717,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_29() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

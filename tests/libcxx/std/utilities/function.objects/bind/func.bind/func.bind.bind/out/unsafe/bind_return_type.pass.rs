@@ -166,8 +166,15 @@ pub unsafe fn do_test_51(mut func: Option<unsafe fn(()) -> ()>) {
     const _: () = assert!(true, "std::is_same<RetR2, Expect>::value");;
     let mut exp: () = (unimplemented!() as ());
     let mut exp2: () = (unimplemented!() as ());
-    let mut exp_r: () = unimplemented!();
-    let mut exp_r2: () = unimplemented!();
+    let mut exp_r: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret_r(&mut ___args)
+    });
+    let mut exp_r2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret_r(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -334,8 +341,15 @@ pub unsafe fn do_test_r_56(mut func: Option<unsafe fn(()) -> ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
@@ -348,8 +362,15 @@ pub unsafe fn do_test_r_57(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
@@ -362,8 +383,15 @@ pub unsafe fn do_test_r_58(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
@@ -376,8 +404,15 @@ pub unsafe fn do_test_r_59(mut func: Option<unsafe fn(()) -> *mut ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {
@@ -390,8 +425,15 @@ pub unsafe fn do_test_r_60(mut func: Option<unsafe fn(()) -> *const ()>) {
     let mut ret: () = unimplemented!();
     const _: () = assert!(true, "std::is_same<Ret, Expect>::value");;
     const _: () = assert!(true, "std::is_same<Ret2, Expect>::value");;
-    let mut exp: () = unimplemented!();
-    let mut exp2: () = unimplemented!();
+    let mut exp: () = (unsafe {
+        let mut ___args: () = 100_();
+        ret(&mut ___args)
+    });
+    let mut exp2: () = (unsafe {
+        let mut ___args_0: () = 101_();
+        let mut ___args_1: () = 102_();
+        ret(&mut ___args_0, &mut ___args_1)
+    });
     unimplemented!();
     unimplemented!();
     {

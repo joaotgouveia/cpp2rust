@@ -8,7 +8,7 @@ use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn foo_0() {}
 pub unsafe fn test_call_1() {
-    let mut r: () = unimplemented!();
+    let mut r: () = std_function_void____::new_1({ Some(foo_0) });
     unimplemented!();
 }
 pub unsafe fn test_throw_2() {}

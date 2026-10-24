@@ -180,7 +180,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             i += 2_();
         }
         unimplemented!();
-        let mut it : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__Moveable___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
+        let mut it: () = unimplemented!();
         let mut mv1: Moveable = Moveable::new_2({ 3_() }, { 3_f64 });
         let mut i: () = 0_();
         'loop_: while ((i) < (20_())) {

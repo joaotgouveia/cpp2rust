@@ -29,7 +29,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut f: () = unimplemented!();
         unimplemented!();
         unimplemented!();
-        unimplemented!();
+        f = g_0;
         unimplemented!();
         unimplemented!();
     }

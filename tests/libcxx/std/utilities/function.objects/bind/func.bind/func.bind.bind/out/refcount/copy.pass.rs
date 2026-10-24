@@ -29,7 +29,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let fnc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let fnc: Value<()> = Rc::new(RefCell::new(std_function_float__float__float__::new_1({
+        FnPtr::<fn((), ()) -> ()>::new(_pow_0)
+    })));
     let task: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let task2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();

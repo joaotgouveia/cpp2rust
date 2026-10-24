@@ -233,9 +233,6 @@ pub struct limited_allocator_char__10_ {
     handle_: detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__,
 }
 impl limited_allocator_char__10_ {}
-pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
-    return true;
-}
 const _: () = assert!(
     true,
     "std::is_nothrow_default_constructible<std::string>::value"
@@ -248,7 +245,7 @@ const _: () = assert!(
     true,
     "!std::is_nothrow_default_constructible<\n                         std::basic_string<char, std::char_traits<char>, limited_allocator<char, 10>>>::value"
 );
-pub fn test_5() -> () {
+pub fn test_4() -> () {
     let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -274,7 +271,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_5() });
+    ({ test_4() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

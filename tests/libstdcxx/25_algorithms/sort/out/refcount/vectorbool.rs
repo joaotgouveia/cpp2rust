@@ -264,9 +264,9 @@ pub fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((((({ unimplemented!()() }) == false) && (({ unimplemented!()() }) == false))
-            && (({ unimplemented!()() }) == true))
-            && (({ unimplemented!()() }) == true))
+        if !((((unimplemented!() == false) && (unimplemented!() == false))
+            && (unimplemented!() == true))
+            && (unimplemented!() == true))
         {
             ({
                 __builtin_fprintf_11(

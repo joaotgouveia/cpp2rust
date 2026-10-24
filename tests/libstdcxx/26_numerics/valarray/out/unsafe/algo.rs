@@ -15,9 +15,7 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut b: () = unimplemented!();
     let mut c: () = unimplemented!();
-    let mut m: () = (unsafe {
-        ( unsafe { let mut ___e : std__Expr_std___detail__BinClos_std___minus__std__ValArray__std__ValArray__double__double___double_  = unimplemented!()  ; abs_0 ( & mut ___e , ) } )  . max  ( )
-    });
+    let mut m: () = unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

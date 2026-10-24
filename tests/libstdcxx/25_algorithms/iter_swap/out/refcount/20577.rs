@@ -262,7 +262,7 @@ pub fn test1_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((({ unimplemented!()() }) == false) && (({ unimplemented!()() }) == true)) {
+        if !((unimplemented!() == false) && (unimplemented!() == true)) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

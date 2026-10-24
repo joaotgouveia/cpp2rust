@@ -88,7 +88,7 @@ pub struct cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocato
     tracker_: support_double_move_tracker,
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__ { pub fn new ( it : ()  , ) -> Self { let it : Value<() >  = Rc::new(RefCell::new(it)) ;
- Self { it_ : ((*it.borrow()) ).clone()  , tracker_ : support_double_move_tracker :: new ( )   , }  } }
+ Self { it_ : unimplemented!()  , tracker_ : support_double_move_tracker :: new ( )   , }  } }
 pub fn operator_ne_1(
     x: Ptr<cpp17_input_iterator_bool_ptr__bool_ptr_>,
     y: Ptr<cpp17_input_iterator_bool_ptr__bool_ptr_>,
@@ -134,7 +134,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
     pub fn new_1(it: ()) -> Self {
         let it: Value<()> = Rc::new(RefCell::new(it));
         Self {
-            it_: (*it.borrow()).clone(),
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -144,7 +144,7 @@ impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____
         >,
     ) -> Self {
         Self {
-            it_: { (*_a0.upgrade().deref()).it_.clone() },
+            it_: unimplemented!(),
             tracker_: support_double_move_tracker::move_from({ field_ptr!(_a0, tracker_) }),
         }
     }
@@ -692,14 +692,14 @@ pub trait cpp17_input_iterator_int_ptr__int_ptr_Impl {
 impl cpp17_input_iterator_int_ptr__int_ptr_Impl for Ptr<cpp17_input_iterator_int_ptr__int_ptr_> {}
 pub trait cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__Impl
 {
-    fn operator_deref(&self) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_;
+    fn operator_deref(&self) -> ();
     fn operator_inc_5 ( &self , ) -> Ptr< cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  > ;
     fn operator_post_inc_6 ( &self , mut _a0 : ()  , ) -> cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__{
         unimplemented!()
     }
 }
 impl cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__Impl for Ptr<cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__> {
-fn operator_deref ( &self , ) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_  { return unimplemented!()    ;
+fn operator_deref ( &self , ) -> ()  { return unimplemented!()    ;
  } fn operator_inc_5 ( &self , ) -> Ptr< cpp17_input_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0___std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__  > { unimplemented!()  ;
  return ((* self )  ).clone()  ;
  } }
@@ -821,7 +821,7 @@ impl forward_iterator_bool_ptr_Impl for Ptr<forward_iterator_bool_ptr_> {
 }
 pub trait forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__Impl
 {
-    fn operator_deref(&self) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_;
+    fn operator_deref(&self) -> ();
     fn operator_inc_6(
         &self,
     ) -> Ptr<forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__>;
@@ -835,7 +835,7 @@ pub trait forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_boo
 impl forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__Impl
     for Ptr<forward_iterator_std___bit_iterator_std_vector_bool__std_allocator_bool____false__0__>
 {
-    fn operator_deref(&self) -> std___bit_reference_std_vector_bool__std_allocator_bool____true_ {
+    fn operator_deref(&self) -> () {
         return unimplemented!();
     }
     fn operator_inc_6(

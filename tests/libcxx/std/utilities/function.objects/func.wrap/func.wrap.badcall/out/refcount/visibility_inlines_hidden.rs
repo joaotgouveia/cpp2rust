@@ -8,7 +8,9 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn foo_0() {}
 pub fn test_call_1() {
-    let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<()> = Rc::new(RefCell::new(std_function_void____::new_1({
+        FnPtr::<fn()>::new(foo_0)
+    })));
     unimplemented!();
 }
 pub fn test_throw_2() {}

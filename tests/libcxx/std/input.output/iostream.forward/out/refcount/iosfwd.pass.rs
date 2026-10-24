@@ -130,14 +130,6 @@ pub fn test_30() {
     let mut p: Ptr<()> = Ptr::<()>::null();
     (&(p));
 }
-pub fn test_31() {
-    let mut p: Ptr<()> = Ptr::<()>::null();
-    (&(p));
-}
-pub fn test_32() {
-    let mut p: Ptr<()> = Ptr::<()>::null();
-    (&(p));
-}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -158,6 +150,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_31() });
+    ({ test_32() });
     ({ test_0() });
     ({ test_1() });
     ({ test_2() });
@@ -188,10 +182,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_27() });
     ({ test_28() });
     ({ test_29() });
-    ({ test_30() });
-    ({ test_31() });
+    ({ test_0() });
+    ({ test_1() });
     ({ test_2() });
-    ({ test_3() });
     ({ test_4() });
     ({ test_6() });
     ({ test_8() });
@@ -203,7 +196,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_20() });
     ({ test_22() });
     ({ test_24() });
-    ({ test_26() });
+    ({ test_3() });
     ({ test_5() });
     ({ test_7() });
     ({ test_9() });
@@ -215,10 +208,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_21() });
     ({ test_23() });
     ({ test_25() });
-    ({ test_27() });
-    ({ test_32() });
-    ({ test_32() });
-    ({ test_32() });
+    ({ test_30() });
+    ({ test_30() });
+    ({ test_30() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

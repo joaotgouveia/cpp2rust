@@ -34,7 +34,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "std::is_same_v<F::state_type, std::mbstate_t>");;
     let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
-    let f: Ptr<()> = ({ use_facet_0(l.as_pointer()) });
+    let f: Ptr<std_codecvt_char32_t__char8_t____mbstate_t_> = ({ use_facet_0(l.as_pointer()) });
     &(unimplemented!());
     &(*f.upgrade().deref());
     return 0_();

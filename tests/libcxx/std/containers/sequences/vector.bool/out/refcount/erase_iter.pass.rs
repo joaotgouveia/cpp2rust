@@ -139,12 +139,7 @@ pub fn tests_8() -> () {
     ])));
     {
         let mut l1: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___bit_iterator_std_vector_bool__std_allocator_bool____true__0_::new_1({
-                __tmp_0.as_pointer()
-            })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -164,12 +159,7 @@ pub fn tests_8() -> () {
     }
     {
         let mut l1: () = unimplemented!();
-        let i: Value<()> = Rc::new(RefCell::new({
-            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            std___bit_iterator_std_vector_bool__min_allocator_bool____true__0_::new_1({
-                __tmp_1.as_pointer()
-            })
-        }));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

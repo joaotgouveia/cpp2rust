@@ -18,7 +18,12 @@ pub fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -33,7 +38,12 @@ pub fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -48,7 +58,12 @@ pub fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -63,7 +78,12 @@ pub fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -78,92 +98,12 @@ pub fn test_string_ctor_0() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
-        let mut i: () = 0_();
-        'loop_: while (i < M) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-}
-pub fn test_string_ctor_1() {
-    const _: () = assert!(
-        true,
-        "!std::is_convertible<std::string, std::bitset<N> >::value"
-    );;
-    const _: () = assert!(
-        true,
-        "std::is_constructible<std::bitset<N>, std::string>::value"
-    );;
-    {
-        let mut s: () = unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
-        let mut i: () = 0_();
-        'loop_: while (i < M) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
-        let mut i: () = 0_();
-        'loop_: while (i < M) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
-        let mut i: () = 0_();
-        'loop_: while (i < M) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
-        let mut i: () = 0_();
-        'loop_: while (i < M) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-        let mut i: () = 10_();
-        'loop_: while (i < unimplemented!()) {
-            unimplemented!();
-            i.prefix_inc();
-        }
-    }
-    {
-        let mut s: () = unimplemented!();
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -188,7 +128,12 @@ pub fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -203,7 +148,12 @@ pub fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -218,7 +168,12 @@ pub fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -233,7 +188,12 @@ pub fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -248,7 +208,12 @@ pub fn test_string_ctor_2() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -273,7 +238,12 @@ pub fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -288,7 +258,12 @@ pub fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -303,7 +278,12 @@ pub fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -318,7 +298,12 @@ pub fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -333,7 +318,12 @@ pub fn test_string_ctor_3() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -358,7 +348,12 @@ pub fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -373,7 +368,12 @@ pub fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -388,7 +388,12 @@ pub fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -403,7 +408,12 @@ pub fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -418,7 +428,12 @@ pub fn test_string_ctor_4() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -443,7 +458,12 @@ pub fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -458,7 +478,12 @@ pub fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -473,7 +498,12 @@ pub fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -488,7 +518,12 @@ pub fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -503,7 +538,12 @@ pub fn test_string_ctor_5() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -528,7 +568,12 @@ pub fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -543,7 +588,12 @@ pub fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -558,7 +608,12 @@ pub fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -573,7 +628,12 @@ pub fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -588,7 +648,12 @@ pub fn test_string_ctor_6() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -613,7 +678,12 @@ pub fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -628,7 +698,12 @@ pub fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -643,7 +718,12 @@ pub fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -658,7 +738,12 @@ pub fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -673,7 +758,12 @@ pub fn test_string_ctor_7() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -698,7 +788,12 @@ pub fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -713,7 +808,12 @@ pub fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -728,7 +828,12 @@ pub fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -743,7 +848,12 @@ pub fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -758,7 +868,122 @@ pub fn test_string_ctor_8() {
     {
         let mut s: () = unimplemented!();
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut M: () = (unimplemented!().read());
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
+        let mut i: () = 0_();
+        'loop_: while (i < M) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while (i < unimplemented!()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+}
+pub fn test_string_ctor_9() {
+    const _: () = assert!(
+        true,
+        "!std::is_convertible<std::string, std::bitset<N> >::value"
+    );;
+    const _: () = assert!(
+        true,
+        "std::is_constructible<std::bitset<N>, std::string>::value"
+    );;
+    {
+        let mut s: () = unimplemented!();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
+        let mut i: () = 0_();
+        'loop_: while (i < M) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while (i < unimplemented!()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
+        let mut i: () = 0_();
+        'loop_: while (i < M) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while (i < unimplemented!()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
+        let mut i: () = 0_();
+        'loop_: while (i < M) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while (i < unimplemented!()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
+        let mut i: () = 0_();
+        'loop_: while (i < M) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+        let mut i: () = 10_();
+        'loop_: while (i < unimplemented!()) {
+            unimplemented!();
+            i.prefix_inc();
+        }
+    }
+    {
+        let mut s: () = unimplemented!();
+        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut M: () = (({
+            let ___a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ___b: Value<()> = Rc::new(RefCell::new(10_()));
+            min_1(___a.as_pointer(), ___b.as_pointer())
+        })
+        .read());
         let mut i: () = 0_();
         'loop_: while (i < M) {
             unimplemented!();
@@ -775,7 +1000,7 @@ pub fn test_string_ctor_8() {
 #[byte_size(8)]
 pub struct Nonsense {}
 impl Nonsense {}
-pub fn test_for_non_eager_instantiation_9() {
+pub fn test_for_non_eager_instantiation_10() {
     const _: () = assert!(
         true,
         "!std::is_constructible<std::bitset<3>, Nonsense*>::value"
@@ -785,9 +1010,8 @@ pub fn test_for_non_eager_instantiation_9() {
         "!std::is_constructible<std::bitset<3>, Nonsense*, std::size_t, Nonsense&, Nonsense&>::value"
     );;
 }
-pub fn test_10() -> () {
+pub fn test_11() -> () {
     ({ test_string_ctor_0() });
-    ({ test_string_ctor_1() });
     ({ test_string_ctor_2() });
     ({ test_string_ctor_3() });
     ({ test_string_ctor_4() });
@@ -795,7 +1019,8 @@ pub fn test_10() -> () {
     ({ test_string_ctor_6() });
     ({ test_string_ctor_7() });
     ({ test_string_ctor_8() });
-    ({ test_for_non_eager_instantiation_9() });
+    ({ test_string_ctor_9() });
+    ({ test_for_non_eager_instantiation_10() });
     return true;
 }
 pub fn main() {
@@ -818,7 +1043,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_10() });
+    ({ test_11() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -112,76 +112,67 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_6(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_7(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_8(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_9(s: (), mut n: (), mut c: (), mut expected: ()) {
+pub fn test_6(s: (), mut n: (), mut c: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_10(s: (), mut n: (), mut c: (), mut expected: ()) {
+pub fn test_7(s: (), mut n: (), mut c: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_11(s: (), mut n: (), mut c: (), mut expected: ()) {
+pub fn test_8(s: (), mut n: (), mut c: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_12() {
-    ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_9(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+pub fn test_string_9() {
+    ({ test_6(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_6(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_string_13() {
-    ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_10(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+pub fn test_string_10() {
+    ({ test_7(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_7(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_string_14() {
-    ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
-    ({ test_11(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+pub fn test_string_11() {
+    ({ test_8(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 100_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 0_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 1_(), ('a' as ()), unimplemented!()) });
+    ({ test_8(unimplemented!(), 10_(), ('a' as ()), unimplemented!()) });
 }
-pub fn test_15() -> () {
-    ({ test_string_12() });
-    ({ test_string_13() });
-    ({ test_string_14() });
+pub fn test_12() -> () {
+    ({ test_string_9() });
+    ({ test_string_10() });
+    ({ test_string_11() });
     return true;
 }
 pub fn main() {
@@ -204,7 +195,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_15() });
+    ({ test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

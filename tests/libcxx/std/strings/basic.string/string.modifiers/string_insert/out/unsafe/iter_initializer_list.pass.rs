@@ -244,16 +244,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_9(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_10(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_11(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_string_12() {
+pub unsafe fn test_string_9() {
     let mut s: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
@@ -264,7 +255,7 @@ pub unsafe fn test_string_12() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_13() {
+pub unsafe fn test_string_10() {
     let mut s: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
@@ -275,7 +266,7 @@ pub unsafe fn test_string_13() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_14() {
+pub unsafe fn test_string_11() {
     let mut s: () = unimplemented!();
     let mut i: () = unimplemented!();
     unimplemented!();
@@ -286,10 +277,10 @@ pub unsafe fn test_string_14() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_string_12() });
-    (unsafe { test_string_13() });
-    (unsafe { test_string_14() });
+pub unsafe fn test_12() -> () {
+    (unsafe { test_string_9() });
+    (unsafe { test_string_10() });
+    (unsafe { test_string_11() });
     return true;
 }
 pub fn main() {
@@ -308,7 +299,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

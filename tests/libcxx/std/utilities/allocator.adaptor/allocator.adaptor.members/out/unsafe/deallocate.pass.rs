@@ -80,17 +80,17 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut a: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut a: () = unimplemented!();
-        unimplemented!();
+        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
         unimplemented!();
     }
     {
         let mut a: () = unimplemented!();
+        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
         unimplemented!();
+    }
+    {
+        let mut a: () = unimplemented!();
+        (unsafe { a.deallocate((10_() as *mut ()), 20_()) });
         unimplemented!();
     }
     return 0_();

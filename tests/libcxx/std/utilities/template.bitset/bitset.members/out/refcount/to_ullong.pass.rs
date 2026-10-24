@@ -18,16 +18,28 @@ pub fn test_to_ullong_0() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -49,7 +61,7 @@ pub fn test_to_ullong_0() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_1() {
+pub fn test_to_ullong_2() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 1_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -61,16 +73,28 @@ pub fn test_to_ullong_1() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -92,7 +116,7 @@ pub fn test_to_ullong_1() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_2() {
+pub fn test_to_ullong_3() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 31_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -104,16 +128,28 @@ pub fn test_to_ullong_2() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -135,7 +171,7 @@ pub fn test_to_ullong_2() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_3() {
+pub fn test_to_ullong_4() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 32_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -147,16 +183,28 @@ pub fn test_to_ullong_3() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -178,7 +226,7 @@ pub fn test_to_ullong_3() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_4() {
+pub fn test_to_ullong_5() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 33_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -190,16 +238,28 @@ pub fn test_to_ullong_4() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -221,7 +281,7 @@ pub fn test_to_ullong_4() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_5() {
+pub fn test_to_ullong_6() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 63_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -233,16 +293,28 @@ pub fn test_to_ullong_5() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -264,7 +336,7 @@ pub fn test_to_ullong_5() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_6() {
+pub fn test_to_ullong_7() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 64_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -276,16 +348,28 @@ pub fn test_to_ullong_6() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -307,7 +391,7 @@ pub fn test_to_ullong_6() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_7() {
+pub fn test_to_ullong_8() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 65_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -319,16 +403,28 @@ pub fn test_to_ullong_7() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -350,7 +446,7 @@ pub fn test_to_ullong_7() {
         unimplemented!();
     }
 }
-pub fn test_to_ullong_8() {
+pub fn test_to_ullong_9() {
     let mut M: () = if ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) < 1000_()) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -362,16 +458,28 @@ pub fn test_to_ullong_8() {
     } else {
         ((::std::mem::size_of::<()>() as ()).wrapping_mul(8_()) as ()).wrapping_sub(M)
     };
-    let mut max: () = if is_M_zero { 0_() } else { ((-1_()) >> X) };
+    let max: Value<()> = Rc::new(RefCell::new(if is_M_zero { 0_() } else { ((-1_()) >> X) }));
     let tests: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(1_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(2_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
+        (({
+            let ___a: Value<()> = Rc::new(RefCell::new(3_()));
+            min_1(___a.as_pointer(), max.as_pointer())
+        })
+        .read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
         (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        (unimplemented!().read()),
-        max,
+        (*max.borrow()),
     ])));
     'loop_: for j in IterRange::new(
         (tests.as_pointer() as Ptr<()>),
@@ -393,9 +501,8 @@ pub fn test_to_ullong_8() {
         unimplemented!();
     }
 }
-pub fn test_9() -> () {
+pub fn test_10() -> () {
     ({ test_to_ullong_0() });
-    ({ test_to_ullong_1() });
     ({ test_to_ullong_2() });
     ({ test_to_ullong_3() });
     ({ test_to_ullong_4() });
@@ -403,6 +510,7 @@ pub fn test_9() -> () {
     ({ test_to_ullong_6() });
     ({ test_to_ullong_7() });
     ({ test_to_ullong_8() });
+    ({ test_to_ullong_9() });
     return true;
 }
 pub fn main() {
@@ -425,7 +533,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_9() });
+    ({ test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

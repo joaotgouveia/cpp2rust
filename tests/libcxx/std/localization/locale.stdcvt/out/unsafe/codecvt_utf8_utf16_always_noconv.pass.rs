@@ -25,17 +25,19 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.always_noconv() });
+        let mut r: () = (unsafe { (c as std_codecvt_wchar_t__char____mbstate_t_).always_noconv() });
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.always_noconv() });
+        let mut r: () =
+            (unsafe { (c as std_codecvt_char16_t__char____mbstate_t_).always_noconv() });
         unimplemented!();
     }
     {
         let mut c: () = unimplemented!();
-        let mut r: () = (unsafe { c.always_noconv() });
+        let mut r: () =
+            (unsafe { (c as std_codecvt_char32_t__char____mbstate_t_).always_noconv() });
         unimplemented!();
     }
     return 0_();

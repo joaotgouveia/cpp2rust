@@ -281,7 +281,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    d2 = unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

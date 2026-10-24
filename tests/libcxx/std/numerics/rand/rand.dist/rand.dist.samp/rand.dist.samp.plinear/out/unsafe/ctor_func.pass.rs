@@ -26,7 +26,10 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut d: () = unimplemented!();
+        let mut d: () =
+            std_piecewise_linear_distribution_double_::new_1({ 0_() }, { 0_() }, { 1_() }, {
+                Some(fw_0)
+            });
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -37,7 +40,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut d: () = unimplemented!();
+        let mut d: () =
+            std_piecewise_linear_distribution_double_::new_1({ 1_() }, { 10_() }, { 12_() }, {
+                Some(fw_0)
+            });
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -48,7 +54,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         unimplemented!();
     }
     {
-        let mut d: () = unimplemented!();
+        let mut d: () =
+            std_piecewise_linear_distribution_double_::new_1({ 2_() }, { 6_() }, { 14_() }, {
+                Some(fw_0)
+            });
         let mut iv: () = unimplemented!();
         unimplemented!();
         unimplemented!();

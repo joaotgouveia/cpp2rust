@@ -191,16 +191,7 @@ impl tiny_size_allocator_29__char_ {
         return 29_();
     }
 }
-pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_9(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_string_10() {
+pub unsafe fn test_string_7() {
     let mut test_data: [*const (); 4] = [
         c"".as_ptr(),
         c"12345".as_ptr(),
@@ -227,7 +218,7 @@ pub unsafe fn test_string_10() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_string_11() {
+pub unsafe fn test_string_8() {
     let mut test_data: [*const (); 4] = [
         c"".as_ptr(),
         c"12345".as_ptr(),
@@ -254,7 +245,7 @@ pub unsafe fn test_string_11() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_string_12() {
+pub unsafe fn test_string_9() {
     let mut test_data: [*const (); 4] = [
         c"".as_ptr(),
         c"12345".as_ptr(),
@@ -281,10 +272,10 @@ pub unsafe fn test_string_12() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_13() -> () {
-    (unsafe { test_string_10() });
-    (unsafe { test_string_11() });
-    (unsafe { test_string_12() });
+pub unsafe fn test_10() -> () {
+    (unsafe { test_string_7() });
+    (unsafe { test_string_8() });
+    (unsafe { test_string_9() });
     {
         let mut str: () = unimplemented!();
         unimplemented!();
@@ -311,7 +302,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_13() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

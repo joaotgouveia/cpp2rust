@@ -82,17 +82,17 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
+        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
         unimplemented!();
     }
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
         unimplemented!();
+    }
+    {
+        let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        ({ (*a.borrow()).deallocate(<Ptr<()>>::from_int(10_()), 20_()) });
         unimplemented!();
     }
     return 0_();

@@ -460,16 +460,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_11(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_12(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_13(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_14(s: *const (), mut pos: (), mut n: ()) {
+pub unsafe fn test_11(s: *const (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
         let mut str: () = unimplemented!();
         unimplemented!();
@@ -481,7 +472,7 @@ pub unsafe fn test_14(s: *const (), mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_15(s: *const (), mut pos: (), mut n: ()) {
+pub unsafe fn test_12(s: *const (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
         let mut str: () = unimplemented!();
         unimplemented!();
@@ -493,7 +484,7 @@ pub unsafe fn test_15(s: *const (), mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_16(s: *const (), mut pos: (), mut n: ()) {
+pub unsafe fn test_13(s: *const (), mut pos: (), mut n: ()) {
     if ((pos) <= (unimplemented!())) {
         let mut str: () = unimplemented!();
         unimplemented!();
@@ -505,823 +496,823 @@ pub unsafe fn test_16(s: *const (), mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_string_17() {
+pub unsafe fn test_string_14() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 0_())
+        test_11(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 0_())
+        test_11(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 1_())
+        test_11(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 2_())
+        test_11(&mut _s, 0_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 4_())
+        test_11(&mut _s, 0_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 5_())
+        test_11(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 1_())
+        test_11(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 2_())
+        test_11(&mut _s, 1_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 3_())
+        test_11(&mut _s, 1_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 4_())
+        test_11(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 2_(), 0_())
+        test_11(&mut _s, 2_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 2_(), 1_())
+        test_11(&mut _s, 2_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 2_(), 2_())
+        test_11(&mut _s, 2_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 2_(), 3_())
+        test_11(&mut _s, 2_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 4_(), 0_())
+        test_11(&mut _s, 4_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 4_(), 1_())
+        test_11(&mut _s, 4_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 0_())
+        test_11(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 6_(), 0_())
+        test_11(&mut _s, 6_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 0_())
+        test_11(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 1_())
+        test_11(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 5_())
+        test_11(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 9_())
+        test_11(&mut _s, 0_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 10_())
+        test_11(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 1_())
+        test_11(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 4_())
+        test_11(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 8_())
+        test_11(&mut _s, 1_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 9_())
+        test_11(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 0_())
+        test_11(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 1_())
+        test_11(&mut _s, 5_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 2_())
+        test_11(&mut _s, 5_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 4_())
+        test_11(&mut _s, 5_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 5_(), 5_())
+        test_11(&mut _s, 5_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 9_(), 0_())
+        test_11(&mut _s, 9_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 9_(), 1_())
+        test_11(&mut _s, 9_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 0_())
+        test_11(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 11_(), 0_())
+        test_11(&mut _s, 11_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 0_())
+        test_11(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 1_())
+        test_11(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 10_())
+        test_11(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 19_())
+        test_11(&mut _s, 0_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 20_())
+        test_11(&mut _s, 0_(), 20_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 1_())
+        test_11(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 9_())
+        test_11(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 18_())
+        test_11(&mut _s, 1_(), 18_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 19_())
+        test_11(&mut _s, 1_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 0_())
+        test_11(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 1_())
+        test_11(&mut _s, 10_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 5_())
+        test_11(&mut _s, 10_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 9_())
+        test_11(&mut _s, 10_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 10_(), 10_())
+        test_11(&mut _s, 10_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 19_(), 0_())
+        test_11(&mut _s, 19_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 19_(), 1_())
+        test_11(&mut _s, 19_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 20_(), 0_())
+        test_11(&mut _s, 20_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 21_(), 0_())
+        test_11(&mut _s, 21_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 22_())
+        test_11(&mut _s, 0_(), 22_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 8_())
+        test_11(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 23_())
+        test_11(&mut _s, 0_(), 23_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 8_())
+        test_11(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 24_())
+        test_11(&mut _s, 0_(), 24_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 0_(), 8_())
+        test_11(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_14(&mut _s, 1_(), 0_())
+        test_11(&mut _s, 1_(), 0_())
     });
 }
-pub unsafe fn test_string_18() {
+pub unsafe fn test_string_15() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 0_())
+        test_12(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 0_())
+        test_12(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 1_())
+        test_12(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 2_())
+        test_12(&mut _s, 0_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 4_())
+        test_12(&mut _s, 0_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 5_())
+        test_12(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 1_())
+        test_12(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 2_())
+        test_12(&mut _s, 1_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 3_())
+        test_12(&mut _s, 1_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 4_())
+        test_12(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 2_(), 0_())
+        test_12(&mut _s, 2_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 2_(), 1_())
+        test_12(&mut _s, 2_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 2_(), 2_())
+        test_12(&mut _s, 2_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 2_(), 3_())
+        test_12(&mut _s, 2_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 4_(), 0_())
+        test_12(&mut _s, 4_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 4_(), 1_())
+        test_12(&mut _s, 4_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 0_())
+        test_12(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 6_(), 0_())
+        test_12(&mut _s, 6_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 0_())
+        test_12(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 1_())
+        test_12(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 5_())
+        test_12(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 9_())
+        test_12(&mut _s, 0_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 10_())
+        test_12(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 1_())
+        test_12(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 4_())
+        test_12(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 8_())
+        test_12(&mut _s, 1_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 9_())
+        test_12(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 0_())
+        test_12(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 1_())
+        test_12(&mut _s, 5_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 2_())
+        test_12(&mut _s, 5_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 4_())
+        test_12(&mut _s, 5_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 5_(), 5_())
+        test_12(&mut _s, 5_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 9_(), 0_())
+        test_12(&mut _s, 9_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 9_(), 1_())
+        test_12(&mut _s, 9_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 0_())
+        test_12(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 11_(), 0_())
+        test_12(&mut _s, 11_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 0_())
+        test_12(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 1_())
+        test_12(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 10_())
+        test_12(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 19_())
+        test_12(&mut _s, 0_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 20_())
+        test_12(&mut _s, 0_(), 20_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 1_())
+        test_12(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 9_())
+        test_12(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 18_())
+        test_12(&mut _s, 1_(), 18_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 19_())
+        test_12(&mut _s, 1_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 0_())
+        test_12(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 1_())
+        test_12(&mut _s, 10_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 5_())
+        test_12(&mut _s, 10_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 9_())
+        test_12(&mut _s, 10_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 10_(), 10_())
+        test_12(&mut _s, 10_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 19_(), 0_())
+        test_12(&mut _s, 19_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 19_(), 1_())
+        test_12(&mut _s, 19_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 20_(), 0_())
+        test_12(&mut _s, 20_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 21_(), 0_())
+        test_12(&mut _s, 21_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 22_())
+        test_12(&mut _s, 0_(), 22_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 8_())
+        test_12(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 23_())
+        test_12(&mut _s, 0_(), 23_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 8_())
+        test_12(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 24_())
+        test_12(&mut _s, 0_(), 24_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 0_(), 8_())
+        test_12(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_15(&mut _s, 1_(), 0_())
+        test_12(&mut _s, 1_(), 0_())
     });
 }
-pub unsafe fn test_string_19() {
+pub unsafe fn test_string_16() {
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 0_())
+        test_13(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 0_())
+        test_13(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 1_())
+        test_13(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 2_())
+        test_13(&mut _s, 0_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 4_())
+        test_13(&mut _s, 0_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 5_())
+        test_13(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 1_())
+        test_13(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 2_())
+        test_13(&mut _s, 1_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 3_())
+        test_13(&mut _s, 1_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 4_())
+        test_13(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 2_(), 0_())
+        test_13(&mut _s, 2_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 2_(), 1_())
+        test_13(&mut _s, 2_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 2_(), 2_())
+        test_13(&mut _s, 2_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 2_(), 3_())
+        test_13(&mut _s, 2_(), 3_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 4_(), 0_())
+        test_13(&mut _s, 4_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 4_(), 1_())
+        test_13(&mut _s, 4_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 0_())
+        test_13(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 6_(), 0_())
+        test_13(&mut _s, 6_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 0_())
+        test_13(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 1_())
+        test_13(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 5_())
+        test_13(&mut _s, 0_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 9_())
+        test_13(&mut _s, 0_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 10_())
+        test_13(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 1_())
+        test_13(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 4_())
+        test_13(&mut _s, 1_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 8_())
+        test_13(&mut _s, 1_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 9_())
+        test_13(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 0_())
+        test_13(&mut _s, 5_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 1_())
+        test_13(&mut _s, 5_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 2_())
+        test_13(&mut _s, 5_(), 2_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 4_())
+        test_13(&mut _s, 5_(), 4_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 5_(), 5_())
+        test_13(&mut _s, 5_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 9_(), 0_())
+        test_13(&mut _s, 9_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 9_(), 1_())
+        test_13(&mut _s, 9_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 0_())
+        test_13(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 11_(), 0_())
+        test_13(&mut _s, 11_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 0_())
+        test_13(&mut _s, 0_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 1_())
+        test_13(&mut _s, 0_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 10_())
+        test_13(&mut _s, 0_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 19_())
+        test_13(&mut _s, 0_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 20_())
+        test_13(&mut _s, 0_(), 20_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 1_())
+        test_13(&mut _s, 1_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 9_())
+        test_13(&mut _s, 1_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 18_())
+        test_13(&mut _s, 1_(), 18_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 19_())
+        test_13(&mut _s, 1_(), 19_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 0_())
+        test_13(&mut _s, 10_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 1_())
+        test_13(&mut _s, 10_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 5_())
+        test_13(&mut _s, 10_(), 5_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 9_())
+        test_13(&mut _s, 10_(), 9_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 10_(), 10_())
+        test_13(&mut _s, 10_(), 10_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 19_(), 0_())
+        test_13(&mut _s, 19_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 19_(), 1_())
+        test_13(&mut _s, 19_(), 1_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 20_(), 0_())
+        test_13(&mut _s, 20_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 21_(), 0_())
+        test_13(&mut _s, 21_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 22_())
+        test_13(&mut _s, 0_(), 22_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 8_())
+        test_13(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 23_())
+        test_13(&mut _s, 0_(), 23_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 8_())
+        test_13(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 24_())
+        test_13(&mut _s, 0_(), 24_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 0_(), 8_())
+        test_13(&mut _s, 0_(), 8_())
     });
     (unsafe {
         let mut _s: () = unimplemented!();
-        test_16(&mut _s, 1_(), 0_())
+        test_13(&mut _s, 1_(), 0_())
     });
 }
-pub unsafe fn test_20() -> () {
-    (unsafe { test_string_17() });
-    (unsafe { test_string_18() });
-    (unsafe { test_string_19() });
+pub unsafe fn test_17() -> () {
+    (unsafe { test_string_14() });
+    (unsafe { test_string_15() });
+    (unsafe { test_string_16() });
     return true;
 }
-pub unsafe fn test_alloc_21() -> () {
+pub unsafe fn test_alloc_18() -> () {
     {
         let mut stats: test_allocator_statistics = <test_allocator_statistics>::default();
         {
@@ -1357,8 +1348,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_20() });
-    (unsafe { test_alloc_21() });
+    (unsafe { test_17() });
+    (unsafe { test_alloc_18() });
     const _: () = assert!(true, "test()");;
     const _: () = assert!(true, "test_alloc()");;
     return 0_();

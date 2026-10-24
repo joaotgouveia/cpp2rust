@@ -996,7 +996,13 @@ pub fn test02_13() {
 }
 pub fn test03_14() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let res1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let res1: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___k: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(0_()) })));
+            let ___obj: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(5_()) })));
+            (*m.borrow()).insert_or_assign(___k.as_pointer(), ___obj.as_pointer())
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -1408,7 +1414,14 @@ pub fn test03_14() {
 }
 pub fn test04_15() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let res1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let res1: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___hint: () = unimplemented!();
+            let ___k: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(0_()) })));
+            let ___obj: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(5_()) })));
+            (*m.borrow()).insert_or_assign(___hint, ___k.as_pointer(), ___obj.as_pointer())
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2366,7 +2379,13 @@ pub fn test06_17() {
 }
 pub fn test07_18() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let res1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let res1: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___k: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(0_()) })));
+            let ___obj: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(5_()) })));
+            (*m.borrow()).insert_or_assign(___k.as_pointer(), ___obj.as_pointer())
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -2777,7 +2796,14 @@ pub fn test07_18() {
 }
 pub fn test08_19() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let res1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let res1: Value<()> = Rc::new(RefCell::new(
+        ({
+            let ___hint: () = unimplemented!();
+            let ___k: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(0_()) })));
+            let ___obj: Value<Val> = Rc::new(RefCell::new(Val::new({ Some(5_()) })));
+            (*m.borrow()).insert_or_assign(___hint, ___k.as_pointer(), ___obj.as_pointer())
+        }),
+    ));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

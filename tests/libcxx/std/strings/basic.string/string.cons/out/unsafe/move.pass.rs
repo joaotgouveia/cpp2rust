@@ -434,16 +434,7 @@ impl std::cmp::PartialEq for min_allocator_char_ {
     }
 }
 impl std::cmp::Eq for min_allocator_char_ {}
-pub unsafe fn is_string_asan_correct_10(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_11(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_12(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_13(mut s0: ()) {
+pub unsafe fn test_10(mut s0: ()) {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     unimplemented!();
@@ -455,7 +446,7 @@ pub unsafe fn test_13(mut s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_14(mut s0: ()) {
+pub unsafe fn test_11(mut s0: ()) {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     unimplemented!();
@@ -467,7 +458,7 @@ pub unsafe fn test_14(mut s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_15(mut s0: ()) {
+pub unsafe fn test_12(mut s0: ()) {
     let mut s1: () = unimplemented!();
     let mut s2: () = unimplemented!();
     unimplemented!();
@@ -479,37 +470,37 @@ pub unsafe fn test_15(mut s0: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_string_16(a: *const ()) {
-    (unsafe { test_13(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
-    (unsafe { test_13(unimplemented!()) });
+pub unsafe fn test_string_13(a: *const ()) {
+    (unsafe { test_10(unimplemented!()) });
+    (unsafe { test_10(unimplemented!()) });
+    (unsafe { test_10(unimplemented!()) });
 }
-pub unsafe fn test_string_17(a: *const test_allocator_char_) {
-    (unsafe { test_14(unimplemented!()) });
-    (unsafe { test_14(unimplemented!()) });
-    (unsafe { test_14(unimplemented!()) });
+pub unsafe fn test_string_14(a: *const test_allocator_char_) {
+    (unsafe { test_11(unimplemented!()) });
+    (unsafe { test_11(unimplemented!()) });
+    (unsafe { test_11(unimplemented!()) });
 }
-pub unsafe fn test_string_18(a: *const min_allocator_char_) {
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
-    (unsafe { test_15(unimplemented!()) });
+pub unsafe fn test_string_15(a: *const min_allocator_char_) {
+    (unsafe { test_12(unimplemented!()) });
+    (unsafe { test_12(unimplemented!()) });
+    (unsafe { test_12(unimplemented!()) });
 }
-pub unsafe fn test_19() -> () {
+pub unsafe fn test_16() -> () {
     (unsafe {
         let mut _a: () = unimplemented!();
-        test_string_16(&mut _a)
+        test_string_13(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_char_ = <test_allocator_char_>::default();
-        test_string_17(&mut _a)
+        test_string_14(&mut _a)
     });
     (unsafe {
         let mut _a: test_allocator_char_ = test_allocator_char_::new_1({ 3_() });
-        test_string_17(&mut _a)
+        test_string_14(&mut _a)
     });
     (unsafe {
         let mut _a: min_allocator_char_ = <min_allocator_char_>::default();
-        test_string_18(&mut _a)
+        test_string_15(&mut _a)
     });
     return true;
 }
@@ -529,7 +520,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_19() });
+    (unsafe { test_16() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

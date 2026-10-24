@@ -207,16 +207,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_9(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_10(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_11(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_12(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
+pub unsafe fn test_9(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     unimplemented!();
     let mut sufficient_cap: () = ((unimplemented!()) < (unimplemented!()));
     let mut pos: () = (unimplemented!() as ());
@@ -230,7 +221,7 @@ pub unsafe fn test_12(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn test_13(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
+pub unsafe fn test_10(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     unimplemented!();
     let mut sufficient_cap: () = ((unimplemented!()) < (unimplemented!()));
     let mut pos: () = unimplemented!();
@@ -244,7 +235,7 @@ pub unsafe fn test_13(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn test_14(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
+pub unsafe fn test_11(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     unimplemented!();
     let mut sufficient_cap: () = ((unimplemented!()) < (unimplemented!()));
     let mut pos: () = (unimplemented!() as ());
@@ -258,484 +249,484 @@ pub unsafe fn test_14(s: *mut (), mut p: (), mut c: (), mut expected: ()) {
     }
     unimplemented!();
 }
-pub unsafe fn test_string_15() {
+pub unsafe fn test_string_12() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('1' as ()), unimplemented!())
+        test_9(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('a' as ()), unimplemented!())
+        test_9(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('b' as ()), unimplemented!())
+        test_9(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('c' as ()), unimplemented!())
+        test_9(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('d' as ()), unimplemented!())
+        test_9(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('2' as ()), unimplemented!())
+        test_9(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('3' as ()), unimplemented!())
+        test_9(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('4' as ()), unimplemented!())
+        test_9(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('5' as ()), unimplemented!())
+        test_9(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('6' as ()), unimplemented!())
+        test_9(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('7' as ()), unimplemented!())
+        test_9(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('A' as ()), unimplemented!())
+        test_9(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('B' as ()), unimplemented!())
+        test_9(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('C' as ()), unimplemented!())
+        test_9(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_12(_s, _p, ('x' as ()), unimplemented!())
+        test_9(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub unsafe fn test_string_16() {
+pub unsafe fn test_string_13() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('1' as ()), unimplemented!())
+        test_10(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('a' as ()), unimplemented!())
+        test_10(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('b' as ()), unimplemented!())
+        test_10(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('c' as ()), unimplemented!())
+        test_10(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('d' as ()), unimplemented!())
+        test_10(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('2' as ()), unimplemented!())
+        test_10(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('3' as ()), unimplemented!())
+        test_10(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('4' as ()), unimplemented!())
+        test_10(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('5' as ()), unimplemented!())
+        test_10(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('6' as ()), unimplemented!())
+        test_10(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('7' as ()), unimplemented!())
+        test_10(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('A' as ()), unimplemented!())
+        test_10(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('B' as ()), unimplemented!())
+        test_10(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('C' as ()), unimplemented!())
+        test_10(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_13(_s, _p, ('x' as ()), unimplemented!())
+        test_10(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub unsafe fn test_string_17() {
+pub unsafe fn test_string_14() {
     let mut s: () = unimplemented!();
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('1' as ()), unimplemented!())
+        test_11(_s, _p, ('1' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('a' as ()), unimplemented!())
+        test_11(_s, _p, ('a' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('b' as ()), unimplemented!())
+        test_11(_s, _p, ('b' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('c' as ()), unimplemented!())
+        test_11(_s, _p, ('c' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('d' as ()), unimplemented!())
+        test_11(_s, _p, ('d' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('2' as ()), unimplemented!())
+        test_11(_s, _p, ('2' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('3' as ()), unimplemented!())
+        test_11(_s, _p, ('3' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('4' as ()), unimplemented!())
+        test_11(_s, _p, ('4' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('5' as ()), unimplemented!())
+        test_11(_s, _p, ('5' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('6' as ()), unimplemented!())
+        test_11(_s, _p, ('6' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('7' as ()), unimplemented!())
+        test_11(_s, _p, ('7' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('A' as ()), unimplemented!())
+        test_11(_s, _p, ('A' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('B' as ()), unimplemented!())
+        test_11(_s, _p, ('B' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('C' as ()), unimplemented!())
+        test_11(_s, _p, ('C' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
     (unsafe {
         let _s: *mut () = &mut s;
         let _p: () = unimplemented!();
-        test_14(_s, _p, ('x' as ()), unimplemented!())
+        test_11(_s, _p, ('x' as ()), unimplemented!())
     });
 }
-pub unsafe fn test_18() -> () {
-    (unsafe { test_string_15() });
-    (unsafe { test_string_16() });
-    (unsafe { test_string_17() });
+pub unsafe fn test_15() -> () {
+    (unsafe { test_string_12() });
+    (unsafe { test_string_13() });
+    (unsafe { test_string_14() });
     return true;
 }
 pub fn main() {
@@ -754,7 +745,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

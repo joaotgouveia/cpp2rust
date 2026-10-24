@@ -6,22 +6,7 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn is_string_asan_correct_0(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_1(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_2(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_3(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_5(mut val: ()) {
+pub fn test_0(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -61,7 +46,7 @@ pub fn test_5(mut val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_6(mut val: ()) {
+pub fn test_1(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -101,7 +86,7 @@ pub fn test_6(mut val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7(mut val: ()) {
+pub fn test_2(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -141,7 +126,7 @@ pub fn test_7(mut val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_8(mut val: ()) {
+pub fn test_3(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -181,7 +166,7 @@ pub fn test_8(mut val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_9(mut val: ()) {
+pub fn test_4(mut val: ()) {
     let empty_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let short_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let long_s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -241,11 +226,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_5(('x' as ())) });
-    ({ test_6((120 as ())) });
-    ({ test_7((120 as ())) });
-    ({ test_8((120 as ())) });
-    ({ test_9((120 as ())) });
+    ({ test_0(('x' as ())) });
+    ({ test_1((120 as ())) });
+    ({ test_2((120 as ())) });
+    ({ test_3((120 as ())) });
+    ({ test_4((120 as ())) });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {}

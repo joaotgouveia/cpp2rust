@@ -374,16 +374,7 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_11(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_12(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_13(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_14(s: Ptr<()>, mut pos: (), mut n: ()) {
+pub fn test_11(s: Ptr<()>, mut pos: (), mut n: ()) {
     if ({ pos } <= { unimplemented!() }) {
         let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -395,7 +386,7 @@ pub fn test_14(s: Ptr<()>, mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub fn test_15(s: Ptr<()>, mut pos: (), mut n: ()) {
+pub fn test_12(s: Ptr<()>, mut pos: (), mut n: ()) {
     if ({ pos } <= { unimplemented!() }) {
         let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -407,7 +398,7 @@ pub fn test_15(s: Ptr<()>, mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub fn test_16(s: Ptr<()>, mut pos: (), mut n: ()) {
+pub fn test_13(s: Ptr<()>, mut pos: (), mut n: ()) {
     if ({ pos } <= { unimplemented!() }) {
         let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -419,823 +410,823 @@ pub fn test_16(s: Ptr<()>, mut pos: (), mut n: ()) {
         unimplemented!();
     }
 }
-pub fn test_string_17() {
+pub fn test_string_14() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 0_())
+        test_11(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 0_())
+        test_11(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 1_())
+        test_11(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 2_())
+        test_11(_s.as_pointer(), 0_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 4_())
+        test_11(_s.as_pointer(), 0_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 5_())
+        test_11(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 1_())
+        test_11(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 2_())
+        test_11(_s.as_pointer(), 1_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 3_())
+        test_11(_s.as_pointer(), 1_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 4_())
+        test_11(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 2_(), 0_())
+        test_11(_s.as_pointer(), 2_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 2_(), 1_())
+        test_11(_s.as_pointer(), 2_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 2_(), 2_())
+        test_11(_s.as_pointer(), 2_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 2_(), 3_())
+        test_11(_s.as_pointer(), 2_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 4_(), 0_())
+        test_11(_s.as_pointer(), 4_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 4_(), 1_())
+        test_11(_s.as_pointer(), 4_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 0_())
+        test_11(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 6_(), 0_())
+        test_11(_s.as_pointer(), 6_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 0_())
+        test_11(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 1_())
+        test_11(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 5_())
+        test_11(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 9_())
+        test_11(_s.as_pointer(), 0_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 10_())
+        test_11(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 1_())
+        test_11(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 4_())
+        test_11(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 8_())
+        test_11(_s.as_pointer(), 1_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 9_())
+        test_11(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 0_())
+        test_11(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 1_())
+        test_11(_s.as_pointer(), 5_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 2_())
+        test_11(_s.as_pointer(), 5_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 4_())
+        test_11(_s.as_pointer(), 5_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 5_(), 5_())
+        test_11(_s.as_pointer(), 5_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 9_(), 0_())
+        test_11(_s.as_pointer(), 9_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 9_(), 1_())
+        test_11(_s.as_pointer(), 9_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 0_())
+        test_11(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 11_(), 0_())
+        test_11(_s.as_pointer(), 11_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 0_())
+        test_11(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 1_())
+        test_11(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 10_())
+        test_11(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 19_())
+        test_11(_s.as_pointer(), 0_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 20_())
+        test_11(_s.as_pointer(), 0_(), 20_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 1_())
+        test_11(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 9_())
+        test_11(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 18_())
+        test_11(_s.as_pointer(), 1_(), 18_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 19_())
+        test_11(_s.as_pointer(), 1_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 0_())
+        test_11(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 1_())
+        test_11(_s.as_pointer(), 10_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 5_())
+        test_11(_s.as_pointer(), 10_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 9_())
+        test_11(_s.as_pointer(), 10_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 10_(), 10_())
+        test_11(_s.as_pointer(), 10_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 19_(), 0_())
+        test_11(_s.as_pointer(), 19_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 19_(), 1_())
+        test_11(_s.as_pointer(), 19_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 20_(), 0_())
+        test_11(_s.as_pointer(), 20_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 21_(), 0_())
+        test_11(_s.as_pointer(), 21_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 22_())
+        test_11(_s.as_pointer(), 0_(), 22_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 8_())
+        test_11(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 23_())
+        test_11(_s.as_pointer(), 0_(), 23_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 8_())
+        test_11(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 24_())
+        test_11(_s.as_pointer(), 0_(), 24_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 0_(), 8_())
+        test_11(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_14(_s.as_pointer(), 1_(), 0_())
+        test_11(_s.as_pointer(), 1_(), 0_())
     });
 }
-pub fn test_string_18() {
+pub fn test_string_15() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 0_())
+        test_12(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 0_())
+        test_12(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 1_())
+        test_12(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 2_())
+        test_12(_s.as_pointer(), 0_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 4_())
+        test_12(_s.as_pointer(), 0_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 5_())
+        test_12(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 1_())
+        test_12(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 2_())
+        test_12(_s.as_pointer(), 1_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 3_())
+        test_12(_s.as_pointer(), 1_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 4_())
+        test_12(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 2_(), 0_())
+        test_12(_s.as_pointer(), 2_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 2_(), 1_())
+        test_12(_s.as_pointer(), 2_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 2_(), 2_())
+        test_12(_s.as_pointer(), 2_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 2_(), 3_())
+        test_12(_s.as_pointer(), 2_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 4_(), 0_())
+        test_12(_s.as_pointer(), 4_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 4_(), 1_())
+        test_12(_s.as_pointer(), 4_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 0_())
+        test_12(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 6_(), 0_())
+        test_12(_s.as_pointer(), 6_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 0_())
+        test_12(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 1_())
+        test_12(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 5_())
+        test_12(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 9_())
+        test_12(_s.as_pointer(), 0_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 10_())
+        test_12(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 1_())
+        test_12(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 4_())
+        test_12(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 8_())
+        test_12(_s.as_pointer(), 1_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 9_())
+        test_12(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 0_())
+        test_12(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 1_())
+        test_12(_s.as_pointer(), 5_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 2_())
+        test_12(_s.as_pointer(), 5_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 4_())
+        test_12(_s.as_pointer(), 5_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 5_(), 5_())
+        test_12(_s.as_pointer(), 5_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 9_(), 0_())
+        test_12(_s.as_pointer(), 9_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 9_(), 1_())
+        test_12(_s.as_pointer(), 9_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 0_())
+        test_12(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 11_(), 0_())
+        test_12(_s.as_pointer(), 11_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 0_())
+        test_12(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 1_())
+        test_12(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 10_())
+        test_12(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 19_())
+        test_12(_s.as_pointer(), 0_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 20_())
+        test_12(_s.as_pointer(), 0_(), 20_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 1_())
+        test_12(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 9_())
+        test_12(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 18_())
+        test_12(_s.as_pointer(), 1_(), 18_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 19_())
+        test_12(_s.as_pointer(), 1_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 0_())
+        test_12(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 1_())
+        test_12(_s.as_pointer(), 10_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 5_())
+        test_12(_s.as_pointer(), 10_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 9_())
+        test_12(_s.as_pointer(), 10_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 10_(), 10_())
+        test_12(_s.as_pointer(), 10_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 19_(), 0_())
+        test_12(_s.as_pointer(), 19_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 19_(), 1_())
+        test_12(_s.as_pointer(), 19_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 20_(), 0_())
+        test_12(_s.as_pointer(), 20_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 21_(), 0_())
+        test_12(_s.as_pointer(), 21_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 22_())
+        test_12(_s.as_pointer(), 0_(), 22_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 8_())
+        test_12(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 23_())
+        test_12(_s.as_pointer(), 0_(), 23_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 8_())
+        test_12(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 24_())
+        test_12(_s.as_pointer(), 0_(), 24_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 0_(), 8_())
+        test_12(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_15(_s.as_pointer(), 1_(), 0_())
+        test_12(_s.as_pointer(), 1_(), 0_())
     });
 }
-pub fn test_string_19() {
+pub fn test_string_16() {
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 0_())
+        test_13(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 0_())
+        test_13(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 1_())
+        test_13(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 2_())
+        test_13(_s.as_pointer(), 0_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 4_())
+        test_13(_s.as_pointer(), 0_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 5_())
+        test_13(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 1_())
+        test_13(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 2_())
+        test_13(_s.as_pointer(), 1_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 3_())
+        test_13(_s.as_pointer(), 1_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 4_())
+        test_13(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 2_(), 0_())
+        test_13(_s.as_pointer(), 2_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 2_(), 1_())
+        test_13(_s.as_pointer(), 2_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 2_(), 2_())
+        test_13(_s.as_pointer(), 2_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 2_(), 3_())
+        test_13(_s.as_pointer(), 2_(), 3_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 4_(), 0_())
+        test_13(_s.as_pointer(), 4_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 4_(), 1_())
+        test_13(_s.as_pointer(), 4_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 0_())
+        test_13(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 6_(), 0_())
+        test_13(_s.as_pointer(), 6_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 0_())
+        test_13(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 1_())
+        test_13(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 5_())
+        test_13(_s.as_pointer(), 0_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 9_())
+        test_13(_s.as_pointer(), 0_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 10_())
+        test_13(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 1_())
+        test_13(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 4_())
+        test_13(_s.as_pointer(), 1_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 8_())
+        test_13(_s.as_pointer(), 1_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 9_())
+        test_13(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 0_())
+        test_13(_s.as_pointer(), 5_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 1_())
+        test_13(_s.as_pointer(), 5_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 2_())
+        test_13(_s.as_pointer(), 5_(), 2_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 4_())
+        test_13(_s.as_pointer(), 5_(), 4_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 5_(), 5_())
+        test_13(_s.as_pointer(), 5_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 9_(), 0_())
+        test_13(_s.as_pointer(), 9_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 9_(), 1_())
+        test_13(_s.as_pointer(), 9_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 0_())
+        test_13(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 11_(), 0_())
+        test_13(_s.as_pointer(), 11_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 0_())
+        test_13(_s.as_pointer(), 0_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 1_())
+        test_13(_s.as_pointer(), 0_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 10_())
+        test_13(_s.as_pointer(), 0_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 19_())
+        test_13(_s.as_pointer(), 0_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 20_())
+        test_13(_s.as_pointer(), 0_(), 20_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 1_())
+        test_13(_s.as_pointer(), 1_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 9_())
+        test_13(_s.as_pointer(), 1_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 18_())
+        test_13(_s.as_pointer(), 1_(), 18_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 19_())
+        test_13(_s.as_pointer(), 1_(), 19_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 0_())
+        test_13(_s.as_pointer(), 10_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 1_())
+        test_13(_s.as_pointer(), 10_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 5_())
+        test_13(_s.as_pointer(), 10_(), 5_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 9_())
+        test_13(_s.as_pointer(), 10_(), 9_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 10_(), 10_())
+        test_13(_s.as_pointer(), 10_(), 10_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 19_(), 0_())
+        test_13(_s.as_pointer(), 19_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 19_(), 1_())
+        test_13(_s.as_pointer(), 19_(), 1_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 20_(), 0_())
+        test_13(_s.as_pointer(), 20_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 21_(), 0_())
+        test_13(_s.as_pointer(), 21_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 22_())
+        test_13(_s.as_pointer(), 0_(), 22_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 8_())
+        test_13(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 23_())
+        test_13(_s.as_pointer(), 0_(), 23_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 8_())
+        test_13(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 24_())
+        test_13(_s.as_pointer(), 0_(), 24_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 0_(), 8_())
+        test_13(_s.as_pointer(), 0_(), 8_())
     });
     ({
         let _s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_16(_s.as_pointer(), 1_(), 0_())
+        test_13(_s.as_pointer(), 1_(), 0_())
     });
 }
-pub fn test_20() -> () {
-    ({ test_string_17() });
-    ({ test_string_18() });
-    ({ test_string_19() });
+pub fn test_17() -> () {
+    ({ test_string_14() });
+    ({ test_string_15() });
+    ({ test_string_16() });
     return true;
 }
-pub fn test_alloc_21() -> () {
+pub fn test_alloc_18() -> () {
     {
         let stats: Value<test_allocator_statistics> =
             Rc::new(RefCell::new(<test_allocator_statistics>::default()));
@@ -1276,8 +1267,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_20() });
-    ({ test_alloc_21() });
+    ({ test_17() });
+    ({ test_alloc_18() });
     const _: () = assert!(true, "test()");;
     const _: () = assert!(true, "test_alloc()");;
     return 0_();

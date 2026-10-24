@@ -81,7 +81,7 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut f: () = unimplemented!();
+        let mut f: () = std_function_int__int__::new_1({ A::new() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -89,7 +89,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     unimplemented!();
     {
-        let mut f: () = unimplemented!();
+        let mut f: () = std_function_int__int__::new_2({ Some(g_1) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -97,7 +97,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     unimplemented!();
     {
-        let f: () = unimplemented!();
+        let f: () = std_function_int__int__::new_1({ A::new() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -105,7 +105,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     unimplemented!();
     {
-        let f: () = unimplemented!();
+        let f: () = std_function_int__int__::new_2({ Some(g_1) });
         unimplemented!();
         unimplemented!();
         unimplemented!();

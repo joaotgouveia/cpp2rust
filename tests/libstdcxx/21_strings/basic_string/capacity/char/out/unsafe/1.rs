@@ -386,11 +386,7 @@ pub unsafe fn test01_10() {
             unimplemented!();
         }
     }
-    let mut str05: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-        { 30_() },
-        { ('q' as ()) },
-        None,
-    );
+    let mut str05: () = unimplemented!();
     let mut str06: () = unimplemented!();
     unimplemented!();
     let mut __do_while = true;

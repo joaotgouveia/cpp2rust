@@ -25,9 +25,18 @@ pub unsafe fn test_to_ulong_0() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -53,7 +62,7 @@ pub unsafe fn test_to_ulong_0() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_1() {
+pub unsafe fn test_to_ulong_2() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (1_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -72,9 +81,18 @@ pub unsafe fn test_to_ulong_1() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -100,7 +118,7 @@ pub unsafe fn test_to_ulong_1() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_2() {
+pub unsafe fn test_to_ulong_3() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (31_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -119,9 +137,18 @@ pub unsafe fn test_to_ulong_2() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -147,7 +174,7 @@ pub unsafe fn test_to_ulong_2() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_3() {
+pub unsafe fn test_to_ulong_4() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (32_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -166,9 +193,18 @@ pub unsafe fn test_to_ulong_3() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -194,7 +230,7 @@ pub unsafe fn test_to_ulong_3() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_4() {
+pub unsafe fn test_to_ulong_5() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (33_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -213,9 +249,18 @@ pub unsafe fn test_to_ulong_4() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -241,7 +286,7 @@ pub unsafe fn test_to_ulong_4() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_5() {
+pub unsafe fn test_to_ulong_6() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (63_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -260,9 +305,18 @@ pub unsafe fn test_to_ulong_5() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -288,7 +342,7 @@ pub unsafe fn test_to_ulong_5() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_6() {
+pub unsafe fn test_to_ulong_7() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (64_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -307,9 +361,18 @@ pub unsafe fn test_to_ulong_6() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -335,7 +398,7 @@ pub unsafe fn test_to_ulong_6() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_7() {
+pub unsafe fn test_to_ulong_8() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (65_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -354,9 +417,18 @@ pub unsafe fn test_to_ulong_7() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -382,7 +454,7 @@ pub unsafe fn test_to_ulong_7() {
         unimplemented!();
     }
 }
-pub unsafe fn test_to_ulong_8() {
+pub unsafe fn test_to_ulong_9() {
     let M: () = if (((::std::mem::size_of::<()>() as ()).wrapping_mul(8_())) < (1000_())) {
         (::std::mem::size_of::<()>() as ()).wrapping_mul(8_())
     } else {
@@ -401,9 +473,18 @@ pub unsafe fn test_to_ulong_8() {
     };
     let mut tests: [(); 8] = [
         0_(),
-        (*unimplemented!()),
-        (*unimplemented!()),
-        (*unimplemented!()),
+        (*(unsafe {
+            let mut ___a: () = 1_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 2_();
+            min_1(&mut ___a, &max)
+        })),
+        (*(unsafe {
+            let mut ___a: () = 3_();
+            min_1(&mut ___a, &max)
+        })),
         (*unimplemented!()),
         (*unimplemented!()),
         (*unimplemented!()),
@@ -429,9 +510,8 @@ pub unsafe fn test_to_ulong_8() {
         unimplemented!();
     }
 }
-pub unsafe fn test_9() -> () {
+pub unsafe fn test_10() -> () {
     (unsafe { test_to_ulong_0() });
-    (unsafe { test_to_ulong_1() });
     (unsafe { test_to_ulong_2() });
     (unsafe { test_to_ulong_3() });
     (unsafe { test_to_ulong_4() });
@@ -439,6 +519,7 @@ pub unsafe fn test_9() -> () {
     (unsafe { test_to_ulong_6() });
     (unsafe { test_to_ulong_7() });
     (unsafe { test_to_ulong_8() });
+    (unsafe { test_to_ulong_9() });
     return true;
 }
 pub fn main() {
@@ -457,7 +538,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_9() });
+    (unsafe { test_10() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

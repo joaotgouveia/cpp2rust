@@ -354,11 +354,11 @@ impl deleter_wchar_t__pointer {}
 pub struct deleter_wchar_t_ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct deleter_std_basic_ostream_char__ref__pointer {}
-impl deleter_std_basic_ostream_char__ref__pointer {}
+pub struct deleter_std_basic_ostringstream_char__ref__pointer {}
+impl deleter_std_basic_ostringstream_char__ref__pointer {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct deleter_std_basic_ostream_char__ref_ {}
+pub struct deleter_std_basic_ostringstream_char__ref_ {}
 pub fn operator_shl_12(o: Ptr<()>, _a1: Ptr<deleter_char__pointer>) -> () {
     unimplemented!();
     return 1_();
@@ -769,22 +769,25 @@ impl deleter_char__pointerImpl for Ptr<deleter_char__pointer> {
         return true;
     }
 }
-pub trait deleter_std_basic_ostream_char__ref_Impl {
-    fn operator_call(&self, mut _a0: deleter_std_basic_ostream_char__ref__pointer) {
+pub trait deleter_std_basic_ostringstream_char__ref_Impl {
+    fn operator_call(&self, mut _a0: deleter_std_basic_ostringstream_char__ref__pointer) {
         unimplemented!()
     }
 }
-impl deleter_std_basic_ostream_char__ref_Impl for Ptr<deleter_std_basic_ostream_char__ref_> {}
-pub trait deleter_std_basic_ostream_char__ref__pointerImpl {
+impl deleter_std_basic_ostringstream_char__ref_Impl
+    for Ptr<deleter_std_basic_ostringstream_char__ref_>
+{
+}
+pub trait deleter_std_basic_ostringstream_char__ref__pointerImpl {
     fn to_(&self) -> () {
         unimplemented!()
     }
-    fn operator_eq(&self, mut _a0: deleter_std_basic_ostream_char__ref__pointer) -> () {
+    fn operator_eq(&self, mut _a0: deleter_std_basic_ostringstream_char__ref__pointer) -> () {
         unimplemented!()
     }
 }
-impl deleter_std_basic_ostream_char__ref__pointerImpl
-    for Ptr<deleter_std_basic_ostream_char__ref__pointer>
+impl deleter_std_basic_ostringstream_char__ref__pointerImpl
+    for Ptr<deleter_std_basic_ostringstream_char__ref__pointer>
 {
 }
 pub trait deleter_wchar_t_Impl {

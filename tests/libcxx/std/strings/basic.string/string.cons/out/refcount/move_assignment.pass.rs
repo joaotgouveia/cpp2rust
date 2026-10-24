@@ -317,16 +317,7 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_17(s1: (), s2: ()) {
+pub fn test_14(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -339,7 +330,7 @@ pub fn test_17(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_18(s1: (), s2: ()) {
+pub fn test_15(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -352,7 +343,7 @@ pub fn test_18(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_19(s1: (), s2: ()) {
+pub fn test_16(s1: (), s2: ()) {
     let s1: Value<()> = Rc::new(RefCell::new(s1));
     let s2: Value<()> = Rc::new(RefCell::new(s2));
     let s0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -365,46 +356,46 @@ pub fn test_19(s1: (), s2: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_string_20() {
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
-    ({ test_17(unimplemented!(), unimplemented!()) });
+pub fn test_string_17() {
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
+    ({ test_14(unimplemented!(), unimplemented!()) });
 }
-pub fn test_string_21() {
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
-    ({ test_18(unimplemented!(), unimplemented!()) });
+pub fn test_string_18() {
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
+    ({ test_15(unimplemented!(), unimplemented!()) });
 }
-pub fn test_string_22() {
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
-    ({ test_19(unimplemented!(), unimplemented!()) });
+pub fn test_string_19() {
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
+    ({ test_16(unimplemented!(), unimplemented!()) });
 }
-pub fn test_23() -> () {
-    ({ test_string_20() });
-    ({ test_string_21() });
-    ({ test_string_22() });
+pub fn test_20() -> () {
+    ({ test_string_17() });
+    ({ test_string_18() });
+    ({ test_string_19() });
     return true;
 }
 pub fn main() {
@@ -427,7 +418,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_23() });
+    ({ test_20() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -24,8 +24,20 @@ pub fn test_1() -> () {
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t0: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 0_() }));
+            let __tmp_1: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 1_() }));
+            std_tuple_ConstSwappable__ConstSwappable_::new({ __tmp_0.as_pointer() }, {
+                __tmp_1.as_pointer()
+            })
+        }));
+        let t1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_2: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 2_() }));
+            let __tmp_3: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 3_() }));
+            std_tuple_ConstSwappable__ConstSwappable_::new({ __tmp_2.as_pointer() }, {
+                __tmp_3.as_pointer()
+            })
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -33,8 +45,26 @@ pub fn test_1() -> () {
         unimplemented!();
     }
     {
-        let t0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t0: Value<()> = Rc::new(RefCell::new({
+            let __tmp_4: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 0_() }));
+            let __tmp_5: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 1_() }));
+            let __tmp_6: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 2_() }));
+            std_tuple_ConstSwappable__const_ConstSwappable__const_ConstSwappable_::new(
+                { __tmp_4.as_pointer() },
+                { __tmp_5.as_pointer() },
+                { __tmp_6.as_pointer() },
+            )
+        }));
+        let t1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_7: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 3_() }));
+            let __tmp_8: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 4_() }));
+            let __tmp_9: Value<ConstSwappable> = Rc::new(RefCell::new(ConstSwappable { i: 5_() }));
+            std_tuple_ConstSwappable__const_ConstSwappable__const_ConstSwappable_::new(
+                { __tmp_7.as_pointer() },
+                { __tmp_8.as_pointer() },
+                { __tmp_9.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();

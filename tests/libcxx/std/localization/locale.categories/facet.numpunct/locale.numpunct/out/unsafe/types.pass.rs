@@ -26,7 +26,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let mut l: () = unimplemented!();
     {
         unimplemented!();
-        let f: *const () = (unsafe { use_facet_0(&l) });
+        let f: *const std_numpunct_char_ = (unsafe { use_facet_0(&l) });
         (&(*f));
         {
             &(*unimplemented!());
@@ -46,7 +46,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         unimplemented!();
-        let f: *const () = (unsafe { use_facet_1(&l) });
+        let f: *const std_numpunct_wchar_t_ = (unsafe { use_facet_1(&l) });
         (&(*f));
         {
             &(*unimplemented!());

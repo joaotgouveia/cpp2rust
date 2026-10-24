@@ -62,21 +62,6 @@ impl MultiStringType {
         }
     }
 }
-pub fn is_string_asan_correct_0(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_1(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_2(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_3(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_4(_a0: Ptr<()>) -> () {
-    return true;
-}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_
@@ -97,7 +82,7 @@ pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__c
 #[byte_size(1)]
 pub struct types_concatenate_types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128__bool___types_type_list_float__double__long_double__
 {}
-pub fn for_each_5(
+pub fn for_each_0(
     mut _a0 : types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_,
     f: FnPtr<Generic>,
 ) {
@@ -171,13 +156,13 @@ pub fn for_each_5(
             ({ (*f.borrow()).spec::<fn()>(16).call() });
             0_()
         };
-        swallow_6(
+        swallow_1(
             _arg0, _arg1, _arg2, _arg3, _arg4, _arg5, _arg6, _arg7, _arg8, _arg9, _arg10, _arg11,
             _arg12, _arg13, _arg14, _arg15, _arg16,
         )
     });
 }
-pub fn swallow_6(
+pub fn swallow_1(
     mut _a0: (),
     mut _a1: (),
     mut _a2: (),
@@ -197,7 +182,7 @@ pub fn swallow_6(
     mut _a16: (),
 ) {
 }
-pub fn test_appending_7(k: (), N: (), new_capacity: ()) {
+pub fn test_appending_2(k: (), N: (), new_capacity: ()) {
     let k: Value<()> = Rc::new(RefCell::new(k));
     let N: Value<()> = Rc::new(RefCell::new(N));
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
@@ -210,7 +195,7 @@ pub fn test_appending_7(k: (), N: (), new_capacity: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_appending_8(k: (), N: (), new_capacity: ()) {
+pub fn test_appending_3(k: (), N: (), new_capacity: ()) {
     let k: Value<()> = Rc::new(RefCell::new(k));
     let N: Value<()> = Rc::new(RefCell::new(N));
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
@@ -223,7 +208,7 @@ pub fn test_appending_8(k: (), N: (), new_capacity: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_appending_9(k: (), N: (), new_capacity: ()) {
+pub fn test_appending_4(k: (), N: (), new_capacity: ()) {
     let k: Value<()> = Rc::new(RefCell::new(k));
     let N: Value<()> = Rc::new(RefCell::new(N));
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
@@ -236,7 +221,7 @@ pub fn test_appending_9(k: (), N: (), new_capacity: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_appending_10(k: (), N: (), new_capacity: ()) {
+pub fn test_appending_5(k: (), N: (), new_capacity: ()) {
     let k: Value<()> = Rc::new(RefCell::new(k));
     let N: Value<()> = Rc::new(RefCell::new(N));
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
@@ -249,7 +234,7 @@ pub fn test_appending_10(k: (), N: (), new_capacity: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_appending_11(k: (), N: (), new_capacity: ()) {
+pub fn test_appending_6(k: (), N: (), new_capacity: ()) {
     let k: Value<()> = Rc::new(RefCell::new(k));
     let N: Value<()> = Rc::new(RefCell::new(N));
     let new_capacity: Value<()> = Rc::new(RefCell::new(new_capacity));
@@ -262,7 +247,7 @@ pub fn test_appending_11(k: (), N: (), new_capacity: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_truncating_12(mut o: (), N: ()) {
+pub fn test_truncating_7(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -272,7 +257,7 @@ pub fn test_truncating_12(mut o: (), N: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_truncating_13(mut o: (), N: ()) {
+pub fn test_truncating_8(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -282,7 +267,7 @@ pub fn test_truncating_13(mut o: (), N: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_truncating_14(mut o: (), N: ()) {
+pub fn test_truncating_9(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -292,7 +277,7 @@ pub fn test_truncating_14(mut o: (), N: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_truncating_15(mut o: (), N: ()) {
+pub fn test_truncating_10(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -302,7 +287,7 @@ pub fn test_truncating_15(mut o: (), N: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_truncating_16(mut o: (), N: ()) {
+pub fn test_truncating_11(mut o: (), N: ()) {
     let N: Value<()> = Rc::new(RefCell::new(N));
     unimplemented!();
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -312,72 +297,72 @@ pub fn test_truncating_16(mut o: (), N: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_17() -> () {
-    ({ test_appending_7(10_(), 15_(), 15_()) });
-    ({ test_appending_7(10_(), 15_(), 20_()) });
-    ({ test_appending_7(10_(), 40_(), 40_()) });
-    ({ test_appending_7(10_(), 40_(), 50_()) });
-    ({ test_appending_7(30_(), 35_(), 35_()) });
-    ({ test_appending_7(30_(), 35_(), 45_()) });
-    ({ test_appending_7(10_(), 15_(), 30_()) });
-    ({ test_truncating_12(15_(), 10_()) });
-    ({ test_truncating_12(40_(), 35_()) });
-    ({ test_truncating_12(40_(), 10_()) });
+pub fn test_12() -> () {
+    ({ test_appending_2(10_(), 15_(), 15_()) });
+    ({ test_appending_2(10_(), 15_(), 20_()) });
+    ({ test_appending_2(10_(), 40_(), 40_()) });
+    ({ test_appending_2(10_(), 40_(), 50_()) });
+    ({ test_appending_2(30_(), 35_(), 35_()) });
+    ({ test_appending_2(30_(), 35_(), 45_()) });
+    ({ test_appending_2(10_(), 15_(), 30_()) });
+    ({ test_truncating_7(15_(), 10_()) });
+    ({ test_truncating_7(40_(), 35_()) });
+    ({ test_truncating_7(40_(), 10_()) });
     return true;
 }
-pub fn test_18() -> () {
-    ({ test_appending_8(10_(), 15_(), 15_()) });
-    ({ test_appending_8(10_(), 15_(), 20_()) });
-    ({ test_appending_8(10_(), 40_(), 40_()) });
-    ({ test_appending_8(10_(), 40_(), 50_()) });
-    ({ test_appending_8(30_(), 35_(), 35_()) });
-    ({ test_appending_8(30_(), 35_(), 45_()) });
-    ({ test_appending_8(10_(), 15_(), 30_()) });
-    ({ test_truncating_13(15_(), 10_()) });
-    ({ test_truncating_13(40_(), 35_()) });
-    ({ test_truncating_13(40_(), 10_()) });
+pub fn test_13() -> () {
+    ({ test_appending_3(10_(), 15_(), 15_()) });
+    ({ test_appending_3(10_(), 15_(), 20_()) });
+    ({ test_appending_3(10_(), 40_(), 40_()) });
+    ({ test_appending_3(10_(), 40_(), 50_()) });
+    ({ test_appending_3(30_(), 35_(), 35_()) });
+    ({ test_appending_3(30_(), 35_(), 45_()) });
+    ({ test_appending_3(10_(), 15_(), 30_()) });
+    ({ test_truncating_8(15_(), 10_()) });
+    ({ test_truncating_8(40_(), 35_()) });
+    ({ test_truncating_8(40_(), 10_()) });
     return true;
 }
-pub fn test_19() -> () {
-    ({ test_appending_9(10_(), 15_(), 15_()) });
-    ({ test_appending_9(10_(), 15_(), 20_()) });
-    ({ test_appending_9(10_(), 40_(), 40_()) });
-    ({ test_appending_9(10_(), 40_(), 50_()) });
-    ({ test_appending_9(30_(), 35_(), 35_()) });
-    ({ test_appending_9(30_(), 35_(), 45_()) });
-    ({ test_appending_9(10_(), 15_(), 30_()) });
-    ({ test_truncating_14(15_(), 10_()) });
-    ({ test_truncating_14(40_(), 35_()) });
-    ({ test_truncating_14(40_(), 10_()) });
+pub fn test_14() -> () {
+    ({ test_appending_4(10_(), 15_(), 15_()) });
+    ({ test_appending_4(10_(), 15_(), 20_()) });
+    ({ test_appending_4(10_(), 40_(), 40_()) });
+    ({ test_appending_4(10_(), 40_(), 50_()) });
+    ({ test_appending_4(30_(), 35_(), 35_()) });
+    ({ test_appending_4(30_(), 35_(), 45_()) });
+    ({ test_appending_4(10_(), 15_(), 30_()) });
+    ({ test_truncating_9(15_(), 10_()) });
+    ({ test_truncating_9(40_(), 35_()) });
+    ({ test_truncating_9(40_(), 10_()) });
     return true;
 }
-pub fn test_20() -> () {
-    ({ test_appending_10(10_(), 15_(), 15_()) });
-    ({ test_appending_10(10_(), 15_(), 20_()) });
-    ({ test_appending_10(10_(), 40_(), 40_()) });
-    ({ test_appending_10(10_(), 40_(), 50_()) });
-    ({ test_appending_10(30_(), 35_(), 35_()) });
-    ({ test_appending_10(30_(), 35_(), 45_()) });
-    ({ test_appending_10(10_(), 15_(), 30_()) });
-    ({ test_truncating_15(15_(), 10_()) });
-    ({ test_truncating_15(40_(), 35_()) });
-    ({ test_truncating_15(40_(), 10_()) });
+pub fn test_15() -> () {
+    ({ test_appending_5(10_(), 15_(), 15_()) });
+    ({ test_appending_5(10_(), 15_(), 20_()) });
+    ({ test_appending_5(10_(), 40_(), 40_()) });
+    ({ test_appending_5(10_(), 40_(), 50_()) });
+    ({ test_appending_5(30_(), 35_(), 35_()) });
+    ({ test_appending_5(30_(), 35_(), 45_()) });
+    ({ test_appending_5(10_(), 15_(), 30_()) });
+    ({ test_truncating_10(15_(), 10_()) });
+    ({ test_truncating_10(40_(), 35_()) });
+    ({ test_truncating_10(40_(), 10_()) });
     return true;
 }
-pub fn test_21() -> () {
-    ({ test_appending_11(10_(), 15_(), 15_()) });
-    ({ test_appending_11(10_(), 15_(), 20_()) });
-    ({ test_appending_11(10_(), 40_(), 40_()) });
-    ({ test_appending_11(10_(), 40_(), 50_()) });
-    ({ test_appending_11(30_(), 35_(), 35_()) });
-    ({ test_appending_11(30_(), 35_(), 45_()) });
-    ({ test_appending_11(10_(), 15_(), 30_()) });
-    ({ test_truncating_16(15_(), 10_()) });
-    ({ test_truncating_16(40_(), 35_()) });
-    ({ test_truncating_16(40_(), 10_()) });
+pub fn test_16() -> () {
+    ({ test_appending_6(10_(), 15_(), 15_()) });
+    ({ test_appending_6(10_(), 15_(), 20_()) });
+    ({ test_appending_6(10_(), 40_(), 40_()) });
+    ({ test_appending_6(10_(), 40_(), 50_()) });
+    ({ test_appending_6(30_(), 35_(), 35_()) });
+    ({ test_appending_6(30_(), 35_(), 45_()) });
+    ({ test_appending_6(10_(), 15_(), 30_()) });
+    ({ test_truncating_11(15_(), 10_()) });
+    ({ test_truncating_11(40_(), 35_()) });
+    ({ test_truncating_11(40_(), 10_()) });
     return true;
 }
-pub fn test_value_categories_22() -> () {
+pub fn test_value_categories_17() -> () {
     let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
@@ -389,10 +374,10 @@ pub fn test_value_categories_22() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct RefQualified_23 {}
-pub fn test_integer_like_return_types_24() -> () {
+pub struct RefQualified_18 {}
+pub fn test_integer_like_return_types_19() -> () {
     ({
-        for_each_5 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_  >::default()  , lambda! ( Generic , { } , | | { let mut s : ()  = unimplemented!()  ;
+        for_each_0 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_  >::default()  , lambda! ( Generic , { } , | | { let mut s : ()  = unimplemented!()  ;
   ;
  ;
  unimplemented!()  ;
@@ -501,10 +486,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_17() });
-    ({ test_18() });
-    ({ test_19() });
-    ({ test_20() });
+    ({ test_12() });
+    ({ test_13() });
+    ({ test_14() });
+    ({ test_15() });
     const _: () = assert!(
         true,
         "test<std::basic_string<char, std::char_traits<char>, std::allocator<char>>>()"
@@ -521,13 +506,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         true,
         "test<std::basic_string<char32_t, std::char_traits<char32_t>, std::allocator<char32_t>>>()"
     );;
-    ({ test_21() });
+    ({ test_16() });
     const _: () = assert!(
         true,
         "test<std::basic_string<wchar_t, std::char_traits<wchar_t>, std::allocator<wchar_t>>>()"
     );;
-    ({ test_value_categories_22() });
-    ({ test_integer_like_return_types_24() });
+    ({ test_value_categories_17() });
+    ({ test_integer_like_return_types_19() });
     const _: () = assert!(true, "test_value_categories()");;
     const _: () = assert!(true, "test_integer_like_return_types()");;
     return 0_();
@@ -596,10 +581,10 @@ impl MultiStringTypeImpl for Ptr<MultiStringType> {
         return (*self).with(|__s| __s.u32_.clone());
     }
 }
-pub trait RefQualified_23Impl {
+pub trait RefQualified_18Impl {
     fn operator_call(&self, _a0: Ptr<()>, _a1: ()) -> ();
 }
-impl RefQualified_23Impl for Ptr<RefQualified_23> {
+impl RefQualified_18Impl for Ptr<RefQualified_18> {
     fn operator_call(&self, mut _a0: Ptr<()>, mut _a1: ()) -> () {
         return 0_();
     }

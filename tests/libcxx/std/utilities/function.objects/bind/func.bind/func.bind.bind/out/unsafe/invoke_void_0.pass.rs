@@ -24,32 +24,32 @@ pub unsafe fn test_3(mut f: ()) {
 }
 pub unsafe fn test_4(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_5(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_6(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_7(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_8(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_9(mut f: ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { f() });
     unimplemented!();
 }
 pub unsafe fn test_const_10(f: *const ()) {
@@ -59,12 +59,12 @@ pub unsafe fn test_const_10(f: *const ()) {
 }
 pub unsafe fn test_const_11(f: *const ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { (*f)() });
     unimplemented!();
 }
 pub unsafe fn test_const_12(f: *const ()) {
     let mut save_count: () = (*std::cell::LazyCell::force_mut(&mut *&raw mut count_0));
-    unimplemented!();
+    (unsafe { (*f)() });
     unimplemented!();
 }
 pub unsafe fn f_13() {

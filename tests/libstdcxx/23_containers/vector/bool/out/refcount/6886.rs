@@ -261,16 +261,16 @@ pub fn test02_10() {
     unimplemented!();
     i = 0_();
     'loop_: while (i < 66_()) {
-        unimplemented!() = (0_() != 0);
+        unimplemented!();
         i.prefix_inc();
     }
-    unimplemented!() = (1_() != 0);
-    unimplemented!() = (1_() != 0);
-    unimplemented!() = (1_() != 0);
-    unimplemented!() = (1_() != 0);
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     'loop_: while unimplemented!() {
-        if ({ unimplemented!()() }) {
+        if unimplemented!() {
             num.prefix_inc();
         }
         unimplemented!();

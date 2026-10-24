@@ -409,19 +409,7 @@ impl Default for safe_allocator_char_ {
         { safe_allocator_char_::new() }
     }
 }
-pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_16(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_17(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_18() {
+pub fn test_14() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -443,7 +431,7 @@ pub fn test_18() {
         unimplemented!();
     }
 }
-pub fn test2_19() {
+pub fn test2_15() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -465,7 +453,7 @@ pub fn test2_19() {
         unimplemented!();
     }
 }
-pub fn test2_20() {
+pub fn test2_16() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -487,7 +475,7 @@ pub fn test2_20() {
         unimplemented!();
     }
 }
-pub fn test2_21() {
+pub fn test2_17() {
     {
         const _: () = assert!(true, "(noexcept(S{{}}))");;
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -509,11 +497,11 @@ pub fn test2_21() {
         unimplemented!();
     }
 }
-pub fn test_22() -> () {
-    ({ test_18() });
-    ({ test2_19() });
-    ({ test2_20() });
-    ({ test2_21() });
+pub fn test_18() -> () {
+    ({ test_14() });
+    ({ test2_15() });
+    ({ test2_16() });
+    ({ test2_17() });
     return true;
 }
 pub fn main() {
@@ -536,7 +524,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_22() });
+    ({ test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

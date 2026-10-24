@@ -262,7 +262,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -281,7 +281,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == (-1_())) {
+        if !((unimplemented!()) == (-1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -300,7 +300,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == (!(1_() != 0))) {
+        if !((unimplemented!()) == (!(1_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -319,7 +319,7 @@ pub unsafe fn test01_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == (!1_())) {
+        if !((unimplemented!()) == (!1_())) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -344,7 +344,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) + (3_()))) {
+        if !((unimplemented!()) == ((1_()) + (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -363,7 +363,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) - (3_()))) {
+        if !((unimplemented!()) == ((1_()) - (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -382,7 +382,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) * (3_()))) {
+        if !((unimplemented!()) == ((1_()) * (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -401,7 +401,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) / (3_()))) {
+        if !((unimplemented!()) == ((1_()) / (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -420,7 +420,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) % (3_()))) {
+        if !((unimplemented!()) == ((1_()) % (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -439,7 +439,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) ^ (3_()))) {
+        if !((unimplemented!()) == ((1_()) ^ (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -458,7 +458,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) & (3_()))) {
+        if !((unimplemented!()) == ((1_()) & (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -477,7 +477,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) | (3_()))) {
+        if !((unimplemented!()) == ((1_()) | (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -496,7 +496,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) << (3_()))) {
+        if !((unimplemented!()) == ((1_()) << (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -515,7 +515,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) >> (3_()))) {
+        if !((unimplemented!()) == ((1_()) >> (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -534,7 +534,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_() != 0) && (3_() != 0))) {
+        if !((unimplemented!()) == ((1_() != 0) && (3_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -553,7 +553,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_() != 0) || (3_() != 0))) {
+        if !((unimplemented!()) == ((1_() != 0) || (3_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -572,7 +572,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) == (3_()))) {
+        if !((unimplemented!()) == ((1_()) == (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -591,7 +591,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) != (3_()))) {
+        if !((unimplemented!()) == ((1_()) != (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -610,7 +610,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) < (3_()))) {
+        if !((unimplemented!()) == ((1_()) < (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -629,7 +629,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) > (3_()))) {
+        if !((unimplemented!()) == ((1_()) > (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -648,7 +648,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) <= (3_()))) {
+        if !((unimplemented!()) == ((1_()) <= (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -667,7 +667,7 @@ pub unsafe fn test02_12() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) >= (3_()))) {
+        if !((unimplemented!()) == ((1_()) >= (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -691,7 +691,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) + (3_()))) {
+        if !((unimplemented!()) == ((1_()) + (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -710,7 +710,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) - (3_()))) {
+        if !((unimplemented!()) == ((1_()) - (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -729,7 +729,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) * (3_()))) {
+        if !((unimplemented!()) == ((1_()) * (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -748,7 +748,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) / (3_()))) {
+        if !((unimplemented!()) == ((1_()) / (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -767,7 +767,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) % (3_()))) {
+        if !((unimplemented!()) == ((1_()) % (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -786,7 +786,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) ^ (3_()))) {
+        if !((unimplemented!()) == ((1_()) ^ (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -805,7 +805,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) & (3_()))) {
+        if !((unimplemented!()) == ((1_()) & (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -824,7 +824,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) | (3_()))) {
+        if !((unimplemented!()) == ((1_()) | (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -843,7 +843,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) << (3_()))) {
+        if !((unimplemented!()) == ((1_()) << (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -862,7 +862,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) >> (3_()))) {
+        if !((unimplemented!()) == ((1_()) >> (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -881,7 +881,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_() != 0) && (3_() != 0))) {
+        if !((unimplemented!()) == ((1_() != 0) && (3_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -900,7 +900,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_() != 0) || (3_() != 0))) {
+        if !((unimplemented!()) == ((1_() != 0) || (3_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -919,7 +919,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) == (3_()))) {
+        if !((unimplemented!()) == ((1_()) == (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -938,7 +938,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) != (3_()))) {
+        if !((unimplemented!()) == ((1_()) != (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -957,7 +957,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) < (3_()))) {
+        if !((unimplemented!()) == ((1_()) < (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -976,7 +976,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) > (3_()))) {
+        if !((unimplemented!()) == ((1_()) > (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -995,7 +995,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) <= (3_()))) {
+        if !((unimplemented!()) == ((1_()) <= (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1014,7 +1014,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((1_()) >= (3_()))) {
+        if !((unimplemented!()) == ((1_()) >= (3_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1033,7 +1033,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) + (1_()))) {
+        if !((unimplemented!()) == ((3_()) + (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1052,7 +1052,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) - (1_()))) {
+        if !((unimplemented!()) == ((3_()) - (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1071,7 +1071,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) * (1_()))) {
+        if !((unimplemented!()) == ((3_()) * (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1090,7 +1090,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) / (1_()))) {
+        if !((unimplemented!()) == ((3_()) / (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1109,7 +1109,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) % (1_()))) {
+        if !((unimplemented!()) == ((3_()) % (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1128,7 +1128,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) ^ (1_()))) {
+        if !((unimplemented!()) == ((3_()) ^ (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1147,7 +1147,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) & (1_()))) {
+        if !((unimplemented!()) == ((3_()) & (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1166,7 +1166,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) | (1_()))) {
+        if !((unimplemented!()) == ((3_()) | (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1185,7 +1185,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) << (1_()))) {
+        if !((unimplemented!()) == ((3_()) << (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1204,7 +1204,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) >> (1_()))) {
+        if !((unimplemented!()) == ((3_()) >> (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1223,7 +1223,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_() != 0) && (1_() != 0))) {
+        if !((unimplemented!()) == ((3_() != 0) && (1_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1242,7 +1242,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_() != 0) || (1_() != 0))) {
+        if !((unimplemented!()) == ((3_() != 0) || (1_() != 0))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1261,7 +1261,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) == (1_()))) {
+        if !((unimplemented!()) == ((3_()) == (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1280,7 +1280,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) != (1_()))) {
+        if !((unimplemented!()) == ((3_()) != (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1299,7 +1299,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) < (1_()))) {
+        if !((unimplemented!()) == ((3_()) < (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1318,7 +1318,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) > (1_()))) {
+        if !((unimplemented!()) == ((3_()) > (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1337,7 +1337,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) <= (1_()))) {
+        if !((unimplemented!()) == ((3_()) <= (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -1356,7 +1356,7 @@ pub unsafe fn test03_13() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(((unimplemented!())[(0_()) as usize]) == ((3_()) >= (1_()))) {
+        if !((unimplemented!()) == ((3_()) >= (1_()))) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

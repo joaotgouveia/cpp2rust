@@ -160,16 +160,7 @@ impl Default for safe_allocator_char_ {
         unsafe { safe_allocator_char_::new() }
     }
 }
-pub unsafe fn is_string_asan_correct_6(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_7(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn is_string_asan_correct_8(_a0: *const ()) -> () {
-    return true;
-}
-pub unsafe fn test_9(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
+pub unsafe fn test_6(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
     let old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
     if ((pos) <= (old_size)) {
@@ -179,7 +170,7 @@ pub unsafe fn test_9(mut s: (), mut pos: (), mut str: *const (), mut expected: (
         unimplemented!();
     }
 }
-pub unsafe fn test_10(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
+pub unsafe fn test_7(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
     let old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
     if ((pos) <= (old_size)) {
@@ -189,7 +180,7 @@ pub unsafe fn test_10(mut s: (), mut pos: (), mut str: *const (), mut expected: 
         unimplemented!();
     }
 }
-pub unsafe fn test_11(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
+pub unsafe fn test_8(mut s: (), mut pos: (), mut str: *const (), mut expected: ()) {
     let old_size: () = unimplemented!();
     let mut s0: () = unimplemented!();
     if ((pos) <= (old_size)) {
@@ -199,11 +190,11 @@ pub unsafe fn test_11(mut s: (), mut pos: (), mut str: *const (), mut expected: 
         unimplemented!();
     }
 }
-pub unsafe fn test_string_12() {
-    (unsafe { test_9(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+pub unsafe fn test_string_9() {
+    (unsafe { test_6(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -211,17 +202,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -229,17 +220,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -247,17 +238,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -265,17 +256,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             2_(),
             c"1234567890".as_ptr(),
@@ -283,17 +274,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             2_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             4_(),
             c"1234567890".as_ptr(),
@@ -301,17 +292,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             4_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             5_(),
             c"1234567890".as_ptr(),
@@ -319,17 +310,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             5_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             6_(),
             c"1234567890".as_ptr(),
@@ -337,17 +328,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             6_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -355,17 +346,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -373,17 +364,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             5_(),
             c"1234567890".as_ptr(),
@@ -391,17 +382,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             5_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             9_(),
             c"1234567890".as_ptr(),
@@ -409,17 +400,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             9_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             10_(),
             c"1234567890".as_ptr(),
@@ -427,17 +418,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             10_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             11_(),
             c"1234567890".as_ptr(),
@@ -445,17 +436,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             11_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -463,17 +454,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -481,17 +472,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             10_(),
             c"1234567890".as_ptr(),
@@ -499,17 +490,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             10_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             19_(),
             c"1234567890".as_ptr(),
@@ -517,17 +508,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             19_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             20_(),
             c"1234567890".as_ptr(),
@@ -535,17 +526,17 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             20_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_9(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_9(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_6(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_9(
+        test_6(
             unimplemented!(),
             21_(),
             c"1234567890".as_ptr(),
@@ -553,369 +544,7 @@ pub unsafe fn test_string_12() {
         )
     });
     (unsafe {
-        test_9(
-            unimplemented!(),
-            21_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-}
-pub unsafe fn test_string_13() {
-    (unsafe { test_10(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            2_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            2_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            4_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            4_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            5_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            5_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            6_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            6_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            5_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            5_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            9_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            9_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            10_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            10_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            11_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            11_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            0_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            1_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            10_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            10_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            19_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            19_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            20_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            20_(),
-            c"12345678901234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe { test_10(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_10(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
-    (unsafe {
-        test_10(
-            unimplemented!(),
-            21_(),
-            c"1234567890".as_ptr(),
-            unimplemented!(),
-        )
-    });
-    (unsafe {
-        test_10(
+        test_6(
             unimplemented!(),
             21_(),
             c"12345678901234567890".as_ptr(),
@@ -923,11 +552,11 @@ pub unsafe fn test_string_13() {
         )
     });
 }
-pub unsafe fn test_string_14() {
-    (unsafe { test_11(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+pub unsafe fn test_string_10() {
+    (unsafe { test_7(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -935,17 +564,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -953,17 +582,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -971,17 +600,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -989,17 +618,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             2_(),
             c"1234567890".as_ptr(),
@@ -1007,17 +636,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             2_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             4_(),
             c"1234567890".as_ptr(),
@@ -1025,17 +654,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             4_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             5_(),
             c"1234567890".as_ptr(),
@@ -1043,17 +672,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             5_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             6_(),
             c"1234567890".as_ptr(),
@@ -1061,17 +690,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             6_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -1079,17 +708,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -1097,17 +726,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             5_(),
             c"1234567890".as_ptr(),
@@ -1115,17 +744,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             5_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             9_(),
             c"1234567890".as_ptr(),
@@ -1133,17 +762,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             9_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             10_(),
             c"1234567890".as_ptr(),
@@ -1151,17 +780,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             10_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             11_(),
             c"1234567890".as_ptr(),
@@ -1169,17 +798,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             11_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"1234567890".as_ptr(),
@@ -1187,17 +816,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             0_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"1234567890".as_ptr(),
@@ -1205,17 +834,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             1_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             10_(),
             c"1234567890".as_ptr(),
@@ -1223,17 +852,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             10_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             19_(),
             c"1234567890".as_ptr(),
@@ -1241,17 +870,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             19_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             20_(),
             c"1234567890".as_ptr(),
@@ -1259,17 +888,17 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             20_(),
             c"12345678901234567890".as_ptr(),
             unimplemented!(),
         )
     });
-    (unsafe { test_11(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
-    (unsafe { test_11(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_7(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             21_(),
             c"1234567890".as_ptr(),
@@ -1277,7 +906,7 @@ pub unsafe fn test_string_14() {
         )
     });
     (unsafe {
-        test_11(
+        test_7(
             unimplemented!(),
             21_(),
             c"12345678901234567890".as_ptr(),
@@ -1285,10 +914,372 @@ pub unsafe fn test_string_14() {
         )
     });
 }
-pub unsafe fn test_15() -> () {
-    (unsafe { test_string_12() });
-    (unsafe { test_string_13() });
-    (unsafe { test_string_14() });
+pub unsafe fn test_string_11() {
+    (unsafe { test_8(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 2_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 2_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            2_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            2_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 4_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 4_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            4_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            4_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            5_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            5_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 6_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 6_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            6_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            6_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 5_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 5_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            5_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            5_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 9_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 9_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            9_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            9_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            10_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            10_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 11_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 11_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            11_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            11_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 0_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 0_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            0_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 1_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 1_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            1_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 10_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 10_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            10_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            10_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 19_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 19_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            19_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            19_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 20_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 20_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            20_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            20_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe { test_8(unimplemented!(), 21_(), c"".as_ptr(), unimplemented!()) });
+    (unsafe { test_8(unimplemented!(), 21_(), c"12345".as_ptr(), unimplemented!()) });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            21_(),
+            c"1234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+    (unsafe {
+        test_8(
+            unimplemented!(),
+            21_(),
+            c"12345678901234567890".as_ptr(),
+            unimplemented!(),
+        )
+    });
+}
+pub unsafe fn test_12() -> () {
+    (unsafe { test_string_9() });
+    (unsafe { test_string_10() });
+    (unsafe { test_string_11() });
     {
         let mut s_short: () = unimplemented!();
         let mut s_long: () = unimplemented!();
@@ -1319,7 +1310,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_15() });
+    (unsafe { test_12() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

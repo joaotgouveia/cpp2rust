@@ -286,7 +286,7 @@ pub struct service_result_int_ {}
 impl service_result_int_ {
     pub unsafe fn get_result() -> () {
         let mut sr: () = unimplemented!();
-        return unimplemented!();
+        return sr;
     }
     pub unsafe fn get_result_with_cond(mut cond: ()) -> () {
         if cond {
@@ -301,7 +301,7 @@ pub struct service_result_std_optional_int__ {}
 impl service_result_std_optional_int__ {
     pub unsafe fn get_result() -> () {
         let mut sr: () = unimplemented!();
-        return unimplemented!();
+        return sr;
     }
     pub unsafe fn get_result_with_cond(mut cond: ()) -> () {
         if cond {

@@ -28,14 +28,34 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let t1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t1: Value<()> = Rc::new(RefCell::new({
+            let __tmp_0: Value<()> = Rc::new(RefCell::new(42_()));
+            let __tmp_1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let __tmp_2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            std_tuple_int__std_string__std_complex_float__::new(
+                { __tmp_0.as_pointer() },
+                { __tmp_1.as_pointer() },
+                { __tmp_2.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let t2: Value<()> = Rc::new(RefCell::new({
+            let __tmp_3: Value<()> = Rc::new(RefCell::new(42_()));
+            let __tmp_4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let __tmp_5: Value<()> = Rc::new(RefCell::new(23_()));
+            let __tmp_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            std_tuple_int__std_string__int__std_complex_float__::new(
+                { __tmp_3.as_pointer() },
+                { __tmp_4.as_pointer() },
+                { __tmp_5.as_pointer() },
+                { __tmp_6.as_pointer() },
+            )
+        }));
         unimplemented!();
         unimplemented!();
     }

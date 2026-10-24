@@ -96,7 +96,7 @@ pub unsafe fn testImplicitCopy2_2() -> () {
 }
 pub unsafe fn testImplicitCopy3_3() -> () {
     let i: ImplicitCopy = ImplicitCopy::new({ 42_() });
-    return unimplemented!();
+    return i;
 }
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
@@ -115,7 +115,10 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     {
-        let mut t: () = unimplemented!();
+        let mut t: () = {
+            let mut __tmp_0: *mut () = std::ptr::null_mut();
+            std_tuple_int_ptr_::new({ &mut __tmp_0 })
+        };
         unimplemented!();
     }
     {
@@ -131,7 +134,11 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         const _: () = assert!(true, "std::get<0>(t) == 0");;
     }
     {
-        let mut t: () = unimplemented!();
+        let mut t: () = {
+            let mut __tmp_1: () = 2_();
+            let mut __tmp_2: *mut () = std::ptr::null_mut();
+            std_tuple_int__char_ptr_::new_1({ &mut __tmp_1 }, { &mut __tmp_2 })
+        };
         unimplemented!();
         unimplemented!();
     }

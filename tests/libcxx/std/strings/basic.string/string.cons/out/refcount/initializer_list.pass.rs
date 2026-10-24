@@ -344,25 +344,7 @@ impl Default for safe_allocator_wchar_t_ {
         { safe_allocator_wchar_t_::new() }
     }
 }
-pub fn is_string_asan_correct_10(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_11(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_12(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_13(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_14(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn is_string_asan_correct_15(_a0: Ptr<()>) -> () {
-    return true;
-}
-pub fn test_string_16() {
+pub fn test_string_10() {
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -384,7 +366,7 @@ pub fn test_string_16() {
         unimplemented!();
     }
 }
-pub fn test_string_17() {
+pub fn test_string_11() {
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -406,7 +388,7 @@ pub fn test_string_17() {
         unimplemented!();
     }
 }
-pub fn test_string_18() {
+pub fn test_string_12() {
     {
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -428,10 +410,10 @@ pub fn test_string_18() {
         unimplemented!();
     }
 }
-pub fn test_19() -> () {
-    ({ test_string_16() });
-    ({ test_string_17() });
-    ({ test_string_18() });
+pub fn test_13() -> () {
+    ({ test_string_10() });
+    ({ test_string_11() });
+    ({ test_string_12() });
     return true;
 }
 pub fn main() {
@@ -454,7 +436,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_19() });
+    ({ test_13() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

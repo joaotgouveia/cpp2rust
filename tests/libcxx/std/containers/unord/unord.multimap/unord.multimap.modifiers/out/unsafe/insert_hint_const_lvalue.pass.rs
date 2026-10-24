@@ -76,7 +76,7 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
  } }
 pub unsafe fn do_insert_const_lvalue_test_4() {
     let mut c: () = unimplemented!();
-    let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_double__int___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
+    let mut e: () = unimplemented!();
     let v1: () = unimplemented!();
     let mut r: () = unimplemented!();
     unimplemented!();
@@ -100,7 +100,7 @@ pub unsafe fn do_insert_const_lvalue_test_4() {
 }
 pub unsafe fn do_insert_const_lvalue_test_5() {
     let mut c: () = unimplemented!();
-    let mut e : () = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_double__int___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
+    let mut e: () = unimplemented!();
     let v1: () = unimplemented!();
     let mut r: () = unimplemented!();
     unimplemented!();

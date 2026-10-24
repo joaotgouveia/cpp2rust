@@ -16,10 +16,7 @@ pub unsafe fn test_1() -> () {
     const _: () = assert!(true, "");;
     let mut vec_: () = unimplemented!();
     unimplemented!();
-    let mut ref_: () = {
-        let mut __tmp_0: () = unimplemented!();
-        std___bit_const_reference_std_vector_bool__std_allocator_bool___::new_1({ &mut __tmp_0 })
-    };
+    let mut ref_: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();

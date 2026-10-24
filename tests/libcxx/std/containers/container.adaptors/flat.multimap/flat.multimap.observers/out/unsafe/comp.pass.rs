@@ -43,7 +43,7 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut comp: () = unimplemented!();
+        let mut comp: () = std_function_bool__int__int__::new_1({ unimplemented!() });
         let mut m: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -74,7 +74,9 @@ pub unsafe fn test_4() -> () {
         unimplemented!();
     }
     {
-        let mut comp: () = unimplemented!();
+        let mut comp : () = std_function_bool__const_std_vector_int__std_allocator_int___ref__const_std_vector_int__std_allocator_int___ref__ :: new_1 ( { lambda_unsafe! ( Generic , { let i : () = 1_() ;
+ } , | x : *const () , y : *const () , | -> () { return ( ( ( * unimplemented!()  )  ) < ( ( * unimplemented!()  )  ) )  ;
+ } ) } , )  ;
         let mut m: () = unimplemented!();
         let mut vc : std_flat_multimap_std_vector_int___int__std_function_bool__const_std_vector_int__ref__const_std_vector_int__ref____value_compare = unimplemented!()  ;
         const _: () = assert!(( ( ::std::mem::size_of::<std_flat_multimap_std_vector_int___int__std_function_bool__const_std_vector_int__ref__const_std_vector_int__ref____value_compare>() ) >= ( ::std::mem::size_of::<()>() ) ) , "sizeof(vc) >= sizeof(Comp)");;

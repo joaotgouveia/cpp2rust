@@ -260,7 +260,7 @@ pub fn test02_10() {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(({ (*r.borrow())() }) == false) {
+        if !(unimplemented!() == false) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
