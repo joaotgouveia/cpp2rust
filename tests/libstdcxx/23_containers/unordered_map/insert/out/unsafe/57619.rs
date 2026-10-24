@@ -260,9 +260,7 @@ pub unsafe fn test01_10() {
     {
         let mut mymap: () = unimplemented!();
         let mut mypair: () = unimplemented!();
-        (unsafe {
-            mymap . insert_41_struct_std_pair_class_std_basic_string_char___class_std_basic_string_char____ref  ( & mut mypair , )
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -286,10 +284,7 @@ pub unsafe fn test01_10() {
     {
         let mut mymap: () = unimplemented!();
         let mut mypair: () = unimplemented!();
-        (unsafe {
-            let ___hint: () = unimplemented!();
-            mymap . insert_44_struct_std_pair_class_std_basic_string_char___class_std_basic_string_char____ref  ( ___hint , & mut mypair , )
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

@@ -10,7 +10,7 @@ const _: () = assert!(!(false), "!ErrorNoexcept<int>");
 const _: () = assert!(true, "ErrorNoexcept<std::unexpected<int>>");
 pub unsafe fn test_0() -> () {
     let unex: () = unimplemented!();
-    let i: *const () = (unsafe { unex.error_10() });
+    let i: *const () = (unsafe { (*unimplemented!()).error_10() });
     const _: () = assert!(true, "std::same_as<decltype(i), const int&&>");;
     unimplemented!();
     return true;

@@ -341,7 +341,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut p0: () = unimplemented!();
         let mut p1: () = std_shared_ptr_int_::new_1(
             { Default::default() },
-            { move_deleter_int_::move_from({ &mut d }) },
+            { move_deleter_int_::move_from({ &mut (*unimplemented!()) }) },
             None,
         );
     }

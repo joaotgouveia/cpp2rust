@@ -261,14 +261,8 @@ pub fn main() {
 fn main_0() -> () {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*a.borrow()).insert_37_struct_std_pair_int__int_(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*b.borrow()).insert_37_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

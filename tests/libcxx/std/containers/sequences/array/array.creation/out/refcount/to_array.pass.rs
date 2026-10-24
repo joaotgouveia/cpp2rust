@@ -230,12 +230,7 @@ impl Default for TrivialMoveOnly {
 }
 pub fn tests_22() -> () {
     {
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-                to_array_23(___arr.as_pointer())
-            }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -243,13 +238,7 @@ pub fn tests_22() -> () {
     }
     {
         let mut l1: () = 42_();
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___arr: Value<Box<[()]>> =
-                    Rc::new(RefCell::new(Box::new([1_(), 4_(), 9_(), l1])));
-                to_array_24(___arr.as_pointer())
-            }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "arr.size() == 4");;
         unimplemented!();
@@ -258,9 +247,7 @@ pub fn tests_22() -> () {
         unimplemented!();
     }
     {
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({ to_array_25(Ptr::<()>::from_string_literal(b"meow")) }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -269,16 +256,16 @@ pub fn tests_22() -> () {
         unimplemented!();
     }
     {
-        let source: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([4_f64, 5_f64, 6_f64])));
-        let arr: Value<()> = Rc::new(RefCell::new(({ to_array_26(source.as_pointer()) })));
+        let mut source: [(); 3] = [4_f64, 5_f64, 6_f64];
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let source: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([4_f64, 5_f64, 6_f64])));
-        let arr: Value<()> = Rc::new(RefCell::new(({ to_array_27(source.as_pointer()) })));
+        let mut source: [(); 3] = [4_f64, 5_f64, 6_f64];
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -290,7 +277,7 @@ pub fn tests_22() -> () {
             MoveOnly::new({ Some(1_()) }),
             MoveOnly::new({ Some(2_()) }),
         ])));
-        let arr: Value<()> = Rc::new(RefCell::new(({ to_array_28(source.as_pointer()) })));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         let mut i: () = 0_();
         'loop_: while (i < 3_()) {
@@ -299,38 +286,20 @@ pub fn tests_22() -> () {
         }
     }
     {
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([3_(), 4_()])));
-                to_array_29(___arr.as_pointer())
-            }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-                to_array_30(___arr.as_pointer())
-            }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let arr: Value<()> = Rc::new(RefCell::new(
-            ({
-                let ___arr: Value<Box<[A_31]>> = Rc::new(RefCell::new(Box::new([A_31 {
-                    a: 3_(),
-                    b: 0.1_f64,
-                }])));
-                to_array_32(___arr.as_pointer())
-            }),
-        ));
+        let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -339,7 +308,7 @@ pub fn tests_22() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(16)]
-pub struct A_31 {
+pub struct A_23 {
     #[offset(0)]
     pub a: (),
     #[offset(8)]

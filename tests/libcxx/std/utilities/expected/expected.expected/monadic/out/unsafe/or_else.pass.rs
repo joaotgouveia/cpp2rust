@@ -7,11 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    (unsafe {
-        let ___x: *mut () = &mut (*x).i;
-        let ___y: *mut () = &mut (*y).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -57,7 +53,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -74,7 +70,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_1(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -136,7 +132,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -183,7 +179,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_3(___s, 0_(), ___n)
+                memset_2(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -315,7 +311,7 @@ const _: () = assert!(
     true,
     "has_or_else<const std::expected<int, MoveOnlyErrorType>&&, std::expected<int, int>(const MoveOnlyErrorType&&)>"
 );
-pub unsafe fn test_val_types_4() {
+pub unsafe fn test_val_types_3() {
     {
         {
             let mut e: () = unimplemented!();
@@ -347,7 +343,7 @@ pub unsafe fn test_val_types_4() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVal = <RVal>::default();
-                e.or_else(&mut ___f)
+                (*unimplemented!()).or_else(&mut ___f)
             });
             unimplemented!();
         }
@@ -355,7 +351,7 @@ pub unsafe fn test_val_types_4() {
             let mut e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: RVRefQual = <RVRefQual>::default();
-                e.or_else(&mut ___f)
+                (*unimplemented!()).or_else(&mut ___f)
             });
             unimplemented!();
         }
@@ -365,14 +361,14 @@ pub unsafe fn test_val_types_4() {
             let e: () = unimplemented!();
             let mut val: () = (unsafe {
                 let mut ___f: CRVal = <CRVal>::default();
-                e.or_else(&mut ___f)
+                (*unimplemented!()).or_else(&mut ___f)
             });
             unimplemented!();
         }
         {
             let e: () = unimplemented!();
             let l: RVCRefQual = <RVCRefQual>::default();
-            let mut val: () = (unsafe { e.or_else(&l) });
+            let mut val: () = (unsafe { (*unimplemented!()).or_else(&(*unimplemented!())) });
             unimplemented!();
         }
     }
@@ -385,7 +381,7 @@ impl NonConst {
         return unimplemented!();
     }
 }
-pub unsafe fn test_sfinae_5() {
+pub unsafe fn test_sfinae_4() {
     let mut e: () = unimplemented!();
     let mut l: FnPtr<Generic> = lambda_unsafe!(
         Generic,
@@ -398,9 +394,9 @@ pub unsafe fn test_sfinae_5() {
         }
     );
     &(unimplemented!());
-    &(unsafe { e.or_else(&mut l) });
+    &(unsafe { (*unimplemented!()).or_else(&mut l) });
 }
-pub unsafe fn test_move_only_error_type_6() {
+pub unsafe fn test_move_only_error_type_5() {
     {
         let mut e: () = unimplemented!();
         let mut l: FnPtr<fn(*mut MoveOnlyErrorType) -> ()> =
@@ -431,7 +427,7 @@ pub unsafe fn test_move_only_error_type_6() {
                     return unimplemented!();
                 }
             });
-        &(unsafe { e.or_else(&mut l) });
+        &(unsafe { (*unimplemented!()).or_else(&mut l) });
     }
     {
         let e: () = unimplemented!();
@@ -443,13 +439,13 @@ pub unsafe fn test_move_only_error_type_6() {
                     }
                 },
             );
-        &(unsafe { e.or_else(&mut l) });
+        &(unsafe { (*unimplemented!()).or_else(&mut l) });
     }
 }
-pub unsafe fn test_7() -> () {
-    (unsafe { test_sfinae_5() });
-    (unsafe { test_val_types_4() });
-    (unsafe { test_move_only_error_type_6() });
+pub unsafe fn test_6() -> () {
+    (unsafe { test_sfinae_4() });
+    (unsafe { test_val_types_3() });
+    (unsafe { test_move_only_error_type_5() });
     let mut e: () = unimplemented!();
     let ce: *const () = &e;
     let never_called: FnPtr<fn(()) -> ()> = FnPtr::<fn(()) -> ()>::new(|mut _a0: ()| -> () {
@@ -459,11 +455,11 @@ pub unsafe fn test_7() -> () {
         }
     });
     &(unimplemented!());
-    &(unsafe { e.or_else(&never_called) });
+    &(unsafe { (*unimplemented!()).or_else(&never_called) });
     &(unimplemented!());
     &(unsafe {
         let ___f: *const FnPtr<fn(()) -> ()> = &never_called;
-        (*ce).or_else(___f)
+        (*unimplemented!()).or_else(___f)
     });
     return true;
 }
@@ -483,7 +479,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_7() });
+    (unsafe { test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

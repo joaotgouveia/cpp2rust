@@ -33,11 +33,7 @@ pub fn swap_2(
     x: Ptr<layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__>,
     y: Ptr<layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__>,
 ) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(x, extents_);
-        let ___y: Ptr<()> = field_ptr!(y, extents_);
-        swap_3(___x, ___y)
-    });
+    unimplemented!();
     {
         ( { layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__::swap_counter ( ) } )  .with_mut(|__v| __v. postfix_inc ()) ;
     }
@@ -63,7 +59,7 @@ impl layout_wrapping_integral_4__mapping_std_extents_int__4__1844674407370955161
         }
     }
     pub fn swap_counter() -> Ptr<()> {
-        return value_4.with(|v| v.as_pointer());
+        return value_3.with(|v| v.as_pointer());
     }
 }
 impl std::cmp::PartialEq
@@ -106,12 +102,12 @@ impl Default for layout_wrapping_integral_4__mapping_std_extents_int__4__1844674
 #[byte_size(1)]
 pub struct layout_wrapping_integral_4_ {}
 thread_local!(
-    static value_4: Value<()> = Rc::new(RefCell::new(0_()));
+    static value_3: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct always_convertible_layout {}
-pub fn test_swap_5(a: (), b: ()) {
+pub fn test_swap_4(a: (), b: ()) {
     let a: Value<()> = Rc::new(RefCell::new(a));
     let b: Value<()> = Rc::new(RefCell::new(b));
     let org_a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -129,7 +125,7 @@ pub fn test_swap_5(a: (), b: ()) {
     }
     { {} }
 }
-pub fn test_swap_6(a: (), b: ()) {
+pub fn test_swap_5(a: (), b: ()) {
     let a: Value<()> = Rc::new(RefCell::new(a));
     let b: Value<()> = Rc::new(RefCell::new(b));
     let org_a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -151,7 +147,7 @@ pub fn test_swap_6(a: (), b: ()) {
         }
     }
 }
-pub fn test_7() -> () {
+pub fn test_6() -> () {
     let data_a: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..1024).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
@@ -161,14 +157,14 @@ pub fn test_7() -> () {
     {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_swap_5(unimplemented!(), unimplemented!()) });
+        ({ test_swap_4(unimplemented!(), unimplemented!()) });
     }
     {
         let mut map_a : layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__  = { let __tmp_0 : Value<() > = Rc::new(RefCell::new(unimplemented!() )); layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__ :: new_1 ( { __tmp_0.as_pointer() } , { <not_extents_constructible_tag  >::default()  } , )  }  ;
         let mut map_b : layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__  = { let __tmp_1 : Value<() > = Rc::new(RefCell::new(unimplemented!() )); layout_wrapping_integral_4__mapping_std_extents_int__4__18446744073709551615__ :: new_1 ( { __tmp_1.as_pointer() } , { <not_extents_constructible_tag  >::default()  } , )  }  ;
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_swap_6(unimplemented!(), unimplemented!()) });
+        ({ test_swap_5(unimplemented!(), unimplemented!()) });
     }
     return true;
 }
@@ -192,7 +188,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_7() });
+    ({ test_6() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

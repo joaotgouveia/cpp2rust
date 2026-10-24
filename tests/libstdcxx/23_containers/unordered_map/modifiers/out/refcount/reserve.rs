@@ -283,10 +283,7 @@ pub fn test01_10() {
         }
         i.prefix_inc();
         'loop_: while (i < bkts) {
-            ({
-                let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                (*m.borrow()).insert_41_struct_std_pair_int__int_(___x.as_pointer())
-            });
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -335,10 +332,7 @@ pub fn test01_10() {
             }
             i.prefix_inc();
         }
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()).insert_41_struct_std_pair_int__int_(___x.as_pointer())
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

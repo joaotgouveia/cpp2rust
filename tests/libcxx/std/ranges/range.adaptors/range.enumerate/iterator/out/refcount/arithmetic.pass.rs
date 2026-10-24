@@ -390,29 +390,23 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_10(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -458,7 +452,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_13(
+            operator_cmp_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -483,7 +477,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -666,7 +660,7 @@ const _: () = assert!(
     !(false),
     "!HasMinus<EnumerateIter<NonRandomAccessRange>, EnumerateSent<NonRandomAccessRange>>"
 );
-pub fn test_with_common_range_14() {
+pub fn test_with_common_range_13() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: random_access_iterator_int_ptr_ =
@@ -722,7 +716,7 @@ pub fn test_with_common_range_14() {
         unimplemented!();
     }
 }
-pub fn test_with_common_range_15() {
+pub fn test_with_common_range_14() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: contiguous_iterator_int_ptr_ =
@@ -730,6 +724,59 @@ pub fn test_with_common_range_15() {
     let mut baseSt: contiguous_iterator_int_ptr_ = contiguous_iterator_int_ptr_::new_2({
         (arr.as_pointer() as Ptr<()>).offset((4_()) as isize)
     });
+    let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    {
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut diff: () = 3_();
+        let resultIt: Ptr<()> = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut diff: () = 4_();
+        let resultIt: Ptr<()> = (unimplemented!());
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut diff: () = 3_();
+        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut diff: () = 3_();
+        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut diff: () = 4_();
+        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut resultIt: () = (unimplemented!());
+        const _: () = assert!(true, "noexcept(it1 - it2)");;
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub fn test_with_common_range_15() {
+    const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
+    let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
+    let mut baseIt: Ptr<()> = (arr.as_pointer() as Ptr<()>);
+    let mut baseSt: Ptr<()> = (arr.as_pointer() as Ptr<()>).offset((4_()) as isize);
     let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     {
@@ -831,60 +878,7 @@ pub fn test_with_common_range_16() {
         unimplemented!();
     }
 }
-pub fn test_with_common_range_17() {
-    const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
-    let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
-    let mut baseIt: Ptr<()> = (arr.as_pointer() as Ptr<()>);
-    let mut baseSt: Ptr<()> = (arr.as_pointer() as Ptr<()>).offset((4_()) as isize);
-    let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let ev: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut diff: () = 3_();
-        let resultIt: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut diff: () = 4_();
-        let resultIt: Ptr<()> = (unimplemented!());
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut diff: () = 3_();
-        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut diff: () = 3_();
-        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut diff: () = 4_();
-        let resultIt: Value<()> = Rc::new(RefCell::new((unimplemented!())));
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut resultIt: () = (unimplemented!());
-        const _: () = assert!(true, "noexcept(it1 - it2)");;
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_with_noncommon_range_18() {
+pub fn test_with_noncommon_range_17() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: random_access_iterator_int_ptr_ =
@@ -936,7 +930,7 @@ pub fn test_with_noncommon_range_18() {
         unimplemented!();
     }
 }
-pub fn test_with_noncommon_range_19() {
+pub fn test_with_noncommon_range_18() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: contiguous_iterator_int_ptr_ =
@@ -988,7 +982,7 @@ pub fn test_with_noncommon_range_19() {
         unimplemented!();
     }
 }
-pub fn test_with_noncommon_range_20() {
+pub fn test_with_noncommon_range_19() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: Ptr<()> = (arr.as_pointer() as Ptr<()>);
@@ -1038,7 +1032,7 @@ pub fn test_with_noncommon_range_20() {
         unimplemented!();
     }
 }
-pub fn test_with_noncommon_range_21() {
+pub fn test_with_noncommon_range_20() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut baseIt: Ptr<()> = (arr.as_pointer() as Ptr<()>);
@@ -1088,15 +1082,15 @@ pub fn test_with_noncommon_range_21() {
         unimplemented!();
     }
 }
-pub fn test_22() -> () {
+pub fn test_21() -> () {
+    ({ test_with_common_range_13() });
     ({ test_with_common_range_14() });
     ({ test_with_common_range_15() });
     ({ test_with_common_range_16() });
-    ({ test_with_common_range_17() });
+    ({ test_with_noncommon_range_17() });
     ({ test_with_noncommon_range_18() });
     ({ test_with_noncommon_range_19() });
     ({ test_with_noncommon_range_20() });
-    ({ test_with_noncommon_range_21() });
     return true;
 }
 pub fn main() {
@@ -1119,7 +1113,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_22() });
+    ({ test_21() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

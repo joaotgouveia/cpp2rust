@@ -28,7 +28,7 @@ pub unsafe fn test_val_types_0() {
             return unimplemented!();
         });
         let mut v: () = unimplemented!();
-        let mut val: () = (unsafe { v.or_else(&mut l) });
+        let mut val: () = (unsafe { (*unimplemented!()).or_else(&mut l) });
         unimplemented!();
     }
     {
@@ -36,7 +36,7 @@ pub unsafe fn test_val_types_0() {
             return unimplemented!();
         });
         let v: () = unimplemented!();
-        let mut val: () = (unsafe { v.or_else(&mut l) });
+        let mut val: () = (unsafe { (*unimplemented!()).or_else(&mut l) });
         unimplemented!();
     }
 }
@@ -57,12 +57,12 @@ pub unsafe fn test_fail_1() {
     }
     {
         let mut v: () = unimplemented!();
-        let mut val: () = (unsafe { v.or_else(&mut never_called) });
+        let mut val: () = (unsafe { (*unimplemented!()).or_else(&mut never_called) });
         unimplemented!();
     }
     {
         let v: () = unimplemented!();
-        let mut val: () = (unsafe { v.or_else(&mut never_called) });
+        let mut val: () = (unsafe { (*unimplemented!()).or_else(&mut never_called) });
         unimplemented!();
     }
 }

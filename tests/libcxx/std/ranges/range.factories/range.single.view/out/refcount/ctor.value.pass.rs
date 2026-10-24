@@ -104,13 +104,13 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
     }
     {
-        let bt: Value<BigType> = Rc::new(RefCell::new(<BigType>::default()));
+        let mut bt: BigType = <BigType>::default();
         let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

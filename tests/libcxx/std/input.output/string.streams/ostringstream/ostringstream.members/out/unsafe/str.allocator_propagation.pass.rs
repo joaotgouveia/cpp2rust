@@ -379,7 +379,7 @@ pub unsafe fn test_soccc_behavior_4() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = (unsafe { ss.str_16() });
+        let mut moved: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -393,7 +393,7 @@ pub unsafe fn test_soccc_behavior_5() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = (unsafe { ss.str_16() });
+        let mut moved: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -505,7 +505,7 @@ pub unsafe fn test_allocation_is_pilfered_6() {
         unimplemented!();
         let mut mr1: () = unimplemented!();
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_16() });
+        let mut s: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
     }
 }
@@ -615,7 +615,7 @@ pub unsafe fn test_allocation_is_pilfered_7() {
         unimplemented!();
         let mut mr1: () = unimplemented!();
         let mut ss: () = unimplemented!();
-        let mut s: () = (unsafe { ss.str_16() });
+        let mut s: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
     }
 }
@@ -729,7 +729,7 @@ pub unsafe fn test_no_foreign_allocations_8() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = (unsafe { ss.str_16() });
+        let mut moved: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -845,7 +845,7 @@ pub unsafe fn test_no_foreign_allocations_9() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mut moved: () = (unsafe { ss.str_16() });
+        let mut moved: () = (unsafe { (*unimplemented!()).str_16() });
         unimplemented!();
         unimplemented!();
         unimplemented!();

@@ -112,10 +112,9 @@ pub struct cpp17_output_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
-    pub fn new(it: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
+    pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (*it.borrow()).clone(),
+            it_: (unimplemented!().read()),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -647,29 +646,23 @@ pub fn operator_add_20(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_19(_i, n)
     });
 }
-pub fn iter_swap_21(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_22(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_21(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_23(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_22(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -715,7 +708,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_25(
+            operator_cmp_24(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -740,7 +733,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_24(
+            operator_eq_23(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -833,7 +826,7 @@ pub struct LvalueConvertible {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct OnlyExplicitlyConvertible {}
-pub fn test_26() -> () {
+pub fn test_25() -> () {
     let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         1_(),
         2_(),
@@ -867,7 +860,7 @@ pub fn test_26() -> () {
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     buffer.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -876,7 +869,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -899,7 +892,7 @@ pub fn test_26() -> () {
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -908,7 +901,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -917,8 +910,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -930,7 +923,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -940,7 +933,7 @@ pub fn test_26() -> () {
         let c5: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     cit.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -949,7 +942,7 @@ pub fn test_26() -> () {
         let c6: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -958,8 +951,8 @@ pub fn test_26() -> () {
         let c7: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    cit.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -971,7 +964,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1003,14 +996,12 @@ pub fn test_26() -> () {
         let cit: Value<random_access_iterator_const_int_ptr_> = Rc::new(RefCell::new(
             random_access_iterator_const_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }),
         ));
-        let it_copy: Value<random_access_iterator_int_ptr_> =
-            Rc::new(RefCell::new((*it.borrow()).clone()));
-        let cit_copy: Value<random_access_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new((*cit.borrow()).clone()));
+        let mut it_copy: random_access_iterator_int_ptr_ = (*it.borrow()).clone();
+        let mut cit_copy: random_access_iterator_const_int_ptr_ = (*cit.borrow()).clone();
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1019,7 +1010,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1028,8 +1019,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1041,7 +1032,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1051,7 +1042,7 @@ pub fn test_26() -> () {
         let c5: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     cit.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1060,7 +1051,7 @@ pub fn test_26() -> () {
         let c6: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1069,8 +1060,8 @@ pub fn test_26() -> () {
         let c7: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    cit_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1082,7 +1073,7 @@ pub fn test_26() -> () {
                         { (buffer.as_pointer() as Ptr<()>) },
                     )));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1114,14 +1105,12 @@ pub fn test_26() -> () {
         let cit: Value<bidirectional_iterator_const_int_ptr_> = Rc::new(RefCell::new(
             bidirectional_iterator_const_int_ptr_::new_2({ (buffer.as_pointer() as Ptr<()>) }),
         ));
-        let it_copy: Value<bidirectional_iterator_int_ptr_> =
-            Rc::new(RefCell::new((*it.borrow()).clone()));
-        let cit_copy: Value<bidirectional_iterator_const_int_ptr_> =
-            Rc::new(RefCell::new((*cit.borrow()).clone()));
+        let mut it_copy: bidirectional_iterator_int_ptr_ = (*it.borrow()).clone();
+        let mut cit_copy: bidirectional_iterator_const_int_ptr_ = (*cit.borrow()).clone();
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1130,7 +1119,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1139,8 +1128,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1152,7 +1141,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1162,7 +1151,7 @@ pub fn test_26() -> () {
         let c5: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     cit.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1171,7 +1160,7 @@ pub fn test_26() -> () {
         let c6: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1180,8 +1169,8 @@ pub fn test_26() -> () {
         let c7: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    cit_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1193,7 +1182,7 @@ pub fn test_26() -> () {
                         { (buffer.as_pointer() as Ptr<()>) },
                     )));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1222,12 +1211,11 @@ pub fn test_26() -> () {
             Rc::new(RefCell::new(cpp17_output_iterator_int_ptr_::new({
                 (buffer.as_pointer() as Ptr<()>)
             })));
-        let it_copy: Value<cpp17_output_iterator_int_ptr_> =
-            Rc::new(RefCell::new((*it.borrow()).clone()));
+        let mut it_copy: cpp17_output_iterator_int_ptr_ = (*it.borrow()).clone();
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1236,7 +1224,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1245,8 +1233,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1258,7 +1246,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1279,12 +1267,11 @@ pub fn test_26() -> () {
             Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
                 (buffer.as_pointer() as Ptr<()>)
             })));
-        let it_copy: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-            Rc::new(RefCell::new((*it.borrow()).clone()));
+        let mut it_copy: cpp17_input_iterator_int_ptr__int_ptr_ = (*it.borrow()).clone();
         let c1: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1293,7 +1280,7 @@ pub fn test_26() -> () {
         let c2: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     unimplemented!(),
                     ___count.as_pointer(),
                 )
@@ -1302,8 +1289,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it_copy.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1315,7 +1302,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1348,8 +1335,8 @@ pub fn test_26() -> () {
         let c3: Value<()> = Rc::new(RefCell::new(
             ({
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
-                    it.as_pointer(),
+                (*counted_26.with(Value::clone).borrow_mut())(
+                    unimplemented!(),
                     ___count.as_pointer(),
                 )
             }),
@@ -1361,7 +1348,7 @@ pub fn test_26() -> () {
                         (buffer.as_pointer() as Ptr<()>)
                     })));
                 let ___count: Value<()> = Rc::new(RefCell::new(3_()));
-                (*counted_27.with(Value::clone).borrow_mut())(
+                (*counted_26.with(Value::clone).borrow_mut())(
                     ___it.as_pointer(),
                     ___count.as_pointer(),
                 )
@@ -1395,7 +1382,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_26() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

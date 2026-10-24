@@ -424,25 +424,21 @@ pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_10(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -526,7 +522,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -536,7 +532,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -703,7 +699,7 @@ const _: () = assert!(
     !(false),
     "!HasMinus<EnumerateIter<NonRandomAccessRange>, EnumerateSent<NonRandomAccessRange>>"
 );
-pub unsafe fn test_with_common_range_14() {
+pub unsafe fn test_with_common_range_13() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: random_access_iterator_int_ptr_ =
@@ -758,7 +754,7 @@ pub unsafe fn test_with_common_range_14() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_common_range_15() {
+pub unsafe fn test_with_common_range_14() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: contiguous_iterator_int_ptr_ =
@@ -813,7 +809,7 @@ pub unsafe fn test_with_common_range_15() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_common_range_16() {
+pub unsafe fn test_with_common_range_15() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: *mut () = arr.as_mut_ptr();
@@ -866,7 +862,7 @@ pub unsafe fn test_with_common_range_16() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_common_range_17() {
+pub unsafe fn test_with_common_range_16() {
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: *const () = (arr.as_mut_ptr()).cast_const();
@@ -919,7 +915,7 @@ pub unsafe fn test_with_common_range_17() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_noncommon_range_18() {
+pub unsafe fn test_with_noncommon_range_17() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: random_access_iterator_int_ptr_ =
@@ -969,7 +965,7 @@ pub unsafe fn test_with_noncommon_range_18() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_noncommon_range_19() {
+pub unsafe fn test_with_noncommon_range_18() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: contiguous_iterator_int_ptr_ =
@@ -1019,7 +1015,7 @@ pub unsafe fn test_with_noncommon_range_19() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_noncommon_range_20() {
+pub unsafe fn test_with_noncommon_range_19() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: *mut () = arr.as_mut_ptr();
@@ -1067,7 +1063,7 @@ pub unsafe fn test_with_noncommon_range_20() {
         unimplemented!();
     }
 }
-pub unsafe fn test_with_noncommon_range_21() {
+pub unsafe fn test_with_noncommon_range_20() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let mut arr: [(); 4] = [94_(), 1_(), 2_(), 82_()];
     let mut baseIt: *const () = (arr.as_mut_ptr()).cast_const();
@@ -1115,15 +1111,15 @@ pub unsafe fn test_with_noncommon_range_21() {
         unimplemented!();
     }
 }
-pub unsafe fn test_22() -> () {
+pub unsafe fn test_21() -> () {
+    (unsafe { test_with_common_range_13() });
     (unsafe { test_with_common_range_14() });
     (unsafe { test_with_common_range_15() });
     (unsafe { test_with_common_range_16() });
-    (unsafe { test_with_common_range_17() });
+    (unsafe { test_with_noncommon_range_17() });
     (unsafe { test_with_noncommon_range_18() });
     (unsafe { test_with_noncommon_range_19() });
     (unsafe { test_with_noncommon_range_20() });
-    (unsafe { test_with_noncommon_range_21() });
     return true;
 }
 pub fn main() {
@@ -1142,7 +1138,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_22() });
+    (unsafe { test_21() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

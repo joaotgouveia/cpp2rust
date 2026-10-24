@@ -368,29 +368,23 @@ pub fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_4(_i, n)
     });
 }
-pub fn iter_swap_6(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_7(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -436,7 +430,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_10(
+            operator_cmp_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -461,7 +455,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_9(
+            operator_eq_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -545,7 +539,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn check_prev_n_11(
+pub fn check_prev_n_10(
     mut it: forward_iterator_const_char_ptr_,
     mut n: (),
     result: forward_iterator_const_char_ptr_,
@@ -560,7 +554,7 @@ pub fn check_prev_n_11(
     );
     unimplemented!();
 }
-pub fn check_prev_n_13(
+pub fn check_prev_n_12(
     mut it: bidirectional_iterator_const_char_ptr_,
     mut n: (),
     result: bidirectional_iterator_const_char_ptr_,
@@ -575,7 +569,7 @@ pub fn check_prev_n_13(
     >::new(libcc2rs::prev_refcount);
     unimplemented!();
 }
-pub fn check_prev_n_15(
+pub fn check_prev_n_14(
     mut it: random_access_iterator_const_char_ptr_,
     mut n: (),
     result: random_access_iterator_const_char_ptr_,
@@ -590,14 +584,14 @@ pub fn check_prev_n_15(
     >::new(libcc2rs::prev_refcount);
     unimplemented!();
 }
-pub fn check_prev_n_17(mut it: Ptr<()>, mut n: (), mut result: Ptr<()>) {
+pub fn check_prev_n_16(mut it: Ptr<()>, mut n: (), mut result: Ptr<()>) {
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it, n)), It>::value");;
     unimplemented!();
     let mut prev_ptr: FnPtr<fn(Ptr<()>, ()) -> Ptr<()>> =
         FnPtr::<fn(Ptr<()>, ()) -> Ptr<()>>::new(libcc2rs::prev_refcount);
     unimplemented!();
 }
-pub fn check_prev_1_19(
+pub fn check_prev_1_18(
     mut it: bidirectional_iterator_const_char_ptr_,
     result: bidirectional_iterator_const_char_ptr_,
 ) {
@@ -605,7 +599,7 @@ pub fn check_prev_1_19(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_prev_1_20(
+pub fn check_prev_1_19(
     mut it: random_access_iterator_const_char_ptr_,
     result: random_access_iterator_const_char_ptr_,
 ) {
@@ -613,70 +607,70 @@ pub fn check_prev_1_20(
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_prev_1_21(mut it: Ptr<()>, mut result: Ptr<()>) {
+pub fn check_prev_1_20(mut it: Ptr<()>, mut result: Ptr<()>) {
     const _: () = assert!(true, "std::is_same<decltype(std::prev(it)), It>::value");;
     unimplemented!();
 }
-pub fn tests_22() -> () {
+pub fn tests_21() -> () {
     let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"1234567890");
     ({
         let _it: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_prev_n_11(_it, -10_(), _result)
+        check_prev_n_10(_it, -10_(), _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_prev_n_13(_it, 10_(), _result)
+        check_prev_n_12(_it, 10_(), _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_prev_n_13(_it, -10_(), _result)
+        check_prev_n_12(_it, -10_(), _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_prev_n_15(_it, 10_(), _result)
+        check_prev_n_14(_it, 10_(), _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_prev_n_15(_it, -10_(), _result)
+        check_prev_n_14(_it, -10_(), _result)
     });
     ({
         let _it: Ptr<()> = s.offset((10_()) as isize);
         let _result: Ptr<()> = (s).clone();
-        check_prev_n_17(_it, 10_(), _result)
+        check_prev_n_16(_it, 10_(), _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((1_()) as isize) });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_prev_1_19(_it, _result)
+        check_prev_1_18(_it, _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((1_()) as isize) });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_prev_1_20(_it, _result)
+        check_prev_1_19(_it, _result)
     });
     ({
         let _it: Ptr<()> = s.offset((1_()) as isize);
         let _result: Ptr<()> = (s).clone();
-        check_prev_1_21(_it, _result)
+        check_prev_1_20(_it, _result)
     });
     return true;
 }
@@ -700,7 +694,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_22() });
+    ({ tests_21() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

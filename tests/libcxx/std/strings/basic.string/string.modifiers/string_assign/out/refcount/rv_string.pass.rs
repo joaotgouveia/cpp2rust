@@ -110,16 +110,14 @@ impl std::cmp::PartialEq for min_allocator_char_ {
     }
 }
 impl std::cmp::Eq for min_allocator_char_ {}
-pub fn test_6(s: (), str: (), mut expected: ()) {
+pub fn test_6(s: (), mut str: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
-    let str: Value<()> = Rc::new(RefCell::new(str));
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn test_7(s: (), str: (), mut expected: ()) {
+pub fn test_7(s: (), mut str: (), mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
-    let str: Value<()> = Rc::new(RefCell::new(str));
     unimplemented!();
     unimplemented!();
     unimplemented!();

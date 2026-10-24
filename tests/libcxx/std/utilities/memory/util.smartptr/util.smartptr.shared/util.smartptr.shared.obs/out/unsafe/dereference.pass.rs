@@ -25,7 +25,7 @@ pub fn main() {
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     let p: () = unimplemented!();
     unimplemented!();
-    (*p) = 3_();
+    (*unimplemented!()) = 3_();
     unimplemented!();
     return 0_();
 }

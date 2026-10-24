@@ -427,29 +427,23 @@ pub fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_11(_i, n)
     });
 }
-pub fn iter_swap_13(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_14(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_14(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_15(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -495,7 +489,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_17(
+            operator_cmp_16(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -520,7 +514,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_15(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -621,10 +615,10 @@ impl unary_counting_predicate_bool__ptr__int___int_ {
         }
     }
 }
-pub fn equal2_18(mut i: ()) -> () {
+pub fn equal2_17(mut i: ()) -> () {
     return (i == 2_());
 }
-pub fn test_constexpr_19() -> () {
+pub fn test_constexpr_18() -> () {
     let mut ia: [(); 6] = [1_(), 3_(), 5_(), 2_(), 5_(), 6_()];
     let mut it: Ptr<()> = unimplemented!();
     return ({
@@ -633,6 +627,36 @@ pub fn test_constexpr_19() -> () {
             .offset(-((1_()) as isize)))
     } == { (it).clone() })
         && (unimplemented!());
+}
+pub fn test_19() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        2_(),
+        3_(),
+        4_(),
+        2_(),
+    ])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 9]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
+        unary_counting_predicate_bool__ptr__int___int_::new({
+            FnPtr::<fn(()) -> ()>::new(equal2_17)
+        }),
+    ));
+    let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
+    let mut r: Ptr<()> = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_20() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -650,7 +674,7 @@ pub fn test_20() {
         (::std::mem::size_of::<[(); 9]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
         unary_counting_predicate_bool__ptr__int___int_::new({
-            FnPtr::<fn(()) -> ()>::new(equal2_18)
+            FnPtr::<fn(()) -> ()>::new(equal2_17)
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
@@ -680,7 +704,7 @@ pub fn test_21() {
         (::std::mem::size_of::<[(); 9]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
         unary_counting_predicate_bool__ptr__int___int_::new({
-            FnPtr::<fn(()) -> ()>::new(equal2_18)
+            FnPtr::<fn(()) -> ()>::new(equal2_17)
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
@@ -710,37 +734,7 @@ pub fn test_22() {
         (::std::mem::size_of::<[(); 9]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
         unary_counting_predicate_bool__ptr__int___int_::new({
-            FnPtr::<fn(()) -> ()>::new(equal2_18)
-        }),
-    ));
-    let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
-    let mut r: Ptr<()> = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_23() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        2_(),
-        3_(),
-        4_(),
-        2_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 9]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let cp: Value<unary_counting_predicate_bool__ptr__int___int_> = Rc::new(RefCell::new(
-        unary_counting_predicate_bool__ptr__int___int_::new({
-            FnPtr::<fn(()) -> ()>::new(equal2_18)
+            FnPtr::<fn(()) -> ()>::new(equal2_17)
         }),
     ));
     let _dtor_cp = ScopedDestructor::new(&cp, |__p| __p.destructor());
@@ -757,7 +751,7 @@ pub fn test_23() {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct pred {}
-pub fn test1_24() {
+pub fn test1_23() {
     let mut sa: () = 9_();
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
@@ -781,7 +775,7 @@ pub fn test1_24() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test1_25() {
+pub fn test1_24() {
     let mut sa: () = 9_();
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
@@ -805,7 +799,7 @@ pub fn test1_25() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test1_26() {
+pub fn test1_25() {
     let mut sa: () = 9_();
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
@@ -829,7 +823,7 @@ pub fn test1_26() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test1_27() {
+pub fn test1_26() {
     let mut sa: () = 9_();
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..9).map(|_| unimplemented!()).collect::<Box<[()]>>(),
@@ -872,14 +866,14 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_19() });
     ({ test_20() });
     ({ test_21() });
     ({ test_22() });
-    ({ test_23() });
+    ({ test1_23() });
     ({ test1_24() });
     ({ test1_25() });
     ({ test1_26() });
-    ({ test1_27() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }
@@ -1175,7 +1169,7 @@ pub trait predImpl {
 }
 impl predImpl for Ptr<pred> {
     fn operator_call(&self, i: Ptr<()>) -> () {
-        return (((*i.upgrade().deref()).read()) == 2_());
+        return ((unimplemented!().read()) == 2_());
     }
 }
 pub trait random_access_iterator_std_unique_ptr_int__std_default_delete_int___ptr_Impl {

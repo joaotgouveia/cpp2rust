@@ -571,10 +571,10 @@ const _: () = assert!(
 );
 pub fn test_6() -> () {
     {
-        let i1: Value<()> = Rc::new(RefCell::new(1_()));
-        let i2: Value<()> = Rc::new(RefCell::new(2_()));
-        let j1: Value<()> = Rc::new(RefCell::new(3_()));
-        let j2: Value<()> = Rc::new(RefCell::new(4_()));
+        let mut i1: () = 1_();
+        let mut i2: () = 2_();
+        let mut j1: () = 3_();
+        let mut j2: () = 4_();
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -636,7 +636,7 @@ impl AssignableFrom_ConstMoveAssign_Impl for Ptr<AssignableFrom_ConstMoveAssign_
         t: Ptr<ConstMoveAssign>,
     ) -> Ptr<AssignableFrom_ConstMoveAssign_> {
         ({
-            let _other: Ptr<ConstMoveAssign> = (t).clone();
+            let _other: Ptr<ConstMoveAssign> = unimplemented!();
             ConstMoveAssignImpl::move_assign(&field_ptr!((*self), v), _other)
         });
         return (*self).clone();
@@ -666,7 +666,7 @@ impl AssignableFrom_TracedAssignment_Impl for Ptr<AssignableFrom_TracedAssignmen
         t: Ptr<TracedAssignment>,
     ) -> Ptr<AssignableFrom_TracedAssignment_> {
         ({
-            let _arg0: Ptr<TracedAssignment> = (t).clone();
+            let _arg0: Ptr<TracedAssignment> = unimplemented!();
             TracedAssignmentImpl::operator_assign_5(&field_ptr!((*self), v), _arg0)
         });
         return (*self).clone();

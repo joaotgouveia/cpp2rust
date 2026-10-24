@@ -1169,7 +1169,7 @@ pub fn tests_46() -> () {
     }
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut v: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

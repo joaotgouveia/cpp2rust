@@ -15,7 +15,7 @@ impl indirect_less {
         x: *const (),
         y: *const (),
     ) -> () {
-        return ((*(*x)) < (*(*y)));
+        return ((*unimplemented!()) < (*unimplemented!()));
     }
 }
 pub fn main() {

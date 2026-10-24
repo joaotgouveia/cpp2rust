@@ -155,7 +155,7 @@ pub fn test_string_4() {
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -217,7 +217,7 @@ pub fn test_string_5() {
             {
                 let mut lhs: Ptr<()> =
                     ((*test_data.borrow())[(0_()) as usize][(i) as usize]).clone();
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();

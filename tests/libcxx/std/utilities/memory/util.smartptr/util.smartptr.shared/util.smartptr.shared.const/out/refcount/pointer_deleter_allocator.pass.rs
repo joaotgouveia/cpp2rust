@@ -676,7 +676,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let d: Value<move_deleter_int_> = Rc::new(RefCell::new(move_deleter_int_::new_1({ 0_() })));
+        let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     }

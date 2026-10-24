@@ -351,7 +351,7 @@ impl Default for ConstMove {
 impl ConvertibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ _v }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         };
         this
@@ -376,7 +376,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
 impl ConvertibleFrom_TracedCopyMove_ {
     pub unsafe fn new_1(_v: *const TracedCopyMove) -> Self {
         let mut this = Self {
-            v: TracedCopyMove::new_1({ _v }),
+            v: TracedCopyMove::new_1({ unimplemented!() }),
             alloc_constructed: false,
         };
         this
@@ -401,7 +401,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ConvertibleFrom_CvtFromConstTupleRefRef_ {
     pub unsafe fn new_1(_v: *mut CvtFromConstTupleRefRef) -> Self {
         let mut this = Self {
-            v: (*_v),
+            v: (*unimplemented!()),
             alloc_constructed: false,
         };
         this
@@ -426,7 +426,7 @@ impl Default for ConvertibleFrom_CvtFromConstTupleRefRef_ {
 impl ConvertibleFrom_ExplicitCtrFromConstTupleRefRef_ {
     pub unsafe fn new_1(_v: *const ExplicitCtrFromConstTupleRefRef) -> Self {
         let mut this = Self {
-            v: (*_v),
+            v: (*unimplemented!()),
             alloc_constructed: false,
         };
         this
@@ -451,7 +451,7 @@ impl Default for ConvertibleFrom_ExplicitCtrFromConstTupleRefRef_ {
 impl ExplicitConstructibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ _v }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         };
         this

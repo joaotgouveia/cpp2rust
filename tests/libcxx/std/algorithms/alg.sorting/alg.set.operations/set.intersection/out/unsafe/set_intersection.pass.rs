@@ -72,7 +72,7 @@ pub struct cpp17_output_iterator_TrivialSortable_ptr_ {
 impl cpp17_output_iterator_TrivialSortable_ptr_ {
     pub unsafe fn new(mut it: *mut TrivialSortable) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -106,7 +106,7 @@ pub struct cpp17_output_iterator_NonTrivialSortable_ptr_ {
 impl cpp17_output_iterator_NonTrivialSortable_ptr_ {
     pub unsafe fn new(mut it: *mut NonTrivialSortable) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -1005,25 +1005,21 @@ pub unsafe fn operator_add_28(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_29(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_30(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_31(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_30(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_32(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_31(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_32(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1107,7 +1103,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_33(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_32(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1117,7 +1113,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_32(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_31(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1185,7 +1181,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_lt_34(a: *const TrivialSortable, b: *const TrivialSortable) -> () {
+pub unsafe fn operator_lt_33(a: *const TrivialSortable, b: *const TrivialSortable) -> () {
     return ((((*a).value) / (10_())) < (((*b).value) / (10_())));
 }
 #[repr(C)]
@@ -1209,12 +1205,12 @@ impl TrivialSortable {
 impl std::cmp::Ord for TrivialSortable {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_34(
+            if operator_lt_33(
                 self as *const TrivialSortable,
                 other as *const TrivialSortable,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_34(
+            } else if operator_lt_33(
                 other as *const TrivialSortable,
                 self as *const TrivialSortable,
             ) {
@@ -1233,10 +1229,10 @@ impl std::cmp::PartialOrd for TrivialSortable {
 impl std::cmp::PartialEq for TrivialSortable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            !(operator_lt_34(
+            !(operator_lt_33(
                 self as *const TrivialSortable,
                 other as *const TrivialSortable,
-            )) && !(operator_lt_34(
+            )) && !(operator_lt_33(
                 other as *const TrivialSortable,
                 self as *const TrivialSortable,
             ))
@@ -1249,7 +1245,7 @@ impl Default for TrivialSortable {
         unsafe { TrivialSortable::new_1() }
     }
 }
-pub unsafe fn operator_lt_35(a: *const NonTrivialSortable, b: *const NonTrivialSortable) -> () {
+pub unsafe fn operator_lt_34(a: *const NonTrivialSortable, b: *const NonTrivialSortable) -> () {
     return ((((*a).value) / (10_())) < (((*b).value) / (10_())));
 }
 #[repr(C)]
@@ -1286,12 +1282,12 @@ impl NonTrivialSortable {
 impl std::cmp::Ord for NonTrivialSortable {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_35(
+            if operator_lt_34(
                 self as *const NonTrivialSortable,
                 other as *const NonTrivialSortable,
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_35(
+            } else if operator_lt_34(
                 other as *const NonTrivialSortable,
                 self as *const NonTrivialSortable,
             ) {
@@ -1310,10 +1306,10 @@ impl std::cmp::PartialOrd for NonTrivialSortable {
 impl std::cmp::PartialEq for NonTrivialSortable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            !(operator_lt_35(
+            !(operator_lt_34(
                 self as *const NonTrivialSortable,
                 other as *const NonTrivialSortable,
-            )) && !(operator_lt_35(
+            )) && !(operator_lt_34(
                 other as *const NonTrivialSortable,
                 self as *const NonTrivialSortable,
             ))
@@ -1502,7 +1498,7 @@ impl Default for TracedCopy {
         }
     }
 }
-pub unsafe fn test4_36() {
+pub unsafe fn test4_35() {
     let a: [TrivialSortable; 4] = [
         TrivialSortable::new_2({ 11_() }),
         TrivialSortable::new_2({ 33_() }),
@@ -1581,6 +1577,91 @@ pub unsafe fn test4_36() {
         let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
         let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+}
+pub unsafe fn test4_36() {
+    let a: [TrivialSortable; 4] = [
+        TrivialSortable::new_2({ 11_() }),
+        TrivialSortable::new_2({ 33_() }),
+        TrivialSortable::new_2({ 31_() }),
+        TrivialSortable::new_2({ 41_() }),
+    ];
+    let b: [TrivialSortable; 5] = [
+        TrivialSortable::new_2({ 22_() }),
+        TrivialSortable::new_2({ 32_() }),
+        TrivialSortable::new_2({ 43_() }),
+        TrivialSortable::new_2({ 42_() }),
+        TrivialSortable::new_2({ 52_() }),
+    ];
+    {
+        let mut result: [TrivialSortable; 20] = [
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ];
+        let mut expected: [TrivialSortable; 2] = [
+            TrivialSortable::new_2({ 33_() }),
+            TrivialSortable::new_2({ 41_() }),
+        ];
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        unimplemented!();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
+            unimplemented!();
+            it.prefix_inc();
+        }
+    }
+    {
+        let mut result: [TrivialSortable; 20] = [
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+            TrivialSortable::new_1(),
+        ];
+        let mut expected: [TrivialSortable; 2] = [
+            TrivialSortable::new_2({ 32_() }),
+            TrivialSortable::new_2({ 42_() }),
+        ];
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        unimplemented!();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1628,9 +1709,9 @@ pub unsafe fn test4_37() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1663,9 +1744,9 @@ pub unsafe fn test4_37() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1713,9 +1794,9 @@ pub unsafe fn test4_38() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1748,9 +1829,9 @@ pub unsafe fn test4_38() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1798,9 +1879,9 @@ pub unsafe fn test4_39() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1833,9 +1914,9 @@ pub unsafe fn test4_39() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1883,9 +1964,9 @@ pub unsafe fn test4_40() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1918,9 +1999,9 @@ pub unsafe fn test4_40() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -1968,9 +2049,9 @@ pub unsafe fn test4_41() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2003,9 +2084,9 @@ pub unsafe fn test4_41() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2053,9 +2134,9 @@ pub unsafe fn test4_42() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2088,9 +2169,9 @@ pub unsafe fn test4_42() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2138,9 +2219,9 @@ pub unsafe fn test4_43() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2173,9 +2254,9 @@ pub unsafe fn test4_43() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2223,9 +2304,9 @@ pub unsafe fn test4_44() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2258,9 +2339,9 @@ pub unsafe fn test4_44() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2308,9 +2389,9 @@ pub unsafe fn test4_45() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2343,9 +2424,9 @@ pub unsafe fn test4_45() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2393,9 +2474,9 @@ pub unsafe fn test4_46() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2428,9 +2509,9 @@ pub unsafe fn test4_46() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2478,9 +2559,9 @@ pub unsafe fn test4_47() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2513,9 +2594,9 @@ pub unsafe fn test4_47() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2563,9 +2644,9 @@ pub unsafe fn test4_48() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2598,9 +2679,9 @@ pub unsafe fn test4_48() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2648,9 +2729,9 @@ pub unsafe fn test4_49() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2683,9 +2764,9 @@ pub unsafe fn test4_49() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2733,9 +2814,9 @@ pub unsafe fn test4_50() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2768,9 +2849,9 @@ pub unsafe fn test4_50() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2818,9 +2899,9 @@ pub unsafe fn test4_51() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2853,9 +2934,9 @@ pub unsafe fn test4_51() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2903,9 +2984,9 @@ pub unsafe fn test4_52() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2938,9 +3019,9 @@ pub unsafe fn test4_52() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -2988,9 +3069,9 @@ pub unsafe fn test4_53() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3023,9 +3104,9 @@ pub unsafe fn test4_53() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3073,9 +3154,9 @@ pub unsafe fn test4_54() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3108,9 +3189,9 @@ pub unsafe fn test4_54() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3158,9 +3239,9 @@ pub unsafe fn test4_55() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3193,9 +3274,9 @@ pub unsafe fn test4_55() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3243,9 +3324,9 @@ pub unsafe fn test4_56() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3278,9 +3359,9 @@ pub unsafe fn test4_56() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3328,9 +3409,9 @@ pub unsafe fn test4_57() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3363,9 +3444,9 @@ pub unsafe fn test4_57() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3413,9 +3494,9 @@ pub unsafe fn test4_58() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3448,9 +3529,9 @@ pub unsafe fn test4_58() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3498,9 +3579,9 @@ pub unsafe fn test4_59() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3533,9 +3614,9 @@ pub unsafe fn test4_59() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3583,9 +3664,9 @@ pub unsafe fn test4_60() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3618,9 +3699,9 @@ pub unsafe fn test4_60() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3668,9 +3749,9 @@ pub unsafe fn test4_61() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3703,9 +3784,9 @@ pub unsafe fn test4_61() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3753,9 +3834,9 @@ pub unsafe fn test4_62() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3788,9 +3869,9 @@ pub unsafe fn test4_62() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3838,9 +3919,9 @@ pub unsafe fn test4_63() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3873,9 +3954,9 @@ pub unsafe fn test4_63() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3923,9 +4004,9 @@ pub unsafe fn test4_64() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -3958,9 +4039,9 @@ pub unsafe fn test4_64() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4008,9 +4089,9 @@ pub unsafe fn test4_65() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4043,9 +4124,9 @@ pub unsafe fn test4_65() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4093,9 +4174,9 @@ pub unsafe fn test4_66() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4128,9 +4209,9 @@ pub unsafe fn test4_66() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4178,9 +4259,9 @@ pub unsafe fn test4_67() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4213,9 +4294,9 @@ pub unsafe fn test4_67() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4263,9 +4344,9 @@ pub unsafe fn test4_68() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4298,9 +4379,9 @@ pub unsafe fn test4_68() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4348,9 +4429,9 @@ pub unsafe fn test4_69() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4383,9 +4464,9 @@ pub unsafe fn test4_69() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4433,9 +4514,9 @@ pub unsafe fn test4_70() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4468,9 +4549,9 @@ pub unsafe fn test4_70() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4518,9 +4599,9 @@ pub unsafe fn test4_71() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4553,9 +4634,9 @@ pub unsafe fn test4_71() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4603,9 +4684,9 @@ pub unsafe fn test4_72() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4638,9 +4719,9 @@ pub unsafe fn test4_72() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4688,9 +4769,9 @@ pub unsafe fn test4_73() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4723,9 +4804,9 @@ pub unsafe fn test4_73() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4773,9 +4854,9 @@ pub unsafe fn test4_74() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4808,9 +4889,9 @@ pub unsafe fn test4_74() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4858,9 +4939,9 @@ pub unsafe fn test4_75() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4893,9 +4974,9 @@ pub unsafe fn test4_75() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4943,9 +5024,9 @@ pub unsafe fn test4_76() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -4978,9 +5059,9 @@ pub unsafe fn test4_76() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5028,9 +5109,9 @@ pub unsafe fn test4_77() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5063,9 +5144,9 @@ pub unsafe fn test4_77() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5113,9 +5194,9 @@ pub unsafe fn test4_78() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5148,9 +5229,9 @@ pub unsafe fn test4_78() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5198,9 +5279,9 @@ pub unsafe fn test4_79() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5233,9 +5314,9 @@ pub unsafe fn test4_79() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5283,9 +5364,9 @@ pub unsafe fn test4_80() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5318,9 +5399,9 @@ pub unsafe fn test4_80() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5368,9 +5449,9 @@ pub unsafe fn test4_81() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5403,9 +5484,9 @@ pub unsafe fn test4_81() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5453,9 +5534,9 @@ pub unsafe fn test4_82() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5488,9 +5569,9 @@ pub unsafe fn test4_82() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5538,9 +5619,9 @@ pub unsafe fn test4_83() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5573,9 +5654,9 @@ pub unsafe fn test4_83() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5623,9 +5704,9 @@ pub unsafe fn test4_84() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5658,9 +5739,9 @@ pub unsafe fn test4_84() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5708,9 +5789,9 @@ pub unsafe fn test4_85() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5743,9 +5824,9 @@ pub unsafe fn test4_85() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5793,9 +5874,9 @@ pub unsafe fn test4_86() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5828,9 +5909,9 @@ pub unsafe fn test4_86() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5878,9 +5959,9 @@ pub unsafe fn test4_87() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5913,9 +5994,9 @@ pub unsafe fn test4_87() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5963,9 +6044,9 @@ pub unsafe fn test4_88() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -5998,9 +6079,9 @@ pub unsafe fn test4_88() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6048,9 +6129,9 @@ pub unsafe fn test4_89() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6083,9 +6164,9 @@ pub unsafe fn test4_89() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6133,9 +6214,9 @@ pub unsafe fn test4_90() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6168,9 +6249,9 @@ pub unsafe fn test4_90() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6218,9 +6299,9 @@ pub unsafe fn test4_91() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6253,9 +6334,9 @@ pub unsafe fn test4_91() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6303,9 +6384,9 @@ pub unsafe fn test4_92() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6338,9 +6419,9 @@ pub unsafe fn test4_92() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6388,9 +6469,9 @@ pub unsafe fn test4_93() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6423,9 +6504,9 @@ pub unsafe fn test4_93() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6473,9 +6554,9 @@ pub unsafe fn test4_94() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6508,9 +6589,9 @@ pub unsafe fn test4_94() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6558,9 +6639,9 @@ pub unsafe fn test4_95() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6593,9 +6674,9 @@ pub unsafe fn test4_95() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6643,9 +6724,9 @@ pub unsafe fn test4_96() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6678,9 +6759,9 @@ pub unsafe fn test4_96() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6728,9 +6809,9 @@ pub unsafe fn test4_97() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6763,9 +6844,9 @@ pub unsafe fn test4_97() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6813,9 +6894,9 @@ pub unsafe fn test4_98() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6848,9 +6929,9 @@ pub unsafe fn test4_98() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6898,9 +6979,9 @@ pub unsafe fn test4_99() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6933,9 +7014,9 @@ pub unsafe fn test4_99() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -6983,9 +7064,9 @@ pub unsafe fn test4_100() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7018,9 +7099,9 @@ pub unsafe fn test4_100() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7068,9 +7149,9 @@ pub unsafe fn test4_101() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7103,9 +7184,9 @@ pub unsafe fn test4_101() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7153,9 +7234,9 @@ pub unsafe fn test4_102() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7188,9 +7269,9 @@ pub unsafe fn test4_102() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7238,9 +7319,9 @@ pub unsafe fn test4_103() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7273,9 +7354,9 @@ pub unsafe fn test4_103() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7323,9 +7404,9 @@ pub unsafe fn test4_104() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7358,9 +7439,9 @@ pub unsafe fn test4_104() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7408,9 +7489,9 @@ pub unsafe fn test4_105() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7443,9 +7524,9 @@ pub unsafe fn test4_105() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7493,9 +7574,9 @@ pub unsafe fn test4_106() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7528,9 +7609,9 @@ pub unsafe fn test4_106() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7578,9 +7659,9 @@ pub unsafe fn test4_107() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7613,9 +7694,9 @@ pub unsafe fn test4_107() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7663,9 +7744,9 @@ pub unsafe fn test4_108() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7698,9 +7779,9 @@ pub unsafe fn test4_108() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7748,9 +7829,9 @@ pub unsafe fn test4_109() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7783,9 +7864,9 @@ pub unsafe fn test4_109() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7833,9 +7914,9 @@ pub unsafe fn test4_110() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7868,9 +7949,9 @@ pub unsafe fn test4_110() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7918,9 +7999,9 @@ pub unsafe fn test4_111() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -7953,9 +8034,9 @@ pub unsafe fn test4_111() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8003,9 +8084,9 @@ pub unsafe fn test4_112() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8038,9 +8119,9 @@ pub unsafe fn test4_112() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8088,9 +8169,9 @@ pub unsafe fn test4_113() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8123,9 +8204,9 @@ pub unsafe fn test4_113() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8173,9 +8254,9 @@ pub unsafe fn test4_114() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8208,9 +8289,9 @@ pub unsafe fn test4_114() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8258,9 +8339,9 @@ pub unsafe fn test4_115() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8293,9 +8374,9 @@ pub unsafe fn test4_115() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8343,9 +8424,9 @@ pub unsafe fn test4_116() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8378,9 +8459,9 @@ pub unsafe fn test4_116() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8428,9 +8509,9 @@ pub unsafe fn test4_117() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8463,9 +8544,9 @@ pub unsafe fn test4_117() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8513,9 +8594,9 @@ pub unsafe fn test4_118() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8548,9 +8629,9 @@ pub unsafe fn test4_118() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8598,9 +8679,9 @@ pub unsafe fn test4_119() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8633,9 +8714,9 @@ pub unsafe fn test4_119() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8683,9 +8764,9 @@ pub unsafe fn test4_120() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8718,9 +8799,9 @@ pub unsafe fn test4_120() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8768,9 +8849,9 @@ pub unsafe fn test4_121() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8803,9 +8884,9 @@ pub unsafe fn test4_121() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8853,9 +8934,9 @@ pub unsafe fn test4_122() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8888,9 +8969,9 @@ pub unsafe fn test4_122() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8938,9 +9019,9 @@ pub unsafe fn test4_123() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -8973,9 +9054,9 @@ pub unsafe fn test4_123() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9023,9 +9104,9 @@ pub unsafe fn test4_124() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9058,9 +9139,9 @@ pub unsafe fn test4_124() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9108,9 +9189,9 @@ pub unsafe fn test4_125() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9143,9 +9224,9 @@ pub unsafe fn test4_125() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9193,9 +9274,9 @@ pub unsafe fn test4_126() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9228,9 +9309,9 @@ pub unsafe fn test4_126() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9278,9 +9359,9 @@ pub unsafe fn test4_127() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9313,9 +9394,9 @@ pub unsafe fn test4_127() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9363,9 +9444,9 @@ pub unsafe fn test4_128() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9398,9 +9479,9 @@ pub unsafe fn test4_128() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9448,9 +9529,9 @@ pub unsafe fn test4_129() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9483,9 +9564,9 @@ pub unsafe fn test4_129() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9533,9 +9614,9 @@ pub unsafe fn test4_130() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9568,9 +9649,9 @@ pub unsafe fn test4_130() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9618,9 +9699,9 @@ pub unsafe fn test4_131() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9653,9 +9734,9 @@ pub unsafe fn test4_131() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9703,9 +9784,9 @@ pub unsafe fn test4_132() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9738,9 +9819,9 @@ pub unsafe fn test4_132() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9788,9 +9869,9 @@ pub unsafe fn test4_133() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9823,9 +9904,9 @@ pub unsafe fn test4_133() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9873,9 +9954,9 @@ pub unsafe fn test4_134() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9908,9 +9989,9 @@ pub unsafe fn test4_134() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9958,9 +10039,9 @@ pub unsafe fn test4_135() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -9993,9 +10074,9 @@ pub unsafe fn test4_135() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10043,9 +10124,9 @@ pub unsafe fn test4_136() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10078,9 +10159,9 @@ pub unsafe fn test4_136() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10128,9 +10209,9 @@ pub unsafe fn test4_137() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10163,9 +10244,9 @@ pub unsafe fn test4_137() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10213,9 +10294,9 @@ pub unsafe fn test4_138() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10248,9 +10329,9 @@ pub unsafe fn test4_138() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10298,9 +10379,9 @@ pub unsafe fn test4_139() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10333,9 +10414,9 @@ pub unsafe fn test4_139() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10383,9 +10464,9 @@ pub unsafe fn test4_140() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10418,9 +10499,9 @@ pub unsafe fn test4_140() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10468,9 +10549,9 @@ pub unsafe fn test4_141() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10503,9 +10584,9 @@ pub unsafe fn test4_141() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10553,9 +10634,9 @@ pub unsafe fn test4_142() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10588,9 +10669,9 @@ pub unsafe fn test4_142() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10638,9 +10719,9 @@ pub unsafe fn test4_143() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10673,9 +10754,9 @@ pub unsafe fn test4_143() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10723,9 +10804,9 @@ pub unsafe fn test4_144() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10758,9 +10839,9 @@ pub unsafe fn test4_144() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10808,9 +10889,9 @@ pub unsafe fn test4_145() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10843,9 +10924,9 @@ pub unsafe fn test4_145() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10893,9 +10974,9 @@ pub unsafe fn test4_146() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10928,9 +11009,9 @@ pub unsafe fn test4_146() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -10978,9 +11059,9 @@ pub unsafe fn test4_147() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11013,9 +11094,9 @@ pub unsafe fn test4_147() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11063,9 +11144,9 @@ pub unsafe fn test4_148() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11098,9 +11179,9 @@ pub unsafe fn test4_148() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11148,9 +11229,9 @@ pub unsafe fn test4_149() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11183,9 +11264,9 @@ pub unsafe fn test4_149() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11233,9 +11314,9 @@ pub unsafe fn test4_150() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11268,9 +11349,9 @@ pub unsafe fn test4_150() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11318,9 +11399,9 @@ pub unsafe fn test4_151() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11353,9 +11434,9 @@ pub unsafe fn test4_151() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11403,9 +11484,9 @@ pub unsafe fn test4_152() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11438,9 +11519,9 @@ pub unsafe fn test4_152() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11488,9 +11569,9 @@ pub unsafe fn test4_153() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11523,9 +11604,9 @@ pub unsafe fn test4_153() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11573,9 +11654,9 @@ pub unsafe fn test4_154() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11608,9 +11689,9 @@ pub unsafe fn test4_154() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11658,9 +11739,9 @@ pub unsafe fn test4_155() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11693,9 +11774,9 @@ pub unsafe fn test4_155() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11743,9 +11824,9 @@ pub unsafe fn test4_156() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11778,9 +11859,9 @@ pub unsafe fn test4_156() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_0(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11828,9 +11909,9 @@ pub unsafe fn test4_157() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11863,9 +11944,9 @@ pub unsafe fn test4_157() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_4(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11913,9 +11994,9 @@ pub unsafe fn test4_158() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11948,9 +12029,9 @@ pub unsafe fn test4_158() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_10(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -11998,9 +12079,9 @@ pub unsafe fn test4_159() {
             TrivialSortable::new_2({ 33_() }),
             TrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12033,9 +12114,9 @@ pub unsafe fn test4_159() {
             TrivialSortable::new_2({ 32_() }),
             TrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_TrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut TrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_16(&end) }).cast_const();
+        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12043,84 +12124,84 @@ pub unsafe fn test4_159() {
     }
 }
 pub unsafe fn test4_160() {
-    let a: [TrivialSortable; 4] = [
-        TrivialSortable::new_2({ 11_() }),
-        TrivialSortable::new_2({ 33_() }),
-        TrivialSortable::new_2({ 31_() }),
-        TrivialSortable::new_2({ 41_() }),
+    let a: [NonTrivialSortable; 4] = [
+        NonTrivialSortable::new_2({ 11_() }),
+        NonTrivialSortable::new_2({ 33_() }),
+        NonTrivialSortable::new_2({ 31_() }),
+        NonTrivialSortable::new_2({ 41_() }),
     ];
-    let b: [TrivialSortable; 5] = [
-        TrivialSortable::new_2({ 22_() }),
-        TrivialSortable::new_2({ 32_() }),
-        TrivialSortable::new_2({ 43_() }),
-        TrivialSortable::new_2({ 42_() }),
-        TrivialSortable::new_2({ 52_() }),
+    let b: [NonTrivialSortable; 5] = [
+        NonTrivialSortable::new_2({ 22_() }),
+        NonTrivialSortable::new_2({ 32_() }),
+        NonTrivialSortable::new_2({ 43_() }),
+        NonTrivialSortable::new_2({ 42_() }),
+        NonTrivialSortable::new_2({ 52_() }),
     ];
     {
-        let mut result: [TrivialSortable; 20] = [
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
+        let mut result: [NonTrivialSortable; 20] = [
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
         ];
-        let mut expected: [TrivialSortable; 2] = [
-            TrivialSortable::new_2({ 33_() }),
-            TrivialSortable::new_2({ 41_() }),
+        let mut expected: [NonTrivialSortable; 2] = [
+            NonTrivialSortable::new_2({ 33_() }),
+            NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
         }
     }
     {
-        let mut result: [TrivialSortable; 20] = [
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
-            TrivialSortable::new_1(),
+        let mut result: [NonTrivialSortable; 20] = [
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
+            NonTrivialSortable::new_1(),
         ];
-        let mut expected: [TrivialSortable; 2] = [
-            TrivialSortable::new_2({ 32_() }),
-            TrivialSortable::new_2({ 42_() }),
+        let mut expected: [NonTrivialSortable; 2] = [
+            NonTrivialSortable::new_2({ 32_() }),
+            NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut TrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const TrivialSortable = (unsafe { base_24(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12168,9 +12249,9 @@ pub unsafe fn test4_161() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12203,9 +12284,9 @@ pub unsafe fn test4_161() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12253,9 +12334,9 @@ pub unsafe fn test4_162() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12288,9 +12369,9 @@ pub unsafe fn test4_162() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12338,9 +12419,9 @@ pub unsafe fn test4_163() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12373,9 +12454,9 @@ pub unsafe fn test4_163() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12423,9 +12504,9 @@ pub unsafe fn test4_164() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12458,9 +12539,9 @@ pub unsafe fn test4_164() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12508,9 +12589,9 @@ pub unsafe fn test4_165() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12543,9 +12624,9 @@ pub unsafe fn test4_165() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12593,9 +12674,9 @@ pub unsafe fn test4_166() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12628,9 +12709,9 @@ pub unsafe fn test4_166() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12678,9 +12759,9 @@ pub unsafe fn test4_167() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12713,9 +12794,9 @@ pub unsafe fn test4_167() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12763,9 +12844,9 @@ pub unsafe fn test4_168() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12798,9 +12879,9 @@ pub unsafe fn test4_168() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12848,9 +12929,9 @@ pub unsafe fn test4_169() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12883,9 +12964,9 @@ pub unsafe fn test4_169() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12933,9 +13014,9 @@ pub unsafe fn test4_170() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -12968,9 +13049,9 @@ pub unsafe fn test4_170() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13018,9 +13099,9 @@ pub unsafe fn test4_171() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13053,9 +13134,9 @@ pub unsafe fn test4_171() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13103,9 +13184,9 @@ pub unsafe fn test4_172() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13138,9 +13219,9 @@ pub unsafe fn test4_172() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13188,9 +13269,9 @@ pub unsafe fn test4_173() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13223,9 +13304,9 @@ pub unsafe fn test4_173() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13273,9 +13354,9 @@ pub unsafe fn test4_174() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13308,9 +13389,9 @@ pub unsafe fn test4_174() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13358,9 +13439,9 @@ pub unsafe fn test4_175() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13393,9 +13474,9 @@ pub unsafe fn test4_175() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13443,9 +13524,9 @@ pub unsafe fn test4_176() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13478,9 +13559,9 @@ pub unsafe fn test4_176() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13528,9 +13609,9 @@ pub unsafe fn test4_177() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13563,9 +13644,9 @@ pub unsafe fn test4_177() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13613,9 +13694,9 @@ pub unsafe fn test4_178() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13648,9 +13729,9 @@ pub unsafe fn test4_178() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13698,9 +13779,9 @@ pub unsafe fn test4_179() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13733,9 +13814,9 @@ pub unsafe fn test4_179() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13783,9 +13864,9 @@ pub unsafe fn test4_180() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13818,9 +13899,9 @@ pub unsafe fn test4_180() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13868,9 +13949,9 @@ pub unsafe fn test4_181() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13903,9 +13984,9 @@ pub unsafe fn test4_181() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13953,9 +14034,9 @@ pub unsafe fn test4_182() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -13988,9 +14069,9 @@ pub unsafe fn test4_182() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14038,9 +14119,9 @@ pub unsafe fn test4_183() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14073,9 +14154,9 @@ pub unsafe fn test4_183() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14123,9 +14204,9 @@ pub unsafe fn test4_184() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14158,9 +14239,9 @@ pub unsafe fn test4_184() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14208,9 +14289,9 @@ pub unsafe fn test4_185() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14243,9 +14324,9 @@ pub unsafe fn test4_185() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14293,9 +14374,9 @@ pub unsafe fn test4_186() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14328,9 +14409,9 @@ pub unsafe fn test4_186() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14378,9 +14459,9 @@ pub unsafe fn test4_187() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14413,9 +14494,9 @@ pub unsafe fn test4_187() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14463,9 +14544,9 @@ pub unsafe fn test4_188() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14498,9 +14579,9 @@ pub unsafe fn test4_188() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14548,9 +14629,9 @@ pub unsafe fn test4_189() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14583,9 +14664,9 @@ pub unsafe fn test4_189() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14633,9 +14714,9 @@ pub unsafe fn test4_190() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14668,9 +14749,9 @@ pub unsafe fn test4_190() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14718,9 +14799,9 @@ pub unsafe fn test4_191() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14753,9 +14834,9 @@ pub unsafe fn test4_191() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14803,9 +14884,9 @@ pub unsafe fn test4_192() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14838,9 +14919,9 @@ pub unsafe fn test4_192() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14888,9 +14969,9 @@ pub unsafe fn test4_193() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14923,9 +15004,9 @@ pub unsafe fn test4_193() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -14973,9 +15054,9 @@ pub unsafe fn test4_194() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15008,9 +15089,9 @@ pub unsafe fn test4_194() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15058,9 +15139,9 @@ pub unsafe fn test4_195() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15093,9 +15174,9 @@ pub unsafe fn test4_195() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15143,9 +15224,9 @@ pub unsafe fn test4_196() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15178,9 +15259,9 @@ pub unsafe fn test4_196() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15228,9 +15309,9 @@ pub unsafe fn test4_197() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15263,9 +15344,9 @@ pub unsafe fn test4_197() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15313,9 +15394,9 @@ pub unsafe fn test4_198() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15348,9 +15429,9 @@ pub unsafe fn test4_198() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15398,9 +15479,9 @@ pub unsafe fn test4_199() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15433,9 +15514,9 @@ pub unsafe fn test4_199() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15483,9 +15564,9 @@ pub unsafe fn test4_200() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15518,9 +15599,9 @@ pub unsafe fn test4_200() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15568,9 +15649,9 @@ pub unsafe fn test4_201() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15603,9 +15684,9 @@ pub unsafe fn test4_201() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15653,9 +15734,9 @@ pub unsafe fn test4_202() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15688,9 +15769,9 @@ pub unsafe fn test4_202() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15738,9 +15819,9 @@ pub unsafe fn test4_203() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15773,9 +15854,9 @@ pub unsafe fn test4_203() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15823,9 +15904,9 @@ pub unsafe fn test4_204() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15858,9 +15939,9 @@ pub unsafe fn test4_204() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15908,9 +15989,9 @@ pub unsafe fn test4_205() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15943,9 +16024,9 @@ pub unsafe fn test4_205() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -15993,9 +16074,9 @@ pub unsafe fn test4_206() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16028,9 +16109,9 @@ pub unsafe fn test4_206() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16078,9 +16159,9 @@ pub unsafe fn test4_207() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16113,9 +16194,9 @@ pub unsafe fn test4_207() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16163,9 +16244,9 @@ pub unsafe fn test4_208() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16198,9 +16279,9 @@ pub unsafe fn test4_208() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16248,9 +16329,9 @@ pub unsafe fn test4_209() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16283,9 +16364,9 @@ pub unsafe fn test4_209() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16333,9 +16414,9 @@ pub unsafe fn test4_210() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16368,9 +16449,9 @@ pub unsafe fn test4_210() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16418,9 +16499,9 @@ pub unsafe fn test4_211() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16453,9 +16534,9 @@ pub unsafe fn test4_211() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16503,9 +16584,9 @@ pub unsafe fn test4_212() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16538,9 +16619,9 @@ pub unsafe fn test4_212() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16588,9 +16669,9 @@ pub unsafe fn test4_213() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16623,9 +16704,9 @@ pub unsafe fn test4_213() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16673,9 +16754,9 @@ pub unsafe fn test4_214() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16708,9 +16789,9 @@ pub unsafe fn test4_214() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16758,9 +16839,9 @@ pub unsafe fn test4_215() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16793,9 +16874,9 @@ pub unsafe fn test4_215() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16843,9 +16924,9 @@ pub unsafe fn test4_216() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16878,9 +16959,9 @@ pub unsafe fn test4_216() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16928,9 +17009,9 @@ pub unsafe fn test4_217() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -16963,9 +17044,9 @@ pub unsafe fn test4_217() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17013,9 +17094,9 @@ pub unsafe fn test4_218() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17048,9 +17129,9 @@ pub unsafe fn test4_218() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17098,9 +17179,9 @@ pub unsafe fn test4_219() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17133,9 +17214,9 @@ pub unsafe fn test4_219() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17183,9 +17264,9 @@ pub unsafe fn test4_220() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17218,9 +17299,9 @@ pub unsafe fn test4_220() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17268,9 +17349,9 @@ pub unsafe fn test4_221() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17303,9 +17384,9 @@ pub unsafe fn test4_221() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17353,9 +17434,9 @@ pub unsafe fn test4_222() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17388,9 +17469,9 @@ pub unsafe fn test4_222() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17438,9 +17519,9 @@ pub unsafe fn test4_223() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17473,9 +17554,9 @@ pub unsafe fn test4_223() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17523,9 +17604,9 @@ pub unsafe fn test4_224() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17558,9 +17639,9 @@ pub unsafe fn test4_224() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17608,9 +17689,9 @@ pub unsafe fn test4_225() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17643,9 +17724,9 @@ pub unsafe fn test4_225() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17693,9 +17774,9 @@ pub unsafe fn test4_226() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17728,9 +17809,9 @@ pub unsafe fn test4_226() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17778,9 +17859,9 @@ pub unsafe fn test4_227() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17813,9 +17894,9 @@ pub unsafe fn test4_227() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17863,9 +17944,9 @@ pub unsafe fn test4_228() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17898,9 +17979,9 @@ pub unsafe fn test4_228() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17948,9 +18029,9 @@ pub unsafe fn test4_229() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -17983,9 +18064,9 @@ pub unsafe fn test4_229() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18033,9 +18114,9 @@ pub unsafe fn test4_230() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18068,9 +18149,9 @@ pub unsafe fn test4_230() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18118,9 +18199,9 @@ pub unsafe fn test4_231() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18153,9 +18234,9 @@ pub unsafe fn test4_231() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18203,9 +18284,9 @@ pub unsafe fn test4_232() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18238,9 +18319,9 @@ pub unsafe fn test4_232() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18288,9 +18369,9 @@ pub unsafe fn test4_233() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18323,9 +18404,9 @@ pub unsafe fn test4_233() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18373,9 +18454,9 @@ pub unsafe fn test4_234() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18408,9 +18489,9 @@ pub unsafe fn test4_234() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18458,9 +18539,9 @@ pub unsafe fn test4_235() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18493,9 +18574,9 @@ pub unsafe fn test4_235() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18543,9 +18624,9 @@ pub unsafe fn test4_236() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18578,9 +18659,9 @@ pub unsafe fn test4_236() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18628,9 +18709,9 @@ pub unsafe fn test4_237() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18663,9 +18744,9 @@ pub unsafe fn test4_237() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18713,9 +18794,9 @@ pub unsafe fn test4_238() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18748,9 +18829,9 @@ pub unsafe fn test4_238() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18798,9 +18879,9 @@ pub unsafe fn test4_239() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18833,9 +18914,9 @@ pub unsafe fn test4_239() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18883,9 +18964,9 @@ pub unsafe fn test4_240() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18918,9 +18999,9 @@ pub unsafe fn test4_240() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -18968,9 +19049,9 @@ pub unsafe fn test4_241() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19003,9 +19084,9 @@ pub unsafe fn test4_241() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19053,9 +19134,9 @@ pub unsafe fn test4_242() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19088,9 +19169,9 @@ pub unsafe fn test4_242() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19138,9 +19219,9 @@ pub unsafe fn test4_243() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19173,9 +19254,9 @@ pub unsafe fn test4_243() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19223,9 +19304,9 @@ pub unsafe fn test4_244() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19258,9 +19339,9 @@ pub unsafe fn test4_244() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19308,9 +19389,9 @@ pub unsafe fn test4_245() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19343,9 +19424,9 @@ pub unsafe fn test4_245() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19393,9 +19474,9 @@ pub unsafe fn test4_246() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19428,9 +19509,9 @@ pub unsafe fn test4_246() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19478,9 +19559,9 @@ pub unsafe fn test4_247() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19513,9 +19594,9 @@ pub unsafe fn test4_247() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19563,9 +19644,9 @@ pub unsafe fn test4_248() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19598,9 +19679,9 @@ pub unsafe fn test4_248() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19648,9 +19729,9 @@ pub unsafe fn test4_249() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19683,9 +19764,9 @@ pub unsafe fn test4_249() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19733,9 +19814,9 @@ pub unsafe fn test4_250() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19768,9 +19849,9 @@ pub unsafe fn test4_250() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19818,9 +19899,9 @@ pub unsafe fn test4_251() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19853,9 +19934,9 @@ pub unsafe fn test4_251() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19903,9 +19984,9 @@ pub unsafe fn test4_252() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19938,9 +20019,9 @@ pub unsafe fn test4_252() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -19988,9 +20069,9 @@ pub unsafe fn test4_253() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20023,9 +20104,9 @@ pub unsafe fn test4_253() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20073,9 +20154,9 @@ pub unsafe fn test4_254() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20108,9 +20189,9 @@ pub unsafe fn test4_254() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20158,9 +20239,9 @@ pub unsafe fn test4_255() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20193,9 +20274,9 @@ pub unsafe fn test4_255() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20243,9 +20324,9 @@ pub unsafe fn test4_256() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20278,9 +20359,9 @@ pub unsafe fn test4_256() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20328,9 +20409,9 @@ pub unsafe fn test4_257() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20363,9 +20444,9 @@ pub unsafe fn test4_257() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20413,9 +20494,9 @@ pub unsafe fn test4_258() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20448,9 +20529,9 @@ pub unsafe fn test4_258() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20498,9 +20579,9 @@ pub unsafe fn test4_259() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20533,9 +20614,9 @@ pub unsafe fn test4_259() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20583,9 +20664,9 @@ pub unsafe fn test4_260() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20618,9 +20699,9 @@ pub unsafe fn test4_260() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20668,9 +20749,9 @@ pub unsafe fn test4_261() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20703,9 +20784,9 @@ pub unsafe fn test4_261() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20753,9 +20834,9 @@ pub unsafe fn test4_262() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20788,9 +20869,9 @@ pub unsafe fn test4_262() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20838,9 +20919,9 @@ pub unsafe fn test4_263() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20873,9 +20954,9 @@ pub unsafe fn test4_263() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20923,9 +21004,9 @@ pub unsafe fn test4_264() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -20958,9 +21039,9 @@ pub unsafe fn test4_264() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21008,9 +21089,9 @@ pub unsafe fn test4_265() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21043,9 +21124,9 @@ pub unsafe fn test4_265() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21093,9 +21174,9 @@ pub unsafe fn test4_266() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21128,9 +21209,9 @@ pub unsafe fn test4_266() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21178,9 +21259,9 @@ pub unsafe fn test4_267() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21213,9 +21294,9 @@ pub unsafe fn test4_267() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21263,9 +21344,9 @@ pub unsafe fn test4_268() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21298,9 +21379,9 @@ pub unsafe fn test4_268() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21348,9 +21429,9 @@ pub unsafe fn test4_269() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21383,9 +21464,9 @@ pub unsafe fn test4_269() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21433,9 +21514,9 @@ pub unsafe fn test4_270() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21468,9 +21549,9 @@ pub unsafe fn test4_270() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21518,9 +21599,9 @@ pub unsafe fn test4_271() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21553,9 +21634,9 @@ pub unsafe fn test4_271() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21603,9 +21684,9 @@ pub unsafe fn test4_272() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21638,9 +21719,9 @@ pub unsafe fn test4_272() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21688,9 +21769,9 @@ pub unsafe fn test4_273() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21723,9 +21804,9 @@ pub unsafe fn test4_273() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21773,9 +21854,9 @@ pub unsafe fn test4_274() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21808,9 +21889,9 @@ pub unsafe fn test4_274() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21858,9 +21939,9 @@ pub unsafe fn test4_275() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21893,9 +21974,9 @@ pub unsafe fn test4_275() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21943,9 +22024,9 @@ pub unsafe fn test4_276() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -21978,9 +22059,9 @@ pub unsafe fn test4_276() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22028,9 +22109,9 @@ pub unsafe fn test4_277() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22063,9 +22144,9 @@ pub unsafe fn test4_277() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22113,9 +22194,9 @@ pub unsafe fn test4_278() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22148,9 +22229,9 @@ pub unsafe fn test4_278() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22198,9 +22279,9 @@ pub unsafe fn test4_279() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22233,9 +22314,9 @@ pub unsafe fn test4_279() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22283,9 +22364,9 @@ pub unsafe fn test4_280() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22318,9 +22399,9 @@ pub unsafe fn test4_280() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: *mut NonTrivialSortable = unimplemented!();
+        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22368,9 +22449,9 @@ pub unsafe fn test4_281() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22403,9 +22484,9 @@ pub unsafe fn test4_281() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: cpp17_output_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_1(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22453,9 +22534,9 @@ pub unsafe fn test4_282() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22488,9 +22569,9 @@ pub unsafe fn test4_282() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: forward_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_7(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22538,9 +22619,9 @@ pub unsafe fn test4_283() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22573,9 +22654,9 @@ pub unsafe fn test4_283() {
             NonTrivialSortable::new_2({ 32_() }),
             NonTrivialSortable::new_2({ 42_() }),
         ];
-        let mut end: bidirectional_iterator_NonTrivialSortable_ptr_ = unimplemented!();
+        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
         unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_13(&end) }).cast_const();
+        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
         'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
             unimplemented!();
             it.prefix_inc();
@@ -22623,91 +22704,6 @@ pub unsafe fn test4_284() {
             NonTrivialSortable::new_2({ 33_() }),
             NonTrivialSortable::new_2({ 41_() }),
         ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
-        unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
-        'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-    {
-        let mut result: [NonTrivialSortable; 20] = [
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ];
-        let mut expected: [NonTrivialSortable; 2] = [
-            NonTrivialSortable::new_2({ 32_() }),
-            NonTrivialSortable::new_2({ 42_() }),
-        ];
-        let mut end: random_access_iterator_NonTrivialSortable_ptr_ = unimplemented!();
-        unimplemented!();
-        let mut it: *const NonTrivialSortable = (unsafe { base_20(&end) }).cast_const();
-        'loop_: while ((it) != ((result.as_mut_ptr().offset((20_()) as isize)).cast_const())) {
-            unimplemented!();
-            it.prefix_inc();
-        }
-    }
-}
-pub unsafe fn test4_285() {
-    let a: [NonTrivialSortable; 4] = [
-        NonTrivialSortable::new_2({ 11_() }),
-        NonTrivialSortable::new_2({ 33_() }),
-        NonTrivialSortable::new_2({ 31_() }),
-        NonTrivialSortable::new_2({ 41_() }),
-    ];
-    let b: [NonTrivialSortable; 5] = [
-        NonTrivialSortable::new_2({ 22_() }),
-        NonTrivialSortable::new_2({ 32_() }),
-        NonTrivialSortable::new_2({ 43_() }),
-        NonTrivialSortable::new_2({ 42_() }),
-        NonTrivialSortable::new_2({ 52_() }),
-    ];
-    {
-        let mut result: [NonTrivialSortable; 20] = [
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-            NonTrivialSortable::new_1(),
-        ];
-        let mut expected: [NonTrivialSortable; 2] = [
-            NonTrivialSortable::new_2({ 33_() }),
-            NonTrivialSortable::new_2({ 41_() }),
-        ];
         let mut end: *mut NonTrivialSortable = unimplemented!();
         unimplemented!();
         let mut it: *const NonTrivialSortable = (unsafe { base_25(end) }).cast_const();
@@ -22752,443 +22748,443 @@ pub unsafe fn test4_285() {
         }
     }
 }
-pub unsafe fn test3_286() {
+pub unsafe fn test3_285() {
+    (unsafe { test4_35() });
     (unsafe { test4_36() });
     (unsafe { test4_37() });
     (unsafe { test4_38() });
     (unsafe { test4_39() });
-    (unsafe { test4_40() });
 }
-pub unsafe fn test3_287() {
+pub unsafe fn test3_286() {
+    (unsafe { test4_40() });
     (unsafe { test4_41() });
     (unsafe { test4_42() });
     (unsafe { test4_43() });
     (unsafe { test4_44() });
-    (unsafe { test4_45() });
 }
-pub unsafe fn test3_288() {
+pub unsafe fn test3_287() {
+    (unsafe { test4_45() });
     (unsafe { test4_46() });
     (unsafe { test4_47() });
     (unsafe { test4_48() });
     (unsafe { test4_49() });
-    (unsafe { test4_50() });
 }
-pub unsafe fn test3_289() {
+pub unsafe fn test3_288() {
+    (unsafe { test4_50() });
     (unsafe { test4_51() });
     (unsafe { test4_52() });
     (unsafe { test4_53() });
     (unsafe { test4_54() });
-    (unsafe { test4_55() });
 }
-pub unsafe fn test3_290() {
+pub unsafe fn test3_289() {
+    (unsafe { test4_55() });
     (unsafe { test4_56() });
     (unsafe { test4_57() });
     (unsafe { test4_58() });
     (unsafe { test4_59() });
-    (unsafe { test4_60() });
 }
-pub unsafe fn test3_291() {
+pub unsafe fn test3_290() {
+    (unsafe { test4_60() });
     (unsafe { test4_61() });
     (unsafe { test4_62() });
     (unsafe { test4_63() });
     (unsafe { test4_64() });
-    (unsafe { test4_65() });
 }
-pub unsafe fn test3_292() {
+pub unsafe fn test3_291() {
+    (unsafe { test4_65() });
     (unsafe { test4_66() });
     (unsafe { test4_67() });
     (unsafe { test4_68() });
     (unsafe { test4_69() });
-    (unsafe { test4_70() });
 }
-pub unsafe fn test3_293() {
+pub unsafe fn test3_292() {
+    (unsafe { test4_70() });
     (unsafe { test4_71() });
     (unsafe { test4_72() });
     (unsafe { test4_73() });
     (unsafe { test4_74() });
-    (unsafe { test4_75() });
 }
-pub unsafe fn test3_294() {
+pub unsafe fn test3_293() {
+    (unsafe { test4_75() });
     (unsafe { test4_76() });
     (unsafe { test4_77() });
     (unsafe { test4_78() });
     (unsafe { test4_79() });
-    (unsafe { test4_80() });
 }
-pub unsafe fn test3_295() {
+pub unsafe fn test3_294() {
+    (unsafe { test4_80() });
     (unsafe { test4_81() });
     (unsafe { test4_82() });
     (unsafe { test4_83() });
     (unsafe { test4_84() });
-    (unsafe { test4_85() });
 }
-pub unsafe fn test3_296() {
+pub unsafe fn test3_295() {
+    (unsafe { test4_85() });
     (unsafe { test4_86() });
     (unsafe { test4_87() });
     (unsafe { test4_88() });
     (unsafe { test4_89() });
-    (unsafe { test4_90() });
 }
-pub unsafe fn test3_297() {
+pub unsafe fn test3_296() {
+    (unsafe { test4_90() });
     (unsafe { test4_91() });
     (unsafe { test4_92() });
     (unsafe { test4_93() });
     (unsafe { test4_94() });
-    (unsafe { test4_95() });
 }
-pub unsafe fn test3_298() {
+pub unsafe fn test3_297() {
+    (unsafe { test4_95() });
     (unsafe { test4_96() });
     (unsafe { test4_97() });
     (unsafe { test4_98() });
     (unsafe { test4_99() });
-    (unsafe { test4_100() });
 }
-pub unsafe fn test3_299() {
+pub unsafe fn test3_298() {
+    (unsafe { test4_100() });
     (unsafe { test4_101() });
     (unsafe { test4_102() });
     (unsafe { test4_103() });
     (unsafe { test4_104() });
-    (unsafe { test4_105() });
 }
-pub unsafe fn test3_300() {
+pub unsafe fn test3_299() {
+    (unsafe { test4_105() });
     (unsafe { test4_106() });
     (unsafe { test4_107() });
     (unsafe { test4_108() });
     (unsafe { test4_109() });
-    (unsafe { test4_110() });
 }
-pub unsafe fn test3_301() {
+pub unsafe fn test3_300() {
+    (unsafe { test4_110() });
     (unsafe { test4_111() });
     (unsafe { test4_112() });
     (unsafe { test4_113() });
     (unsafe { test4_114() });
-    (unsafe { test4_115() });
 }
-pub unsafe fn test3_302() {
+pub unsafe fn test3_301() {
+    (unsafe { test4_115() });
     (unsafe { test4_116() });
     (unsafe { test4_117() });
     (unsafe { test4_118() });
     (unsafe { test4_119() });
-    (unsafe { test4_120() });
 }
-pub unsafe fn test3_303() {
+pub unsafe fn test3_302() {
+    (unsafe { test4_120() });
     (unsafe { test4_121() });
     (unsafe { test4_122() });
     (unsafe { test4_123() });
     (unsafe { test4_124() });
-    (unsafe { test4_125() });
 }
-pub unsafe fn test3_304() {
+pub unsafe fn test3_303() {
+    (unsafe { test4_125() });
     (unsafe { test4_126() });
     (unsafe { test4_127() });
     (unsafe { test4_128() });
     (unsafe { test4_129() });
-    (unsafe { test4_130() });
 }
-pub unsafe fn test3_305() {
+pub unsafe fn test3_304() {
+    (unsafe { test4_130() });
     (unsafe { test4_131() });
     (unsafe { test4_132() });
     (unsafe { test4_133() });
     (unsafe { test4_134() });
-    (unsafe { test4_135() });
 }
-pub unsafe fn test3_306() {
+pub unsafe fn test3_305() {
+    (unsafe { test4_135() });
     (unsafe { test4_136() });
     (unsafe { test4_137() });
     (unsafe { test4_138() });
     (unsafe { test4_139() });
-    (unsafe { test4_140() });
 }
-pub unsafe fn test3_307() {
+pub unsafe fn test3_306() {
+    (unsafe { test4_140() });
     (unsafe { test4_141() });
     (unsafe { test4_142() });
     (unsafe { test4_143() });
     (unsafe { test4_144() });
-    (unsafe { test4_145() });
 }
-pub unsafe fn test3_308() {
+pub unsafe fn test3_307() {
+    (unsafe { test4_145() });
     (unsafe { test4_146() });
     (unsafe { test4_147() });
     (unsafe { test4_148() });
     (unsafe { test4_149() });
-    (unsafe { test4_150() });
 }
-pub unsafe fn test3_309() {
+pub unsafe fn test3_308() {
+    (unsafe { test4_150() });
     (unsafe { test4_151() });
     (unsafe { test4_152() });
     (unsafe { test4_153() });
     (unsafe { test4_154() });
-    (unsafe { test4_155() });
 }
-pub unsafe fn test3_310() {
+pub unsafe fn test3_309() {
+    (unsafe { test4_155() });
     (unsafe { test4_156() });
     (unsafe { test4_157() });
     (unsafe { test4_158() });
     (unsafe { test4_159() });
-    (unsafe { test4_160() });
 }
-pub unsafe fn test3_311() {
+pub unsafe fn test3_310() {
+    (unsafe { test4_160() });
     (unsafe { test4_161() });
     (unsafe { test4_162() });
     (unsafe { test4_163() });
     (unsafe { test4_164() });
-    (unsafe { test4_165() });
 }
-pub unsafe fn test3_312() {
+pub unsafe fn test3_311() {
+    (unsafe { test4_165() });
     (unsafe { test4_166() });
     (unsafe { test4_167() });
     (unsafe { test4_168() });
     (unsafe { test4_169() });
-    (unsafe { test4_170() });
 }
-pub unsafe fn test3_313() {
+pub unsafe fn test3_312() {
+    (unsafe { test4_170() });
     (unsafe { test4_171() });
     (unsafe { test4_172() });
     (unsafe { test4_173() });
     (unsafe { test4_174() });
-    (unsafe { test4_175() });
 }
-pub unsafe fn test3_314() {
+pub unsafe fn test3_313() {
+    (unsafe { test4_175() });
     (unsafe { test4_176() });
     (unsafe { test4_177() });
     (unsafe { test4_178() });
     (unsafe { test4_179() });
-    (unsafe { test4_180() });
 }
-pub unsafe fn test3_315() {
+pub unsafe fn test3_314() {
+    (unsafe { test4_180() });
     (unsafe { test4_181() });
     (unsafe { test4_182() });
     (unsafe { test4_183() });
     (unsafe { test4_184() });
-    (unsafe { test4_185() });
 }
-pub unsafe fn test3_316() {
+pub unsafe fn test3_315() {
+    (unsafe { test4_185() });
     (unsafe { test4_186() });
     (unsafe { test4_187() });
     (unsafe { test4_188() });
     (unsafe { test4_189() });
-    (unsafe { test4_190() });
 }
-pub unsafe fn test3_317() {
+pub unsafe fn test3_316() {
+    (unsafe { test4_190() });
     (unsafe { test4_191() });
     (unsafe { test4_192() });
     (unsafe { test4_193() });
     (unsafe { test4_194() });
-    (unsafe { test4_195() });
 }
-pub unsafe fn test3_318() {
+pub unsafe fn test3_317() {
+    (unsafe { test4_195() });
     (unsafe { test4_196() });
     (unsafe { test4_197() });
     (unsafe { test4_198() });
     (unsafe { test4_199() });
-    (unsafe { test4_200() });
 }
-pub unsafe fn test3_319() {
+pub unsafe fn test3_318() {
+    (unsafe { test4_200() });
     (unsafe { test4_201() });
     (unsafe { test4_202() });
     (unsafe { test4_203() });
     (unsafe { test4_204() });
-    (unsafe { test4_205() });
 }
-pub unsafe fn test3_320() {
+pub unsafe fn test3_319() {
+    (unsafe { test4_205() });
     (unsafe { test4_206() });
     (unsafe { test4_207() });
     (unsafe { test4_208() });
     (unsafe { test4_209() });
-    (unsafe { test4_210() });
 }
-pub unsafe fn test3_321() {
+pub unsafe fn test3_320() {
+    (unsafe { test4_210() });
     (unsafe { test4_211() });
     (unsafe { test4_212() });
     (unsafe { test4_213() });
     (unsafe { test4_214() });
-    (unsafe { test4_215() });
 }
-pub unsafe fn test3_322() {
+pub unsafe fn test3_321() {
+    (unsafe { test4_215() });
     (unsafe { test4_216() });
     (unsafe { test4_217() });
     (unsafe { test4_218() });
     (unsafe { test4_219() });
-    (unsafe { test4_220() });
 }
-pub unsafe fn test3_323() {
+pub unsafe fn test3_322() {
+    (unsafe { test4_220() });
     (unsafe { test4_221() });
     (unsafe { test4_222() });
     (unsafe { test4_223() });
     (unsafe { test4_224() });
-    (unsafe { test4_225() });
 }
-pub unsafe fn test3_324() {
+pub unsafe fn test3_323() {
+    (unsafe { test4_225() });
     (unsafe { test4_226() });
     (unsafe { test4_227() });
     (unsafe { test4_228() });
     (unsafe { test4_229() });
-    (unsafe { test4_230() });
 }
-pub unsafe fn test3_325() {
+pub unsafe fn test3_324() {
+    (unsafe { test4_230() });
     (unsafe { test4_231() });
     (unsafe { test4_232() });
     (unsafe { test4_233() });
     (unsafe { test4_234() });
-    (unsafe { test4_235() });
 }
-pub unsafe fn test3_326() {
+pub unsafe fn test3_325() {
+    (unsafe { test4_235() });
     (unsafe { test4_236() });
     (unsafe { test4_237() });
     (unsafe { test4_238() });
     (unsafe { test4_239() });
-    (unsafe { test4_240() });
 }
-pub unsafe fn test3_327() {
+pub unsafe fn test3_326() {
+    (unsafe { test4_240() });
     (unsafe { test4_241() });
     (unsafe { test4_242() });
     (unsafe { test4_243() });
     (unsafe { test4_244() });
-    (unsafe { test4_245() });
 }
-pub unsafe fn test3_328() {
+pub unsafe fn test3_327() {
+    (unsafe { test4_245() });
     (unsafe { test4_246() });
     (unsafe { test4_247() });
     (unsafe { test4_248() });
     (unsafe { test4_249() });
-    (unsafe { test4_250() });
 }
-pub unsafe fn test3_329() {
+pub unsafe fn test3_328() {
+    (unsafe { test4_250() });
     (unsafe { test4_251() });
     (unsafe { test4_252() });
     (unsafe { test4_253() });
     (unsafe { test4_254() });
-    (unsafe { test4_255() });
 }
-pub unsafe fn test3_330() {
+pub unsafe fn test3_329() {
+    (unsafe { test4_255() });
     (unsafe { test4_256() });
     (unsafe { test4_257() });
     (unsafe { test4_258() });
     (unsafe { test4_259() });
-    (unsafe { test4_260() });
 }
-pub unsafe fn test3_331() {
+pub unsafe fn test3_330() {
+    (unsafe { test4_260() });
     (unsafe { test4_261() });
     (unsafe { test4_262() });
     (unsafe { test4_263() });
     (unsafe { test4_264() });
-    (unsafe { test4_265() });
 }
-pub unsafe fn test3_332() {
+pub unsafe fn test3_331() {
+    (unsafe { test4_265() });
     (unsafe { test4_266() });
     (unsafe { test4_267() });
     (unsafe { test4_268() });
     (unsafe { test4_269() });
-    (unsafe { test4_270() });
 }
-pub unsafe fn test3_333() {
+pub unsafe fn test3_332() {
+    (unsafe { test4_270() });
     (unsafe { test4_271() });
     (unsafe { test4_272() });
     (unsafe { test4_273() });
     (unsafe { test4_274() });
-    (unsafe { test4_275() });
 }
-pub unsafe fn test3_334() {
+pub unsafe fn test3_333() {
+    (unsafe { test4_275() });
     (unsafe { test4_276() });
     (unsafe { test4_277() });
     (unsafe { test4_278() });
     (unsafe { test4_279() });
-    (unsafe { test4_280() });
 }
-pub unsafe fn test3_335() {
+pub unsafe fn test3_334() {
+    (unsafe { test4_280() });
     (unsafe { test4_281() });
     (unsafe { test4_282() });
     (unsafe { test4_283() });
     (unsafe { test4_284() });
-    (unsafe { test4_285() });
 }
-pub unsafe fn test2_336() {
+pub unsafe fn test2_335() {
+    (unsafe { test3_285() });
     (unsafe { test3_286() });
     (unsafe { test3_287() });
     (unsafe { test3_288() });
     (unsafe { test3_289() });
-    (unsafe { test3_290() });
 }
-pub unsafe fn test2_337() {
+pub unsafe fn test2_336() {
+    (unsafe { test3_290() });
     (unsafe { test3_291() });
     (unsafe { test3_292() });
     (unsafe { test3_293() });
     (unsafe { test3_294() });
-    (unsafe { test3_295() });
 }
-pub unsafe fn test2_338() {
+pub unsafe fn test2_337() {
+    (unsafe { test3_295() });
     (unsafe { test3_296() });
     (unsafe { test3_297() });
     (unsafe { test3_298() });
     (unsafe { test3_299() });
-    (unsafe { test3_300() });
 }
-pub unsafe fn test2_339() {
+pub unsafe fn test2_338() {
+    (unsafe { test3_300() });
     (unsafe { test3_301() });
     (unsafe { test3_302() });
     (unsafe { test3_303() });
     (unsafe { test3_304() });
-    (unsafe { test3_305() });
 }
-pub unsafe fn test2_340() {
+pub unsafe fn test2_339() {
+    (unsafe { test3_305() });
     (unsafe { test3_306() });
     (unsafe { test3_307() });
     (unsafe { test3_308() });
     (unsafe { test3_309() });
-    (unsafe { test3_310() });
 }
-pub unsafe fn test2_341() {
+pub unsafe fn test2_340() {
+    (unsafe { test3_310() });
     (unsafe { test3_311() });
     (unsafe { test3_312() });
     (unsafe { test3_313() });
     (unsafe { test3_314() });
-    (unsafe { test3_315() });
 }
-pub unsafe fn test2_342() {
+pub unsafe fn test2_341() {
+    (unsafe { test3_315() });
     (unsafe { test3_316() });
     (unsafe { test3_317() });
     (unsafe { test3_318() });
     (unsafe { test3_319() });
-    (unsafe { test3_320() });
 }
-pub unsafe fn test2_343() {
+pub unsafe fn test2_342() {
+    (unsafe { test3_320() });
     (unsafe { test3_321() });
     (unsafe { test3_322() });
     (unsafe { test3_323() });
     (unsafe { test3_324() });
-    (unsafe { test3_325() });
 }
-pub unsafe fn test2_344() {
+pub unsafe fn test2_343() {
+    (unsafe { test3_325() });
     (unsafe { test3_326() });
     (unsafe { test3_327() });
     (unsafe { test3_328() });
     (unsafe { test3_329() });
-    (unsafe { test3_330() });
 }
-pub unsafe fn test2_345() {
+pub unsafe fn test2_344() {
+    (unsafe { test3_330() });
     (unsafe { test3_331() });
     (unsafe { test3_332() });
     (unsafe { test3_333() });
     (unsafe { test3_334() });
-    (unsafe { test3_335() });
 }
-pub unsafe fn test1_346() {
+pub unsafe fn test1_345() {
+    (unsafe { test2_335() });
     (unsafe { test2_336() });
     (unsafe { test2_337() });
     (unsafe { test2_338() });
     (unsafe { test2_339() });
-    (unsafe { test2_340() });
 }
-pub unsafe fn test1_347() {
+pub unsafe fn test1_346() {
+    (unsafe { test2_340() });
     (unsafe { test2_341() });
     (unsafe { test2_342() });
     (unsafe { test2_343() });
     (unsafe { test2_344() });
-    (unsafe { test2_345() });
 }
-pub unsafe fn test_348() -> () {
+pub unsafe fn test_347() -> () {
+    (unsafe { test1_345() });
     (unsafe { test1_346() });
-    (unsafe { test1_347() });
     return true;
 }
 pub fn main() {
@@ -23207,7 +23203,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_348() });
+    (unsafe { test_347() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -377,25 +377,21 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_8(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -479,7 +475,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -489,7 +485,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -557,17 +553,17 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn lt_12(mut a: (), mut b: ()) -> () {
+pub unsafe fn lt_11(mut a: (), mut b: ()) -> () {
     return ((a) < (b));
 }
-pub unsafe fn test_constexpr_13() -> () {
+pub unsafe fn test_constexpr_12() -> () {
     let mut ia: [(); 5] = [1_(), 3_(), 3_(), 6_(), 7_()];
     return ((unimplemented!()) && (unimplemented!())) && (!(unimplemented!()));
 }
-pub unsafe fn test_14(mut first: *mut (), mut last: *mut (), value: *const (), mut x: ()) {
+pub unsafe fn test_13(mut first: *mut (), mut last: *mut (), value: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn test_15(
+pub unsafe fn test_14(
     mut first: forward_iterator_const_int_ptr_,
     mut last: forward_iterator_const_int_ptr_,
     value: *const (),
@@ -575,7 +571,7 @@ pub unsafe fn test_15(
 ) {
     unimplemented!();
 }
-pub unsafe fn test_16(
+pub unsafe fn test_15(
     mut first: bidirectional_iterator_const_int_ptr_,
     mut last: bidirectional_iterator_const_int_ptr_,
     value: *const (),
@@ -583,7 +579,7 @@ pub unsafe fn test_16(
 ) {
     unimplemented!();
 }
-pub unsafe fn test_17(
+pub unsafe fn test_16(
     mut first: random_access_iterator_const_int_ptr_,
     mut last: random_access_iterator_const_int_ptr_,
     value: *const (),
@@ -591,10 +587,10 @@ pub unsafe fn test_17(
 ) {
     unimplemented!();
 }
-pub unsafe fn test_18(mut first: *const (), mut last: *const (), value: *const (), mut x: ()) {
+pub unsafe fn test_17(mut first: *const (), mut last: *const (), value: *const (), mut x: ()) {
     unimplemented!();
 }
-pub unsafe fn test_19() {
+pub unsafe fn test_18() {
     let N: () = 1000_();
     let M: () = 10_();
     let mut v: () = unimplemented!();
@@ -616,7 +612,7 @@ pub unsafe fn test_19() {
             let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
                 (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
             });
-            test_15(_first, _last, &x, true)
+            test_14(_first, _last, &x, true)
         });
         x.prefix_inc();
     }
@@ -627,7 +623,7 @@ pub unsafe fn test_19() {
             (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
         });
         let mut _value: () = -1_();
-        test_15(_first, _last, &mut _value, false)
+        test_14(_first, _last, &mut _value, false)
     });
     (unsafe {
         let _first: forward_iterator_const_int_ptr_ =
@@ -635,10 +631,10 @@ pub unsafe fn test_19() {
         let _last: forward_iterator_const_int_ptr_ = forward_iterator_const_int_ptr_::new_1({
             (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
         });
-        test_15(_first, _last, &M, false)
+        test_14(_first, _last, &M, false)
     });
 }
-pub unsafe fn test_20() {
+pub unsafe fn test_19() {
     let N: () = 1000_();
     let M: () = 10_();
     let mut v: () = unimplemented!();
@@ -661,7 +657,7 @@ pub unsafe fn test_20() {
                 bidirectional_iterator_const_int_ptr_::new_1({
                     (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
                 });
-            test_16(_first, _last, &x, true)
+            test_15(_first, _last, &x, true)
         });
         x.prefix_inc();
     }
@@ -673,7 +669,7 @@ pub unsafe fn test_20() {
                 (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
             });
         let mut _value: () = -1_();
-        test_16(_first, _last, &mut _value, false)
+        test_15(_first, _last, &mut _value, false)
     });
     (unsafe {
         let _first: bidirectional_iterator_const_int_ptr_ =
@@ -682,10 +678,10 @@ pub unsafe fn test_20() {
             bidirectional_iterator_const_int_ptr_::new_1({
                 (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
             });
-        test_16(_first, _last, &M, false)
+        test_15(_first, _last, &M, false)
     });
 }
-pub unsafe fn test_21() {
+pub unsafe fn test_20() {
     let N: () = 1000_();
     let M: () = 10_();
     let mut v: () = unimplemented!();
@@ -708,7 +704,7 @@ pub unsafe fn test_21() {
                 random_access_iterator_const_int_ptr_::new_1({
                     (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
                 });
-            test_17(_first, _last, &x, true)
+            test_16(_first, _last, &x, true)
         });
         x.prefix_inc();
     }
@@ -720,7 +716,7 @@ pub unsafe fn test_21() {
                 (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
             });
         let mut _value: () = -1_();
-        test_17(_first, _last, &mut _value, false)
+        test_16(_first, _last, &mut _value, false)
     });
     (unsafe {
         let _first: random_access_iterator_const_int_ptr_ =
@@ -729,10 +725,10 @@ pub unsafe fn test_21() {
             random_access_iterator_const_int_ptr_::new_1({
                 (unimplemented!().offset((unimplemented!()) as isize)).cast_const()
             });
-        test_17(_first, _last, &M, false)
+        test_16(_first, _last, &M, false)
     });
 }
-pub unsafe fn test_22() {
+pub unsafe fn test_21() {
     let N: () = 1000_();
     let M: () = 10_();
     let mut v: () = unimplemented!();
@@ -751,7 +747,7 @@ pub unsafe fn test_22() {
         (unsafe {
             let _first: *const () = unimplemented!();
             let _last: *const () = unimplemented!().offset((unimplemented!()) as isize);
-            test_18(_first, _last, &x, true)
+            test_17(_first, _last, &x, true)
         });
         x.prefix_inc();
     }
@@ -759,12 +755,12 @@ pub unsafe fn test_22() {
         let _first: *const () = unimplemented!();
         let _last: *const () = unimplemented!().offset((unimplemented!()) as isize);
         let mut _value: () = -1_();
-        test_18(_first, _last, &mut _value, false)
+        test_17(_first, _last, &mut _value, false)
     });
     (unsafe {
         let _first: *const () = unimplemented!();
         let _last: *const () = unimplemented!().offset((unimplemented!()) as isize);
-        test_18(_first, _last, &M, false)
+        test_17(_first, _last, &M, false)
     });
 }
 pub fn main() {
@@ -798,16 +794,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                             as ()))
                         + (8_()))
                         <= (x));
-                test_14(_first, _last, _value, _x)
+                test_13(_first, _last, _value, _x)
             });
             x.prefix_inc();
         }
         e.prefix_inc();
     }
+    (unsafe { test_18() });
     (unsafe { test_19() });
     (unsafe { test_20() });
     (unsafe { test_21() });
-    (unsafe { test_22() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }

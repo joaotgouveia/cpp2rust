@@ -252,29 +252,23 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_6(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -320,7 +314,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -345,7 +339,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -435,28 +429,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_11.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_12.with(|rc| *rc.borrow())));
+        return ((alloc_count_10.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_11.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_13.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_10.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_11.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_12.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_12.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_9.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_10.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_11.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_10: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_9: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_11: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_10: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_12: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_11: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_13: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_12: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -477,6 +471,129 @@ impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct min_allocator_std_pair_const_int__int__ {}
+pub fn test_alloc_13() {
+    {
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 1] = [unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
+            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
 pub fn test_alloc_14() {
     {
         {
@@ -600,132 +717,9 @@ pub fn test_alloc_14() {
         }
     }
 }
-pub fn test_alloc_15() {
-    {
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let arr: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 1] = [unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 1] = [unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let mut arr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
-            let map: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn test_16() -> () {
+pub fn test_15() -> () {
+    ({ test_alloc_13() });
     ({ test_alloc_14() });
-    ({ test_alloc_15() });
     return true;
 }
 pub fn main() {
@@ -748,7 +742,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_16() });
+    ({ test_15() });
     return 0_();
 }
 pub trait adl_IteratorImpl {
@@ -1133,8 +1127,8 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_10.with(|_| ());
-    let _ = alloc_count_11.with(|_| ());
-    let _ = dealloc_count_12.with(|_| ());
-    let _ = disable_default_constructor_13.with(|_| ());
+    let _ = outstanding_bytes_9.with(|_| ());
+    let _ = alloc_count_10.with(|_| ());
+    let _ = dealloc_count_11.with(|_| ());
+    let _ = disable_default_constructor_12.with(|_| ());
 }

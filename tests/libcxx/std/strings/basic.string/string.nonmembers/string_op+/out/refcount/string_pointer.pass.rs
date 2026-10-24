@@ -170,7 +170,7 @@ pub fn test_string_6() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
@@ -232,7 +232,7 @@ pub fn test_string_7() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();
@@ -294,7 +294,7 @@ pub fn test_string_8() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: Ptr<()> =
                     ((*test_data.borrow())[(1_()) as usize][(k) as usize]).clone();
                 unimplemented!();

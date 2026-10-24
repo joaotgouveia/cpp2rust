@@ -771,12 +771,7 @@ pub fn test01_20() {
             unimplemented!();
         }
     }
-    let p: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()) . insert_41_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_ ( ___x.as_pointer() , )
-        }),
-    ));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -914,18 +909,8 @@ pub fn test02_21() {
             unimplemented!();
         }
     }
-    let p1: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()) . insert_41_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_ ( ___x.as_pointer() , )
-        }),
-    ));
-    let p2: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()) . insert_41_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_ ( ___x.as_pointer() , )
-        }),
-    ));
+    let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

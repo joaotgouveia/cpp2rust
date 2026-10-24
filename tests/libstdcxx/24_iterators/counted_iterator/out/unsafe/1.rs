@@ -267,10 +267,7 @@ pub unsafe fn test01_10() {
 }
 pub unsafe fn test02_11() {
     let mut in_: [(); 3] = [1_(), 2_(), 3_()];
-    let mut in_iter: () =
-        std_counted_iterator_const_int_ptr_::new_1({ (unimplemented!()).cast_const() }, {
-            (unimplemented!() as ())
-        });
+    let mut in_iter: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -334,8 +331,7 @@ pub unsafe fn test02_11() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut out_iter: () =
-        std_counted_iterator_int_ptr_::new_1({ unimplemented!() }, { (unimplemented!() as ()) });
+    let mut out_iter: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -592,9 +588,8 @@ pub unsafe fn test02_11() {
 }
 pub unsafe fn test03_13() {
     let mut arr: [X_14; 2] = [X_14::new({ 1_() }), X_14::new({ 2_() })];
-    let mut i: () = std_counted_iterator_X_ptr_::new_1({ arr.as_mut_ptr() }, { 2_() });
-    let mut j: () =
-        std_counted_iterator_X_ptr_::new_1({ arr.as_mut_ptr().offset((1_()) as isize) }, { 1_() });
+    let mut i: () = unimplemented!();
+    let mut j: () = unimplemented!();
     (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut iter_swap_15))(&mut i, &mut j) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

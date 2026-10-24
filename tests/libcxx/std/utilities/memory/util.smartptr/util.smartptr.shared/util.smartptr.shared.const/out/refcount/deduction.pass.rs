@@ -61,9 +61,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(std_unique_ptr_A__std_default_delete_A__::new(
-            { Ptr::alloc(<A>::default()) },
-        )));
+        let mut u: () =
+            std_unique_ptr_A__std_default_delete_A__::new({ Ptr::alloc(<A>::default()) });
         let mut uPointee: Ptr<A> = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -71,11 +70,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_const_A__std_default_delete_const_A__::new({
-                Ptr::alloc(<A>::default())
-            }),
-        ));
+        let mut u: () = std_unique_ptr_const_A__std_default_delete_const_A__::new({
+            Ptr::alloc(<A>::default())
+        });
         let mut uPointee: Ptr<A> = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -83,7 +80,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut u: () = unimplemented!();
         let mut uPointee: Ptr<A> = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
@@ -91,7 +88,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
     }
     {
-        let u: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut u: () = unimplemented!();
         let mut uPointee: Ptr<A> = unimplemented!();
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;

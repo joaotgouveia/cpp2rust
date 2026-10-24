@@ -65,7 +65,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -460,25 +460,21 @@ pub unsafe fn operator_add_11(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_12(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_13(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -562,7 +558,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -572,7 +568,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -652,7 +648,7 @@ impl rvalue_addable {
         _a1: *const rvalue_addable,
     ) -> rvalue_addable {
         (*r).correctOperatorUsed = true;
-        return (*r);
+        return (*unimplemented!());
     }
 }
 impl Default for rvalue_addable {
@@ -664,21 +660,21 @@ impl Default for rvalue_addable {
         }
     }
 }
-pub unsafe fn operator_add_17(
+pub unsafe fn operator_add_16(
     lhs: *mut rvalue_addable,
     _a1: *const rvalue_addable,
 ) -> rvalue_addable {
     (*lhs).correctOperatorUsed = false;
     return (*lhs);
 }
-pub unsafe fn operator_add_18(
+pub unsafe fn operator_add_17(
     lhs: *mut rvalue_addable,
     _a1: *const rvalue_addable,
 ) -> rvalue_addable {
     (*lhs).correctOperatorUsed = true;
-    return (*lhs);
+    return (*unimplemented!());
 }
-pub unsafe fn test_use_move_19() {
+pub unsafe fn test_use_move_18() {
     let size: () = 100_();
     let mut arr: [rvalue_addable; 100] = [<rvalue_addable>::default(); 100];
     let mut res1: [rvalue_addable; 100] = [<rvalue_addable>::default(); 100];
@@ -696,13 +692,33 @@ pub unsafe fn test_use_move_19() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_string_20() {
+pub unsafe fn test_string_19() {
     let mut sa: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     let mut sr: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     let mut output: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (3_())) {
+        unimplemented!();
+        i.prefix_inc();
+    }
+}
+pub unsafe fn test_20() {
+    let mut ia: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut ir: [(); 5] = [1_(), -1_(), -4_(), -8_(), -13_()];
+    let s: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ib: [(); 5] = [
+        0_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (s)) {
         unimplemented!();
         i.prefix_inc();
     }
@@ -719,7 +735,7 @@ pub unsafe fn test_21() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -739,7 +755,7 @@ pub unsafe fn test_22() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -759,7 +775,7 @@ pub unsafe fn test_23() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -779,7 +795,7 @@ pub unsafe fn test_24() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -799,7 +815,7 @@ pub unsafe fn test_25() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -819,7 +835,7 @@ pub unsafe fn test_26() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -839,7 +855,7 @@ pub unsafe fn test_27() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -859,7 +875,7 @@ pub unsafe fn test_28() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -879,7 +895,7 @@ pub unsafe fn test_29() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -899,7 +915,7 @@ pub unsafe fn test_30() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -919,7 +935,7 @@ pub unsafe fn test_31() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -939,7 +955,7 @@ pub unsafe fn test_32() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -959,7 +975,7 @@ pub unsafe fn test_33() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -979,7 +995,7 @@ pub unsafe fn test_34() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -999,7 +1015,7 @@ pub unsafe fn test_35() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1019,7 +1035,7 @@ pub unsafe fn test_36() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1039,7 +1055,7 @@ pub unsafe fn test_37() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1059,7 +1075,7 @@ pub unsafe fn test_38() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1079,7 +1095,7 @@ pub unsafe fn test_39() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1099,7 +1115,7 @@ pub unsafe fn test_40() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1119,7 +1135,7 @@ pub unsafe fn test_41() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1139,7 +1155,7 @@ pub unsafe fn test_42() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1159,7 +1175,7 @@ pub unsafe fn test_43() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) < (s)) {
@@ -1179,26 +1195,6 @@ pub unsafe fn test_44() {
         unimplemented!(),
         unimplemented!(),
     ];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (s)) {
-        unimplemented!();
-        i.prefix_inc();
-    }
-}
-pub unsafe fn test_45() {
-    let mut ia: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut ir: [(); 5] = [1_(), -1_(), -4_(), -8_(), -13_()];
-    let s: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ib: [(); 5] = [
-        0_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
     let mut r: *mut () = unimplemented!();
     unimplemented!();
     let mut i: () = 0_();
@@ -1207,7 +1203,8 @@ pub unsafe fn test_45() {
         i.prefix_inc();
     }
 }
-pub unsafe fn test_46() -> () {
+pub unsafe fn test_45() -> () {
+    (unsafe { test_20() });
     (unsafe { test_21() });
     (unsafe { test_22() });
     (unsafe { test_23() });
@@ -1232,9 +1229,8 @@ pub unsafe fn test_46() -> () {
     (unsafe { test_42() });
     (unsafe { test_43() });
     (unsafe { test_44() });
-    (unsafe { test_45() });
-    (unsafe { test_use_move_19() });
-    (unsafe { test_string_20() });
+    (unsafe { test_use_move_18() });
+    (unsafe { test_string_19() });
     return true;
 }
 pub fn main() {
@@ -1253,7 +1249,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_46() });
+    (unsafe { test_45() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

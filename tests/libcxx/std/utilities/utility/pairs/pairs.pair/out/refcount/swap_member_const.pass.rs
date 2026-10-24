@@ -29,11 +29,7 @@ const _: () = assert!(
     "!ConstMemberSwapNoexcept<std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>"
 );
 pub fn swap_0(lhs: Ptr<ConstSwappable>, rhs: Ptr<ConstSwappable>) {
-    ({
-        let ___x: Ptr<()> = field_ptr!(lhs, i);
-        let ___y: Ptr<()> = field_ptr!(rhs, i);
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(4)]
@@ -41,7 +37,7 @@ pub struct ConstSwappable {
     #[offset(0)]
     pub i: (),
 }
-pub fn test_2() -> () {
+pub fn test_1() -> () {
     {
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -92,7 +88,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_2() });
+    ({ test_1() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -680,14 +680,14 @@ pub struct anon_22 {
 pub fn test04_23() {
     let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
-    (*p.borrow_mut()) = b"a/b/c/d/e";
+    unimplemented!();
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
-    (*p.borrow_mut()) = b"/a/b/c/d/e";
+    unimplemented!();
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });
     ({ compare_paths_18(unimplemented!(), unimplemented!()) });

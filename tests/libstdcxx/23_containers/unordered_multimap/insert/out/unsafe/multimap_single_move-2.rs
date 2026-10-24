@@ -872,12 +872,7 @@ pub unsafe fn test01_20() {
             unimplemented!();
         }
     }
-    let mut i: () = (unsafe {
-        let mut ___x: () = unimplemented!();
-        m.insert_33_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_(
-            &mut ___x,
-        )
-    });
+    let mut i: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -995,18 +990,8 @@ pub unsafe fn test02_21() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        m.insert_33_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_(
-            &mut ___x,
-        )
-    });
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        m.insert_33_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_(
-            &mut ___x,
-        )
-    });
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

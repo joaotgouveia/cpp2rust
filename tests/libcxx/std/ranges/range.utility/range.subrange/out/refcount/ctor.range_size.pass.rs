@@ -39,57 +39,33 @@ pub fn test_1() -> () {
         8_(),
     ])));
     {
-        let range: Value<BorrowedRange> = Rc::new(RefCell::new(BorrowedRange::new(
-            { (buff.as_pointer() as Ptr<()>) },
-            { (buff.as_pointer() as Ptr<()>) },
-        )));
-        let subrange: Value<()> = Rc::new(RefCell::new(
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { range.as_pointer() },
-                { 0_() },
-            ),
-        ));
+        let mut range: BorrowedRange = BorrowedRange::new({ (buff.as_pointer() as Ptr<()>) }, {
+            (buff.as_pointer() as Ptr<()>)
+        });
+        let subrange: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let range: Value<BorrowedRange> = Rc::new(RefCell::new(BorrowedRange::new(
-            { (buff.as_pointer() as Ptr<()>) },
-            { (buff.as_pointer() as Ptr<()>).offset((1_()) as isize) },
-        )));
-        let subrange: Value<()> = Rc::new(RefCell::new(
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { range.as_pointer() },
-                { 1_() },
-            ),
-        ));
+        let mut range: BorrowedRange = BorrowedRange::new({ (buff.as_pointer() as Ptr<()>) }, {
+            (buff.as_pointer() as Ptr<()>).offset((1_()) as isize)
+        });
+        let subrange: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let range: Value<BorrowedRange> = Rc::new(RefCell::new(BorrowedRange::new(
-            { (buff.as_pointer() as Ptr<()>) },
-            { (buff.as_pointer() as Ptr<()>).offset((2_()) as isize) },
-        )));
-        let subrange: Value<()> = Rc::new(RefCell::new(
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { range.as_pointer() },
-                { 2_() },
-            ),
-        ));
+        let mut range: BorrowedRange = BorrowedRange::new({ (buff.as_pointer() as Ptr<()>) }, {
+            (buff.as_pointer() as Ptr<()>).offset((2_()) as isize)
+        });
+        let subrange: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let range: Value<BorrowedRange> = Rc::new(RefCell::new(BorrowedRange::new(
-            { (buff.as_pointer() as Ptr<()>) },
-            { (buff.as_pointer() as Ptr<()>).offset((8_()) as isize) },
-        )));
-        let subrange: Value<()> = Rc::new(RefCell::new(
-            std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-                { range.as_pointer() },
-                { 8_() },
-            ),
-        ));
+        let mut range: BorrowedRange = BorrowedRange::new({ (buff.as_pointer() as Ptr<()>) }, {
+            (buff.as_pointer() as Ptr<()>).offset((8_()) as isize)
+        });
+        let subrange: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
         unimplemented!();

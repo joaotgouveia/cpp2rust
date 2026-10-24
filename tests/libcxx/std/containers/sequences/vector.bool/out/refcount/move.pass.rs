@@ -539,7 +539,7 @@ impl Tag_X {
     }
 }
 pub fn test_14(a: Ptr<()>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
@@ -553,7 +553,7 @@ pub fn test_14(a: Ptr<()>) {
     unimplemented!();
 }
 pub fn test_15(a: Ptr<()>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
@@ -567,7 +567,7 @@ pub fn test_15(a: Ptr<()>) {
     unimplemented!();
 }
 pub fn test_16(a: Ptr<()>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
@@ -581,7 +581,7 @@ pub fn test_16(a: Ptr<()>) {
     unimplemented!();
 }
 pub fn test_17(a: Ptr<()>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
@@ -595,7 +595,7 @@ pub fn test_17(a: Ptr<()>) {
     unimplemented!();
 }
 pub fn test_18(a: Ptr<()>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
@@ -609,7 +609,7 @@ pub fn test_18(a: Ptr<()>) {
     unimplemented!();
 }
 pub fn test_19(a: Ptr<other_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
@@ -623,7 +623,7 @@ pub fn test_19(a: Ptr<other_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_20(a: Ptr<other_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
@@ -637,7 +637,7 @@ pub fn test_20(a: Ptr<other_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_21(a: Ptr<other_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
@@ -651,7 +651,7 @@ pub fn test_21(a: Ptr<other_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_22(a: Ptr<other_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
@@ -665,7 +665,7 @@ pub fn test_22(a: Ptr<other_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_23(a: Ptr<other_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
@@ -679,7 +679,7 @@ pub fn test_23(a: Ptr<other_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_24(a: Ptr<min_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
@@ -693,7 +693,7 @@ pub fn test_24(a: Ptr<min_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_25(a: Ptr<min_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
@@ -707,7 +707,7 @@ pub fn test_25(a: Ptr<min_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_26(a: Ptr<min_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
@@ -721,7 +721,7 @@ pub fn test_26(a: Ptr<min_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_27(a: Ptr<min_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
@@ -735,7 +735,7 @@ pub fn test_27(a: Ptr<min_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_28(a: Ptr<min_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
@@ -749,7 +749,7 @@ pub fn test_28(a: Ptr<min_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_29(a: Ptr<test_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 5_()) {
@@ -763,7 +763,7 @@ pub fn test_29(a: Ptr<test_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_30(a: Ptr<test_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 18_()) {
@@ -777,7 +777,7 @@ pub fn test_30(a: Ptr<test_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_31(a: Ptr<test_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 33_()) {
@@ -791,7 +791,7 @@ pub fn test_31(a: Ptr<test_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_32(a: Ptr<test_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 65_()) {
@@ -805,7 +805,7 @@ pub fn test_32(a: Ptr<test_allocator_bool_>) {
     unimplemented!();
 }
 pub fn test_33(a: Ptr<test_allocator_bool_>) {
-    let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut v: () = unimplemented!();
     let mut original: () = unimplemented!();
     let mut i: () = 1_();
     'loop_: while (i < 299_()) {
@@ -936,7 +936,7 @@ pub fn tests_34() -> () {
     }
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut v: () = unimplemented!();
         unimplemented!();
         {
             let __tmp_0: Value<test_allocator_bool_> = Rc::new(RefCell::new(unimplemented!()));

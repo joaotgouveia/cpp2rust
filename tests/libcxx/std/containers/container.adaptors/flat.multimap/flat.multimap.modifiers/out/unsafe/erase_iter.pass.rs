@@ -209,8 +209,8 @@ impl Default for three_way_random_access_iterator_int_ptr_ {
 impl three_way_random_access_iterator_const_int_ptr_ {
     pub unsafe fn new_1(u: *mut three_way_random_access_iterator_int_ptr_) -> Self {
         let mut this = Self {
-            it_: ((*u).it_).cast_const(),
-            tracker_: support_double_move_tracker::move_from({ &mut (*u).tracker_ }),
+            it_: (*unimplemented!()).cast_const(),
+            tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
         };
         (*u).it_ = std::ptr::null_mut();
         this
@@ -430,8 +430,8 @@ impl three_way_random_access_iterator_const_double_ptr_ {
 impl three_way_random_access_iterator_const_double_ptr_ {
     pub unsafe fn new_2(u: *mut three_way_random_access_iterator_double_ptr_) -> Self {
         let mut this = Self {
-            it_: ((*u).it_).cast_const(),
-            tracker_: support_double_move_tracker::move_from({ &mut (*u).tracker_ }),
+            it_: (*unimplemented!()).cast_const(),
+            tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
         };
         (*u).it_ = std::ptr::null_mut();
         this
@@ -655,25 +655,21 @@ pub unsafe fn operator_add_18(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_19(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_20(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_21(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_20(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_22(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_23(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_22(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -757,7 +753,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_23(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_22(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -767,7 +763,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_22(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_21(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1031,21 +1027,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_24: std::cell::LazyCell<()> =
+pub static mut destructed_value_23: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_25: std::cell::LazyCell<()> =
+pub static mut moved_value_24: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_26(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_25(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_27(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_26(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_26(_x, _y)
+        operator_eq_25(_x, _y)
     });
 }
 #[repr(C)]
@@ -1109,8 +1105,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_24));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_24));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_23));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_23));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1131,7 +1127,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_26(
+            operator_eq_25(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1181,27 +1177,27 @@ impl Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
 }
-pub unsafe fn check_possible_values_28(actual: *const (), expected: *const ()) {
+pub unsafe fn check_possible_values_27(actual: *const (), expected: *const ()) {
     unimplemented!();
     let mut __tmp_0: () = (unsafe {
         let ___rs_0: *const () = actual;
         let ___rs_1: *const () = expected;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_29))(___rs_0, ___rs_1)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_28))(___rs_0, ___rs_1)
     });
     let __range1: *mut () = &mut __tmp_0;
-    'loop_: for __decomp_30 in IterRange::new(unimplemented!(), unimplemented!()) {
+    'loop_: for __decomp_29 in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut __tmp_1 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_30 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_1 ;
+        let __decomp_29 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_1 ;
         let actual_value: *const () = (unsafe {
-            get_31 ( (__decomp_30  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_30 ( (__decomp_29  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         let possible_values: *const () = (unsafe {
-            get_32 ( (__decomp_30  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_31 ( (__decomp_29  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         unimplemented!();
     }
 }
-pub unsafe fn check_possible_values_33(
+pub unsafe fn check_possible_values_32(
     actual : *const MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__,
     expected: *const (),
 ) {
@@ -1209,92 +1205,92 @@ pub unsafe fn check_possible_values_33(
     let mut __tmp_2: () = (unsafe {
         let ___rs_0: *const MinSequenceContainer_double__three_way_random_access_iterator_double_ptr___three_way_random_access_iterator_const_double_ptr__  = actual ;
         let ___rs_1: *const () = expected;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_29))(___rs_0, ___rs_1)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_28))(___rs_0, ___rs_1)
     });
     let __range1: *mut () = &mut __tmp_2;
-    'loop_: for __decomp_34 in IterRange::new(unimplemented!(), unimplemented!()) {
+    'loop_: for __decomp_33 in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut __tmp_3 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_34 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_3 ;
+        let __decomp_33 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_3 ;
         let actual_value: *const () = (unsafe {
-            get_31 ( (__decomp_34  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_30 ( (__decomp_33  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         let possible_values: *const () = (unsafe {
-            get_32 ( (__decomp_34  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_31 ( (__decomp_33  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         unimplemented!();
     }
 }
-pub unsafe fn check_possible_values_35(actual: *const (), expected: *const ()) {
+pub unsafe fn check_possible_values_34(actual: *const (), expected: *const ()) {
     unimplemented!();
     let mut __tmp_4: () = (unsafe {
         let ___rs_0: *const () = actual;
         let ___rs_1: *const () = expected;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_29))(___rs_0, ___rs_1)
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut zip_28))(___rs_0, ___rs_1)
     });
     let __range1: *mut () = &mut __tmp_4;
-    'loop_: for __decomp_36 in IterRange::new(unimplemented!(), unimplemented!()) {
+    'loop_: for __decomp_35 in IterRange::new(unimplemented!(), unimplemented!()) {
         let mut __tmp_5 : std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_  = unimplemented!()  ;
-        let __decomp_36 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_5 ;
+        let __decomp_35 : *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_ = & mut __tmp_5 ;
         let actual_value: *const () = (unsafe {
-            get_31 ( (__decomp_36  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_30 ( (__decomp_35  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         let possible_values: *const () = (unsafe {
-            get_32 ( (__decomp_36  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
+            get_31 ( (__decomp_35  as *const std_tuple_const_double_ref__const_std_vector_double__std_allocator_double___ref_).cast::<()>() , )
         });
         unimplemented!();
     }
 }
-pub unsafe fn test_erase_exception_guarantee_37(erase_function: *mut FnPtr<Generic>) {}
+pub unsafe fn test_erase_exception_guarantee_36(erase_function: *mut FnPtr<Generic>) {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_39))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_40))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_38))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_39))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_41)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_38)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_39)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_40)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_40)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_37)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_38)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_39)) = 0_();
     }
 }
-pub static mut outstanding_bytes_38: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_37: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_39: std::cell::LazyCell<()> =
+pub static mut alloc_count_38: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_40: std::cell::LazyCell<()> =
+pub static mut dealloc_count_39: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_41: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_40: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn operator_sub_42(
+pub unsafe fn operator_sub_41(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_43(
+pub unsafe fn operator_lt_42(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) < (y.ptr_));
 }
-pub unsafe fn operator_eq_44(
+pub unsafe fn operator_eq_43(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_45(
+pub unsafe fn operator_ne_44(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_44(_x, y)
+        operator_eq_43(_x, y)
     });
 }
 #[repr(C)]
@@ -1381,9 +1377,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_43(self.clone(), other.clone()) {
+            if operator_lt_42(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_43(other.clone(), self.clone()) {
+            } else if operator_lt_42(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1398,7 +1394,7 @@ impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_lo
 }
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_44(self.clone(), other.clone()) }
+        unsafe { operator_eq_43(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -1408,19 +1404,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_46(
+pub unsafe fn operator_sub_45(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_47(
+pub unsafe fn operator_eq_46(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_48(
+pub unsafe fn operator_ne_47(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1462,7 +1458,7 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_47(self.clone(), other.clone()) }
+        unsafe { operator_eq_46(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
@@ -1472,31 +1468,31 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_49(
+pub unsafe fn operator_sub_48(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_50(
+pub unsafe fn operator_lt_49(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) < (y.ptr_));
 }
-pub unsafe fn operator_eq_51(
+pub unsafe fn operator_eq_50(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_52(
+pub unsafe fn operator_ne_51(
     mut x: min_pointer_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_double__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_51(_x, y)
+        operator_eq_50(_x, y)
     });
 }
 #[repr(C)]
@@ -1583,9 +1579,9 @@ impl min_pointer_double__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_double__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_50(self.clone(), other.clone()) {
+            if operator_lt_49(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_50(other.clone(), self.clone()) {
+            } else if operator_lt_49(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1600,23 +1596,23 @@ impl std::cmp::PartialOrd for min_pointer_double__std_integral_constant_unsigned
 }
 impl std::cmp::PartialEq for min_pointer_double__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_51(self.clone(), other.clone()) }
+        unsafe { operator_eq_50(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_double__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_53(
+pub unsafe fn operator_sub_52(
     mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_54(
+pub unsafe fn operator_eq_53(
     mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_55(
+pub unsafe fn operator_ne_54(
     mut x: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_double__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1657,7 +1653,7 @@ impl min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
 }
 impl std::cmp::PartialEq for min_pointer_const_double__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_54(self.clone(), other.clone()) }
+        unsafe { operator_eq_53(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_double__std_integral_constant_unsigned_long__0__ {}
@@ -1701,6 +1697,103 @@ impl min_allocator_double_ {
         unimplemented!();
     }
 }
+pub unsafe fn test_55() {
+    let mut ar: [(); 11] = [
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ];
+    let mut m: () = unimplemented!();
+    unimplemented!();
+    let mut i1: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i3: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i4: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i5: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i6: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i7: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i8: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i9: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    (unsafe {
+        let mut _expected: () = unimplemented!();
+        check_possible_values_27(unimplemented!(), &mut _expected)
+    });
+    let mut i10: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let mut i11: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_56() {
     let mut ar: [(); 11] = [
         unimplemented!(),
@@ -1723,7 +1816,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i2: () = unimplemented!();
     unimplemented!();
@@ -1731,7 +1824,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i3: () = unimplemented!();
     unimplemented!();
@@ -1739,7 +1832,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i4: () = unimplemented!();
     unimplemented!();
@@ -1747,7 +1840,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i5: () = unimplemented!();
     unimplemented!();
@@ -1755,7 +1848,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i6: () = unimplemented!();
     unimplemented!();
@@ -1763,7 +1856,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i7: () = unimplemented!();
     unimplemented!();
@@ -1771,7 +1864,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i8: () = unimplemented!();
     unimplemented!();
@@ -1779,7 +1872,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i9: () = unimplemented!();
     unimplemented!();
@@ -1787,7 +1880,7 @@ pub unsafe fn test_56() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_27(unimplemented!(), &mut _expected)
     });
     let mut i10: () = unimplemented!();
     unimplemented!();
@@ -1820,7 +1913,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i2: () = unimplemented!();
     unimplemented!();
@@ -1828,7 +1921,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i3: () = unimplemented!();
     unimplemented!();
@@ -1836,7 +1929,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i4: () = unimplemented!();
     unimplemented!();
@@ -1844,7 +1937,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i5: () = unimplemented!();
     unimplemented!();
@@ -1852,7 +1945,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i6: () = unimplemented!();
     unimplemented!();
@@ -1860,7 +1953,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i7: () = unimplemented!();
     unimplemented!();
@@ -1868,7 +1961,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i8: () = unimplemented!();
     unimplemented!();
@@ -1876,7 +1969,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i9: () = unimplemented!();
     unimplemented!();
@@ -1884,7 +1977,7 @@ pub unsafe fn test_57() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_28(unimplemented!(), &mut _expected)
+        check_possible_values_32(unimplemented!(), &mut _expected)
     });
     let mut i10: () = unimplemented!();
     unimplemented!();
@@ -1917,7 +2010,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i2: () = unimplemented!();
     unimplemented!();
@@ -1925,7 +2018,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i3: () = unimplemented!();
     unimplemented!();
@@ -1933,7 +2026,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i4: () = unimplemented!();
     unimplemented!();
@@ -1941,7 +2034,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i5: () = unimplemented!();
     unimplemented!();
@@ -1949,7 +2042,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i6: () = unimplemented!();
     unimplemented!();
@@ -1957,7 +2050,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i7: () = unimplemented!();
     unimplemented!();
@@ -1965,7 +2058,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i8: () = unimplemented!();
     unimplemented!();
@@ -1973,7 +2066,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i9: () = unimplemented!();
     unimplemented!();
@@ -1981,7 +2074,7 @@ pub unsafe fn test_58() {
     unimplemented!();
     (unsafe {
         let mut _expected: () = unimplemented!();
-        check_possible_values_33(unimplemented!(), &mut _expected)
+        check_possible_values_34(unimplemented!(), &mut _expected)
     });
     let mut i10: () = unimplemented!();
     unimplemented!();
@@ -1992,113 +2085,16 @@ pub unsafe fn test_58() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_59() {
-    let mut ar: [(); 11] = [
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ];
-    let mut m: () = unimplemented!();
-    unimplemented!();
-    let mut i1: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i2: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i3: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i4: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i5: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i6: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i7: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i8: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i9: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    (unsafe {
-        let mut _expected: () = unimplemented!();
-        check_possible_values_35(unimplemented!(), &mut _expected)
-    });
-    let mut i10: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let mut i11: () = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_60() -> () {
-    (unsafe { test_56() });
+pub unsafe fn test_59() -> () {
+    (unsafe { test_55() });
     {
-        (unsafe { test_57() });
+        (unsafe { test_56() });
     }
+    (unsafe { test_57() });
     (unsafe { test_58() });
-    (unsafe { test_59() });
     {
         let mut erase_function: FnPtr<Generic> = lambda_unsafe!(Generic, {});
-        (unsafe { test_erase_exception_guarantee_37(&mut erase_function) });
+        (unsafe { test_erase_exception_guarantee_36(&mut erase_function) });
     }
     return true;
 }
@@ -2118,14 +2114,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_60() });
+    (unsafe { test_59() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_24);
-    std::cell::LazyCell::force(&*&raw const moved_value_25);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_38);
-    std::cell::LazyCell::force(&*&raw const alloc_count_39);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_40);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_41);
+    std::cell::LazyCell::force(&*&raw const destructed_value_23);
+    std::cell::LazyCell::force(&*&raw const moved_value_24);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_37);
+    std::cell::LazyCell::force(&*&raw const alloc_count_38);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_39);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_40);
 }

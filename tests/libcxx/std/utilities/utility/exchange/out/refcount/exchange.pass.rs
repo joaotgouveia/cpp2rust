@@ -37,19 +37,16 @@ pub fn test_noexcept_1() -> () {
         const _: () = assert!(true, "");;
     }
     {
-        let x: Value<TestNoexcept_true__true_> =
-            Rc::new(RefCell::new(<TestNoexcept_true__true_>::default()));
+        let mut x: TestNoexcept_true__true_ = <TestNoexcept_true__true_>::default();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
     }
     {
-        let x: Value<TestNoexcept_true__false_> =
-            Rc::new(RefCell::new(<TestNoexcept_true__false_>::default()));
+        let mut x: TestNoexcept_true__false_ = <TestNoexcept_true__false_>::default();
         const _: () = assert!(true, "");;
     }
     {
-        let x: Value<TestNoexcept_false__true_> =
-            Rc::new(RefCell::new(<TestNoexcept_false__true_>::default()));
+        let mut x: TestNoexcept_false__true_ = <TestNoexcept_false__true_>::default();
         const _: () = assert!(true, "");;
     }
     return true;

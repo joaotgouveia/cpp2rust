@@ -2381,29 +2381,23 @@ pub fn operator_add_30(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_29(_i, n)
     });
 }
-pub fn iter_swap_31(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_32(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_31(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_33(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_32(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_34(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_33(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_35(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_34(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -2449,7 +2443,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_35(
+            operator_cmp_34(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -2474,7 +2468,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_34(
+            operator_eq_33(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -2558,7 +2552,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn RunTestCaseImpl_36(MS: Ptr<MultiStringType>) {
+pub fn RunTestCaseImpl_35(MS: Ptr<MultiStringType>) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_8((TestPath).clone()) });
@@ -2600,7 +2594,7 @@ pub fn RunTestCaseImpl_36(MS: Ptr<MultiStringType>) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_37(MS: Ptr<MultiStringType>, mut args: ()) {
+pub fn RunTestCaseImpl_36(MS: Ptr<MultiStringType>, mut args: ()) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_8((TestPath).clone()) });
@@ -2642,7 +2636,7 @@ pub fn RunTestCaseImpl_37(MS: Ptr<MultiStringType>, mut args: ()) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_38(MS: Ptr<MultiStringType>) {
+pub fn RunTestCaseImpl_37(MS: Ptr<MultiStringType>) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_14(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_9((TestPath).clone()) });
@@ -2684,7 +2678,7 @@ pub fn RunTestCaseImpl_38(MS: Ptr<MultiStringType>) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_39(MS: Ptr<MultiStringType>, mut args: ()) {
+pub fn RunTestCaseImpl_38(MS: Ptr<MultiStringType>, mut args: ()) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_14(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_9((TestPath).clone()) });
@@ -2726,7 +2720,7 @@ pub fn RunTestCaseImpl_39(MS: Ptr<MultiStringType>, mut args: ()) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_40(MS: Ptr<MultiStringType>) {
+pub fn RunTestCaseImpl_39(MS: Ptr<MultiStringType>) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_13(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_10((TestPath).clone()) });
@@ -2768,7 +2762,7 @@ pub fn RunTestCaseImpl_40(MS: Ptr<MultiStringType>) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_41(MS: Ptr<MultiStringType>, mut args: ()) {
+pub fn RunTestCaseImpl_40(MS: Ptr<MultiStringType>, mut args: ()) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_13(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_10((TestPath).clone()) });
@@ -2810,7 +2804,7 @@ pub fn RunTestCaseImpl_41(MS: Ptr<MultiStringType>, mut args: ()) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_42(MS: Ptr<MultiStringType>) {
+pub fn RunTestCaseImpl_41(MS: Ptr<MultiStringType>) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_15(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_11((TestPath).clone()) });
@@ -2852,7 +2846,7 @@ pub fn RunTestCaseImpl_42(MS: Ptr<MultiStringType>) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_43(MS: Ptr<MultiStringType>, mut args: ()) {
+pub fn RunTestCaseImpl_42(MS: Ptr<MultiStringType>, mut args: ()) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_15(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_11((TestPath).clone()) });
@@ -2894,7 +2888,7 @@ pub fn RunTestCaseImpl_43(MS: Ptr<MultiStringType>, mut args: ()) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_44(MS: Ptr<MultiStringType>) {
+pub fn RunTestCaseImpl_43(MS: Ptr<MultiStringType>) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_16(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_12((TestPath).clone()) });
@@ -2936,7 +2930,7 @@ pub fn RunTestCaseImpl_44(MS: Ptr<MultiStringType>) {
         unimplemented!();
     }
 }
-pub fn RunTestCaseImpl_45(MS: Ptr<MultiStringType>, mut args: ()) {
+pub fn RunTestCaseImpl_44(MS: Ptr<MultiStringType>, mut args: ()) {
     let mut Expect: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_12(&MS) });
     let mut TestPath: Ptr<()> = ({ MultiStringTypeImpl::to_pconst_16(&MS) });
     let mut TestPathEnd: Ptr<()> = ({ StrEnd_12((TestPath).clone()) });
@@ -2977,53 +2971,53 @@ pub fn RunTestCaseImpl_45(MS: Ptr<MultiStringType>, mut args: ()) {
         unimplemented!();
         unimplemented!();
     }
+}
+pub fn RunTestCase_45(MS: Ptr<MultiStringType>) {
+    ({ RunTestCaseImpl_35((MS).clone()) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_36((MS).clone(), std_filesystem_path_format_generic_format) });
 }
 pub fn RunTestCase_46(MS: Ptr<MultiStringType>) {
-    ({ RunTestCaseImpl_36((MS).clone()) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_37((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_37((MS).clone()) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_38((MS).clone(), std_filesystem_path_format_generic_format) });
 }
 pub fn RunTestCase_47(MS: Ptr<MultiStringType>) {
-    ({ RunTestCaseImpl_38((MS).clone()) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_39((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_39((MS).clone()) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_40((MS).clone(), std_filesystem_path_format_generic_format) });
 }
 pub fn RunTestCase_48(MS: Ptr<MultiStringType>) {
-    ({ RunTestCaseImpl_40((MS).clone()) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_41((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_41((MS).clone()) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_42((MS).clone(), std_filesystem_path_format_generic_format) });
 }
 pub fn RunTestCase_49(MS: Ptr<MultiStringType>) {
-    ({ RunTestCaseImpl_42((MS).clone()) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_43((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_43((MS).clone()) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_generic_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_auto_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_native_format) });
+    ({ RunTestCaseImpl_44((MS).clone(), std_filesystem_path_format_generic_format) });
 }
-pub fn RunTestCase_50(MS: Ptr<MultiStringType>) {
-    ({ RunTestCaseImpl_44((MS).clone()) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_generic_format) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_auto_format) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_native_format) });
-    ({ RunTestCaseImpl_45((MS).clone(), std_filesystem_path_format_generic_format) });
-}
-pub fn test_sfinae_51() {
+pub fn test_sfinae_50() {
     {
         const _: () = assert!(true, "std::is_constructible<path, It>::value");;
     }
@@ -3042,7 +3036,7 @@ pub fn test_sfinae_51() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct Traits_52 {}
+pub struct Traits_51 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -3068,13 +3062,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         (PathList_13.with(|v| v.as_pointer()) as Ptr<MultiStringType>).offset((42_()) as isize),
     ) {
         let MS: Ptr<MultiStringType> = (MS).clone();
+        ({ RunTestCase_45((MS).clone()) });
         ({ RunTestCase_46((MS).clone()) });
         ({ RunTestCase_47((MS).clone()) });
         ({ RunTestCase_48((MS).clone()) });
         ({ RunTestCase_49((MS).clone()) });
-        ({ RunTestCase_50((MS).clone()) });
     }
-    ({ test_sfinae_51() });
+    ({ test_sfinae_50() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

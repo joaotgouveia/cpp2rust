@@ -41,7 +41,7 @@ pub unsafe fn test_1() -> () {
     {
         let mut copy: std___ignore_type =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        let mut moved: std___ignore_type = copy;
+        let mut moved: std___ignore_type = (*unimplemented!());
     }
     {
         let mut copy: std___ignore_type =
@@ -49,7 +49,7 @@ pub unsafe fn test_1() -> () {
         copy = (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
         let mut moved: std___ignore_type =
             (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2));
-        moved = copy;
+        moved = (*unimplemented!());
     }
     {
         (*std::cell::LazyCell::force_mut(&mut *&raw mut ignore_2)) =

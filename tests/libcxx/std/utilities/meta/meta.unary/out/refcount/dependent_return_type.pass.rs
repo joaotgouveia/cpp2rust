@@ -22,13 +22,13 @@ pub fn add_pointer_4() -> Ptr<()> {
     return Ptr::<()>::null();
 }
 pub fn add_rvalue_reference_5() -> Ptr<()> {
-    return (i_6.with(|v| v.as_pointer())).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
 thread_local!(
     static i_6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 pub fn add_volatile_7() -> () {
-    return (i_8.with(|rc| *rc.borrow()) as ());
+    return ((unimplemented!().read()) as ());
 }
 thread_local!(
     static i_8: Value<()> = Rc::new(RefCell::new(unimplemented!()));

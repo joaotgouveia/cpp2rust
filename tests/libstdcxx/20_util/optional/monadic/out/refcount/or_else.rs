@@ -334,7 +334,7 @@ pub fn test_move_12() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (unimplemented!().read()).copied }) {
+        if !({ unimplemented!().copied }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -372,8 +372,7 @@ pub fn test_move_12() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (({ (*unimplemented!().upgrade().deref()).or_else(f.as_pointer()) }).read()).moved })
-        {
+        if !({ unimplemented!().moved }) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -517,7 +516,7 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!().read()) == 1_()) {
+        if !((({ (*unimplemented!().upgrade().deref()).or_else(f.as_pointer()) }).read()) == 1_()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -555,7 +554,8 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!().read()) == 2_()) {
+        if !((({ (*unimplemented!().upgrade().deref()).or_else(unimplemented!()) }).read()) == 2_())
+        {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -597,7 +597,13 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!().read()) == 3_()) {
+        if !((({
+            let ___f: Ptr<F_16> = (cf).clone();
+            (*unimplemented!().upgrade().deref()).or_else(___f)
+        })
+        .read())
+            == 3_())
+        {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -635,7 +641,13 @@ pub fn test_call_15() -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unimplemented!().read()) == 4_()) {
+        if !((({
+            let ___f: Ptr<F_16> = unimplemented!();
+            (*unimplemented!().upgrade().deref()).or_else(___f)
+        })
+        .read())
+            == 4_())
+        {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),
@@ -767,12 +779,7 @@ pub fn verify_demangle_24(mut mangled: Ptr<()>, mut wanted: Ptr<()>) {
             }
         });
     }
-    let w: Value<()> = Rc::new(RefCell::new(
-        std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (wanted).clone() },
-            None,
-        ),
-    ));
+    let w: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     if !(unimplemented!()) {
         ({ __throw_runtime_error_3((s).clone()) });
     }
@@ -783,22 +790,14 @@ pub fn run_tests_wrapped_locale_26(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
     let orig: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut res: Ptr<()> = unimplemented!();
     if !(res).is_null() {
-        let mut preLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { (res).clone() },
-                None,
-            );
+        let mut preLC_ALL: () = unimplemented!();
         let mut tests: Ptr<FnPtr<fn()>> = ({ __gnu_test_func_callbackImpl::tests(&l) });
         let mut i: () = 0_();
         'loop_: while ({ i } < { ({ __gnu_test_func_callbackImpl::size(&l) }) }) {
             ({ (elem!(tests, i).read()).call() });
             i.prefix_inc();
         }
-        let mut postLC_ALL: () =
-            std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-                { unimplemented!() },
-                None,
-            );
+        let mut postLC_ALL: () = unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -810,10 +809,7 @@ pub fn run_tests_wrapped_locale_26(mut name: Ptr<()>, l: Ptr<__gnu_test_func_cal
             }
         }
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { Ptr::<()>::from_string_literal(b"LC_ALL for ") },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });
     }
@@ -835,10 +831,7 @@ pub fn run_tests_wrapped_env_27(
         }
         unimplemented!();
     } else {
-        let mut s: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
-            { (env).clone() },
-            None,
-        );
+        let mut s: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         ({ __throw_runtime_error_3(unimplemented!()) });

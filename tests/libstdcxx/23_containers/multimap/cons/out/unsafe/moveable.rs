@@ -265,14 +265,8 @@ pub fn main() {
 unsafe fn main_0() -> () {
     let mut a: () = unimplemented!();
     let mut b: () = unimplemented!();
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        a.insert_37_struct_std_pair_int__int_(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        b.insert_37_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

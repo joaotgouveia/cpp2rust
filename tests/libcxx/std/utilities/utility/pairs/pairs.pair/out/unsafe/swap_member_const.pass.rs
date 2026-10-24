@@ -29,18 +29,14 @@ const _: () = assert!(
     "!ConstMemberSwapNoexcept<std::pair<SwapMayThrow<true>, SwapMayThrow<true>>>"
 );
 pub unsafe fn swap_0(lhs: *const ConstSwappable, rhs: *const ConstSwappable) {
-    (unsafe {
-        let ___x: *mut () = &mut (*lhs).i;
-        let ___y: *mut () = &mut (*rhs).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct ConstSwappable {
     pub i: (),
 }
-pub unsafe fn test_2() -> () {
+pub unsafe fn test_1() -> () {
     {
         let p1: () = unimplemented!();
         let p2: () = unimplemented!();
@@ -81,7 +77,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_2() });
+    (unsafe { test_1() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -258,9 +258,7 @@ pub fn test01_10() {
     {
         let mymmap: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mypair: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            (*mymmap.borrow()) . insert_33_struct_std_pair_class_std_basic_string_char___class_std_basic_string_char____ref ( mypair .as_pointer()  , )
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;
@@ -287,10 +285,7 @@ pub fn test01_10() {
     {
         let mymmap: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mypair: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({
-            let ___hint: () = unimplemented!();
-            (*mymmap.borrow()) . insert_36_struct_std_pair_class_std_basic_string_char___class_std_basic_string_char____ref ( ___hint , mypair .as_pointer()  , )
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

@@ -278,29 +278,23 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_10(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -346,7 +340,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_13(
+            operator_cmp_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -371,7 +365,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -477,7 +471,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         Self {
             copied: (Other.with(|__s| __s.copied) + 1_()),
             assigned: 0_(),
-            value: (Other.with(|__s| __s.value) as ()),
+            value: ((unimplemented!().read()) as ()),
         }
     }
 }
@@ -492,10 +486,10 @@ impl Default for EmplaceConstructibleMoveableAndAssignable_int_ {
         }
     }
 }
-pub fn operator_eq_14(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_eq_13(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
-pub fn operator_ne_15(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_ne_14(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } != { RHS.with(|__s| __s.m_id.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -515,7 +509,7 @@ impl detail_TypeID {
 impl std::cmp::PartialEq for detail_TypeID {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_13(
                 Rc::new(RefCell::new(detail_TypeID {
                     m_id: self.m_id.clone(),
                 }))
@@ -560,11 +554,11 @@ impl Default for AllocatorConstructController {
         { AllocatorConstructController::new() }
     }
 }
-pub fn getConstructController_16() -> Ptr<AllocatorConstructController> {
-    return (c_17.with(|v| v.as_pointer()));
+pub fn getConstructController_15() -> Ptr<AllocatorConstructController> {
+    return (c_16.with(|v| v.as_pointer()));
 }
 thread_local!(
-    static c_17: Value<AllocatorConstructController> =
+    static c_16: Value<AllocatorConstructController> =
         Rc::new(RefCell::new(AllocatorConstructController::new()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -593,7 +587,7 @@ pub struct ContainerTestAllocator_float__int_ {
 impl ContainerTestAllocator_float__int_ {}
 const _: () = assert!(true, "std::is_same<A1T::rebind_traits<float>, A2T>::value");
 const _: () = assert!(true, "std::is_same<A2T::rebind_traits<int>, A1T>::value");
-pub fn test_18() -> () {
+pub fn test_17() -> () {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
@@ -757,7 +751,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_18() });
+    ({ test_17() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -791,7 +785,7 @@ impl AllocatorConstructControllerImpl for Ptr<AllocatorConstructController> {
             ({
                 let _LHS: Ptr<detail_TypeID> = (*self).with(|__s| __s.m_expected_args.clone());
                 let _RHS: Ptr<detail_TypeID> = (tid).clone();
-                operator_eq_14(_LHS, _RHS)
+                operator_eq_13(_LHS, _RHS)
             }),
         ));
         if ((*self).with(|__s| __s.m_expected_count) == -1_())
@@ -856,9 +850,11 @@ pub trait EmplaceConstructibleMoveableAndAssignable_int_Impl {
 impl EmplaceConstructibleMoveableAndAssignable_int_Impl
     for Ptr<EmplaceConstructibleMoveableAndAssignable_int_>
 {
-    fn operator_assign_4(&self, xvalue: ()) -> Ptr<EmplaceConstructibleMoveableAndAssignable_int_> {
-        let xvalue: Value<()> = Rc::new(RefCell::new(xvalue));
-        field!((*self), value).write(((*xvalue.borrow()) as ()));
+    fn operator_assign_4(
+        &self,
+        mut xvalue: (),
+    ) -> Ptr<EmplaceConstructibleMoveableAndAssignable_int_> {
+        field!((*self), value).write(((unimplemented!().read()) as ()));
         field!((*self), assigned).with_mut(|__v| __v.prefix_inc());
         return (*self).clone();
     }

@@ -175,10 +175,10 @@ pub unsafe fn test_basic_format_arg_7(mut arg: (), mut expected: ()) -> () {
     return unimplemented!();
 }
 pub unsafe fn test_format_context_create_8(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_9(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_9((*unimplemented!()), args.clone(), None) });
 }
 pub unsafe fn test_format_context_create_10(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_11(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_11((*unimplemented!()), args.clone(), None) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

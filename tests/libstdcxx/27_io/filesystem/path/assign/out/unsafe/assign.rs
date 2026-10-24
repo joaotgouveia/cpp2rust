@@ -228,14 +228,14 @@ pub unsafe fn test01_8() {
         let mut p2: () = unimplemented!();
         let mut p3: () = unimplemented!();
         let mut p4: () = unimplemented!();
-        p1 = (s).clone();
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p1) });
-        p2 = (unimplemented!() as *const ());
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p2) });
         let mut ws: () = unimplemented!();
-        p3 = (ws).clone();
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p3) });
-        p4 = (unimplemented!() as *const ());
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p4) });
     }
 }
@@ -256,44 +256,22 @@ pub unsafe fn test02_9() {
         let mut p6: () = unimplemented!();
         let mut p7: () = unimplemented!();
         let mut p8: () = unimplemented!();
-        (unsafe { p1.assign(&s) });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p1) });
-        (unsafe {
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            p2.assign(___first, ___last)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p2) });
-        (unsafe {
-            let mut ___source: *const () = (unimplemented!() as *const ());
-            p3.assign(&mut ___source)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p3) });
-        (unsafe {
-            let ___first: *const () = unimplemented!();
-            let ___last: *const () = unimplemented!().offset((unimplemented!()) as isize);
-            p4.assign(___first, ___last)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p4) });
         let mut ws: () = unimplemented!();
-        (unsafe { p5.assign(&ws) });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p5) });
-        (unsafe {
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            p6.assign(___first, ___last)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p6) });
-        (unsafe {
-            let mut ___source: *const () = (unimplemented!() as *const ());
-            p7.assign(&mut ___source)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p7) });
-        (unsafe {
-            let ___first: *const () = unimplemented!();
-            let ___last: *const () = unimplemented!().offset((unimplemented!()) as isize);
-            p8.assign(___first, ___last)
-        });
+        unimplemented!();
         (unsafe { compare_paths_0(&p0, &p8) });
     }
 }

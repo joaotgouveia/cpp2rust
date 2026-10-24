@@ -118,26 +118,26 @@ impl Deleter_Aarrarr_ {
     }
 }
 pub unsafe fn swap_4(x: *mut Deleter_A_, y: *mut Deleter_A_) {
-    let mut t: Deleter_A_ = Deleter_A_::move_from({ x });
+    let mut t: Deleter_A_ = Deleter_A_::move_from({ unimplemented!() });
     let _dtor_t = ScopedDestructorUnsafe::new(&raw mut t, Deleter_A_::destructor);
     (unsafe {
-        let _r: *mut Deleter_A_ = y;
+        let _r: *mut Deleter_A_ = unimplemented!();
         Deleter_A_::move_assign(&mut (*x), _r)
     });
     (unsafe {
-        let _r: *mut Deleter_A_ = &mut t;
+        let _r: *mut Deleter_A_ = &mut (*unimplemented!());
         Deleter_A_::move_assign(&mut (*y), _r)
     });
 }
 pub unsafe fn swap_5(x: *mut Deleter_Aarrarr_, y: *mut Deleter_Aarrarr_) {
-    let mut t: Deleter_Aarrarr_ = Deleter_Aarrarr_::move_from({ x });
+    let mut t: Deleter_Aarrarr_ = Deleter_Aarrarr_::move_from({ unimplemented!() });
     let _dtor_t = ScopedDestructorUnsafe::new(&raw mut t, Deleter_Aarrarr_::destructor);
     (unsafe {
-        let _r: *mut Deleter_Aarrarr_ = y;
+        let _r: *mut Deleter_Aarrarr_ = unimplemented!();
         Deleter_Aarrarr_::move_assign(&mut (*x), _r)
     });
     (unsafe {
-        let _r: *mut Deleter_Aarrarr_ = &mut t;
+        let _r: *mut Deleter_Aarrarr_ = &mut (*unimplemented!());
         Deleter_Aarrarr_::move_assign(&mut (*y), _r)
     });
 }
@@ -277,7 +277,7 @@ pub unsafe fn test_10() -> () {
         let mut y: () = 43_();
         let mut p: () = unimplemented!();
         let mut p2: () = unimplemented!();
-        (unsafe { swap_11(&mut p, &mut p2) });
+        unimplemented!();
     }
     return true;
 }

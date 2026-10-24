@@ -216,10 +216,7 @@ impl Default for TrivialMoveOnly {
 }
 pub unsafe fn tests_22() -> () {
     {
-        let mut arr: () = (unsafe {
-            let mut ___arr: [(); 3] = [1_(), 2_(), 3_()];
-            to_array_23(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -227,10 +224,7 @@ pub unsafe fn tests_22() -> () {
     }
     {
         let l1: () = 42_();
-        let mut arr: () = (unsafe {
-            let mut ___arr: [(); 4] = [1_(), 4_(), 9_(), l1];
-            to_array_24(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "arr.size() == 4");;
         unimplemented!();
@@ -239,7 +233,7 @@ pub unsafe fn tests_22() -> () {
         unimplemented!();
     }
     {
-        let mut arr: () = (unsafe { to_array_25(&std::mem::transmute(*b"meow\0")) });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -249,7 +243,7 @@ pub unsafe fn tests_22() -> () {
     }
     {
         let mut source: [(); 3] = [4_f64, 5_f64, 6_f64];
-        let mut arr: () = (unsafe { to_array_26(&mut source) });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -257,7 +251,7 @@ pub unsafe fn tests_22() -> () {
     }
     {
         let mut source: [(); 3] = [4_f64, 5_f64, 6_f64];
-        let mut arr: () = (unsafe { to_array_27(&mut source) });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -269,7 +263,7 @@ pub unsafe fn tests_22() -> () {
             MoveOnly::new({ Some(1_()) }),
             MoveOnly::new({ Some(2_()) }),
         ];
-        let mut arr: () = (unsafe { to_array_28(&mut source) });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         let mut i: () = 0_();
         'loop_: while ((i) < (3_())) {
@@ -278,32 +272,20 @@ pub unsafe fn tests_22() -> () {
         }
     }
     {
-        let mut arr: () = (unsafe {
-            let mut ___arr: [(); 2] = [3_(), 4_()];
-            to_array_29(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut arr: () = (unsafe {
-            let mut ___arr: [(); 3] = [1_(), 2_(), 3_()];
-            to_array_30(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let mut arr: () = (unsafe {
-            let mut ___arr: [A_31; 1] = [A_31 {
-                a: 3_(),
-                b: 0.1_f64,
-            }];
-            to_array_32(&mut ___arr)
-        });
+        let mut arr: () = unimplemented!();
         const _: () = assert!(true, "");;
         unimplemented!();
         unimplemented!();
@@ -312,7 +294,7 @@ pub unsafe fn tests_22() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct A_31 {
+pub struct A_23 {
     pub a: (),
     pub b: (),
 }

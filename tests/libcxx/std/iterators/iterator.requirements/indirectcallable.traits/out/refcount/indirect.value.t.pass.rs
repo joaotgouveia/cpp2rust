@@ -124,7 +124,7 @@ pub fn test_0() {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: (),
                                                        mut y: ()|
              -> () {
-                return ((x.read()) < (y.read()));
+                return ((unimplemented!().read()) < (unimplemented!().read()));
             })));
         const _: () = assert!(
             true,

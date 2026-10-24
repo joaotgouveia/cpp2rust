@@ -488,7 +488,7 @@ pub unsafe fn test01_18() {
     }
     let mut v: () = unimplemented!();
     let mut v2: () = unimplemented!();
-    p = c"/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -510,7 +510,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"filename";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -532,7 +532,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"dir/.";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -554,7 +554,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"dir/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -576,7 +576,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"//rootname/dir/.";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -598,7 +598,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"//rootname/dir/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -620,7 +620,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"//rootname/dir/filename";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -642,7 +642,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"c:relative/path";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -664,7 +664,7 @@ pub unsafe fn test01_18() {
             unimplemented!();
         }
     }
-    p = c"c:/absolute/path";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;

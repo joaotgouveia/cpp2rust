@@ -480,7 +480,7 @@ pub fn test01_18() {
     }
     let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let v2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    (*p.borrow_mut()) = b"/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -502,7 +502,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"filename";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -524,7 +524,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"dir/.";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -546,7 +546,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"dir/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -568,7 +568,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"//rootname/dir/.";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -590,7 +590,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"//rootname/dir/";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -612,7 +612,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"//rootname/dir/filename";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -634,7 +634,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"c:relative/path";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;
@@ -656,7 +656,7 @@ pub fn test01_18() {
             unimplemented!();
         }
     }
-    (*p.borrow_mut()) = b"c:/absolute/path";
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     let mut __do_while = true;

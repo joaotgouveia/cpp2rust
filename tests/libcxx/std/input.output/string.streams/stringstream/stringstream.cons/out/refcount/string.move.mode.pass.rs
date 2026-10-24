@@ -112,44 +112,44 @@ pub struct operator_hijacker_allocator_char_ {}
 pub struct operator_hijacker_allocator_wchar_t_ {}
 pub fn test_0() {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
 pub fn test_1() {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let ss: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

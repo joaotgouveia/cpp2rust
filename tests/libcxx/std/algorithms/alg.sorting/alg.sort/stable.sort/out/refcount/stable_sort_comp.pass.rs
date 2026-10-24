@@ -100,7 +100,7 @@ pub trait indirect_lessImpl {
 }
 impl indirect_lessImpl for Ptr<indirect_less> {
     fn operator_call_1_class_std_unique_ptr_int_(&self, x: Ptr<()>, y: Ptr<()>) -> () {
-        return ({ ((*x.upgrade().deref()).read()) } < { ((*y.upgrade().deref()).read()) });
+        return ({ (unimplemented!().read()) } < { (unimplemented!().read()) });
     }
 }
 pub fn __cpp2rust_init_globals() {}

@@ -359,29 +359,23 @@ pub fn operator_add_19(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_18(_i, n)
     });
 }
-pub fn iter_swap_20(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_21(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_20(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_22(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_21(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -427,7 +421,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_24(
+            operator_cmp_23(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -452,7 +446,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_23(
+            operator_eq_22(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -987,6 +981,9 @@ const _: () = assert!(true, "std::ranges::input_range<RangeT<int>>");
 const _: () = assert!(true, "std::ranges::range<BadRangeT<int>>");
 const _: () = assert!(!(false), "!std::ranges::input_range<BadRangeT<int>>");
 thread_local!(
+    pub static SFINAEs_away_24: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+);
+thread_local!(
     pub static SFINAEs_away_25: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
 thread_local!(
@@ -1046,13 +1043,10 @@ thread_local!(
 thread_local!(
     pub static SFINAEs_away_44: Value<()> = Rc::new(RefCell::new(unimplemented!()));
 );
-thread_local!(
-    pub static SFINAEs_away_45: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-);
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
-pub fn AssociativeContainerDeductionGuidesSfinaeAway_46() {
+pub fn AssociativeContainerDeductionGuidesSfinaeAway_45() {
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, OutputIter, OutputIter>");;
     const _: () = assert!(true, "SFINAEs_away<Container, BadIter, BadIter, Comp>");;
@@ -1116,7 +1110,7 @@ pub fn AssociativeContainerDeductionGuidesSfinaeAway_46() {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct BadAlloc_47 {}
+pub struct BadAlloc_46 {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
 #[byte_size(40)]
 pub struct test_allocator_statistics {
@@ -1160,22 +1154,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_48: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_47: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_49: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_48: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_50(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_49(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_51(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_50(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_50(_x, _y)
+        operator_eq_49(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -1236,7 +1230,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_50(
+            operator_eq_49(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -1359,7 +1353,7 @@ impl test_allocator_int_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_48.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1437,7 +1431,7 @@ impl test_allocator_int_ptr_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_48.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1573,7 +1567,7 @@ impl test_allocator_long_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_48.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1651,7 +1645,7 @@ impl test_allocator_long_ptr_ {
             field!(this.with(|__s| __s.stats_.clone()), moved).with_mut(|__v| __v.prefix_inc());
         }
         unimplemented!();
-        field!(a, id_).write(moved_value_49.with(|rc| *rc.borrow()));
+        field!(a, id_).write(moved_value_48.with(|rc| *rc.borrow()));
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
@@ -1717,7 +1711,7 @@ impl Tag_X {
         Self {}
     }
 }
-pub fn test_copy_52() {
+pub fn test_copy_51() {
     {
         let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1737,7 +1731,7 @@ pub fn test_copy_52() {
         unimplemented!();
     }
 }
-pub fn test_containers_53() {
+pub fn test_containers_52() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1780,7 +1774,7 @@ pub fn test_containers_53() {
         unimplemented!();
     }
 }
-pub fn test_containers_compare_54() {
+pub fn test_containers_compare_53() {
     let ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let vs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let sorted_ks: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1823,7 +1817,7 @@ pub fn test_containers_compare_54() {
         unimplemented!();
     }
 }
-pub fn test_iter_iter_55() {
+pub fn test_iter_iter_54() {
     let mut arr: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -1916,7 +1910,7 @@ pub fn test_iter_iter_55() {
         unimplemented!();
     }
 }
-pub fn test_iter_iter_compare_56() {
+pub fn test_iter_iter_compare_55() {
     let mut arr: [(); 5] = [
         unimplemented!(),
         unimplemented!(),
@@ -1976,7 +1970,7 @@ pub fn test_iter_iter_compare_56() {
         const _: () = assert!(true, "");;
     }
 }
-pub fn test_initializer_list_57() {
+pub fn test_initializer_list_56() {
     let sorted_arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2007,7 +2001,7 @@ pub fn test_initializer_list_57() {
         unimplemented!();
     }
 }
-pub fn test_initializer_list_compare_58() {
+pub fn test_initializer_list_compare_57() {
     let sorted_arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
         unimplemented!(),
@@ -2026,7 +2020,7 @@ pub fn test_initializer_list_compare_58() {
         unimplemented!();
     }
 }
-pub fn test_from_range_59() {
+pub fn test_from_range_58() {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
@@ -2048,7 +2042,7 @@ pub fn test_from_range_59() {
         unimplemented!();
     }
 }
-pub fn test_from_range_compare_60() {
+pub fn test_from_range_compare_59() {
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
@@ -2070,7 +2064,7 @@ pub fn test_from_range_compare_60() {
         unimplemented!();
     }
 }
-pub fn test_tuple_like_deduction_61() {
+pub fn test_tuple_like_deduction_60() {
     let pair_vec: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let fmm1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
@@ -2104,17 +2098,17 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_copy_52() });
-    ({ test_containers_53() });
-    ({ test_containers_compare_54() });
-    ({ test_iter_iter_55() });
-    ({ test_iter_iter_compare_56() });
-    ({ test_initializer_list_57() });
-    ({ test_initializer_list_compare_58() });
-    ({ test_from_range_59() });
-    ({ test_from_range_compare_60() });
-    ({ test_tuple_like_deduction_61() });
-    ({ AssociativeContainerDeductionGuidesSfinaeAway_46() });
+    ({ test_copy_51() });
+    ({ test_containers_52() });
+    ({ test_containers_compare_53() });
+    ({ test_iter_iter_54() });
+    ({ test_iter_iter_compare_55() });
+    ({ test_initializer_list_56() });
+    ({ test_initializer_list_compare_57() });
+    ({ test_from_range_58() });
+    ({ test_from_range_compare_59() });
+    ({ test_tuple_like_deduction_60() });
+    ({ AssociativeContainerDeductionGuidesSfinaeAway_45() });
     return 0_();
 }
 pub trait BidirectionalIteratorNotDecrementableImpl {
@@ -2984,8 +2978,8 @@ impl test_allocator_int_Impl for Ptr<test_allocator_int_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_47.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_47.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3087,8 +3081,8 @@ impl test_allocator_int_ptr_Impl for Ptr<test_allocator_int_ptr_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_47.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_47.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<()>> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3179,8 +3173,8 @@ impl test_allocator_long_Impl for Ptr<test_allocator_long_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_47.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_47.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<()> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3282,8 +3276,8 @@ impl test_allocator_long_ptr_Impl for Ptr<test_allocator_long_ptr_> {
         if !(((*self).with(|__s| __s.stats_.clone())).is_null()) {
             field!((*self).with(|__s| __s.stats_.clone()), count).with_mut(|__v| __v.prefix_dec());
         }
-        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_47.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_47.with(|rc| *rc.borrow()));
     }
     fn allocate(&self, mut n: (), _a1: Option<()>) -> Ptr<Ptr<()>> {
         let mut _a1: () = _a1.unwrap_or_else(|| unimplemented!());
@@ -3378,8 +3372,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_48.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_48.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_47.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_47.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -3395,6 +3389,7 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
+    let _ = SFINAEs_away_24.with(|_| ());
     let _ = SFINAEs_away_25.with(|_| ());
     let _ = SFINAEs_away_26.with(|_| ());
     let _ = SFINAEs_away_27.with(|_| ());
@@ -3415,7 +3410,6 @@ pub fn __cpp2rust_init_globals() {
     let _ = SFINAEs_away_42.with(|_| ());
     let _ = SFINAEs_away_43.with(|_| ());
     let _ = SFINAEs_away_44.with(|_| ());
-    let _ = SFINAEs_away_45.with(|_| ());
-    let _ = destructed_value_48.with(|_| ());
-    let _ = moved_value_49.with(|_| ());
+    let _ = destructed_value_47.with(|_| ());
+    let _ = moved_value_48.with(|_| ());
 }

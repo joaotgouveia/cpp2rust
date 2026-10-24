@@ -336,13 +336,13 @@ pub static mut testcases_10: std::cell::LazyCell<[testcase; 13]> =
 pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_12(p, q) });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((r1) >= (0_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -352,7 +352,7 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
         __do_while = false;
         if !((r1 as ()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -360,9 +360,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_12(q, p) }) == (r1)) {
+        if !((unimplemented!()) == (r1)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -375,14 +375,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_12(___m, ___n)
-        }) == (pabs))
-        {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -390,9 +385,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), p) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -400,9 +395,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(p, 0_()) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -410,9 +405,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), p) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -420,9 +415,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(p, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -435,14 +430,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_12(___m, ___n)
-        }) == (qabs))
-        {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -450,9 +440,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), q) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -460,9 +450,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(q, 0_()) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -470,9 +460,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), q) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -480,9 +470,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(q, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -490,14 +480,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -505,9 +490,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -515,9 +500,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -525,9 +510,9 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
@@ -535,25 +520,25 @@ pub unsafe fn check_11(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
             });
             unimplemented!();
         }
     }
     return true;
 }
-pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
+pub unsafe fn check_13(mut p: (), mut q: (), mut r: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_17(p, q) });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((r1) >= (0_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -573,7 +558,7 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
         __do_while = false;
         if !((r1) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -591,9 +576,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_17(q, p) }) == (r1)) {
+        if !((unimplemented!()) == (r1)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -612,14 +597,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_17(___m, ___n)
-        }) == (pabs))
-        {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -637,9 +617,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(0_(), p) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -657,9 +637,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(p, 0_()) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -677,9 +657,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(1_(), p) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -697,9 +677,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(p, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -718,14 +698,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_17(___m, ___n)
-        }) == (qabs))
-        {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -743,9 +718,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(0_(), q) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -763,9 +738,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(q, 0_()) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -783,9 +758,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(1_(), q) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -803,9 +778,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(q, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -823,14 +798,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -848,9 +818,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -868,9 +838,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -888,9 +858,9 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -908,15 +878,1893 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
                         (c"2.cc".as_ptr()).into(),
                         (71_()).into(),
                         (c"bool check(P, Q, unsigned long long) [P = long, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_14(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1 as ()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) {
+        (q).wrapping_neg()
+    } else {
+        q
+    };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_15(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1 as ()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) {
+        (p).wrapping_neg()
+    } else {
+        p
+    };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (49_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"r1 >= 0".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (51_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (53_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (56_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (57_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (58_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (59_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (60_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (62_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (63_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (64_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (65_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (66_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (67_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (68_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (69_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (70_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (71_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_17(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (49_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"r1 >= 0".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (51_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (53_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (56_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (57_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (58_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (59_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (60_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (62_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (63_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (64_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (65_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (66_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (67_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (68_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (69_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (70_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (71_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_18(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (49_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"r1 >= 0".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (51_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (53_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (56_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (57_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (58_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (59_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (60_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) {
+        (q).wrapping_neg()
+    } else {
+        q
+    };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (62_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (63_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (64_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (65_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (66_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (67_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(r, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (68_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(0, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (69_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (70_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (71_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
+                            .as_ptr())
+                        .into(),
+                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    return true;
+}
+pub unsafe fn check_19(mut p: (), mut q: (), mut r: ()) -> () {
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
+    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
+    let mut r1: () = unimplemented!();
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) >= (0_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (49_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"r1 >= 0".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((r1) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (51_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r1)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (53_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (56_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (57_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (pabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (58_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (59_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (60_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (62_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (63_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (qabs)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (64_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (65_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (66_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (67_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (68_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(0, r) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (r)) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (69_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (70_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
+                            .into(),
+                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
+                    ]),
+                )
+            });
+            unimplemented!();
+        }
+    }
+    let mut __do_while = true;
+    'loop_: while __do_while || (false) {
+        __do_while = false;
+        if !((unimplemented!()) == (1_())) {
+            (unsafe {
+                __builtin_fprintf_12(
+                    libcc2rs::stderr_unsafe(),
+                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
+                    Box::new([
+                        (c"2.cc".as_ptr()).into(),
+                        (71_()).into(),
+                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
                             .into(),
                         (c"std::gcd(r, 1) == 1".as_ptr()).into(),
                     ]),
@@ -930,1981 +2778,13 @@ pub unsafe fn check_16(mut p: (), mut q: (), mut r: ()) -> () {
 pub unsafe fn check_20(mut p: (), mut q: (), mut r: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_21(p, q) });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((r1) >= (0_())) {
             (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1 as ()) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_22(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_17(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) {
-        (q).wrapping_neg()
-    } else {
-        q
-    };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_12(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = long, Q = unsigned long long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_23(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_22(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 49_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"r1 >= 0" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1 as ()) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 51_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"(unsigned long long)r1 == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_21(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 53_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, p) == r1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) {
-        (p).wrapping_neg()
-    } else {
-        p
-    };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_12(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 56_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, p) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 57_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, p) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 58_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, 0) == pabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 59_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, p) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 60_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(p, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_17(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 62_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, q) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 63_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, q) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 64_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, 0) == qabs" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 65_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, q) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 66_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(q, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 67_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, r) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 68_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(0, r) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 69_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, 0) == r" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 70_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(1, r) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"2.cc" .as_ptr() ) .into() , ( 71_() ) .into() , ( c"bool check(P, Q, unsigned long long) [P = unsigned long long, Q = long]" .as_ptr() ) .into() , ( c"std::gcd(r, 1) == 1" .as_ptr() ) .into() , ] ) )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_24(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_19(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"r1 >= 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (53_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_17(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (56_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (57_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (58_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (59_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (60_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_25(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (64_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (67_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = long, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_26(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_18(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"r1 >= 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (53_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_25(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (56_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (57_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (58_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (59_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (60_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_17(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (64_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_18(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_19(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (67_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = long]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_27(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_28(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"r1 >= 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_29(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (53_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_25(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (56_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (57_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (58_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (59_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (60_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) {
-        (q).wrapping_neg()
-    } else {
-        q
-    };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_30(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_28(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_29(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (64_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_28(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_29(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (67_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(r, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(0, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = unsigned int]"
-                            .as_ptr())
-                        .into(),
-                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_31(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_25(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (49_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"r1 >= 0".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (51_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"(unsigned long long)r1 == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(q, p) }) == (r1)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (53_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, p) == r1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut pabs: () = if ((p) < (0_())) { -p } else { p };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_25(___m, ___n)
-        }) == (pabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (56_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(0_(), p) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (57_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, p) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 0_()) }) == (pabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (58_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 0) == pabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(1_(), p) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (59_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, p) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(p, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (60_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(p, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut qabs: () = if ((q) < (0_())) { -q } else { q };
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_25(___m, ___n)
-        }) == (qabs))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (62_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(0_(), q) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (63_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, q) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(q, 0_()) }) == (qabs)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (64_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 0) == qabs".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(1_(), q) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (65_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, q) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_25(q, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (66_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(q, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (67_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (68_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(0, r) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (69_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 0) == r".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (70_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(1, r) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
-            (unsafe {
-                __builtin_fprintf_13(
-                    libcc2rs::stderr_unsafe(),
-                    c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
-                    Box::new([
-                        (c"2.cc".as_ptr()).into(),
-                        (71_()).into(),
-                        (c"bool check(P, Q, unsigned long long) [P = int, Q = int]".as_ptr())
-                            .into(),
-                        (c"std::gcd(r, 1) == 1".as_ptr()).into(),
-                    ]),
-                )
-            });
-            unimplemented!();
-        }
-    }
-    return true;
-}
-pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
-    const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_33(p, q) });
-    let mut __do_while = true;
-    'loop_: while __do_while || (false) {
-        __do_while = false;
-        if !((r1) >= (0_())) {
-            (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -2924,7 +2804,7 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
         __do_while = false;
         if !((r1) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -2942,9 +2822,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_34(q, p) }) == (r1)) {
+        if !((unimplemented!()) == (r1)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -2963,14 +2843,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_17(___m, ___n)
-        }) == (pabs))
-        {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -2988,9 +2863,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(0_(), p) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3008,9 +2883,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(p, 0_()) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3028,9 +2903,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_18(1_(), p) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3048,9 +2923,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_19(p, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3069,14 +2944,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_35(___m, ___n)
-        }) == (qabs))
-        {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3094,9 +2964,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_36(0_(), q) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3114,9 +2984,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_37(q, 0_()) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3134,9 +3004,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_36(1_(), q) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3154,9 +3024,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_37(q, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3174,14 +3044,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3199,9 +3064,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3219,9 +3084,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3239,9 +3104,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3259,9 +3124,9 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3278,16 +3143,16 @@ pub unsafe fn check_32(mut p: (), mut q: (), mut r: ()) -> () {
     }
     return true;
 }
-pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
+pub unsafe fn check_21(mut p: (), mut q: (), mut r: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_39(p, q) });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((r1) >= (0_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3308,7 +3173,7 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
         __do_while = false;
         if !((r1) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3327,9 +3192,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_40(q, p) }) == (r1)) {
+        if !((unimplemented!()) == (r1)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3349,14 +3214,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_35(___m, ___n)
-        }) == (pabs))
-        {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3375,9 +3235,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_36(0_(), p) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3396,9 +3256,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_37(p, 0_()) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3417,9 +3277,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_36(1_(), p) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3438,9 +3298,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_37(p, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3460,14 +3320,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_41(___m, ___n)
-        }) == (qabs))
-        {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3486,9 +3341,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_42(0_(), q) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3507,9 +3362,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_43(q, 0_()) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3528,9 +3383,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_42(1_(), q) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3549,9 +3404,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_43(q, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3570,14 +3425,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3596,9 +3446,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3617,9 +3467,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3638,9 +3488,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3659,9 +3509,9 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3679,16 +3529,16 @@ pub unsafe fn check_38(mut p: (), mut q: (), mut r: ()) -> () {
     }
     return true;
 }
-pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
+pub unsafe fn check_22(mut p: (), mut q: (), mut r: ()) -> () {
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(p, q)), R>");;
     const _: () = assert!(true, "std::is_same_v<decltype(std::gcd(q, p)), R>");;
-    let mut r1: () = (unsafe { gcd_42(p, q) });
+    let mut r1: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
         if !((r1) >= (0_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3709,7 +3559,7 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
         __do_while = false;
         if !((r1) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3728,9 +3578,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_43(q, p) }) == (r1)) {
+        if !((unimplemented!()) == (r1)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3750,14 +3600,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = p;
-            let ___n: () = p;
-            gcd_25(___m, ___n)
-        }) == (pabs))
-        {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3776,9 +3621,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_25(0_(), p) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3797,9 +3642,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_25(p, 0_()) }) == (pabs)) {
+        if !((unimplemented!()) == (pabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3818,9 +3663,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_25(1_(), p) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3839,9 +3684,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_25(p, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3861,14 +3706,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = q;
-            let ___n: () = q;
-            gcd_41(___m, ___n)
-        }) == (qabs))
-        {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3887,9 +3727,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_42(0_(), q) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3908,9 +3748,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_43(q, 0_()) }) == (qabs)) {
+        if !((unimplemented!()) == (qabs)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3929,9 +3769,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_42(1_(), q) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3950,9 +3790,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_43(q, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3971,14 +3811,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe {
-            let ___m: () = r;
-            let ___n: () = r;
-            gcd_12(___m, ___n)
-        }) == (r))
-        {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -3997,9 +3832,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(0_(), r) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -4018,9 +3853,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 0_()) }) == (r)) {
+        if !((unimplemented!()) == (r)) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -4039,9 +3874,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_14(1_(), r) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -4060,9 +3895,9 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !((unsafe { gcd_15(r, 1_()) }) == (1_())) {
+        if !((unimplemented!()) == (1_())) {
             (unsafe {
-                __builtin_fprintf_13(
+                __builtin_fprintf_12(
                     libcc2rs::stderr_unsafe(),
                     c"%s:%d: %s: Assertion \'%s\' failed.\n".as_ptr(),
                     Box::new([
@@ -4080,7 +3915,7 @@ pub unsafe fn check_44(mut p: (), mut q: (), mut r: ()) -> () {
     }
     return true;
 }
-pub unsafe fn test01_45() -> () {
+pub unsafe fn test01_23() -> () {
     'loop_: for t in IterRange::new(
         (*std::cell::LazyCell::force_mut(&mut *&raw mut testcases_10)).as_ptr(),
         (*std::cell::LazyCell::force_mut(&mut *&raw mut testcases_10))
@@ -4099,67 +3934,67 @@ pub unsafe fn test01_45() -> () {
                 let _p: () = t.p;
                 let _q: () = t.p;
                 let _r: () = t.p;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.p;
                 let _r: () = t.p;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.p;
                 let _r: () = t.p;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_20(_p, _q, _r)
+                check_14(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_20(_p, _q, _r)
+                check_14(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_23(_p, _q, _r)
+                check_15(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_23(_p, _q, _r)
+                check_15(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_16(_p, _q, _r)
+                check_13(_p, _q, _r)
             });
         }
         if ((t.p) <= (2147483647_())) && ((t.q) <= (2147483647_())) {
@@ -4167,37 +4002,37 @@ pub unsafe fn test01_45() -> () {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_24(_p, _q, _r)
+                check_16(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_26(_p, _q, _r)
+                check_17(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_27(_p, _q, _r)
+                check_18(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_27(_p, _q, _r)
+                check_18(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_31(_p, _q, _r)
+                check_19(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_26(_p, _q, _r)
+                check_17(_p, _q, _r)
             });
         }
         if ((t.p) <= (32767_())) && ((t.q) <= (32767_())) {
@@ -4205,37 +4040,37 @@ pub unsafe fn test01_45() -> () {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_32(_p, _q, _r)
+                check_20(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_26(_p, _q, _r)
+                check_17(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_38(_p, _q, _r)
+                check_21(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = t.q;
                 let _r: () = t.r;
-                check_44(_p, _q, _r)
+                check_22(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_31(_p, _q, _r)
+                check_19(_p, _q, _r)
             });
             (unsafe {
                 let _p: () = -t.p;
                 let _q: () = -t.q;
                 let _r: () = t.r;
-                check_26(_p, _q, _r)
+                check_17(_p, _q, _r)
             });
         }
     }
@@ -4262,47 +4097,47 @@ impl __gnu_test_semaphore {
             sem_set_: unimplemented!(),
             pid_: 0 as ::libc::pid_t,
         };
-        this.pid_ = ((unsafe { getpid_46() }) as ::libc::pid_t);
+        this.pid_ = ((unsafe { getpid_24() }) as ::libc::pid_t);
         this.sem_set_ =
-            (unsafe { semget_47(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
+            (unsafe { semget_25(((0_() as ()) as ::libc::key_t), 1_(), ((256_()) | (128_()))) });
         if ((this.sem_set_) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not obtain semaphore set".as_ptr()) });
         }
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((unsafe { semctl_48(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
+        if ((unsafe { semctl_26(this.sem_set_, 0_(), 16_(), Box::new([(val).into()])) }) == (-1_()))
         {
             (unsafe { __throw_runtime_error_3(c"could not initialize semaphore".as_ptr()) });
         }
         this
     }
 }
-pub unsafe fn set_memory_limits_49(mut size: Option<()>) {
+pub unsafe fn set_memory_limits_27(mut size: Option<()>) {
     let mut size: () = size.unwrap_or_else(|| unsafe { 16_f64 });
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) * (1048576_()));
     (unsafe {
-        getrlimit_50(
+        getrlimit_28(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_51(
+        setrlimit_29(
             (__rlimit_resource_RLIMIT_DATA as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
     (unsafe {
-        getrlimit_50(
+        getrlimit_28(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_51(
+        setrlimit_29(
             (__rlimit_resource___RLIMIT_RSS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
@@ -4310,37 +4145,37 @@ pub unsafe fn set_memory_limits_49(mut size: Option<()>) {
     if ((limit) < (20971520_())) {
         limit = 20971520_();
     }
-    (unsafe { getrlimit_50((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
+    (unsafe { getrlimit_28((__rlimit_resource_RLIMIT_AS as ()), (&mut r as *mut rlimit)) });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_51(
+        setrlimit_29(
             (__rlimit_resource_RLIMIT_AS as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn set_file_limit_52(mut size: ()) {
+pub unsafe fn set_file_limit_30(mut size: ()) {
     let mut r: rlimit = unsafe { std::mem::zeroed::<rlimit>() };
     let mut limit: () = ((size) as ());
     (unsafe {
-        getrlimit_50(
+        getrlimit_28(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit),
         )
     });
     r.rlim_cur = limit;
     (unsafe {
-        setrlimit_51(
+        setrlimit_29(
             (__rlimit_resource_RLIMIT_FSIZE as ()),
             (&mut r as *mut rlimit).cast_const(),
         )
     });
 }
-pub unsafe fn verify_demangle_53(mut mangled: *const (), mut wanted: *const ()) {
+pub unsafe fn verify_demangle_31(mut mangled: *const (), mut wanted: *const ()) {
     let mut status: () = 0_();
     let mut s: *const () = std::ptr::null();
     let mut demangled: *mut () = (unsafe {
-        __cxa_demangle_54(
+        __cxa_demangle_32(
             mangled,
             std::ptr::null_mut(),
             std::ptr::null_mut(),
@@ -4378,7 +4213,7 @@ pub unsafe fn verify_demangle_53(mut mangled: *const (), mut wanted: *const ()) 
     }
     unimplemented!();
 }
-pub unsafe fn run_tests_wrapped_locale_55(mut name: *const (), l: *const __gnu_test_func_callback) {
+pub unsafe fn run_tests_wrapped_locale_33(mut name: *const (), l: *const __gnu_test_func_callback) {
     let mut loc_name: () = unimplemented!();
     let mut orig: () = unimplemented!();
     let mut res: *const () = (unimplemented!()).cast_const();
@@ -4397,7 +4232,7 @@ pub unsafe fn run_tests_wrapped_locale_55(mut name: *const (), l: *const __gnu_t
             __do_while = false;
             if !(unimplemented!()) {
                 (unsafe {
-                    __builtin_fprintf_13 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
+                    __builtin_fprintf_12 ( libcc2rs::stderr_unsafe() , c"%s:%d: %s: Assertion \'%s\' failed.\n" .as_ptr() , Box::new ( [ ( c"testsuite_hooks.cc" .as_ptr() ) .into() , ( 182_() ) .into() , ( c"void __gnu_test::run_tests_wrapped_locale(const char *, const func_callback &)" .as_ptr() ) .into() , ( c"preLC_ALL == postLC_ALL" .as_ptr() ) .into() , ] ) )
                 });
                 unimplemented!();
             }
@@ -4408,7 +4243,7 @@ pub unsafe fn run_tests_wrapped_locale_55(mut name: *const (), l: *const __gnu_t
         (unsafe { __throw_runtime_error_3(unimplemented!()) });
     }
 }
-pub unsafe fn run_tests_wrapped_env_56(
+pub unsafe fn run_tests_wrapped_env_34(
     mut name: *const (),
     mut env: *const (),
     l: *const __gnu_test_func_callback,
@@ -4456,15 +4291,15 @@ impl __gnu_test_semaphore {
     pub unsafe fn destructor(&mut self) {
         let mut val: __gnu_test_semun = <__gnu_test_semun>::default();
         val.val = 0_();
-        if ((self.pid_) == (unsafe { getpid_46() })) {
-            (unsafe { semctl_48(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
+        if ((self.pid_) == (unsafe { getpid_24() })) {
+            (unsafe { semctl_26(self.sem_set_, 0_(), 0_(), Box::new([(val).into()])) });
         }
     }
 }
 impl __gnu_test_semaphore {
     pub unsafe fn signal(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_57(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_35(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not signal semaphore".as_ptr()) });
         }
     }
@@ -4472,12 +4307,12 @@ impl __gnu_test_semaphore {
 impl __gnu_test_semaphore {
     pub unsafe fn wait(&mut self) {
         let mut op: [sembuf; 1] = [unimplemented!()];
-        if ((unsafe { semop_57(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
+        if ((unsafe { semop_35(self.sem_set_, op.as_mut_ptr(), 1_()) }) == (-1_())) {
             (unsafe { __throw_runtime_error_3(c"could not wait for semaphore".as_ptr()) });
         }
     }
 }
-pub unsafe fn test_tm_58(
+pub unsafe fn test_tm_36(
     mut sec: (),
     mut min: (),
     mut hour: (),
@@ -4488,18 +4323,18 @@ pub unsafe fn test_tm_58(
     mut yday: (),
     mut isdst: (),
 ) -> ::libc::tm {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_sec = sec;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_min = min;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_hour = hour;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_mday = mday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_mon = mon;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_year = year;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_wday = wday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_yday = yday;
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59)).tm_isdst = isdst;
-    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_59));
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_sec = sec;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_min = min;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_hour = hour;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_mday = mday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_mon = mon;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_year = year;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_wday = wday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_yday = yday;
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37)).tm_isdst = isdst;
+    return (*std::cell::LazyCell::force_mut(&mut *&raw mut tmp_37));
 }
-static mut tmp_59: std::cell::LazyCell<::libc::tm> =
+static mut tmp_37: std::cell::LazyCell<::libc::tm> =
     std::cell::LazyCell::new(|| unsafe { unsafe { std::mem::zeroed() } });
 pub unsafe fn __cpp2rust_init_globals() {
     std::cell::LazyCell::force(&*&raw const testcases_10);

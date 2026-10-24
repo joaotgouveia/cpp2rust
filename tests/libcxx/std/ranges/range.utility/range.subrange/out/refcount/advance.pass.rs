@@ -322,29 +322,23 @@ pub fn operator_add_7(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_6(_i, n)
     });
 }
-pub fn iter_swap_8(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_9(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_8(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -390,7 +384,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_12(
+            operator_cmp_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -415,7 +409,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_11(
+            operator_eq_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -500,14 +494,14 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static globalBuff_13: Value<Box<[()]>> = Rc::new(RefCell::new(
+    pub static globalBuff_12: Value<Box<[()]>> = Rc::new(RefCell::new(
         (0..8).map(|_| unimplemented!()).collect::<Box<[()]>>(),
     ));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct Empty {}
-pub fn operator_eq_14(lhs: Ptr<MoveOnlyForwardIter>, mut rhs: Ptr<()>) -> () {
+pub fn operator_eq_13(lhs: Ptr<MoveOnlyForwardIter>, mut rhs: Ptr<()>) -> () {
     return ({ lhs.with(|__s| __s.base.clone()) } == { rhs });
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign)]
@@ -538,13 +532,13 @@ impl Default for MoveOnlyForwardIter {
         }
     }
 }
-pub fn operator_eq_15(
+pub fn operator_eq_14(
     lhs: Ptr<SizedSentinelForwardIter>,
     rhs: Ptr<SizedSentinelForwardIter>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_sub_16(a: Ptr<SizedSentinelForwardIter>, b: Ptr<SizedSentinelForwardIter>) -> () {
+pub fn operator_sub_15(a: Ptr<SizedSentinelForwardIter>, b: Ptr<SizedSentinelForwardIter>) -> () {
     if !(a.with(|__s| __s.minusWasCalled_.clone())).is_null() {
         a.with(|__s| __s.minusWasCalled_.clone()).write(true);
     }
@@ -574,7 +568,7 @@ impl SizedSentinelForwardIter {
 impl std::cmp::PartialEq for SizedSentinelForwardIter {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_15(
+            operator_eq_14(
                 Rc::new(RefCell::new(SizedSentinelForwardIter {
                     base_: self.base_.clone(),
                     minusWasCalled_: self.minusWasCalled_.clone(),
@@ -628,7 +622,7 @@ impl Default for ConvertibleForwardIter {
     }
 }
 const _: () = assert!(true, "std::is_convertible_v<ConvertibleForwardIter, int*>");
-pub fn operator_eq_17(
+pub fn operator_eq_16(
     _a0: Ptr<ConditionallyConvertibleBase_false_>,
     _a1: Ptr<ConditionallyConvertibleBase_false_>,
 ) -> () {
@@ -645,7 +639,7 @@ impl ConditionallyConvertibleBase_false_ {}
 impl std::cmp::PartialEq for ConditionallyConvertibleBase_false_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_16(
                 Rc::new(RefCell::new(ConditionallyConvertibleBase_false_ {
                     base_: self.base_.clone(),
                 }))
@@ -668,7 +662,7 @@ impl Default for ConditionallyConvertibleBase_false_ {
         }
     }
 }
-pub fn operator_eq_18(
+pub fn operator_eq_17(
     _a0: Ptr<ConditionallyConvertibleBase_true_>,
     _a1: Ptr<ConditionallyConvertibleBase_true_>,
 ) -> () {
@@ -685,7 +679,7 @@ impl ConditionallyConvertibleBase_true_ {}
 impl std::cmp::PartialEq for ConditionallyConvertibleBase_true_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_18(
+            operator_eq_17(
                 Rc::new(RefCell::new(ConditionallyConvertibleBase_true_ {
                     base_: self.base_.clone(),
                 }))
@@ -712,7 +706,7 @@ impl Default for ConditionallyConvertibleBase_true_ {
 #[byte_size(1)]
 pub struct ForwardBorrowedRange {}
 thread_local!(
-    pub static enable_borrowed_range_19: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_18: Value<()> = Rc::new(RefCell::new(true));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
@@ -721,9 +715,9 @@ pub struct ForwardRange {}
 #[byte_size(1)]
 pub struct ConvertibleForwardBorrowedRange {}
 thread_local!(
-    pub static enable_borrowed_range_20: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_19: Value<()> = Rc::new(RefCell::new(true));
 );
-pub fn operator_eq_21(
+pub fn operator_eq_20(
     mut s: ForwardBorrowedRangeDifferentSentinel_sentinel,
     i: forward_iterator_int_ptr_,
 ) -> () {
@@ -741,9 +735,9 @@ pub struct ForwardBorrowedRangeDifferentSentinel_sentinel {
 #[byte_size(1)]
 pub struct ForwardBorrowedRangeDifferentSentinel {}
 thread_local!(
-    pub static enable_borrowed_range_22: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_21: Value<()> = Rc::new(RefCell::new(true));
 );
-pub fn operator_eq_23(
+pub fn operator_eq_22(
     mut s: DifferentSentinelWithSizeMember_sentinel,
     i: forward_iterator_int_ptr_,
 ) -> () {
@@ -761,16 +755,10 @@ pub struct DifferentSentinelWithSizeMember_sentinel {
 #[byte_size(1)]
 pub struct DifferentSentinelWithSizeMember {}
 thread_local!(
-    pub static enable_borrowed_range_24: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_23: Value<()> = Rc::new(RefCell::new(true));
 );
-pub fn test_25() -> () {
-    let a: Value<()> = Rc::new(RefCell::new(
-        std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized_::new_1(
-            { (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>) },
-            { (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize) },
-            { 8_() },
-        ),
-    ));
+pub fn test_24() -> () {
+    let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let a1: Value<()> = Rc::new(RefCell::new(({ (*a.borrow()).next_13(None) })));
     unimplemented!();
     unimplemented!();
@@ -781,7 +769,9 @@ pub fn test_25() -> () {
     unimplemented!();
     unimplemented!();
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let b1: Value<()> = Rc::new(RefCell::new(({ (*b.borrow()).next_14(None) })));
+    let b1: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).next_14(None) }),
+    ));
     unimplemented!();
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let c1: Value<()> = Rc::new(RefCell::new(({ (*c.borrow()).prev(None) })));
@@ -820,7 +810,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_25() });
+    ({ test_24() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -879,11 +869,11 @@ pub trait ConvertibleForwardBorrowedRangeImpl {
 impl ConvertibleForwardBorrowedRangeImpl for Ptr<ConvertibleForwardBorrowedRange> {
     fn begin(&self) -> ConvertibleForwardIter {
         return ConvertibleForwardIter::new_1({
-            (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> Ptr<()> {
-        return (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
+        return (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     }
 }
 pub trait ConvertibleForwardIterImpl {
@@ -920,12 +910,12 @@ pub trait DifferentSentinelWithSizeMemberImpl {
 impl DifferentSentinelWithSizeMemberImpl for Ptr<DifferentSentinelWithSizeMember> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> DifferentSentinelWithSizeMember_sentinel {
         return DifferentSentinelWithSizeMember_sentinel {
-            value: (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize),
+            value: (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize),
         };
     }
     fn size(&self) -> () {
@@ -939,12 +929,12 @@ pub trait ForwardBorrowedRangeImpl {
 impl ForwardBorrowedRangeImpl for Ptr<ForwardBorrowedRange> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
+            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize)
         });
     }
 }
@@ -955,12 +945,12 @@ pub trait ForwardBorrowedRangeDifferentSentinelImpl {
 impl ForwardBorrowedRangeDifferentSentinelImpl for Ptr<ForwardBorrowedRangeDifferentSentinel> {
     fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
-            (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> ForwardBorrowedRangeDifferentSentinel_sentinel {
         return ForwardBorrowedRangeDifferentSentinel_sentinel {
-            value: (globalBuff_13.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize),
+            value: (globalBuff_12.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize),
         };
     }
 }
@@ -1342,9 +1332,9 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = globalBuff_13.with(|_| ());
+    let _ = globalBuff_12.with(|_| ());
+    let _ = enable_borrowed_range_18.with(|_| ());
     let _ = enable_borrowed_range_19.with(|_| ());
-    let _ = enable_borrowed_range_20.with(|_| ());
-    let _ = enable_borrowed_range_22.with(|_| ());
-    let _ = enable_borrowed_range_24.with(|_| ());
+    let _ = enable_borrowed_range_21.with(|_| ());
+    let _ = enable_borrowed_range_23.with(|_| ());
 }

@@ -253,25 +253,21 @@ pub unsafe fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_5(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -355,7 +351,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -365,7 +361,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -433,6 +429,16 @@ impl util_iterator_error {
         this
     }
 }
+pub unsafe fn CheckConsecutiveKeys_8(mut pos: (), mut end: (), key: (), values: *mut ()) {
+    'loop_: while !(unimplemented!()) {
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    unimplemented!();
+}
 pub unsafe fn CheckConsecutiveKeys_9(mut pos: (), mut end: (), key: (), values: *mut ()) {
     'loop_: while !(unimplemented!()) {
         unimplemented!();
@@ -443,17 +449,7 @@ pub unsafe fn CheckConsecutiveKeys_9(mut pos: (), mut end: (), key: (), values: 
     }
     unimplemented!();
 }
-pub unsafe fn CheckConsecutiveKeys_10(mut pos: (), mut end: (), key: (), values: *mut ()) {
-    'loop_: while !(unimplemented!()) {
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    unimplemented!();
-}
-pub unsafe fn operator_eq_11(a: *const test_equal_to_int_, b: *const test_equal_to_int_) -> () {
+pub unsafe fn operator_eq_10(a: *const test_equal_to_int_, b: *const test_equal_to_int_) -> () {
     return (((*a).data_) == ((*b).data_));
 }
 #[repr(C)]
@@ -473,7 +469,7 @@ impl test_equal_to_int_ {
 impl std::cmp::PartialEq for test_equal_to_int_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_11(
+            operator_eq_10(
                 self as *const test_equal_to_int_,
                 other as *const test_equal_to_int_,
             )
@@ -559,21 +555,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_12: std::cell::LazyCell<()> =
+pub static mut destructed_value_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_13: std::cell::LazyCell<()> =
+pub static mut moved_value_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_14(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_13(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_15(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_14(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_14(_x, _y)
+        operator_eq_13(_x, _y)
     });
 }
 #[repr(C)]
@@ -637,8 +633,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_12));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_12));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_11));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_11));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -659,7 +655,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_14(
+            operator_eq_13(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -683,7 +679,7 @@ impl Default for test_allocator_void_ {
         }
     }
 }
-pub unsafe fn operator_eq_16(
+pub unsafe fn operator_eq_15(
     x: *const test_allocator_std_pair_const_int__std_string__,
     y: *const test_allocator_std_pair_const_int__std_string__,
 ) -> () {
@@ -728,14 +724,14 @@ impl test_allocator_std_pair_const_int__std_string__ {
         if !((self.stats_).is_null()) {
             (*self.stats_).count.prefix_dec();
         }
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_12));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_12));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_11));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_11));
     }
 }
 impl std::cmp::PartialEq for test_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_16(
+            operator_eq_15(
                 self as *const test_allocator_std_pair_const_int__std_string__,
                 other as *const test_allocator_std_pair_const_int__std_string__,
             )
@@ -795,24 +791,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_17))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_18))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_20)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_17)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_18)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_19)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_19)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_16)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_17)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_18)) = 0_();
     }
 }
-pub static mut outstanding_bytes_17: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_18: std::cell::LazyCell<()> =
+pub static mut alloc_count_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_19: std::cell::LazyCell<()> =
+pub static mut dealloc_count_18: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_20: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_19: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -861,7 +857,7 @@ impl min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_st
  this } pub unsafe fn to_ ( &self , ) -> () { return ! ( ( self . ptr_  ).is_null() )  ;
  } pub unsafe fn operator_index ( &self , mut n : () , ) -> *mut min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__ { return & mut ( * self . ptr_  . offset ( ( n ) as isize ) )  ;
  } }
-pub unsafe fn operator_eq_21(
+pub unsafe fn operator_eq_20(
     mut _a0: min_allocator_std_pair_const_int__std_string__,
     mut _a1: min_allocator_std_pair_const_int__std_string__,
 ) -> () {
@@ -872,7 +868,7 @@ pub unsafe fn operator_eq_21(
 pub struct min_allocator_std_pair_const_int__std_string__ {}
 impl std::cmp::PartialEq for min_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_21(self.clone(), other.clone()) }
+        unsafe { operator_eq_20(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_allocator_std_pair_const_int__std_string__ {}
@@ -886,7 +882,7 @@ impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_
  } pub unsafe fn deallocate ( &mut self , mut p : min_pointer_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____std_integral_constant_unsigned_long__0__ , mut n : () , ) { unimplemented!()  ;
  } }
 impl min_allocator_min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0___ { }
-pub unsafe fn operator_eq_22(
+pub unsafe fn operator_eq_21(
     mut _a0: explicit_allocator_std_pair_const_int__std_string__,
     mut _a1: explicit_allocator_std_pair_const_int__std_string__,
 ) -> () {
@@ -903,7 +899,7 @@ impl explicit_allocator_std_pair_const_int__std_string__ {
 }
 impl std::cmp::PartialEq for explicit_allocator_std_pair_const_int__std_string__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_22(self.clone(), other.clone()) }
+        unsafe { operator_eq_21(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for explicit_allocator_std_pair_const_int__std_string__ {}
@@ -912,7 +908,7 @@ impl Default for explicit_allocator_std_pair_const_int__std_string__ {
         unsafe { explicit_allocator_std_pair_const_int__std_string__::new() }
     }
 }
-pub unsafe fn test_23(alloc: *const test_allocator_std_pair_const_int__std_string__) {
+pub unsafe fn test_22(alloc: *const test_allocator_std_pair_const_int__std_string__) {
     let mut a: [(); 6] = [
         unimplemented!(),
         unimplemented!(),
@@ -932,7 +928,7 @@ pub unsafe fn test_23(alloc: *const test_allocator_std_pair_const_int__std_strin
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_9(_pos, _end, 1_(), &mut s)
+        CheckConsecutiveKeys_8(_pos, _end, 1_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -941,7 +937,7 @@ pub unsafe fn test_23(alloc: *const test_allocator_std_pair_const_int__std_strin
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_9(_pos, _end, 2_(), &mut s)
+        CheckConsecutiveKeys_8(_pos, _end, 2_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -960,7 +956,7 @@ pub unsafe fn test_23(alloc: *const test_allocator_std_pair_const_int__std_strin
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_24(alloc: *const min_allocator_std_pair_const_int__std_string__) {
+pub unsafe fn test_23(alloc: *const min_allocator_std_pair_const_int__std_string__) {
     let mut a: [(); 6] = [
         unimplemented!(),
         unimplemented!(),
@@ -980,7 +976,7 @@ pub unsafe fn test_24(alloc: *const min_allocator_std_pair_const_int__std_string
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_10(_pos, _end, 1_(), &mut s)
+        CheckConsecutiveKeys_9(_pos, _end, 1_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -989,7 +985,7 @@ pub unsafe fn test_24(alloc: *const min_allocator_std_pair_const_int__std_string
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0____ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_10(_pos, _end, 2_(), &mut s)
+        CheckConsecutiveKeys_9(_pos, _end, 2_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -1008,7 +1004,7 @@ pub unsafe fn test_24(alloc: *const min_allocator_std_pair_const_int__std_string
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_25(alloc: *const explicit_allocator_std_pair_const_int__std_string__) {
+pub unsafe fn test_24(alloc: *const explicit_allocator_std_pair_const_int__std_string__) {
     let mut a: [(); 6] = [
         unimplemented!(),
         unimplemented!(),
@@ -1028,7 +1024,7 @@ pub unsafe fn test_25(alloc: *const explicit_allocator_std_pair_const_int__std_s
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_9(_pos, _end, 1_(), &mut s)
+        CheckConsecutiveKeys_8(_pos, _end, 1_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -1037,7 +1033,7 @@ pub unsafe fn test_25(alloc: *const explicit_allocator_std_pair_const_int__std_s
     (unsafe {
         let _pos: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
         let _end: ()  = std___hash_map_const_iterator_std___hash_const_iterator_std___hash_node_std___hash_value_type_int__std_string___void_ptr__ptr__ :: new_1 ( { unimplemented!()  } , )  ;
-        CheckConsecutiveKeys_9(_pos, _end, 2_(), &mut s)
+        CheckConsecutiveKeys_8(_pos, _end, 2_(), &mut s)
     });
     unimplemented!();
     unimplemented!();
@@ -1075,27 +1071,27 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
         let mut _alloc: test_allocator_std_pair_const_int__std_string__ =
             test_allocator_std_pair_const_int__std_string__::new_1({ 10_() });
-        test_23(&mut _alloc)
+        test_22(&mut _alloc)
     });
     (unsafe {
         let mut _alloc: min_allocator_std_pair_const_int__std_string__ =
             <min_allocator_std_pair_const_int__std_string__>::default();
-        test_24(&mut _alloc)
+        test_23(&mut _alloc)
     });
     (unsafe {
         let mut _alloc: explicit_allocator_std_pair_const_int__std_string__ =
             explicit_allocator_std_pair_const_int__std_string__::new();
-        test_25(&mut _alloc)
+        test_24(&mut _alloc)
     });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]
 pub struct min_pointer_std___hash_node_base_min_pointer_std___hash_node_std___hash_value_type_int__std_string___min_pointer_void__std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0_____std_integral_constant_unsigned_long__0__;
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_12);
-    std::cell::LazyCell::force(&*&raw const moved_value_13);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_17);
-    std::cell::LazyCell::force(&*&raw const alloc_count_18);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_19);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_20);
+    std::cell::LazyCell::force(&*&raw const destructed_value_11);
+    std::cell::LazyCell::force(&*&raw const moved_value_12);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_16);
+    std::cell::LazyCell::force(&*&raw const alloc_count_17);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_18);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_19);
 }

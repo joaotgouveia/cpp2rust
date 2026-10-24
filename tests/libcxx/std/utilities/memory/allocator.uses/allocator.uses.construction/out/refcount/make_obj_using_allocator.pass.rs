@@ -534,7 +534,7 @@ pub fn test_4() -> () {
             ({
                 make_obj_using_allocator_14(
                     a.as_pointer(),
-                    (p.as_pointer()).reinterpret_cast::<()>(),
+                    (unimplemented!()).reinterpret_cast::<()>(),
                 )
             }),
         ));
@@ -570,9 +570,9 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let ctp: Value<ConvertibleToPair> = Rc::new(RefCell::new(<ConvertibleToPair>::default()));
+        let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
         let ret: Value<()> = Rc::new(RefCell::new(
-            ({ make_obj_using_allocator_17(a.as_pointer(), ctp.as_pointer()) }),
+            ({ make_obj_using_allocator_17(a.as_pointer(), unimplemented!()) }),
         ));
         unimplemented!();
         unimplemented!();

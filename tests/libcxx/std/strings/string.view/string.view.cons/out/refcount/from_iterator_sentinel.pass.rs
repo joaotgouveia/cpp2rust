@@ -672,29 +672,23 @@ pub fn operator_add_37(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_36(_i, n)
     });
 }
-pub fn iter_swap_38(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_39(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_38(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_40(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_39(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_41(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_40(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_42(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_41(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -740,7 +734,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_42(
+            operator_cmp_41(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -765,7 +759,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_41(
+            operator_eq_40(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -848,6 +842,12 @@ impl util_iterator_error {
     pub fn new(mut what: Ptr<()>) -> Self {
         Self {}
     }
+}
+pub fn test_construction_42(val: ()) {
+    let val: Value<()> = Rc::new(RefCell::new(val));
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_construction_43(val: ()) {
     let val: Value<()> = Rc::new(RefCell::new(val));
@@ -1023,63 +1023,57 @@ pub fn test_construction_71(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_construction_72(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_with_char_73() {
+pub fn test_with_char_72() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_construction_42(unimplemented!()) });
     ({ test_construction_43(unimplemented!()) });
     ({ test_construction_44(unimplemented!()) });
     ({ test_construction_45(unimplemented!()) });
     ({ test_construction_46(unimplemented!()) });
     ({ test_construction_47(unimplemented!()) });
-    ({ test_construction_48(unimplemented!()) });
 }
-pub fn test_with_char_74() {
+pub fn test_with_char_73() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_construction_48(unimplemented!()) });
     ({ test_construction_49(unimplemented!()) });
     ({ test_construction_50(unimplemented!()) });
     ({ test_construction_51(unimplemented!()) });
     ({ test_construction_52(unimplemented!()) });
     ({ test_construction_53(unimplemented!()) });
-    ({ test_construction_54(unimplemented!()) });
 }
-pub fn test_with_char_75() {
+pub fn test_with_char_74() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_construction_54(unimplemented!()) });
     ({ test_construction_55(unimplemented!()) });
     ({ test_construction_56(unimplemented!()) });
     ({ test_construction_57(unimplemented!()) });
     ({ test_construction_58(unimplemented!()) });
     ({ test_construction_59(unimplemented!()) });
-    ({ test_construction_60(unimplemented!()) });
 }
-pub fn test_with_char_76() {
+pub fn test_with_char_75() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_construction_60(unimplemented!()) });
     ({ test_construction_61(unimplemented!()) });
     ({ test_construction_62(unimplemented!()) });
     ({ test_construction_63(unimplemented!()) });
     ({ test_construction_64(unimplemented!()) });
     ({ test_construction_65(unimplemented!()) });
-    ({ test_construction_66(unimplemented!()) });
 }
-pub fn test_with_char_77() {
+pub fn test_with_char_76() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_construction_66(unimplemented!()) });
     ({ test_construction_67(unimplemented!()) });
     ({ test_construction_68(unimplemented!()) });
     ({ test_construction_69(unimplemented!()) });
     ({ test_construction_70(unimplemented!()) });
     ({ test_construction_71(unimplemented!()) });
-    ({ test_construction_72(unimplemented!()) });
 }
-pub fn test_78() -> () {
+pub fn test_77() -> () {
+    ({ test_with_char_72() });
     ({ test_with_char_73() });
     ({ test_with_char_74() });
     ({ test_with_char_75() });
     ({ test_with_char_76() });
-    ({ test_with_char_77() });
     return true;
 }
 const _: () = assert!(
@@ -1126,7 +1120,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_78() });
+    ({ test_77() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

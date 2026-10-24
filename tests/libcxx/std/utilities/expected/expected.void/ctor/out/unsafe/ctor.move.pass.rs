@@ -7,11 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn swap_0(x: *mut ADLSwap, y: *mut ADLSwap) {
-    (unsafe {
-        let ___x: *mut () = &mut (*x).i;
-        let ___y: *mut () = &mut (*y).i;
-        swap_1(___x, ___y)
-    });
+    unimplemented!();
     (*x).adlSwapCalled = true;
     (*y).adlSwapCalled = true;
 }
@@ -57,7 +53,7 @@ impl MoveOnlyErrorType {
         this
     }
 }
-pub unsafe fn operator_eq_2(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
+pub unsafe fn operator_eq_1(_a0: *const TailClobberer_0_, _a1: *const TailClobberer_0_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -74,7 +70,7 @@ impl TailClobberer_0_ {
 impl std::cmp::PartialEq for TailClobberer_0_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_2(
+            operator_eq_1(
                 self as *const TailClobberer_0_,
                 other as *const TailClobberer_0_,
             )
@@ -82,7 +78,7 @@ impl std::cmp::PartialEq for TailClobberer_0_ {
     }
 }
 impl std::cmp::Eq for TailClobberer_0_ {}
-pub unsafe fn operator_eq_3(_a0: *const TailClobberer_1_, _a1: *const TailClobberer_1_) -> () {
+pub unsafe fn operator_eq_2(_a0: *const TailClobberer_1_, _a1: *const TailClobberer_1_) -> () {
     return (((*_a0).b) == ((*_a1).b));
 }
 #[repr(C)]
@@ -99,7 +95,7 @@ impl TailClobberer_1_ {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<TailClobberer_1_>();
-                memset_4(___s, 1_(), ___n)
+                memset_3(___s, 1_(), ___n)
             });
         }
         this.b = false;
@@ -113,7 +109,7 @@ impl TailClobberer_1_ {
 impl std::cmp::PartialEq for TailClobberer_1_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_3(
+            operator_eq_2(
                 self as *const TailClobberer_1_,
                 other as *const TailClobberer_1_,
             )
@@ -189,7 +185,7 @@ impl BoolWithPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<BoolWithPadding>();
-                memset_4(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -236,7 +232,7 @@ impl IntWithoutPadding {
             (unsafe {
                 let ___s: () = (&raw mut this as ());
                 let ___n: () = ::std::mem::size_of::<IntWithoutPadding>();
-                memset_4(___s, 0_(), ___n)
+                memset_3(___s, 0_(), ___n)
             });
         }
         this.val_ = val;
@@ -283,7 +279,7 @@ pub struct CheckForInvalidWritesBaseImpl_false__true_ {}
 #[repr(C)]
 #[derive(FnPtrArg, Default)]
 pub struct NonMovable {}
-pub unsafe fn operator_eq_5(_a0: *const MovableNonTrivial, _a1: *const MovableNonTrivial) -> () {
+pub unsafe fn operator_eq_4(_a0: *const MovableNonTrivial, _a1: *const MovableNonTrivial) -> () {
     return (((*_a0).i) == ((*_a1).i));
 }
 #[repr(C)]
@@ -305,7 +301,7 @@ impl MovableNonTrivial {
 impl std::cmp::PartialEq for MovableNonTrivial {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_5(
+            operator_eq_4(
                 self as *const MovableNonTrivial,
                 other as *const MovableNonTrivial,
             )
@@ -358,7 +354,7 @@ const _: () = assert!(
     true,
     "!std::is_nothrow_move_constructible_v<std::expected<MoveMayThrow, MoveMayThrow>>"
 );
-pub unsafe fn test_6() -> () {
+pub unsafe fn test_5() -> () {
     {
         let mut e1: () = unimplemented!();
         let mut e2: std_expected_void__MovableNonTrivial_ = unimplemented!();
@@ -383,7 +379,7 @@ pub unsafe fn test_6() -> () {
     }
     return true;
 }
-pub unsafe fn testException_7() {}
+pub unsafe fn testException_6() {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -400,9 +396,9 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_6() });
+    (unsafe { test_5() });
     const _: () = assert!(true, "test()");;
-    (unsafe { testException_7() });
+    (unsafe { testException_6() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

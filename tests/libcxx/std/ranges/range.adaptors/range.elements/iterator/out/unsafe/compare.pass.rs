@@ -505,25 +505,21 @@ pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_10(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -607,7 +603,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -617,7 +613,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -692,13 +688,33 @@ pub struct sentinel {}
 #[derive(FnPtrArg, Default)]
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
-pub static mut enable_borrowed_range_14: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedView>");
 const _: () = assert!(true, "std::ranges::view<NonBorrowedView>");
 const _: () = assert!(!(false), "!std::ranges::borrowed_range<NonBorrowedView>");
+pub unsafe fn compareOperatorTest_14(iter1: *const (), iter2: *const ()) {
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn compareOperatorTest_15(iter1: *const (), iter2: *const ()) {
     unimplemented!();
     unimplemented!();
@@ -719,25 +735,17 @@ pub unsafe fn compareOperatorTest_15(iter1: *const (), iter2: *const ()) {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn compareOperatorTest_16(iter1: *const (), iter2: *const ()) {
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
+pub unsafe fn inequalityOperatorsDoNotExistTest_16(iter1: *const (), iter2: *const ()) {
+    const _: () = assert!(true, "!std::is_invocable_v<std::less<>, Iter1, Iter2>");;
+    const _: () = assert!(
+        true,
+        "!std::is_invocable_v<std::less_equal<>, Iter1, Iter2>"
+    );;
+    const _: () = assert!(true, "!std::is_invocable_v<std::greater<>, Iter1, Iter2>");;
+    const _: () = assert!(
+        true,
+        "!std::is_invocable_v<std::greater_equal<>, Iter1, Iter2>"
+    );;
 }
 pub unsafe fn inequalityOperatorsDoNotExistTest_17(iter1: *const (), iter2: *const ()) {
     const _: () = assert!(true, "!std::is_invocable_v<std::less<>, Iter1, Iter2>");;
@@ -751,19 +759,7 @@ pub unsafe fn inequalityOperatorsDoNotExistTest_17(iter1: *const (), iter2: *con
         "!std::is_invocable_v<std::greater_equal<>, Iter1, Iter2>"
     );;
 }
-pub unsafe fn inequalityOperatorsDoNotExistTest_18(iter1: *const (), iter2: *const ()) {
-    const _: () = assert!(true, "!std::is_invocable_v<std::less<>, Iter1, Iter2>");;
-    const _: () = assert!(
-        true,
-        "!std::is_invocable_v<std::less_equal<>, Iter1, Iter2>"
-    );;
-    const _: () = assert!(true, "!std::is_invocable_v<std::greater<>, Iter1, Iter2>");;
-    const _: () = assert!(
-        true,
-        "!std::is_invocable_v<std::greater_equal<>, Iter1, Iter2>"
-    );;
-}
-pub unsafe fn test_19() -> () {
+pub unsafe fn test_18() -> () {
     let mut ts: [(); 3] = [unimplemented!(), unimplemented!(), unimplemented!()];
     {
         const _: () = assert!(true, "std::three_way_comparable<It>");;
@@ -774,7 +770,7 @@ pub unsafe fn test_19() -> () {
         let mut ev : std_ranges_elements_view_std_ranges_subrange_three_way_contiguous_iterator_std_tuple_int__ptr___three_way_contiguous_iterator_std_tuple_int__ptr___std_ranges_subrange_kind_sized___0_ = unimplemented!()  ;
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
-        (unsafe { compareOperatorTest_15(&iter1, &iter2) });
+        (unsafe { compareOperatorTest_14(&iter1, &iter2) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -788,7 +784,7 @@ pub unsafe fn test_19() -> () {
         let mut ev : std_ranges_elements_view_std_ranges_subrange_random_access_iterator_std_tuple_int__ptr___random_access_iterator_std_tuple_int__ptr___std_ranges_subrange_kind_sized___0_ = unimplemented!()  ;
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
-        (unsafe { compareOperatorTest_16(&iter1, &iter2) });
+        (unsafe { compareOperatorTest_15(&iter1, &iter2) });
     }
     {
         const _: () = assert!(!(false), "!std::ranges::random_access_range<Subrange>");;
@@ -806,7 +802,7 @@ pub unsafe fn test_19() -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        (unsafe { inequalityOperatorsDoNotExistTest_17(&it1, &it2) });
+        (unsafe { inequalityOperatorsDoNotExistTest_16(&it1, &it2) });
     }
     {
         const _: () = assert!(
@@ -822,7 +818,7 @@ pub unsafe fn test_19() -> () {
         (unsafe {
             let _iter1: *const () = &it;
             let _iter2: *const () = &it;
-            inequalityOperatorsDoNotExistTest_18(_iter1, _iter2)
+            inequalityOperatorsDoNotExistTest_17(_iter1, _iter2)
         });
     }
     return true;
@@ -843,10 +839,10 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_19() });
+    (unsafe { test_18() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_14);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_13);
 }

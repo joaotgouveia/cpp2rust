@@ -245,7 +245,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_vector_bool_13() });
     {
         let mut vec_: Matcher_14 = Matcher_14::new_1();
-        let mut m: Matcher_14 = vec_;
+        let mut m: Matcher_14 = (*unimplemented!());
     }
     return 0_();
 }

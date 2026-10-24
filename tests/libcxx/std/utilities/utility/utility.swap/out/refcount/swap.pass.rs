@@ -84,10 +84,10 @@ pub fn can_swap_6() -> () {
     return value_5.with(|rc| *rc.borrow());
 }
 pub fn test_swap_constexpr_7() -> () {
-    let i: Value<()> = Rc::new(RefCell::new(1_()));
-    let j: Value<()> = Rc::new(RefCell::new(2_()));
-    ({ swap_8(i.as_pointer(), j.as_pointer()) });
-    return ((*i.borrow()) == 2_()) && ((*j.borrow()) == 1_());
+    let mut i: () = 1_();
+    let mut j: () = 2_();
+    unimplemented!();
+    return (i == 2_()) && (j == 1_());
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -110,19 +110,15 @@ pub fn main() {
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
-        let i: Value<()> = Rc::new(RefCell::new(1_()));
-        let j: Value<()> = Rc::new(RefCell::new(2_()));
-        ({ swap_8(i.as_pointer(), j.as_pointer()) });
+        let mut i: () = 1_();
+        let mut j: () = 2_();
+        unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let i: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(1_()) }),
-        ));
-        let j: Value<()> = Rc::new(RefCell::new(
-            std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(2_()) }),
-        ));
+        let mut i: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(1_()) });
+        let mut j: () = std_unique_ptr_int__std_default_delete_int__::new({ Ptr::alloc(2_()) });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -133,9 +129,9 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         const _: () = assert!(true, "can_swap<NoexceptMoveOnly&>()");;
         const _: () = assert!(true, "!can_swap<NotMoveConstructible&>()");;
         const _: () = assert!(true, "!can_swap<NotMoveAssignable&>()");;
-        let c: Value<CopyOnly> = Rc::new(RefCell::new(CopyOnly::new()));
-        let m: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new()));
-        let nm: Value<NoexceptMoveOnly> = Rc::new(RefCell::new(NoexceptMoveOnly::new()));
+        let mut c: CopyOnly = CopyOnly::new();
+        let mut m: MoveOnly = MoveOnly::new();
+        let mut nm: NoexceptMoveOnly = NoexceptMoveOnly::new();
         const _: () = assert!(true, "!noexcept(std::swap(c, c))");;
         const _: () = assert!(true, "!noexcept(std::swap(m, m))");;
         const _: () = assert!(true, "noexcept(std::swap(nm, nm))");;

@@ -245,29 +245,23 @@ pub fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_1(_i, n)
     });
 }
-pub fn iter_swap_3(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_4(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_4(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_5(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -313,7 +307,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_7(
+            operator_cmp_6(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -338,7 +332,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_6(
+            operator_eq_5(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -422,7 +416,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_eq_8(x: Ptr<A>, y: Ptr<A>) -> () {
+pub fn operator_eq_7(x: Ptr<A>, y: Ptr<A>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor)]
@@ -439,7 +433,7 @@ impl A {
 impl std::cmp::PartialEq for A {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(A {
                     data_: self.data_.clone(),
                 }))
@@ -458,17 +452,17 @@ impl Default for A {
         { A::new() }
     }
 }
-pub fn test_9(mut i: Ptr<A>, x: A) {
+pub fn test_8(mut i: Ptr<A>, x: A) {
     let x: Value<A> = Rc::new(RefCell::new(x));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_10(mut i: random_access_iterator_A_ptr_, x: A) {
+pub fn test_9(mut i: random_access_iterator_A_ptr_, x: A) {
     let x: Value<A> = Rc::new(RefCell::new(x));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_11(mut i: cpp20_random_access_iterator_A_ptr_, x: A) {
+pub fn test_10(mut i: cpp20_random_access_iterator_A_ptr_, x: A) {
     let x: Value<A> = Rc::new(RefCell::new(x));
     let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
@@ -495,15 +489,15 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     let a: Value<A> = Rc::new(RefCell::new(A::new()));
     let _dtor_a = ScopedDestructor::new(&a, |__p| __p.destructor());
-    ({ test_9((a.as_pointer()).offset((1_()) as isize), A::new()) });
+    ({ test_8((a.as_pointer()).offset((1_()) as isize), A::new()) });
     ({
-        test_10(
+        test_9(
             random_access_iterator_A_ptr_::new_1({ (a.as_pointer()).offset((1_()) as isize) }),
             A::new(),
         )
     });
     ({
-        test_11(
+        test_10(
             cpp20_random_access_iterator_A_ptr_::new_1({
                 (a.as_pointer()).offset((1_()) as isize)
             }),

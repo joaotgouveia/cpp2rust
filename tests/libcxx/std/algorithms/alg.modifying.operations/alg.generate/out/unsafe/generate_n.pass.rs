@@ -360,25 +360,21 @@ pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_7(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -462,7 +458,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -472,7 +468,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -562,12 +558,21 @@ impl gen_test {
         return 2_();
     }
 }
-pub unsafe fn test_constexpr_11() -> () {
+pub unsafe fn test_constexpr_10() -> () {
     let N: () = 5_();
     let mut ib: [(); 6] = [0_(), 0_(), 0_(), 0_(), 0_(), 0_()];
     let mut it: *mut () = unimplemented!();
     return (((it) == (unimplemented!().offset((N) as isize))) && (unimplemented!()))
         && ((*it) == (0_()));
+}
+pub unsafe fn test2_11() {
+    let n: () = 4_();
+    let mut ia: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
 }
 pub unsafe fn test2_12() {
     let n: () = 4_();
@@ -848,16 +853,8 @@ pub unsafe fn test2_42() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test2_43() {
-    let n: () = 4_();
-    let mut ia: [(); 4] = [0_(), unimplemented!(), unimplemented!(), unimplemented!()];
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_44() {
+pub unsafe fn test_43() {
+    (unsafe { test2_11() });
     (unsafe { test2_12() });
     (unsafe { test2_13() });
     (unsafe { test2_14() });
@@ -865,9 +862,9 @@ pub unsafe fn test_44() {
     (unsafe { test2_16() });
     (unsafe { test2_17() });
     (unsafe { test2_18() });
-    (unsafe { test2_19() });
 }
-pub unsafe fn test_45() {
+pub unsafe fn test_44() {
+    (unsafe { test2_19() });
     (unsafe { test2_20() });
     (unsafe { test2_21() });
     (unsafe { test2_22() });
@@ -875,9 +872,9 @@ pub unsafe fn test_45() {
     (unsafe { test2_24() });
     (unsafe { test2_25() });
     (unsafe { test2_26() });
-    (unsafe { test2_27() });
 }
-pub unsafe fn test_46() {
+pub unsafe fn test_45() {
+    (unsafe { test2_27() });
     (unsafe { test2_28() });
     (unsafe { test2_29() });
     (unsafe { test2_30() });
@@ -885,9 +882,9 @@ pub unsafe fn test_46() {
     (unsafe { test2_32() });
     (unsafe { test2_33() });
     (unsafe { test2_34() });
-    (unsafe { test2_35() });
 }
-pub unsafe fn test_47() {
+pub unsafe fn test_46() {
+    (unsafe { test2_35() });
     (unsafe { test2_36() });
     (unsafe { test2_37() });
     (unsafe { test2_38() });
@@ -895,9 +892,8 @@ pub unsafe fn test_47() {
     (unsafe { test2_40() });
     (unsafe { test2_41() });
     (unsafe { test2_42() });
-    (unsafe { test2_43() });
 }
-pub unsafe fn deque_test_48() {
+pub unsafe fn deque_test_47() {
     let mut sizes: [(); 9] = [
         0_(),
         1_(),
@@ -935,11 +931,11 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_43() });
     (unsafe { test_44() });
     (unsafe { test_45() });
     (unsafe { test_46() });
-    (unsafe { test_47() });
-    (unsafe { deque_test_48() });
+    (unsafe { deque_test_47() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }

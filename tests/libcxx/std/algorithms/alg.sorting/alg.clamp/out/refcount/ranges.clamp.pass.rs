@@ -164,7 +164,7 @@ pub trait MoveProj_3Impl {
 }
 impl MoveProj_3Impl for Ptr<MoveProj_3> {
     fn operator_call(&self, x: Ptr<()>) -> Ptr<()> {
-        return (x).clone();
+        return unimplemented!();
     }
 }
 pub trait S_2Impl {

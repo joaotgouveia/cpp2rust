@@ -521,29 +521,23 @@ pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_17(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_18(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_19(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -589,7 +583,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_21(
+            operator_cmp_20(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -614,7 +608,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_20(
+            operator_eq_19(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -698,7 +692,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn testOne_22() {
+pub fn testOne_21() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
@@ -721,7 +715,7 @@ pub fn testOne_22() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_23(b.as_pointer(), 2_()) });
+            ({ advance_22(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -762,7 +756,7 @@ pub fn testOne_22() {
         }
     }
 }
-pub fn testOne_24() {
+pub fn testOne_23() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
@@ -785,7 +779,7 @@ pub fn testOne_24() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_25(b.as_pointer(), 2_()) });
+            ({ advance_24(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -826,7 +820,7 @@ pub fn testOne_24() {
         }
     }
 }
-pub fn testOne_26() {
+pub fn testOne_25() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
@@ -849,7 +843,7 @@ pub fn testOne_26() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_27(b.as_pointer(), 2_()) });
+            ({ advance_26(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -890,7 +884,7 @@ pub fn testOne_26() {
         }
     }
 }
-pub fn testOne_28() {
+pub fn testOne_27() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
@@ -913,7 +907,7 @@ pub fn testOne_28() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_29(b.as_pointer(), 2_()) });
+            ({ advance_28(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -954,7 +948,7 @@ pub fn testOne_28() {
         }
     }
 }
-pub fn testOne_30() {
+pub fn testOne_29() {
     const _: () = assert!(true, "std::ranges::common_range<SplitView>");;
     {
         {
@@ -977,7 +971,7 @@ pub fn testOne_30() {
             unimplemented!();
             unimplemented!();
             unimplemented!();
-            ({ advance_31(b.as_pointer(), 2_()) });
+            ({ advance_30(b.as_pointer(), 2_()) });
             unimplemented!();
             unimplemented!();
             unimplemented!();
@@ -1018,12 +1012,12 @@ pub fn testOne_30() {
         }
     }
 }
-pub fn test_32() -> () {
-    ({ testOne_22() });
-    ({ testOne_24() });
-    ({ testOne_26() });
-    ({ testOne_28() });
-    ({ testOne_30() });
+pub fn test_31() -> () {
+    ({ testOne_21() });
+    ({ testOne_23() });
+    ({ testOne_25() });
+    ({ testOne_27() });
+    ({ testOne_29() });
     return true;
 }
 pub fn main() {
@@ -1046,7 +1040,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_32() });
+    ({ test_31() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

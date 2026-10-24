@@ -2515,10 +2515,8 @@ fn main_0(argc: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let res1: Value<()> = Rc::new(RefCell::new(
-            ({ lcm_71((1234_i64 as ()), (-2147483647_() - 1_())) }),
-        ));
-        &({ lcm_72((-2147483647_() - 1_()), 2_()) });
+        let res1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        &(unimplemented!());
         const _: () = assert!(true, "std::is_same_v<decltype(res1), std::int64_t>");;
         unimplemented!();
     }

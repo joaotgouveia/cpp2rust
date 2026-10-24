@@ -372,44 +372,44 @@ impl Tag_X {
 }
 pub fn test_4() {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
 }
 pub fn test_5() {
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }
     {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let buf: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
     }

@@ -263,14 +263,8 @@ pub unsafe fn test01_10() {
     let mut bkts: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while ((i) != (N)) {
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            m.insert_33_struct_std_pair_int__int_(&mut ___x)
-        });
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            m.insert_33_struct_std_pair_int__int_(&mut ___x)
-        });
+        unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

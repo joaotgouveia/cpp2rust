@@ -63,10 +63,9 @@ pub struct cpp17_output_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
-    pub fn new(it: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
+    pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (*it.borrow()).clone(),
+            it_: (unimplemented!().read()),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -385,29 +384,23 @@ pub fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_9(_i, n)
     });
 }
-pub fn iter_swap_11(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_12(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_13(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_15(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -453,7 +446,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_15(
+            operator_cmp_14(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -478,7 +471,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -562,7 +555,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn base_16(i: Ptr<simple_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_15(i: Ptr<simple_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -577,7 +570,7 @@ impl simple_iterator_int_ptr_ {
         Self { it_: (it).clone() }
     }
 }
-pub fn base_17(i: Ptr<value_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_16(i: Ptr<value_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -592,7 +585,7 @@ impl value_iterator_int_ptr_ {
         Self { it_: (it).clone() }
     }
 }
-pub fn base_18(i: Ptr<void_plus_plus_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_17(i: Ptr<void_plus_plus_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -607,7 +600,7 @@ impl void_plus_plus_iterator_int_ptr_ {
         Self { it_: (it).clone() }
     }
 }
-pub fn base_19(i: Ptr<value_type_not_move_constructible_iterator_int_ptr_>) -> Ptr<()> {
+pub fn base_18(i: Ptr<value_type_not_move_constructible_iterator_int_ptr_>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Record, ByteRepr, FnPtrArg, Default)]
@@ -629,79 +622,79 @@ impl value_type_not_move_constructible_iterator_int_ptr_ {
         Self { it_: (it).clone() }
     }
 }
-pub fn operator_eq_20(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<simple_iterator_int_ptr_>) -> () {
+pub fn operator_eq_19(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<simple_iterator_int_ptr_>) -> () {
+    return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_15((rhs).clone()) }) });
+}
+pub fn operator_eq_20(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<value_iterator_int_ptr_>) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_16((rhs).clone()) }) });
 }
-pub fn operator_eq_21(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<value_iterator_int_ptr_>) -> () {
+pub fn operator_eq_21(
+    lhs: Ptr<sentinel_type_int_ptr_>,
+    rhs: Ptr<void_plus_plus_iterator_int_ptr_>,
+) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_17((rhs).clone()) }) });
 }
 pub fn operator_eq_22(
     lhs: Ptr<sentinel_type_int_ptr_>,
-    rhs: Ptr<void_plus_plus_iterator_int_ptr_>,
+    rhs: Ptr<value_type_not_move_constructible_iterator_int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_18((rhs).clone()) }) });
 }
 pub fn operator_eq_23(
     lhs: Ptr<sentinel_type_int_ptr_>,
-    rhs: Ptr<value_type_not_move_constructible_iterator_int_ptr_>,
-) -> () {
-    return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_19((rhs).clone()) }) });
-}
-pub fn operator_eq_24(
-    lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_3((rhs).clone()) }) });
 }
-pub fn operator_eq_25(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<forward_iterator_int_ptr_>) -> () {
+pub fn operator_eq_24(lhs: Ptr<sentinel_type_int_ptr_>, rhs: Ptr<forward_iterator_int_ptr_>) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_5((rhs).clone()) }) });
 }
-pub fn operator_eq_26(
+pub fn operator_eq_25(
     lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<random_access_iterator_int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_7((rhs).clone()) }) });
 }
-pub fn operator_eq_27(
+pub fn operator_eq_26(
     lhs: Ptr<sentinel_type_int_ptr_>,
     rhs: Ptr<cpp17_output_iterator_int_ptr_>,
 ) -> () {
     return ({ lhs.with(|__s| __s.base_.clone()) } == { ({ base_1((rhs).clone()) }) });
 }
-pub fn operator_eq_28(lhs: Ptr<simple_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
+pub fn operator_eq_27(lhs: Ptr<simple_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
+    return ({ ({ base_15((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
+}
+pub fn operator_eq_28(lhs: Ptr<value_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
     return ({ ({ base_16((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_29(lhs: Ptr<value_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
+pub fn operator_eq_29(
+    lhs: Ptr<void_plus_plus_iterator_int_ptr_>,
+    rhs: Ptr<sentinel_type_int_ptr_>,
+) -> () {
     return ({ ({ base_17((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
 pub fn operator_eq_30(
-    lhs: Ptr<void_plus_plus_iterator_int_ptr_>,
+    lhs: Ptr<value_type_not_move_constructible_iterator_int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
     return ({ ({ base_18((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
 pub fn operator_eq_31(
-    lhs: Ptr<value_type_not_move_constructible_iterator_int_ptr_>,
-    rhs: Ptr<sentinel_type_int_ptr_>,
-) -> () {
-    return ({ ({ base_19((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
-}
-pub fn operator_eq_32(
     lhs: Ptr<cpp17_input_iterator_int_ptr__int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
     return ({ ({ base_3((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_33(lhs: Ptr<forward_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
+pub fn operator_eq_32(lhs: Ptr<forward_iterator_int_ptr_>, rhs: Ptr<sentinel_type_int_ptr_>) -> () {
     return ({ ({ base_5((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_34(
+pub fn operator_eq_33(
     lhs: Ptr<random_access_iterator_int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
     return ({ ({ base_7((lhs).clone()) }) } == { rhs.with(|__s| __s.base_.clone()) });
 }
-pub fn operator_eq_35(
+pub fn operator_eq_34(
     lhs: Ptr<cpp17_output_iterator_int_ptr_>,
     rhs: Ptr<sentinel_type_int_ptr_>,
 ) -> () {
@@ -714,7 +707,7 @@ pub struct sentinel_type_int_ptr_ {
     #[byte_size(8)]
     pub base_: Ptr<()>,
 }
-pub fn test_36() {
+pub fn test_35() {
     {
         let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
             1_(),
@@ -957,7 +950,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_36() });
+    ({ test_35() });
     return 0_();
 }
 pub trait adl_IteratorImpl {
@@ -1314,7 +1307,7 @@ pub trait value_iterator_int_ptr_Impl {
 }
 impl value_iterator_int_ptr_Impl for Ptr<value_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
-        return (((*self).with(|__s| __s.it_.clone()).read()) as ());
+        return ((unimplemented!().read()) as ());
     }
     fn operator_inc_4(&self) -> Ptr<value_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
@@ -1335,7 +1328,7 @@ impl value_type_not_move_constructible_iterator_int_ptr_Impl
     for Ptr<value_type_not_move_constructible_iterator_int_ptr_>
 {
     fn operator_deref(&self) -> () {
-        return (((*self).with(|__s| __s.it_.clone()).read()) as ());
+        return ((unimplemented!().read()) as ());
     }
     fn operator_inc_4(&self) -> Ptr<value_type_not_move_constructible_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());
@@ -1354,7 +1347,7 @@ pub trait void_plus_plus_iterator_int_ptr_Impl {
 }
 impl void_plus_plus_iterator_int_ptr_Impl for Ptr<void_plus_plus_iterator_int_ptr_> {
     fn operator_deref(&self) -> () {
-        return (((*self).with(|__s| __s.it_.clone()).read()) as ());
+        return ((unimplemented!().read()) as ());
     }
     fn operator_inc_4(&self) -> Ptr<void_plus_plus_iterator_int_ptr_> {
         field!((*self), it_).with_mut(|__v| __v.prefix_inc());

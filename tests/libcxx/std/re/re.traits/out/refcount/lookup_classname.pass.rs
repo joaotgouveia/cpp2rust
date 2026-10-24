@@ -269,29 +269,23 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_6(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -337,7 +331,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -362,7 +356,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -446,19 +440,19 @@ impl util_iterator_error {
         Self {}
     }
 }
+pub fn test_9(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
+    let mut icase: () = icase.unwrap_or_else(|| false);
+    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
 pub fn test_10(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| false);
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_11(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
-    let mut icase: () = icase.unwrap_or_else(|| false);
-    let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub fn test_w_12(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
+pub fn test_w_11(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| false);
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
@@ -471,7 +465,7 @@ pub fn test_w_12(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
         unimplemented!();
     }
 }
-pub fn test_w_13(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
+pub fn test_w_12(mut A: Ptr<()>, mut expected: (), icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| false);
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut result: () = unimplemented!();
@@ -514,531 +508,531 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ test_10(Ptr::<()>::from_string_literal(b"d"), unimplemented!(), None) });
-    ({ test_10(Ptr::<()>::from_string_literal(b"D"), unimplemented!(), None) });
+    ({ test_9(Ptr::<()>::from_string_literal(b"d"), unimplemented!(), None) });
+    ({ test_9(Ptr::<()>::from_string_literal(b"D"), unimplemented!(), None) });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"d"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"D"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_w_12(
+        test_w_11(
             Ptr::<()>::from_string_literal(b"w"),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             None,
         )
     });
     ({
-        test_w_12(
+        test_w_11(
             Ptr::<()>::from_string_literal(b"W"),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             None,
         )
     });
     ({
-        test_w_12(
+        test_w_11(
             Ptr::<()>::from_string_literal(b"w"),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_w_12(
+        test_w_11(
             Ptr::<()>::from_string_literal(b"W"),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             Some(true),
         )
     });
-    ({ test_10(Ptr::<()>::from_string_literal(b"s"), unimplemented!(), None) });
-    ({ test_10(Ptr::<()>::from_string_literal(b"S"), unimplemented!(), None) });
+    ({ test_9(Ptr::<()>::from_string_literal(b"s"), unimplemented!(), None) });
+    ({ test_9(Ptr::<()>::from_string_literal(b"S"), unimplemented!(), None) });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"s"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"S"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"alnum"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"AlNum"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"alnum"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"AlNum"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"alpha"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Alpha"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"alpha"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Alpha"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"blank"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Blank"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"blank"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Blank"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"cntrl"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Cntrl"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"cntrl"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Cntrl"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"digit"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Digit"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"digit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Digit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"digit"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"DIGIT"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"digit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Digit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"graph"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"GRAPH"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"graph"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Graph"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"lower"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"LOWER"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"lower"),
             (unimplemented!() | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Lower"),
             (unimplemented!() | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"print"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"PRINT"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"print"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Print"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"punct"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"PUNCT"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"punct"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Punct"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"space"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"SPACE"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"space"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Space"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"upper"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"UPPER"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"upper"),
             (unimplemented!() | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Upper"),
             (unimplemented!() | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"xdigit"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"XDIGIT"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"xdigit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"Xdigit"),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"dig"),
             unimplemented!(),
             None,
         )
     });
-    ({ test_10(Ptr::<()>::from_string_literal(b""), unimplemented!(), None) });
+    ({ test_9(Ptr::<()>::from_string_literal(b""), unimplemented!(), None) });
     ({
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"digits"),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[100 as (), 0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[68 as (), 0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[100 as (), 0 as ()]),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[68 as (), 0 as ()]),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_w_13(
+        test_w_12(
             Ptr::<()>::from_string_literal(&[119 as (), 0 as ()]),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             None,
         )
     });
     ({
-        test_w_13(
+        test_w_12(
             Ptr::<()>::from_string_literal(&[87 as (), 0 as ()]),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             None,
         )
     });
     ({
-        test_w_13(
+        test_w_12(
             Ptr::<()>::from_string_literal(&[119 as (), 0 as ()]),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_w_13(
+        test_w_12(
             Ptr::<()>::from_string_literal(&[87 as (), 0 as ()]),
             ((unimplemented!() | unimplemented!()) | unimplemented!()),
             Some(true),
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[115 as (), 0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[83 as (), 0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[115 as (), 0 as ()]),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[83 as (), 0 as ()]),
             unimplemented!(),
             Some(true),
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 108 as (), 110 as (), 117 as (), 109 as (), 0 as (),
             ]),
@@ -1047,7 +1041,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 108 as (), 78 as (), 117 as (), 109 as (), 0 as (),
             ]),
@@ -1056,7 +1050,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 108 as (), 110 as (), 117 as (), 109 as (), 0 as (),
             ]),
@@ -1065,7 +1059,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 108 as (), 78 as (), 117 as (), 109 as (), 0 as (),
             ]),
@@ -1074,7 +1068,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as (),
             ]),
@@ -1083,7 +1077,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as (),
             ]),
@@ -1092,7 +1086,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as (),
             ]),
@@ -1101,7 +1095,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 65 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as (),
             ]),
@@ -1110,7 +1104,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 98 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as (),
             ]),
@@ -1119,7 +1113,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 66 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as (),
             ]),
@@ -1128,7 +1122,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 98 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as (),
             ]),
@@ -1137,7 +1131,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 66 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as (),
             ]),
@@ -1146,7 +1140,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]),
@@ -1155,7 +1149,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 67 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]),
@@ -1164,7 +1158,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]),
@@ -1173,7 +1167,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 67 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]),
@@ -1182,7 +1176,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1191,7 +1185,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1200,7 +1194,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1209,7 +1203,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1218,7 +1212,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1227,7 +1221,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 68 as (), 73 as (), 71 as (), 73 as (), 84 as (), 0 as (),
             ]),
@@ -1236,7 +1230,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1245,7 +1239,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1254,7 +1248,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 103 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as (),
             ]),
@@ -1263,7 +1257,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 71 as (), 82 as (), 65 as (), 80 as (), 72 as (), 0 as (),
             ]),
@@ -1272,7 +1266,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 103 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as (),
             ]),
@@ -1281,7 +1275,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 71 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as (),
             ]),
@@ -1290,7 +1284,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1299,7 +1293,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 76 as (), 79 as (), 87 as (), 69 as (), 82 as (), 0 as (),
             ]),
@@ -1308,7 +1302,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1317,7 +1311,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 76 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1326,7 +1320,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]),
@@ -1335,7 +1329,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 80 as (), 82 as (), 73 as (), 78 as (), 84 as (), 0 as (),
             ]),
@@ -1344,7 +1338,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]),
@@ -1353,7 +1347,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 80 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]),
@@ -1362,7 +1356,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as (),
             ]),
@@ -1371,7 +1365,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 80 as (), 85 as (), 78 as (), 67 as (), 84 as (), 0 as (),
             ]),
@@ -1380,7 +1374,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as (),
             ]),
@@ -1389,7 +1383,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 80 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as (),
             ]),
@@ -1398,7 +1392,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as (),
             ]),
@@ -1407,7 +1401,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 83 as (), 80 as (), 65 as (), 67 as (), 69 as (), 0 as (),
             ]),
@@ -1416,7 +1410,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as (),
             ]),
@@ -1425,7 +1419,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 83 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as (),
             ]),
@@ -1434,7 +1428,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 117 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1443,7 +1437,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 85 as (), 80 as (), 80 as (), 69 as (), 82 as (), 0 as (),
             ]),
@@ -1452,7 +1446,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 117 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1461,7 +1455,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 85 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]),
@@ -1470,7 +1464,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 120 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1479,7 +1473,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 88 as (), 68 as (), 73 as (), 71 as (), 73 as (), 84 as (), 0 as (),
             ]),
@@ -1488,7 +1482,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 120 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1497,7 +1491,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 88 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]),
@@ -1506,21 +1500,21 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[100 as (), 105 as (), 103 as (), 0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[0 as ()]),
             unimplemented!(),
             None,
         )
     });
     ({
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 115 as (), 0 as (),
             ]),

@@ -58,72 +58,6 @@ pub fn test_0() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
@@ -157,7 +91,7 @@ pub fn test_0() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -168,7 +102,73 @@ pub fn test_0() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -193,72 +193,6 @@ pub fn test_1() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let mut lhs: () = unimplemented!();
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut rhs: () = unimplemented!();
-        let mut r: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
-        let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
@@ -292,7 +226,7 @@ pub fn test_1() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -303,7 +237,73 @@ pub fn test_1() -> () {
         let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
         let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
         let mut lhs: () = unimplemented!();
-        let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
+        let mut r: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let soccc_lhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let soccc_rhs: Value<()> = Rc::new(RefCell::new(0_()));
+        let mut lhs: () = unimplemented!();
+        let mut rhs: () = unimplemented!();
         let mut r: () = unimplemented!();
         unimplemented!();
         unimplemented!();

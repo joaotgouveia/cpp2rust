@@ -302,22 +302,10 @@ pub static mut _S_called_on_moved_instance_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 pub unsafe fn test01_11() {
     let mut mmap: () = unimplemented!();
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        mmap.insert_33_struct_std_pair_struct_num__int_(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        mmap.insert_33_struct_std_pair_struct_num__int_(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        mmap.insert_33_struct_std_pair_struct_num__int_(&mut ___x)
-    });
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        mmap.insert_33_struct_std_pair_struct_num__int_(&mut ___x)
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

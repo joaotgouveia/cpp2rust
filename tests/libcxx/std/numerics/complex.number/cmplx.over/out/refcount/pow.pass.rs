@@ -190,240 +190,210 @@ pub fn is_about_6(mut x: (), mut y: ()) {
 pub fn is_about_7(mut x: (), mut y: ()) {
     unimplemented!();
 }
-pub fn test_8(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_8(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_9(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_9(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_10(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_10(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_11(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_11(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_12(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_12(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_13(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_13(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_14(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_14(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_15(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_15(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_16(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_16(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_17(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_17(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_18(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_18(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_19(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_19(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_20(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_20(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_21(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_21(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_22(x: (), y: Ptr<()>) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
+pub fn test_22(mut x: (), y: Ptr<()>) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_23(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_23(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_24(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_24(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_25(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_25(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_26(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_26(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_27(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_27(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_28(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_28(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_29(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_29(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_30(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_30(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_31(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_31(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_32(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_32(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_33(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_33(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_34(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_34(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_35(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_35(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_36(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_36(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"
     );;
     unimplemented!();
 }
-pub fn test_37(x: Ptr<()>, y: ()) {
-    let y: Value<()> = Rc::new(RefCell::new(y));
+pub fn test_37(x: Ptr<()>, mut y: ()) {
     const _: () = assert!(
         true,
         "(std::is_same<decltype(std::pow(x, y)), std::complex<V> >::value)"

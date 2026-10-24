@@ -3312,7 +3312,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut ptr: *mut () = (Box::leak(Box::new(unimplemented!())) as *mut ());
         let mut p: () = std_unique_ptr_int__std_default_delete_int__::new({ ptr });
         let mut f: () = unimplemented!();
-        let mut h: () = (unsafe { f(&p) });
+        let mut h: () = unimplemented!();
         unimplemented!();
     }
     {

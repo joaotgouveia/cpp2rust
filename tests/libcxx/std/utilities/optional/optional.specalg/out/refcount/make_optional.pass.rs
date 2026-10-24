@@ -153,7 +153,7 @@ pub fn test_20() -> () {
         ({ (*test_string.borrow()).call() });
     }
     let test_unique_ptr: Value<FnPtr<fn()>> = Rc::new(RefCell::new(FnPtr::<fn()>::new(|| {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let opt: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         unimplemented!();

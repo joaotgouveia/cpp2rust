@@ -683,14 +683,14 @@ pub struct anon_22 {
 pub unsafe fn test04_23() {
     let mut p: () = unimplemented!();
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
-    p = c"a/b/c/d/e";
+    unimplemented!();
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
-    p = c"/a/b/c/d/e";
+    unimplemented!();
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });
     (unsafe { compare_paths_18(unimplemented!(), unimplemented!()) });

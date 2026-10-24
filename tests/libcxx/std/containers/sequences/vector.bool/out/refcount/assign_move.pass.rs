@@ -568,7 +568,7 @@ impl Tag_X {
 }
 pub fn test_move_assignment_19(mut N: ()) {
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
@@ -577,7 +577,7 @@ pub fn test_move_assignment_19(mut N: ()) {
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
@@ -586,7 +586,7 @@ pub fn test_move_assignment_19(mut N: ()) {
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
@@ -595,7 +595,7 @@ pub fn test_move_assignment_19(mut N: ()) {
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
@@ -604,7 +604,7 @@ pub fn test_move_assignment_19(mut N: ()) {
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();
@@ -613,7 +613,7 @@ pub fn test_move_assignment_19(mut N: ()) {
         unimplemented!();
     }
     {
-        let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut l: () = unimplemented!();
         let mut lo: () = unimplemented!();
         let mut l2: () = unimplemented!();
         unimplemented!();

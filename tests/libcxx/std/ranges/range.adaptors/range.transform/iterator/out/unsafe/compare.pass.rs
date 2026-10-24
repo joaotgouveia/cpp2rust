@@ -475,25 +475,21 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_15(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -577,7 +573,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -587,7 +583,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -665,14 +661,14 @@ pub struct test_common_range_forward_iterator__int_ {}
 #[derive(FnPtrArg, Default)]
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
-pub static mut enable_borrowed_range_19: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_18: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedView>");
 const _: () = assert!(true, "std::ranges::view<NonBorrowedView>");
 const _: () = assert!(!(false), "!std::ranges::borrowed_range<NonBorrowedView>");
-pub static mut globalBuff_20: std::cell::LazyCell<[(); 8]> =
+pub static mut globalBuff_19: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [0_(), 1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_()] });
 #[repr(C)]
 #[derive(FnPtrArg)]
@@ -683,7 +679,7 @@ pub struct MoveOnlyView {
 impl MoveOnlyView {
     pub unsafe fn new(mut ptr: Option<*mut ()>, mut start: Option<()>) -> Self {
         let mut ptr: *mut () = ptr.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19)).as_mut_ptr()
         });
         let mut start: () = start.unwrap_or_else(|| unsafe { 0_() });
         let mut this = Self {
@@ -719,12 +715,12 @@ impl CopyableView {
         this
     }
     pub unsafe fn begin(&self) -> *mut () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20))
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19))
             .as_mut_ptr()
             .offset((self.start_) as isize);
     }
     pub unsafe fn end(&self) -> *mut () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20))
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19))
             .as_mut_ptr()
             .offset((8_()) as isize);
     }
@@ -745,7 +741,7 @@ pub struct ForwardView {
 impl ForwardView {
     pub unsafe fn new(mut ptr: Option<*mut ()>) -> Self {
         let mut ptr: *mut () = ptr.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19)).as_mut_ptr()
         });
         let mut this = Self { ptr_: ptr };
         this
@@ -779,7 +775,7 @@ const _: () = assert!(true, "std::ranges::bidirectional_range<BidirectionalView>
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct BorrowableRange {}
-pub static mut enable_borrowed_range_21: std::cell::LazyCell<()> =
+pub static mut enable_borrowed_range_20: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { true });
 const _: () = assert!(!(false), "!std::ranges::view<BorrowableRange>");
 const _: () = assert!(true, "std::ranges::contiguous_range<BorrowableRange>");
@@ -792,7 +788,7 @@ pub struct InputView {
 impl InputView {
     pub unsafe fn new(mut ptr: Option<*mut ()>) -> Self {
         let mut ptr: *mut () = ptr.unwrap_or_else(|| unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19)).as_mut_ptr()
         });
         let mut this = Self { ptr_: ptr };
         this
@@ -828,11 +824,11 @@ impl SizedSentinelView {
     }
     pub unsafe fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_2({
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20)).as_mut_ptr()
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19)).as_mut_ptr()
         });
     }
     pub unsafe fn end(&self) -> *mut () {
-        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_20))
+        return (*std::cell::LazyCell::force_mut(&mut *&raw mut globalBuff_19))
             .as_mut_ptr()
             .offset((self.count_) as isize);
     }
@@ -842,18 +838,18 @@ impl Default for SizedSentinelView {
         unsafe { SizedSentinelView::new(None) }
     }
 }
-pub unsafe fn operator_sub_22(lhs: *const random_access_iterator_int_ptr_, mut rhs: *mut ()) -> () {
+pub unsafe fn operator_sub_21(lhs: *const random_access_iterator_int_ptr_, mut rhs: *mut ()) -> () {
     return (((unsafe { base_6(lhs) }) as usize - rhs as usize) / ::std::mem::size_of::<()>())
         as ();
 }
-pub unsafe fn operator_sub_23(mut lhs: *mut (), rhs: *const random_access_iterator_int_ptr_) -> () {
+pub unsafe fn operator_sub_22(mut lhs: *mut (), rhs: *const random_access_iterator_int_ptr_) -> () {
     return ((lhs as usize - (unsafe { base_6(rhs) }) as usize) / ::std::mem::size_of::<()>())
         as ();
 }
-pub unsafe fn operator_eq_24(lhs: *const random_access_iterator_int_ptr_, mut rhs: *mut ()) -> () {
+pub unsafe fn operator_eq_23(lhs: *const random_access_iterator_int_ptr_, mut rhs: *mut ()) -> () {
     return ((unsafe { base_6(lhs) }) == (rhs));
 }
-pub unsafe fn operator_eq_25(mut lhs: *mut (), rhs: *const random_access_iterator_int_ptr_) -> () {
+pub unsafe fn operator_eq_24(mut lhs: *mut (), rhs: *const random_access_iterator_int_ptr_) -> () {
     return ((unsafe { base_6(rhs) }) == (lhs));
 }
 #[repr(C)]
@@ -910,7 +906,7 @@ impl Increment {
 pub struct IncrementRvalueRef {}
 impl IncrementRvalueRef {
     pub unsafe fn operator_call(&mut self, x: *mut ()) -> *mut () {
-        return &mut *(&raw mut (*x).prefix_inc()).cast::<()>();
+        return &mut *(&raw mut (*unimplemented!())).cast::<()>();
     }
 }
 #[repr(C)]
@@ -921,7 +917,7 @@ impl PlusOneNoexcept {
         return ((x) + (1_()));
     }
 }
-pub unsafe fn test_26() -> () {
+pub unsafe fn test_25() -> () {
     {
         const _: () = assert!(true, "std::three_way_comparable<It>");;
         const _: () = assert!(
@@ -1001,12 +997,12 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_26() });
+    (unsafe { test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_19);
-    std::cell::LazyCell::force(&*&raw const globalBuff_20);
-    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_21);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_18);
+    std::cell::LazyCell::force(&*&raw const globalBuff_19);
+    std::cell::LazyCell::force(&*&raw const enable_borrowed_range_20);
 }

@@ -230,29 +230,23 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_6(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -298,7 +292,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -323,7 +317,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -418,7 +412,7 @@ pub struct MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___
 impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__ { }
 const _: () = assert!(!(false), "!HasAllocatorType<MinSequenceContainer<int>>");
 const _: () = assert!(!(false), "!HasEmplace<MinSequenceContainer<int>>");
-pub fn alloc_max_size_10(a: Ptr<()>) -> () {
+pub fn alloc_max_size_9(a: Ptr<()>) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -464,22 +458,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_11: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_10: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_12: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_11: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_12(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_13(_x, _y)
+        operator_eq_12(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -540,7 +534,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_12(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -653,7 +647,7 @@ impl Default for limited_alloc_handle_18446744073709551615_ {
         }
     }
 }
-pub fn make_thread_unsafe_shared_15() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
+pub fn make_thread_unsafe_shared_14() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_10__>::default()),
     );
@@ -665,7 +659,7 @@ pub fn make_thread_unsafe_shared_15() -> detail_thread_unsafe_shared_ptr_limited
         ptr.as_pointer()
     });
 }
-pub fn make_thread_unsafe_shared_16() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_20__ {
+pub fn make_thread_unsafe_shared_15() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_20__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_20__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_20__>::default()),
     );
@@ -677,7 +671,7 @@ pub fn make_thread_unsafe_shared_16() -> detail_thread_unsafe_shared_ptr_limited
         ptr.as_pointer()
     });
 }
-pub fn make_thread_unsafe_shared_17()
+pub fn make_thread_unsafe_shared_16()
 -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_18446744073709551615__> =
         Rc::new(RefCell::new(
@@ -906,7 +900,7 @@ pub struct limited_allocator_int__10_ {
 impl limited_allocator_int__10_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_15() }),
+            handle_: ({ make_thread_unsafe_shared_14() }),
         }
     }
 }
@@ -928,7 +922,7 @@ pub struct limited_allocator_int__20_ {
 impl limited_allocator_int__20_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_16() }),
+            handle_: ({ make_thread_unsafe_shared_15() }),
         }
     }
 }
@@ -950,7 +944,7 @@ pub struct limited_allocator_int__18446744073709551615_ {
 impl limited_allocator_int__18446744073709551615_ {
     pub fn new() -> Self {
         Self {
-            handle_: ({ make_thread_unsafe_shared_17() }),
+            handle_: ({ make_thread_unsafe_shared_16() }),
         }
     }
 }
@@ -959,7 +953,7 @@ impl Default for limited_allocator_int__18446744073709551615_ {
         { limited_allocator_int__18446744073709551615_::new() }
     }
 }
-pub fn test_18() -> () {
+pub fn test_17() -> () {
     {
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -1020,7 +1014,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_18() });
+    ({ test_17() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -1707,8 +1701,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_11.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_11.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_10.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_10.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -1760,6 +1754,6 @@ impl three_way_random_access_iterator_const_int_ptr_Impl
 {
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_11.with(|_| ());
-    let _ = moved_value_12.with(|_| ());
+    let _ = destructed_value_10.with(|_| ());
+    let _ = moved_value_11.with(|_| ());
 }

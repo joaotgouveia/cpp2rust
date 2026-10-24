@@ -417,29 +417,23 @@ pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_10(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_11(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -485,7 +479,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_14(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -510,7 +504,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -605,13 +599,13 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::uninitialized_value_construct_n), NotDefaultCtrable*, int>"
 );
-pub fn test_15() -> () {
+pub fn test_14() -> () {
     {
         let mut n: () = 3_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut out: Ptr<()> = unimplemented!();
         let mut result: Ptr<()> = ({
-            (*uninitialized_value_construct_n_16
+            (*uninitialized_value_construct_n_15
                 .with(Value::clone)
                 .borrow_mut())((out).clone(), n)
         });
@@ -629,14 +623,14 @@ pub fn test_15() -> () {
         let buffer: Value<Box<[()]>> =
             Rc::new(RefCell::new(Box::new([42_(), 42_(), 42_(), 42_(), 42_()])));
         ({
-            (*uninitialized_value_construct_n_16
+            (*uninitialized_value_construct_n_15
                 .with(Value::clone)
                 .borrow_mut())((buffer.as_pointer() as Ptr<()>), 1_())
         });
         unimplemented!();
         unimplemented!();
         ({
-            (*uninitialized_value_construct_n_16
+            (*uninitialized_value_construct_n_15
                 .with(Value::clone)
                 .borrow_mut())((buffer.as_pointer() as Ptr<()>), (*N.borrow()))
         });
@@ -671,7 +665,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let buf: Value<Buffer_Counted__1_> = Rc::new(RefCell::new(<Buffer_Counted__1_>::default()));
         ({
-            (*uninitialized_value_construct_n_16
+            (*uninitialized_value_construct_n_15
                 .with(Value::clone)
                 .borrow_mut())(
                 ({ Buffer_Counted__1_Impl::begin(&buf.as_pointer()) }), 0_()
@@ -684,7 +678,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut N: () = 5_();
         let buf: Value<Buffer_Counted__5_> = Rc::new(RefCell::new(<Buffer_Counted__5_>::default()));
         ({
-            (*uninitialized_value_construct_n_16
+            (*uninitialized_value_construct_n_15
                 .with(Value::clone)
                 .borrow_mut())(({ Buffer_Counted__5_Impl::begin(&buf.as_pointer()) }), N)
         });
@@ -693,7 +687,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         ({ Counted::reset() });
     }
-    ({ test_15() });
+    ({ test_14() });
     return 0_();
 }
 pub trait Buffer_Counted__1_Impl {

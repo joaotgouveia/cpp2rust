@@ -293,10 +293,10 @@ impl Default for test_range_format_debug_string_std_wstring_ {
     }
 }
 pub unsafe fn test_format_context_create_9(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_10(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_10((*unimplemented!()), args.clone(), None) });
 }
 pub unsafe fn test_format_context_create_11(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_12(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_12((*unimplemented!()), args.clone(), None) });
 }
 pub unsafe fn test_format_13(mut expected: (), mut arg: test_range_format_string_std_string_) {
     let mut formatter: () = unimplemented!();

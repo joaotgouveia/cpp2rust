@@ -240,10 +240,9 @@ pub struct cpp17_output_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
-    pub fn new(it: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
+    pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (*it.borrow()).clone(),
+            it_: (unimplemented!().read()),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -629,29 +628,23 @@ pub fn operator_add_26(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_25(_i, n)
     });
 }
-pub fn iter_swap_27(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_28(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_27(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_29(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_28(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_30(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_29(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_31(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_30(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -697,7 +690,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_31(
+            operator_cmp_30(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -722,7 +715,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_30(
+            operator_eq_29(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -842,7 +835,7 @@ impl Default for AssignableFromMoveOnly {
         { AssignableFromMoveOnly::new_2() }
     }
 }
-pub fn test_constexpr_32() -> () {
+pub fn test_constexpr_31() -> () {
     let mut ia: [(); 5] = [0_(), 1_(), 2_(), 2_(), 4_()];
     let mut ib: [(); 5] = [0_(), 0_(), 0_(), 0_(), 0_()];
     let mut expected: [(); 4] = [0_(), 1_(), 2_(), 4_()];
@@ -851,7 +844,7 @@ pub fn test_constexpr_32() -> () {
         && ((it.read()) == 0_()))
         && (unimplemented!());
 }
-pub fn test_33() {
+pub fn test_32() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -951,12 +944,112 @@ pub fn test_33() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_34() {
+pub fn test_33() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let r: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
+    let mut sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
+    let mut sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
+    let mut se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
+    let mut sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        2_(),
+        2_(),
+    ])));
+    let mut si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_34() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
+    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1056,7 +1149,7 @@ pub fn test_35() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1156,7 +1249,7 @@ pub fn test_36() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1256,106 +1349,6 @@ pub fn test_37() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
-    let mut sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
-    let mut sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
-    let mut se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
-    let mut sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        2_(),
-        2_(),
-    ])));
-    let mut si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_38() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1451,12 +1444,112 @@ pub fn test_38() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_39() {
+pub fn test_38() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let r: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
+    let mut sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
+    let mut sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
+    let mut se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
+    let mut sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        2_(),
+        2_(),
+    ])));
+    let mut si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_39() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
+    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1556,7 +1649,7 @@ pub fn test_40() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1656,7 +1749,7 @@ pub fn test_41() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -1756,106 +1849,6 @@ pub fn test_42() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
-    let mut sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
-    let mut sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
-    let mut se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
-    let mut sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        2_(),
-        2_(),
-    ])));
-    let mut si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_43() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1951,12 +1944,112 @@ pub fn test_43() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_44() {
+pub fn test_43() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let r: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
+    let mut sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
+    let mut sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
+    let mut se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
+    let mut sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        2_(),
+        2_(),
+    ])));
+    let mut si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_44() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
+    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2056,7 +2149,7 @@ pub fn test_45() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2156,7 +2249,7 @@ pub fn test_46() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2256,106 +2349,6 @@ pub fn test_47() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
-    let mut sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
-    let mut sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
-    let mut se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
-    let mut sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        2_(),
-        2_(),
-    ])));
-    let mut si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_48() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2451,12 +2444,112 @@ pub fn test_48() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_49() {
+pub fn test_48() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let r: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    let mut sb: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
+    let mut sc: () =
+        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
+    let mut sd: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
+    let mut se: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
+    let mut sg: () =
+        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
+    let mut sh: () =
+        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        1_(),
+        1_(),
+        2_(),
+        2_(),
+        2_(),
+    ])));
+    let mut si: () =
+        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        -1_(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+        unimplemented!(),
+    ])));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub fn test_49() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
+    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2556,7 +2649,7 @@ pub fn test_50() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2656,7 +2749,7 @@ pub fn test_51() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
+    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
@@ -2756,106 +2849,6 @@ pub fn test_52() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
-    let r: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    unimplemented!();
-    let ib: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    let mut sb: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jb: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_()])));
-    let mut sc: () =
-        (::std::mem::size_of::<[(); 2]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jc: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_(), unimplemented!()])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let id: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_()])));
-    let mut sd: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jd: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ie: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 0_()])));
-    let mut se: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let je: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 0_(), 1_(), 1_()])));
-    let mut sg: () =
-        (::std::mem::size_of::<[(); 4]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jg: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ih: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 1_()])));
-    let mut sh: () =
-        (::std::mem::size_of::<[(); 3]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let jh: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    let ii: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        1_(),
-        1_(),
-        2_(),
-        2_(),
-        2_(),
-    ])));
-    let mut si: () =
-        (::std::mem::size_of::<[(); 7]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ji: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        -1_(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-        unimplemented!(),
-    ])));
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_53() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let ja: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([-1_()])));
     let mut r: Ptr<()> = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2951,7 +2944,7 @@ pub fn test_53() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_54() {
+pub fn test_53() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -3051,7 +3044,7 @@ pub fn test_54() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_55() {
+pub fn test_54() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -3151,7 +3144,7 @@ pub fn test_55() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_56() {
+pub fn test_55() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -3251,7 +3244,7 @@ pub fn test_56() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_57() {
+pub fn test_56() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -3351,7 +3344,7 @@ pub fn test_57() {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_58() {
+pub fn test_57() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
     let mut sa: () =
         (::std::mem::size_of::<[(); 1]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -3471,6 +3464,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_32() });
     ({ test_33() });
     ({ test_34() });
     ({ test_35() });
@@ -3496,7 +3490,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_55() });
     ({ test_56() });
     ({ test_57() });
-    ({ test_58() });
     {
         let in_: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
             MoveOnly::new({ Some(1_()) }),

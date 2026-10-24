@@ -1619,7 +1619,9 @@ thread_local!(
 );
 pub fn test_54(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1628,7 +1630,9 @@ pub fn test_54(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_55(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1637,7 +1641,9 @@ pub fn test_55(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_56(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1646,7 +1652,9 @@ pub fn test_56(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_57(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1655,7 +1663,9 @@ pub fn test_57(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_58(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1664,7 +1674,9 @@ pub fn test_58(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_59(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1673,7 +1685,9 @@ pub fn test_59(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_60(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1682,7 +1696,9 @@ pub fn test_60(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_61(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1691,7 +1707,9 @@ pub fn test_61(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_62(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1700,7 +1718,9 @@ pub fn test_62(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_63(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1709,7 +1729,9 @@ pub fn test_63(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_64(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1718,7 +1740,9 @@ pub fn test_64(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_65(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1727,7 +1751,9 @@ pub fn test_65(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_66(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1736,7 +1762,9 @@ pub fn test_66(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_67(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1745,7 +1773,9 @@ pub fn test_67(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_68(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1754,7 +1784,9 @@ pub fn test_68(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_69(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1763,7 +1795,9 @@ pub fn test_69(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_70(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1772,7 +1806,9 @@ pub fn test_70(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_71(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1781,7 +1817,9 @@ pub fn test_71(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_72(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1790,7 +1828,9 @@ pub fn test_72(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_73(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1799,7 +1839,9 @@ pub fn test_73(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_74(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1808,7 +1850,9 @@ pub fn test_74(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_75(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1817,7 +1861,9 @@ pub fn test_75(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_76(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1826,7 +1872,9 @@ pub fn test_76(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_77(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1835,7 +1883,9 @@ pub fn test_77(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_78(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1844,7 +1894,9 @@ pub fn test_78(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_79(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1853,7 +1905,9 @@ pub fn test_79(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_80(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1862,7 +1916,9 @@ pub fn test_80(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_81(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1871,7 +1927,9 @@ pub fn test_81(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_82(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1880,7 +1938,9 @@ pub fn test_82(orig: (), mut pos: (), mut n: (), mut expected: ()) {
 }
 pub fn test_83(orig: (), mut pos: (), mut n: (), mut expected: ()) {
     let orig: Value<()> = Rc::new(RefCell::new(orig));
-    let str: Value<()> = Rc::new(RefCell::new(({ (*orig.borrow()).substr_131(pos, n) })));
+    let str: Value<()> = Rc::new(RefCell::new(
+        ({ (*unimplemented!().upgrade().deref()).substr_131(pos, n) }),
+    ));
     unimplemented!();
     unimplemented!();
     unimplemented!();

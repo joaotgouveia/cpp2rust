@@ -7,7 +7,7 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_format_context_create_0(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_1(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_1((*unimplemented!()), args.clone(), None) });
 }
 pub type color = ();
 pub const color_black: color = 0;

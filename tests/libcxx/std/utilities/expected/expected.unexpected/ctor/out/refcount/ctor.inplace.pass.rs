@@ -66,7 +66,7 @@ impl Error {
     }
     pub fn new_2(a: Ptr<Arg>) -> Self {
         Self {
-            arg: Arg::move_from({ (a).clone() }),
+            arg: Arg::move_from({ unimplemented!() }),
         }
     }
     pub fn new_3(_a0: ()) -> Self {
@@ -86,7 +86,7 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let a: Value<Arg> = Rc::new(RefCell::new(Arg::new({ 5_() })));
+        let mut a: Arg = Arg::new({ 5_() });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

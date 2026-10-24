@@ -911,7 +911,7 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
     }
     fn create_dir(&self, filename_path: ()) -> () {
         let filename_path: Value<()> = Rc::new(RefCell::new(filename_path));
-        let filename: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut filename: () = unimplemented!();
         unimplemented!();
         let mut ret: () = unimplemented!();
         unimplemented!();
@@ -928,8 +928,8 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
         let to_path: Value<()> = Rc::new(RefCell::new(to_path));
         let mut sanitize_source: () = sanitize_source.unwrap_or_else(|| true);
         let mut is_dir: () = is_dir.unwrap_or_else(|| false);
-        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut source: () = unimplemented!();
+        let mut to: () = unimplemented!();
         if sanitize_source {
             unimplemented!();
         }
@@ -978,8 +978,8 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
     fn create_hardlink(&self, source_path: (), to_path: ()) -> () {
         let source_path: Value<()> = Rc::new(RefCell::new(source_path));
         let to_path: Value<()> = Rc::new(RefCell::new(to_path));
-        let source: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let to: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut source: () = unimplemented!();
+        let mut to: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         let mut ret: () = ({
@@ -990,15 +990,13 @@ impl scoped_test_envImpl for Ptr<scoped_test_env> {
         unimplemented!();
         return unimplemented!();
     }
-    fn create_fifo(&self, file: ()) -> () {
-        let file: Value<()> = Rc::new(RefCell::new(file));
+    fn create_fifo(&self, mut file: ()) -> () {
         unimplemented!();
         let mut ret: () = ({ mkfifo_23(unimplemented!(), 438_()) });
         unimplemented!();
         return unimplemented!();
     }
-    fn create_socket(&self, file: ()) -> () {
-        let file: Value<()> = Rc::new(RefCell::new(file));
+    fn create_socket(&self, mut file: ()) -> () {
         unimplemented!();
         let address: Value<libc::sockaddr_un> =
             Rc::new(RefCell::new(unsafe { std::mem::zeroed() }));

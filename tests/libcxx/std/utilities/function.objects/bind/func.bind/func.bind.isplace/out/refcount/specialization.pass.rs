@@ -54,7 +54,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
                 return ((10_() * x) + 9_());
             })));
-        let place: Value<My2> = Rc::new(RefCell::new(<My2>::default()));
+        let mut place: My2 = <My2>::default();
         let bound: Value<std___bind__lambda_at_specialization_pass_cpp_42_14__ref__My2_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -64,7 +64,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
                 return ((10_() * x) + 9_());
             })));
-        let place: Value<My2> = Rc::new(RefCell::new(<My2>::default()));
+        let mut place: My2 = <My2>::default();
         let bound: Value<std___bind__lambda_at_specialization_pass_cpp_48_14__ref__const_My2_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

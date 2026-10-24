@@ -70,7 +70,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -750,25 +750,21 @@ pub unsafe fn operator_add_27(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_28(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_29(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_30(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_29(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_31(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_30(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_32(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_31(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -852,7 +848,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_32(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_31(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -862,7 +858,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_31(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_30(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -930,136 +926,136 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_ordinary_33() {
-    let mut r: R_34 = <R_34>::default();
+pub unsafe fn test_ordinary_32() {
+    let mut r: R_33 = <R_33>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_35() {
-    let mut r: R_36 = <R_36>::default();
+pub unsafe fn test_ordinary_34() {
+    let mut r: R_35 = <R_35>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_37() {
-    let mut r: R_38 = <R_38>::default();
+pub unsafe fn test_ordinary_36() {
+    let mut r: R_37 = <R_37>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_39() {
-    let mut r: R_40 = <R_40>::default();
+pub unsafe fn test_ordinary_38() {
+    let mut r: R_39 = <R_39>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_41() {
-    let mut r: R_42 = <R_42>::default();
+pub unsafe fn test_ordinary_40() {
+    let mut r: R_41 = <R_41>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_43() {
-    let mut r: R_44 = <R_44>::default();
+pub unsafe fn test_ordinary_42() {
+    let mut r: R_43 = <R_43>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_45() {
-    let mut r: R_46 = <R_46>::default();
+pub unsafe fn test_ordinary_44() {
+    let mut r: R_45 = <R_45>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_47() {
-    let mut r: R_48 = <R_48>::default();
+pub unsafe fn test_ordinary_46() {
+    let mut r: R_47 = <R_47>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_49() {
-    let mut r: R_50 = <R_50>::default();
+pub unsafe fn test_ordinary_48() {
+    let mut r: R_49 = <R_49>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_51() {
-    let mut r: R_52 = <R_52>::default();
+pub unsafe fn test_ordinary_50() {
+    let mut r: R_51 = <R_51>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_53() {
-    let mut r: R_54 = <R_54>::default();
+pub unsafe fn test_ordinary_52() {
+    let mut r: R_53 = <R_53>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_55() {
-    let mut r: R_56 = <R_56>::default();
+pub unsafe fn test_ordinary_54() {
+    let mut r: R_55 = <R_55>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_57() {
-    let mut r: R_58 = <R_58>::default();
+pub unsafe fn test_ordinary_56() {
+    let mut r: R_57 = <R_57>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_59() {
-    let mut r: R_60 = <R_60>::default();
+pub unsafe fn test_ordinary_58() {
+    let mut r: R_59 = <R_59>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_61() {
-    let mut r: R_62 = <R_62>::default();
+pub unsafe fn test_ordinary_60() {
+    let mut r: R_61 = <R_61>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_63() {
-    let mut r: R_64 = <R_64>::default();
+pub unsafe fn test_ordinary_62() {
+    let mut r: R_63 = <R_63>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
     const _: () = assert!(true, "");;
 }
-pub unsafe fn test_ordinary_65() {
-    let mut r: R_66 = <R_66>::default();
+pub unsafe fn test_ordinary_64() {
+    let mut r: R_65 = <R_65>::default();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1068,10 +1064,10 @@ pub unsafe fn test_ordinary_65() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_34 {
+pub struct R_33 {
     pub a: [(); 3],
 }
-impl R_34 {
+impl R_33 {
     pub unsafe fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1088,10 +1084,10 @@ impl R_34 {
         };
     }
 }
-impl Default for R_34 {
+impl Default for R_33 {
     fn default() -> Self {
         unsafe {
-            R_34 {
+            R_33 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1099,10 +1095,10 @@ impl Default for R_34 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_36 {
+pub struct R_35 {
     pub a: [(); 3],
 }
-impl R_36 {
+impl R_35 {
     pub unsafe fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1120,10 +1116,10 @@ impl R_36 {
         };
     }
 }
-impl Default for R_36 {
+impl Default for R_35 {
     fn default() -> Self {
         unsafe {
-            R_36 {
+            R_35 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1131,10 +1127,10 @@ impl Default for R_36 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_38 {
+pub struct R_37 {
     pub a: [(); 3],
 }
-impl R_38 {
+impl R_37 {
     pub unsafe fn begin(&self) -> cpp20_input_iterator_int_ptr_ {
         return cpp20_input_iterator_int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1151,10 +1147,10 @@ impl R_38 {
         };
     }
 }
-impl Default for R_38 {
+impl Default for R_37 {
     fn default() -> Self {
         unsafe {
-            R_38 {
+            R_37 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1162,10 +1158,10 @@ impl Default for R_38 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_40 {
+pub struct R_39 {
     pub a: [(); 3],
 }
-impl R_40 {
+impl R_39 {
     pub unsafe fn begin(&self) -> cpp17_output_iterator_int_ptr_ {
         return cpp17_output_iterator_int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1183,10 +1179,10 @@ impl R_40 {
         };
     }
 }
-impl Default for R_40 {
+impl Default for R_39 {
     fn default() -> Self {
         unsafe {
-            R_40 {
+            R_39 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1194,10 +1190,10 @@ impl Default for R_40 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_42 {
+pub struct R_41 {
     pub a: [(); 3],
 }
-impl R_42 {
+impl R_41 {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1214,10 +1210,10 @@ impl R_42 {
         };
     }
 }
-impl Default for R_42 {
+impl Default for R_41 {
     fn default() -> Self {
         unsafe {
-            R_42 {
+            R_41 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1225,10 +1221,10 @@ impl Default for R_42 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_44 {
+pub struct R_43 {
     pub a: [(); 3],
 }
-impl R_44 {
+impl R_43 {
     pub unsafe fn begin(&self) -> bidirectional_iterator_int_ptr_ {
         return bidirectional_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1246,10 +1242,10 @@ impl R_44 {
         };
     }
 }
-impl Default for R_44 {
+impl Default for R_43 {
     fn default() -> Self {
         unsafe {
-            R_44 {
+            R_43 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1257,10 +1253,10 @@ impl Default for R_44 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_46 {
+pub struct R_45 {
     pub a: [(); 3],
 }
-impl R_46 {
+impl R_45 {
     pub unsafe fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1278,10 +1274,10 @@ impl R_46 {
         };
     }
 }
-impl Default for R_46 {
+impl Default for R_45 {
     fn default() -> Self {
         unsafe {
-            R_46 {
+            R_45 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1289,10 +1285,10 @@ impl Default for R_46 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_48 {
+pub struct R_47 {
     pub a: [(); 3],
 }
-impl R_48 {
+impl R_47 {
     pub unsafe fn begin(&self) -> contiguous_iterator_int_ptr_ {
         return contiguous_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1309,10 +1305,10 @@ impl R_48 {
         };
     }
 }
-impl Default for R_48 {
+impl Default for R_47 {
     fn default() -> Self {
         unsafe {
-            R_48 {
+            R_47 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1320,10 +1316,10 @@ impl Default for R_48 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_50 {
+pub struct R_49 {
     pub a: [(); 3],
 }
-impl R_50 {
+impl R_49 {
     pub unsafe fn begin(&self) -> *mut () {
         return (*(&raw const self.a).cast_mut()).as_mut_ptr();
     }
@@ -1336,10 +1332,10 @@ impl R_50 {
         };
     }
 }
-impl Default for R_50 {
+impl Default for R_49 {
     fn default() -> Self {
         unsafe {
-            R_50 {
+            R_49 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1347,10 +1343,10 @@ impl Default for R_50 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_52 {
+pub struct R_51 {
     pub a: [(); 3],
 }
-impl R_52 {
+impl R_51 {
     pub unsafe fn begin(&self) -> cpp17_input_iterator_int_ptr__int_ptr_ {
         return cpp17_input_iterator_int_ptr__int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1368,10 +1364,10 @@ impl R_52 {
         };
     }
 }
-impl Default for R_52 {
+impl Default for R_51 {
     fn default() -> Self {
         unsafe {
-            R_52 {
+            R_51 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1379,10 +1375,10 @@ impl Default for R_52 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_54 {
+pub struct R_53 {
     pub a: [(); 3],
 }
-impl R_54 {
+impl R_53 {
     pub unsafe fn begin(&self) -> cpp17_output_iterator_int_ptr_ {
         return cpp17_output_iterator_int_ptr_::new({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1400,10 +1396,10 @@ impl R_54 {
         };
     }
 }
-impl Default for R_54 {
+impl Default for R_53 {
     fn default() -> Self {
         unsafe {
-            R_54 {
+            R_53 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1411,10 +1407,10 @@ impl Default for R_54 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_56 {
+pub struct R_55 {
     pub a: [(); 3],
 }
-impl R_56 {
+impl R_55 {
     pub unsafe fn begin(&self) -> forward_iterator_int_ptr_ {
         return forward_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1431,10 +1427,10 @@ impl R_56 {
         };
     }
 }
-impl Default for R_56 {
+impl Default for R_55 {
     fn default() -> Self {
         unsafe {
-            R_56 {
+            R_55 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1442,10 +1438,10 @@ impl Default for R_56 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_58 {
+pub struct R_57 {
     pub a: [(); 3],
 }
-impl R_58 {
+impl R_57 {
     pub unsafe fn begin(&self) -> bidirectional_iterator_int_ptr_ {
         return bidirectional_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1463,10 +1459,10 @@ impl R_58 {
         };
     }
 }
-impl Default for R_58 {
+impl Default for R_57 {
     fn default() -> Self {
         unsafe {
-            R_58 {
+            R_57 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1474,10 +1470,10 @@ impl Default for R_58 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_60 {
+pub struct R_59 {
     pub a: [(); 3],
 }
-impl R_60 {
+impl R_59 {
     pub unsafe fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1495,10 +1491,10 @@ impl R_60 {
         };
     }
 }
-impl Default for R_60 {
+impl Default for R_59 {
     fn default() -> Self {
         unsafe {
-            R_60 {
+            R_59 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1506,10 +1502,10 @@ impl Default for R_60 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_62 {
+pub struct R_61 {
     pub a: [(); 3],
 }
-impl R_62 {
+impl R_61 {
     pub unsafe fn begin(&self) -> contiguous_iterator_int_ptr_ {
         return contiguous_iterator_int_ptr_::new_1({
             (*(&raw const self.a).cast_mut()).as_mut_ptr()
@@ -1526,10 +1522,10 @@ impl R_62 {
         };
     }
 }
-impl Default for R_62 {
+impl Default for R_61 {
     fn default() -> Self {
         unsafe {
-            R_62 {
+            R_61 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1537,10 +1533,10 @@ impl Default for R_62 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_64 {
+pub struct R_63 {
     pub a: [(); 3],
 }
-impl R_64 {
+impl R_63 {
     pub unsafe fn begin(&self) -> *mut () {
         return (*(&raw const self.a).cast_mut()).as_mut_ptr();
     }
@@ -1553,10 +1549,10 @@ impl R_64 {
         };
     }
 }
-impl Default for R_64 {
+impl Default for R_63 {
     fn default() -> Self {
         unsafe {
-            R_64 {
+            R_63 {
                 a: [1_(), 2_(), 3_()],
             }
         }
@@ -1564,10 +1560,10 @@ impl Default for R_64 {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg)]
-pub struct R_66 {
+pub struct R_65 {
     pub a: [(); 3],
 }
-impl R_66 {
+impl R_65 {
     pub unsafe fn begin(&self) -> *mut () {
         return (*(&raw const self.a).cast_mut()).as_mut_ptr();
     }
@@ -1577,16 +1573,16 @@ impl R_66 {
             .offset((3_()) as isize);
     }
 }
-impl Default for R_66 {
+impl Default for R_65 {
     fn default() -> Self {
         unsafe {
-            R_66 {
+            R_65 {
                 a: [1_(), 2_(), 3_()],
             }
         }
     }
 }
-pub unsafe fn test_67() -> () {
+pub unsafe fn test_66() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         unimplemented!();
@@ -1635,25 +1631,25 @@ pub unsafe fn test_67() -> () {
         );;
     }
     {
-        (unsafe { test_ordinary_33() });
+        (unsafe { test_ordinary_32() });
     }
-    (unsafe { test_ordinary_35() });
-    (unsafe { test_ordinary_37() });
-    (unsafe { test_ordinary_39() });
-    (unsafe { test_ordinary_41() });
-    (unsafe { test_ordinary_43() });
-    (unsafe { test_ordinary_45() });
-    (unsafe { test_ordinary_47() });
-    (unsafe { test_ordinary_49() });
-    (unsafe { test_ordinary_51() });
-    (unsafe { test_ordinary_33() });
-    (unsafe { test_ordinary_53() });
-    (unsafe { test_ordinary_55() });
-    (unsafe { test_ordinary_57() });
-    (unsafe { test_ordinary_59() });
-    (unsafe { test_ordinary_61() });
-    (unsafe { test_ordinary_63() });
-    (unsafe { test_ordinary_65() });
+    (unsafe { test_ordinary_34() });
+    (unsafe { test_ordinary_36() });
+    (unsafe { test_ordinary_38() });
+    (unsafe { test_ordinary_40() });
+    (unsafe { test_ordinary_42() });
+    (unsafe { test_ordinary_44() });
+    (unsafe { test_ordinary_46() });
+    (unsafe { test_ordinary_48() });
+    (unsafe { test_ordinary_50() });
+    (unsafe { test_ordinary_32() });
+    (unsafe { test_ordinary_52() });
+    (unsafe { test_ordinary_54() });
+    (unsafe { test_ordinary_56() });
+    (unsafe { test_ordinary_58() });
+    (unsafe { test_ordinary_60() });
+    (unsafe { test_ordinary_62() });
+    (unsafe { test_ordinary_64() });
     const _: () = assert!(
         true,
         "!std::is_invocable_v<decltype(std::ranges::distance), int>"
@@ -1680,7 +1676,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_67() });
+    (unsafe { test_66() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -266,29 +266,23 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_6(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -334,7 +328,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -359,7 +353,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -448,17 +442,17 @@ impl util_iterator_error {
 pub struct Counted {}
 impl Counted {
     pub fn reset() {
-        count_10.with(|rc| {
+        count_9.with(|rc| {
             *rc.borrow_mut() = {
-                constructed_11.with(|rc| *rc.borrow_mut() = 0_());
-                constructed_11.with(|rc| *rc.borrow())
+                constructed_10.with(|rc| *rc.borrow_mut() = 0_());
+                constructed_10.with(|rc| *rc.borrow())
             }
         });
     }
     pub fn new() -> Self {
         let __this: Counted = Self {};
-        (*count_10.with(Value::clone).borrow_mut()).prefix_inc();
-        (*constructed_11.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_9.with(Value::clone).borrow_mut()).prefix_inc();
+        (*constructed_10.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(_a0: Ptr<Counted>) -> Self {
@@ -479,37 +473,37 @@ impl Default for Counted {
     }
 }
 thread_local!(
-    pub static count_10: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_9: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static constructed_11: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static constructed_10: Value<()> = Rc::new(RefCell::new(0_()));
 );
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
 #[byte_size(1)]
 pub struct ThrowsCounted {}
 impl ThrowsCounted {
     pub fn reset() {
-        throw_after_14.with(|rc| {
+        throw_after_13.with(|rc| {
             *rc.borrow_mut() = {
-                count_12.with(|rc| {
+                count_11.with(|rc| {
                     *rc.borrow_mut() = {
-                        constructed_13.with(|rc| *rc.borrow_mut() = 0_());
-                        constructed_13.with(|rc| *rc.borrow())
+                        constructed_12.with(|rc| *rc.borrow_mut() = 0_());
+                        constructed_12.with(|rc| *rc.borrow())
                     }
                 });
-                count_12.with(|rc| *rc.borrow())
+                count_11.with(|rc| *rc.borrow())
             }
         });
     }
     pub fn new() -> Self {
         let __this: ThrowsCounted = Self {};
-        (*constructed_13.with(Value::clone).borrow_mut()).prefix_inc();
-        if (throw_after_14.with(|rc| *rc.borrow()) > 0_())
-            && ((*throw_after_14.with(Value::clone).borrow_mut()).prefix_dec() == 0_())
+        (*constructed_12.with(Value::clone).borrow_mut()).prefix_inc();
+        if (throw_after_13.with(|rc| *rc.borrow()) > 0_())
+            && ((*throw_after_13.with(Value::clone).borrow_mut()).prefix_dec() == 0_())
         {
             unimplemented!();
         }
-        (*count_12.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_11.with(Value::clone).borrow_mut()).prefix_inc();
         __this
     }
     pub fn copy_from(_a0: Ptr<ThrowsCounted>) -> Self {
@@ -530,15 +524,15 @@ impl Default for ThrowsCounted {
     }
 }
 thread_local!(
-    pub static count_12: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_11: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static constructed_13: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static constructed_12: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static throw_after_14: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static throw_after_13: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn test_15() -> () {
+pub fn test_14() -> () {
     {
         let mut n: () = 3_();
         let alloc: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -568,8 +562,8 @@ pub fn test_15() -> () {
     }
     return true;
 }
-pub fn test_ctor_throws_16() {}
-pub fn test_counted_17() {
+pub fn test_ctor_throws_15() {}
+pub fn test_counted_16() {
     let mut N: () = 5_();
     let pool: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         unimplemented!(),
@@ -608,9 +602,9 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_counted_17() });
-    ({ test_ctor_throws_16() });
-    ({ test_15() });
+    ({ test_counted_16() });
+    ({ test_ctor_throws_15() });
+    ({ test_14() });
     return 0_();
 }
 pub trait CountedImpl {
@@ -620,7 +614,7 @@ pub trait CountedImpl {
 impl CountedImpl for Ptr<Counted> {
     fn destructor(&self) {
         unimplemented!();
-        (*count_10.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_9.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<Counted>) -> Ptr<Counted> {
         return (*self).clone();
@@ -633,7 +627,7 @@ pub trait ThrowsCountedImpl {
 impl ThrowsCountedImpl for Ptr<ThrowsCounted> {
     fn destructor(&self) {
         unimplemented!();
-        (*count_12.with(Value::clone).borrow_mut()).prefix_dec();
+        (*count_11.with(Value::clone).borrow_mut()).prefix_dec();
     }
     fn copy_assign(&self, _a0: Ptr<ThrowsCounted>) -> Ptr<ThrowsCounted> {
         return (*self).clone();
@@ -939,9 +933,9 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_10.with(|_| ());
-    let _ = constructed_11.with(|_| ());
-    let _ = count_12.with(|_| ());
-    let _ = constructed_13.with(|_| ());
-    let _ = throw_after_14.with(|_| ());
+    let _ = count_9.with(|_| ());
+    let _ = constructed_10.with(|_| ());
+    let _ = count_11.with(|_| ());
+    let _ = constructed_12.with(|_| ());
+    let _ = throw_after_13.with(|_| ());
 }

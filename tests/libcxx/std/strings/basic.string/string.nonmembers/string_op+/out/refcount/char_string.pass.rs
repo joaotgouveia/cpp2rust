@@ -154,7 +154,7 @@ pub fn test_string_10() {
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();
@@ -181,7 +181,7 @@ pub fn test_string_11() {
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();
@@ -208,7 +208,7 @@ pub fn test_string_12() {
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut str: () = unimplemented!();
             unimplemented!();
         }
         i.prefix_inc();

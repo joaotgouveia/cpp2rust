@@ -70,7 +70,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -815,25 +815,21 @@ pub unsafe fn operator_add_34(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_35(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_36(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_37(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_36(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_38(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_37(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_39(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_38(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -917,7 +913,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_39(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_38(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -927,7 +923,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_38(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_37(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -995,7 +991,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_unsized_40() {
+pub unsafe fn test_unsized_39() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1264,7 +1260,7 @@ pub unsafe fn test_unsized_40() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_41() {
+pub unsafe fn test_unsized_40() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1501,7 +1497,7 @@ pub unsafe fn test_unsized_41() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_42() {
+pub unsafe fn test_unsized_41() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1738,7 +1734,7 @@ pub unsafe fn test_unsized_42() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_43() {
+pub unsafe fn test_unsized_42() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -1975,7 +1971,7 @@ pub unsafe fn test_unsized_43() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_44() {
+pub unsafe fn test_unsized_43() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2212,7 +2208,7 @@ pub unsafe fn test_unsized_44() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_45() {
+pub unsafe fn test_unsized_44() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2449,7 +2445,7 @@ pub unsafe fn test_unsized_45() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_46() {
+pub unsafe fn test_unsized_45() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2620,7 +2616,7 @@ pub unsafe fn test_unsized_46() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_47() {
+pub unsafe fn test_unsized_46() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2791,7 +2787,7 @@ pub unsafe fn test_unsized_47() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_48() {
+pub unsafe fn test_unsized_47() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -2945,7 +2941,7 @@ pub unsafe fn test_unsized_48() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_unsized_49() {
+pub unsafe fn test_unsized_48() {
     const _: () = assert!(
         true,
         "std::sentinel_for<Sent, It> && !std::sized_sentinel_for<Sent, It>"
@@ -3131,7 +3127,7 @@ pub unsafe fn test_unsized_49() {
         (unsafe { check.spec::<fn()>(15).call() });
     }
 }
-pub unsafe fn test_sized_50() {
+pub unsafe fn test_sized_49() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -3412,7 +3408,7 @@ pub unsafe fn test_sized_50() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_51() {
+pub unsafe fn test_sized_50() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -3659,7 +3655,7 @@ pub unsafe fn test_sized_51() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_52() {
+pub unsafe fn test_sized_51() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -3906,7 +3902,7 @@ pub unsafe fn test_sized_52() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_53() {
+pub unsafe fn test_sized_52() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -4121,7 +4117,7 @@ pub unsafe fn test_sized_53() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_54() {
+pub unsafe fn test_sized_53() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -4368,7 +4364,7 @@ pub unsafe fn test_sized_54() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_55() {
+pub unsafe fn test_sized_54() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -4615,7 +4611,7 @@ pub unsafe fn test_sized_55() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_56() {
+pub unsafe fn test_sized_55() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -4862,7 +4858,7 @@ pub unsafe fn test_sized_56() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_57() {
+pub unsafe fn test_sized_56() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5009,7 +5005,7 @@ pub unsafe fn test_sized_57() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_58() {
+pub unsafe fn test_sized_57() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5156,7 +5152,7 @@ pub unsafe fn test_sized_58() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_59() {
+pub unsafe fn test_sized_58() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5281,7 +5277,7 @@ pub unsafe fn test_sized_59() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_60() {
+pub unsafe fn test_sized_59() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5406,7 +5402,7 @@ pub unsafe fn test_sized_60() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_61() {
+pub unsafe fn test_sized_60() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5599,7 +5595,7 @@ pub unsafe fn test_sized_61() {
         unimplemented!();
     }
 }
-pub unsafe fn test_sized_62() {
+pub unsafe fn test_sized_61() {
     const _: () = assert!(true, "std::sized_sentinel_for<Sent, It>");;
     let mut a: [(); 3] = [1_(), 2_(), 3_()];
     {
@@ -5838,7 +5834,7 @@ const _: () = assert!(
     true,
     "std::sized_sentinel_for<SizedStrideCounter, SizedStrideCounter>"
 );
-pub unsafe fn test_stride_counting_63() {
+pub unsafe fn test_stride_counting_62() {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         let mut inc: () = 0_();
@@ -5849,7 +5845,7 @@ pub unsafe fn test_stride_counting_63() {
                 std::ptr::null_mut()
             });
         let mut result: () =
-            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_64))(first, last) });
+            (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_63))(first, last) });
         unimplemented!();
         unimplemented!();
     }
@@ -5863,13 +5859,13 @@ pub unsafe fn test_stride_counting_63() {
                 std::ptr::null_mut()
             });
         let mut result: () = (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_64))(&mut first, last)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut distance_63))(&mut first, last)
         });
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_deque_65() {
+pub unsafe fn test_deque_64() {
     let mut c: () = unimplemented!();
     let mut view : std_ranges_join_view_std_ranges_ref_view_std_deque_std_deque_double__std_allocator_double____std_allocator_std_deque_double__std_allocator_double______ = unimplemented!()  ;
     let mut n: () = 0_();
@@ -5881,13 +5877,14 @@ pub unsafe fn test_deque_65() {
     }
     unimplemented!();
 }
-pub unsafe fn test_66() -> () {
+pub unsafe fn test_65() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
+    (unsafe { test_unsized_39() });
     (unsafe { test_unsized_40() });
     (unsafe { test_unsized_41() });
     (unsafe { test_unsized_42() });
@@ -5897,7 +5894,7 @@ pub unsafe fn test_66() -> () {
     (unsafe { test_unsized_46() });
     (unsafe { test_unsized_47() });
     (unsafe { test_unsized_48() });
-    (unsafe { test_unsized_49() });
+    (unsafe { test_sized_49() });
     (unsafe { test_sized_50() });
     (unsafe { test_sized_51() });
     (unsafe { test_sized_52() });
@@ -5910,7 +5907,6 @@ pub unsafe fn test_66() -> () {
     (unsafe { test_sized_59() });
     (unsafe { test_sized_60() });
     (unsafe { test_sized_61() });
-    (unsafe { test_sized_62() });
     {
         const _: () = assert!(true, "!std::is_copy_constructible_v<It>");;
         const _: () = assert!(!(false), "!std::sentinel_for<It, It>");;
@@ -6007,7 +6003,7 @@ pub unsafe fn test_66() -> () {
         unimplemented!();
     }
     {
-        (unsafe { test_deque_65() });
+        (unsafe { test_deque_64() });
     }
     return true;
 }
@@ -6027,7 +6023,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_66() });
+    (unsafe { test_65() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

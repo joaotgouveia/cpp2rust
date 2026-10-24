@@ -292,25 +292,21 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_6(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -394,7 +390,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -404,7 +400,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -477,15 +473,15 @@ impl util_iterator_error {
 pub struct Counted {}
 impl Counted {
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)) = {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11)) = 0_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)) = {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10)) = 0_();
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10))
         };
     }
     pub unsafe fn new() -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)).prefix_inc();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_11)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_10)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(_a0: *const Counted) -> Self {
@@ -495,7 +491,7 @@ impl Counted {
     }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_10)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_9)).prefix_dec();
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const Counted) -> *mut Counted {
         return &mut (*(self as *mut Counted));
@@ -511,32 +507,32 @@ impl Default for Counted {
         unsafe { Counted::new() }
     }
 }
-pub static mut count_10: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut constructed_11: std::cell::LazyCell<()> =
+pub static mut count_9: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut constructed_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
 #[repr(C)]
 #[derive(VaArg, FnPtrArg, CopyAssignUnsafe, DestructorUnsafe)]
 pub struct ThrowsCounted {}
 impl ThrowsCounted {
     pub unsafe fn reset() {
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)) = {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)) = {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13)) = 0_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13))
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)) = {
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)) = {
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12)) = 0_();
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12))
             };
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12))
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11))
         };
     }
     pub unsafe fn new() -> Self {
         let mut this = Self {};
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_13)).prefix_inc();
-        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)) > (0_()))
-            && (((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_14)).prefix_dec())
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut constructed_12)).prefix_inc();
+        if ((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)) > (0_()))
+            && (((*std::cell::LazyCell::force_mut(&mut *&raw mut throw_after_13)).prefix_dec())
                 == (0_()))
         {
             unimplemented!();
         }
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)).prefix_inc();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)).prefix_inc();
         this
     }
     pub unsafe fn copy_from(_a0: *const ThrowsCounted) -> Self {
@@ -546,7 +542,7 @@ impl ThrowsCounted {
     }
     pub unsafe fn destructor(&mut self) {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_12)).prefix_dec();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut count_11)).prefix_dec();
     }
     pub unsafe fn copy_assign(&mut self, _a0: *const ThrowsCounted) -> *mut ThrowsCounted {
         return &mut (*(self as *mut ThrowsCounted));
@@ -562,12 +558,12 @@ impl Default for ThrowsCounted {
         unsafe { ThrowsCounted::new() }
     }
 }
-pub static mut count_12: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut constructed_13: std::cell::LazyCell<()> =
+pub static mut count_11: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { 0_() });
+pub static mut constructed_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut throw_after_14: std::cell::LazyCell<()> =
+pub static mut throw_after_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn test_15() -> () {
+pub unsafe fn test_14() -> () {
     {
         let n: () = 3_();
         let mut alloc: () = unimplemented!();
@@ -596,8 +592,8 @@ pub unsafe fn test_15() -> () {
     }
     return true;
 }
-pub unsafe fn test_ctor_throws_16() {}
-pub unsafe fn test_counted_17() {
+pub unsafe fn test_ctor_throws_15() {}
+pub unsafe fn test_counted_16() {
     let N: () = 5_();
     let mut pool: [(); 5] = [
         unimplemented!(),
@@ -632,15 +628,15 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_counted_17() });
-    (unsafe { test_ctor_throws_16() });
-    (unsafe { test_15() });
+    (unsafe { test_counted_16() });
+    (unsafe { test_ctor_throws_15() });
+    (unsafe { test_14() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const count_10);
-    std::cell::LazyCell::force(&*&raw const constructed_11);
-    std::cell::LazyCell::force(&*&raw const count_12);
-    std::cell::LazyCell::force(&*&raw const constructed_13);
-    std::cell::LazyCell::force(&*&raw const throw_after_14);
+    std::cell::LazyCell::force(&*&raw const count_9);
+    std::cell::LazyCell::force(&*&raw const constructed_10);
+    std::cell::LazyCell::force(&*&raw const count_11);
+    std::cell::LazyCell::force(&*&raw const constructed_12);
+    std::cell::LazyCell::force(&*&raw const throw_after_13);
 }

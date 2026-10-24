@@ -261,10 +261,7 @@ impl __gnu_test_semaphore {}
 pub struct MyType {}
 pub unsafe fn test_10() {
     let mut m: () = unimplemented!();
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        m.insert_33_struct_std_pair_class_std_basic_string_char___struct_MyType_ptr_(&mut ___x)
-    });
+    unimplemented!();
 }
 pub fn main() {
     unsafe {

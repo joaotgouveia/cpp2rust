@@ -365,25 +365,21 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_8(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -467,7 +463,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -477,7 +473,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -545,38 +541,38 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn operator_add_assign_12(lhs: *mut SomeInt, rhs: *const SomeInt) -> *mut SomeInt {
+pub unsafe fn operator_add_assign_11(lhs: *mut SomeInt, rhs: *const SomeInt) -> *mut SomeInt {
     (*lhs).value_ += (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_sub_assign_13(lhs: *mut SomeInt, rhs: *const SomeInt) -> *mut SomeInt {
+pub unsafe fn operator_sub_assign_12(lhs: *mut SomeInt, rhs: *const SomeInt) -> *mut SomeInt {
     (*lhs).value_ -= (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_add_assign_14(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
+pub unsafe fn operator_add_assign_13(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
     (*lhs).value_ += rhs;
     return lhs;
 }
-pub unsafe fn operator_sub_assign_15(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
+pub unsafe fn operator_sub_assign_14(lhs: *mut SomeInt, mut rhs: ()) -> *mut SomeInt {
     (*lhs).value_ -= rhs;
     return lhs;
 }
-pub unsafe fn operator_add_16(mut lhs: SomeInt, mut rhs: SomeInt) -> SomeInt {
+pub unsafe fn operator_add_15(mut lhs: SomeInt, mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_17(mut lhs: SomeInt, mut rhs: SomeInt) -> () {
+pub unsafe fn operator_sub_16(mut lhs: SomeInt, mut rhs: SomeInt) -> () {
     return ((lhs.value_) - (rhs.value_));
 }
-pub unsafe fn operator_add_18(mut lhs: SomeInt, mut rhs: ()) -> SomeInt {
+pub unsafe fn operator_add_17(mut lhs: SomeInt, mut rhs: ()) -> SomeInt {
     return SomeInt::new({ Some(((lhs.value_) + (rhs))) });
 }
-pub unsafe fn operator_sub_19(mut lhs: SomeInt, mut rhs: ()) -> () {
+pub unsafe fn operator_sub_18(mut lhs: SomeInt, mut rhs: ()) -> () {
     return ((lhs.value_) - (rhs));
 }
-pub unsafe fn operator_add_20(mut lhs: (), mut rhs: SomeInt) -> SomeInt {
+pub unsafe fn operator_add_19(mut lhs: (), mut rhs: SomeInt) -> SomeInt {
     return SomeInt::new({ Some(((lhs) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_21(mut lhs: (), mut rhs: SomeInt) -> () {
+pub unsafe fn operator_sub_20(mut lhs: (), mut rhs: SomeInt) -> () {
     return ((lhs) - (rhs.value_));
 }
 #[repr(C)]
@@ -643,27 +639,27 @@ impl Default for SomeInt {
         unsafe { SomeInt::new(None) }
     }
 }
-pub unsafe fn operator_add_assign_22(
+pub unsafe fn operator_add_assign_21(
     lhs: *mut NotIncrementable,
     rhs: *const NotIncrementable,
 ) -> *mut NotIncrementable {
     (*lhs).value_ += (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_sub_assign_23(
+pub unsafe fn operator_sub_assign_22(
     lhs: *mut NotIncrementable,
     rhs: *const NotIncrementable,
 ) -> *mut NotIncrementable {
     (*lhs).value_ -= (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_add_24(
+pub unsafe fn operator_add_23(
     mut lhs: NotIncrementable,
     mut rhs: NotIncrementable,
 ) -> NotIncrementable {
     return NotIncrementable::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_25(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> () {
+pub unsafe fn operator_sub_24(mut lhs: NotIncrementable, mut rhs: NotIncrementable) -> () {
     return ((lhs.value_) - (rhs.value_));
 }
 #[repr(C)]
@@ -704,27 +700,27 @@ impl Default for NotIncrementable {
     }
 }
 const _: () = assert!(!(false), "!std::incrementable<NotIncrementable>");
-pub unsafe fn operator_add_assign_26(
+pub unsafe fn operator_add_assign_25(
     lhs: *mut NotDecrementable,
     rhs: *const NotDecrementable,
 ) -> *mut NotDecrementable {
     (*lhs).value_ += (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_sub_assign_27(
+pub unsafe fn operator_sub_assign_26(
     lhs: *mut NotDecrementable,
     rhs: *const NotDecrementable,
 ) -> *mut NotDecrementable {
     (*lhs).value_ -= (*rhs).value_;
     return lhs;
 }
-pub unsafe fn operator_add_28(
+pub unsafe fn operator_add_27(
     mut lhs: NotDecrementable,
     mut rhs: NotDecrementable,
 ) -> NotDecrementable {
     return NotDecrementable::new({ Some(((lhs.value_) + (rhs.value_))) });
 }
-pub unsafe fn operator_sub_29(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> () {
+pub unsafe fn operator_sub_28(mut lhs: NotDecrementable, mut rhs: NotDecrementable) -> () {
     return ((lhs.value_) - (rhs.value_));
 }
 #[repr(C)]
@@ -763,7 +759,7 @@ impl Default for NotDecrementable {
 pub type CtorKind = ();
 pub const CtorKind_DefaultTo42: CtorKind = 0;
 pub const CtorKind_ValueCtor: CtorKind = 1;
-pub unsafe fn test_30() -> () {
+pub unsafe fn test_29() -> () {
     {
         const _: () = assert!(
             true,
@@ -771,7 +767,7 @@ pub unsafe fn test_30() -> () {
         );;
         let mut r: () = (unsafe {
             let mut ___start: () = 42_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_31))(&mut ___start)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_30))(&mut ___start)
         });
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
@@ -807,7 +803,7 @@ pub unsafe fn test_30() -> () {
         let mut r: () = (unsafe {
             let mut ___start: three_way_contiguous_iterator_int_ptr_ =
                 three_way_contiguous_iterator_int_ptr_::new_1({ a.as_mut_ptr() });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_31))(&mut ___start)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_30))(&mut ___start)
         });
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
@@ -843,7 +839,7 @@ pub unsafe fn test_30() -> () {
         let mut r: () = (unsafe {
             let mut ___start: random_access_iterator_int_ptr_ =
                 random_access_iterator_int_ptr_::new_1({ a.as_mut_ptr() });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_31))(&mut ___start)
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_30))(&mut ___start)
         });
         let mut iter1: () = unimplemented!();
         let mut iter2: () = unimplemented!();
@@ -884,7 +880,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_30() });
+    (unsafe { test_29() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

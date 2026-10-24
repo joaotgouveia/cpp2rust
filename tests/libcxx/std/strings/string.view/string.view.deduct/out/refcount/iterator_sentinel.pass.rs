@@ -675,29 +675,23 @@ pub fn operator_add_42(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_41(_i, n)
     });
 }
-pub fn iter_swap_43(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_44(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_43(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_45(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_44(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_46(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_45(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_47(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_46(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -743,7 +737,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_47(
+            operator_cmp_46(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -768,7 +762,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_46(
+            operator_eq_45(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -851,6 +845,13 @@ impl util_iterator_error {
     pub fn new(mut what: Ptr<()>) -> Self {
         Self {}
     }
+}
+pub fn test_ctad_47(val: ()) {
+    let val: Value<()> = Rc::new(RefCell::new(val));
+    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
 }
 pub fn test_ctad_48(val: ()) {
     let val: Value<()> = Rc::new(RefCell::new(val));
@@ -1055,64 +1056,57 @@ pub fn test_ctad_76(val: ()) {
     unimplemented!();
     unimplemented!();
 }
-pub fn test_ctad_77(val: ()) {
-    let val: Value<()> = Rc::new(RefCell::new(val));
-    let sv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_with_char_78() {
+pub fn test_with_char_77() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_ctad_47(unimplemented!()) });
     ({ test_ctad_48(unimplemented!()) });
     ({ test_ctad_49(unimplemented!()) });
     ({ test_ctad_50(unimplemented!()) });
     ({ test_ctad_51(unimplemented!()) });
     ({ test_ctad_52(unimplemented!()) });
-    ({ test_ctad_53(unimplemented!()) });
 }
-pub fn test_with_char_79() {
+pub fn test_with_char_78() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_ctad_53(unimplemented!()) });
     ({ test_ctad_54(unimplemented!()) });
     ({ test_ctad_55(unimplemented!()) });
     ({ test_ctad_56(unimplemented!()) });
     ({ test_ctad_57(unimplemented!()) });
     ({ test_ctad_58(unimplemented!()) });
-    ({ test_ctad_59(unimplemented!()) });
 }
-pub fn test_with_char_80() {
+pub fn test_with_char_79() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_ctad_59(unimplemented!()) });
     ({ test_ctad_60(unimplemented!()) });
     ({ test_ctad_61(unimplemented!()) });
     ({ test_ctad_62(unimplemented!()) });
     ({ test_ctad_63(unimplemented!()) });
     ({ test_ctad_64(unimplemented!()) });
-    ({ test_ctad_65(unimplemented!()) });
 }
-pub fn test_with_char_81() {
+pub fn test_with_char_80() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_ctad_65(unimplemented!()) });
     ({ test_ctad_66(unimplemented!()) });
     ({ test_ctad_67(unimplemented!()) });
     ({ test_ctad_68(unimplemented!()) });
     ({ test_ctad_69(unimplemented!()) });
     ({ test_ctad_70(unimplemented!()) });
-    ({ test_ctad_71(unimplemented!()) });
 }
-pub fn test_with_char_82() {
+pub fn test_with_char_81() {
     let val: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({ test_ctad_71(unimplemented!()) });
     ({ test_ctad_72(unimplemented!()) });
     ({ test_ctad_73(unimplemented!()) });
     ({ test_ctad_74(unimplemented!()) });
     ({ test_ctad_75(unimplemented!()) });
     ({ test_ctad_76(unimplemented!()) });
-    ({ test_ctad_77(unimplemented!()) });
 }
-pub fn test_83() {
+pub fn test_82() {
+    ({ test_with_char_77() });
     ({ test_with_char_78() });
     ({ test_with_char_79() });
     ({ test_with_char_80() });
     ({ test_with_char_81() });
-    ({ test_with_char_82() });
 }
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
@@ -1134,7 +1128,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_83() });
+    ({ test_82() });
     return 0_();
 }
 pub trait MultiStringTypeImpl {

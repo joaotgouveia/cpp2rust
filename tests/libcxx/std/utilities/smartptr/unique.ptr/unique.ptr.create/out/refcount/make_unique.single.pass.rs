@@ -8,13 +8,13 @@ use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
 pub fn test_0() -> () {
     {
-        let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut p1: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     {
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut p2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();

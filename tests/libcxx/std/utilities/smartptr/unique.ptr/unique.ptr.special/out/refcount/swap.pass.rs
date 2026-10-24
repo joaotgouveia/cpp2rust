@@ -72,27 +72,28 @@ impl Deleter_Aarrarr_ {
     }
 }
 pub fn swap_4(x: Ptr<Deleter_A_>, y: Ptr<Deleter_A_>) {
-    let t: Value<Deleter_A_> = Rc::new(RefCell::new(Deleter_A_::move_from({ (x).clone() })));
+    let t: Value<Deleter_A_> = Rc::new(RefCell::new(Deleter_A_::move_from({ unimplemented!() })));
     let _dtor_t = ScopedDestructor::new(&t, |__p| __p.destructor());
     ({
-        let _r: Ptr<Deleter_A_> = (y).clone();
+        let _r: Ptr<Deleter_A_> = unimplemented!();
         Deleter_A_Impl::move_assign(&x, _r)
     });
     ({
-        let _r: Ptr<Deleter_A_> = t.as_pointer();
+        let _r: Ptr<Deleter_A_> = unimplemented!();
         Deleter_A_Impl::move_assign(&y, _r)
     });
 }
 pub fn swap_5(x: Ptr<Deleter_Aarrarr_>, y: Ptr<Deleter_Aarrarr_>) {
-    let t: Value<Deleter_Aarrarr_> =
-        Rc::new(RefCell::new(Deleter_Aarrarr_::move_from({ (x).clone() })));
+    let t: Value<Deleter_Aarrarr_> = Rc::new(RefCell::new(Deleter_Aarrarr_::move_from({
+        unimplemented!()
+    })));
     let _dtor_t = ScopedDestructor::new(&t, |__p| __p.destructor());
     ({
-        let _r: Ptr<Deleter_Aarrarr_> = (y).clone();
+        let _r: Ptr<Deleter_Aarrarr_> = unimplemented!();
         Deleter_Aarrarr_Impl::move_assign(&x, _r)
     });
     ({
-        let _r: Ptr<Deleter_Aarrarr_> = t.as_pointer();
+        let _r: Ptr<Deleter_Aarrarr_> = unimplemented!();
         Deleter_Aarrarr_Impl::move_assign(&y, _r)
     });
 }
@@ -183,9 +184,9 @@ impl NonSwappableDeleter_int_ {
 pub fn test_10() -> () {
     {
         let mut p1: Ptr<A> = Ptr::alloc(A::new_2({ 1_() }));
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s1: () = unimplemented!();
         let mut p2: Ptr<A> = Ptr::alloc(A::new_2({ 2_() }));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s2: () = unimplemented!();
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -233,9 +234,9 @@ pub fn test_10() -> () {
         let mut d: NonSwappableDeleter_int_ = NonSwappableDeleter_int_::new({ 42_() });
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(43_()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ swap_11(p.as_pointer(), p2.as_pointer()) });
+        let mut p: () = unimplemented!();
+        let mut p2: () = unimplemented!();
+        unimplemented!();
     }
     return true;
 }

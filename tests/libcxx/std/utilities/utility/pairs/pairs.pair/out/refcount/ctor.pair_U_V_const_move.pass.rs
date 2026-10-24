@@ -366,7 +366,7 @@ impl Default for ConvertibleFrom_Y_ {
 impl ConvertibleFrom_ConstMove_ {
     pub fn new_1(_v: Ptr<ConstMove>) -> Self {
         Self {
-            v: ConstMove::move_from({ (_v).clone() }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -393,7 +393,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
 impl ConvertibleFrom_int_ {
     pub fn new_1(_v: Ptr<()>) -> Self {
         Self {
-            v: (_v.read()),
+            v: (unimplemented!().read()),
             alloc_constructed: false,
         }
     }
@@ -419,7 +419,7 @@ impl Default for ConvertibleFrom_int_ {
 impl ConvertibleFrom_TracedCopyMove_ {
     pub fn new_1(_v: Ptr<TracedCopyMove>) -> Self {
         Self {
-            v: TracedCopyMove::new_1({ (_v).clone() }),
+            v: TracedCopyMove::new_1({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -484,7 +484,7 @@ impl Default for ExplicitConstructibleFrom_X_ {
 impl ExplicitConstructibleFrom_ConstMove_ {
     pub fn new_1(_v: Ptr<ConstMove>) -> Self {
         Self {
-            v: ConstMove::move_from({ (_v).clone() }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -511,7 +511,7 @@ impl Default for ExplicitConstructibleFrom_ConstMove_ {
 impl ExplicitConstructibleFrom_int_ {
     pub fn new_1(_v: Ptr<()>) -> Self {
         Self {
-            v: (_v.read()),
+            v: (unimplemented!().read()),
             alloc_constructed: false,
         }
     }

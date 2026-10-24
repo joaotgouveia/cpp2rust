@@ -29,7 +29,7 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     {
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut p: () = unimplemented!();
         unimplemented!();
     }
     return 0_();

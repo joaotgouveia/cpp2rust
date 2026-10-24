@@ -375,25 +375,21 @@ pub unsafe fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_8(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -477,7 +473,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -487,7 +483,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -555,7 +551,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn check_advance_12(
+pub unsafe fn check_advance_11(
     mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut n: (),
     mut result: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
@@ -564,10 +560,10 @@ pub unsafe fn check_advance_12(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_13(&mut it, n) });
+    (unsafe { advance_12(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_14(
+pub unsafe fn check_advance_13(
     mut it: forward_iterator_const_char_ptr_,
     mut n: (),
     mut result: forward_iterator_const_char_ptr_,
@@ -576,10 +572,10 @@ pub unsafe fn check_advance_14(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_15(&mut it, n) });
+    (unsafe { advance_14(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_16(
+pub unsafe fn check_advance_15(
     mut it: bidirectional_iterator_const_char_ptr_,
     mut n: (),
     mut result: bidirectional_iterator_const_char_ptr_,
@@ -588,10 +584,10 @@ pub unsafe fn check_advance_16(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_17(&mut it, n) });
+    (unsafe { advance_16(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_18(
+pub unsafe fn check_advance_17(
     mut it: random_access_iterator_const_char_ptr_,
     mut n: (),
     mut result: random_access_iterator_const_char_ptr_,
@@ -600,18 +596,18 @@ pub unsafe fn check_advance_18(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_19(&mut it, n) });
+    (unsafe { advance_18(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_20(mut it: *const (), mut n: (), mut result: *const ()) {
+pub unsafe fn check_advance_19(mut it: *const (), mut n: (), mut result: *const ()) {
     const _: () = assert!(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_21(&mut it, n) });
+    (unsafe { advance_20(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_22(
+pub unsafe fn check_advance_21(
     mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut n: (),
     mut result: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
@@ -620,10 +616,10 @@ pub unsafe fn check_advance_22(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_23(&mut it, n) });
+    (unsafe { advance_22(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_24(
+pub unsafe fn check_advance_23(
     mut it: forward_iterator_const_char_ptr_,
     mut n: (),
     mut result: forward_iterator_const_char_ptr_,
@@ -632,10 +628,10 @@ pub unsafe fn check_advance_24(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_25(&mut it, n) });
+    (unsafe { advance_24(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_26(
+pub unsafe fn check_advance_25(
     mut it: bidirectional_iterator_const_char_ptr_,
     mut n: (),
     mut result: bidirectional_iterator_const_char_ptr_,
@@ -644,10 +640,10 @@ pub unsafe fn check_advance_26(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_27(&mut it, n) });
+    (unsafe { advance_26(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_28(
+pub unsafe fn check_advance_27(
     mut it: random_access_iterator_const_char_ptr_,
     mut n: (),
     mut result: random_access_iterator_const_char_ptr_,
@@ -656,10 +652,10 @@ pub unsafe fn check_advance_28(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_29(&mut it, n) });
+    (unsafe { advance_28(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_30(
+pub unsafe fn check_advance_29(
     mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut n: (),
     mut result: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
@@ -668,10 +664,10 @@ pub unsafe fn check_advance_30(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_31(&mut it, n) });
+    (unsafe { advance_30(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_32(
+pub unsafe fn check_advance_31(
     mut it: forward_iterator_const_char_ptr_,
     mut n: (),
     mut result: forward_iterator_const_char_ptr_,
@@ -680,10 +676,10 @@ pub unsafe fn check_advance_32(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_33(&mut it, n) });
+    (unsafe { advance_32(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_34(
+pub unsafe fn check_advance_33(
     mut it: bidirectional_iterator_const_char_ptr_,
     mut n: (),
     mut result: bidirectional_iterator_const_char_ptr_,
@@ -692,10 +688,10 @@ pub unsafe fn check_advance_34(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_35(&mut it, n) });
+    (unsafe { advance_34(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn check_advance_36(
+pub unsafe fn check_advance_35(
     mut it: random_access_iterator_const_char_ptr_,
     mut n: (),
     mut result: random_access_iterator_const_char_ptr_,
@@ -704,10 +700,10 @@ pub unsafe fn check_advance_36(
         true,
         "std::is_same<decltype(std::advance(it, n)), void>::value"
     );;
-    (unsafe { advance_37(&mut it, n) });
+    (unsafe { advance_36(&mut it, n) });
     unimplemented!();
 }
-pub unsafe fn tests_38() -> () {
+pub unsafe fn tests_37() -> () {
     let mut s: *const () = c"1234567890".as_ptr();
     {
         (unsafe {
@@ -717,52 +713,52 @@ pub unsafe fn tests_38() -> () {
                 cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                     s.offset((10_()) as isize)
                 });
-            check_advance_12(_it, 10_(), _result)
+            check_advance_11(_it, 10_(), _result)
         });
         (unsafe {
             let _it: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s });
             let _result: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_14(_it, 10_(), _result)
+            check_advance_13(_it, 10_(), _result)
         });
         (unsafe {
             let _it: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
             let _result: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_16(_it, 5_(), _result)
+            check_advance_15(_it, 5_(), _result)
         });
         (unsafe {
             let _it: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
             let _result: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s });
-            check_advance_16(_it, -5_(), _result)
+            check_advance_15(_it, -5_(), _result)
         });
         (unsafe {
             let _it: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
             let _result: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_18(_it, 5_(), _result)
+            check_advance_17(_it, 5_(), _result)
         });
         (unsafe {
             let _it: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s.offset((5_()) as isize) });
             let _result: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s });
-            check_advance_18(_it, -5_(), _result)
+            check_advance_17(_it, -5_(), _result)
         });
         (unsafe {
             let _it: *const () = s.offset((5_()) as isize);
             let _result: *const () = s.offset((10_()) as isize);
-            check_advance_20(_it, 5_(), _result)
+            check_advance_19(_it, 5_(), _result)
         });
         (unsafe {
             let _it: *const () = s.offset((5_()) as isize);
             let _result: *const () = s;
-            check_advance_20(_it, -5_(), _result)
+            check_advance_19(_it, -5_(), _result)
         });
     }
     {
@@ -773,28 +769,28 @@ pub unsafe fn tests_38() -> () {
                 cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                     s.offset((10_()) as isize)
                 });
-            check_advance_22(_it, 10_(), _result)
+            check_advance_21(_it, 10_(), _result)
         });
         (unsafe {
             let _it: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s });
             let _result: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_24(_it, 10_(), _result)
+            check_advance_23(_it, 10_(), _result)
         });
         (unsafe {
             let _it: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s });
             let _result: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_26(_it, 10_(), _result)
+            check_advance_25(_it, 10_(), _result)
         });
         (unsafe {
             let _it: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s });
             let _result: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_28(_it, 10_(), _result)
+            check_advance_27(_it, 10_(), _result)
         });
     }
     {
@@ -805,28 +801,28 @@ pub unsafe fn tests_38() -> () {
                 cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                     s.offset((10_()) as isize)
                 });
-            check_advance_30(_it, 10_(), _result)
+            check_advance_29(_it, 10_(), _result)
         });
         (unsafe {
             let _it: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s });
             let _result: forward_iterator_const_char_ptr_ =
                 forward_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_32(_it, 10_(), _result)
+            check_advance_31(_it, 10_(), _result)
         });
         (unsafe {
             let _it: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s });
             let _result: bidirectional_iterator_const_char_ptr_ =
                 bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_34(_it, 10_(), _result)
+            check_advance_33(_it, 10_(), _result)
         });
         (unsafe {
             let _it: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s });
             let _result: random_access_iterator_const_char_ptr_ =
                 random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-            check_advance_36(_it, 10_(), _result)
+            check_advance_35(_it, 10_(), _result)
         });
     }
     return true;
@@ -847,7 +843,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_38() });
+    (unsafe { tests_37() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

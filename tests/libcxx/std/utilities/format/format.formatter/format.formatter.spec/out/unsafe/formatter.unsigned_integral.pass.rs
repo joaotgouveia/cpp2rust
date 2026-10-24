@@ -7,10 +7,10 @@ use std::io::{Read, Seek, Write};
 use std::os::fd::{AsFd, FromRawFd, IntoRawFd};
 use std::rc::Rc;
 pub unsafe fn test_format_context_create_0(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_1(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_1((*unimplemented!()), args.clone(), None) });
 }
 pub unsafe fn test_format_context_create_2(mut out_it: (), mut args: ()) -> () {
-    return (unsafe { __format_context_create_3(out_it, args.clone(), None) });
+    return (unsafe { __format_context_create_3((*unimplemented!()), args.clone(), None) });
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]

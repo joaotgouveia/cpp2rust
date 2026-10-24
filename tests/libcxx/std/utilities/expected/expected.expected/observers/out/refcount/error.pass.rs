@@ -26,13 +26,13 @@ pub fn test_0() -> () {
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<()> = ({ (*e.borrow()).error_44() });
+        let x: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).error_44() });
         const _: () = assert!(true, "std::same_as<decltype(x), int&&>");;
         unimplemented!();
     }
     {
         let e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let x: Ptr<()> = ({ (*e.borrow()).error_43() });
+        let x: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).error_43() });
         const _: () = assert!(true, "std::same_as<decltype(x), const int&&>");;
         unimplemented!();
     }

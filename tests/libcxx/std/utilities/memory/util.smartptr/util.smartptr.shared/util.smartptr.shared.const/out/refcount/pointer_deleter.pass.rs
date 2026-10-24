@@ -300,11 +300,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         );;
     }
     {
-        let d: Value<move_deleter_int_> = Rc::new(RefCell::new(move_deleter_int_::new_1({ 0_() })));
+        let mut d: move_deleter_int_ = move_deleter_int_::new_1({ 0_() });
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p1: Value<()> = Rc::new(RefCell::new(std_shared_ptr_int_::new_1(
             { Default::default() },
-            { move_deleter_int_::move_from({ d.as_pointer() }) },
+            { move_deleter_int_::move_from({ unimplemented!() }) },
             None,
         )));
     }

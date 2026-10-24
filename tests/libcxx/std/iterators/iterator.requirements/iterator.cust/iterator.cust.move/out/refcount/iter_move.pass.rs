@@ -19,10 +19,9 @@ pub struct check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_
     base_: Ptr<move_tracker>,
 }
 impl check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_ {
-    pub fn new_1(i: Ptr<move_tracker>) -> Self {
-        let i: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(i));
+    pub fn new_1(mut i: Ptr<move_tracker>) -> Self {
         Self {
-            base_: (*i.borrow()).clone(),
+            base_: (unimplemented!().read()),
         }
     }
 }
@@ -127,10 +126,9 @@ pub struct iterator_wrapper_move_tracker_ptr_ {
     base_: Ptr<move_tracker>,
 }
 impl iterator_wrapper_move_tracker_ptr_ {
-    pub fn new_1(i: Ptr<move_tracker>) -> Self {
-        let i: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(i));
+    pub fn new_1(mut i: Ptr<move_tracker>) -> Self {
         Self {
-            base_: (*i.borrow()).clone(),
+            base_: (unimplemented!().read()),
         }
     }
 }
@@ -161,37 +159,33 @@ impl Default for iterator_wrapper_move_tracker_ptr_ {
     }
 }
 pub fn unqualified_lookup_move_5(
-    first_: Ptr<move_tracker>,
-    last_: Ptr<move_tracker>,
-    result_first_: Ptr<move_tracker>,
-    result_last_: Ptr<move_tracker>,
+    mut first_: Ptr<move_tracker>,
+    mut last_: Ptr<move_tracker>,
+    mut result_first_: Ptr<move_tracker>,
+    mut result_last_: Ptr<move_tracker>,
 ) {
-    let first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(first_));
-    let last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(last_));
-    let result_first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_first_));
-    let result_last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_last_));
     let first: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (*first_.borrow()).clone()
+                (unimplemented!().read())
             }),
         ));
     let last: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (*last_.borrow()).clone()
+                (unimplemented!().read())
             }),
         ));
     let result_first: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (*result_first_.borrow()).clone()
+                (unimplemented!().read())
             }),
         ));
     let result_last: Value<check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(
             check_unqualified_lookup_unqualified_lookup_wrapper_move_tracker_ptr_::new_1({
-                (*result_last_.borrow()).clone()
+                (unimplemented!().read())
             }),
         ));
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
@@ -225,30 +219,26 @@ pub fn unqualified_lookup_move_5(
     }
 }
 pub fn lvalue_move_6(
-    first_: Ptr<move_tracker>,
-    last_: Ptr<move_tracker>,
-    result_first_: Ptr<move_tracker>,
-    result_last_: Ptr<move_tracker>,
+    mut first_: Ptr<move_tracker>,
+    mut last_: Ptr<move_tracker>,
+    mut result_first_: Ptr<move_tracker>,
+    mut result_last_: Ptr<move_tracker>,
 ) {
-    let first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(first_));
-    let last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(last_));
-    let result_first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_first_));
-    let result_last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_last_));
     let first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*first_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*last_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let result_first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*result_first_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let result_last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*result_last_.borrow()).clone()
+            (unimplemented!().read())
         })));
     const _: () = assert!(true, "!noexcept(std::ranges::iter_move(first))");;
     'loop_: while (!({
@@ -276,30 +266,26 @@ pub fn lvalue_move_6(
     }
 }
 pub fn rvalue_move_7(
-    first_: Ptr<move_tracker>,
-    last_: Ptr<move_tracker>,
-    result_first_: Ptr<move_tracker>,
-    result_last_: Ptr<move_tracker>,
+    mut first_: Ptr<move_tracker>,
+    mut last_: Ptr<move_tracker>,
+    mut result_first_: Ptr<move_tracker>,
+    mut result_last_: Ptr<move_tracker>,
 ) {
-    let first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(first_));
-    let last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(last_));
-    let result_first_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_first_));
-    let result_last_: Value<Ptr<move_tracker>> = Rc::new(RefCell::new(result_last_));
     let first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*first_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*last_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let result_first: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*result_first_.borrow()).clone()
+            (unimplemented!().read())
         })));
     let result_last: Value<iterator_wrapper_move_tracker_ptr_> =
         Rc::new(RefCell::new(iterator_wrapper_move_tracker_ptr_::new_1({
-            (*result_last_.borrow()).clone()
+            (unimplemented!().read())
         })));
     const _: () = assert!(true, "noexcept(std::ranges::iter_move(std::move(first)))");;
     'loop_: while (!({
@@ -310,8 +296,7 @@ pub fn rvalue_move_7(
             result_last.as_pointer(),
         )
     })) {
-        let i: Value<iterator_wrapper_move_tracker_ptr_> =
-            Rc::new(RefCell::new((*first.borrow()).clone()));
+        let mut i: iterator_wrapper_move_tracker_ptr_ = (*first.borrow()).clone();
         ({
             move_trackerImpl::move_assign(
                 &({
@@ -319,7 +304,7 @@ pub fn rvalue_move_7(
                         &result_first.as_pointer(),
                     )
                 }),
-                ({ (*iter_move_1.with(Value::clone).borrow_mut())(i.as_pointer()) }),
+                ({ (*iter_move_1.with(Value::clone).borrow_mut())(unimplemented!()) }),
             )
         });
         {
@@ -606,7 +591,7 @@ impl iterator_wrapper_move_tracker_ptr_Impl for Ptr<iterator_wrapper_move_tracke
         return (*self).with(|__s| __s.base_.clone());
     }
     fn operator_deref_4(&self) -> Ptr<move_tracker> {
-        return (*self).with(|__s| __s.base_.clone());
+        return unimplemented!();
     }
     fn operator_inc_5(&self) -> Ptr<iterator_wrapper_move_tracker_ptr_> {
         field!((*self), base_).with_mut(|__v| __v.prefix_inc());

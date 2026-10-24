@@ -459,7 +459,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
-            let mut keys: () = (unsafe { s.extract() });
+            let mut keys: () = (unsafe { (*unimplemented!()).extract() });
             unimplemented!();
         }
         {
@@ -469,7 +469,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
-            let mut keys: () = (unsafe { s.extract() });
+            let mut keys: () = (unsafe { (*unimplemented!()).extract() });
             unimplemented!();
         }
     }
@@ -484,7 +484,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
-            let mut keys: () = (unsafe { s.extract() });
+            let mut keys: () = (unsafe { (*unimplemented!()).extract() });
             unimplemented!();
         }
         {
@@ -494,7 +494,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut s: () = unimplemented!();
             const _: () = assert!(true, "");;
             unimplemented!();
-            let mut keys: () = (unsafe { s.extract() });
+            let mut keys: () = (unsafe { (*unimplemented!()).extract() });
             unimplemented!();
         }
     }

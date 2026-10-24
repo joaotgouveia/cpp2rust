@@ -35,7 +35,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    let r: Value<Range> = Rc::new(RefCell::new(<Range>::default()));
+    let mut r: Range = <Range>::default();
     let view: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     const _: () = assert!(true, "");;
     return 0_();

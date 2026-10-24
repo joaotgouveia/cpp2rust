@@ -31,7 +31,7 @@ pub unsafe fn test_4() {
         let mut iss: () = (unsafe { make_string_stream_2(&std::mem::transmute(*b"12   3\0")) });
         let mut isv: () = unimplemented!();
         let mut it: std_ranges_basic_istream_view_int__char____iterator = unimplemented!();
-        let mut it2: std_ranges_basic_istream_view_int__char____iterator = it;
+        let mut it2: std_ranges_basic_istream_view_int__char____iterator = (*unimplemented!());
         unimplemented!();
     }
     {
@@ -50,7 +50,7 @@ pub unsafe fn test_5() {
         let mut iss: () = (unsafe { make_string_stream_3(&std::mem::transmute(*b"12   3\0")) });
         let mut isv: () = unimplemented!();
         let mut it: std_ranges_basic_istream_view_int__wchar_t____iterator = unimplemented!();
-        let mut it2: std_ranges_basic_istream_view_int__wchar_t____iterator = it;
+        let mut it2: std_ranges_basic_istream_view_int__wchar_t____iterator = (*unimplemented!());
         unimplemented!();
     }
     {

@@ -3136,7 +3136,7 @@ unsafe fn main_0(mut argc: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     {
-        let mut res: () = (unsafe { gcd_97((1234_i64 as ()), ((-2147483647_()) - (1_()))) });
+        let mut res: () = unimplemented!();
         const _: () = assert!(true, "std::is_same_v<decltype(res), std::int64_t>");;
         unimplemented!();
     }

@@ -537,29 +537,23 @@ pub fn operator_add_21(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_20(_i, n)
     });
 }
-pub fn iter_swap_22(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_23(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_22(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_24(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_23(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -605,7 +599,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_26(
+            operator_cmp_25(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -630,7 +624,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_25(
+            operator_eq_24(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -714,7 +708,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn testOne_27() {
+pub fn testOne_26() {
     let make_subrange: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
@@ -807,6 +801,124 @@ pub fn testOne_27() {
             }),
         ));
         let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___forward_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it1: Ptr<()> = unimplemented!();
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
+            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+}
+pub fn testOne_27() {
+    let make_subrange: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
+        Generic,
+        {},
+        |buffer: Ptr<()>| -> () {
+            return unimplemented!();
+        },
+        |buffer: Ptr<()>| -> () {
+            return unimplemented!();
+        },
+        |buffer: Ptr<()>| -> () {
+            return unimplemented!();
+        }
+    )));
+    {
+        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            0_(),
+            1_(),
+            2_(),
+            -1_(),
+            4_(),
+            5_(),
+            -1_(),
+            7_(),
+        ])));
+        let input: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*make_subrange.borrow())
+                    .spec::<fn(Ptr<()>) -> ()>(0)
+                    .call(buffer.as_pointer())
+            }),
+        ));
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it1: Ptr<()> = unimplemented!();
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
+            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
+        let input: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*make_subrange.borrow())
+                    .spec::<fn(Ptr<()>) -> ()>(1)
+                    .call(buffer.as_pointer())
+            }),
+        ));
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let it1: Ptr<()> = unimplemented!();
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
+            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
+        let input: Value<()> = Rc::new(RefCell::new(
+            ({
+                (*make_subrange.borrow())
+                    .spec::<fn(Ptr<()>) -> ()>(2)
+                    .call(buffer.as_pointer())
+            }),
+        ));
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -864,7 +976,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -898,7 +1010,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -924,7 +1036,7 @@ pub fn testOne_28() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr___std_ranges_subrange_kind_unsized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -982,7 +1094,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1016,7 +1128,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1042,7 +1154,7 @@ pub fn testOne_29() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___random_access_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
+        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let it1: Ptr<()> = unimplemented!();
@@ -1100,124 +1212,6 @@ pub fn testOne_30() {
                     .call(buffer.as_pointer())
             }),
         ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it1: Ptr<()> = unimplemented!();
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
-            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-        let input: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*make_subrange.borrow())
-                    .spec::<fn(Ptr<()>) -> ()>(1)
-                    .call(buffer.as_pointer())
-            }),
-        ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it1: Ptr<()> = unimplemented!();
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
-            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), -1_()])));
-        let input: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*make_subrange.borrow())
-                    .spec::<fn(Ptr<()>) -> ()>(2)
-                    .call(buffer.as_pointer())
-            }),
-        ));
-        let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr___std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let it1: Ptr<()> = unimplemented!();
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter&>");;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let original: Value<()> = Rc::new(RefCell::new((*it.borrow()).clone()));
-            let it1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            const _: () = assert!(true, "std::is_same_v<decltype(it1), SplitIter>");;
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-}
-pub fn testOne_31() {
-    let make_subrange: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
-        Generic,
-        {},
-        |buffer: Ptr<()>| -> () {
-            return unimplemented!();
-        },
-        |buffer: Ptr<()>| -> () {
-            return unimplemented!();
-        },
-        |buffer: Ptr<()>| -> () {
-            return unimplemented!();
-        }
-    )));
-    {
-        let buffer: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            0_(),
-            1_(),
-            2_(),
-            -1_(),
-            4_(),
-            5_(),
-            -1_(),
-            7_(),
-        ])));
-        let input: Value<()> = Rc::new(RefCell::new(
-            ({
-                (*make_subrange.borrow())
-                    .spec::<fn(Ptr<()>) -> ()>(0)
-                    .call(buffer.as_pointer())
-            }),
-        ));
         let sv : Value<() > = Rc::new(RefCell::new(std_ranges_split_view_std_ranges_subrange_int_ptr__int_ptr__std_ranges_subrange_kind_sized___std_ranges_single_view_int__ :: new_1 ( { input .as_pointer()  } , { ( - 1_()  as () )   } , )  )) ;
         {
             let it: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1304,12 +1298,12 @@ pub fn testOne_31() {
         }
     }
 }
-pub fn test_32() -> () {
+pub fn test_31() -> () {
+    ({ testOne_26() });
     ({ testOne_27() });
     ({ testOne_28() });
     ({ testOne_29() });
     ({ testOne_30() });
-    ({ testOne_31() });
     return true;
 }
 pub fn main() {
@@ -1332,7 +1326,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_32() });
+    ({ test_31() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -259,11 +259,11 @@ impl __gnu_test_semaphore {}
 pub struct E {}
 pub fn test01_10() {
     let mut e: E = <E>::default();
-    let p: Value<std___exception_ptr_exception_ptr> = Rc::new(RefCell::new(unimplemented!()));
+    let p: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !({ (*p.borrow())() }) {
+        if !(unimplemented!()) {
             ({
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

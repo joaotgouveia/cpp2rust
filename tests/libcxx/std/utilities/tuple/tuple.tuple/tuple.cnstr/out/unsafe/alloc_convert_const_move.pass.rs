@@ -380,7 +380,7 @@ impl Default for ConstMove {
 impl ConvertibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ _v }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         };
         this
@@ -416,7 +416,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
 impl ConvertibleFrom_TracedCopyMove_ {
     pub unsafe fn new_1(_v: *const TracedCopyMove) -> Self {
         let mut this = Self {
-            v: TracedCopyMove::new_1({ _v }),
+            v: TracedCopyMove::new_1({ unimplemented!() }),
             alloc_constructed: false,
         };
         this
@@ -452,7 +452,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ConvertibleFrom_CvtFromTupleRef_ {
     pub unsafe fn new_1(_v: *const CvtFromTupleRef) -> Self {
         let mut this = Self {
-            v: (*_v),
+            v: (*unimplemented!()),
             alloc_constructed: false,
         };
         this
@@ -488,7 +488,7 @@ impl Default for ConvertibleFrom_CvtFromTupleRef_ {
 impl ConvertibleFrom_ExplicitCtrFromTupleRef_ {
     pub unsafe fn new_1(_v: *const ExplicitCtrFromTupleRef) -> Self {
         let mut this = Self {
-            v: (*_v),
+            v: (*unimplemented!()),
             alloc_constructed: false,
         };
         this
@@ -524,7 +524,7 @@ impl Default for ConvertibleFrom_ExplicitCtrFromTupleRef_ {
 impl ExplicitConstructibleFrom_ConstMove_ {
     pub unsafe fn new_1(_v: *const ConstMove) -> Self {
         let mut this = Self {
-            v: ConstMove::move_from({ _v }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         };
         this
@@ -865,7 +865,9 @@ pub unsafe fn test_6() -> () {
         let t1: () = unimplemented!();
         let mut t2: () = {
             let mut __tmp_0: test_allocator_int_ = <test_allocator_int_>::default();
-            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { &mut __tmp_0 }, { &t1 })
+            std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { &mut __tmp_0 }, {
+                &(*unimplemented!())
+            })
         };
         unimplemented!();
         unimplemented!();

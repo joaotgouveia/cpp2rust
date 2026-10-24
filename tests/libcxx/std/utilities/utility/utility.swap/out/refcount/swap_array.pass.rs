@@ -67,17 +67,13 @@ pub fn can_swap_3() -> () {
     return value_4.with(|rc| *rc.borrow());
 }
 pub fn test_unique_ptr_5() {
-    let i: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
+    let mut i: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
     let mut k: () = 0_();
     'loop_: while (k < 3_()) {
         unimplemented!();
         k.prefix_inc();
     }
-    let j: Value<Box<[()]>> = Rc::new(RefCell::new(
-        (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-    ));
+    let mut j: [(); 3] = std::array::from_fn::<_, 3, _>(|_| unimplemented!());
     let mut k: () = 0_();
     'loop_: while (k < 3_()) {
         unimplemented!();

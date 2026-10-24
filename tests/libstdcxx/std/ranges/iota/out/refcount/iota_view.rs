@@ -529,10 +529,7 @@ pub fn test04_15() {
     let x: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
     let v: Value<()> = Rc::new(RefCell::new(
         ({
-            let ___e: Value<()> = Rc::new(RefCell::new(std_counted_iterator_int_ptr_::new_1(
-                { (x.as_pointer() as Ptr<()>) },
-                { 3_() },
-            )));
+            let ___e: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             (*iota_13.with(Value::clone).borrow_mut())(
                 ___e.as_pointer(),
                 default_sentinel_16.with(|v| v.as_pointer()),

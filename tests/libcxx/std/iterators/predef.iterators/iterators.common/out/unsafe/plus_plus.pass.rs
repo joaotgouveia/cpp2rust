@@ -70,7 +70,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -401,25 +401,21 @@ pub unsafe fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_12(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -503,7 +499,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -513,7 +509,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -581,7 +577,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn base_16(i: *const simple_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_15(i: *const simple_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -611,7 +607,7 @@ impl simple_iterator_int_ptr_ {
         return tmp;
     }
 }
-pub unsafe fn base_17(i: *const value_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_16(i: *const value_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -625,7 +621,7 @@ impl value_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return ((*self.it_) as ());
+        return ((*unimplemented!()) as ());
     }
     pub unsafe fn operator_inc_4(&mut self) -> *mut value_iterator_int_ptr_ {
         self.it_.prefix_inc();
@@ -639,7 +635,7 @@ impl value_iterator_int_ptr_ {
         return tmp;
     }
 }
-pub unsafe fn base_18(i: *const void_plus_plus_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_17(i: *const void_plus_plus_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -653,14 +649,14 @@ impl void_plus_plus_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return ((*self.it_) as ());
+        return ((*unimplemented!()) as ());
     }
     pub unsafe fn operator_inc_4(&mut self) -> *mut void_plus_plus_iterator_int_ptr_ {
         self.it_.prefix_inc();
         return &mut (*(self as *mut void_plus_plus_iterator_int_ptr_));
     }
 }
-pub unsafe fn base_19(i: *const value_type_not_move_constructible_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_18(i: *const value_type_not_move_constructible_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -680,7 +676,7 @@ impl value_type_not_move_constructible_iterator_int_ptr_ {
         this
     }
     pub unsafe fn operator_deref(&self) -> () {
-        return ((*self.it_) as ());
+        return ((*unimplemented!()) as ());
     }
     pub unsafe fn operator_inc_4(
         &mut self,
@@ -696,97 +692,97 @@ impl value_type_not_move_constructible_iterator_int_ptr_ {
         });
     }
 }
-pub unsafe fn operator_eq_20(
+pub unsafe fn operator_eq_19(
     lhs: *const sentinel_type_int_ptr_,
     rhs: *const simple_iterator_int_ptr_,
+) -> () {
+    return (((*lhs).base_) == (unsafe { base_15(rhs) }));
+}
+pub unsafe fn operator_eq_20(
+    lhs: *const sentinel_type_int_ptr_,
+    rhs: *const value_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_16(rhs) }));
 }
 pub unsafe fn operator_eq_21(
     lhs: *const sentinel_type_int_ptr_,
-    rhs: *const value_iterator_int_ptr_,
+    rhs: *const void_plus_plus_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_17(rhs) }));
 }
 pub unsafe fn operator_eq_22(
     lhs: *const sentinel_type_int_ptr_,
-    rhs: *const void_plus_plus_iterator_int_ptr_,
+    rhs: *const value_type_not_move_constructible_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_18(rhs) }));
 }
 pub unsafe fn operator_eq_23(
     lhs: *const sentinel_type_int_ptr_,
-    rhs: *const value_type_not_move_constructible_iterator_int_ptr_,
-) -> () {
-    return (((*lhs).base_) == (unsafe { base_19(rhs) }));
-}
-pub unsafe fn operator_eq_24(
-    lhs: *const sentinel_type_int_ptr_,
     rhs: *const cpp17_input_iterator_int_ptr__int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_3(rhs) }));
 }
-pub unsafe fn operator_eq_25(
+pub unsafe fn operator_eq_24(
     lhs: *const sentinel_type_int_ptr_,
     rhs: *const forward_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_5(rhs) }));
 }
-pub unsafe fn operator_eq_26(
+pub unsafe fn operator_eq_25(
     lhs: *const sentinel_type_int_ptr_,
     rhs: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_7(rhs) }));
 }
-pub unsafe fn operator_eq_27(
+pub unsafe fn operator_eq_26(
     lhs: *const sentinel_type_int_ptr_,
     rhs: *const cpp17_output_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_) == (unsafe { base_1(rhs) }));
 }
-pub unsafe fn operator_eq_28(
+pub unsafe fn operator_eq_27(
     lhs: *const simple_iterator_int_ptr_,
+    rhs: *const sentinel_type_int_ptr_,
+) -> () {
+    return ((unsafe { base_15(lhs) }) == ((*rhs).base_));
+}
+pub unsafe fn operator_eq_28(
+    lhs: *const value_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_16(lhs) }) == ((*rhs).base_));
 }
 pub unsafe fn operator_eq_29(
-    lhs: *const value_iterator_int_ptr_,
+    lhs: *const void_plus_plus_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_17(lhs) }) == ((*rhs).base_));
 }
 pub unsafe fn operator_eq_30(
-    lhs: *const void_plus_plus_iterator_int_ptr_,
+    lhs: *const value_type_not_move_constructible_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_18(lhs) }) == ((*rhs).base_));
 }
 pub unsafe fn operator_eq_31(
-    lhs: *const value_type_not_move_constructible_iterator_int_ptr_,
-    rhs: *const sentinel_type_int_ptr_,
-) -> () {
-    return ((unsafe { base_19(lhs) }) == ((*rhs).base_));
-}
-pub unsafe fn operator_eq_32(
     lhs: *const cpp17_input_iterator_int_ptr__int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_3(lhs) }) == ((*rhs).base_));
 }
-pub unsafe fn operator_eq_33(
+pub unsafe fn operator_eq_32(
     lhs: *const forward_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_5(lhs) }) == ((*rhs).base_));
 }
-pub unsafe fn operator_eq_34(
+pub unsafe fn operator_eq_33(
     lhs: *const random_access_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
     return ((unsafe { base_7(lhs) }) == ((*rhs).base_));
 }
-pub unsafe fn operator_eq_35(
+pub unsafe fn operator_eq_34(
     lhs: *const cpp17_output_iterator_int_ptr_,
     rhs: *const sentinel_type_int_ptr_,
 ) -> () {
@@ -797,7 +793,7 @@ pub unsafe fn operator_eq_35(
 pub struct sentinel_type_int_ptr_ {
     pub base_: *mut (),
 }
-pub unsafe fn test_36() {
+pub unsafe fn test_35() {
     {
         let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
         let mut iter1: simple_iterator_int_ptr_ =
@@ -952,7 +948,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_36() });
+    (unsafe { test_35() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

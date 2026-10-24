@@ -519,25 +519,21 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_15(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -621,7 +617,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -631,7 +627,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -699,7 +695,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_19() -> () {
+pub unsafe fn test_18() -> () {
     {
         let mut array: [(); 10] = [
             unimplemented!(),
@@ -735,6 +731,47 @@ pub unsafe fn test_19() -> () {
         let mut rng: () = unimplemented!();
         let mut beg: *mut () = unimplemented!();
         let mut end: sentinel_wrapper_int_ptr_ = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
+}
+pub unsafe fn test_19() -> () {
+    {
+        let mut array: [(); 10] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
+        let mut rng: () = unimplemented!();
+        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut array: [(); 10] = [
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+            unimplemented!(),
+        ];
+        let mut rng: () = unimplemented!();
+        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -755,8 +792,8 @@ pub unsafe fn test_20() -> () {
             unimplemented!(),
         ];
         let mut rng: () = unimplemented!();
-        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
+        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -774,8 +811,8 @@ pub unsafe fn test_20() -> () {
             unimplemented!(),
         ];
         let mut rng: () = unimplemented!();
-        let mut beg: contiguous_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_contiguous_iterator_int_ptr__ = unimplemented!();
+        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -796,8 +833,8 @@ pub unsafe fn test_21() -> () {
             unimplemented!(),
         ];
         let mut rng: () = unimplemented!();
-        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
+        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
@@ -815,55 +852,14 @@ pub unsafe fn test_21() -> () {
             unimplemented!(),
         ];
         let mut rng: () = unimplemented!();
-        let mut beg: random_access_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_random_access_iterator_int_ptr__ = unimplemented!();
+        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
+        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
         unimplemented!();
         unimplemented!();
     }
     return true;
 }
 pub unsafe fn test_22() -> () {
-    {
-        let mut array: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
-        let mut rng: () = unimplemented!();
-        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut array: [(); 10] = [
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-            unimplemented!(),
-        ];
-        let mut rng: () = unimplemented!();
-        let mut beg: bidirectional_iterator_int_ptr_ = unimplemented!();
-        let mut end: sentinel_wrapper_bidirectional_iterator_int_ptr__ = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub unsafe fn test_23() -> () {
     {
         let mut array: [(); 10] = [
             unimplemented!(),
@@ -921,7 +917,10 @@ pub fn main() {
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe {
-        for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_19 ( ) } )  ;
+        for_each_0 ( <types_type_list_int_ptr__contiguous_iterator_int_ptr___random_access_iterator_int_ptr___bidirectional_iterator_int_ptr___forward_iterator_int_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { ( unsafe { test_18 ( ) } )  ;
+ const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
+ ;
+ } , | | { ( unsafe { test_19 ( ) } )  ;
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } , | | { ( unsafe { test_20 ( ) } )  ;
@@ -931,9 +930,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } , | | { ( unsafe { test_22 ( ) } )  ;
- const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
- ;
- } , | | { ( unsafe { test_23 ( ) } )  ;
  const _: () = assert!(true, "test<Iterator, sentinel_wrapper<Iterator>>()"); ;
  ;
  } ) , )

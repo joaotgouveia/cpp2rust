@@ -397,25 +397,21 @@ pub unsafe fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_11(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -499,7 +495,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -509,7 +505,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -577,10 +573,10 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn eq_15(mut a: (), mut b: ()) -> () {
+pub unsafe fn eq_14(mut a: (), mut b: ()) -> () {
     return ((a) == (b));
 }
-pub unsafe fn test_constexpr_16() -> () {
+pub unsafe fn test_constexpr_15() -> () {
     let mut ia: [(); 4] = [1_(), 3_(), 6_(), 7_()];
     let mut ib: [(); 2] = [1_(), 3_()];
     let mut ic: [(); 4] = [1_(), 3_(), 5_(), 7_()];
@@ -589,10 +585,10 @@ pub unsafe fn test_constexpr_16() -> () {
         && (unimplemented!()))
         && (!(unimplemented!()));
 }
-pub static mut comparison_count_17: std::cell::LazyCell<()> =
+pub static mut comparison_count_16: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub unsafe fn counting_equals_18(a: *const (), b: *const ()) -> () {
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_17)).prefix_inc();
+pub unsafe fn counting_equals_17(a: *const (), b: *const ()) -> () {
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_16)).prefix_inc();
     return ((*a) == (*b));
 }
 pub fn main() {
@@ -618,10 +614,10 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_17)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_16)) = 0_();
     unimplemented!();
     unimplemented!();
-    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_17)) = 0_();
+    (*std::cell::LazyCell::force_mut(&mut *&raw mut comparison_count_16)) = 0_();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -631,5 +627,5 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const comparison_count_17);
+    std::cell::LazyCell::force(&*&raw const comparison_count_16);
 }

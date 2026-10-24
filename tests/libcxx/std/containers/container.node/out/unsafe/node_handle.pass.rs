@@ -153,7 +153,19 @@ pub unsafe fn test_node_handle_operations_15() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_16(&mut nt1, &mut nt2) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub unsafe fn test_node_handle_operations_16() -> () {
+    let mut c: () = unimplemented!();
+    let mut nt1: () = unimplemented!();
+    let mut nt2: () = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -165,127 +177,115 @@ pub unsafe fn test_node_handle_operations_17() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_18(&mut nt1, &mut nt2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_node_handle_operations_19() -> () {
+pub unsafe fn test_node_handle_operations_18() -> () {
     let mut c: () = unimplemented!();
     let mut nt1: () = unimplemented!();
     let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_20(&mut nt1, &mut nt2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_node_handle_operations_21() -> () {
+pub unsafe fn test_node_handle_operations_multi_19() -> () {
     let mut c: () = unimplemented!();
     let mut nt1: () = unimplemented!();
     let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_22(&mut nt1, &mut nt2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_node_handle_operations_multi_23() -> () {
+pub unsafe fn test_node_handle_operations_multi_20() -> () {
     let mut c: () = unimplemented!();
     let mut nt1: () = unimplemented!();
     let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_16(&mut nt1, &mut nt2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_node_handle_operations_multi_24() -> () {
+pub unsafe fn test_node_handle_operations_multi_21() -> () {
     let mut c: () = unimplemented!();
     let mut nt1: () = unimplemented!();
     let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_18(&mut nt1, &mut nt2) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub unsafe fn test_node_handle_operations_multi_25() -> () {
+pub unsafe fn test_node_handle_operations_multi_22() -> () {
     let mut c: () = unimplemented!();
     let mut nt1: () = unimplemented!();
     let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_20(&mut nt1, &mut nt2) });
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub unsafe fn test_node_handle_operations_multi_26() -> () {
-    let mut c: () = unimplemented!();
-    let mut nt1: () = unimplemented!();
-    let mut nt2: () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { swap_22(&mut nt1, &mut nt2) });
-    unimplemented!();
-    unimplemented!();
     return true;
 }
-pub unsafe fn test_typedef_27() -> () {
+pub unsafe fn test_typedef_23() -> () {
     return true;
 }
-pub unsafe fn test_typedef_28() -> () {
+pub unsafe fn test_typedef_24() -> () {
     return true;
 }
-pub unsafe fn test_typedef_29() -> () {
+pub unsafe fn test_typedef_25() -> () {
     return true;
 }
-pub unsafe fn test_typedef_30() -> () {
+pub unsafe fn test_typedef_26() -> () {
     return true;
 }
-pub unsafe fn test_insert_return_type_31() -> () {
-    (unsafe { test_typedef_27() });
+pub unsafe fn test_insert_return_type_27() -> () {
+    (unsafe { test_typedef_23() });
     return true;
 }
-pub unsafe fn test_insert_return_type_32() -> () {
-    (unsafe { test_typedef_28() });
+pub unsafe fn test_insert_return_type_28() -> () {
+    (unsafe { test_typedef_24() });
     return true;
 }
-pub unsafe fn test_insert_return_type_33() -> () {
-    (unsafe { test_typedef_29() });
+pub unsafe fn test_insert_return_type_29() -> () {
+    (unsafe { test_typedef_25() });
     return true;
 }
-pub unsafe fn test_insert_return_type_34() -> () {
-    (unsafe { test_typedef_30() });
+pub unsafe fn test_insert_return_type_30() -> () {
+    (unsafe { test_typedef_26() });
     return true;
 }
-pub unsafe fn test_35() -> () {
+pub unsafe fn test_31() -> () {
     (unsafe { test_node_handle_operations_15() });
-    (unsafe { test_node_handle_operations_multi_23() });
-    (unsafe { test_node_handle_operations_17() });
+    (unsafe { test_node_handle_operations_multi_19() });
+    (unsafe { test_node_handle_operations_16() });
     {
-        (unsafe { test_node_handle_operations_multi_24() });
-        (unsafe { test_node_handle_operations_19() });
-        (unsafe { test_node_handle_operations_multi_25() });
-        (unsafe { test_node_handle_operations_21() });
-        (unsafe { test_node_handle_operations_multi_26() });
+        (unsafe { test_node_handle_operations_multi_20() });
+        (unsafe { test_node_handle_operations_17() });
+        (unsafe { test_node_handle_operations_multi_21() });
+        (unsafe { test_node_handle_operations_18() });
+        (unsafe { test_node_handle_operations_multi_22() });
     }
-    (unsafe { test_insert_return_type_31() });
-    (unsafe { test_insert_return_type_32() });
+    (unsafe { test_insert_return_type_27() });
+    (unsafe { test_insert_return_type_28() });
     {
-        (unsafe { test_insert_return_type_33() });
-        (unsafe { test_insert_return_type_34() });
+        (unsafe { test_insert_return_type_29() });
+        (unsafe { test_insert_return_type_30() });
     }
     return true;
 }
@@ -305,7 +305,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_35() });
+    (unsafe { test_31() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]

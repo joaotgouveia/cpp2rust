@@ -475,29 +475,23 @@ pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_13(_i, n)
     });
 }
-pub fn iter_swap_15(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_16(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_17(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -543,7 +537,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_19(
+            operator_cmp_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -568,7 +562,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_18(
+            operator_eq_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -652,25 +646,25 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_eq_20(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_eq_19(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_21(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ne_20(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_22(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_lt_21(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_23(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_le_22(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_24(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_gt_23(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_25(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
+pub fn operator_ge_24(x: Ptr<MoveOnly>, y: Ptr<MoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_26(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
+pub fn operator_cmp_25(_a0: Ptr<MoveOnly>, _a1: Ptr<MoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -704,7 +698,7 @@ impl MoveOnly {
 impl std::cmp::Ord for MoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_26(
+            operator_cmp_25(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -725,7 +719,7 @@ impl std::cmp::PartialOrd for MoveOnly {
 impl std::cmp::PartialEq for MoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_20(
+            operator_eq_19(
                 Rc::new(RefCell::new(MoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -744,25 +738,25 @@ impl Default for MoveOnly {
         { MoveOnly::new(None) }
     }
 }
-pub fn operator_eq_27(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_eq_26(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_28(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ne_27(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } != { y.with(|__s| __s.data_) });
 }
-pub fn operator_lt_29(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_lt_28(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } < { y.with(|__s| __s.data_) });
 }
-pub fn operator_le_30(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_le_29(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } <= { y.with(|__s| __s.data_) });
 }
-pub fn operator_gt_31(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_gt_30(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } > { y.with(|__s| __s.data_) });
 }
-pub fn operator_ge_32(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_ge_31(x: Ptr<TrivialMoveOnly>, y: Ptr<TrivialMoveOnly>) -> () {
     return ({ x.with(|__s| __s.data_) } >= { y.with(|__s| __s.data_) });
 }
-pub fn operator_cmp_33(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
+pub fn operator_cmp_32(_a0: Ptr<TrivialMoveOnly>, _a1: Ptr<TrivialMoveOnly>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.data_)),
@@ -794,7 +788,7 @@ impl TrivialMoveOnly {
 impl std::cmp::Ord for TrivialMoveOnly {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_33(
+            operator_cmp_32(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -815,7 +809,7 @@ impl std::cmp::PartialOrd for TrivialMoveOnly {
 impl std::cmp::PartialEq for TrivialMoveOnly {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_27(
+            operator_eq_26(
                 Rc::new(RefCell::new(TrivialMoveOnly {
                     data_: self.data_.clone(),
                 }))
@@ -833,6 +827,108 @@ impl Default for TrivialMoveOnly {
     fn default() -> Self {
         { TrivialMoveOnly::new(None) }
     }
+}
+pub fn test_33() -> () {
+    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        3_(),
+        1_(),
+        4_(),
+        1_(),
+        5_(),
+        9_(),
+        2_(),
+        6_(),
+        5_(),
+        3_(),
+        5_(),
+        8_(),
+        9_(),
+        7_(),
+        9_(),
+    ])));
+    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        3_(),
+        1_(),
+        4_(),
+        1_(),
+        5_(),
+        9_(),
+        2_(),
+        6_(),
+        5_(),
+        3_(),
+        5_(),
+        8_(),
+        9_(),
+        7_(),
+        9_(),
+    ])));
+    let mut n: () = 0_();
+    'loop_: while (n < 15_()) {
+        let mut m: () = 0_();
+        'loop_: while (m < n) {
+            unimplemented!();
+            unimplemented!();
+            let mut i: () = 0_();
+            'loop_: while (i < m) {
+                unimplemented!();
+                i.prefix_inc();
+            }
+            let mut i: () = m;
+            'loop_: while (i < n) {
+                unimplemented!();
+                i.prefix_inc();
+            }
+            unimplemented!();
+            m.prefix_inc();
+        }
+        n.prefix_inc();
+    }
+    {
+        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            3_(),
+            1_(),
+            4_(),
+            1_(),
+            5_(),
+            9_(),
+            2_(),
+        ])));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            0_(),
+            1_(),
+            2_(),
+            3_(),
+            4_(),
+            5_(),
+            7_(),
+            6_(),
+        ])));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+            1_(),
+            0_(),
+            2_(),
+            3_(),
+            4_(),
+            5_(),
+            6_(),
+            7_(),
+        ])));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    return true;
 }
 pub fn test_34() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -954,108 +1050,6 @@ pub fn test_35() -> () {
         7_(),
         9_(),
     ])));
-    let work: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ])));
-    let mut n: () = 0_();
-    'loop_: while (n < 15_()) {
-        let mut m: () = 0_();
-        'loop_: while (m < n) {
-            unimplemented!();
-            unimplemented!();
-            let mut i: () = 0_();
-            'loop_: while (i < m) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            let mut i: () = m;
-            'loop_: while (i < n) {
-                unimplemented!();
-                i.prefix_inc();
-            }
-            unimplemented!();
-            m.prefix_inc();
-        }
-        n.prefix_inc();
-    }
-    {
-        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            3_(),
-            1_(),
-            4_(),
-            1_(),
-            5_(),
-            9_(),
-            2_(),
-        ])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            0_(),
-            1_(),
-            2_(),
-            3_(),
-            4_(),
-            5_(),
-            7_(),
-            6_(),
-        ])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let input: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-            1_(),
-            0_(),
-            2_(),
-            3_(),
-            4_(),
-            5_(),
-            6_(),
-            7_(),
-        ])));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
-}
-pub fn test_36() -> () {
-    let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        3_(),
-        1_(),
-        4_(),
-        1_(),
-        5_(),
-        9_(),
-        2_(),
-        6_(),
-        5_(),
-        3_(),
-        5_(),
-        8_(),
-        9_(),
-        7_(),
-        9_(),
-    ])));
     let work: Value<Box<[MoveOnly]>> = Rc::new(RefCell::new(Box::new([
         MoveOnly::new({ Some(3_()) }),
         MoveOnly::new({ Some(1_()) }),
@@ -1140,7 +1134,7 @@ pub fn test_36() -> () {
     }
     return true;
 }
-pub fn test_37() -> () {
+pub fn test_36() -> () {
     let orig: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         3_(),
         1_(),
@@ -1262,10 +1256,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_33() });
     ({ test_34() });
     ({ test_35() });
     ({ test_36() });
-    ({ test_37() });
     const _: () = assert!(true, "test<int, random_access_iterator<int*>>()");;
     const _: () = assert!(true, "test<int, int*>()");;
     const _: () = assert!(true, "test<MoveOnly, random_access_iterator<MoveOnly*>>()");;

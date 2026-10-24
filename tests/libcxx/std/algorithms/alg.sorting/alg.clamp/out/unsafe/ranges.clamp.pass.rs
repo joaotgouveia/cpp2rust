@@ -118,7 +118,7 @@ impl std::cmp::Eq for S_2 {}
 pub struct MoveProj_3 {}
 impl MoveProj_3 {
     pub unsafe fn operator_call(&self, x: *const ()) -> *const () {
-        return x;
+        return unimplemented!();
     }
 }
 pub fn main() {

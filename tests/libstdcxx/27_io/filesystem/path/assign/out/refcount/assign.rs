@@ -214,20 +214,20 @@ pub fn test01_8() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*p1.borrow_mut()) = (*s.borrow()).clone();
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p1.as_pointer()) });
-        (*p2.borrow_mut()) = unimplemented!();
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p2.as_pointer()) });
-        let ws: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*p3.borrow_mut()) = (*ws.borrow()).clone();
+        let mut ws: () = unimplemented!();
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p3.as_pointer()) });
-        (*p4.borrow_mut()) = unimplemented!();
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p4.as_pointer()) });
     }
 }
@@ -236,7 +236,7 @@ pub fn test02_9() {
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>),
         (test_paths_1.with(|v| v.as_pointer()) as Ptr<()>).offset((18_()) as isize),
     ) {
-        let s: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut s: () = unimplemented!();
         let p0: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -246,44 +246,22 @@ pub fn test02_9() {
         let p6: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p7: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let p8: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*p1.borrow()).assign(s.as_pointer()) });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p1.as_pointer()) });
-        ({
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            (*p2.borrow()).assign(___first, ___last)
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p2.as_pointer()) });
-        ({
-            let ___source: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
-            (*p3.borrow()).assign(___source.as_pointer())
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p3.as_pointer()) });
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-            (*p4.borrow()).assign(___first, ___last)
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p4.as_pointer()) });
-        let ws: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ (*p5.borrow()).assign(ws.as_pointer()) });
+        let mut ws: () = unimplemented!();
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p5.as_pointer()) });
-        ({
-            let ___first: () = unimplemented!();
-            let ___last: () = unimplemented!();
-            (*p6.borrow()).assign(___first, ___last)
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p6.as_pointer()) });
-        ({
-            let ___source: Value<Ptr<()>> = Rc::new(RefCell::new(unimplemented!()));
-            (*p7.borrow()).assign(___source.as_pointer())
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p7.as_pointer()) });
-        ({
-            let ___first: Ptr<()> = unimplemented!();
-            let ___last: Ptr<()> = unimplemented!().offset((unimplemented!()) as isize);
-            (*p8.borrow()).assign(___first, ___last)
-        });
+        unimplemented!();
         ({ compare_paths_0(p0.as_pointer(), p8.as_pointer()) });
     }
 }

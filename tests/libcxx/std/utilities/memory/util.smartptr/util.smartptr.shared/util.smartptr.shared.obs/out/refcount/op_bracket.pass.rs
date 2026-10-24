@@ -32,7 +32,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut i: () = 0_();
         'loop_: while (i < 8_()) {
             let __rhs = i;
-            (*p.borrow_mut())[i] = __rhs;
+            unimplemented!().write(__rhs);
             i.prefix_inc();
         }
         let mut i: () = 0_();
@@ -61,7 +61,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         let mut i: () = 0_();
         'loop_: while (i < 8_()) {
             let __rhs = i;
-            (*p.borrow_mut())[i] = __rhs;
+            unimplemented!().write(__rhs);
             i.prefix_inc();
         }
         let mut i: () = 0_();

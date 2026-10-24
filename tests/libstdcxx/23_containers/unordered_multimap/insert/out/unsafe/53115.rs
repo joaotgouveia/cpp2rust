@@ -267,10 +267,7 @@ pub unsafe fn get_nb_bucket_elems_10(us: *const ()) -> () {
 }
 pub unsafe fn test01_11() {
     let mut umm: () = unimplemented!();
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -328,10 +325,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -389,10 +383,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -450,10 +441,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -511,10 +499,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -572,10 +557,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -633,10 +615,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -694,10 +673,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -755,10 +731,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -816,10 +789,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -877,10 +847,7 @@ pub unsafe fn test01_11() {
             unimplemented!();
         }
     }
-    (unsafe {
-        let mut ___x: () = unimplemented!();
-        umm.insert_33_struct_std_pair_int__int_(&mut ___x)
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

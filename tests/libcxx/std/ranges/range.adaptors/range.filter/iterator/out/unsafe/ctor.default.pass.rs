@@ -682,25 +682,21 @@ pub unsafe fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_15(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_16(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_18(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -784,7 +780,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_18(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -794,7 +790,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1016,6 +1012,12 @@ impl minimal_view_int_ptr__sentinel_wrapper_int_ptr__ {
         return sentinel_wrapper_int_ptr_::new_1({ &self.sent_ });
     }
 }
+pub unsafe fn test_default_constructible_18() {
+    let mut iter1: () = unimplemented!();
+    let mut iter2: () = unimplemented!();
+    unimplemented!();
+    const _: () = assert!(true, "noexcept(FilterIterator()) == IsNoexcept");;
+}
 pub unsafe fn test_default_constructible_19() {
     let mut iter1: () = unimplemented!();
     let mut iter2: () = unimplemented!();
@@ -1040,26 +1042,20 @@ pub unsafe fn test_default_constructible_22() {
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterIterator()) == IsNoexcept");;
 }
-pub unsafe fn test_default_constructible_23() {
-    let mut iter1: () = unimplemented!();
-    let mut iter2: () = unimplemented!();
-    unimplemented!();
-    const _: () = assert!(true, "noexcept(FilterIterator()) == IsNoexcept");;
+pub unsafe fn test_not_default_constructible_23() {
+    const _: () = assert!(true, "!std::is_default_constructible_v<FilterIterator>");;
 }
 pub unsafe fn test_not_default_constructible_24() {
     const _: () = assert!(true, "!std::is_default_constructible_v<FilterIterator>");;
 }
-pub unsafe fn test_not_default_constructible_25() {
-    const _: () = assert!(true, "!std::is_default_constructible_v<FilterIterator>");;
-}
-pub unsafe fn tests_26() -> () {
+pub unsafe fn tests_25() -> () {
+    (unsafe { test_not_default_constructible_23() });
     (unsafe { test_not_default_constructible_24() });
-    (unsafe { test_not_default_constructible_25() });
+    (unsafe { test_default_constructible_18() });
     (unsafe { test_default_constructible_19() });
     (unsafe { test_default_constructible_20() });
     (unsafe { test_default_constructible_21() });
     (unsafe { test_default_constructible_22() });
-    (unsafe { test_default_constructible_23() });
     return true;
 }
 pub fn main() {
@@ -1078,7 +1074,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_26() });
+    (unsafe { tests_25() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

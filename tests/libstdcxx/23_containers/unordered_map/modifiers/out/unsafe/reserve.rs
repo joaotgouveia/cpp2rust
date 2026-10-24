@@ -285,10 +285,7 @@ pub unsafe fn test01_10() {
         }
         i.prefix_inc();
         'loop_: while ((i) < (bkts)) {
-            (unsafe {
-                let mut ___x: () = unimplemented!();
-                m.insert_41_struct_std_pair_int__int_(&mut ___x)
-            });
+            unimplemented!();
             let mut __do_while = true;
             'loop_: while __do_while || (false) {
                 __do_while = false;
@@ -329,10 +326,7 @@ pub unsafe fn test01_10() {
             }
             i.prefix_inc();
         }
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            m.insert_41_struct_std_pair_int__int_(&mut ___x)
-        });
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

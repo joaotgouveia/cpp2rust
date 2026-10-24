@@ -2520,25 +2520,21 @@ pub unsafe fn operator_add_30(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_31(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_32(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_33(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_32(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_35(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -2622,7 +2618,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_35(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_34(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -2632,7 +2628,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_34(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_33(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -2700,7 +2696,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn RunTestCaseImpl_36(MS: *const MultiStringType) {
+pub unsafe fn RunTestCaseImpl_35(MS: *const MultiStringType) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_8(TestPath) });
@@ -2743,7 +2739,7 @@ pub unsafe fn RunTestCaseImpl_36(MS: *const MultiStringType) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_37(MS: *const MultiStringType, mut args: ()) {
+pub unsafe fn RunTestCaseImpl_36(MS: *const MultiStringType, mut args: ()) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_8(TestPath) });
@@ -2786,7 +2782,7 @@ pub unsafe fn RunTestCaseImpl_37(MS: *const MultiStringType, mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_38(MS: *const MultiStringType) {
+pub unsafe fn RunTestCaseImpl_37(MS: *const MultiStringType) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_14(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_9(TestPath) });
@@ -2829,7 +2825,7 @@ pub unsafe fn RunTestCaseImpl_38(MS: *const MultiStringType) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_39(MS: *const MultiStringType, mut args: ()) {
+pub unsafe fn RunTestCaseImpl_38(MS: *const MultiStringType, mut args: ()) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_14(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_9(TestPath) });
@@ -2872,7 +2868,7 @@ pub unsafe fn RunTestCaseImpl_39(MS: *const MultiStringType, mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_40(MS: *const MultiStringType) {
+pub unsafe fn RunTestCaseImpl_39(MS: *const MultiStringType) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_13(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_10(TestPath) });
@@ -2915,7 +2911,7 @@ pub unsafe fn RunTestCaseImpl_40(MS: *const MultiStringType) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_41(MS: *const MultiStringType, mut args: ()) {
+pub unsafe fn RunTestCaseImpl_40(MS: *const MultiStringType, mut args: ()) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_13(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_10(TestPath) });
@@ -2958,7 +2954,7 @@ pub unsafe fn RunTestCaseImpl_41(MS: *const MultiStringType, mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_42(MS: *const MultiStringType) {
+pub unsafe fn RunTestCaseImpl_41(MS: *const MultiStringType) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_15(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_11(TestPath) });
@@ -3001,7 +2997,7 @@ pub unsafe fn RunTestCaseImpl_42(MS: *const MultiStringType) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_43(MS: *const MultiStringType, mut args: ()) {
+pub unsafe fn RunTestCaseImpl_42(MS: *const MultiStringType, mut args: ()) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_15(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_11(TestPath) });
@@ -3044,7 +3040,7 @@ pub unsafe fn RunTestCaseImpl_43(MS: *const MultiStringType, mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_44(MS: *const MultiStringType) {
+pub unsafe fn RunTestCaseImpl_43(MS: *const MultiStringType) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_16(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_12(TestPath) });
@@ -3087,7 +3083,7 @@ pub unsafe fn RunTestCaseImpl_44(MS: *const MultiStringType) {
         unimplemented!();
     }
 }
-pub unsafe fn RunTestCaseImpl_45(MS: *const MultiStringType, mut args: ()) {
+pub unsafe fn RunTestCaseImpl_44(MS: *const MultiStringType, mut args: ()) {
     let mut Expect: *const () = (unsafe { MultiStringType::to_pconst_12(&(*MS)) });
     let mut TestPath: *const () = (unsafe { MultiStringType::to_pconst_16(&(*MS)) });
     let mut TestPathEnd: *const () = (unsafe { StrEnd_12(TestPath) });
@@ -3129,53 +3125,53 @@ pub unsafe fn RunTestCaseImpl_45(MS: *const MultiStringType, mut args: ()) {
         unimplemented!();
         unimplemented!();
     }
+}
+pub unsafe fn RunTestCase_45(MS: *const MultiStringType) {
+    (unsafe { RunTestCaseImpl_35(MS) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_36(MS, std_filesystem_path_format_generic_format) });
 }
 pub unsafe fn RunTestCase_46(MS: *const MultiStringType) {
-    (unsafe { RunTestCaseImpl_36(MS) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_generic_format) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_37(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_37(MS) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_38(MS, std_filesystem_path_format_generic_format) });
 }
 pub unsafe fn RunTestCase_47(MS: *const MultiStringType) {
-    (unsafe { RunTestCaseImpl_38(MS) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_generic_format) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_39(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_39(MS) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_40(MS, std_filesystem_path_format_generic_format) });
 }
 pub unsafe fn RunTestCase_48(MS: *const MultiStringType) {
-    (unsafe { RunTestCaseImpl_40(MS) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_generic_format) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_41(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_41(MS) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_42(MS, std_filesystem_path_format_generic_format) });
 }
 pub unsafe fn RunTestCase_49(MS: *const MultiStringType) {
-    (unsafe { RunTestCaseImpl_42(MS) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_generic_format) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_43(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_43(MS) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_generic_format) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_auto_format) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_native_format) });
+    (unsafe { RunTestCaseImpl_44(MS, std_filesystem_path_format_generic_format) });
 }
-pub unsafe fn RunTestCase_50(MS: *const MultiStringType) {
-    (unsafe { RunTestCaseImpl_44(MS) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_generic_format) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_auto_format) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_native_format) });
-    (unsafe { RunTestCaseImpl_45(MS, std_filesystem_path_format_generic_format) });
-}
-pub unsafe fn test_sfinae_51() {
+pub unsafe fn test_sfinae_50() {
     {
         const _: () = assert!(true, "std::is_constructible<path, It>::value");;
     }
@@ -3194,7 +3190,7 @@ pub unsafe fn test_sfinae_51() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct Traits_52 {}
+pub struct Traits_51 {}
 pub fn main() {
     let mut args: Vec<Vec<u8>> = std::env::args()
         .map(|arg| arg.as_bytes().to_vec())
@@ -3218,13 +3214,13 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             .offset((42_()) as isize),
     ) {
         let MS: *const MultiStringType = &(*MS);
+        (unsafe { RunTestCase_45(MS) });
         (unsafe { RunTestCase_46(MS) });
         (unsafe { RunTestCase_47(MS) });
         (unsafe { RunTestCase_48(MS) });
         (unsafe { RunTestCase_49(MS) });
-        (unsafe { RunTestCase_50(MS) });
     }
-    (unsafe { test_sfinae_51() });
+    (unsafe { test_sfinae_50() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {

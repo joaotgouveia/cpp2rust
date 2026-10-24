@@ -9545,25 +9545,21 @@ pub unsafe fn operator_add_337(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_338(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_339(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_340(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_339(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_341(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_340(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_342(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_341(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -9647,7 +9643,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_342(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_341(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -9657,7 +9653,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_341(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_340(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -9725,7 +9721,7 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut comparable_data_343: std::cell::LazyCell<()> =
+pub static mut comparable_data_342: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -22284,7 +22280,7 @@ impl Test_Comparable_wchar_t___Comparable_wchar_t__ {
         }
     }
 }
-pub unsafe fn operator_eq_344(lhs: *const Comparable_char_, rhs: *const Comparable_char_) -> () {
+pub unsafe fn operator_eq_343(lhs: *const Comparable_char_, rhs: *const Comparable_char_) -> () {
     return ((*unimplemented!()) == (*unimplemented!()));
 }
 #[repr(C)]
@@ -22308,7 +22304,7 @@ impl Comparable_char_ {
 impl std::cmp::PartialEq for Comparable_char_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_344(
+            operator_eq_343(
                 self as *const Comparable_char_,
                 other as *const Comparable_char_,
             )
@@ -22316,7 +22312,7 @@ impl std::cmp::PartialEq for Comparable_char_ {
     }
 }
 impl std::cmp::Eq for Comparable_char_ {}
-pub unsafe fn operator_eq_345(
+pub unsafe fn operator_eq_344(
     lhs: *const Comparable_wchar_t_,
     rhs: *const Comparable_wchar_t_,
 ) -> () {
@@ -22343,7 +22339,7 @@ impl Comparable_wchar_t_ {
 impl std::cmp::PartialEq for Comparable_wchar_t_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_345(
+            operator_eq_344(
                 self as *const Comparable_wchar_t_,
                 other as *const Comparable_wchar_t_,
             )
@@ -22668,7 +22664,7 @@ impl TestTypes_long_long_ {
         });
     }
 }
-pub unsafe fn test_deque_346() {
+pub unsafe fn test_deque_345() {
     {
         let mut data: () = unimplemented!();
         unimplemented!();
@@ -40921,7 +40917,7 @@ impl TestIntegerPromotions {
         });
     }
 }
-pub unsafe fn test_347() -> () {
+pub unsafe fn test_346() -> () {
     (unsafe {
         for_each_0 ( <types_type_list_char__wchar_t__char8_t__char16_t__char32_t__signed_char__short__int__long__long_long____int128__unsigned_char__unsigned_short__unsigned_int__unsigned_long__unsigned_long_long__unsigned___int128_ >::default() , <TestTypes_char_ >::default() , )
     });
@@ -41003,8 +40999,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_deque_346() });
-    (unsafe { test_347() });
+    (unsafe { test_deque_345() });
+    (unsafe { test_346() });
     const _: () = assert!(true, "test()");;
     (unsafe {
         Test_Comparable_char___Comparable_char__::operator_call_1_class_Comparable_char__ptr(
@@ -41017,5 +41013,5 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const comparable_data_343);
+    std::cell::LazyCell::force(&*&raw const comparable_data_342);
 }

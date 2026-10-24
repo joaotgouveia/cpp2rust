@@ -390,25 +390,21 @@ pub unsafe fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_14(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -492,7 +488,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -502,7 +498,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -570,9 +566,9 @@ impl util_iterator_error {
         this
     }
 }
-pub static mut randomness_18: std::cell::LazyCell<()> =
+pub static mut randomness_17: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { unimplemented!() });
-pub unsafe fn test_19(
+pub unsafe fn test_18(
     mut first: forward_iterator_const_int_ptr_,
     mut last: forward_iterator_const_int_ptr_,
 ) {
@@ -596,7 +592,7 @@ pub unsafe fn test_19(
         unimplemented!();
     }
 }
-pub unsafe fn test_20(
+pub unsafe fn test_19(
     mut first: bidirectional_iterator_const_int_ptr_,
     mut last: bidirectional_iterator_const_int_ptr_,
 ) {
@@ -620,7 +616,7 @@ pub unsafe fn test_20(
         unimplemented!();
     }
 }
-pub unsafe fn test_21(
+pub unsafe fn test_20(
     mut first: random_access_iterator_const_int_ptr_,
     mut last: random_access_iterator_const_int_ptr_,
 ) {
@@ -644,7 +640,7 @@ pub unsafe fn test_21(
         unimplemented!();
     }
 }
-pub unsafe fn test_22(mut first: *const (), mut last: *const ()) {
+pub unsafe fn test_21(mut first: *const (), mut last: *const ()) {
     let mut comp: () = unimplemented!();
     let mut p: () = unimplemented!();
     if ((first) != (last)) {
@@ -659,7 +655,7 @@ pub unsafe fn test_22(mut first: *const (), mut last: *const ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_23(mut N: ()) {
+pub unsafe fn test_22(mut N: ()) {
     let mut a: *mut () =
         Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
     let mut i: () = 0_();
@@ -673,6 +669,33 @@ pub unsafe fn test_23(mut N: ()) {
             forward_iterator_const_int_ptr_::new_1({ (a).cast_const() });
         let _last: forward_iterator_const_int_ptr_ =
             forward_iterator_const_int_ptr_::new_1({ (a.offset((N) as isize)).cast_const() });
+        test_18(_first, _last)
+    });
+    {
+        let __p = a;
+        if !__p.is_null() {
+            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
+                __p,
+                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
+                    / ::std::mem::size_of::<()>(),
+            )))
+        }
+    };
+}
+pub unsafe fn test_23(mut N: ()) {
+    let mut a: *mut () =
+        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+    let mut i: () = 0_();
+    'loop_: while ((i) < (N)) {
+        (*a.offset((i) as isize)) = i;
+        i.prefix_inc();
+    }
+    unimplemented!();
+    (unsafe {
+        let _first: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (a).cast_const() });
+        let _last: bidirectional_iterator_const_int_ptr_ =
+            bidirectional_iterator_const_int_ptr_::new_1({ (a.offset((N) as isize)).cast_const() });
         test_19(_first, _last)
     });
     {
@@ -696,10 +719,10 @@ pub unsafe fn test_24(mut N: ()) {
     }
     unimplemented!();
     (unsafe {
-        let _first: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (a).cast_const() });
-        let _last: bidirectional_iterator_const_int_ptr_ =
-            bidirectional_iterator_const_int_ptr_::new_1({ (a.offset((N) as isize)).cast_const() });
+        let _first: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (a).cast_const() });
+        let _last: random_access_iterator_const_int_ptr_ =
+            random_access_iterator_const_int_ptr_::new_1({ (a.offset((N) as isize)).cast_const() });
         test_20(_first, _last)
     });
     {
@@ -723,10 +746,8 @@ pub unsafe fn test_25(mut N: ()) {
     }
     unimplemented!();
     (unsafe {
-        let _first: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (a).cast_const() });
-        let _last: random_access_iterator_const_int_ptr_ =
-            random_access_iterator_const_int_ptr_::new_1({ (a.offset((N) as isize)).cast_const() });
+        let _first: *const () = a;
+        let _last: *const () = a.offset((N) as isize);
         test_21(_first, _last)
     });
     {
@@ -740,30 +761,38 @@ pub unsafe fn test_25(mut N: ()) {
         }
     };
 }
-pub unsafe fn test_26(mut N: ()) {
-    let mut a: *mut () =
-        Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-    let mut i: () = 0_();
-    'loop_: while ((i) < (N)) {
-        (*a.offset((i) as isize)) = i;
-        i.prefix_inc();
-    }
-    unimplemented!();
-    (unsafe {
-        let _first: *const () = a;
-        let _last: *const () = a.offset((N) as isize);
-        test_22(_first, _last)
-    });
+pub unsafe fn test_26() {
+    (unsafe { test_22(0_()) });
+    (unsafe { test_22(1_()) });
+    (unsafe { test_22(2_()) });
+    (unsafe { test_22(3_()) });
+    (unsafe { test_22(10_()) });
+    (unsafe { test_22(1000_()) });
     {
-        let __p = a;
-        if !__p.is_null() {
-            ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
-                __p,
-                libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                    / ::std::mem::size_of::<()>(),
-            )))
+        let N: () = 100_();
+        let mut a: *mut () =
+            Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
+        let mut i: () = 0_();
+        'loop_: while ((i) < (N)) {
+            (*a.offset((i) as isize)) = 5_();
+            i.prefix_inc();
         }
-    };
+        unimplemented!();
+        let mut comp: () = unimplemented!();
+        let mut p: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        {
+            let __p = a;
+            if !__p.is_null() {
+                ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
+                    __p,
+                    libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
+                        / ::std::mem::size_of::<()>(),
+                )))
+            }
+        };
+    }
 }
 pub unsafe fn test_27() {
     (unsafe { test_23(0_()) });
@@ -864,40 +893,7 @@ pub unsafe fn test_29() {
         };
     }
 }
-pub unsafe fn test_30() {
-    (unsafe { test_26(0_()) });
-    (unsafe { test_26(1_()) });
-    (unsafe { test_26(2_()) });
-    (unsafe { test_26(3_()) });
-    (unsafe { test_26(10_()) });
-    (unsafe { test_26(1000_()) });
-    {
-        let N: () = 100_();
-        let mut a: *mut () =
-            Box::leak((0..N).map(|_| unimplemented!()).collect::<Box<[()]>>()).as_mut_ptr();
-        let mut i: () = 0_();
-        'loop_: while ((i) < (N)) {
-            (*a.offset((i) as isize)) = 5_();
-            i.prefix_inc();
-        }
-        unimplemented!();
-        let mut comp: () = unimplemented!();
-        let mut p: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        {
-            let __p = a;
-            if !__p.is_null() {
-                ::std::mem::drop(Box::from_raw(::std::slice::from_raw_parts_mut(
-                    __p,
-                    libcc2rs::malloc_usable_size(__p as *mut ::libc::c_void)
-                        / ::std::mem::size_of::<()>(),
-                )))
-            }
-        };
-    }
-}
-pub static mut il_31: std::cell::LazyCell<[(); 8]> =
+pub static mut il_30: std::cell::LazyCell<[(); 8]> =
     std::cell::LazyCell::new(|| unsafe { [2_(), 4_(), 6_(), 8_(), 7_(), 5_(), 3_(), 1_()] });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -907,7 +903,7 @@ impl less {
         return ((*x) < (*y));
     }
 }
-pub unsafe fn constexpr_test_32() {
+pub unsafe fn constexpr_test_31() {
     let p: () = unimplemented!();
     const _: () = assert!(true, "*(p.first)  == 1");;
     const _: () = assert!(true, "*(p.second) == 8");;
@@ -928,14 +924,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_26() });
     (unsafe { test_27() });
     (unsafe { test_28() });
     (unsafe { test_29() });
-    (unsafe { test_30() });
-    (unsafe { constexpr_test_32() });
+    (unsafe { constexpr_test_31() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const randomness_18);
-    std::cell::LazyCell::force(&*&raw const il_31);
+    std::cell::LazyCell::force(&*&raw const randomness_17);
+    std::cell::LazyCell::force(&*&raw const il_30);
 }

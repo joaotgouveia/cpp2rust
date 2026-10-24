@@ -55,7 +55,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     }
     {
         let t: () = unimplemented!();
-        let p: *const () = (unsafe { get_2(&t) });
+        let p: *const () = (unsafe { get_2(&(*unimplemented!())) });
         unimplemented!();
         unimplemented!();
     }

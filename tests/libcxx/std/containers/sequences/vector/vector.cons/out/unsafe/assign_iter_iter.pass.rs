@@ -303,25 +303,21 @@ pub unsafe fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_10(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_11(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -405,7 +401,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_13(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -415,7 +411,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -503,7 +499,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         let mut this = Self {
             copied: (((*Other).copied) + (1_())),
             assigned: 0_(),
-            value: ((*Other).value as ()),
+            value: ((*unimplemented!()) as ()),
         };
         this
     }
@@ -511,7 +507,7 @@ impl EmplaceConstructibleMoveableAndAssignable_int_ {
         &mut self,
         mut xvalue: (),
     ) -> *mut EmplaceConstructibleMoveableAndAssignable_int_ {
-        self.value = (xvalue as ());
+        self.value = ((*unimplemented!()) as ());
         self.assigned.prefix_inc();
         return &mut (*(self as *mut EmplaceConstructibleMoveableAndAssignable_int_));
     }
@@ -527,10 +523,10 @@ impl Default for EmplaceConstructibleMoveableAndAssignable_int_ {
         }
     }
 }
-pub unsafe fn operator_eq_14(LHS: *const detail_TypeID, RHS: *const detail_TypeID) -> () {
+pub unsafe fn operator_eq_13(LHS: *const detail_TypeID, RHS: *const detail_TypeID) -> () {
     return (((*LHS).m_id) == ((*RHS).m_id));
 }
-pub unsafe fn operator_ne_15(LHS: *const detail_TypeID, RHS: *const detail_TypeID) -> () {
+pub unsafe fn operator_ne_14(LHS: *const detail_TypeID, RHS: *const detail_TypeID) -> () {
     return (((*LHS).m_id) != ((*RHS).m_id));
 }
 #[repr(C)]
@@ -546,7 +542,7 @@ impl detail_TypeID {
 }
 impl std::cmp::PartialEq for detail_TypeID {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self as *const detail_TypeID, other as *const detail_TypeID) }
+        unsafe { operator_eq_13(self as *const detail_TypeID, other as *const detail_TypeID) }
     }
 }
 impl std::cmp::Eq for detail_TypeID {}
@@ -571,7 +567,7 @@ impl AllocatorConstructController {
         let mut res: () = (unsafe {
             let _LHS: *const detail_TypeID = &(*self.m_expected_args);
             let _RHS: *const detail_TypeID = tid;
-            operator_eq_14(_LHS, _RHS)
+            operator_eq_13(_LHS, _RHS)
         });
         if ((self.m_expected_count) == (-1_())) || ((self.m_expected_count.prefix_dec()) == (-1_()))
         {
@@ -619,11 +615,11 @@ impl Default for AllocatorConstructController {
         unsafe { AllocatorConstructController::new() }
     }
 }
-pub unsafe fn getConstructController_16() -> *mut AllocatorConstructController {
-    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut c_17))
+pub unsafe fn getConstructController_15() -> *mut AllocatorConstructController {
+    return (&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut c_16))
         as *mut AllocatorConstructController);
 }
-static mut c_17: std::cell::LazyCell<AllocatorConstructController> =
+static mut c_16: std::cell::LazyCell<AllocatorConstructController> =
     std::cell::LazyCell::new(|| unsafe { AllocatorConstructController::new() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -643,7 +639,7 @@ pub struct ContainerTestAllocator_float__int_ {
 impl ContainerTestAllocator_float__int_ {}
 const _: () = assert!(true, "std::is_same<A1T::rebind_traits<float>, A2T>::value");
 const _: () = assert!(true, "std::is_same<A2T::rebind_traits<int>, A1T>::value");
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_17() -> () {
     let mut arr1: [(); 1] = [42_()];
     let mut arr2: [(); 3] = [1_(), 101_(), 42_()];
     {
@@ -803,7 +799,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_18() });
+    (unsafe { test_17() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

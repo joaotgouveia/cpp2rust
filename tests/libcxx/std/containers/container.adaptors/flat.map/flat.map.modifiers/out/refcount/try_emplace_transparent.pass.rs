@@ -157,8 +157,8 @@ impl three_way_random_access_iterator_const_int_ptr_ {
 impl three_way_random_access_iterator_const_int_ptr_ {
     pub fn new_2(u: Ptr<three_way_random_access_iterator_int_ptr_>) -> Self {
         let __this: three_way_random_access_iterator_const_int_ptr_ = Self {
-            it_: u.with(|__s| __s.it_.clone()),
-            tracker_: support_double_move_tracker::move_from({ field_ptr!(u, tracker_) }),
+            it_: (unimplemented!().read()),
+            tracker_: support_double_move_tracker::move_from({ unimplemented!() }),
         };
         field!(u, it_).write(Ptr::<()>::null());
         __this
@@ -335,8 +335,8 @@ impl three_way_random_access_iterator_const_Moveable_ptr_ {
 impl three_way_random_access_iterator_const_Moveable_ptr_ {
     pub fn new_2(u: Ptr<three_way_random_access_iterator_Moveable_ptr_>) -> Self {
         let __this: three_way_random_access_iterator_const_Moveable_ptr_ = Self {
-            it_: u.with(|__s| __s.it_.clone()),
-            tracker_: support_double_move_tracker::move_from({ field_ptr!(u, tracker_) }),
+            it_: (unimplemented!().read()),
+            tracker_: support_double_move_tracker::move_from({ unimplemented!() }),
         };
         field!(u, it_).write(Ptr::<Moveable>::null());
         __this
@@ -523,29 +523,23 @@ pub fn operator_add_14(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_13(_i, n)
     });
 }
-pub fn iter_swap_15(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_16(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_15(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_17(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -591,7 +585,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_19(
+            operator_cmp_18(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -616,7 +610,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_18(
+            operator_eq_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -899,22 +893,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_20: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_19: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_21: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_20: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_22(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_21(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_23(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_22(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_22(_x, _y)
+        operator_eq_21(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -975,7 +969,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_22(
+            operator_eq_21(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -1031,62 +1025,62 @@ impl Tag_X {
         Self {}
     }
 }
+pub fn test_emplace_exception_guarantee_23(emplace_function: Ptr<FnPtr<Generic>>) {}
 pub fn test_emplace_exception_guarantee_24(emplace_function: Ptr<FnPtr<Generic>>) {}
-pub fn test_emplace_exception_guarantee_25(emplace_function: Ptr<FnPtr<Generic>>) {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_27.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_28.with(|rc| *rc.borrow())));
+        return ((alloc_count_26.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_27.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_29.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_26.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_27.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_28.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_28.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_25.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_26.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_27.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_26: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_25: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_27: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_26: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_28: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_27: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_29: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_28: Value<()> = Rc::new(RefCell::new(false));
 );
-pub fn operator_sub_30(
+pub fn operator_sub_29(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_lt_31(
+pub fn operator_lt_30(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
-pub fn operator_eq_32(
+pub fn operator_eq_31(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-pub fn operator_ne_33(
+pub fn operator_ne_32(
     mut x: min_pointer_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !({
         let _x: min_pointer_int__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_32(_x, y)
+        operator_eq_31(_x, y)
     });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1109,9 +1103,9 @@ impl min_pointer_int__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_31(self.clone(), other.clone()) {
+            if operator_lt_30(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_31(other.clone(), self.clone()) {
+            } else if operator_lt_30(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1126,7 +1120,7 @@ impl std::cmp::PartialOrd for min_pointer_int__std_integral_constant_unsigned_lo
 }
 impl std::cmp::PartialEq for min_pointer_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_32(self.clone(), other.clone()) }
+        { operator_eq_31(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_int__std_integral_constant_unsigned_long__0__ {}
@@ -1138,25 +1132,25 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_34(
+pub fn operator_sub_33(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_lt_35(
+pub fn operator_lt_34(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
-pub fn operator_eq_36(
+pub fn operator_eq_35(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-pub fn operator_ne_37(
+pub fn operator_ne_36(
     mut x: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_int__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1179,9 +1173,9 @@ impl min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_35(self.clone(), other.clone()) {
+            if operator_lt_34(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_35(other.clone(), self.clone()) {
+            } else if operator_lt_34(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1196,7 +1190,7 @@ impl std::cmp::PartialOrd for min_pointer_const_int__std_integral_constant_unsig
 }
 impl std::cmp::PartialEq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_36(self.clone(), other.clone()) }
+        { operator_eq_35(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_int__std_integral_constant_unsigned_long__0__ {}
@@ -1208,31 +1202,31 @@ pub struct min_pointer_const_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_const_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_38(
+pub fn operator_sub_37(
     mut x: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_lt_39(
+pub fn operator_lt_38(
     mut x: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
-pub fn operator_eq_40(
+pub fn operator_eq_39(
     mut x: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-pub fn operator_ne_41(
+pub fn operator_ne_40(
     mut x: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !({
         let _x: min_pointer_Moveable__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_40(_x, y)
+        operator_eq_39(_x, y)
     });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1255,9 +1249,9 @@ impl min_pointer_Moveable__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_Moveable__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_39(self.clone(), other.clone()) {
+            if operator_lt_38(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_39(other.clone(), self.clone()) {
+            } else if operator_lt_38(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1272,17 +1266,17 @@ impl std::cmp::PartialOrd for min_pointer_Moveable__std_integral_constant_unsign
 }
 impl std::cmp::PartialEq for min_pointer_Moveable__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_40(self.clone(), other.clone()) }
+        { operator_eq_39(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_Moveable__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_42(
+pub fn operator_sub_41(
     mut x: min_pointer_const_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_ne_43(
+pub fn operator_ne_42(
     mut x: min_pointer_const_Moveable__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_Moveable__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1477,6 +1471,72 @@ const _: () = assert!(
     !(false),
     "!CanTryEmplace<TransparentMap, TransparentMapConstIter, ConvertibleTransparent<int>, int>"
 );
+pub fn test_43() {
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut i: () = 0_();
+        'loop_: while (i < 20_()) {
+            unimplemented!();
+            i += 2_();
+        }
+        unimplemented!();
+        let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
+        let mut i: () = 0_();
+        'loop_: while (i < 20_()) {
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            i += 2_();
+        }
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5_() }, { 3_f64 })));
+        let r3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut mv3: Moveable = Moveable::new_2({ -1_() }, { 3_f64 });
+        let r4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut i: () = 0_();
+        'loop_: while (i < 20_()) {
+            unimplemented!();
+            i += 2_();
+        }
+        unimplemented!();
+        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__std_vector_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable_____std_vector_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
+        let mut i: () = 0_();
+        'loop_: while (i < 20_()) {
+            let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            unimplemented!();
+            i += 2_();
+        }
+        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
 pub fn test_44() {
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1509,7 +1569,7 @@ pub fn test_44() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_() }, { 3_f64 })));
+        let mut mv3: Moveable = Moveable::new_2({ -1_() }, { 3_f64 });
         let r4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -1525,7 +1585,7 @@ pub fn test_44() {
             i += 2_();
         }
         unimplemented!();
-        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__std_vector_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable_____std_vector_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__std_deque_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable_____std_deque_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
         let mut i: () = 0_();
         'loop_: while (i < 20_()) {
@@ -1575,7 +1635,7 @@ pub fn test_45() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_() }, { 3_f64 })));
+        let mut mv3: Moveable = Moveable::new_2({ -1_() }, { 3_f64 });
         let r4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -1591,7 +1651,7 @@ pub fn test_45() {
             i += 2_();
         }
         unimplemented!();
-        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__std_deque_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable_____std_deque_int__std_allocator_int____std_vector_Moveable__std_allocator_Moveable____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
+        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_Moveable__three_way_random_access_iterator_Moveable_ptr___three_way_random_access_iterator_const_Moveable_ptr_____MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_Moveable__three_way_random_access_iterator_Moveable_ptr___three_way_random_access_iterator_const_Moveable_ptr____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
         let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
         let mut i: () = 0_();
         'loop_: while (i < 20_()) {
@@ -1641,73 +1701,7 @@ pub fn test_46() {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_() }, { 3_f64 })));
-        let r4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 20_()) {
-            unimplemented!();
-            i += 2_();
-        }
-        unimplemented!();
-        let it : Value<() > = Rc::new(RefCell::new(std___key_value_iterator_std_flat_map_int__Moveable__TransparentComparator__MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_Moveable__three_way_random_access_iterator_Moveable_ptr___three_way_random_access_iterator_const_Moveable_ptr_____MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr____MinSequenceContainer_Moveable__three_way_random_access_iterator_Moveable_ptr___three_way_random_access_iterator_const_Moveable_ptr____true_ :: new_1 ( { unimplemented!()   } , )  )) ;
-        let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
-        let mut i: () = 0_();
-        'loop_: while (i < 20_()) {
-            let r1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            i += 2_();
-        }
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_47() {
-    {
-        let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let mut i: () = 0_();
-        'loop_: while (i < 20_()) {
-            unimplemented!();
-            i += 2_();
-        }
-        unimplemented!();
-        let mv1: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 3_() }, { 3_f64 })));
-        let mut i: () = 0_();
-        'loop_: while (i < 20_()) {
-            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            unimplemented!();
-            i += 2_();
-        }
-        let r2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mv2: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ 5_() }, { 3_f64 })));
-        let r3: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mv3: Value<Moveable> = Rc::new(RefCell::new(Moveable::new_2({ -1_() }, { 3_f64 })));
+        let mut mv3: Moveable = Moveable::new_2({ -1_() }, { 3_f64 });
         let r4: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();
@@ -1741,13 +1735,13 @@ pub fn test_47() {
         unimplemented!();
     }
 }
-pub fn test_48() -> () {
-    ({ test_44() });
+pub fn test_47() -> () {
+    ({ test_43() });
     {
-        ({ test_45() });
+        ({ test_44() });
     }
+    ({ test_45() });
     ({ test_46() });
-    ({ test_47() });
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
         let mut c: TransparentComparator =
@@ -1770,9 +1764,9 @@ pub fn test_48() -> () {
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __decomp_49: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let it1: Ptr<()> = ({ get_50(__decomp_49.as_pointer()) });
-        let inserted: Ptr<()> = ({ get_51(__decomp_49.as_pointer()) });
+        let __decomp_48: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let it1: Ptr<()> = ({ get_49(__decomp_48.as_pointer()) });
+        let inserted: Ptr<()> = ({ get_50(__decomp_48.as_pointer()) });
         unimplemented!();
         unimplemented!();
         let it2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1781,12 +1775,12 @@ pub fn test_48() -> () {
     {
         {
             let try_emplace: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(Generic, {})));
-            ({ test_emplace_exception_guarantee_24(try_emplace.as_pointer()) });
+            ({ test_emplace_exception_guarantee_23(try_emplace.as_pointer()) });
         }
         {
             let try_emplace_iter: Value<FnPtr<Generic>> =
                 Rc::new(RefCell::new(lambda!(Generic, {})));
-            ({ test_emplace_exception_guarantee_25(try_emplace_iter.as_pointer()) });
+            ({ test_emplace_exception_guarantee_24(try_emplace_iter.as_pointer()) });
         }
     }
     return true;
@@ -1811,7 +1805,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_48() });
+    ({ test_47() });
     return 0_();
 }
 pub trait EmplaceableImpl {
@@ -2800,8 +2794,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_20.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_20.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_19.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_19.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -3003,10 +2997,10 @@ impl three_way_random_access_iterator_int_ptr_Impl
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_20.with(|_| ());
-    let _ = moved_value_21.with(|_| ());
-    let _ = outstanding_bytes_26.with(|_| ());
-    let _ = alloc_count_27.with(|_| ());
-    let _ = dealloc_count_28.with(|_| ());
-    let _ = disable_default_constructor_29.with(|_| ());
+    let _ = destructed_value_19.with(|_| ());
+    let _ = moved_value_20.with(|_| ());
+    let _ = outstanding_bytes_25.with(|_| ());
+    let _ = alloc_count_26.with(|_| ());
+    let _ = dealloc_count_27.with(|_| ());
+    let _ = disable_default_constructor_28.with(|_| ());
 }

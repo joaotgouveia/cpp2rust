@@ -259,12 +259,7 @@ impl __gnu_test_semaphore {}
 pub struct MyType {}
 pub fn test_10() {
     let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*m.borrow()).insert_33_struct_std_pair_class_std_basic_string_char___struct_MyType_ptr_(
-            ___x.as_pointer(),
-        )
-    });
+    unimplemented!();
 }
 pub fn main() {
     __cpp2rust_init_globals();

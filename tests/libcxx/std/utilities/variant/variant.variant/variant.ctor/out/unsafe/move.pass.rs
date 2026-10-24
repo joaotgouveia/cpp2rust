@@ -286,7 +286,7 @@ impl anon_3 {
         let mut v2: () = unimplemented!();
         return Result_int_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_4(&mut *(&raw mut v2).cast::<()>()) })) as ()),
+            value: ((*(unsafe { get_4(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })) as ()),
         };
     }
 }
@@ -299,7 +299,7 @@ impl anon_5 {
         let mut v2: () = unimplemented!();
         return Result_long_ {
             index: unimplemented!(),
-            value: ((*(unsafe { get_6(&mut *(&raw mut v2).cast::<()>()) })) as ()),
+            value: ((*(unsafe { get_6(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })) as ()),
         };
     }
 }
@@ -312,7 +312,9 @@ impl anon_7 {
         let mut v2: () = unimplemented!();
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ (unsafe { get_8(&mut *(&raw mut v2).cast::<()>()) }) }),
+            value: TMove::move_from({
+                (unsafe { get_8(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })
+            }),
         };
     }
 }
@@ -325,7 +327,9 @@ impl anon_9 {
         let mut v2: () = unimplemented!();
         return Result_TMove_ {
             index: unimplemented!(),
-            value: TMove::move_from({ (unsafe { get_10(&mut *(&raw mut v2).cast::<()>()) }) }),
+            value: TMove::move_from({
+                (unsafe { get_10(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })
+            }),
         };
     }
 }
@@ -339,7 +343,7 @@ impl anon_11 {
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
             value: TMoveNTCopy::move_from({
-                (unsafe { get_12(&mut *(&raw mut v2).cast::<()>()) })
+                (unsafe { get_12(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })
             }),
         };
     }
@@ -354,7 +358,7 @@ impl anon_13 {
         return Result_TMoveNTCopy_ {
             index: unimplemented!(),
             value: TMoveNTCopy::move_from({
-                (unsafe { get_14(&mut *(&raw mut v2).cast::<()>()) })
+                (unsafe { get_14(&mut *(&raw mut (*unimplemented!())).cast::<()>()) })
             }),
         };
     }

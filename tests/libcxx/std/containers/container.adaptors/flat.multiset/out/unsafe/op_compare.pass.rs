@@ -244,25 +244,21 @@ pub unsafe fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_7(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_8(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -346,7 +342,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_10(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -356,7 +352,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -439,24 +435,24 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_12))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_13))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_11))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_12))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_14)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_11)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_12)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_13)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_13)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_10)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_11)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_12)) = 0_();
     }
 }
-pub static mut outstanding_bytes_11: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_10: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_12: std::cell::LazyCell<()> =
+pub static mut alloc_count_11: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_13: std::cell::LazyCell<()> =
+pub static mut dealloc_count_12: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_14: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_13: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -517,21 +513,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_15: std::cell::LazyCell<()> =
+pub static mut destructed_value_14: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_16: std::cell::LazyCell<()> =
+pub static mut moved_value_15: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_17(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_16(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_18(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_17(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_17(_x, _y)
+        operator_eq_16(_x, _y)
     });
 }
 #[repr(C)]
@@ -595,8 +591,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_15));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_14));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -617,7 +613,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_17(
+            operator_eq_16(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -666,6 +662,165 @@ impl Tag_X {
     pub unsafe fn move_assign(&mut self, _a0: *mut Tag_X) -> *mut Tag_X {
         return &mut (*(self as *mut Tag_X));
     }
+}
+pub unsafe fn testComparisonsComplete_18(
+    t1: *const (),
+    t2: *const (),
+    mut isEqual: (),
+    mut isLess: (),
+    mut isGreater: (),
+) -> () {
+    unimplemented!();
+    if isEqual {
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+    } else if isLess {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+    } else if isGreater {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+    } else {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+    }
+    return true;
 }
 pub unsafe fn testComparisonsComplete_19(
     t1: *const (),
@@ -1144,164 +1299,22 @@ pub unsafe fn testComparisonsComplete_21(
     }
     return true;
 }
-pub unsafe fn testComparisonsComplete_22(
+pub unsafe fn testComparisons_22(
     t1: *const (),
     t2: *const (),
     mut isEqual: (),
     mut isLess: (),
-    mut isGreater: (),
 ) -> () {
     unimplemented!();
-    if isEqual {
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-    } else if isLess {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-    } else if isGreater {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-    } else {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-    }
-    return true;
+    let mut isGreater: () = (!(isEqual)) && (!(isLess));
+    return (unsafe {
+        let _t1: *const () = t1;
+        let _t2: *const () = t2;
+        let _isEqual: () = isEqual;
+        let _isLess: () = isLess;
+        let _isGreater: () = isGreater;
+        testComparisonsComplete_18(_t1, _t2, _isEqual, _isLess, _isGreater)
+    });
 }
 pub unsafe fn testComparisons_23(
     t1: *const (),
@@ -1320,22 +1333,13 @@ pub unsafe fn testComparisons_23(
         testComparisonsComplete_19(_t1, _t2, _isEqual, _isLess, _isGreater)
     });
 }
-pub unsafe fn testComparisons_24(
-    t1: *const (),
-    t2: *const (),
-    mut isEqual: (),
-    mut isLess: (),
-) -> () {
-    unimplemented!();
-    let mut isGreater: () = (!(isEqual)) && (!(isLess));
-    return (unsafe {
-        let _t1: *const () = t1;
-        let _t2: *const () = t2;
-        let _isEqual: () = isEqual;
-        let _isLess: () = isLess;
-        let _isGreater: () = isGreater;
-        testComparisonsComplete_20(_t1, _t2, _isEqual, _isLess, _isGreater)
-    });
+pub unsafe fn AssertComparisonsReturnBool_24() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
 pub unsafe fn AssertComparisonsReturnBool_25() {
     const _: () = assert!(true, "");;
@@ -1361,18 +1365,10 @@ pub unsafe fn AssertComparisonsReturnBool_27() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub unsafe fn AssertComparisonsReturnBool_28() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub unsafe fn operator_lt_29(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
+pub unsafe fn operator_lt_28(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
     return (((*lhs).value) < ((*rhs).value));
 }
-pub unsafe fn operator_eq_30(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
+pub unsafe fn operator_eq_29(lhs: *const LessAndEqComp, rhs: *const LessAndEqComp) -> () {
     return (((*lhs).value) == ((*rhs).value));
 }
 #[repr(C)]
@@ -1389,9 +1385,9 @@ impl LessAndEqComp {
 impl std::cmp::Ord for LessAndEqComp {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_29(self as *const LessAndEqComp, other as *const LessAndEqComp) {
+            if operator_lt_28(self as *const LessAndEqComp, other as *const LessAndEqComp) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_29(other as *const LessAndEqComp, self as *const LessAndEqComp) {
+            } else if operator_lt_28(other as *const LessAndEqComp, self as *const LessAndEqComp) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1406,11 +1402,11 @@ impl std::cmp::PartialOrd for LessAndEqComp {
 }
 impl std::cmp::PartialEq for LessAndEqComp {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_30(self as *const LessAndEqComp, other as *const LessAndEqComp) }
+        unsafe { operator_eq_29(self as *const LessAndEqComp, other as *const LessAndEqComp) }
     }
 }
 impl std::cmp::Eq for LessAndEqComp {}
-pub unsafe fn operator_cmp_31(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
+pub unsafe fn operator_cmp_30(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let mut cmp: () = std::cmp::Ord::cmp(&(_a0.value), &(_a1.value));
         if !(unimplemented!()) {
@@ -1432,7 +1428,7 @@ impl StrongOrder {
 }
 impl std::cmp::Ord for StrongOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_31(self.clone(), other.clone()) }
+        unsafe { operator_cmp_30(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for StrongOrder {
@@ -1442,11 +1438,11 @@ impl std::cmp::PartialOrd for StrongOrder {
 }
 impl std::cmp::PartialEq for StrongOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_cmp_31(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        unsafe { operator_cmp_30(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for StrongOrder {}
-pub unsafe fn operator_cmp_32(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
+pub unsafe fn operator_cmp_31(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let mut cmp: () = unimplemented!();
         if !(unimplemented!()) {
@@ -1468,7 +1464,7 @@ impl WeakOrder {
 }
 impl std::cmp::Ord for WeakOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_32(self.clone(), other.clone()) }
+        unsafe { operator_cmp_31(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for WeakOrder {
@@ -1478,11 +1474,11 @@ impl std::cmp::PartialOrd for WeakOrder {
 }
 impl std::cmp::PartialEq for WeakOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_cmp_32(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        unsafe { operator_cmp_31(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for WeakOrder {}
-pub unsafe fn operator_cmp_33(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub unsafe fn operator_cmp_32(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if ((lhs.value) == (unimplemented!())) || ((rhs.value) == (unimplemented!())) {
         return unimplemented!();
     }
@@ -1491,7 +1487,7 @@ pub unsafe fn operator_cmp_33(mut lhs: PartialOrder, mut rhs: PartialOrder) -> (
     }
     return unimplemented!();
 }
-pub unsafe fn operator_eq_34(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub unsafe fn operator_eq_33(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     return unimplemented!();
 }
 #[repr(C)]
@@ -1507,7 +1503,7 @@ impl PartialOrder {
 }
 impl std::cmp::Ord for PartialOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_33(self.clone(), other.clone()) }
+        unsafe { operator_cmp_32(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for PartialOrder {
@@ -1517,7 +1513,7 @@ impl std::cmp::PartialOrd for PartialOrder {
 }
 impl std::cmp::PartialEq for PartialOrder {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_34(self.clone(), other.clone()) }
+        unsafe { operator_eq_33(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for PartialOrder {}
@@ -1532,7 +1528,7 @@ const _: () = assert!(!(false), "!HasOperatorLessThan<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorLessThanEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorNotEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorSpaceship<NonComparable>");
-pub unsafe fn operator_eq_35(_a0: *const EqualityComparable, _a1: *const EqualityComparable) -> () {
+pub unsafe fn operator_eq_34(_a0: *const EqualityComparable, _a1: *const EqualityComparable) -> () {
     return (((*_a0).value_) == ((*_a1).value_));
 }
 #[repr(C)]
@@ -1549,7 +1545,7 @@ impl EqualityComparable {
 impl std::cmp::PartialEq for EqualityComparable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_35(
+            operator_eq_34(
                 self as *const EqualityComparable,
                 other as *const EqualityComparable,
             )
@@ -1560,10 +1556,10 @@ impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
-pub unsafe fn operator_eq_36(_a0: *const ThreeWayComparable, _a1: *const ThreeWayComparable) -> () {
+pub unsafe fn operator_eq_35(_a0: *const ThreeWayComparable, _a1: *const ThreeWayComparable) -> () {
     return (((*_a0).value_) == ((*_a1).value_));
 }
-pub unsafe fn operator_cmp_37(
+pub unsafe fn operator_cmp_36(
     _a0: *const ThreeWayComparable,
     _a1: *const ThreeWayComparable,
 ) -> () {
@@ -1589,7 +1585,7 @@ impl ThreeWayComparable {
 impl std::cmp::Ord for ThreeWayComparable {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            operator_cmp_37(
+            operator_cmp_36(
                 self as *const ThreeWayComparable,
                 other as *const ThreeWayComparable,
             )
@@ -1604,7 +1600,7 @@ impl std::cmp::PartialOrd for ThreeWayComparable {
 impl std::cmp::PartialEq for ThreeWayComparable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_36(
+            operator_eq_35(
                 self as *const ThreeWayComparable,
                 other as *const ThreeWayComparable,
             )
@@ -1641,17 +1637,17 @@ impl ImplicitBool {
         return self.val;
     }
 }
-pub unsafe fn operator_eq_38(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
+pub unsafe fn operator_eq_37(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
         val: ((lhs.x) == (rhs.y)),
     };
 }
-pub unsafe fn test_one_39() {
+pub unsafe fn test_one_38() {
     {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_25() });
+        (unsafe { AssertComparisonsReturnBool_24() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1662,7 +1658,35 @@ pub unsafe fn test_one_39() {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_26() });
+        (unsafe { AssertComparisonsReturnBool_25() });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
+pub unsafe fn test_one_39() {
+    {
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        (unsafe { AssertComparisonsReturnBool_24() });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        (unsafe { AssertComparisonsReturnBool_25() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1679,7 +1703,7 @@ pub unsafe fn test_one_40() {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_25() });
+        (unsafe { AssertComparisonsReturnBool_24() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1690,7 +1714,7 @@ pub unsafe fn test_one_40() {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_26() });
+        (unsafe { AssertComparisonsReturnBool_25() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1707,7 +1731,7 @@ pub unsafe fn test_one_41() {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_25() });
+        (unsafe { AssertComparisonsReturnBool_24() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1718,7 +1742,7 @@ pub unsafe fn test_one_41() {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_26() });
+        (unsafe { AssertComparisonsReturnBool_25() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1730,53 +1754,25 @@ pub unsafe fn test_one_41() {
         unimplemented!();
     }
 }
-pub unsafe fn test_one_42() {
+pub unsafe fn test_42() -> () {
+    (unsafe { test_one_38() });
     {
-        let mut s1: () = unimplemented!();
-        let mut s2: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_25() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
+        (unsafe { test_one_39() });
     }
-    {
-        let mut s1: () = unimplemented!();
-        let mut s2: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_26() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_43() -> () {
-    (unsafe { test_one_39() });
-    {
-        (unsafe { test_one_40() });
-    }
+    (unsafe { test_one_40() });
     (unsafe { test_one_41() });
-    (unsafe { test_one_42() });
+    {
+        let mut s1: () = unimplemented!();
+        let mut s2: () = unimplemented!();
+        const _: () = assert!(true, "");;
+        (unsafe { AssertComparisonsReturnBool_26() });
+        unimplemented!();
+    }
     {
         let mut s1: () = unimplemented!();
         let mut s2: () = unimplemented!();
         const _: () = assert!(true, "");;
         (unsafe { AssertComparisonsReturnBool_27() });
-        unimplemented!();
-    }
-    {
-        let mut s1: () = unimplemented!();
-        let mut s2: () = unimplemented!();
-        const _: () = assert!(true, "");;
-        (unsafe { AssertComparisonsReturnBool_28() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1788,8 +1784,8 @@ pub unsafe fn test_43() -> () {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct StrongComp_44 {}
-impl StrongComp_44 {
+pub struct StrongComp_43 {}
+impl StrongComp_43 {
     pub unsafe fn operator_call(&self, mut a: (), mut b: ()) -> () {
         return unimplemented!();
     }
@@ -1810,14 +1806,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_43() });
+    (unsafe { test_42() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_11);
-    std::cell::LazyCell::force(&*&raw const alloc_count_12);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_13);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_14);
-    std::cell::LazyCell::force(&*&raw const destructed_value_15);
-    std::cell::LazyCell::force(&*&raw const moved_value_16);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_10);
+    std::cell::LazyCell::force(&*&raw const alloc_count_11);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_12);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_13);
+    std::cell::LazyCell::force(&*&raw const destructed_value_14);
+    std::cell::LazyCell::force(&*&raw const moved_value_15);
 }

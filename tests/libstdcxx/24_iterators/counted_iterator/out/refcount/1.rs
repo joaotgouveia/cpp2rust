@@ -265,10 +265,7 @@ pub fn test01_10() {
 }
 pub fn test02_11() {
     let in_: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let in_iter: Value<()> = Rc::new(RefCell::new(std_counted_iterator_const_int_ptr_::new_1(
-        { unimplemented!() },
-        { (unimplemented!() as ()) },
-    )));
+    let in_iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -336,10 +333,7 @@ pub fn test02_11() {
         unimplemented!(),
         unimplemented!(),
     ])));
-    let out_iter: Value<()> = Rc::new(RefCell::new(std_counted_iterator_int_ptr_::new_1(
-        { unimplemented!() },
-        { (unimplemented!() as ()) },
-    )));
+    let out_iter: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -613,14 +607,8 @@ pub fn test03_13() {
         X_14::new({ 1_() }),
         X_14::new({ 2_() }),
     ])));
-    let i: Value<()> = Rc::new(RefCell::new(std_counted_iterator_X_ptr_::new_1(
-        { (arr.as_pointer() as Ptr<X_14>) },
-        { 2_() },
-    )));
-    let j: Value<()> = Rc::new(RefCell::new(std_counted_iterator_X_ptr_::new_1(
-        { (arr.as_pointer() as Ptr<X_14>).offset((1_()) as isize) },
-        { 1_() },
-    )));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let j: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({ (*iter_swap_15.with(Value::clone).borrow_mut())(i.as_pointer(), j.as_pointer()) });
     let mut __do_while = true;
     'loop_: while __do_while || (false) {

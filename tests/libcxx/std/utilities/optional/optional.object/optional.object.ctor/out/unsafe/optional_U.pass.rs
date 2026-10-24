@@ -75,22 +75,22 @@ impl Z {
 pub unsafe fn test_all_4() -> () {
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_0(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_0(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     return true;
 }
 pub unsafe fn test_all_5() -> () {
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_1(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_1(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     return true;
 }
@@ -116,11 +116,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     const _: () = assert!(true, "test_all<int, X>()");;
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_2(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_2(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_2(&mut *(&raw mut rhs).cast::<()>(), Some(true)) });
+        (unsafe {
+            test_2(
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                Some(true),
+            )
+        });
     }
     const _: () = assert!(
         true,

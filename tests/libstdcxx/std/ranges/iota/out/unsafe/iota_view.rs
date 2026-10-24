@@ -523,7 +523,7 @@ pub unsafe fn test03_14() {
 pub unsafe fn test04_15() {
     let mut x: [(); 3] = [1_(), 2_(), 3_()];
     let mut v: () = (unsafe {
-        let mut ___e: () = std_counted_iterator_int_ptr_::new_1({ x.as_mut_ptr() }, { 3_() });
+        let mut ___e: () = unimplemented!();
         (*std::cell::LazyCell::force_mut(&mut *&raw mut iota_13))(
             &mut ___e,
             &(*std::cell::LazyCell::force_mut(&mut *&raw mut default_sentinel_16)),

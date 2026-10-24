@@ -235,29 +235,23 @@ pub fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_4(_i, n)
     });
 }
-pub fn iter_swap_6(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_7(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -303,7 +297,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_10(
+            operator_cmp_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -328,7 +322,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_9(
+            operator_eq_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -429,28 +423,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_12.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_13.with(|rc| *rc.borrow())));
+        return ((alloc_count_11.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_12.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_14.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_11.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_12.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_13.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_13.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_10.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_11.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_12.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_11: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_10: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_12: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_11: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_13: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_12: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_14: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_13: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -506,22 +500,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_15: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_14: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_16: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_15: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_17(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_16(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_18(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_17(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_17(_x, _y)
+        operator_eq_16(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -582,7 +576,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_16(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -637,6 +631,165 @@ impl Tag_X {
     pub fn new_3(mut _a0: Ctor_Tag, _a1: Ptr<Tag_X>) -> Self {
         Self {}
     }
+}
+pub fn testComparisonsComplete_18(
+    t1: Ptr<()>,
+    t2: Ptr<()>,
+    mut isEqual: (),
+    mut isLess: (),
+    mut isGreater: (),
+) -> () {
+    unimplemented!();
+    if isEqual {
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+        if (!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+    } else if isLess {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+    } else if isGreater {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+    } else {
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if !(!(unimplemented!())) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+        if (unimplemented!()) {
+            return false;
+        }
+    }
+    return true;
 }
 pub fn testComparisonsComplete_19(
     t1: Ptr<()>,
@@ -1274,164 +1427,17 @@ pub fn testComparisonsComplete_22(
     }
     return true;
 }
-pub fn testComparisonsComplete_23(
-    t1: Ptr<()>,
-    t2: Ptr<()>,
-    mut isEqual: (),
-    mut isLess: (),
-    mut isGreater: (),
-) -> () {
+pub fn testComparisons_23(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: (), mut isLess: ()) -> () {
     unimplemented!();
-    if isEqual {
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-        if (!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-    } else if isLess {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-    } else if isGreater {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-    } else {
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if !(!(unimplemented!())) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-        if (unimplemented!()) {
-            return false;
-        }
-    }
-    return true;
+    let mut isGreater: () = (!(isEqual)) && (!(isLess));
+    return ({
+        let _t1: Ptr<()> = (t1).clone();
+        let _t2: Ptr<()> = (t2).clone();
+        let _isEqual: () = isEqual;
+        let _isLess: () = isLess;
+        let _isGreater: () = isGreater;
+        testComparisonsComplete_18(_t1, _t2, _isEqual, _isLess, _isGreater)
+    });
 }
 pub fn testComparisons_24(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: (), mut isLess: ()) -> () {
     unimplemented!();
@@ -1445,17 +1451,13 @@ pub fn testComparisons_24(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: (), mut isLess:
         testComparisonsComplete_19(_t1, _t2, _isEqual, _isLess, _isGreater)
     });
 }
-pub fn testComparisons_25(t1: Ptr<()>, t2: Ptr<()>, mut isEqual: (), mut isLess: ()) -> () {
-    unimplemented!();
-    let mut isGreater: () = (!(isEqual)) && (!(isLess));
-    return ({
-        let _t1: Ptr<()> = (t1).clone();
-        let _t2: Ptr<()> = (t2).clone();
-        let _isEqual: () = isEqual;
-        let _isLess: () = isLess;
-        let _isGreater: () = isGreater;
-        testComparisonsComplete_20(_t1, _t2, _isEqual, _isLess, _isGreater)
-    });
+pub fn AssertComparisonsReturnBool_25() {
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
+    const _: () = assert!(true, "");;
 }
 pub fn AssertComparisonsReturnBool_26() {
     const _: () = assert!(true, "");;
@@ -1489,18 +1491,10 @@ pub fn AssertComparisonsReturnBool_29() {
     const _: () = assert!(true, "");;
     const _: () = assert!(true, "");;
 }
-pub fn AssertComparisonsReturnBool_30() {
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-    const _: () = assert!(true, "");;
-}
-pub fn operator_lt_31(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_lt_30(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
     return ({ lhs.with(|__s| __s.value) } < { rhs.with(|__s| __s.value) });
 }
-pub fn operator_eq_32(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
+pub fn operator_eq_31(lhs: Ptr<LessAndEqComp>, rhs: Ptr<LessAndEqComp>) -> () {
     return ({ lhs.with(|__s| __s.value) } == { rhs.with(|__s| __s.value) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1517,7 +1511,7 @@ impl LessAndEqComp {
 impl std::cmp::Ord for LessAndEqComp {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_31(
+            if operator_lt_30(
                 Rc::new(RefCell::new(LessAndEqComp {
                     value: self.value.clone(),
                 }))
@@ -1528,7 +1522,7 @@ impl std::cmp::Ord for LessAndEqComp {
                 .as_pointer(),
             ) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_31(
+            } else if operator_lt_30(
                 Rc::new(RefCell::new(LessAndEqComp {
                     value: other.value.clone(),
                 }))
@@ -1553,7 +1547,7 @@ impl std::cmp::PartialOrd for LessAndEqComp {
 impl std::cmp::PartialEq for LessAndEqComp {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_32(
+            operator_eq_31(
                 Rc::new(RefCell::new(LessAndEqComp {
                     value: self.value.clone(),
                 }))
@@ -1567,7 +1561,7 @@ impl std::cmp::PartialEq for LessAndEqComp {
     }
 }
 impl std::cmp::Eq for LessAndEqComp {}
-pub fn operator_cmp_33(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
+pub fn operator_cmp_32(mut _a0: StrongOrder, mut _a1: StrongOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(&(_a0.value), &(_a1.value))));
         if !(unimplemented!()) {
@@ -1589,7 +1583,7 @@ impl StrongOrder {
 }
 impl std::cmp::Ord for StrongOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_33(self.clone(), other.clone()) }
+        { operator_cmp_32(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for StrongOrder {
@@ -1599,11 +1593,11 @@ impl std::cmp::PartialOrd for StrongOrder {
 }
 impl std::cmp::PartialEq for StrongOrder {
     fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_33(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        { operator_cmp_32(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for StrongOrder {}
-pub fn operator_cmp_34(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
+pub fn operator_cmp_33(mut _a0: WeakOrder, mut _a1: WeakOrder) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         if !(unimplemented!()) {
@@ -1625,7 +1619,7 @@ impl WeakOrder {
 }
 impl std::cmp::Ord for WeakOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_34(self.clone(), other.clone()) }
+        { operator_cmp_33(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for WeakOrder {
@@ -1635,11 +1629,11 @@ impl std::cmp::PartialOrd for WeakOrder {
 }
 impl std::cmp::PartialEq for WeakOrder {
     fn eq(&self, other: &Self) -> bool {
-        { operator_cmp_34(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
+        { operator_cmp_33(self.clone(), other.clone()) == std::cmp::Ordering::Equal }
     }
 }
 impl std::cmp::Eq for WeakOrder {}
-pub fn operator_cmp_35(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub fn operator_cmp_34(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     if (lhs.value == unimplemented!()) || (rhs.value == unimplemented!()) {
         return unimplemented!();
     }
@@ -1648,7 +1642,7 @@ pub fn operator_cmp_35(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     }
     return unimplemented!();
 }
-pub fn operator_eq_36(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
+pub fn operator_eq_35(mut lhs: PartialOrder, mut rhs: PartialOrder) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1664,7 +1658,7 @@ impl PartialOrder {
 }
 impl std::cmp::Ord for PartialOrder {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        { operator_cmp_35(self.clone(), other.clone()) }
+        { operator_cmp_34(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::PartialOrd for PartialOrder {
@@ -1674,7 +1668,7 @@ impl std::cmp::PartialOrd for PartialOrder {
 }
 impl std::cmp::PartialEq for PartialOrder {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_36(self.clone(), other.clone()) }
+        { operator_eq_35(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for PartialOrder {}
@@ -1689,7 +1683,7 @@ const _: () = assert!(!(false), "!HasOperatorLessThan<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorLessThanEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorNotEqual<NonComparable>");
 const _: () = assert!(!(false), "!HasOperatorSpaceship<NonComparable>");
-pub fn operator_eq_37(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> () {
+pub fn operator_eq_36(_a0: Ptr<EqualityComparable>, _a1: Ptr<EqualityComparable>) -> () {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1706,7 +1700,7 @@ impl EqualityComparable {
 impl std::cmp::PartialEq for EqualityComparable {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_37(
+            operator_eq_36(
                 Rc::new(RefCell::new(EqualityComparable {
                     value_: self.value_.clone(),
                 }))
@@ -1723,10 +1717,10 @@ impl std::cmp::Eq for EqualityComparable {}
 const _: () = assert!(true, "std::equality_comparable<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorEqual<EqualityComparable>");
 const _: () = assert!(true, "HasOperatorNotEqual<EqualityComparable>");
-pub fn operator_eq_38(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_eq_37(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
     return ({ _a0.with(|__s| __s.value_) } == { _a1.with(|__s| __s.value_) });
 }
-pub fn operator_cmp_39(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
+pub fn operator_cmp_38(_a0: Ptr<ThreeWayComparable>, _a1: Ptr<ThreeWayComparable>) -> () {
     {
         let cmp: Value<()> = Rc::new(RefCell::new(std::cmp::Ord::cmp(
             &(_a0.with(|__s| __s.value_)),
@@ -1752,7 +1746,7 @@ impl ThreeWayComparable {
 impl std::cmp::Ord for ThreeWayComparable {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_39(
+            operator_cmp_38(
                 Rc::new(RefCell::new(ThreeWayComparable {
                     value_: self.value_.clone(),
                 }))
@@ -1773,7 +1767,7 @@ impl std::cmp::PartialOrd for ThreeWayComparable {
 impl std::cmp::PartialEq for ThreeWayComparable {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_38(
+            operator_eq_37(
                 Rc::new(RefCell::new(ThreeWayComparable {
                     value_: self.value_.clone(),
                 }))
@@ -1814,12 +1808,27 @@ pub struct ImplicitBool {
     #[offset(0)]
     pub val: (),
 }
-pub fn operator_eq_40(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
+pub fn operator_eq_39(mut lhs: ImplicitBool_E1, mut rhs: ImplicitBool_E2) -> ImplicitBool {
     return ImplicitBool {
         val: (lhs.x == rhs.y),
     };
 }
-pub fn test_41() {
+pub fn test_40() {
+    {
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        ({ AssertComparisonsReturnBool_25() });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1835,11 +1844,28 @@ pub fn test_41() {
         unimplemented!();
         unimplemented!();
     }
+}
+pub fn test_41() {
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_27() });
+        ({ AssertComparisonsReturnBool_25() });
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        ({ AssertComparisonsReturnBool_26() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1856,7 +1882,7 @@ pub fn test_42() {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_26() });
+        ({ AssertComparisonsReturnBool_25() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1871,7 +1897,7 @@ pub fn test_42() {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_27() });
+        ({ AssertComparisonsReturnBool_26() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1888,7 +1914,7 @@ pub fn test_43() {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_26() });
+        ({ AssertComparisonsReturnBool_25() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1899,23 +1925,6 @@ pub fn test_43() {
         unimplemented!();
         unimplemented!();
     }
-    {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_27() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub fn test_44() {
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1931,35 +1940,29 @@ pub fn test_44() {
         unimplemented!();
         unimplemented!();
     }
-    {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_27() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
 }
-pub fn test_45() -> () {
-    ({ test_41() });
+pub fn test_44() -> () {
+    ({ test_40() });
     {
-        ({ test_42() });
+        ({ test_41() });
     }
+    ({ test_42() });
     ({ test_43() });
-    ({ test_44() });
-    ({ test_44() });
+    ({ test_43() });
+    {
+        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        ({ AssertComparisonsReturnBool_27() });
+        unimplemented!();
+    }
     {
         let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         ({ AssertComparisonsReturnBool_28() });
+        unimplemented!();
+        unimplemented!();
         unimplemented!();
     }
     {
@@ -1967,15 +1970,6 @@ pub fn test_45() -> () {
         let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         const _: () = assert!(true, "");;
         ({ AssertComparisonsReturnBool_29() });
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let s1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let s2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        ({ AssertComparisonsReturnBool_30() });
         unimplemented!();
         unimplemented!();
         unimplemented!();
@@ -1987,7 +1981,7 @@ pub fn test_45() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
-pub struct StrongComp_46 {}
+pub struct StrongComp_45 {}
 pub fn main() {
     let size: usize = ::std::env::args().map(|arg| arg.len() + 1).sum();
     let args: Value<Box<[i8]>> = Rc::new(RefCell::new(vec![0; size].into_boxed_slice()));
@@ -2008,7 +2002,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_45() });
+    ({ test_44() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -2104,10 +2098,10 @@ pub trait MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___t
 }
 impl MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__Impl for Ptr<MinSequenceContainer_int__three_way_random_access_iterator_int_ptr___three_way_random_access_iterator_const_int_ptr__> {
 }
-pub trait StrongComp_46Impl {
+pub trait StrongComp_45Impl {
     fn operator_call(&self, a: (), b: ()) -> ();
 }
-impl StrongComp_46Impl for Ptr<StrongComp_46> {
+impl StrongComp_45Impl for Ptr<StrongComp_45> {
     fn operator_call(&self, a: (), b: ()) -> () {
         let a: Value<()> = Rc::new(RefCell::new(a));
         let b: Value<()> = Rc::new(RefCell::new(b));
@@ -2490,8 +2484,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_15.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_15.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_14.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_14.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -2543,10 +2537,10 @@ impl three_way_random_access_iterator_const_int_ptr_Impl
 {
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = outstanding_bytes_11.with(|_| ());
-    let _ = alloc_count_12.with(|_| ());
-    let _ = dealloc_count_13.with(|_| ());
-    let _ = disable_default_constructor_14.with(|_| ());
-    let _ = destructed_value_15.with(|_| ());
-    let _ = moved_value_16.with(|_| ());
+    let _ = outstanding_bytes_10.with(|_| ());
+    let _ = alloc_count_11.with(|_| ());
+    let _ = dealloc_count_12.with(|_| ());
+    let _ = disable_default_constructor_13.with(|_| ());
+    let _ = destructed_value_14.with(|_| ());
+    let _ = moved_value_15.with(|_| ());
 }

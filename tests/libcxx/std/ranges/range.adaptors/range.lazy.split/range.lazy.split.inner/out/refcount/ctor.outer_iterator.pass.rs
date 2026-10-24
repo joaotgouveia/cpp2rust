@@ -74,8 +74,8 @@ const _: () = assert!(true, "std::input_iterator<cpp17_input_iterator<int*>>");
 impl forward_iterator_const_char_ptr_ {
     pub fn new_1(other: Ptr<forward_iterator_char_ptr_>) -> Self {
         let __this: forward_iterator_const_char_ptr_ = Self {
-            it_: other.with(|__s| __s.it_.clone()),
-            tracker_: support_double_move_tracker::move_from({ field_ptr!(other, tracker_) }),
+            it_: (unimplemented!().read()),
+            tracker_: support_double_move_tracker::move_from({ unimplemented!() }),
         };
         field!(other, it_).write(Ptr::<()>::null());
         __this
@@ -435,29 +435,23 @@ pub fn operator_add_8(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_7(_i, n)
     });
 }
-pub fn iter_swap_9(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_10(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_9(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_10(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -503,7 +497,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_13(
+            operator_cmp_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -528,7 +522,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_12(
+            operator_eq_11(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -768,7 +762,7 @@ const _: () = assert!(
     "!std::ranges::forward_range<const ForwardOnlyIfNonConstView>"
 );
 const _: () = assert!(true, "std::ranges::view<ForwardOnlyIfNonConstView>");
-pub fn operator_eq_14(lhs: Ptr<InputView>, rhs: Ptr<InputView>) -> () {
+pub fn operator_eq_13(lhs: Ptr<InputView>, rhs: Ptr<InputView>) -> () {
     return unimplemented!();
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg)]
@@ -794,7 +788,7 @@ impl InputView {
 impl std::cmp::PartialEq for InputView {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_13(
                 Rc::new(RefCell::new(InputView {
                     buffer_: self.buffer_.clone(),
                 }))
@@ -858,7 +852,7 @@ const _: () = assert!(
     true,
     "!std::is_constructible_v<InnerIterNonConst, OuterIterConst>"
 );
-pub fn test_impl_15() {
+pub fn test_impl_14() {
     let i: Value<()> = Rc::new(RefCell::new(
         std_ranges_lazy_split_view_ForwardView__ForwardView____inner_iterator_true_::new_1({
             unimplemented!()
@@ -866,7 +860,7 @@ pub fn test_impl_15() {
     ));
     const _: () = assert!(true, "!std::is_convertible_v<Outer, Inner>");;
 }
-pub fn test_impl_16() {
+pub fn test_impl_15() {
     let i: Value<()> = Rc::new(RefCell::new(
         std_ranges_lazy_split_view_InputView__ForwardTinyView____inner_iterator_false_::new_1({
             unimplemented!()
@@ -874,7 +868,7 @@ pub fn test_impl_16() {
     ));
     const _: () = assert!(true, "!std::is_convertible_v<Outer, Inner>");;
 }
-pub fn test_impl_17() {
+pub fn test_impl_16() {
     let i: Value<()> = Rc::new(RefCell::new(
         std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____inner_iterator_true_::new_1(
             { unimplemented!() },
@@ -882,7 +876,7 @@ pub fn test_impl_17() {
     ));
     const _: () = assert!(true, "!std::is_convertible_v<Outer, Inner>");;
 }
-pub fn test_impl_18() {
+pub fn test_impl_17() {
     let i: Value<()> = Rc::new(RefCell::new(
         std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____inner_iterator_true_::new_1(
             {
@@ -892,7 +886,7 @@ pub fn test_impl_18() {
     ));
     const _: () = assert!(true, "!std::is_convertible_v<Outer, Inner>");;
 }
-pub fn test_impl_19() {
+pub fn test_impl_18() {
     let i: Value<()> = Rc::new(RefCell::new(
         std_ranges_lazy_split_view_ForwardDiffView__ForwardDiffView____inner_iterator_false_::new_1(
             { unimplemented!() },
@@ -900,12 +894,12 @@ pub fn test_impl_19() {
     ));
     const _: () = assert!(true, "!std::is_convertible_v<Outer, Inner>");;
 }
-pub fn test_20() -> () {
+pub fn test_19() -> () {
+    ({ test_impl_14() });
     ({ test_impl_15() });
     ({ test_impl_16() });
     ({ test_impl_17() });
     ({ test_impl_18() });
-    ({ test_impl_19() });
     return true;
 }
 pub fn main() {
@@ -928,7 +922,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_20() });
+    ({ test_19() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

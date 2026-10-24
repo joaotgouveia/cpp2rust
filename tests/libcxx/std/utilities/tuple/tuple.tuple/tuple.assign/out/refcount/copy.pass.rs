@@ -48,7 +48,7 @@ pub fn test_0() -> () {
         let x: Value<()> = Rc::new(RefCell::new(42_()));
         let y: Value<()> = Rc::new(RefCell::new(100_()));
         let mut x2: () = -1_();
-        let y2: Value<()> = Rc::new(RefCell::new(500_()));
+        let mut y2: () = 500_();
         let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let t2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         (*t.borrow_mut()) = (*t2.borrow()).clone();

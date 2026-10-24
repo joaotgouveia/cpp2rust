@@ -126,7 +126,7 @@ pub fn test_0() -> () {
         const _: () = assert!(true, "!std::is_convertible_v<int, OwningView>");;
         const _: () = assert!(true, "std::is_convertible_v<MoveChecker&&, OwningView>");;
         {
-            let m: Value<MoveChecker> = Rc::new(RefCell::new(MoveChecker::new({ 42_() })));
+            let mut m: MoveChecker = MoveChecker::new({ 42_() });
             let ov: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             unimplemented!();
             unimplemented!();

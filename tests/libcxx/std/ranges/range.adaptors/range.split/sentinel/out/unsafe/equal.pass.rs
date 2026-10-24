@@ -530,25 +530,21 @@ pub unsafe fn operator_add_7(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_8(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_9(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_10(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_9(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_10(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_12(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_11(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -632,7 +628,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_12(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_11(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -642,7 +638,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_11(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_10(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -710,7 +706,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn testOne_13() {
+pub unsafe fn testOne_12() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -721,7 +717,7 @@ pub unsafe fn testOne_13() {
             let mut e : std_ranges_split_view_std_ranges_subrange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_14(&mut b, 2_()) });
+            (unsafe { advance_13(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
         }
@@ -740,7 +736,7 @@ pub unsafe fn testOne_13() {
         }
     }
 }
-pub unsafe fn testOne_15() {
+pub unsafe fn testOne_14() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -751,7 +747,7 @@ pub unsafe fn testOne_15() {
             let mut e : std_ranges_split_view_std_ranges_subrange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_16(&mut b, 2_()) });
+            (unsafe { advance_15(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
         }
@@ -770,7 +766,7 @@ pub unsafe fn testOne_15() {
         }
     }
 }
-pub unsafe fn testOne_17() {
+pub unsafe fn testOne_16() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -781,7 +777,7 @@ pub unsafe fn testOne_17() {
             let mut e : std_ranges_split_view_std_ranges_subrange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_18(&mut b, 2_()) });
+            (unsafe { advance_17(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
         }
@@ -800,7 +796,7 @@ pub unsafe fn testOne_17() {
         }
     }
 }
-pub unsafe fn testOne_19() {
+pub unsafe fn testOne_18() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -811,7 +807,7 @@ pub unsafe fn testOne_19() {
             let mut e : std_ranges_split_view_std_ranges_subrange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_20(&mut b, 2_()) });
+            (unsafe { advance_19(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
         }
@@ -830,7 +826,7 @@ pub unsafe fn testOne_19() {
         }
     }
 }
-pub unsafe fn testOne_21() {
+pub unsafe fn testOne_20() {
     const _: () = assert!(!(false), "!std::ranges::common_range<SplitView>");;
     {
         {
@@ -841,7 +837,7 @@ pub unsafe fn testOne_21() {
             let mut e : std_ranges_split_view_std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr____std_ranges_single_view_int_____sentinel = unimplemented!()  ;
             unimplemented!();
             unimplemented!();
-            (unsafe { advance_22(&mut b, 2_()) });
+            (unsafe { advance_21(&mut b, 2_()) });
             unimplemented!();
             unimplemented!();
         }
@@ -860,12 +856,12 @@ pub unsafe fn testOne_21() {
         }
     }
 }
-pub unsafe fn test_23() -> () {
-    (unsafe { testOne_13() });
-    (unsafe { testOne_15() });
-    (unsafe { testOne_17() });
-    (unsafe { testOne_19() });
-    (unsafe { testOne_21() });
+pub unsafe fn test_22() -> () {
+    (unsafe { testOne_12() });
+    (unsafe { testOne_14() });
+    (unsafe { testOne_16() });
+    (unsafe { testOne_18() });
+    (unsafe { testOne_20() });
     return true;
 }
 pub fn main() {
@@ -884,7 +880,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_23() });
+    (unsafe { test_22() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

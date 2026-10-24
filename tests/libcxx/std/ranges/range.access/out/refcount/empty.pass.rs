@@ -247,29 +247,23 @@ pub fn operator_add_5(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_4(_i, n)
     });
 }
-pub fn iter_swap_6(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_7(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_6(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -315,7 +309,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_10(
+            operator_cmp_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -340,7 +334,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_9(
+            operator_eq_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -459,7 +453,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeEmptyT, const NonConstEmpty&>"
 );
-pub fn empty_12(_a0: Ptr<HasMemberAndFunction>) -> () {
+pub fn empty_11(_a0: Ptr<HasMemberAndFunction>) -> () {
     return false;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -490,7 +484,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<RangeEmptyT, const InputIterators&>"
 );
-pub fn testEmptyMember_13() -> () {
+pub fn testEmptyMember_12() -> () {
     let a: Value<HasMemberAndFunction> = Rc::new(RefCell::new(<HasMemberAndFunction>::default()));
     unimplemented!();
     let b: Value<BoolConvertibleReturnType> =
@@ -504,7 +498,7 @@ pub struct SizeMember {
     #[offset(0)]
     pub size_: (),
 }
-pub fn size_14(mut sf: SizeFunction) -> () {
+pub fn size_13(mut sf: SizeFunction) -> () {
     return sf.size_;
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -518,7 +512,7 @@ pub struct SizeFunction {
 pub struct BeginEndSizedSentinel {}
 const _: () = assert!(true, "std::ranges::forward_range<BeginEndSizedSentinel>");
 const _: () = assert!(true, "std::ranges::sized_range<BeginEndSizedSentinel>");
-pub fn testUsingRangesSize_15() -> () {
+pub fn testUsingRangesSize_14() -> () {
     let a: Value<SizeMember> = Rc::new(RefCell::new(SizeMember { size_: 1_() }));
     unimplemented!();
     let b: Value<SizeMember> = Rc::new(RefCell::new(SizeMember { size_: 0_() }));
@@ -543,7 +537,7 @@ const _: () = assert!(
 #[byte_size(1)]
 pub struct DisabledSizeRangeWithBeginEnd {}
 thread_local!(
-    pub static disable_sized_range_16: Value<()> = Rc::new(RefCell::new(true));
+    pub static disable_sized_range_15: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(
     true,
@@ -559,7 +553,7 @@ pub struct BeginEndAndEmpty {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct EvilBeginEnd {}
-pub fn testBeginEqualsEnd_17() -> () {
+pub fn testBeginEqualsEnd_16() -> () {
     let a: Value<BeginEndNotSizedSentinel> =
         Rc::new(RefCell::new(<BeginEndNotSizedSentinel>::default()));
     unimplemented!();
@@ -600,11 +594,11 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ testEmptyMember_13() });
+    ({ testEmptyMember_12() });
     const _: () = assert!(true, "testEmptyMember()");;
-    ({ testUsingRangesSize_15() });
+    ({ testUsingRangesSize_14() });
     const _: () = assert!(true, "testUsingRangesSize()");;
-    ({ testBeginEqualsEnd_17() });
+    ({ testBeginEqualsEnd_16() });
     const _: () = assert!(true, "testBeginEqualsEnd()");;
     return 0_();
 }
@@ -1037,5 +1031,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = disable_sized_range_16.with(|_| ());
+    let _ = disable_sized_range_15.with(|_| ());
 }

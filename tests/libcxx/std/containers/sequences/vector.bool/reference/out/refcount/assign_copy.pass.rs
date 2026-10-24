@@ -30,14 +30,14 @@ pub fn test_0() -> () {
     {
         unimplemented!() = false;
         unimplemented!() = true;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
+        (*ref1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
         unimplemented!();
         unimplemented!();
     }
     {
         unimplemented!() = true;
         unimplemented!() = false;
-        (*ref1.borrow_mut()) = (*ref2.borrow()).clone();
+        (*ref1.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
         unimplemented!();
         unimplemented!();
     }

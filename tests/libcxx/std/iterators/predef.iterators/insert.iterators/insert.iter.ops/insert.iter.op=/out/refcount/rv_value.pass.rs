@@ -6,22 +6,16 @@ use std::io::prelude::*;
 use std::io::{Read, Seek, Write};
 use std::os::fd::AsFd;
 use std::rc::{Rc, Weak};
-pub fn test_0(c1: (), mut j: (), x1: (), x2: (), x3: (), c2: Ptr<()>) {
+pub fn test_0(c1: (), mut j: (), mut x1: (), mut x2: (), mut x3: (), c2: Ptr<()>) {
     let c1: Value<()> = Rc::new(RefCell::new(c1));
-    let x1: Value<()> = Rc::new(RefCell::new(x1));
-    let x2: Value<()> = Rc::new(RefCell::new(x2));
-    let x3: Value<()> = Rc::new(RefCell::new(x3));
     let q: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
 }
-pub fn insert3at_1(c: Ptr<()>, i: (), x1: (), x2: (), x3: ()) {
+pub fn insert3at_1(c: Ptr<()>, i: (), mut x1: (), mut x2: (), mut x3: ()) {
     let i: Value<()> = Rc::new(RefCell::new(i));
-    let x1: Value<()> = Rc::new(RefCell::new(x1));
-    let x2: Value<()> = Rc::new(RefCell::new(x2));
-    let x3: Value<()> = Rc::new(RefCell::new(x3));
     unimplemented!();
     unimplemented!();
     unimplemented!();

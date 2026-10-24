@@ -1718,25 +1718,21 @@ pub unsafe fn operator_add_69(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_70(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_71(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_72(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_71(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_73(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_72(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_74(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_73(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1820,7 +1816,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_74(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_73(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1830,7 +1826,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_73(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_72(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -2383,13 +2379,13 @@ const _: () = assert!(
     !(false),
     "!std::random_access_iterator<RandomAccessIteratorBadDifferenceType>"
 );
-pub unsafe fn operator_eq_75(
+pub unsafe fn operator_eq_74(
     lhs: *const BooleanTestable,
     rhs: *const BooleanTestable,
 ) -> BooleanTestable {
     return BooleanTestable::new({ (((*lhs).value_) == ((*rhs).value_)) });
 }
-pub unsafe fn operator_ne_76(
+pub unsafe fn operator_ne_75(
     lhs: *const BooleanTestable,
     rhs: *const BooleanTestable,
 ) -> BooleanTestable {
@@ -2406,7 +2402,7 @@ impl BooleanTestable {
     }
     pub unsafe fn operator_not(&mut self) -> *mut BooleanTestable {
         self.value_ = !(self.value_);
-        return &mut (*(self as *mut BooleanTestable));
+        return &mut (*unimplemented!());
     }
     pub unsafe fn new(mut value: ()) -> Self {
         let mut this = Self { value_: value };
@@ -2417,7 +2413,7 @@ impl std::cmp::PartialEq for BooleanTestable {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
             {
-                let __cmp = &operator_eq_75(
+                let __cmp = &operator_eq_74(
                     self as *const BooleanTestable,
                     other as *const BooleanTestable,
                 );
@@ -2427,13 +2423,13 @@ impl std::cmp::PartialEq for BooleanTestable {
     }
 }
 impl std::cmp::Eq for BooleanTestable {}
-pub static mut yes_77: std::cell::LazyCell<BooleanTestable> =
+pub static mut yes_76: std::cell::LazyCell<BooleanTestable> =
     std::cell::LazyCell::new(|| unsafe { BooleanTestable::new({ true }) });
-pub static mut no_78: std::cell::LazyCell<BooleanTestable> =
+pub static mut no_77: std::cell::LazyCell<BooleanTestable> =
     std::cell::LazyCell::new(|| unsafe { BooleanTestable::new({ false }) });
-pub static mut StrictUnaryPredicate_79: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut StrictUnaryPredicate_78: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe { lambda_unsafe!(Generic, {}) });
-pub static mut StrictBinaryPredicate_80: std::cell::LazyCell<FnPtr<Generic>> =
+pub static mut StrictBinaryPredicate_79: std::cell::LazyCell<FnPtr<Generic>> =
     std::cell::LazyCell::new(|| unsafe { lambda_unsafe!(Generic, {}) });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
@@ -2498,7 +2494,7 @@ const _: () = assert!(
     !(false),
     "!HasContainsR<InputRangeNotSentinelEqualityComparableWith, int>"
 );
-pub unsafe fn test_iterators_81() {
+pub unsafe fn test_iterators_80() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -2507,7 +2503,7 @@ pub unsafe fn test_iterators_81() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2520,7 +2516,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2537,7 +2533,7 @@ pub unsafe fn test_iterators_81() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2550,7 +2546,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2566,7 +2562,7 @@ pub unsafe fn test_iterators_81() {
                 let ___first: *mut () = unimplemented!();
                 let ___last: *mut () = unimplemented!();
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2579,7 +2575,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2607,7 +2603,7 @@ pub unsafe fn test_iterators_81() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2620,7 +2616,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2637,7 +2633,7 @@ pub unsafe fn test_iterators_81() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2650,7 +2646,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2667,7 +2663,7 @@ pub unsafe fn test_iterators_81() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2680,7 +2676,7 @@ pub unsafe fn test_iterators_81() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2696,7 +2692,7 @@ pub unsafe fn test_iterators_81() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2713,7 +2709,7 @@ pub unsafe fn test_iterators_81() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -2727,7 +2723,7 @@ pub unsafe fn test_iterators_81() {
         }
     }
 }
-pub unsafe fn test_iterators_83() {
+pub unsafe fn test_iterators_82() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -2739,7 +2735,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_0 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2752,7 +2748,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2772,7 +2768,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_1 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2785,7 +2781,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2804,7 +2800,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_2 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2817,7 +2813,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2848,7 +2844,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_3 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2861,7 +2857,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2881,7 +2877,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_4 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2894,7 +2890,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2914,7 +2910,7 @@ pub unsafe fn test_iterators_83() {
                     sentinel_wrapper_char_ptr_::new_1({ &mut __tmp_5 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2927,7 +2923,7 @@ pub unsafe fn test_iterators_83() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -2943,7 +2939,7 @@ pub unsafe fn test_iterators_83() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2960,7 +2956,7 @@ pub unsafe fn test_iterators_83() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -2974,7 +2970,7 @@ pub unsafe fn test_iterators_83() {
         }
     }
 }
-pub unsafe fn test_iterators_84() {
+pub unsafe fn test_iterators_83() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -2986,7 +2982,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_6 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -2999,7 +2995,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3019,7 +3015,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_7 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3032,7 +3028,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3051,7 +3047,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_8 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3064,7 +3060,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3095,7 +3091,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_9 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3108,7 +3104,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3128,7 +3124,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_10 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3141,7 +3137,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3161,7 +3157,7 @@ pub unsafe fn test_iterators_84() {
                     sized_sentinel_char_ptr_::new_1({ &mut __tmp_11 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3174,7 +3170,7 @@ pub unsafe fn test_iterators_84() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3190,7 +3186,7 @@ pub unsafe fn test_iterators_84() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3207,7 +3203,7 @@ pub unsafe fn test_iterators_84() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -3221,7 +3217,7 @@ pub unsafe fn test_iterators_84() {
         }
     }
 }
-pub unsafe fn test_iterators_85() {
+pub unsafe fn test_iterators_84() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -3235,7 +3231,7 @@ pub unsafe fn test_iterators_85() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3248,7 +3244,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3270,7 +3266,7 @@ pub unsafe fn test_iterators_85() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3283,7 +3279,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3301,7 +3297,7 @@ pub unsafe fn test_iterators_85() {
                 let ___last: contiguous_iterator_char_ptr_ =
                     contiguous_iterator_char_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3314,7 +3310,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3347,7 +3343,7 @@ pub unsafe fn test_iterators_85() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3360,7 +3356,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3382,7 +3378,7 @@ pub unsafe fn test_iterators_85() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3395,7 +3391,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3417,7 +3413,7 @@ pub unsafe fn test_iterators_85() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3430,7 +3426,7 @@ pub unsafe fn test_iterators_85() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3446,7 +3442,7 @@ pub unsafe fn test_iterators_85() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3463,7 +3459,7 @@ pub unsafe fn test_iterators_85() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -3477,7 +3473,7 @@ pub unsafe fn test_iterators_85() {
         }
     }
 }
-pub unsafe fn test_iterators_86() {
+pub unsafe fn test_iterators_85() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -3494,7 +3490,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_12 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3507,7 +3503,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3532,7 +3528,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_13 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3545,7 +3541,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3566,7 +3562,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_14 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3579,7 +3575,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3615,7 +3611,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_15 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3628,7 +3624,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3653,7 +3649,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_16 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3666,7 +3662,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3691,7 +3687,7 @@ pub unsafe fn test_iterators_86() {
                     sentinel_wrapper_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_17 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3704,7 +3700,7 @@ pub unsafe fn test_iterators_86() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3720,7 +3716,7 @@ pub unsafe fn test_iterators_86() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3737,7 +3733,7 @@ pub unsafe fn test_iterators_86() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -3751,7 +3747,7 @@ pub unsafe fn test_iterators_86() {
         }
     }
 }
-pub unsafe fn test_iterators_87() {
+pub unsafe fn test_iterators_86() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -3768,7 +3764,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_18 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3781,7 +3777,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3806,7 +3802,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_19 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3819,7 +3815,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3840,7 +3836,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_20 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3853,7 +3849,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3889,7 +3885,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_21 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3902,7 +3898,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3927,7 +3923,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_22 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3940,7 +3936,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3965,7 +3961,7 @@ pub unsafe fn test_iterators_87() {
                     sized_sentinel_contiguous_iterator_char_ptr__::new_1({ &mut __tmp_23 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -3978,7 +3974,7 @@ pub unsafe fn test_iterators_87() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -3994,7 +3990,7 @@ pub unsafe fn test_iterators_87() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4011,7 +4007,7 @@ pub unsafe fn test_iterators_87() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -4025,7 +4021,7 @@ pub unsafe fn test_iterators_87() {
         }
     }
 }
-pub unsafe fn test_iterators_88() {
+pub unsafe fn test_iterators_87() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -4039,7 +4035,7 @@ pub unsafe fn test_iterators_88() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4052,7 +4048,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4074,7 +4070,7 @@ pub unsafe fn test_iterators_88() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4087,7 +4083,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4105,7 +4101,7 @@ pub unsafe fn test_iterators_88() {
                 let ___last: random_access_iterator_char_ptr_ =
                     random_access_iterator_char_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4118,7 +4114,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4151,7 +4147,7 @@ pub unsafe fn test_iterators_88() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4164,7 +4160,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4186,7 +4182,7 @@ pub unsafe fn test_iterators_88() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4199,7 +4195,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4221,7 +4217,7 @@ pub unsafe fn test_iterators_88() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4234,7 +4230,7 @@ pub unsafe fn test_iterators_88() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4250,7 +4246,7 @@ pub unsafe fn test_iterators_88() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4267,7 +4263,7 @@ pub unsafe fn test_iterators_88() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -4281,7 +4277,7 @@ pub unsafe fn test_iterators_88() {
         }
     }
 }
-pub unsafe fn test_iterators_89() {
+pub unsafe fn test_iterators_88() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -4298,7 +4294,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_24 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4311,7 +4307,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4336,7 +4332,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_25 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4349,7 +4345,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4370,7 +4366,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_26 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4383,7 +4379,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4419,7 +4415,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_27 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4432,7 +4428,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4457,7 +4453,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_28 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4470,7 +4466,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4495,7 +4491,7 @@ pub unsafe fn test_iterators_89() {
                     sentinel_wrapper_random_access_iterator_char_ptr__::new_1({ &mut __tmp_29 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4508,7 +4504,7 @@ pub unsafe fn test_iterators_89() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4524,7 +4520,7 @@ pub unsafe fn test_iterators_89() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4541,7 +4537,7 @@ pub unsafe fn test_iterators_89() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -4555,7 +4551,7 @@ pub unsafe fn test_iterators_89() {
         }
     }
 }
-pub unsafe fn test_iterators_90() {
+pub unsafe fn test_iterators_89() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -4572,7 +4568,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_30 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4585,7 +4581,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4610,7 +4606,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_31 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4623,7 +4619,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4644,7 +4640,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_32 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4657,7 +4653,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4693,7 +4689,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_33 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4706,7 +4702,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4731,7 +4727,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_34 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4744,7 +4740,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4769,7 +4765,7 @@ pub unsafe fn test_iterators_90() {
                     sized_sentinel_random_access_iterator_char_ptr__::new_1({ &mut __tmp_35 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4782,7 +4778,7 @@ pub unsafe fn test_iterators_90() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4798,7 +4794,7 @@ pub unsafe fn test_iterators_90() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4815,7 +4811,7 @@ pub unsafe fn test_iterators_90() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -4829,7 +4825,7 @@ pub unsafe fn test_iterators_90() {
         }
     }
 }
-pub unsafe fn test_iterators_91() {
+pub unsafe fn test_iterators_90() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -4843,7 +4839,7 @@ pub unsafe fn test_iterators_91() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4856,7 +4852,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4878,7 +4874,7 @@ pub unsafe fn test_iterators_91() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4891,7 +4887,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4909,7 +4905,7 @@ pub unsafe fn test_iterators_91() {
                 let ___last: bidirectional_iterator_char_ptr_ =
                     bidirectional_iterator_char_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4922,7 +4918,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4955,7 +4951,7 @@ pub unsafe fn test_iterators_91() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -4968,7 +4964,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -4990,7 +4986,7 @@ pub unsafe fn test_iterators_91() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5003,7 +4999,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5025,7 +5021,7 @@ pub unsafe fn test_iterators_91() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5038,7 +5034,7 @@ pub unsafe fn test_iterators_91() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5054,7 +5050,7 @@ pub unsafe fn test_iterators_91() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5071,7 +5067,7 @@ pub unsafe fn test_iterators_91() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -5085,7 +5081,7 @@ pub unsafe fn test_iterators_91() {
         }
     }
 }
-pub unsafe fn test_iterators_92() {
+pub unsafe fn test_iterators_91() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -5102,7 +5098,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_36 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5115,7 +5111,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5140,7 +5136,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_37 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5153,7 +5149,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5174,7 +5170,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_38 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5187,7 +5183,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5223,7 +5219,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_39 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5236,7 +5232,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5261,7 +5257,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_40 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5274,7 +5270,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5299,7 +5295,7 @@ pub unsafe fn test_iterators_92() {
                     sentinel_wrapper_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_41 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5312,7 +5308,7 @@ pub unsafe fn test_iterators_92() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5328,7 +5324,7 @@ pub unsafe fn test_iterators_92() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5345,7 +5341,7 @@ pub unsafe fn test_iterators_92() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -5359,7 +5355,7 @@ pub unsafe fn test_iterators_92() {
         }
     }
 }
-pub unsafe fn test_iterators_93() {
+pub unsafe fn test_iterators_92() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -5376,7 +5372,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_42 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5389,7 +5385,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5414,7 +5410,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_43 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5427,7 +5423,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5448,7 +5444,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_44 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5461,7 +5457,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5497,7 +5493,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_45 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5510,7 +5506,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5535,7 +5531,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_46 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5548,7 +5544,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5573,7 +5569,7 @@ pub unsafe fn test_iterators_93() {
                     sized_sentinel_bidirectional_iterator_char_ptr__::new_1({ &mut __tmp_47 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5586,7 +5582,7 @@ pub unsafe fn test_iterators_93() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5602,7 +5598,7 @@ pub unsafe fn test_iterators_93() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5619,7 +5615,7 @@ pub unsafe fn test_iterators_93() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -5633,7 +5629,7 @@ pub unsafe fn test_iterators_93() {
         }
     }
 }
-pub unsafe fn test_iterators_94() {
+pub unsafe fn test_iterators_93() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -5644,7 +5640,7 @@ pub unsafe fn test_iterators_94() {
                     (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                 });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5657,7 +5653,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5676,7 +5672,7 @@ pub unsafe fn test_iterators_94() {
                     (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                 });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5689,7 +5685,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5707,7 +5703,7 @@ pub unsafe fn test_iterators_94() {
                 let ___last: forward_iterator_char_ptr_ =
                     forward_iterator_char_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5720,7 +5716,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5750,7 +5746,7 @@ pub unsafe fn test_iterators_94() {
                     (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                 });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5763,7 +5759,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5782,7 +5778,7 @@ pub unsafe fn test_iterators_94() {
                     (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                 });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5795,7 +5791,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5814,7 +5810,7 @@ pub unsafe fn test_iterators_94() {
                     (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                 });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5827,7 +5823,7 @@ pub unsafe fn test_iterators_94() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5843,7 +5839,7 @@ pub unsafe fn test_iterators_94() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5860,7 +5856,7 @@ pub unsafe fn test_iterators_94() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -5874,7 +5870,7 @@ pub unsafe fn test_iterators_94() {
         }
     }
 }
-pub unsafe fn test_iterators_95() {
+pub unsafe fn test_iterators_94() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -5889,7 +5885,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_48 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5902,7 +5898,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5925,7 +5921,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_49 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5938,7 +5934,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -5959,7 +5955,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_50 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -5972,7 +5968,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6006,7 +6002,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_51 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6019,7 +6015,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6042,7 +6038,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_52 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6055,7 +6051,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6078,7 +6074,7 @@ pub unsafe fn test_iterators_95() {
                     sentinel_wrapper_forward_iterator_char_ptr__::new_1({ &mut __tmp_53 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6091,7 +6087,7 @@ pub unsafe fn test_iterators_95() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6107,7 +6103,7 @@ pub unsafe fn test_iterators_95() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6124,7 +6120,7 @@ pub unsafe fn test_iterators_95() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -6138,7 +6134,7 @@ pub unsafe fn test_iterators_95() {
         }
     }
 }
-pub unsafe fn test_iterators_96() {
+pub unsafe fn test_iterators_95() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -6153,7 +6149,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_54 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6166,7 +6162,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6189,7 +6185,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_55 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6202,7 +6198,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6223,7 +6219,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_56 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6236,7 +6232,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6270,7 +6266,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_57 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6283,7 +6279,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6306,7 +6302,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_58 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6319,7 +6315,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6342,7 +6338,7 @@ pub unsafe fn test_iterators_96() {
                     sized_sentinel_forward_iterator_char_ptr__::new_1({ &mut __tmp_59 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6355,7 +6351,7 @@ pub unsafe fn test_iterators_96() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6371,7 +6367,7 @@ pub unsafe fn test_iterators_96() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6388,7 +6384,7 @@ pub unsafe fn test_iterators_96() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -6402,7 +6398,7 @@ pub unsafe fn test_iterators_96() {
         }
     }
 }
-pub unsafe fn test_iterators_97() {
+pub unsafe fn test_iterators_96() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -6419,7 +6415,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_60 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6432,7 +6428,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_61 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_61 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6457,7 +6453,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_62 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6470,7 +6466,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_63 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_63 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6491,7 +6487,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_64 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6504,7 +6500,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { unimplemented!()  } , )  } , { { let mut __tmp_65 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_65 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6540,7 +6536,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_66 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6553,7 +6549,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_67 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_67 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6578,7 +6574,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_68 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6591,7 +6587,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_69 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_69 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6616,7 +6612,7 @@ pub unsafe fn test_iterators_97() {
                     sentinel_wrapper_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_70 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6629,7 +6625,7 @@ pub unsafe fn test_iterators_97() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sentinel_wrapper_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_71 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_71 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6645,7 +6641,7 @@ pub unsafe fn test_iterators_97() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6662,7 +6658,7 @@ pub unsafe fn test_iterators_97() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -6676,7 +6672,7 @@ pub unsafe fn test_iterators_97() {
         }
     }
 }
-pub unsafe fn test_iterators_98() {
+pub unsafe fn test_iterators_97() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -6693,7 +6689,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_72 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6706,7 +6702,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_73 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_73 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6731,7 +6727,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_74 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6744,7 +6740,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_75 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_75 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6765,7 +6761,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_76 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6778,7 +6774,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { unimplemented!()  } , )  } , { { let mut __tmp_77 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { unimplemented!()  } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_77 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6814,7 +6810,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_78 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6827,7 +6823,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_79 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_79 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6852,7 +6848,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_80 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6865,7 +6861,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_81 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_81 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6890,7 +6886,7 @@ pub unsafe fn test_iterators_98() {
                     sized_sentinel_cpp20_input_iterator_char_ptr__::new_1({ &mut __tmp_82 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6903,7 +6899,7 @@ pub unsafe fn test_iterators_98() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_char_ptr___sized_sentinel_cpp20_input_iterator_char_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_83 : cpp20_input_iterator_char_ptr_  = cpp20_input_iterator_char_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_char_ptr__ :: new_1 ( { & mut __tmp_83 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -6919,7 +6915,7 @@ pub unsafe fn test_iterators_98() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6936,7 +6932,7 @@ pub unsafe fn test_iterators_98() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -6950,7 +6946,7 @@ pub unsafe fn test_iterators_98() {
         }
     }
 }
-pub unsafe fn test_iterators_99() {
+pub unsafe fn test_iterators_98() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -6969,7 +6965,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -6982,7 +6978,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7009,7 +7005,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7022,7 +7018,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7045,7 +7041,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7058,7 +7054,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7096,7 +7092,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7109,7 +7105,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7136,7 +7132,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7149,7 +7145,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7176,7 +7172,7 @@ pub unsafe fn test_iterators_99() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7189,7 +7185,7 @@ pub unsafe fn test_iterators_99() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7205,7 +7201,7 @@ pub unsafe fn test_iterators_99() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7222,7 +7218,7 @@ pub unsafe fn test_iterators_99() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -7236,7 +7232,7 @@ pub unsafe fn test_iterators_99() {
         }
     }
 }
-pub unsafe fn test_iterators_100() {
+pub unsafe fn test_iterators_99() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -7255,7 +7251,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7268,7 +7264,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7295,7 +7291,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7308,7 +7304,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7331,7 +7327,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7344,7 +7340,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7382,7 +7378,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7395,7 +7391,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7422,7 +7418,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7435,7 +7431,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7462,7 +7458,7 @@ pub unsafe fn test_iterators_100() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7475,7 +7471,7 @@ pub unsafe fn test_iterators_100() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7491,7 +7487,7 @@ pub unsafe fn test_iterators_100() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7508,7 +7504,7 @@ pub unsafe fn test_iterators_100() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -7522,7 +7518,7 @@ pub unsafe fn test_iterators_100() {
         }
     }
 }
-pub unsafe fn test_iterators_101() {
+pub unsafe fn test_iterators_100() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -7531,7 +7527,7 @@ pub unsafe fn test_iterators_101() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7544,7 +7540,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7561,7 +7557,7 @@ pub unsafe fn test_iterators_101() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7574,7 +7570,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7590,7 +7586,7 @@ pub unsafe fn test_iterators_101() {
                 let ___first: *mut () = unimplemented!();
                 let ___last: *mut () = unimplemented!();
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7603,7 +7599,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7631,7 +7627,7 @@ pub unsafe fn test_iterators_101() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7644,7 +7640,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7661,7 +7657,7 @@ pub unsafe fn test_iterators_101() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7674,7 +7670,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7691,7 +7687,7 @@ pub unsafe fn test_iterators_101() {
                 let ___last: *mut () =
                     (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>();
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7704,7 +7700,7 @@ pub unsafe fn test_iterators_101() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7720,7 +7716,7 @@ pub unsafe fn test_iterators_101() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7737,7 +7733,7 @@ pub unsafe fn test_iterators_101() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -7751,7 +7747,7 @@ pub unsafe fn test_iterators_101() {
         }
     }
 }
-pub unsafe fn test_iterators_102() {
+pub unsafe fn test_iterators_101() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -7763,7 +7759,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_96 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7776,7 +7772,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7796,7 +7792,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_97 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7809,7 +7805,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7828,7 +7824,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_98 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7841,7 +7837,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7872,7 +7868,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_99 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7885,7 +7881,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7905,7 +7901,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_100 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7918,7 +7914,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7938,7 +7934,7 @@ pub unsafe fn test_iterators_102() {
                     sentinel_wrapper_long_long_ptr_::new_1({ &mut __tmp_101 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7951,7 +7947,7 @@ pub unsafe fn test_iterators_102() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -7967,7 +7963,7 @@ pub unsafe fn test_iterators_102() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -7984,7 +7980,7 @@ pub unsafe fn test_iterators_102() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -7998,7 +7994,7 @@ pub unsafe fn test_iterators_102() {
         }
     }
 }
-pub unsafe fn test_iterators_103() {
+pub unsafe fn test_iterators_102() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -8010,7 +8006,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_102 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8023,7 +8019,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8043,7 +8039,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_103 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8056,7 +8052,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8075,7 +8071,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_104 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8088,7 +8084,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8119,7 +8115,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_105 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8132,7 +8128,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8152,7 +8148,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_106 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8165,7 +8161,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8185,7 +8181,7 @@ pub unsafe fn test_iterators_103() {
                     sized_sentinel_long_long_ptr_::new_1({ &mut __tmp_107 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8198,7 +8194,7 @@ pub unsafe fn test_iterators_103() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8214,7 +8210,7 @@ pub unsafe fn test_iterators_103() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8231,7 +8227,7 @@ pub unsafe fn test_iterators_103() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -8245,7 +8241,7 @@ pub unsafe fn test_iterators_103() {
         }
     }
 }
-pub unsafe fn test_iterators_104() {
+pub unsafe fn test_iterators_103() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -8259,7 +8255,7 @@ pub unsafe fn test_iterators_104() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8272,7 +8268,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8294,7 +8290,7 @@ pub unsafe fn test_iterators_104() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8307,7 +8303,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8325,7 +8321,7 @@ pub unsafe fn test_iterators_104() {
                 let ___last: contiguous_iterator_long_long_ptr_ =
                     contiguous_iterator_long_long_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8338,7 +8334,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8371,7 +8367,7 @@ pub unsafe fn test_iterators_104() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8384,7 +8380,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8406,7 +8402,7 @@ pub unsafe fn test_iterators_104() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8419,7 +8415,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8441,7 +8437,7 @@ pub unsafe fn test_iterators_104() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8454,7 +8450,7 @@ pub unsafe fn test_iterators_104() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8470,7 +8466,7 @@ pub unsafe fn test_iterators_104() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8487,7 +8483,7 @@ pub unsafe fn test_iterators_104() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -8501,7 +8497,7 @@ pub unsafe fn test_iterators_104() {
         }
     }
 }
-pub unsafe fn test_iterators_105() {
+pub unsafe fn test_iterators_104() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -8518,7 +8514,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_108 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8531,7 +8527,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8556,7 +8552,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_109 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8569,7 +8565,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8590,7 +8586,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_110 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8603,7 +8599,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8639,7 +8635,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_111 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8652,7 +8648,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8677,7 +8673,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_112 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8690,7 +8686,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8715,7 +8711,7 @@ pub unsafe fn test_iterators_105() {
                     sentinel_wrapper_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_113 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8728,7 +8724,7 @@ pub unsafe fn test_iterators_105() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8744,7 +8740,7 @@ pub unsafe fn test_iterators_105() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8761,7 +8757,7 @@ pub unsafe fn test_iterators_105() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -8775,7 +8771,7 @@ pub unsafe fn test_iterators_105() {
         }
     }
 }
-pub unsafe fn test_iterators_106() {
+pub unsafe fn test_iterators_105() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -8792,7 +8788,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_114 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8805,7 +8801,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8830,7 +8826,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_115 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8843,7 +8839,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8864,7 +8860,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_116 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8877,7 +8873,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8913,7 +8909,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_117 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8926,7 +8922,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8951,7 +8947,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_118 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -8964,7 +8960,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -8989,7 +8985,7 @@ pub unsafe fn test_iterators_106() {
                     sized_sentinel_contiguous_iterator_long_long_ptr__::new_1({ &mut __tmp_119 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9002,7 +8998,7 @@ pub unsafe fn test_iterators_106() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9018,7 +9014,7 @@ pub unsafe fn test_iterators_106() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9035,7 +9031,7 @@ pub unsafe fn test_iterators_106() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -9049,7 +9045,7 @@ pub unsafe fn test_iterators_106() {
         }
     }
 }
-pub unsafe fn test_iterators_107() {
+pub unsafe fn test_iterators_106() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -9063,7 +9059,7 @@ pub unsafe fn test_iterators_107() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9076,7 +9072,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9098,7 +9094,7 @@ pub unsafe fn test_iterators_107() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9111,7 +9107,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9129,7 +9125,7 @@ pub unsafe fn test_iterators_107() {
                 let ___last: random_access_iterator_long_long_ptr_ =
                     random_access_iterator_long_long_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9142,7 +9138,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9175,7 +9171,7 @@ pub unsafe fn test_iterators_107() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9188,7 +9184,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9210,7 +9206,7 @@ pub unsafe fn test_iterators_107() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9223,7 +9219,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9245,7 +9241,7 @@ pub unsafe fn test_iterators_107() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9258,7 +9254,7 @@ pub unsafe fn test_iterators_107() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9274,7 +9270,7 @@ pub unsafe fn test_iterators_107() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9291,7 +9287,7 @@ pub unsafe fn test_iterators_107() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -9305,7 +9301,7 @@ pub unsafe fn test_iterators_107() {
         }
     }
 }
-pub unsafe fn test_iterators_108() {
+pub unsafe fn test_iterators_107() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -9324,7 +9320,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9337,7 +9333,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9364,7 +9360,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9377,7 +9373,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9400,7 +9396,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9413,7 +9409,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9451,7 +9447,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9464,7 +9460,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9491,7 +9487,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9504,7 +9500,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9531,7 +9527,7 @@ pub unsafe fn test_iterators_108() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9544,7 +9540,7 @@ pub unsafe fn test_iterators_108() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9560,7 +9556,7 @@ pub unsafe fn test_iterators_108() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9577,7 +9573,7 @@ pub unsafe fn test_iterators_108() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -9591,7 +9587,7 @@ pub unsafe fn test_iterators_108() {
         }
     }
 }
-pub unsafe fn test_iterators_109() {
+pub unsafe fn test_iterators_108() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -9608,7 +9604,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_126 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9621,7 +9617,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9646,7 +9642,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_127 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9659,7 +9655,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9680,7 +9676,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_128 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9693,7 +9689,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9729,7 +9725,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_129 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9742,7 +9738,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9767,7 +9763,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_130 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9780,7 +9776,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9805,7 +9801,7 @@ pub unsafe fn test_iterators_109() {
                     sized_sentinel_random_access_iterator_long_long_ptr__::new_1({ &mut __tmp_131 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9818,7 +9814,7 @@ pub unsafe fn test_iterators_109() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9834,7 +9830,7 @@ pub unsafe fn test_iterators_109() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9851,7 +9847,7 @@ pub unsafe fn test_iterators_109() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -9865,7 +9861,7 @@ pub unsafe fn test_iterators_109() {
         }
     }
 }
-pub unsafe fn test_iterators_110() {
+pub unsafe fn test_iterators_109() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -9879,7 +9875,7 @@ pub unsafe fn test_iterators_110() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9892,7 +9888,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9914,7 +9910,7 @@ pub unsafe fn test_iterators_110() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9927,7 +9923,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9945,7 +9941,7 @@ pub unsafe fn test_iterators_110() {
                 let ___last: bidirectional_iterator_long_long_ptr_ =
                     bidirectional_iterator_long_long_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -9958,7 +9954,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -9991,7 +9987,7 @@ pub unsafe fn test_iterators_110() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10004,7 +10000,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10026,7 +10022,7 @@ pub unsafe fn test_iterators_110() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10039,7 +10035,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10061,7 +10057,7 @@ pub unsafe fn test_iterators_110() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10074,7 +10070,7 @@ pub unsafe fn test_iterators_110() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10090,7 +10086,7 @@ pub unsafe fn test_iterators_110() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10107,7 +10103,7 @@ pub unsafe fn test_iterators_110() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -10121,7 +10117,7 @@ pub unsafe fn test_iterators_110() {
         }
     }
 }
-pub unsafe fn test_iterators_111() {
+pub unsafe fn test_iterators_110() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -10140,7 +10136,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10153,7 +10149,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10180,7 +10176,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10193,7 +10189,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10216,7 +10212,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10229,7 +10225,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10267,7 +10263,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10280,7 +10276,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10307,7 +10303,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10320,7 +10316,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10347,7 +10343,7 @@ pub unsafe fn test_iterators_111() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10360,7 +10356,7 @@ pub unsafe fn test_iterators_111() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10376,7 +10372,7 @@ pub unsafe fn test_iterators_111() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10393,7 +10389,7 @@ pub unsafe fn test_iterators_111() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -10407,7 +10403,7 @@ pub unsafe fn test_iterators_111() {
         }
     }
 }
-pub unsafe fn test_iterators_112() {
+pub unsafe fn test_iterators_111() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -10424,7 +10420,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_138 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10437,7 +10433,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10462,7 +10458,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_139 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10475,7 +10471,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10496,7 +10492,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_140 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10509,7 +10505,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10545,7 +10541,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_141 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10558,7 +10554,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10583,7 +10579,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_142 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10596,7 +10592,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10621,7 +10617,7 @@ pub unsafe fn test_iterators_112() {
                     sized_sentinel_bidirectional_iterator_long_long_ptr__::new_1({ &mut __tmp_143 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10634,7 +10630,7 @@ pub unsafe fn test_iterators_112() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10650,7 +10646,7 @@ pub unsafe fn test_iterators_112() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10667,7 +10663,7 @@ pub unsafe fn test_iterators_112() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -10681,7 +10677,7 @@ pub unsafe fn test_iterators_112() {
         }
     }
 }
-pub unsafe fn test_iterators_113() {
+pub unsafe fn test_iterators_112() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -10695,7 +10691,7 @@ pub unsafe fn test_iterators_113() {
                         (a.as_mut_ptr().offset((6_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10708,7 +10704,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10730,7 +10726,7 @@ pub unsafe fn test_iterators_113() {
                         (a.as_mut_ptr().offset((1_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10743,7 +10739,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10761,7 +10757,7 @@ pub unsafe fn test_iterators_113() {
                 let ___last: forward_iterator_long_long_ptr_ =
                     forward_iterator_long_long_ptr_::new_1({ unimplemented!() });
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10774,7 +10770,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10807,7 +10803,7 @@ pub unsafe fn test_iterators_113() {
                         (a.as_mut_ptr().offset((10_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10820,7 +10816,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10842,7 +10838,7 @@ pub unsafe fn test_iterators_113() {
                         (a.as_mut_ptr().offset((9_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10855,7 +10851,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10877,7 +10873,7 @@ pub unsafe fn test_iterators_113() {
                         (a.as_mut_ptr().offset((5_()) as isize) as *mut ()).cast::<()>()
                     });
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10890,7 +10886,7 @@ pub unsafe fn test_iterators_113() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10906,7 +10902,7 @@ pub unsafe fn test_iterators_113() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10923,7 +10919,7 @@ pub unsafe fn test_iterators_113() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -10937,7 +10933,7 @@ pub unsafe fn test_iterators_113() {
         }
     }
 }
-pub unsafe fn test_iterators_114() {
+pub unsafe fn test_iterators_113() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -10954,7 +10950,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_144 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -10967,7 +10963,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -10992,7 +10988,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_145 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11005,7 +11001,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11026,7 +11022,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_146 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11039,7 +11035,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11075,7 +11071,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_147 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11088,7 +11084,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11113,7 +11109,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_148 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11126,7 +11122,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11151,7 +11147,7 @@ pub unsafe fn test_iterators_114() {
                     sentinel_wrapper_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_149 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11164,7 +11160,7 @@ pub unsafe fn test_iterators_114() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11180,7 +11176,7 @@ pub unsafe fn test_iterators_114() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11197,7 +11193,7 @@ pub unsafe fn test_iterators_114() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -11211,7 +11207,7 @@ pub unsafe fn test_iterators_114() {
         }
     }
 }
-pub unsafe fn test_iterators_115() {
+pub unsafe fn test_iterators_114() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -11228,7 +11224,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_150 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11241,7 +11237,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11266,7 +11262,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_151 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11279,7 +11275,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11300,7 +11296,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_152 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11313,7 +11309,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11349,7 +11345,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_153 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11362,7 +11358,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11387,7 +11383,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_154 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11400,7 +11396,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11425,7 +11421,7 @@ pub unsafe fn test_iterators_115() {
                     sized_sentinel_forward_iterator_long_long_ptr__::new_1({ &mut __tmp_155 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11438,7 +11434,7 @@ pub unsafe fn test_iterators_115() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11454,7 +11450,7 @@ pub unsafe fn test_iterators_115() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11471,7 +11467,7 @@ pub unsafe fn test_iterators_115() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -11485,7 +11481,7 @@ pub unsafe fn test_iterators_115() {
         }
     }
 }
-pub unsafe fn test_iterators_116() {
+pub unsafe fn test_iterators_115() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -11502,7 +11498,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_156 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11515,7 +11511,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_157 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_157 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11540,7 +11536,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_158 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11553,7 +11549,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_159 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_159 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11574,7 +11570,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_160 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11587,7 +11583,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { unimplemented!()  } , )  } , { { let mut __tmp_161 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { unimplemented!()  } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_161 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11623,7 +11619,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_162 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11636,7 +11632,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_163 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_163 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11661,7 +11657,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_164 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11674,7 +11670,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_165 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_165 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11699,7 +11695,7 @@ pub unsafe fn test_iterators_116() {
                     sentinel_wrapper_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_166 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11712,7 +11708,7 @@ pub unsafe fn test_iterators_116() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sentinel_wrapper_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_167 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sentinel_wrapper_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_167 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11728,7 +11724,7 @@ pub unsafe fn test_iterators_116() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11745,7 +11741,7 @@ pub unsafe fn test_iterators_116() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -11759,7 +11755,7 @@ pub unsafe fn test_iterators_116() {
         }
     }
 }
-pub unsafe fn test_iterators_117() {
+pub unsafe fn test_iterators_116() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -11776,7 +11772,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_168 })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11789,7 +11785,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_169 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 6_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_169 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11814,7 +11810,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_170 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11827,7 +11823,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_171 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 1_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_171 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11848,7 +11844,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_172 })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11861,7 +11857,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { unimplemented!()  } , )  } , { { let mut __tmp_173 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { unimplemented!()  } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_173 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11897,7 +11893,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_174 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11910,7 +11906,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_175 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 10_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_175 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11935,7 +11931,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_176 })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11948,7 +11944,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_177 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 9_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_177 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -11973,7 +11969,7 @@ pub unsafe fn test_iterators_117() {
                     sized_sentinel_cpp20_input_iterator_long_long_ptr__::new_1({ &mut __tmp_178 })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -11986,7 +11982,7 @@ pub unsafe fn test_iterators_117() {
             let mut whole : () = std_ranges_subrange_cpp20_input_iterator_long_long_ptr___sized_sentinel_cpp20_input_iterator_long_long_ptr____std_ranges_subrange_kind_sized_ :: new_1 ( { cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr()  as *mut ()).cast::<()>() } , )  } , { { let mut __tmp_179 : cpp20_input_iterator_long_long_ptr_  = cpp20_input_iterator_long_long_ptr_ :: new ( { (a .as_mut_ptr() . offset ( ( 5_() ) as isize )  as *mut ()).cast::<()>() } , )  ; sized_sentinel_cpp20_input_iterator_long_long_ptr__ :: new_1 ( { & mut __tmp_179 } , )  } } , )  ;
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12002,7 +11998,7 @@ pub unsafe fn test_iterators_117() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12019,7 +12015,7 @@ pub unsafe fn test_iterators_117() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -12033,7 +12029,7 @@ pub unsafe fn test_iterators_117() {
         }
     }
 }
-pub unsafe fn test_iterators_118() {
+pub unsafe fn test_iterators_117() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -12052,7 +12048,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12065,7 +12061,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12092,7 +12088,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12105,7 +12101,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12130,7 +12126,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12143,7 +12139,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12181,7 +12177,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12194,7 +12190,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12221,7 +12217,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12234,7 +12230,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12261,7 +12257,7 @@ pub unsafe fn test_iterators_118() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12274,7 +12270,7 @@ pub unsafe fn test_iterators_118() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12290,7 +12286,7 @@ pub unsafe fn test_iterators_118() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12307,7 +12303,7 @@ pub unsafe fn test_iterators_118() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -12321,7 +12317,7 @@ pub unsafe fn test_iterators_118() {
         }
     }
 }
-pub unsafe fn test_iterators_119() {
+pub unsafe fn test_iterators_118() {
     {
         let mut a: [(); 6] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_()];
         {
@@ -12340,7 +12336,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12353,7 +12349,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 3_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12380,7 +12376,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12393,7 +12389,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12418,7 +12414,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12431,7 +12427,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 1_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12469,7 +12465,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12482,7 +12478,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12509,7 +12505,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12522,7 +12518,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 32_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12549,7 +12545,7 @@ pub unsafe fn test_iterators_119() {
                     })
                 };
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12562,7 +12558,7 @@ pub unsafe fn test_iterators_119() {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = 10_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     None,
@@ -12578,7 +12574,7 @@ pub unsafe fn test_iterators_119() {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12595,7 +12591,7 @@ pub unsafe fn test_iterators_119() {
             let mut range: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: () = -13_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut range,
                     &mut ___value,
                     FnPtr::<fn(()) -> ()>::new(|mut i: ()| -> () {
@@ -12609,7 +12605,7 @@ pub unsafe fn test_iterators_119() {
         }
     }
 }
-pub unsafe fn test_120() -> () {
+pub unsafe fn test_119() -> () {
     (unsafe {
         for_each_0(
             <types_type_list_char__long_long_>::default(),
@@ -12618,49 +12614,49 @@ pub unsafe fn test_120() -> () {
                 {},
                 || {
                     (unsafe {
-                        for_each_2 ( <types_type_list_char_ptr__contiguous_iterator_char_ptr___random_access_iterator_char_ptr___bidirectional_iterator_char_ptr___forward_iterator_char_ptr___cpp20_input_iterator_char_ptr___cpp17_input_iterator_char_ptr__char_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { { ( unsafe { test_iterators_81 ( ) } )  ;
- } ( unsafe { test_iterators_83 ( ) } )  ;
- ( unsafe { test_iterators_84 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_85 ( ) } )  ;
- } ( unsafe { test_iterators_86 ( ) } )  ;
- ( unsafe { test_iterators_87 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_88 ( ) } )  ;
- } ( unsafe { test_iterators_89 ( ) } )  ;
- ( unsafe { test_iterators_90 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_91 ( ) } )  ;
- } ( unsafe { test_iterators_92 ( ) } )  ;
- ( unsafe { test_iterators_93 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_94 ( ) } )  ;
- } ( unsafe { test_iterators_95 ( ) } )  ;
- ( unsafe { test_iterators_96 ( ) } )  ;
- } , | | { { } ( unsafe { test_iterators_97 ( ) } )  ;
- ( unsafe { test_iterators_98 ( ) } )  ;
- } , | | { { } ( unsafe { test_iterators_99 ( ) } )  ;
- ( unsafe { test_iterators_100 ( ) } )  ;
+                        for_each_2 ( <types_type_list_char_ptr__contiguous_iterator_char_ptr___random_access_iterator_char_ptr___bidirectional_iterator_char_ptr___forward_iterator_char_ptr___cpp20_input_iterator_char_ptr___cpp17_input_iterator_char_ptr__char_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { { ( unsafe { test_iterators_80 ( ) } )  ;
+ } ( unsafe { test_iterators_82 ( ) } )  ;
+ ( unsafe { test_iterators_83 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_84 ( ) } )  ;
+ } ( unsafe { test_iterators_85 ( ) } )  ;
+ ( unsafe { test_iterators_86 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_87 ( ) } )  ;
+ } ( unsafe { test_iterators_88 ( ) } )  ;
+ ( unsafe { test_iterators_89 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_90 ( ) } )  ;
+ } ( unsafe { test_iterators_91 ( ) } )  ;
+ ( unsafe { test_iterators_92 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_93 ( ) } )  ;
+ } ( unsafe { test_iterators_94 ( ) } )  ;
+ ( unsafe { test_iterators_95 ( ) } )  ;
+ } , | | { { } ( unsafe { test_iterators_96 ( ) } )  ;
+ ( unsafe { test_iterators_97 ( ) } )  ;
+ } , | | { { } ( unsafe { test_iterators_98 ( ) } )  ;
+ ( unsafe { test_iterators_99 ( ) } )  ;
  } ) , )
                     });
                 },
                 || {
                     (unsafe {
-                        for_each_4 ( <types_type_list_long_long_ptr__contiguous_iterator_long_long_ptr___random_access_iterator_long_long_ptr___bidirectional_iterator_long_long_ptr___forward_iterator_long_long_ptr___cpp20_input_iterator_long_long_ptr___cpp17_input_iterator_long_long_ptr__long_long_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { { ( unsafe { test_iterators_101 ( ) } )  ;
- } ( unsafe { test_iterators_102 ( ) } )  ;
- ( unsafe { test_iterators_103 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_104 ( ) } )  ;
- } ( unsafe { test_iterators_105 ( ) } )  ;
- ( unsafe { test_iterators_106 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_107 ( ) } )  ;
- } ( unsafe { test_iterators_108 ( ) } )  ;
- ( unsafe { test_iterators_109 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_110 ( ) } )  ;
- } ( unsafe { test_iterators_111 ( ) } )  ;
- ( unsafe { test_iterators_112 ( ) } )  ;
- } , | | { { ( unsafe { test_iterators_113 ( ) } )  ;
- } ( unsafe { test_iterators_114 ( ) } )  ;
- ( unsafe { test_iterators_115 ( ) } )  ;
- } , | | { { } ( unsafe { test_iterators_116 ( ) } )  ;
- ( unsafe { test_iterators_117 ( ) } )  ;
- } , | | { { } ( unsafe { test_iterators_118 ( ) } )  ;
- ( unsafe { test_iterators_119 ( ) } )  ;
+                        for_each_4 ( <types_type_list_long_long_ptr__contiguous_iterator_long_long_ptr___random_access_iterator_long_long_ptr___bidirectional_iterator_long_long_ptr___forward_iterator_long_long_ptr___cpp20_input_iterator_long_long_ptr___cpp17_input_iterator_long_long_ptr__long_long_ptr__ >::default() , lambda_unsafe! ( Generic , { } , | | { { ( unsafe { test_iterators_100 ( ) } )  ;
+ } ( unsafe { test_iterators_101 ( ) } )  ;
+ ( unsafe { test_iterators_102 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_103 ( ) } )  ;
+ } ( unsafe { test_iterators_104 ( ) } )  ;
+ ( unsafe { test_iterators_105 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_106 ( ) } )  ;
+ } ( unsafe { test_iterators_107 ( ) } )  ;
+ ( unsafe { test_iterators_108 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_109 ( ) } )  ;
+ } ( unsafe { test_iterators_110 ( ) } )  ;
+ ( unsafe { test_iterators_111 ( ) } )  ;
+ } , | | { { ( unsafe { test_iterators_112 ( ) } )  ;
+ } ( unsafe { test_iterators_113 ( ) } )  ;
+ ( unsafe { test_iterators_114 ( ) } )  ;
+ } , | | { { } ( unsafe { test_iterators_115 ( ) } )  ;
+ ( unsafe { test_iterators_116 ( ) } )  ;
+ } , | | { { } ( unsafe { test_iterators_117 ( ) } )  ;
+ ( unsafe { test_iterators_118 ( ) } )  ;
  } ) , )
                     });
                 }
@@ -12675,7 +12671,7 @@ pub unsafe fn test_120() -> () {
                 let ___first: *mut () = a.as_mut_ptr();
                 let ___last: *mut () = a.as_mut_ptr().offset((5_()) as isize);
                 let mut ___value: () = 0_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12697,7 +12693,7 @@ pub unsafe fn test_120() -> () {
         {
             let mut ret: () = (unsafe {
                 let mut ___value: () = 0_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut a,
                     &mut ___value,
                     lambda_unsafe!(
@@ -12733,7 +12729,7 @@ pub unsafe fn test_120() -> () {
                     unimplemented!();
                 let ___last: forward_iterator_std_move_iterator_std_string_ptr__ = unimplemented!();
                 let mut ___value: *const () = c"hello world".as_ptr();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12763,7 +12759,7 @@ pub unsafe fn test_120() -> () {
             let mut whole: () = unimplemented!();
             let mut ret: () = (unsafe {
                 let mut ___value: *const () = c"hello world".as_ptr();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     lambda_unsafe!(
@@ -12789,7 +12785,7 @@ pub unsafe fn test_120() -> () {
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
                 let mut ___value: () = true;
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12811,7 +12807,7 @@ pub unsafe fn test_120() -> () {
         {
             let mut ret: () = (unsafe {
                 let mut ___value: () = true;
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut whole,
                     &mut ___value,
                     lambda_unsafe!(
@@ -12838,7 +12834,7 @@ pub unsafe fn test_120() -> () {
                 let ___first: () = unimplemented!();
                 let ___last: () = unimplemented!();
                 let mut ___value: () = 16_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     ___first,
                     ___last,
                     &mut ___value,
@@ -12860,7 +12856,7 @@ pub unsafe fn test_120() -> () {
         {
             let mut ret: () = (unsafe {
                 let mut ___value: () = 16_();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                     &mut *(&raw mut square_number).cast::<()>(),
                     &mut ___value,
                     lambda_unsafe!(
@@ -12880,7 +12876,7 @@ pub unsafe fn test_120() -> () {
     }
     return true;
 }
-pub unsafe fn test_nonconstexpr_121() -> () {
+pub unsafe fn test_nonconstexpr_120() -> () {
     let mut a: () = unimplemented!();
     let mut projection_count: () = 0_();
     {
@@ -12888,7 +12884,7 @@ pub unsafe fn test_nonconstexpr_121() -> () {
             let ___first: () = unimplemented!();
             let ___last: () = unimplemented!();
             let mut ___value: () = 0_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                 ___first,
                 ___last,
                 &mut ___value,
@@ -12910,7 +12906,7 @@ pub unsafe fn test_nonconstexpr_121() -> () {
     {
         let mut ret: () = (unsafe {
             let mut ___value: () = 0_();
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_82))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut contains_81))(
                 &mut a,
                 &mut ___value,
                 lambda_unsafe!(
@@ -12945,14 +12941,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_120() });
+    (unsafe { test_119() });
     const _: () = assert!(true, "test()");;
     unimplemented!();
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const yes_77);
-    std::cell::LazyCell::force(&*&raw const no_78);
-    std::cell::LazyCell::force(&*&raw const StrictUnaryPredicate_79);
-    std::cell::LazyCell::force(&*&raw const StrictBinaryPredicate_80);
+    std::cell::LazyCell::force(&*&raw const yes_76);
+    std::cell::LazyCell::force(&*&raw const no_77);
+    std::cell::LazyCell::force(&*&raw const StrictUnaryPredicate_78);
+    std::cell::LazyCell::force(&*&raw const StrictBinaryPredicate_79);
 }

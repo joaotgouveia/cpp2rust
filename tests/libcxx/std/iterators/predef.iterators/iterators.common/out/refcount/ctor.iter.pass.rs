@@ -374,29 +374,23 @@ pub fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_1(_i, n)
     });
 }
-pub fn iter_swap_3(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_4(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_5(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_4(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_5(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_6(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -442,7 +436,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_7(
+            operator_cmp_6(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -467,7 +461,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_6(
+            operator_eq_5(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -551,12 +545,20 @@ impl util_iterator_error {
         Self {}
     }
 }
+pub fn test_7() -> () {
+    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+    let mut it: cpp17_input_iterator_int_ptr__int_ptr_ =
+        cpp17_input_iterator_int_ptr__int_ptr_::new({ (a.as_pointer() as Ptr<()>) });
+    let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    return true;
+}
 pub fn test_8() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-        Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_::new({
-            (a.as_pointer() as Ptr<()>)
-        })));
+    let mut it: forward_iterator_int_ptr_ =
+        forward_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -565,10 +567,8 @@ pub fn test_8() -> () {
 }
 pub fn test_9() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<forward_iterator_int_ptr_> =
-        Rc::new(RefCell::new(forward_iterator_int_ptr_::new_1({
-            (a.as_pointer() as Ptr<()>)
-        })));
+    let mut it: bidirectional_iterator_int_ptr_ =
+        bidirectional_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -577,10 +577,8 @@ pub fn test_9() -> () {
 }
 pub fn test_10() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<bidirectional_iterator_int_ptr_> =
-        Rc::new(RefCell::new(bidirectional_iterator_int_ptr_::new_1({
-            (a.as_pointer() as Ptr<()>)
-        })));
+    let mut it: random_access_iterator_int_ptr_ =
+        random_access_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -589,10 +587,8 @@ pub fn test_10() -> () {
 }
 pub fn test_11() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<random_access_iterator_int_ptr_> =
-        Rc::new(RefCell::new(random_access_iterator_int_ptr_::new_1({
-            (a.as_pointer() as Ptr<()>)
-        })));
+    let mut it: contiguous_iterator_int_ptr_ =
+        contiguous_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -601,10 +597,7 @@ pub fn test_11() -> () {
 }
 pub fn test_12() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<contiguous_iterator_int_ptr_> =
-        Rc::new(RefCell::new(contiguous_iterator_int_ptr_::new_1({
-            (a.as_pointer() as Ptr<()>)
-        })));
+    let mut it: Ptr<()> = (a.as_pointer() as Ptr<()>);
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -613,16 +606,7 @@ pub fn test_12() -> () {
 }
 pub fn test_13() -> () {
     let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
-    let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    unimplemented!();
-    return true;
-}
-pub fn test_14() -> () {
-    let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-    let it: Value<Ptr<()>> = Rc::new(RefCell::new((a.as_pointer() as Ptr<()>)));
+    let mut it: Ptr<()> = (a.as_pointer() as Ptr<()>);
     let lv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     let rv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -649,13 +633,13 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_7() });
     ({ test_8() });
     ({ test_9() });
     ({ test_10() });
     ({ test_11() });
     ({ test_12() });
     ({ test_13() });
-    ({ test_14() });
     const _: () = assert!(true, "test<cpp17_input_iterator<int*>>()");;
     const _: () = assert!(true, "test<forward_iterator<int*>>()");;
     const _: () = assert!(true, "test<bidirectional_iterator<int*>>()");;

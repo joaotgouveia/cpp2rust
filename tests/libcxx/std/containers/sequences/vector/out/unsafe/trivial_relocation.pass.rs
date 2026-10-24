@@ -64,7 +64,7 @@ impl NotTriviallyMovable {
     }
     pub unsafe fn move_from(other: *mut NotTriviallyMovable) -> Self {
         let mut this = Self {
-            inner_: Inner::move_from({ &mut (*other).inner_ }),
+            inner_: Inner::move_from({ &mut (*unimplemented!()) }),
         };
         this
     }

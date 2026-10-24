@@ -298,8 +298,8 @@ impl three_way_random_access_iterator_const_std_string_ptr_ {
 impl three_way_random_access_iterator_const_std_string_ptr_ {
     pub fn new_2(u: Ptr<three_way_random_access_iterator_std_string_ptr_>) -> Self {
         let __this: three_way_random_access_iterator_const_std_string_ptr_ = Self {
-            it_: u.with(|__s| __s.it_.clone()),
-            tracker_: support_double_move_tracker::move_from({ field_ptr!(u, tracker_) }),
+            it_: (unimplemented!().read()),
+            tracker_: support_double_move_tracker::move_from({ unimplemented!() }),
         };
         field!(u, it_).write(Ptr::<()>::null());
         __this
@@ -519,29 +519,23 @@ pub fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_15(_i, n)
     });
 }
-pub fn iter_swap_17(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_18(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_19(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_18(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_19(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_20(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -587,7 +581,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_21(
+            operator_cmp_20(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -612,7 +606,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_20(
+            operator_eq_19(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -905,22 +899,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_22: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_21: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_23: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_22: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_24(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_23(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_25(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_24(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_24(_x, _y)
+        operator_eq_23(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -981,7 +975,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_24(
+            operator_eq_23(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -1043,54 +1037,54 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_27.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_28.with(|rc| *rc.borrow())));
+        return ((alloc_count_26.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_27.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_29.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_26.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_27.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_28.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_28.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_25.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_26.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_27.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_26: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_25: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_27: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_26: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_28: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_27: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_29: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_28: Value<()> = Rc::new(RefCell::new(false));
 );
-pub fn operator_sub_30(
+pub fn operator_sub_29(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_lt_31(
+pub fn operator_lt_30(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } < { (y.ptr_).clone() });
 }
-pub fn operator_eq_32(
+pub fn operator_eq_31(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-pub fn operator_ne_33(
+pub fn operator_ne_32(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !({
         let _x: min_pointer_std_string__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_32(_x, y)
+        operator_eq_31(_x, y)
     });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -1113,9 +1107,9 @@ impl min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            if operator_lt_31(self.clone(), other.clone()) {
+            if operator_lt_30(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_31(other.clone(), self.clone()) {
+            } else if operator_lt_30(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1130,7 +1124,7 @@ impl std::cmp::PartialOrd for min_pointer_std_string__std_integral_constant_unsi
 }
 impl std::cmp::PartialEq for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_32(self.clone(), other.clone()) }
+        { operator_eq_31(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {}
@@ -1142,19 +1136,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub fn operator_sub_34(
+pub fn operator_sub_33(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_).clone() - (y.ptr_).clone()) as () as ());
 }
-pub fn operator_eq_35(
+pub fn operator_eq_34(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ({ (x.ptr_).clone() } == { (y.ptr_).clone() });
 }
-pub fn operator_ne_36(
+pub fn operator_ne_35(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1178,7 +1172,7 @@ impl std::cmp::PartialEq
     for min_pointer_const_std_string__std_integral_constant_unsigned_long__0__
 {
     fn eq(&self, other: &Self) -> bool {
-        { operator_eq_35(self.clone(), other.clone()) }
+        { operator_eq_34(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_std_string__std_integral_constant_unsigned_long__0__ {}
@@ -1197,21 +1191,21 @@ const _: () = assert!(true, "CanEqualRange<TransparentSet>");
 const _: () = assert!(true, "CanEqualRange<const TransparentSet>");
 const _: () = assert!(!(false), "!CanEqualRange<NonTransparentSet>");
 const _: () = assert!(!(false), "!CanEqualRange<const NonTransparentSet>");
-pub fn test_one_37() {
+pub fn test_one_36() {
     let test_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_38: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_39(__decomp_38.as_pointer()) });
-            let last: Ptr<()> = ({ get_40(__decomp_38.as_pointer()) });
+            let __decomp_37: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_38(__decomp_37.as_pointer()) });
+            let last: Ptr<()> = ({ get_39(__decomp_37.as_pointer()) });
             unimplemented!();
             unimplemented!();
         },
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_41: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_39(__decomp_41.as_pointer()) });
-            let last: Ptr<()> = ({ get_40(__decomp_41.as_pointer()) });
+            let __decomp_40: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_38(__decomp_40.as_pointer()) });
+            let last: Ptr<()> = ({ get_39(__decomp_40.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1219,17 +1213,17 @@ pub fn test_one_37() {
     let test_not_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
+        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
+            let __decomp_41: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_38(__decomp_41.as_pointer()) });
+            let last: Ptr<()> = ({ get_39(__decomp_41.as_pointer()) });
+            unimplemented!();
+            unimplemented!();
+        },
         |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
             let __decomp_42: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_39(__decomp_42.as_pointer()) });
-            let last: Ptr<()> = ({ get_40(__decomp_42.as_pointer()) });
-            unimplemented!();
-            unimplemented!();
-        },
-        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
-            let __decomp_43: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_39(__decomp_43.as_pointer()) });
-            let last: Ptr<()> = ({ get_40(__decomp_43.as_pointer()) });
+            let first: Ptr<()> = ({ get_38(__decomp_42.as_pointer()) });
+            let last: Ptr<()> = ({ get_39(__decomp_42.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1362,21 +1356,21 @@ pub fn test_one_37() {
         });
     }
 }
-pub fn test_one_44() {
+pub fn test_one_43() {
     let test_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_45: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_46(__decomp_45.as_pointer()) });
-            let last: Ptr<()> = ({ get_47(__decomp_45.as_pointer()) });
+            let __decomp_44: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_45(__decomp_44.as_pointer()) });
+            let last: Ptr<()> = ({ get_46(__decomp_44.as_pointer()) });
             unimplemented!();
             unimplemented!();
         },
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_48: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_46(__decomp_48.as_pointer()) });
-            let last: Ptr<()> = ({ get_47(__decomp_48.as_pointer()) });
+            let __decomp_47: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_45(__decomp_47.as_pointer()) });
+            let last: Ptr<()> = ({ get_46(__decomp_47.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1384,17 +1378,17 @@ pub fn test_one_44() {
     let test_not_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
+        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
+            let __decomp_48: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_45(__decomp_48.as_pointer()) });
+            let last: Ptr<()> = ({ get_46(__decomp_48.as_pointer()) });
+            unimplemented!();
+            unimplemented!();
+        },
         |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
             let __decomp_49: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_46(__decomp_49.as_pointer()) });
-            let last: Ptr<()> = ({ get_47(__decomp_49.as_pointer()) });
-            unimplemented!();
-            unimplemented!();
-        },
-        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
-            let __decomp_50: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_46(__decomp_50.as_pointer()) });
-            let last: Ptr<()> = ({ get_47(__decomp_50.as_pointer()) });
+            let first: Ptr<()> = ({ get_45(__decomp_49.as_pointer()) });
+            let last: Ptr<()> = ({ get_46(__decomp_49.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1527,21 +1521,21 @@ pub fn test_one_44() {
         });
     }
 }
-pub fn test_one_51() {
+pub fn test_one_50() {
     let test_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_52: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_53(__decomp_52.as_pointer()) });
-            let last: Ptr<()> = ({ get_54(__decomp_52.as_pointer()) });
+            let __decomp_51: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_52(__decomp_51.as_pointer()) });
+            let last: Ptr<()> = ({ get_53(__decomp_51.as_pointer()) });
             unimplemented!();
             unimplemented!();
         },
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_55: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_53(__decomp_55.as_pointer()) });
-            let last: Ptr<()> = ({ get_54(__decomp_55.as_pointer()) });
+            let __decomp_54: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_52(__decomp_54.as_pointer()) });
+            let last: Ptr<()> = ({ get_53(__decomp_54.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1549,17 +1543,17 @@ pub fn test_one_51() {
     let test_not_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
+        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
+            let __decomp_55: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_52(__decomp_55.as_pointer()) });
+            let last: Ptr<()> = ({ get_53(__decomp_55.as_pointer()) });
+            unimplemented!();
+            unimplemented!();
+        },
         |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
             let __decomp_56: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_53(__decomp_56.as_pointer()) });
-            let last: Ptr<()> = ({ get_54(__decomp_56.as_pointer()) });
-            unimplemented!();
-            unimplemented!();
-        },
-        |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
-            let __decomp_57: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_53(__decomp_57.as_pointer()) });
-            let last: Ptr<()> = ({ get_54(__decomp_57.as_pointer()) });
+            let first: Ptr<()> = ({ get_52(__decomp_56.as_pointer()) });
+            let last: Ptr<()> = ({ get_53(__decomp_56.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1692,21 +1686,21 @@ pub fn test_one_51() {
         });
     }
 }
-pub fn test_one_58() {
+pub fn test_one_57() {
     let test_found: Value<FnPtr<Generic>> = Rc::new(RefCell::new(lambda!(
         Generic,
         {},
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_59: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_60(__decomp_59.as_pointer()) });
-            let last: Ptr<()> = ({ get_61(__decomp_59.as_pointer()) });
+            let __decomp_58: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_59(__decomp_58.as_pointer()) });
+            let last: Ptr<()> = ({ get_60(__decomp_58.as_pointer()) });
             unimplemented!();
             unimplemented!();
         },
         |map: Ptr<()>, expected_key: Ptr<()>| {
-            let __decomp_62: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_60(__decomp_62.as_pointer()) });
-            let last: Ptr<()> = ({ get_61(__decomp_62.as_pointer()) });
+            let __decomp_61: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_59(__decomp_61.as_pointer()) });
+            let last: Ptr<()> = ({ get_60(__decomp_61.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1715,16 +1709,16 @@ pub fn test_one_58() {
         Generic,
         {},
         |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
-            let __decomp_63: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_60(__decomp_63.as_pointer()) });
-            let last: Ptr<()> = ({ get_61(__decomp_63.as_pointer()) });
+            let __decomp_62: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_59(__decomp_62.as_pointer()) });
+            let last: Ptr<()> = ({ get_60(__decomp_62.as_pointer()) });
             unimplemented!();
             unimplemented!();
         },
         |map: Ptr<()>, expected_key: Ptr<()>, mut expected_offset: ()| {
-            let __decomp_64: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let first: Ptr<()> = ({ get_60(__decomp_64.as_pointer()) });
-            let last: Ptr<()> = ({ get_61(__decomp_64.as_pointer()) });
+            let __decomp_63: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let first: Ptr<()> = ({ get_59(__decomp_63.as_pointer()) });
+            let last: Ptr<()> = ({ get_60(__decomp_63.as_pointer()) });
             unimplemented!();
             unimplemented!();
         }
@@ -1857,13 +1851,13 @@ pub fn test_one_58() {
         });
     }
 }
-pub fn test_65() -> () {
-    ({ test_one_37() });
+pub fn test_64() -> () {
+    ({ test_one_36() });
     {
-        ({ test_one_44() });
+        ({ test_one_43() });
     }
-    ({ test_one_51() });
-    ({ test_one_58() });
+    ({ test_one_50() });
+    ({ test_one_57() });
     {
         let transparent_used: Value<()> = Rc::new(RefCell::new(false));
         let mut c: TransparentComparator =
@@ -1876,9 +1870,9 @@ pub fn test_65() -> () {
     }
     {
         let m: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let __decomp_66: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let first: Ptr<()> = ({ get_67(__decomp_66.as_pointer()) });
-        let last: Ptr<()> = ({ get_68(__decomp_66.as_pointer()) });
+        let __decomp_65: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let first: Ptr<()> = ({ get_66(__decomp_65.as_pointer()) });
+        let last: Ptr<()> = ({ get_67(__decomp_65.as_pointer()) });
         unimplemented!();
         unimplemented!();
     }
@@ -1904,7 +1898,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_65() });
+    ({ test_64() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]
@@ -2707,8 +2701,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_22.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_22.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_21.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_21.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -2883,10 +2877,10 @@ impl three_way_random_access_iterator_std_string_ptr_Impl
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_22.with(|_| ());
-    let _ = moved_value_23.with(|_| ());
-    let _ = outstanding_bytes_26.with(|_| ());
-    let _ = alloc_count_27.with(|_| ());
-    let _ = dealloc_count_28.with(|_| ());
-    let _ = disable_default_constructor_29.with(|_| ());
+    let _ = destructed_value_21.with(|_| ());
+    let _ = moved_value_22.with(|_| ());
+    let _ = outstanding_bytes_25.with(|_| ());
+    let _ = alloc_count_26.with(|_| ());
+    let _ = dealloc_count_27.with(|_| ());
+    let _ = disable_default_constructor_28.with(|_| ());
 }

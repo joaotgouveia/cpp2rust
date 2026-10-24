@@ -192,13 +192,7 @@ pub fn is_about_7(mut x: (), mut y: ()) {
 }
 pub fn test_8(a: Ptr<()>, b: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    let c: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Ptr<()> = (a).clone();
-            let ___y: Ptr<()> = (b).clone();
-            pow_9(___x, ___y)
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _x: () = unimplemented!();
         let _y: () = unimplemented!();
@@ -208,37 +202,25 @@ pub fn test_8(a: Ptr<()>, b: Ptr<()>, x: ()) {
         let _x: () = unimplemented!();
         let _y: () = unimplemented!();
         is_about_5(_x, _y)
+    });
+}
+pub fn test_9(a: Ptr<()>, b: Ptr<()>, x: ()) {
+    let x: Value<()> = Rc::new(RefCell::new(x));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    ({
+        let _x: () = unimplemented!();
+        let _y: () = unimplemented!();
+        is_about_6(_x, _y)
+    });
+    ({
+        let _x: () = unimplemented!();
+        let _y: () = unimplemented!();
+        is_about_6(_x, _y)
     });
 }
 pub fn test_10(a: Ptr<()>, b: Ptr<()>, x: ()) {
     let x: Value<()> = Rc::new(RefCell::new(x));
-    let c: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Ptr<()> = (a).clone();
-            let ___y: Ptr<()> = (b).clone();
-            pow_11(___x, ___y)
-        }),
-    ));
-    ({
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
-        is_about_6(_x, _y)
-    });
-    ({
-        let _x: () = unimplemented!();
-        let _y: () = unimplemented!();
-        is_about_6(_x, _y)
-    });
-}
-pub fn test_12(a: Ptr<()>, b: Ptr<()>, x: ()) {
-    let x: Value<()> = Rc::new(RefCell::new(x));
-    let c: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Ptr<()> = (a).clone();
-            let ___y: Ptr<()> = (b).clone();
-            pow_13(___x, ___y)
-        }),
-    ));
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let _x: () = unimplemented!();
         let _y: () = unimplemented!();
@@ -250,40 +232,34 @@ pub fn test_12(a: Ptr<()>, b: Ptr<()>, x: ()) {
         is_about_7(_x, _y)
     });
 }
-pub fn test_14() {
+pub fn test_11() {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _b: Value<()> = Rc::new(RefCell::new(2_()));
         test_8(_a.as_pointer(), _b.as_pointer(), unimplemented!())
     });
 }
-pub fn test_15() {
+pub fn test_12() {
+    ({
+        let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let _b: Value<()> = Rc::new(RefCell::new(2_()));
+        test_9(_a.as_pointer(), _b.as_pointer(), unimplemented!())
+    });
+}
+pub fn test_13() {
     ({
         let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let _b: Value<()> = Rc::new(RefCell::new(2_()));
         test_10(_a.as_pointer(), _b.as_pointer(), unimplemented!())
     });
 }
-pub fn test_16() {
-    ({
-        let _a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        let _b: Value<()> = Rc::new(RefCell::new(2_()));
-        test_12(_a.as_pointer(), _b.as_pointer(), unimplemented!())
-    });
-}
-pub fn test_edges_17() {
+pub fn test_edges_14() {
     let mut N: () = (2448usize as ()).wrapping_div((16usize as ()));
     let mut i: () = 0_();
     'loop_: while (i < N) {
         let mut j: () = 0_();
         'loop_: while (j < N) {
-            let r: Value<()> = Rc::new(RefCell::new(
-                ({
-                    let ___x: Ptr<()> = (testcases_0.with(|v| v.as_pointer()) as Ptr<()>).offset(i);
-                    let ___y: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                    pow_11(___x, ___y.as_pointer())
-                }),
-            ));
+            let r: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let z: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             if ({ isnan_4(unimplemented!()) }) {
                 unimplemented!();
@@ -320,10 +296,10 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_14() });
-    ({ test_15() });
-    ({ test_16() });
-    ({ test_edges_17() });
+    ({ test_11() });
+    ({ test_12() });
+    ({ test_13() });
+    ({ test_edges_14() });
     return 0_();
 }
 pub fn __cpp2rust_init_globals() {

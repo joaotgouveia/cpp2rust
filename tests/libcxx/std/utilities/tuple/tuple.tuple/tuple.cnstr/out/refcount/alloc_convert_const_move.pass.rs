@@ -351,7 +351,7 @@ impl Default for ConstMove {
 impl ConvertibleFrom_ConstMove_ {
     pub fn new_1(_v: Ptr<ConstMove>) -> Self {
         Self {
-            v: ConstMove::move_from({ (_v).clone() }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -390,7 +390,7 @@ impl Default for ConvertibleFrom_ConstMove_ {
 impl ConvertibleFrom_TracedCopyMove_ {
     pub fn new_1(_v: Ptr<TracedCopyMove>) -> Self {
         Self {
-            v: TracedCopyMove::new_1({ (_v).clone() }),
+            v: TracedCopyMove::new_1({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -429,7 +429,7 @@ impl Default for ConvertibleFrom_TracedCopyMove_ {
 impl ConvertibleFrom_CvtFromTupleRef_ {
     pub fn new_1(_v: Ptr<CvtFromTupleRef>) -> Self {
         Self {
-            v: (*_v.upgrade().deref()).clone(),
+            v: (*unimplemented!().upgrade().deref()).clone(),
             alloc_constructed: false,
         }
     }
@@ -468,7 +468,7 @@ impl Default for ConvertibleFrom_CvtFromTupleRef_ {
 impl ConvertibleFrom_ExplicitCtrFromTupleRef_ {
     pub fn new_1(_v: Ptr<ExplicitCtrFromTupleRef>) -> Self {
         Self {
-            v: (*_v.upgrade().deref()).clone(),
+            v: (*unimplemented!().upgrade().deref()).clone(),
             alloc_constructed: false,
         }
     }
@@ -506,7 +506,7 @@ impl Default for ConvertibleFrom_ExplicitCtrFromTupleRef_ {
 impl ExplicitConstructibleFrom_ConstMove_ {
     pub fn new_1(_v: Ptr<ConstMove>) -> Self {
         Self {
-            v: ConstMove::move_from({ (_v).clone() }),
+            v: ConstMove::move_from({ unimplemented!() }),
             alloc_constructed: false,
         }
     }
@@ -821,7 +821,7 @@ pub fn test_6() -> () {
             let __tmp_0: Value<test_allocator_int_> =
                 Rc::new(RefCell::new(<test_allocator_int_>::default()));
             std_tuple_TracedCopyMove_::new_1({ unimplemented!() }, { __tmp_0.as_pointer() }, {
-                t1.as_pointer()
+                unimplemented!()
             })
         }));
         unimplemented!();

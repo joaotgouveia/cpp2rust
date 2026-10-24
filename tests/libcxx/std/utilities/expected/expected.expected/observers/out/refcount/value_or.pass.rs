@@ -204,7 +204,7 @@ pub fn test_14() -> () {
         let x: Value<MoveOnly> = Rc::new(RefCell::new(
             ({
                 let ___v: Value<()> = Rc::new(RefCell::new(10_()));
-                (*e.borrow()).value_or(___v.as_pointer())
+                (*unimplemented!().upgrade().deref()).value_or(___v.as_pointer())
             }),
         ));
         unimplemented!();
@@ -214,7 +214,7 @@ pub fn test_14() -> () {
         let x: Value<MoveOnly> = Rc::new(RefCell::new(
             ({
                 let ___v: Value<()> = Rc::new(RefCell::new(10_()));
-                (*e.borrow()).value_or(___v.as_pointer())
+                (*unimplemented!().upgrade().deref()).value_or(___v.as_pointer())
             }),
         ));
         unimplemented!();

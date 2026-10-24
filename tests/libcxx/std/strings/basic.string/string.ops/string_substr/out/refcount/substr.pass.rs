@@ -1247,9 +1247,9 @@ pub fn test_alloc_21() -> () {
             unimplemented!();
         }
         {
-            let str: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let mut str: () = unimplemented!();
             (*stats.borrow_mut()) = <test_allocator_statistics>::default();
-            &({ (*str.borrow()).substr_131(None, None) });
+            &({ (*unimplemented!().upgrade().deref()).substr_131(None, None) });
             unimplemented!();
             unimplemented!();
         }

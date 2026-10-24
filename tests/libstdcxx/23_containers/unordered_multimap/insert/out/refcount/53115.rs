@@ -268,10 +268,7 @@ pub fn get_nb_bucket_elems_10(us: Ptr<()>) -> () {
 }
 pub fn test01_11() {
     let umm: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -333,10 +330,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -398,10 +392,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -463,10 +454,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -528,10 +516,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -593,10 +578,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -658,10 +640,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -723,10 +702,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -788,10 +764,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -853,10 +826,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -918,10 +888,7 @@ pub fn test01_11() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*umm.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-    });
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

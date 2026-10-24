@@ -516,29 +516,23 @@ pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_14(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_15(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -584,7 +578,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_18(
+            operator_cmp_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -609,7 +603,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_16(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -704,7 +698,7 @@ pub struct test_common_range_forward_iterator__int_ {}
 pub struct BorrowedRange_int_ {}
 const _: () = assert!(!(false), "!std::ranges::view<BorrowedRange<>>");
 thread_local!(
-    pub static enable_borrowed_range_19: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_18: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedRange<>>");
 const _: () = assert!(true, "std::ranges::view<BorrowedView>");
@@ -712,7 +706,7 @@ const _: () = assert!(true, "std::ranges::borrowed_range<BorrowedView>");
 const _: () = assert!(true, "std::ranges::view<NonBorrowedView>");
 const _: () = assert!(!(false), "!std::ranges::borrowed_range<NonBorrowedView>");
 thread_local!(
-    pub static globalBuff_20: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+    pub static globalBuff_19: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
         1_(),
         2_(),
@@ -735,7 +729,7 @@ pub struct MoveOnlyView {
 impl MoveOnlyView {
     pub fn new(ptr: Option<Ptr<()>>, start: Option<()>) -> Self {
         let mut ptr: Ptr<()> =
-            ptr.unwrap_or_else(|| (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>));
+            ptr.unwrap_or_else(|| (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>));
         let mut start: () = start.unwrap_or_else(|| 0_());
         Self {
             start_: start,
@@ -781,7 +775,7 @@ pub struct ForwardView {
 impl ForwardView {
     pub fn new(ptr: Option<Ptr<()>>) -> Self {
         let mut ptr: Ptr<()> =
-            ptr.unwrap_or_else(|| (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>));
+            ptr.unwrap_or_else(|| (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>));
         Self {
             ptr_: (ptr).clone(),
         }
@@ -810,7 +804,7 @@ const _: () = assert!(true, "std::ranges::bidirectional_range<BidirectionalView>
 #[byte_size(1)]
 pub struct BorrowableRange {}
 thread_local!(
-    pub static enable_borrowed_range_21: Value<()> = Rc::new(RefCell::new(true));
+    pub static enable_borrowed_range_20: Value<()> = Rc::new(RefCell::new(true));
 );
 const _: () = assert!(!(false), "!std::ranges::view<BorrowableRange>");
 const _: () = assert!(true, "std::ranges::contiguous_range<BorrowableRange>");
@@ -825,7 +819,7 @@ pub struct InputView {
 impl InputView {
     pub fn new(ptr: Option<Ptr<()>>) -> Self {
         let mut ptr: Ptr<()> =
-            ptr.unwrap_or_else(|| (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>));
+            ptr.unwrap_or_else(|| (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>));
         Self {
             ptr_: (ptr).clone(),
         }
@@ -855,16 +849,16 @@ impl Default for SizedSentinelView {
         { SizedSentinelView::new(None) }
     }
 }
-pub fn operator_sub_22(lhs: Ptr<random_access_iterator_int_ptr_>, mut rhs: Ptr<()>) -> () {
+pub fn operator_sub_21(lhs: Ptr<random_access_iterator_int_ptr_>, mut rhs: Ptr<()>) -> () {
     return (({ base_6((lhs).clone()) }) - rhs) as ();
 }
-pub fn operator_sub_23(mut lhs: Ptr<()>, rhs: Ptr<random_access_iterator_int_ptr_>) -> () {
+pub fn operator_sub_22(mut lhs: Ptr<()>, rhs: Ptr<random_access_iterator_int_ptr_>) -> () {
     return (lhs - ({ base_6((rhs).clone()) })) as ();
 }
-pub fn operator_eq_24(lhs: Ptr<random_access_iterator_int_ptr_>, mut rhs: Ptr<()>) -> () {
+pub fn operator_eq_23(lhs: Ptr<random_access_iterator_int_ptr_>, mut rhs: Ptr<()>) -> () {
     return ({ ({ base_6((lhs).clone()) }) } == { rhs });
 }
-pub fn operator_eq_25(mut lhs: Ptr<()>, rhs: Ptr<random_access_iterator_int_ptr_>) -> () {
+pub fn operator_eq_24(mut lhs: Ptr<()>, rhs: Ptr<random_access_iterator_int_ptr_>) -> () {
     return ({ ({ base_6((rhs).clone()) }) } == { lhs });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -894,7 +888,7 @@ pub struct IncrementRvalueRef {}
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct PlusOneNoexcept {}
-pub fn test_26() -> () {
+pub fn test_25() -> () {
     {
         const _: () = assert!(true, "std::three_way_comparable<It>");;
         const _: () = assert!(
@@ -978,7 +972,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_26() });
+    ({ test_25() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -1018,11 +1012,11 @@ pub trait CopyableViewImpl {
 }
 impl CopyableViewImpl for Ptr<CopyableView> {
     fn begin(&self) -> Ptr<()> {
-        return (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>)
+        return (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>)
             .offset(((*self).with(|__s| __s.start_)) as isize);
     }
     fn end(&self) -> Ptr<()> {
-        return (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
+        return (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>).offset((8_()) as isize);
     }
 }
 pub trait ForwardViewImpl {
@@ -1052,7 +1046,7 @@ pub trait IncrementRvalueRefImpl {
 }
 impl IncrementRvalueRefImpl for Ptr<IncrementRvalueRef> {
     fn operator_call(&self, x: Ptr<()>) -> Ptr<()> {
-        return (x.with_mut(|__v| __v.prefix_inc())).reinterpret_cast::<()>();
+        return (unimplemented!()).reinterpret_cast::<()>();
     }
 }
 pub trait InputViewImpl {
@@ -1160,11 +1154,11 @@ pub trait SizedSentinelViewImpl {
 impl SizedSentinelViewImpl for Ptr<SizedSentinelView> {
     fn begin(&self) -> random_access_iterator_int_ptr_ {
         return random_access_iterator_int_ptr_::new_2({
-            (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>)
+            (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>)
         });
     }
     fn end(&self) -> Ptr<()> {
-        return (globalBuff_20.with(|v| v.as_pointer()) as Ptr<()>)
+        return (globalBuff_19.with(|v| v.as_pointer()) as Ptr<()>)
             .offset(((*self).with(|__s| __s.count_)) as isize);
     }
 }
@@ -1577,7 +1571,7 @@ impl three_way_contiguous_iterator_int_ptr_Impl for Ptr<three_way_contiguous_ite
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = enable_borrowed_range_19.with(|_| ());
-    let _ = globalBuff_20.with(|_| ());
-    let _ = enable_borrowed_range_21.with(|_| ());
+    let _ = enable_borrowed_range_18.with(|_| ());
+    let _ = globalBuff_19.with(|_| ());
+    let _ = enable_borrowed_range_20.with(|_| ());
 }

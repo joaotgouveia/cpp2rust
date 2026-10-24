@@ -77,7 +77,7 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let e: Value<Error> = Rc::new(RefCell::new(Error::new_1({ 5_() })));
+        let mut e: Error = Error::new_1({ 5_() });
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
         unimplemented!();

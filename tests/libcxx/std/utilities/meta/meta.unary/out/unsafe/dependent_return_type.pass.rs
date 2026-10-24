@@ -20,11 +20,11 @@ pub unsafe fn add_pointer_4() -> *mut () {
     return std::ptr::null_mut();
 }
 pub unsafe fn add_rvalue_reference_5() -> *mut () {
-    return &mut *(&raw mut (*std::cell::LazyCell::force_mut(&mut *&raw mut i_6))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
 static mut i_6: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn add_volatile_7() -> () {
-    return ((*std::cell::LazyCell::force_mut(&mut *&raw mut i_8)) as ());
+    return ((*unimplemented!()) as ());
 }
 static mut i_8: std::cell::LazyCell<()> = std::cell::LazyCell::new(|| unsafe { unimplemented!() });
 pub unsafe fn decay_9() -> () {

@@ -539,29 +539,23 @@ pub fn operator_add_21(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_20(_i, n)
     });
 }
-pub fn iter_swap_22(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_23(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_22(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_24(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_23(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_24(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_26(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_25(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -607,7 +601,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_26(
+            operator_cmp_25(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -632,7 +626,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_25(
+            operator_eq_24(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -716,13 +710,13 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn operator_eq_27(x: Ptr<MoveOnlyIterator>, y: Ptr<MoveOnlyIterator>) -> () {
+pub fn operator_eq_26(x: Ptr<MoveOnlyIterator>, y: Ptr<MoveOnlyIterator>) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } == { y.with(|__s| __s.it_.clone()) });
 }
-pub fn operator_ne_28(x: Ptr<MoveOnlyIterator>, y: Ptr<MoveOnlyIterator>) -> () {
+pub fn operator_ne_27(x: Ptr<MoveOnlyIterator>, y: Ptr<MoveOnlyIterator>) -> () {
     return ({ x.with(|__s| __s.it_.clone()) } != { y.with(|__s| __s.it_.clone()) });
 }
-pub fn base_29(i: Ptr<MoveOnlyIterator>) -> Ptr<()> {
+pub fn base_28(i: Ptr<MoveOnlyIterator>) -> Ptr<()> {
     return i.with(|__s| __s.it_.clone());
 }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
@@ -745,7 +739,7 @@ impl MoveOnlyIterator {
 impl std::cmp::PartialEq for MoveOnlyIterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_27(
+            operator_eq_26(
                 Rc::new(RefCell::new(MoveOnlyIterator {
                     it_: self.it_.clone(),
                 }))
@@ -761,6 +755,30 @@ impl std::cmp::PartialEq for MoveOnlyIterator {
 impl std::cmp::Eq for MoveOnlyIterator {}
 const _: () = assert!(true, "std::input_iterator<MoveOnlyIterator>");
 const _: () = assert!(true, "!std::is_copy_constructible<MoveOnlyIterator>::value");
+pub fn test_one_29() {
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+    {
+        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
+        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        const _: () = assert!(true, "");;
+        unimplemented!();
+    }
+}
 pub fn test_one_30() {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
@@ -905,38 +923,14 @@ pub fn test_one_35() {
         unimplemented!();
     }
 }
-pub fn test_one_36() {
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-    {
-        let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 2_(), 3_()])));
-        let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        const _: () = assert!(true, "");;
-        unimplemented!();
-    }
-}
-pub fn test_37() -> () {
+pub fn test_36() -> () {
+    ({ test_one_29() });
     ({ test_one_30() });
     ({ test_one_31() });
     ({ test_one_32() });
     ({ test_one_33() });
     ({ test_one_34() });
     ({ test_one_35() });
-    ({ test_one_36() });
     return true;
 }
 pub fn main() {
@@ -959,7 +953,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_37() });
+    ({ test_36() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

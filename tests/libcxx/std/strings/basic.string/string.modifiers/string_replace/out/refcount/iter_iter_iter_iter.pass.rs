@@ -322,29 +322,23 @@ pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_10(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_11(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -390,7 +384,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_14(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -415,7 +409,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -499,7 +493,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_15(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
+pub fn test_14(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
     let first: Value<()> = Rc::new(RefCell::new({
@@ -517,7 +511,7 @@ pub fn test_15(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, 
     let mut rlen: () = unimplemented!();
     unimplemented!();
 }
-pub fn test_16(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
+pub fn test_15(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, mut expected: ()) {
     let s: Value<()> = Rc::new(RefCell::new(s));
     let mut old_size: () = unimplemented!();
     let first: Value<()> = Rc::new(RefCell::new({
@@ -540,8702 +534,8727 @@ pub fn test_16(s: (), mut pos1: (), mut n1: (), mut f: Ptr<()>, mut l: Ptr<()>, 
     unimplemented!();
 }
 thread_local!(
-    pub static str_17: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(
+    pub static str_16: Value<Ptr<()>> = Rc::new(RefCell::new(Ptr::<()>::from_string_literal(
         b"12345678901234567890",
     )));
 );
+pub fn test0_17() -> () {
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+    });
+    ({
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+    });
+    return true;
+}
 pub fn test0_18() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test0_19() -> () {
+pub fn test1_19() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test1_20() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test1_21() -> () {
+pub fn test2_21() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 2_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test2_22() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test2_23() -> () {
+pub fn test3_23() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 2_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 2_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 2_(), 3_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 4_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 4_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test3_24() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test3_25() -> () {
+pub fn test4_25() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test4_26() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test4_27() -> () {
+pub fn test5_27() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 8_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 2_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test5_28() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test5_29() -> () {
+pub fn test6_29() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 4_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 5_(), 5_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 9_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 9_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test6_30() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test6_31() -> () {
+pub fn test7_31() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 10_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 0_(), 20_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test7_32() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test7_33() -> () {
+pub fn test8_33() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 18_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 1_(), 19_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 0_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 5_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 9_(), _f, _l, unimplemented!())
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
+        test_14(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     return true;
 }
 pub fn test8_34() -> () {
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((2_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((4_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((5_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((9_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((0_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((1_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((10_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((19_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
+        let _f: Ptr<()> = (*str_16.with(Value::clone).borrow()).clone();
+        let _l: Ptr<()> = (*str_16.with(Value::clone).borrow()).offset((20_()) as isize);
         test_15(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
     });
     return true;
 }
-pub fn test8_35() -> () {
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 10_(), 10_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 19_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 19_(), 1_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((2_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((4_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((5_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((9_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((0_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((1_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((10_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((19_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
-    ({
-        let _f: Ptr<()> = (*str_17.with(Value::clone).borrow()).clone();
-        let _l: Ptr<()> = (*str_17.with(Value::clone).borrow()).offset((20_()) as isize);
-        test_16(unimplemented!(), 20_(), 0_(), _f, _l, unimplemented!())
-    });
+pub fn test9_35() -> () {
+    {
+        let mut s_short: () = unimplemented!();
+        let mut s_long: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let pc: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"ABCD\0")));
+        let p: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"EFGH\0")));
+        let mut s: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
     return true;
 }
 pub fn test9_36() -> () {
@@ -9263,30 +9282,27 @@ pub fn test9_36() -> () {
     }
     return true;
 }
-pub fn test9_37() -> () {
-    {
-        let mut s_short: () = unimplemented!();
-        let mut s_long: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let pc: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"ABCD\0")));
-        let p: Value<Box<[u8]>> = Rc::new(RefCell::new(u8::array_from_literal(b"EFGH\0")));
-        let mut s: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    return true;
+pub fn test_37() {
+    ({ test0_17() });
+    ({ test1_19() });
+    ({ test2_21() });
+    ({ test3_23() });
+    ({ test4_25() });
+    ({ test5_27() });
+    ({ test6_29() });
+    ({ test7_31() });
+    ({ test8_33() });
+    ({ test9_35() });
+    const _: () = assert!(true, "test0<S>()");;
+    const _: () = assert!(true, "test1<S>()");;
+    const _: () = assert!(true, "test2<S>()");;
+    const _: () = assert!(true, "test3<S>()");;
+    const _: () = assert!(true, "test4<S>()");;
+    const _: () = assert!(true, "test5<S>()");;
+    const _: () = assert!(true, "test6<S>()");;
+    const _: () = assert!(true, "test7<S>()");;
+    const _: () = assert!(true, "test8<S>()");;
+    const _: () = assert!(true, "test9<S>()");;
 }
 pub fn test_38() {
     ({ test0_18() });
@@ -9299,28 +9315,6 @@ pub fn test_38() {
     ({ test7_32() });
     ({ test8_34() });
     ({ test9_36() });
-    const _: () = assert!(true, "test0<S>()");;
-    const _: () = assert!(true, "test1<S>()");;
-    const _: () = assert!(true, "test2<S>()");;
-    const _: () = assert!(true, "test3<S>()");;
-    const _: () = assert!(true, "test4<S>()");;
-    const _: () = assert!(true, "test5<S>()");;
-    const _: () = assert!(true, "test6<S>()");;
-    const _: () = assert!(true, "test7<S>()");;
-    const _: () = assert!(true, "test8<S>()");;
-    const _: () = assert!(true, "test9<S>()");;
-}
-pub fn test_39() {
-    ({ test0_19() });
-    ({ test1_21() });
-    ({ test2_23() });
-    ({ test3_25() });
-    ({ test4_27() });
-    ({ test5_29() });
-    ({ test6_31() });
-    ({ test7_33() });
-    ({ test8_35() });
-    ({ test9_37() });
     const _: () = assert!(true, "test0<S>()");;
     const _: () = assert!(true, "test1<S>()");;
     const _: () = assert!(true, "test2<S>()");;
@@ -9352,8 +9346,8 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_37() });
     ({ test_38() });
-    ({ test_39() });
     return 0_();
 }
 pub trait adl_IteratorImpl {
@@ -9811,5 +9805,5 @@ pub fn __cpp2rust_init_globals() {
     let _ = alloc_count_1.with(|_| ());
     let _ = dealloc_count_2.with(|_| ());
     let _ = disable_default_constructor_3.with(|_| ());
-    let _ = str_17.with(|_| ());
+    let _ = str_16.with(|_| ());
 }

@@ -626,7 +626,7 @@ pub fn test_7(expected_num_allocs: Option<()>) {
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut num_stored_allocs: () = { (*alloc_stats.borrow()).count };
         {
@@ -661,7 +661,7 @@ pub fn test_8(expected_num_allocs: Option<()>) {
         Rc::new(RefCell::new(<test_allocator_statistics>::default()));
     {
         ({ test_allocator_statisticsImpl::clear(&alloc_stats.as_pointer()) });
-        let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+        let mut v: () = unimplemented!();
         unimplemented!();
         let mut num_stored_allocs: () = { (*alloc_stats.borrow()).count };
         {

@@ -179,18 +179,18 @@ pub fn test_string_9() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: () = unimplemented!();
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -250,18 +250,18 @@ pub fn test_string_10() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: () = unimplemented!();
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();
@@ -321,18 +321,18 @@ pub fn test_string_11() {
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
                 let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
                 let mut lhs: () = unimplemented!();
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             {
-                let lhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-                let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+                let mut lhs: () = unimplemented!();
+                let mut rhs: () = unimplemented!();
                 unimplemented!();
             }
             k.prefix_inc();

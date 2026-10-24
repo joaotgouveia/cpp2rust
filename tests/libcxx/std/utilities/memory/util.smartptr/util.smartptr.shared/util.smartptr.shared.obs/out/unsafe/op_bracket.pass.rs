@@ -27,7 +27,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let p: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
-            p[(i) as usize] = i;
+            (*unimplemented!()) = i;
             i.prefix_inc();
         }
         let mut i: () = 0_();
@@ -55,7 +55,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let p: () = unimplemented!();
         let mut i: () = 0_();
         'loop_: while ((i) < (8_())) {
-            p[(i) as usize] = i;
+            (*unimplemented!()) = i;
             i.prefix_inc();
         }
         let mut i: () = 0_();

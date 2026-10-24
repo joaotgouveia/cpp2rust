@@ -136,23 +136,25 @@ impl ConstexprFixedCapacityDeque_int__10_Impl for Ptr<ConstexprFixedCapacityDequ
         return (array_field_ptr!((*self), data_) as Ptr<()>)
             .offset(((*self).with(|__s| __s.size_) - 1_()) as isize);
     }
-    fn insert(&self, mut pos: Ptr<()>, t: ()) -> Ptr<()> {
-        let t: Value<()> = Rc::new(RefCell::new(t));
+    fn insert(&self, mut pos: Ptr<()>, mut t: ()) -> Ptr<()> {
         let mut i: () = ((pos).clone() - (array_field_ptr!((*self), data_) as Ptr<()>)) as ();
         if (i != (*self).with(|__s| __s.size_)) {
             unimplemented!();
         }
-        array_elem!((*self), data_, i).write(((*t.borrow()) as ()));
+        array_elem!((*self), data_, i).write(((unimplemented!().read()) as ()));
         {
             field!((*self), size_).with_mut(|__v| *__v = *__v + 1_())
         };
         return (array_field_ptr!((*self), data_) as Ptr<()>).offset((i) as isize);
     }
-    fn push_back(&self, t: ()) {
-        let t: Value<()> = Rc::new(RefCell::new(t));
+    fn push_back(&self, mut t: ()) {
         ({
             let _pos: Ptr<()> = ({ ConstexprFixedCapacityDeque_int__10_Impl::end_3(self) });
-            ConstexprFixedCapacityDeque_int__10_Impl::insert(self, _pos, ((*t.borrow()) as ()))
+            ConstexprFixedCapacityDeque_int__10_Impl::insert(
+                self,
+                _pos,
+                ((unimplemented!().read()) as ()),
+            )
         });
     }
 }

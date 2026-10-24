@@ -579,7 +579,7 @@ impl Counter_int_ {
     }
     pub fn move_from(rhs: Ptr<Counter_int_>) -> Self {
         let __this: Counter_int_ = Self {
-            data_: (rhs.with(|__s| __s.data_) as ()),
+            data_: ((unimplemented!().read()) as ()),
         };
         (*gConstructed_22.with(Value::clone).borrow_mut()).prefix_inc();
         __this

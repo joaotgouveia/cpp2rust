@@ -167,7 +167,19 @@ pub fn test_node_handle_operations_15() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_16(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    return true;
+}
+pub fn test_node_handle_operations_16() -> () {
+    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
@@ -179,127 +191,115 @@ pub fn test_node_handle_operations_17() -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_18(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_node_handle_operations_19() -> () {
+pub fn test_node_handle_operations_18() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_20(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_node_handle_operations_21() -> () {
+pub fn test_node_handle_operations_multi_19() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_22(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_node_handle_operations_multi_23() -> () {
+pub fn test_node_handle_operations_multi_20() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_16(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_node_handle_operations_multi_24() -> () {
+pub fn test_node_handle_operations_multi_21() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_18(nt1.as_pointer(), nt2.as_pointer()) });
+    unimplemented!();
     unimplemented!();
     unimplemented!();
     return true;
 }
-pub fn test_node_handle_operations_multi_25() -> () {
+pub fn test_node_handle_operations_multi_22() -> () {
     let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_20(nt1.as_pointer(), nt2.as_pointer()) });
-    unimplemented!();
-    unimplemented!();
-    return true;
-}
-pub fn test_node_handle_operations_multi_26() -> () {
-    let c: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let nt1: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    let nt2: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    ({ swap_22(nt1.as_pointer(), nt2.as_pointer()) });
-    unimplemented!();
-    unimplemented!();
     return true;
 }
-pub fn test_typedef_27() -> () {
+pub fn test_typedef_23() -> () {
     return true;
 }
-pub fn test_typedef_28() -> () {
+pub fn test_typedef_24() -> () {
     return true;
 }
-pub fn test_typedef_29() -> () {
+pub fn test_typedef_25() -> () {
     return true;
 }
-pub fn test_typedef_30() -> () {
+pub fn test_typedef_26() -> () {
     return true;
 }
-pub fn test_insert_return_type_31() -> () {
-    ({ test_typedef_27() });
+pub fn test_insert_return_type_27() -> () {
+    ({ test_typedef_23() });
     return true;
 }
-pub fn test_insert_return_type_32() -> () {
-    ({ test_typedef_28() });
+pub fn test_insert_return_type_28() -> () {
+    ({ test_typedef_24() });
     return true;
 }
-pub fn test_insert_return_type_33() -> () {
-    ({ test_typedef_29() });
+pub fn test_insert_return_type_29() -> () {
+    ({ test_typedef_25() });
     return true;
 }
-pub fn test_insert_return_type_34() -> () {
-    ({ test_typedef_30() });
+pub fn test_insert_return_type_30() -> () {
+    ({ test_typedef_26() });
     return true;
 }
-pub fn test_35() -> () {
+pub fn test_31() -> () {
     ({ test_node_handle_operations_15() });
-    ({ test_node_handle_operations_multi_23() });
-    ({ test_node_handle_operations_17() });
+    ({ test_node_handle_operations_multi_19() });
+    ({ test_node_handle_operations_16() });
     {
-        ({ test_node_handle_operations_multi_24() });
-        ({ test_node_handle_operations_19() });
-        ({ test_node_handle_operations_multi_25() });
-        ({ test_node_handle_operations_21() });
-        ({ test_node_handle_operations_multi_26() });
+        ({ test_node_handle_operations_multi_20() });
+        ({ test_node_handle_operations_17() });
+        ({ test_node_handle_operations_multi_21() });
+        ({ test_node_handle_operations_18() });
+        ({ test_node_handle_operations_multi_22() });
     }
-    ({ test_insert_return_type_31() });
-    ({ test_insert_return_type_32() });
+    ({ test_insert_return_type_27() });
+    ({ test_insert_return_type_28() });
     {
-        ({ test_insert_return_type_33() });
-        ({ test_insert_return_type_34() });
+        ({ test_insert_return_type_29() });
+        ({ test_insert_return_type_30() });
     }
     return true;
 }
@@ -323,7 +323,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_35() });
+    ({ test_31() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, ByteRepr, VaArg, FnPtrArg)]

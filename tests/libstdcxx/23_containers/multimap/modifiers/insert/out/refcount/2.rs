@@ -771,12 +771,7 @@ pub fn test01_20() {
             unimplemented!();
         }
     }
-    let i: Value<()> = Rc::new(RefCell::new(
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()) . insert_37_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_ ( ___x.as_pointer() , )
-        }),
-    ));
+    let i: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
@@ -895,20 +890,8 @@ pub fn test02_21() {
             unimplemented!();
         }
     }
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*m.borrow())
-            .insert_37_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_(
-                ___x.as_pointer(),
-            )
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*m.borrow())
-            .insert_37_struct_std_pair_struct___gnu_test_rvalstruct__struct___gnu_test_rvalstruct_(
-                ___x.as_pointer(),
-            )
-    });
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

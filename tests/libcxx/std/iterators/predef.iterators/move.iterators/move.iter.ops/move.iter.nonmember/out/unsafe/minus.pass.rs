@@ -250,25 +250,21 @@ pub unsafe fn operator_add_3(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_4(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_5(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -352,7 +348,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -362,7 +358,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -430,7 +426,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_9(
+pub unsafe fn test_8(
     mut l: random_access_iterator_char_ptr_,
     mut r: random_access_iterator_char_ptr_,
     mut x: (),
@@ -439,7 +435,7 @@ pub unsafe fn test_9(
     let r2: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_10(mut l: *mut (), mut r: *mut (), mut x: ()) {
+pub unsafe fn test_9(mut l: *mut (), mut r: *mut (), mut x: ()) {
     let r1: () = unimplemented!();
     let r2: () = unimplemented!();
     unimplemented!();
@@ -466,12 +462,12 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             random_access_iterator_char_ptr_::new_1({ s.as_mut_ptr().offset((5_()) as isize) });
         let _r: random_access_iterator_char_ptr_ =
             random_access_iterator_char_ptr_::new_1({ s.as_mut_ptr() });
-        test_9(_l, _r, 5_())
+        test_8(_l, _r, 5_())
     });
     (unsafe {
         let _l: *mut () = s.as_mut_ptr().offset((5_()) as isize);
         let _r: *mut () = s.as_mut_ptr();
-        test_10(_l, _r, 5_())
+        test_9(_l, _r, 5_())
     });
     {
         let p: *const () = c"123456789".as_ptr();

@@ -260,10 +260,7 @@ pub fn test01_10() {
     let mut nb_bkts: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while true {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*mmap.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-        });
+        unimplemented!();
         if (unimplemented!() != nb_bkts) {
             break;
         }

@@ -255,8 +255,8 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_construction_with_repeated_types_12() });
     ({ test_vector_bool_13() });
     {
-        let vec_: Value<Matcher_14> = Rc::new(RefCell::new(Matcher_14::new_1()));
-        let mut m: Matcher_14 = (*vec_.borrow()).clone();
+        let mut vec_: Matcher_14 = Matcher_14::new_1();
+        let mut m: Matcher_14 = (*unimplemented!().upgrade().deref()).clone();
     }
     return 0_();
 }

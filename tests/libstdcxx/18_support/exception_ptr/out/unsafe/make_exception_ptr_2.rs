@@ -261,11 +261,11 @@ impl __gnu_test_semaphore {}
 pub struct E {}
 pub unsafe fn test01_10() {
     let mut e: E = <E>::default();
-    let mut p: std___exception_ptr_exception_ptr = unimplemented!();
+    let mut p: () = unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;
-        if !(unsafe { (p)() }) {
+        if !(unimplemented!()) {
             (unsafe {
                 __builtin_fprintf_11(
                     libcc2rs::stderr_unsafe(),

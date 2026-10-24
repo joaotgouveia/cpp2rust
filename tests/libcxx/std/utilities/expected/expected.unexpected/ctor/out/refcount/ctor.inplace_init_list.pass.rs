@@ -57,7 +57,7 @@ impl Error {
         let l: Value<()> = Rc::new(RefCell::new(l));
         Self {
             list: (*l.borrow()).clone(),
-            arg: Arg::move_from({ (a).clone() }),
+            arg: Arg::move_from({ unimplemented!() }),
         }
     }
 }
@@ -87,7 +87,7 @@ pub fn test_0() -> () {
         unimplemented!();
     }
     {
-        let a: Value<Arg> = Rc::new(RefCell::new(Arg::new({ 5_() })));
+        let mut a: Arg = Arg::new({ 5_() });
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let unex: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

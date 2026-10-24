@@ -569,7 +569,7 @@ pub fn test_4() -> () {
         unimplemented!();
     }
     {
-        let ctp: Value<ConvertibleToPair> = Rc::new(RefCell::new(<ConvertibleToPair>::default()));
+        let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
         let mut ptr: Ptr<()> = unimplemented!();
         let mut ret: Ptr<()> = unimplemented!();
         unimplemented!();

@@ -291,25 +291,21 @@ pub unsafe fn operator_add_10(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_11(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_12(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_13(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_12(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_13(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_14(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -393,7 +389,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_15(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_14(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -403,7 +399,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_14(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_13(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -475,7 +471,7 @@ const _: () = assert!(true, "HasGet<0, std::ranges::subrange<int*>>");
 const _: () = assert!(true, "HasGet<1, std::ranges::subrange<int*>>");
 const _: () = assert!(!(false), "!HasGet<2, std::ranges::subrange<int*>>");
 const _: () = assert!(!(false), "!HasGet<3, std::ranges::subrange<int*>>");
-pub unsafe fn test_16() -> () {
+pub unsafe fn test_15() -> () {
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
         let mut r: () = unimplemented!();
@@ -494,7 +490,7 @@ pub unsafe fn test_16() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut r : () = std_ranges_subrange_int_ptr__sentinel_wrapper_int_ptr___std_ranges_subrange_kind_sized_ :: new_1 ( { a .as_mut_ptr() } , { { let mut __tmp_0 : *mut ()  = a .as_mut_ptr() . offset ( ( 3_() ) as isize ) ; sentinel_wrapper_int_ptr_ :: new_1 ( { & mut __tmp_0 } , )  } } , { 3_() } , )  ;
+        let mut r: () = unimplemented!();
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -510,7 +506,7 @@ pub unsafe fn test_16() -> () {
     }
     {
         let mut a: [(); 3] = [1_(), 2_(), 3_()];
-        let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_1 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_1 } , )  } } , )  ;
+        let mut r : () = std_ranges_subrange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr____std_ranges_subrange_kind_unsized_ :: new_1 ( { cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() } , )  } , { { let mut __tmp_0 : cpp20_input_iterator_int_ptr_  = cpp20_input_iterator_int_ptr_ :: new ( { a .as_mut_ptr() . offset ( ( 3_() ) as isize ) } , )  ; sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { & mut __tmp_0 } , )  } } , )  ;
         const _: () = assert!(!(false), "!HasGet<0, R&>");;
         const _: () = assert!(true, "");;
         const _: () = assert!(true, "");;
@@ -541,7 +537,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_16() });
+    (unsafe { test_15() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

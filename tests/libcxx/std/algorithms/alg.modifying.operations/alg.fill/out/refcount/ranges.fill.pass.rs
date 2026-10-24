@@ -238,10 +238,9 @@ pub struct cpp17_output_iterator_int_ptr_ {
     tracker_: support_double_move_tracker,
 }
 impl cpp17_output_iterator_int_ptr_ {
-    pub fn new(it: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
+    pub fn new(mut it: Ptr<()>) -> Self {
         Self {
-            it_: (*it.borrow()).clone(),
+            it_: (unimplemented!().read()),
             tracker_: support_double_move_tracker::new(),
         }
     }
@@ -632,29 +631,23 @@ pub fn operator_add_13(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_12(_i, n)
     });
 }
-pub fn iter_swap_14(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_15(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_14(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_16(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_18(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -700,7 +693,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_18(
+            operator_cmp_17(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -725,7 +718,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_17(
+            operator_eq_16(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -1276,7 +1269,7 @@ const _: () = assert!(
     !(false),
     "!HasFillR<OutputRangeNotSentinelEqualityComparableWith>"
 );
-pub fn test_iterators_19() {
+pub fn test_iterators_18() {
     {
         {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
@@ -1296,7 +1289,7 @@ pub fn test_iterators_19() {
                         })
                     };
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1315,7 +1308,7 @@ pub fn test_iterators_19() {
             let ret: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1342,7 +1335,7 @@ pub fn test_iterators_19() {
                         })
                     };
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1358,7 +1351,7 @@ pub fn test_iterators_19() {
             let ret: Value<cpp17_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1368,7 +1361,7 @@ pub fn test_iterators_19() {
         }
     }
 }
-pub fn test_iterators_21() {
+pub fn test_iterators_20() {
     {
         {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
@@ -1388,7 +1381,7 @@ pub fn test_iterators_21() {
                         })
                     };
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1407,7 +1400,7 @@ pub fn test_iterators_21() {
             let ret: Value<cpp20_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1434,7 +1427,7 @@ pub fn test_iterators_21() {
                         })
                     };
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1450,7 +1443,7 @@ pub fn test_iterators_21() {
             let ret: Value<cpp20_output_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1460,7 +1453,7 @@ pub fn test_iterators_21() {
         }
     }
 }
-pub fn test_iterators_22() {
+pub fn test_iterators_21() {
     {
         {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
@@ -1474,7 +1467,7 @@ pub fn test_iterators_22() {
                         (a.as_pointer() as Ptr<()>).offset((3_()) as isize)
                     });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1493,7 +1486,7 @@ pub fn test_iterators_22() {
             let ret: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1513,7 +1506,7 @@ pub fn test_iterators_22() {
                     let ___last: forward_iterator_int_ptr_ =
                         forward_iterator_int_ptr_::new_1({ unimplemented!() });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1529,7 +1522,87 @@ pub fn test_iterators_22() {
             let ret: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
+                        range.as_pointer(),
+                        ___value.as_pointer(),
+                    )
+                }),
+            ));
+            unimplemented!();
+        }
+    }
+}
+pub fn test_iterators_22() {
+    {
+        {
+            let a: Value<Box<[()]>> = Rc::new(RefCell::new(
+                (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            ));
+            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_int_ptr_ =
+                        bidirectional_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
+                    let ___last: bidirectional_iterator_int_ptr_ =
+                        bidirectional_iterator_int_ptr_::new_1({
+                            (a.as_pointer() as Ptr<()>).offset((3_()) as isize)
+                        });
+                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
+                    (*fill_19.with(Value::clone).borrow_mut())(
+                        ___first,
+                        ___last,
+                        ___value.as_pointer(),
+                    )
+                })
+                .clone(),
+            ));
+            unimplemented!();
+            unimplemented!();
+        }
+        {
+            let a: Value<Box<[()]>> = Rc::new(RefCell::new(
+                (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
+            ));
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
+                    (*fill_19.with(Value::clone).borrow_mut())(
+                        range.as_pointer(),
+                        ___value.as_pointer(),
+                    )
+                }),
+            ));
+            unimplemented!();
+            unimplemented!();
+        }
+    }
+    {
+        {
+            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___first: bidirectional_iterator_int_ptr_ =
+                        bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___last: bidirectional_iterator_int_ptr_ =
+                        bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
+                    (*fill_19.with(Value::clone).borrow_mut())(
+                        ___first,
+                        ___last,
+                        ___value.as_pointer(),
+                    )
+                })
+                .clone(),
+            ));
+            unimplemented!();
+        }
+        {
+            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
+            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+                ({
+                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1545,16 +1618,16 @@ pub fn test_iterators_23() {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
-            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
-                    let ___first: bidirectional_iterator_int_ptr_ =
-                        bidirectional_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
-                    let ___last: bidirectional_iterator_int_ptr_ =
-                        bidirectional_iterator_int_ptr_::new_1({
+                    let ___first: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
+                    let ___last: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({
                             (a.as_pointer() as Ptr<()>).offset((3_()) as isize)
                         });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1570,10 +1643,10 @@ pub fn test_iterators_23() {
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1586,14 +1659,14 @@ pub fn test_iterators_23() {
     {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
-                    let ___first: bidirectional_iterator_int_ptr_ =
-                        bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
-                    let ___last: bidirectional_iterator_int_ptr_ =
-                        bidirectional_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___first: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___last: random_access_iterator_int_ptr_ =
+                        random_access_iterator_int_ptr_::new_1({ unimplemented!() });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1606,10 +1679,10 @@ pub fn test_iterators_23() {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1625,16 +1698,16 @@ pub fn test_iterators_24() {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
-            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
-                    let ___first: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
-                    let ___last: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({
+                    let ___first: contiguous_iterator_int_ptr_ =
+                        contiguous_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
+                    let ___last: contiguous_iterator_int_ptr_ =
+                        contiguous_iterator_int_ptr_::new_1({
                             (a.as_pointer() as Ptr<()>).offset((3_()) as isize)
                         });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1650,10 +1723,10 @@ pub fn test_iterators_24() {
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1666,14 +1739,14 @@ pub fn test_iterators_24() {
     {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
-                    let ___first: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ unimplemented!() });
-                    let ___last: random_access_iterator_int_ptr_ =
-                        random_access_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___first: contiguous_iterator_int_ptr_ =
+                        contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
+                    let ___last: contiguous_iterator_int_ptr_ =
+                        contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         ___first,
                         ___last,
                         ___value.as_pointer(),
@@ -1686,10 +1759,10 @@ pub fn test_iterators_24() {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
                 ({
                     let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
+                    (*fill_19.with(Value::clone).borrow_mut())(
                         range.as_pointer(),
                         ___value.as_pointer(),
                     )
@@ -1705,91 +1778,11 @@ pub fn test_iterators_25() {
             let a: Value<Box<[()]>> = Rc::new(RefCell::new(
                 (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
             ));
-            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
-                ({
-                    let ___first: contiguous_iterator_int_ptr_ =
-                        contiguous_iterator_int_ptr_::new_1({ (a.as_pointer() as Ptr<()>) });
-                    let ___last: contiguous_iterator_int_ptr_ =
-                        contiguous_iterator_int_ptr_::new_1({
-                            (a.as_pointer() as Ptr<()>).offset((3_()) as isize)
-                        });
-                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
-                        ___first,
-                        ___last,
-                        ___value.as_pointer(),
-                    )
-                })
-                .clone(),
-            ));
-            unimplemented!();
-            unimplemented!();
-        }
-        {
-            let a: Value<Box<[()]>> = Rc::new(RefCell::new(
-                (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-            ));
-            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
-                ({
-                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
-                        range.as_pointer(),
-                        ___value.as_pointer(),
-                    )
-                }),
-            ));
-            unimplemented!();
-            unimplemented!();
-        }
-    }
-    {
-        {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
-                ({
-                    let ___first: contiguous_iterator_int_ptr_ =
-                        contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                    let ___last: contiguous_iterator_int_ptr_ =
-                        contiguous_iterator_int_ptr_::new_1({ unimplemented!() });
-                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
-                        ___first,
-                        ___last,
-                        ___value.as_pointer(),
-                    )
-                })
-                .clone(),
-            ));
-            unimplemented!();
-        }
-        {
-            let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            let ret: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
-                ({
-                    let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                    (*fill_20.with(Value::clone).borrow_mut())(
-                        range.as_pointer(),
-                        ___value.as_pointer(),
-                    )
-                }),
-            ));
-            unimplemented!();
-        }
-    }
-}
-pub fn test_iterators_26() {
-    {
-        {
-            let a: Value<Box<[()]>> = Rc::new(RefCell::new(
-                (0..3).map(|_| unimplemented!()).collect::<Box<[()]>>(),
-            ));
             let mut ret: Ptr<()> = ({
                 let ___first: Ptr<()> = (a.as_pointer() as Ptr<()>);
                 let ___last: Ptr<()> = (a.as_pointer() as Ptr<()>).offset((3_()) as isize);
                 let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                (*fill_20.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
             })
             .clone();
             unimplemented!();
@@ -1802,7 +1795,7 @@ pub fn test_iterators_26() {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut ret: Ptr<()> = ({
                 let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1818,7 +1811,7 @@ pub fn test_iterators_26() {
                 let ___first: Ptr<()> = unimplemented!();
                 let ___last: Ptr<()> = unimplemented!();
                 let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                (*fill_20.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
             })
             .clone();
             unimplemented!();
@@ -1828,7 +1821,7 @@ pub fn test_iterators_26() {
             let range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut ret: Ptr<()> = ({
                 let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1837,7 +1830,7 @@ pub fn test_iterators_26() {
         }
     }
 }
-pub fn test_vector_bool_27(mut N: ()) -> () {
+pub fn test_vector_bool_26(mut N: ()) -> () {
     {
         {
             let mut in_: () = unimplemented!();
@@ -1850,7 +1843,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1868,7 +1861,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1894,7 +1887,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1908,7 +1901,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             let mut expected: () = unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
@@ -1918,7 +1911,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1926,7 +1919,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(false));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1934,7 +1927,7 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(false));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -1944,43 +1937,43 @@ pub fn test_vector_bool_27(mut N: ()) -> () {
     }
     return true;
 }
-pub fn test_deque_28() {
+pub fn test_deque_27() {
     let in_: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     ({
         let ___value: Value<()> = Rc::new(RefCell::new(42_()));
-        (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+        (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
     });
     unimplemented!();
 }
-pub fn test_29() -> () {
-    ({ test_iterators_19() });
+pub fn test_28() -> () {
+    ({ test_iterators_18() });
+    ({ test_iterators_20() });
     ({ test_iterators_21() });
     ({ test_iterators_22() });
     ({ test_iterators_23() });
     ({ test_iterators_24() });
     ({ test_iterators_25() });
-    ({ test_iterators_26() });
     {
         {
-            let a: Value<Box<[S_30]>> = Rc::new(RefCell::new(
-                (0..5).map(|_| <S_30>::default()).collect::<Box<[S_30]>>(),
+            let a: Value<Box<[S_29]>> = Rc::new(RefCell::new(
+                (0..5).map(|_| <S_29>::default()).collect::<Box<[S_29]>>(),
             ));
             ({
-                let ___first: Ptr<S_30> = (a.as_pointer() as Ptr<S_30>);
-                let ___last: Ptr<S_30> = (a.as_pointer() as Ptr<S_30>).offset((5_()) as isize);
-                let ___value: Value<S_30> = Rc::new(RefCell::new(S_30 { copied: true }));
-                (*fill_20.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
+                let ___first: Ptr<S_29> = (a.as_pointer() as Ptr<S_29>);
+                let ___last: Ptr<S_29> = (a.as_pointer() as Ptr<S_29>).offset((5_()) as isize);
+                let ___value: Value<S_29> = Rc::new(RefCell::new(S_29 { copied: true }));
+                (*fill_19.with(Value::clone).borrow_mut())(___first, ___last, ___value.as_pointer())
             });
             unimplemented!();
         }
         {
-            let a: Value<Box<[S_30]>> = Rc::new(RefCell::new(
-                (0..5).map(|_| <S_30>::default()).collect::<Box<[S_30]>>(),
+            let a: Value<Box<[S_29]>> = Rc::new(RefCell::new(
+                (0..5).map(|_| <S_29>::default()).collect::<Box<[S_29]>>(),
             ));
             ({
-                let ___value: Value<S_30> = Rc::new(RefCell::new(S_30 { copied: true }));
-                (*fill_20.with(Value::clone).borrow_mut())(a.as_pointer(), ___value.as_pointer())
+                let ___value: Value<S_29> = Rc::new(RefCell::new(S_29 { copied: true }));
+                (*fill_19.with(Value::clone).borrow_mut())(a.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
@@ -1990,7 +1983,7 @@ pub fn test_29() -> () {
             ({
                 let ___range: Value<()> = Rc::new(RefCell::new(unimplemented!()));
                 let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___range.as_pointer(),
                     ___value.as_pointer(),
                 )
@@ -2002,10 +1995,10 @@ pub fn test_29() -> () {
         let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let mut ret: Ptr<()> = ({
             let ___range: Value<()> = Rc::new(RefCell::new(
-                ({ (*all_31.with(Value::clone).borrow_mut())(a.as_pointer()) }),
+                ({ (*all_30.with(Value::clone).borrow_mut())(a.as_pointer()) }),
             ));
             let ___value: Value<()> = Rc::new(RefCell::new(1_()));
-            (*fill_20.with(Value::clone).borrow_mut())(___range.as_pointer(), ___value.as_pointer())
+            (*fill_19.with(Value::clone).borrow_mut())(___range.as_pointer(), ___value.as_pointer())
         })
         .clone();
         unimplemented!();
@@ -2016,7 +2009,7 @@ pub fn test_29() -> () {
             let mut ret: Ptr<()> = ({
                 let ___first: Ptr<()> = unimplemented!();
                 let ___last: Ptr<()> = unimplemented!();
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     ___first,
                     ___last,
                     Ptr::<()>::from_string_literal(b"long long string so no SSO"),
@@ -2028,7 +2021,7 @@ pub fn test_29() -> () {
         {
             let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
             let mut ret: Ptr<()> = ({
-                (*fill_20.with(Value::clone).borrow_mut())(
+                (*fill_19.with(Value::clone).borrow_mut())(
                     a.as_pointer(),
                     Ptr::<()>::from_string_literal(b"long long string so no SSO"),
                 )
@@ -2050,7 +2043,7 @@ pub fn test_29() -> () {
             let mut expected: () = unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
@@ -2059,7 +2052,7 @@ pub fn test_29() -> () {
             let mut expected: () = unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
@@ -2068,7 +2061,7 @@ pub fn test_29() -> () {
             let mut expected: () = unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
@@ -2077,20 +2070,20 @@ pub fn test_29() -> () {
             let mut expected: () = unimplemented!();
             ({
                 let ___value: Value<()> = Rc::new(RefCell::new(true));
-                (*fill_20.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
+                (*fill_19.with(Value::clone).borrow_mut())(in_.as_pointer(), ___value.as_pointer())
             });
             unimplemented!();
         }
     }
     {
-        ({ test_deque_28() });
+        ({ test_deque_27() });
     }
     {
         let v: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         let jv: Value<()> = Rc::new(RefCell::new(unimplemented!()));
         ({
             let ___value: Value<()> = Rc::new(RefCell::new(42_()));
-            (*fill_20.with(Value::clone).borrow_mut())(jv.as_pointer(), ___value.as_pointer())
+            (*fill_19.with(Value::clone).borrow_mut())(jv.as_pointer(), ___value.as_pointer())
         });
         'loop_: for vec_ in IterRange::new(unimplemented!(), unimplemented!()) {
             let vec_: Ptr<()> = unimplemented!();
@@ -2104,13 +2097,13 @@ pub fn test_29() -> () {
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, CopyAssign)]
 #[byte_size(1)]
-pub struct S_30 {
+pub struct S_29 {
     #[offset(0)]
     pub copied: (),
 }
-impl Default for S_30 {
+impl Default for S_29 {
     fn default() -> Self {
-        { S_30 { copied: false } }
+        { S_29 { copied: false } }
     }
 }
 pub fn main() {
@@ -2133,7 +2126,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_29() });
+    ({ test_28() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }
@@ -2438,11 +2431,11 @@ impl RandomAccessIteratorNotDerivedFromImpl for Ptr<RandomAccessIteratorNotDeriv
         return true;
     }
 }
-pub trait S_30Impl {
-    fn copy_assign(&self, _a0: Ptr<S_30>) -> Ptr<S_30>;
+pub trait S_29Impl {
+    fn copy_assign(&self, _a0: Ptr<S_29>) -> Ptr<S_29>;
 }
-impl S_30Impl for Ptr<S_30> {
-    fn copy_assign(&self, _a0: Ptr<S_30>) -> Ptr<S_30> {
+impl S_29Impl for Ptr<S_29> {
+    fn copy_assign(&self, _a0: Ptr<S_29>) -> Ptr<S_29> {
         field!((*self), copied).write(true);
         return (*self).clone();
     }

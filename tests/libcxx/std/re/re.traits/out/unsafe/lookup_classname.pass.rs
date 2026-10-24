@@ -292,25 +292,21 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_6(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -394,7 +390,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -404,7 +400,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -472,19 +468,19 @@ impl util_iterator_error {
         this
     }
 }
+pub unsafe fn test_9(mut A: *const (), mut expected: (), mut icase: Option<()>) {
+    let mut icase: () = icase.unwrap_or_else(|| unsafe { false });
+    let mut t: () = unimplemented!();
+    let mut result: () = unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_10(mut A: *const (), mut expected: (), mut icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| unsafe { false });
     let mut t: () = unimplemented!();
     let mut result: () = unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_11(mut A: *const (), mut expected: (), mut icase: Option<()>) {
-    let mut icase: () = icase.unwrap_or_else(|| unsafe { false });
-    let mut t: () = unimplemented!();
-    let mut result: () = unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_w_12(mut A: *const (), mut expected: (), mut icase: Option<()>) {
+pub unsafe fn test_w_11(mut A: *const (), mut expected: (), mut icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| unsafe { false });
     let mut t: () = unimplemented!();
     let mut result: () = unimplemented!();
@@ -497,7 +493,7 @@ pub unsafe fn test_w_12(mut A: *const (), mut expected: (), mut icase: Option<()
         unimplemented!();
     }
 }
-pub unsafe fn test_w_13(mut A: *const (), mut expected: (), mut icase: Option<()>) {
+pub unsafe fn test_w_12(mut A: *const (), mut expected: (), mut icase: Option<()>) {
     let mut icase: () = icase.unwrap_or_else(|| unsafe { false });
     let mut t: () = unimplemented!();
     let mut result: () = unimplemented!();
@@ -536,159 +532,159 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     unimplemented!();
     unimplemented!();
     unimplemented!();
-    (unsafe { test_10(c"d".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"D".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"d".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"D".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"d".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"D".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"d".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"D".as_ptr(), unimplemented!(), Some(true)) });
     (unsafe {
-        test_w_12(
+        test_w_11(
             c"w".as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             None,
         )
     });
     (unsafe {
-        test_w_12(
+        test_w_11(
             c"W".as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             None,
         )
     });
     (unsafe {
-        test_w_12(
+        test_w_11(
             c"w".as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             Some(true),
         )
     });
     (unsafe {
-        test_w_12(
+        test_w_11(
             c"W".as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             Some(true),
         )
     });
-    (unsafe { test_10(c"s".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"S".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"s".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"S".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"alnum".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"AlNum".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"alnum".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"AlNum".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"alpha".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"Alpha".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"alpha".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Alpha".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"blank".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"Blank".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"blank".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Blank".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"cntrl".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"Cntrl".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"cntrl".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Cntrl".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"digit".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"Digit".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"digit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Digit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"digit".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"DIGIT".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"digit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Digit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"graph".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"GRAPH".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"graph".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Graph".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"lower".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"LOWER".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"s".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"S".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"s".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"S".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"alnum".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"AlNum".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"alnum".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"AlNum".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"alpha".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"Alpha".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"alpha".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Alpha".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"blank".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"Blank".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"blank".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Blank".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"cntrl".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"Cntrl".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"cntrl".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Cntrl".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"digit".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"Digit".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"digit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Digit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"digit".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"DIGIT".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"digit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Digit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"graph".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"GRAPH".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"graph".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Graph".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"lower".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"LOWER".as_ptr(), unimplemented!(), None) });
     (unsafe {
-        test_10(
+        test_9(
             c"lower".as_ptr(),
             ((unimplemented!()) | (unimplemented!())),
             Some(true),
         )
     });
     (unsafe {
-        test_10(
+        test_9(
             c"Lower".as_ptr(),
             ((unimplemented!()) | (unimplemented!())),
             Some(true),
         )
     });
-    (unsafe { test_10(c"print".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"PRINT".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"print".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Print".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"punct".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"PUNCT".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"punct".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Punct".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"space".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"SPACE".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"space".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Space".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"upper".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"UPPER".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"print".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"PRINT".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"print".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Print".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"punct".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"PUNCT".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"punct".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Punct".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"space".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"SPACE".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"space".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Space".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"upper".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"UPPER".as_ptr(), unimplemented!(), None) });
     (unsafe {
-        test_10(
+        test_9(
             c"upper".as_ptr(),
             ((unimplemented!()) | (unimplemented!())),
             Some(true),
         )
     });
     (unsafe {
-        test_10(
+        test_9(
             c"Upper".as_ptr(),
             ((unimplemented!()) | (unimplemented!())),
             Some(true),
         )
     });
-    (unsafe { test_10(c"xdigit".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"XDIGIT".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"xdigit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"Xdigit".as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_10(c"dig".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_10(c"digits".as_ptr(), unimplemented!(), None) });
-    (unsafe { test_11([100 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
-    (unsafe { test_11([68 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
-    (unsafe { test_11([100 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_11([68 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"xdigit".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"XDIGIT".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"xdigit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"Xdigit".as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_9(c"dig".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_9(c"digits".as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([100 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([68 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([100 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_10([68 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
     (unsafe {
-        test_w_13(
+        test_w_12(
             [119 as (), 0 as ()].as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             None,
         )
     });
     (unsafe {
-        test_w_13(
+        test_w_12(
             [87 as (), 0 as ()].as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             None,
         )
     });
     (unsafe {
-        test_w_13(
+        test_w_12(
             [119 as (), 0 as ()].as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             Some(true),
         )
     });
     (unsafe {
-        test_w_13(
+        test_w_12(
             [87 as (), 0 as ()].as_ptr(),
             (((unimplemented!()) | (unimplemented!())) | (unimplemented!())),
             Some(true),
         )
     });
-    (unsafe { test_11([115 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
-    (unsafe { test_11([83 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
-    (unsafe { test_11([115 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
-    (unsafe { test_11([83 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_10([115 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([83 as (), 0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([115 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
+    (unsafe { test_10([83 as (), 0 as ()].as_ptr(), unimplemented!(), Some(true)) });
     (unsafe {
-        test_11(
+        test_10(
             [
                 97 as (), 108 as (), 110 as (), 117 as (), 109 as (), 0 as (),
             ]
@@ -698,14 +694,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [65 as (), 108 as (), 78 as (), 117 as (), 109 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 97 as (), 108 as (), 110 as (), 117 as (), 109 as (), 0 as (),
             ]
@@ -715,70 +711,70 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [65 as (), 108 as (), 78 as (), 117 as (), 109 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [97 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [65 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [97 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [65 as (), 108 as (), 112 as (), 104 as (), 97 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [98 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [66 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [98 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [66 as (), 108 as (), 97 as (), 110 as (), 107 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 99 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]
@@ -788,7 +784,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 67 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]
@@ -798,7 +794,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 99 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]
@@ -808,7 +804,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 67 as (), 110 as (), 116 as (), 114 as (), 108 as (), 0 as (),
             ]
@@ -818,7 +814,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -828,7 +824,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -838,7 +834,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -848,7 +844,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -858,7 +854,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -868,14 +864,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [68 as (), 73 as (), 71 as (), 73 as (), 84 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -885,7 +881,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 68 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -895,7 +891,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 103 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as (),
             ]
@@ -905,14 +901,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [71 as (), 82 as (), 65 as (), 80 as (), 72 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 103 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as (),
             ]
@@ -922,14 +918,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [71 as (), 114 as (), 97 as (), 112 as (), 104 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 108 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -939,14 +935,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [76 as (), 79 as (), 87 as (), 69 as (), 82 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 108 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -956,7 +952,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 76 as (), 111 as (), 119 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -966,7 +962,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 112 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]
@@ -976,14 +972,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [80 as (), 82 as (), 73 as (), 78 as (), 84 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 112 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]
@@ -993,7 +989,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 80 as (), 114 as (), 105 as (), 110 as (), 116 as (), 0 as (),
             ]
@@ -1003,7 +999,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 112 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as (),
             ]
@@ -1013,14 +1009,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [80 as (), 85 as (), 78 as (), 67 as (), 84 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 112 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as (),
             ]
@@ -1030,42 +1026,42 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [80 as (), 117 as (), 110 as (), 99 as (), 116 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [83 as (), 80 as (), 65 as (), 67 as (), 69 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [83 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             Some(true),
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 117 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -1075,14 +1071,14 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [85 as (), 80 as (), 80 as (), 69 as (), 82 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 117 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -1092,7 +1088,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 85 as (), 112 as (), 112 as (), 101 as (), 114 as (), 0 as (),
             ]
@@ -1102,7 +1098,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 120 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -1112,7 +1108,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 88 as (), 68 as (), 73 as (), 71 as (), 73 as (), 84 as (), 0 as (),
             ]
@@ -1122,7 +1118,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 120 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -1132,7 +1128,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [
                 88 as (), 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 0 as (),
             ]
@@ -1142,15 +1138,15 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         )
     });
     (unsafe {
-        test_11(
+        test_10(
             [100 as (), 105 as (), 103 as (), 0 as ()].as_ptr(),
             unimplemented!(),
             None,
         )
     });
-    (unsafe { test_11([0 as ()].as_ptr(), unimplemented!(), None) });
+    (unsafe { test_10([0 as ()].as_ptr(), unimplemented!(), None) });
     (unsafe {
-        test_11(
+        test_10(
             [
                 100 as (), 105 as (), 103 as (), 105 as (), 116 as (), 115 as (), 0 as (),
             ]

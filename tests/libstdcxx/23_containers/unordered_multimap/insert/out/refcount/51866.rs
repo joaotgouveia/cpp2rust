@@ -283,22 +283,10 @@ thread_local!(
 );
 pub fn test01_11() {
     let mmap: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*mmap.borrow()).insert_33_struct_std_pair_struct_num__int_(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*mmap.borrow()).insert_33_struct_std_pair_struct_num__int_(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*mmap.borrow()).insert_33_struct_std_pair_struct_num__int_(___x.as_pointer())
-    });
-    ({
-        let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        (*mmap.borrow()).insert_33_struct_std_pair_struct_num__int_(___x.as_pointer())
-    });
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
     let mut __do_while = true;
     'loop_: while __do_while || (false) {
         __do_while = false;

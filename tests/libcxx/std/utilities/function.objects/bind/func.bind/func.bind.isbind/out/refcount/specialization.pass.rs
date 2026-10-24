@@ -55,7 +55,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
                 return ((10_() * x) + 9_());
             })));
-        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let mut bindexpr: MyBind = <MyBind>::default();
         let bound: Value<std___bind__lambda_at_specialization_pass_cpp_44_14__ref__MyBind_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();
@@ -65,7 +65,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
             Rc::new(RefCell::new(lambda!(Generic, {}, |mut x: ()| -> () {
                 return ((10_() * x) + 9_());
             })));
-        let bindexpr: Value<MyBind> = Rc::new(RefCell::new(<MyBind>::default()));
+        let mut bindexpr: MyBind = <MyBind>::default();
         let bound: Value<std___bind__lambda_at_specialization_pass_cpp_50_14__ref__const_MyBind_> =
             Rc::new(RefCell::new(unimplemented!()));
         unimplemented!();

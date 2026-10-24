@@ -541,7 +541,7 @@ impl AssignableFrom_ConstMoveAssign_ {
         t: *mut ConstMoveAssign,
     ) -> *const AssignableFrom_ConstMoveAssign_ {
         (unsafe {
-            let _other: *mut ConstMoveAssign = t;
+            let _other: *mut ConstMoveAssign = unimplemented!();
             ConstMoveAssign::move_assign(&self.v, _other)
         });
         return &(*(self as *const AssignableFrom_ConstMoveAssign_));
@@ -575,7 +575,7 @@ impl AssignableFrom_TracedAssignment_ {
         t: *mut TracedAssignment,
     ) -> *const AssignableFrom_TracedAssignment_ {
         (unsafe {
-            let _arg0: *mut TracedAssignment = t;
+            let _arg0: *mut TracedAssignment = unimplemented!();
             TracedAssignment::operator_assign_5(&self.v, _arg0)
         });
         return &(*(self as *const AssignableFrom_TracedAssignment_));

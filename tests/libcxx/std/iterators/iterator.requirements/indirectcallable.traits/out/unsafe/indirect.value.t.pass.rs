@@ -112,7 +112,7 @@ pub unsafe fn test_0() {
     }
     {
         let mut rel: FnPtr<Generic> = lambda_unsafe!(Generic, {}, |mut x: (), mut y: ()| -> () {
-            return ((*x) < (*y));
+            return ((*unimplemented!()) < (*unimplemented!()));
         });
         const _: () = assert!(
             true,

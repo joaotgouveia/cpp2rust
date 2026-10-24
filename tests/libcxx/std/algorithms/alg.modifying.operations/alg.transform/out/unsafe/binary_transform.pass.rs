@@ -65,7 +65,7 @@ pub struct cpp17_output_iterator_int_ptr_ {
 impl cpp17_output_iterator_int_ptr_ {
     pub unsafe fn new(mut it: *mut ()) -> Self {
         let mut this = Self {
-            it_: it,
+            it_: (*unimplemented!()),
             tracker_: support_double_move_tracker::new(),
         };
         this
@@ -485,25 +485,21 @@ pub unsafe fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_14(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -587,7 +583,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -597,7 +593,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -665,7 +661,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_constexpr_18() -> () {
+pub unsafe fn test_constexpr_17() -> () {
     let ia: [(); 4] = [1_(), 3_(), 6_(), 7_()];
     let ib: [(); 4] = [2_(), 4_(), 7_(), 8_()];
     let mut ic: [(); 5] = [0_(), 0_(), 0_(), 0_(), 0_()];
@@ -674,12 +670,25 @@ pub unsafe fn test_constexpr_18() -> () {
     return (((it) == (unimplemented!().offset((unimplemented!()) as isize))) && ((*it) == (0_())))
         && (unimplemented!());
 }
-pub unsafe fn test_19() {
+pub unsafe fn test_18() {
     let mut ia: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
     let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
+pub unsafe fn test_19() {
+    let mut ia: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
+    let sa: () =
+        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -692,7 +701,7 @@ pub unsafe fn test_20() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -705,7 +714,7 @@ pub unsafe fn test_21() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -718,7 +727,7 @@ pub unsafe fn test_22() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -731,7 +740,7 @@ pub unsafe fn test_23() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -744,7 +753,7 @@ pub unsafe fn test_24() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -757,7 +766,7 @@ pub unsafe fn test_25() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -770,7 +779,7 @@ pub unsafe fn test_26() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -783,7 +792,7 @@ pub unsafe fn test_27() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -796,7 +805,7 @@ pub unsafe fn test_28() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -809,7 +818,7 @@ pub unsafe fn test_29() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -822,7 +831,7 @@ pub unsafe fn test_30() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -835,7 +844,7 @@ pub unsafe fn test_31() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -848,7 +857,7 @@ pub unsafe fn test_32() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -861,7 +870,7 @@ pub unsafe fn test_33() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -874,7 +883,7 @@ pub unsafe fn test_34() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -887,7 +896,7 @@ pub unsafe fn test_35() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -900,7 +909,7 @@ pub unsafe fn test_36() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -913,7 +922,7 @@ pub unsafe fn test_37() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -926,7 +935,7 @@ pub unsafe fn test_38() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -939,7 +948,7 @@ pub unsafe fn test_39() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -952,7 +961,7 @@ pub unsafe fn test_40() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -965,7 +974,7 @@ pub unsafe fn test_41() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -978,7 +987,7 @@ pub unsafe fn test_42() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -991,7 +1000,7 @@ pub unsafe fn test_43() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1004,7 +1013,7 @@ pub unsafe fn test_44() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1017,7 +1026,7 @@ pub unsafe fn test_45() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1030,7 +1039,7 @@ pub unsafe fn test_46() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1043,7 +1052,7 @@ pub unsafe fn test_47() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1056,7 +1065,7 @@ pub unsafe fn test_48() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1069,7 +1078,7 @@ pub unsafe fn test_49() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1082,7 +1091,7 @@ pub unsafe fn test_50() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1095,7 +1104,7 @@ pub unsafe fn test_51() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1108,7 +1117,7 @@ pub unsafe fn test_52() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1121,7 +1130,7 @@ pub unsafe fn test_53() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1134,7 +1143,7 @@ pub unsafe fn test_54() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1147,7 +1156,7 @@ pub unsafe fn test_55() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1160,7 +1169,7 @@ pub unsafe fn test_56() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1173,7 +1182,7 @@ pub unsafe fn test_57() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1186,7 +1195,7 @@ pub unsafe fn test_58() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1199,7 +1208,7 @@ pub unsafe fn test_59() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1212,7 +1221,7 @@ pub unsafe fn test_60() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1225,7 +1234,7 @@ pub unsafe fn test_61() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1238,7 +1247,7 @@ pub unsafe fn test_62() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1251,7 +1260,7 @@ pub unsafe fn test_63() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1264,7 +1273,7 @@ pub unsafe fn test_64() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1277,7 +1286,7 @@ pub unsafe fn test_65() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1290,7 +1299,7 @@ pub unsafe fn test_66() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1303,7 +1312,7 @@ pub unsafe fn test_67() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1316,7 +1325,7 @@ pub unsafe fn test_68() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1329,7 +1338,7 @@ pub unsafe fn test_69() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1342,7 +1351,7 @@ pub unsafe fn test_70() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1355,7 +1364,7 @@ pub unsafe fn test_71() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1368,7 +1377,7 @@ pub unsafe fn test_72() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1381,7 +1390,7 @@ pub unsafe fn test_73() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1394,7 +1403,7 @@ pub unsafe fn test_74() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1407,7 +1416,7 @@ pub unsafe fn test_75() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1420,7 +1429,7 @@ pub unsafe fn test_76() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1433,7 +1442,7 @@ pub unsafe fn test_77() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1446,7 +1455,7 @@ pub unsafe fn test_78() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1459,7 +1468,7 @@ pub unsafe fn test_79() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1472,7 +1481,7 @@ pub unsafe fn test_80() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1485,7 +1494,7 @@ pub unsafe fn test_81() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1498,7 +1507,7 @@ pub unsafe fn test_82() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1511,7 +1520,7 @@ pub unsafe fn test_83() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1524,7 +1533,7 @@ pub unsafe fn test_84() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1537,7 +1546,7 @@ pub unsafe fn test_85() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1550,7 +1559,7 @@ pub unsafe fn test_86() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1563,7 +1572,7 @@ pub unsafe fn test_87() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1576,7 +1585,7 @@ pub unsafe fn test_88() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1589,7 +1598,7 @@ pub unsafe fn test_89() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1602,7 +1611,7 @@ pub unsafe fn test_90() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1615,7 +1624,7 @@ pub unsafe fn test_91() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1628,7 +1637,7 @@ pub unsafe fn test_92() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1641,7 +1650,7 @@ pub unsafe fn test_93() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1654,7 +1663,7 @@ pub unsafe fn test_94() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1667,7 +1676,7 @@ pub unsafe fn test_95() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1680,7 +1689,7 @@ pub unsafe fn test_96() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1693,7 +1702,7 @@ pub unsafe fn test_97() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1706,7 +1715,7 @@ pub unsafe fn test_98() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1719,7 +1728,7 @@ pub unsafe fn test_99() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1732,7 +1741,7 @@ pub unsafe fn test_100() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1745,7 +1754,7 @@ pub unsafe fn test_101() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1758,7 +1767,7 @@ pub unsafe fn test_102() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1771,7 +1780,7 @@ pub unsafe fn test_103() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1784,7 +1793,7 @@ pub unsafe fn test_104() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1797,7 +1806,7 @@ pub unsafe fn test_105() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1810,7 +1819,7 @@ pub unsafe fn test_106() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1823,7 +1832,7 @@ pub unsafe fn test_107() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1836,7 +1845,7 @@ pub unsafe fn test_108() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1849,7 +1858,7 @@ pub unsafe fn test_109() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1862,7 +1871,7 @@ pub unsafe fn test_110() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1875,7 +1884,7 @@ pub unsafe fn test_111() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1888,7 +1897,7 @@ pub unsafe fn test_112() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1901,7 +1910,7 @@ pub unsafe fn test_113() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1914,7 +1923,7 @@ pub unsafe fn test_114() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1927,7 +1936,7 @@ pub unsafe fn test_115() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1940,7 +1949,7 @@ pub unsafe fn test_116() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1953,7 +1962,7 @@ pub unsafe fn test_117() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1966,7 +1975,7 @@ pub unsafe fn test_118() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1979,7 +1988,7 @@ pub unsafe fn test_119() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -1992,7 +2001,7 @@ pub unsafe fn test_120() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2005,7 +2014,7 @@ pub unsafe fn test_121() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2018,7 +2027,7 @@ pub unsafe fn test_122() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2031,7 +2040,7 @@ pub unsafe fn test_123() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2044,7 +2053,7 @@ pub unsafe fn test_124() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2057,7 +2066,7 @@ pub unsafe fn test_125() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2070,7 +2079,7 @@ pub unsafe fn test_126() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2083,7 +2092,7 @@ pub unsafe fn test_127() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2096,7 +2105,7 @@ pub unsafe fn test_128() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2109,7 +2118,7 @@ pub unsafe fn test_129() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2122,7 +2131,7 @@ pub unsafe fn test_130() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2135,7 +2144,7 @@ pub unsafe fn test_131() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2148,7 +2157,7 @@ pub unsafe fn test_132() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2161,7 +2170,7 @@ pub unsafe fn test_133() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2174,7 +2183,7 @@ pub unsafe fn test_134() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2187,7 +2196,7 @@ pub unsafe fn test_135() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2200,7 +2209,7 @@ pub unsafe fn test_136() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2213,7 +2222,7 @@ pub unsafe fn test_137() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2226,7 +2235,7 @@ pub unsafe fn test_138() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2239,7 +2248,7 @@ pub unsafe fn test_139() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2252,7 +2261,7 @@ pub unsafe fn test_140() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2265,7 +2274,7 @@ pub unsafe fn test_141() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2278,7 +2287,7 @@ pub unsafe fn test_142() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2291,7 +2300,7 @@ pub unsafe fn test_143() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2304,7 +2313,7 @@ pub unsafe fn test_144() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2317,7 +2326,7 @@ pub unsafe fn test_145() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2330,7 +2339,7 @@ pub unsafe fn test_146() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2343,7 +2352,7 @@ pub unsafe fn test_147() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2356,7 +2365,7 @@ pub unsafe fn test_148() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2369,7 +2378,7 @@ pub unsafe fn test_149() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2382,7 +2391,7 @@ pub unsafe fn test_150() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2395,7 +2404,7 @@ pub unsafe fn test_151() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2408,7 +2417,7 @@ pub unsafe fn test_152() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2421,7 +2430,7 @@ pub unsafe fn test_153() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2434,7 +2443,7 @@ pub unsafe fn test_154() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2447,7 +2456,7 @@ pub unsafe fn test_155() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2460,7 +2469,7 @@ pub unsafe fn test_156() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2473,7 +2482,7 @@ pub unsafe fn test_157() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2486,7 +2495,7 @@ pub unsafe fn test_158() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2499,7 +2508,7 @@ pub unsafe fn test_159() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2512,7 +2521,7 @@ pub unsafe fn test_160() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
+    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2525,7 +2534,7 @@ pub unsafe fn test_161() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: random_access_iterator_int_ptr_ = unimplemented!();
+    let mut r: *mut () = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2538,7 +2547,7 @@ pub unsafe fn test_162() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: *mut () = unimplemented!();
+    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2551,7 +2560,7 @@ pub unsafe fn test_163() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_output_iterator_int_ptr_ = unimplemented!();
+    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2564,7 +2573,7 @@ pub unsafe fn test_164() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: cpp17_input_iterator_int_ptr__int_ptr_ = unimplemented!();
+    let mut r: forward_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2577,7 +2586,7 @@ pub unsafe fn test_165() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: forward_iterator_int_ptr_ = unimplemented!();
+    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2590,19 +2599,6 @@ pub unsafe fn test_166() {
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
-    let mut r: bidirectional_iterator_int_ptr_ = unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_167() {
-    let mut ia: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
-    let sa: () =
-        (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let mut ib: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
     let mut r: random_access_iterator_int_ptr_ = unimplemented!();
     unimplemented!();
     unimplemented!();
@@ -2611,7 +2607,7 @@ pub unsafe fn test_167() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_168() {
+pub unsafe fn test_167() {
     let mut ia: [(); 5] = [0_(), 1_(), 2_(), 3_(), 4_()];
     let sa: () =
         (::std::mem::size_of::<[(); 5]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
@@ -2640,6 +2636,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
+    (unsafe { test_18() });
     (unsafe { test_19() });
     (unsafe { test_20() });
     (unsafe { test_21() });
@@ -2789,7 +2786,6 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_165() });
     (unsafe { test_166() });
     (unsafe { test_167() });
-    (unsafe { test_168() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }

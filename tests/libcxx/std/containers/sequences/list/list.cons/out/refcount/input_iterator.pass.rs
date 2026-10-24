@@ -291,29 +291,23 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_8(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -359,7 +353,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_11(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -384,7 +378,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -511,22 +505,22 @@ impl Default for test_allocator_statistics {
     }
 }
 thread_local!(
-    pub static destructed_value_12: Value<()> = Rc::new(RefCell::new(-1_()));
+    pub static destructed_value_11: Value<()> = Rc::new(RefCell::new(-1_()));
 );
 thread_local!(
-    pub static moved_value_13: Value<()> = Rc::new(RefCell::new(2147483647_()));
+    pub static moved_value_12: Value<()> = Rc::new(RefCell::new(2147483647_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct test_alloc_base {}
-pub fn operator_eq_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_eq_13(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return ({ x.with(|__s| __s.data_) } == { y.with(|__s| __s.data_) });
 }
-pub fn operator_ne_15(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
+pub fn operator_ne_14(x: Ptr<test_allocator_void_>, y: Ptr<test_allocator_void_>) -> () {
     return !({
         let _x: Ptr<test_allocator_void_> = (x).clone();
         let _y: Ptr<test_allocator_void_> = (y).clone();
-        operator_eq_14(_x, _y)
+        operator_eq_13(_x, _y)
     });
 }
 #[derive(Record, ByteRepr, VaArg, FnPtrArg, CopyAssign, Destructor)]
@@ -587,7 +581,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_14(
+            operator_eq_13(
                 Rc::new(RefCell::new(test_allocator_void_ {
                     data_: self.data_.clone(),
                     id_: self.id_.clone(),
@@ -662,7 +656,7 @@ impl Default for limited_alloc_handle_6_ {
         }
     }
 }
-pub fn make_thread_unsafe_shared_16() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_6__ {
+pub fn make_thread_unsafe_shared_15() -> detail_thread_unsafe_shared_ptr_limited_alloc_handle_6__ {
     let ptr: Value<detail_thread_unsafe_shared_ptr_limited_alloc_handle_6__> = Rc::new(
         RefCell::new(<detail_thread_unsafe_shared_ptr_limited_alloc_handle_6__>::default()),
     );
@@ -754,28 +748,28 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((alloc_count_18.with(|rc| *rc.borrow()))
-            .wrapping_sub(dealloc_count_19.with(|rc| *rc.borrow())));
+        return ((alloc_count_17.with(|rc| *rc.borrow()))
+            .wrapping_sub(dealloc_count_18.with(|rc| *rc.borrow())));
     }
     pub fn reset() {
         unimplemented!();
-        disable_default_constructor_20.with(|rc| *rc.borrow_mut() = false);
-        outstanding_bytes_17.with(|rc| *rc.borrow_mut() = 0_());
-        alloc_count_18.with(|rc| *rc.borrow_mut() = 0_());
-        dealloc_count_19.with(|rc| *rc.borrow_mut() = 0_());
+        disable_default_constructor_19.with(|rc| *rc.borrow_mut() = false);
+        outstanding_bytes_16.with(|rc| *rc.borrow_mut() = 0_());
+        alloc_count_17.with(|rc| *rc.borrow_mut() = 0_());
+        dealloc_count_18.with(|rc| *rc.borrow_mut() = 0_());
     }
 }
 thread_local!(
-    pub static outstanding_bytes_17: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static outstanding_bytes_16: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static alloc_count_18: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static alloc_count_17: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static dealloc_count_19: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static dealloc_count_18: Value<()> = Rc::new(RefCell::new(0_()));
 );
 thread_local!(
-    pub static disable_default_constructor_20: Value<()> = Rc::new(RefCell::new(false));
+    pub static disable_default_constructor_19: Value<()> = Rc::new(RefCell::new(false));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(8)]
@@ -815,10 +809,10 @@ impl EmplaceConstructible_int_ {
         Self { value: xvalue }
     }
 }
-pub fn operator_eq_21(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_eq_20(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } == { RHS.with(|__s| __s.m_id.clone()) });
 }
-pub fn operator_ne_22(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
+pub fn operator_ne_21(LHS: Ptr<detail_TypeID>, RHS: Ptr<detail_TypeID>) -> () {
     return ({ LHS.with(|__s| __s.m_id.clone()) } != { RHS.with(|__s| __s.m_id.clone()) });
 }
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
@@ -838,7 +832,7 @@ impl detail_TypeID {
 impl std::cmp::PartialEq for detail_TypeID {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_21(
+            operator_eq_20(
                 Rc::new(RefCell::new(detail_TypeID {
                     m_id: self.m_id.clone(),
                 }))
@@ -853,25 +847,25 @@ impl std::cmp::PartialEq for detail_TypeID {
 }
 impl std::cmp::Eq for detail_TypeID {}
 thread_local!(
-    static dummy_addr_23: Value<()> = Rc::new(RefCell::new(42_()));
+    static dummy_addr_22: Value<()> = Rc::new(RefCell::new(42_()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct detail_TypeInfo_detail_ArgumentListID_int_ref__ {}
 impl detail_TypeInfo_detail_ArgumentListID_int_ref__ {
     pub fn GetID() -> Ptr<detail_TypeID> {
-        return id_24.with(|v| v.as_pointer());
+        return id_23.with(|v| v.as_pointer());
     }
 }
-pub fn makeTypeID_25() -> Ptr<detail_TypeID> {
+pub fn makeTypeID_24() -> Ptr<detail_TypeID> {
     return ({ detail_TypeInfo_detail_ArgumentListID_int_ref__::GetID() });
 }
-pub fn makeArgumentID_26() -> Ptr<detail_TypeID> {
-    return ({ makeTypeID_25() });
+pub fn makeArgumentID_25() -> Ptr<detail_TypeID> {
+    return ({ makeTypeID_24() });
 }
 thread_local!(
-    static id_24: Value<detail_TypeID> = Rc::new(RefCell::new(detail_TypeID::new({
-        (dummy_addr_23.with(|v| v.as_pointer()))
+    static id_23: Value<detail_TypeID> = Rc::new(RefCell::new(detail_TypeID::new({
+        (dummy_addr_22.with(|v| v.as_pointer()))
     })));
 );
 #[derive(Record, ByteRepr, FnPtrArg)]
@@ -905,11 +899,11 @@ impl Default for AllocatorConstructController {
         { AllocatorConstructController::new() }
     }
 }
-pub fn getConstructController_27() -> Ptr<AllocatorConstructController> {
-    return (c_28.with(|v| v.as_pointer()));
+pub fn getConstructController_26() -> Ptr<AllocatorConstructController> {
+    return (c_27.with(|v| v.as_pointer()));
 }
 thread_local!(
-    static c_28: Value<AllocatorConstructController> =
+    static c_27: Value<AllocatorConstructController> =
         Rc::new(RefCell::new(AllocatorConstructController::new()));
 );
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Destructor, Default)]
@@ -918,7 +912,7 @@ pub struct ExpectConstructGuard_int_ref_ {}
 impl ExpectConstructGuard_int_ref_ {
     pub fn new(mut N: ()) -> Self {
         let __this: ExpectConstructGuard_int_ref_ = Self {};
-        let mut CC: Ptr<AllocatorConstructController> = ({ getConstructController_27() });
+        let mut CC: Ptr<AllocatorConstructController> = ({ getConstructController_26() });
         unimplemented!();
         ({ AllocatorConstructControllerImpl::expect_5_int_ref(&CC, N) });
         __this
@@ -964,7 +958,7 @@ impl ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1__ {
         Self {
             construct_called: unimplemented!(),
             destroy_called: unimplemented!(),
-            controller: ({ getConstructController_27() }),
+            controller: ({ getConstructController_26() }),
         }
     }
 }
@@ -995,7 +989,7 @@ impl CopyInsertable_1_ {
         let this: Ptr<CopyInsertable_1_> = __this.as_pointer();
         if ({
             AllocatorConstructControllerImpl::isInAllocatorConstruct(
-                &({ getConstructController_27() }),
+                &({ getConstructController_26() }),
             )
         }) {
             field!(this, copied_once).write(true);
@@ -1004,7 +998,7 @@ impl CopyInsertable_1_ {
         Rc::try_unwrap(__this).ok().unwrap().into_inner()
     }
 }
-pub fn basic_test_29() {
+pub fn basic_test_28() {
     {
         let a: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
         let l: Value<()> = Rc::new(RefCell::new(unimplemented!()));
@@ -1116,7 +1110,7 @@ pub fn basic_test_29() {
         }
     }
 }
-pub fn test_emplacable_concept_30() {
+pub fn test_emplacable_concept_29() {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
@@ -1152,7 +1146,7 @@ pub fn test_emplacable_concept_30() {
         }
     }
 }
-pub fn test_emplacable_concept_with_alloc_31() {
+pub fn test_emplacable_concept_with_alloc_30() {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
@@ -1190,7 +1184,7 @@ pub fn test_emplacable_concept_with_alloc_31() {
         }
     }
 }
-pub fn test_ctor_under_alloc_32() {
+pub fn test_ctor_under_alloc_31() {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
@@ -1222,7 +1216,7 @@ pub fn test_ctor_under_alloc_32() {
         }
     }
 }
-pub fn test_ctor_under_alloc_with_alloc_33() {
+pub fn test_ctor_under_alloc_with_alloc_32() {
     let arr1: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([42_()])));
     let arr2: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([1_(), 101_(), 42_()])));
     {
@@ -1258,13 +1252,13 @@ pub fn test_ctor_under_alloc_with_alloc_33() {
         }
     }
 }
-pub fn test_34() -> () {
-    ({ basic_test_29() });
-    ({ test_emplacable_concept_30() });
-    ({ test_emplacable_concept_with_alloc_31() });
+pub fn test_33() -> () {
+    ({ basic_test_28() });
+    ({ test_emplacable_concept_29() });
+    ({ test_emplacable_concept_with_alloc_30() });
     {
-        ({ test_ctor_under_alloc_32() });
-        ({ test_ctor_under_alloc_with_alloc_33() });
+        ({ test_ctor_under_alloc_31() });
+        ({ test_ctor_under_alloc_with_alloc_32() });
     }
     return true;
 }
@@ -1323,7 +1317,7 @@ impl AllocatorConstructControllerImpl for Ptr<AllocatorConstructController> {
             ({
                 let _LHS: Ptr<detail_TypeID> = (*self).with(|__s| __s.m_expected_args.clone());
                 let _RHS: Ptr<detail_TypeID> = (tid).clone();
-                operator_eq_21(_LHS, _RHS)
+                operator_eq_20(_LHS, _RHS)
             }),
         ));
         if ((*self).with(|__s| __s.m_expected_count) == -1_())
@@ -1361,10 +1355,10 @@ impl AllocatorConstructControllerImpl for Ptr<AllocatorConstructController> {
         unimplemented!();
         unimplemented!();
         field!((*self), m_expected_count).write((times - 1_()));
-        field!((*self), m_expected_args).write(({ makeArgumentID_26() }));
+        field!((*self), m_expected_args).write(({ makeArgumentID_25() }));
     }
     fn check_6_int_ref(&self) -> () {
-        return ({ AllocatorConstructControllerImpl::check(self, ({ makeArgumentID_26() })) });
+        return ({ AllocatorConstructControllerImpl::check(self, ({ makeArgumentID_25() })) });
     }
 }
 pub trait ContainerTestAllocator_CopyInsertable_1___CopyInsertable_1__Impl {
@@ -2007,8 +2001,8 @@ pub trait test_allocator_void_Impl {
 }
 impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     fn destructor(&self) {
-        field!((*self), data_).write(destructed_value_12.with(|rc| *rc.borrow()));
-        field!((*self), id_).write(destructed_value_12.with(|rc| *rc.borrow()));
+        field!((*self), data_).write(destructed_value_11.with(|rc| *rc.borrow()));
+        field!((*self), id_).write(destructed_value_11.with(|rc| *rc.borrow()));
     }
     fn get_id(&self) -> () {
         return (*self).with(|__s| __s.id_);
@@ -2024,11 +2018,11 @@ impl test_allocator_void_Impl for Ptr<test_allocator_void_> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = destructed_value_12.with(|_| ());
-    let _ = moved_value_13.with(|_| ());
-    let _ = outstanding_bytes_17.with(|_| ());
-    let _ = alloc_count_18.with(|_| ());
-    let _ = dealloc_count_19.with(|_| ());
-    let _ = disable_default_constructor_20.with(|_| ());
-    let _ = dummy_addr_23.with(|_| ());
+    let _ = destructed_value_11.with(|_| ());
+    let _ = moved_value_12.with(|_| ());
+    let _ = outstanding_bytes_16.with(|_| ());
+    let _ = alloc_count_17.with(|_| ());
+    let _ = dealloc_count_18.with(|_| ());
+    let _ = disable_default_constructor_19.with(|_| ());
+    let _ = dummy_addr_22.with(|_| ());
 }

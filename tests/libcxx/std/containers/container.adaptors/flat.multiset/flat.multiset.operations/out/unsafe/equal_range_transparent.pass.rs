@@ -272,8 +272,8 @@ impl three_way_random_access_iterator_const_std_string_ptr_ {
 impl three_way_random_access_iterator_const_std_string_ptr_ {
     pub unsafe fn new_2(u: *mut three_way_random_access_iterator_std_string_ptr_) -> Self {
         let mut this = Self {
-            it_: ((*u).it_).cast_const(),
-            tracker_: support_double_move_tracker::move_from({ &mut (*u).tracker_ }),
+            it_: (*unimplemented!()).cast_const(),
+            tracker_: support_double_move_tracker::move_from({ &mut (*unimplemented!()) }),
         };
         (*u).it_ = std::ptr::null_mut();
         this
@@ -501,25 +501,21 @@ pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_18(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_19(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -603,7 +599,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_21(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -613,7 +609,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -927,21 +923,21 @@ impl Default for test_allocator_statistics {
         }
     }
 }
-pub static mut destructed_value_22: std::cell::LazyCell<()> =
+pub static mut destructed_value_21: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { -1_() });
-pub static mut moved_value_23: std::cell::LazyCell<()> =
+pub static mut moved_value_22: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 2147483647_() });
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
 pub struct test_alloc_base {}
-pub unsafe fn operator_eq_24(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_eq_23(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return (((*x).data_) == ((*y).data_));
 }
-pub unsafe fn operator_ne_25(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
+pub unsafe fn operator_ne_24(x: *const test_allocator_void_, y: *const test_allocator_void_) -> () {
     return !(unsafe {
         let _x: *const test_allocator_void_ = x;
         let _y: *const test_allocator_void_ = y;
-        operator_eq_24(_x, _y)
+        operator_eq_23(_x, _y)
     });
 }
 #[repr(C)]
@@ -1005,8 +1001,8 @@ impl test_allocator_void_ {
         this
     }
     pub unsafe fn destructor(&mut self) {
-        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_22));
-        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_22));
+        self.data_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_21));
+        self.id_ = (*std::cell::LazyCell::force_mut(&mut *&raw mut destructed_value_21));
     }
     pub unsafe fn get_id(&self) -> () {
         return self.id_;
@@ -1027,7 +1023,7 @@ impl test_allocator_void_ {
 impl std::cmp::PartialEq for test_allocator_void_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_24(
+            operator_eq_23(
                 self as *const test_allocator_void_,
                 other as *const test_allocator_void_,
             )
@@ -1083,50 +1079,50 @@ pub struct malloc_allocator_base {}
 impl malloc_allocator_base {
     pub unsafe fn outstanding_alloc() -> () {
         unimplemented!();
-        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_27))
-            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_28))));
+        return ((*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_26))
+            .wrapping_sub((*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_27))));
     }
     pub unsafe fn reset() {
         unimplemented!();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_29)) = false;
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_26)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_27)) = 0_();
-        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_28)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut disable_default_constructor_28)) = false;
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut outstanding_bytes_25)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut alloc_count_26)) = 0_();
+        (*std::cell::LazyCell::force_mut(&mut *&raw mut dealloc_count_27)) = 0_();
     }
 }
-pub static mut outstanding_bytes_26: std::cell::LazyCell<()> =
+pub static mut outstanding_bytes_25: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut alloc_count_27: std::cell::LazyCell<()> =
+pub static mut alloc_count_26: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut dealloc_count_28: std::cell::LazyCell<()> =
+pub static mut dealloc_count_27: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { 0_() });
-pub static mut disable_default_constructor_29: std::cell::LazyCell<()> =
+pub static mut disable_default_constructor_28: std::cell::LazyCell<()> =
     std::cell::LazyCell::new(|| unsafe { false });
-pub unsafe fn operator_sub_30(
+pub unsafe fn operator_sub_29(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_lt_31(
+pub unsafe fn operator_lt_30(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) < (y.ptr_));
 }
-pub unsafe fn operator_eq_32(
+pub unsafe fn operator_eq_31(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_33(
+pub unsafe fn operator_ne_32(
     mut x: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return !(unsafe {
         let _x: min_pointer_std_string__std_integral_constant_unsigned_long__0__ = x;
-        operator_eq_32(_x, y)
+        operator_eq_31(_x, y)
     });
 }
 #[repr(C)]
@@ -1214,9 +1210,9 @@ impl min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
 impl std::cmp::Ord for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         unsafe {
-            if operator_lt_31(self.clone(), other.clone()) {
+            if operator_lt_30(self.clone(), other.clone()) {
                 std::cmp::Ordering::Less
-            } else if operator_lt_31(other.clone(), self.clone()) {
+            } else if operator_lt_30(other.clone(), self.clone()) {
                 std::cmp::Ordering::Greater
             } else {
                 std::cmp::Ordering::Equal
@@ -1231,7 +1227,7 @@ impl std::cmp::PartialOrd for min_pointer_std_string__std_integral_constant_unsi
 }
 impl std::cmp::PartialEq for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_32(self.clone(), other.clone()) }
+        unsafe { operator_eq_31(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_std_string__std_integral_constant_unsigned_long__0__ {}
@@ -1241,19 +1237,19 @@ pub struct min_pointer_void__std_integral_constant_unsigned_long__0__ {
     ptr_: (),
 }
 impl min_pointer_void__std_integral_constant_unsigned_long__0__ {}
-pub unsafe fn operator_sub_34(
+pub unsafe fn operator_sub_33(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return (((x.ptr_ as usize - y.ptr_ as usize) / ::std::mem::size_of::<()>()) as () as ());
 }
-pub unsafe fn operator_eq_35(
+pub unsafe fn operator_eq_34(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
     return ((x.ptr_) == (y.ptr_));
 }
-pub unsafe fn operator_ne_36(
+pub unsafe fn operator_ne_35(
     mut x: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
     mut y: min_pointer_const_std_string__std_integral_constant_unsigned_long__0__,
 ) -> () {
@@ -1299,7 +1295,7 @@ impl std::cmp::PartialEq
     for min_pointer_const_std_string__std_integral_constant_unsigned_long__0__
 {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_35(self.clone(), other.clone()) }
+        unsafe { operator_eq_34(self.clone(), other.clone()) }
     }
 }
 impl std::cmp::Eq for min_pointer_const_std_string__std_integral_constant_unsigned_long__0__ {}
@@ -1333,7 +1329,7 @@ const _: () = assert!(true, "CanEqualRange<TransparentSet>");
 const _: () = assert!(true, "CanEqualRange<const TransparentSet>");
 const _: () = assert!(!(false), "!CanEqualRange<NonTransparentSet>");
 const _: () = assert!(!(false), "!CanEqualRange<const NonTransparentSet>");
-pub unsafe fn test_one_37() {
+pub unsafe fn test_one_36() {
     let mut test_found: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1341,9 +1337,9 @@ pub unsafe fn test_one_37() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
-            let mut __decomp_38: () = unimplemented!();
-            let first: *mut () = (unsafe { get_39(&mut __decomp_38) });
-            let last: *mut () = (unsafe { get_40(&mut __decomp_38) });
+            let mut __decomp_37: () = unimplemented!();
+            let first: *mut () = (unsafe { get_38(&mut __decomp_37) });
+            let last: *mut () = (unsafe { get_39(&mut __decomp_37) });
             unimplemented!();
             unimplemented!();
             let mut it: () = (*first).clone();
@@ -1356,32 +1352,32 @@ pub unsafe fn test_one_37() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
+            let mut __decomp_40: () = unimplemented!();
+            let first: *mut () = (unsafe { get_38(&mut __decomp_40) });
+            let last: *mut () = (unsafe { get_39(&mut __decomp_40) });
+            unimplemented!();
+            unimplemented!();
+            let mut it: () = (*first).clone();
+            'loop_: while !(unimplemented!()) {
+                unimplemented!();
+                unimplemented!();
+            }
+        }
+    );
+    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
             let mut __decomp_41: () = unimplemented!();
-            let first: *mut () = (unsafe { get_39(&mut __decomp_41) });
-            let last: *mut () = (unsafe { get_40(&mut __decomp_41) });
+            let first: *mut () = (unsafe { get_38(&mut __decomp_41) });
+            let last: *mut () = (unsafe { get_39(&mut __decomp_41) });
             unimplemented!();
             unimplemented!();
-            let mut it: () = (*first).clone();
-            'loop_: while !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-    );
-    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
+        },
+        |set: *const (), expected_key: *const (), mut expected_offset: ()| {
             let mut __decomp_42: () = unimplemented!();
-            let first: *mut () = (unsafe { get_39(&mut __decomp_42) });
-            let last: *mut () = (unsafe { get_40(&mut __decomp_42) });
-            unimplemented!();
-            unimplemented!();
-        },
-        |set: *const (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_43: () = unimplemented!();
-            let first: *mut () = (unsafe { get_39(&mut __decomp_43) });
-            let last: *mut () = (unsafe { get_40(&mut __decomp_43) });
+            let first: *mut () = (unsafe { get_38(&mut __decomp_42) });
+            let last: *mut () = (unsafe { get_39(&mut __decomp_42) });
             unimplemented!();
             unimplemented!();
         }
@@ -1560,7 +1556,7 @@ pub unsafe fn test_one_37() {
         });
     }
 }
-pub unsafe fn test_one_44() {
+pub unsafe fn test_one_43() {
     let mut test_found: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1568,9 +1564,9 @@ pub unsafe fn test_one_44() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
-            let mut __decomp_45: () = unimplemented!();
-            let first: *mut () = (unsafe { get_46(&mut __decomp_45) });
-            let last: *mut () = (unsafe { get_47(&mut __decomp_45) });
+            let mut __decomp_44: () = unimplemented!();
+            let first: *mut () = (unsafe { get_45(&mut __decomp_44) });
+            let last: *mut () = (unsafe { get_46(&mut __decomp_44) });
             unimplemented!();
             unimplemented!();
             let mut it: () = (*first).clone();
@@ -1583,32 +1579,32 @@ pub unsafe fn test_one_44() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
+            let mut __decomp_47: () = unimplemented!();
+            let first: *mut () = (unsafe { get_45(&mut __decomp_47) });
+            let last: *mut () = (unsafe { get_46(&mut __decomp_47) });
+            unimplemented!();
+            unimplemented!();
+            let mut it: () = (*first).clone();
+            'loop_: while !(unimplemented!()) {
+                unimplemented!();
+                unimplemented!();
+            }
+        }
+    );
+    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
             let mut __decomp_48: () = unimplemented!();
-            let first: *mut () = (unsafe { get_46(&mut __decomp_48) });
-            let last: *mut () = (unsafe { get_47(&mut __decomp_48) });
+            let first: *mut () = (unsafe { get_45(&mut __decomp_48) });
+            let last: *mut () = (unsafe { get_46(&mut __decomp_48) });
             unimplemented!();
             unimplemented!();
-            let mut it: () = (*first).clone();
-            'loop_: while !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-    );
-    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
+        },
+        |set: *const (), expected_key: *const (), mut expected_offset: ()| {
             let mut __decomp_49: () = unimplemented!();
-            let first: *mut () = (unsafe { get_46(&mut __decomp_49) });
-            let last: *mut () = (unsafe { get_47(&mut __decomp_49) });
-            unimplemented!();
-            unimplemented!();
-        },
-        |set: *const (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_50: () = unimplemented!();
-            let first: *mut () = (unsafe { get_46(&mut __decomp_50) });
-            let last: *mut () = (unsafe { get_47(&mut __decomp_50) });
+            let first: *mut () = (unsafe { get_45(&mut __decomp_49) });
+            let last: *mut () = (unsafe { get_46(&mut __decomp_49) });
             unimplemented!();
             unimplemented!();
         }
@@ -1787,7 +1783,7 @@ pub unsafe fn test_one_44() {
         });
     }
 }
-pub unsafe fn test_one_51() {
+pub unsafe fn test_one_50() {
     let mut test_found: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -1795,9 +1791,9 @@ pub unsafe fn test_one_51() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
-            let mut __decomp_52: () = unimplemented!();
-            let first: *mut () = (unsafe { get_53(&mut __decomp_52) });
-            let last: *mut () = (unsafe { get_54(&mut __decomp_52) });
+            let mut __decomp_51: () = unimplemented!();
+            let first: *mut () = (unsafe { get_52(&mut __decomp_51) });
+            let last: *mut () = (unsafe { get_53(&mut __decomp_51) });
             unimplemented!();
             unimplemented!();
             let mut it: () = (*first).clone();
@@ -1810,32 +1806,32 @@ pub unsafe fn test_one_51() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
+            let mut __decomp_54: () = unimplemented!();
+            let first: *mut () = (unsafe { get_52(&mut __decomp_54) });
+            let last: *mut () = (unsafe { get_53(&mut __decomp_54) });
+            unimplemented!();
+            unimplemented!();
+            let mut it: () = (*first).clone();
+            'loop_: while !(unimplemented!()) {
+                unimplemented!();
+                unimplemented!();
+            }
+        }
+    );
+    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
+        Generic,
+        {},
+        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
             let mut __decomp_55: () = unimplemented!();
-            let first: *mut () = (unsafe { get_53(&mut __decomp_55) });
-            let last: *mut () = (unsafe { get_54(&mut __decomp_55) });
-            unimplemented!();
-            unimplemented!();
-            let mut it: () = (*first).clone();
-            'loop_: while !(unimplemented!()) {
-                unimplemented!();
-                unimplemented!();
-            }
-        }
-    );
-    let mut test_not_found: FnPtr<Generic> = lambda_unsafe!(
-        Generic,
-        {},
-        |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_56: () = unimplemented!();
-            let first: *mut () = (unsafe { get_53(&mut __decomp_56) });
-            let last: *mut () = (unsafe { get_54(&mut __decomp_56) });
+            let first: *mut () = (unsafe { get_52(&mut __decomp_55) });
+            let last: *mut () = (unsafe { get_53(&mut __decomp_55) });
             unimplemented!();
             unimplemented!();
         },
         |set: *const (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_57: () = unimplemented!();
-            let first: *mut () = (unsafe { get_53(&mut __decomp_57) });
-            let last: *mut () = (unsafe { get_54(&mut __decomp_57) });
+            let mut __decomp_56: () = unimplemented!();
+            let first: *mut () = (unsafe { get_52(&mut __decomp_56) });
+            let last: *mut () = (unsafe { get_53(&mut __decomp_56) });
             unimplemented!();
             unimplemented!();
         }
@@ -2014,7 +2010,7 @@ pub unsafe fn test_one_51() {
         });
     }
 }
-pub unsafe fn test_one_58() {
+pub unsafe fn test_one_57() {
     let mut test_found: FnPtr<Generic> = lambda_unsafe!(
         Generic,
         {},
@@ -2022,9 +2018,9 @@ pub unsafe fn test_one_58() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
-            let mut __decomp_59: () = unimplemented!();
-            let first: *mut () = (unsafe { get_60(&mut __decomp_59) });
-            let last: *mut () = (unsafe { get_61(&mut __decomp_59) });
+            let mut __decomp_58: () = unimplemented!();
+            let first: *mut () = (unsafe { get_59(&mut __decomp_58) });
+            let last: *mut () = (unsafe { get_60(&mut __decomp_58) });
             unimplemented!();
             unimplemented!();
             let mut it: () = (*first).clone();
@@ -2037,9 +2033,9 @@ pub unsafe fn test_one_58() {
          expected_key: *const (),
          mut expected_offset: (),
          mut expected_length: ()| {
-            let mut __decomp_62: () = unimplemented!();
-            let first: *mut () = (unsafe { get_60(&mut __decomp_62) });
-            let last: *mut () = (unsafe { get_61(&mut __decomp_62) });
+            let mut __decomp_61: () = unimplemented!();
+            let first: *mut () = (unsafe { get_59(&mut __decomp_61) });
+            let last: *mut () = (unsafe { get_60(&mut __decomp_61) });
             unimplemented!();
             unimplemented!();
             let mut it: () = (*first).clone();
@@ -2053,16 +2049,16 @@ pub unsafe fn test_one_58() {
         Generic,
         {},
         |set: *mut (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_63: () = unimplemented!();
-            let first: *mut () = (unsafe { get_60(&mut __decomp_63) });
-            let last: *mut () = (unsafe { get_61(&mut __decomp_63) });
+            let mut __decomp_62: () = unimplemented!();
+            let first: *mut () = (unsafe { get_59(&mut __decomp_62) });
+            let last: *mut () = (unsafe { get_60(&mut __decomp_62) });
             unimplemented!();
             unimplemented!();
         },
         |set: *const (), expected_key: *const (), mut expected_offset: ()| {
-            let mut __decomp_64: () = unimplemented!();
-            let first: *mut () = (unsafe { get_60(&mut __decomp_64) });
-            let last: *mut () = (unsafe { get_61(&mut __decomp_64) });
+            let mut __decomp_63: () = unimplemented!();
+            let first: *mut () = (unsafe { get_59(&mut __decomp_63) });
+            let last: *mut () = (unsafe { get_60(&mut __decomp_63) });
             unimplemented!();
             unimplemented!();
         }
@@ -2241,13 +2237,13 @@ pub unsafe fn test_one_58() {
         });
     }
 }
-pub unsafe fn test_65() -> () {
-    (unsafe { test_one_37() });
+pub unsafe fn test_64() -> () {
+    (unsafe { test_one_36() });
     {
-        (unsafe { test_one_44() });
+        (unsafe { test_one_43() });
     }
-    (unsafe { test_one_51() });
-    (unsafe { test_one_58() });
+    (unsafe { test_one_50() });
+    (unsafe { test_one_57() });
     {
         let mut transparent_used: () = false;
         let mut c: TransparentComparator = TransparentComparator::new_1({ &mut transparent_used });
@@ -2259,9 +2255,9 @@ pub unsafe fn test_65() -> () {
     }
     {
         let mut m: () = unimplemented!();
-        let mut __decomp_66: () = unimplemented!();
-        let first: *mut () = (unsafe { get_67(&mut __decomp_66) });
-        let last: *mut () = (unsafe { get_68(&mut __decomp_66) });
+        let mut __decomp_65: () = unimplemented!();
+        let first: *mut () = (unsafe { get_66(&mut __decomp_65) });
+        let last: *mut () = (unsafe { get_67(&mut __decomp_65) });
         unimplemented!();
         unimplemented!();
     }
@@ -2283,14 +2279,14 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_65() });
+    (unsafe { test_64() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
-    std::cell::LazyCell::force(&*&raw const destructed_value_22);
-    std::cell::LazyCell::force(&*&raw const moved_value_23);
-    std::cell::LazyCell::force(&*&raw const outstanding_bytes_26);
-    std::cell::LazyCell::force(&*&raw const alloc_count_27);
-    std::cell::LazyCell::force(&*&raw const dealloc_count_28);
-    std::cell::LazyCell::force(&*&raw const disable_default_constructor_29);
+    std::cell::LazyCell::force(&*&raw const destructed_value_21);
+    std::cell::LazyCell::force(&*&raw const moved_value_22);
+    std::cell::LazyCell::force(&*&raw const outstanding_bytes_25);
+    std::cell::LazyCell::force(&*&raw const alloc_count_26);
+    std::cell::LazyCell::force(&*&raw const dealloc_count_27);
+    std::cell::LazyCell::force(&*&raw const disable_default_constructor_28);
 }

@@ -251,25 +251,21 @@ pub unsafe fn operator_add_2(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_3(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_4(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_5(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_4(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_5(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_6(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -353,7 +349,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_7(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_6(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -363,7 +359,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_6(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_5(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -469,7 +465,7 @@ impl Clone for Counted {
         unsafe { Counted::copy_from(self as *const Counted) }
     }
 }
-pub unsafe fn test_8() {
+pub unsafe fn test_7() {
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
@@ -481,12 +477,12 @@ pub unsafe fn test_8() {
             i.prefix_inc();
         }
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_9))(out, N) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_8))(out, N) });
         unimplemented!();
         unimplemented!();
     }
 }
-pub unsafe fn test_10() {
+pub unsafe fn test_9() {
     {
         let N: () = 5_();
         let mut alloc: () = unimplemented!();
@@ -499,7 +495,7 @@ pub unsafe fn test_10() {
         }
         unimplemented!();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_9))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_8))(
                 forward_iterator_Counted_ptr_::new_1({ out }),
                 N,
             )
@@ -508,12 +504,12 @@ pub unsafe fn test_10() {
         unimplemented!();
     }
 }
-pub unsafe fn tests_11() -> () {
-    (unsafe { test_8() });
-    (unsafe { test_10() });
+pub unsafe fn tests_10() -> () {
+    (unsafe { test_7() });
+    (unsafe { test_9() });
     return true;
 }
-pub unsafe fn test_arrays_12() -> () {
+pub unsafe fn test_arrays_11() -> () {
     {
         let N: () = 5_();
         let M: () = 3_();
@@ -531,7 +527,7 @@ pub unsafe fn test_arrays_12() -> () {
             i.prefix_inc();
         }
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_9))(buffer, N) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_8))(buffer, N) });
         unimplemented!();
         unimplemented!();
     }
@@ -557,7 +553,7 @@ pub unsafe fn test_arrays_12() -> () {
             i.prefix_inc();
         }
         unimplemented!();
-        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_9))(buffer, N) });
+        (unsafe { (*std::cell::LazyCell::force_mut(&mut *&raw mut destroy_n_8))(buffer, N) });
         unimplemented!();
         unimplemented!();
     }
@@ -579,8 +575,8 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_11() });
-    (unsafe { test_arrays_12() });
+    (unsafe { tests_10() });
+    (unsafe { test_arrays_11() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

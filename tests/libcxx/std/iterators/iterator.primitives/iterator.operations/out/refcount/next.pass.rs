@@ -425,29 +425,23 @@ pub fn operator_add_6(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_5(_i, n)
     });
 }
-pub fn iter_swap_7(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_8(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_7(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_9(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_8(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_11(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_10(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -493,7 +487,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_11(
+            operator_cmp_10(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -518,7 +512,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_10(
+            operator_eq_9(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -602,7 +596,7 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn check_next_n_12(
+pub fn check_next_n_11(
     mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     mut n: (),
     result: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
@@ -624,7 +618,7 @@ pub fn check_next_n_12(
     >::new(libcc2rs::next_refcount);
     unimplemented!();
 }
-pub fn check_next_n_14(
+pub fn check_next_n_13(
     mut it: forward_iterator_const_char_ptr_,
     mut n: (),
     result: forward_iterator_const_char_ptr_,
@@ -639,7 +633,7 @@ pub fn check_next_n_14(
     );
     unimplemented!();
 }
-pub fn check_next_n_16(
+pub fn check_next_n_15(
     mut it: bidirectional_iterator_const_char_ptr_,
     mut n: (),
     result: bidirectional_iterator_const_char_ptr_,
@@ -654,7 +648,7 @@ pub fn check_next_n_16(
     >::new(libcc2rs::next_refcount);
     unimplemented!();
 }
-pub fn check_next_n_18(
+pub fn check_next_n_17(
     mut it: random_access_iterator_const_char_ptr_,
     mut n: (),
     result: random_access_iterator_const_char_ptr_,
@@ -669,14 +663,14 @@ pub fn check_next_n_18(
     >::new(libcc2rs::next_refcount);
     unimplemented!();
 }
-pub fn check_next_n_20(mut it: Ptr<()>, mut n: (), mut result: Ptr<()>) {
+pub fn check_next_n_19(mut it: Ptr<()>, mut n: (), mut result: Ptr<()>) {
     const _: () = assert!(true, "std::is_same<decltype(std::next(it, n)), It>::value");;
     unimplemented!();
     let mut next_ptr: FnPtr<fn(Ptr<()>, ()) -> Ptr<()>> =
         FnPtr::<fn(Ptr<()>, ()) -> Ptr<()>>::new(libcc2rs::next_refcount);
     unimplemented!();
 }
-pub fn check_next_1_22(
+pub fn check_next_1_21(
     mut it: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
     result: cpp17_input_iterator_const_char_ptr__const_char_ptr_,
 ) {
@@ -685,7 +679,7 @@ pub fn check_next_1_22(
     const _: () = assert!(true, "std::is_same<decltype(std::next(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_next_1_23(
+pub fn check_next_1_22(
     mut it: forward_iterator_const_char_ptr_,
     result: forward_iterator_const_char_ptr_,
 ) {
@@ -693,7 +687,7 @@ pub fn check_next_1_23(
     const _: () = assert!(true, "std::is_same<decltype(std::next(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_next_1_24(
+pub fn check_next_1_23(
     mut it: bidirectional_iterator_const_char_ptr_,
     result: bidirectional_iterator_const_char_ptr_,
 ) {
@@ -701,7 +695,7 @@ pub fn check_next_1_24(
     const _: () = assert!(true, "std::is_same<decltype(std::next(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_next_1_25(
+pub fn check_next_1_24(
     mut it: random_access_iterator_const_char_ptr_,
     result: random_access_iterator_const_char_ptr_,
 ) {
@@ -709,11 +703,11 @@ pub fn check_next_1_25(
     const _: () = assert!(true, "std::is_same<decltype(std::next(it)), It>::value");;
     unimplemented!();
 }
-pub fn check_next_1_26(mut it: Ptr<()>, mut result: Ptr<()>) {
+pub fn check_next_1_25(mut it: Ptr<()>, mut result: Ptr<()>) {
     const _: () = assert!(true, "std::is_same<decltype(std::next(it)), It>::value");;
     unimplemented!();
 }
-pub fn tests_27() -> () {
+pub fn tests_26() -> () {
     let mut s: Ptr<()> = Ptr::<()>::from_string_literal(b"1234567890");
     ({
         let _it: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -722,47 +716,47 @@ pub fn tests_27() -> () {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((10_()) as isize)
             });
-        check_next_n_12(_it, 10_(), _result)
+        check_next_n_11(_it, 10_(), _result)
     });
     ({
         let _it: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_next_n_14(_it, 10_(), _result)
+        check_next_n_13(_it, 10_(), _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_next_n_16(_it, 10_(), _result)
+        check_next_n_15(_it, 10_(), _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_next_n_16(_it, -10_(), _result)
+        check_next_n_15(_it, -10_(), _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
-        check_next_n_18(_it, 10_(), _result)
+        check_next_n_17(_it, 10_(), _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((10_()) as isize) });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
-        check_next_n_18(_it, -10_(), _result)
+        check_next_n_17(_it, -10_(), _result)
     });
     ({
         let _it: Ptr<()> = (s).clone();
         let _result: Ptr<()> = s.offset((10_()) as isize);
-        check_next_n_20(_it, 10_(), _result)
+        check_next_n_19(_it, 10_(), _result)
     });
     ({
         let _it: cpp17_input_iterator_const_char_ptr__const_char_ptr_ =
@@ -771,33 +765,33 @@ pub fn tests_27() -> () {
             cpp17_input_iterator_const_char_ptr__const_char_ptr_::new({
                 s.offset((1_()) as isize)
             });
-        check_next_1_22(_it, _result)
+        check_next_1_21(_it, _result)
     });
     ({
         let _it: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: forward_iterator_const_char_ptr_ =
             forward_iterator_const_char_ptr_::new_1({ s.offset((1_()) as isize) });
-        check_next_1_23(_it, _result)
+        check_next_1_22(_it, _result)
     });
     ({
         let _it: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: bidirectional_iterator_const_char_ptr_ =
             bidirectional_iterator_const_char_ptr_::new_1({ s.offset((1_()) as isize) });
-        check_next_1_24(_it, _result)
+        check_next_1_23(_it, _result)
     });
     ({
         let _it: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ (s).clone() });
         let _result: random_access_iterator_const_char_ptr_ =
             random_access_iterator_const_char_ptr_::new_1({ s.offset((1_()) as isize) });
-        check_next_1_25(_it, _result)
+        check_next_1_24(_it, _result)
     });
     ({
         let _it: Ptr<()> = (s).clone();
         let _result: Ptr<()> = s.offset((1_()) as isize);
-        check_next_1_26(_it, _result)
+        check_next_1_25(_it, _result)
     });
     return true;
 }
@@ -821,7 +815,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ tests_27() });
+    ({ tests_26() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

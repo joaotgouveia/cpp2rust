@@ -198,7 +198,7 @@ pub fn test_14() -> () {
     let i: Value<()> = Rc::new(RefCell::new(42_()));
     unimplemented!();
     unimplemented!();
-    let m1: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::new({ Some(2_()) })));
+    let mut m1: MoveOnly = MoveOnly::new({ Some(2_()) });
     let m2: Value<MoveOnly> = Rc::new(RefCell::new(MoveOnly::move_from({ unimplemented!() })));
     unimplemented!();
     unimplemented!();

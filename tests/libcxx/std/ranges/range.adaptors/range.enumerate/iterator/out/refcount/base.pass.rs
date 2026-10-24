@@ -540,29 +540,23 @@ pub fn operator_add_18(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_17(_i, n)
     });
 }
-pub fn iter_swap_19(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_20(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_19(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_21(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_20(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_21(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_23(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_22(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -608,7 +602,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_23(
+            operator_cmp_22(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -633,7 +627,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_22(
+            operator_eq_21(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -851,12 +845,13 @@ pub struct MinimalRange_random_access_iterator_int_ptr___random_access_iterator_
     sent_: Ptr<()>,
 }
 impl MinimalRange_random_access_iterator_int_ptr___random_access_iterator_int_ptr__ {
-    pub fn new(it: random_access_iterator_int_ptr_, sent: random_access_iterator_int_ptr_) -> Self {
-        let it: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(
+        mut it: random_access_iterator_int_ptr_,
+        mut sent: random_access_iterator_int_ptr_,
+    ) -> Self {
         Self {
-            it_: ({ base_3(it.as_pointer()) }),
-            sent_: ({ base_3(sent.as_pointer()) }),
+            it_: ({ base_3(unimplemented!()) }),
+            sent_: ({ base_3(unimplemented!()) }),
         }
     }
 }
@@ -875,15 +870,12 @@ impl
     MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___
 {
     pub fn new(
-        it: random_access_iterator_int_ptr_,
-        sent: sentinel_wrapper_random_access_iterator_int_ptr__,
+        mut it: random_access_iterator_int_ptr_,
+        mut sent: sentinel_wrapper_random_access_iterator_int_ptr__,
     ) -> Self {
-        let it: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_random_access_iterator_int_ptr__> =
-            Rc::new(RefCell::new(sent));
         Self {
-            it_: ({ base_3(it.as_pointer()) }),
-            sent_: ({ base_11(sent.as_pointer()) }),
+            it_: ({ base_3(unimplemented!()) }),
+            sent_: ({ base_11(unimplemented!()) }),
         }
     }
 }
@@ -898,12 +890,10 @@ pub struct MinimalRange_forward_iterator_int_ptr___forward_iterator_int_ptr__ {
     sent_: Ptr<()>,
 }
 impl MinimalRange_forward_iterator_int_ptr___forward_iterator_int_ptr__ {
-    pub fn new(it: forward_iterator_int_ptr_, sent: forward_iterator_int_ptr_) -> Self {
-        let it: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(mut it: forward_iterator_int_ptr_, mut sent: forward_iterator_int_ptr_) -> Self {
         Self {
-            it_: ({ base_1(it.as_pointer()) }),
-            sent_: ({ base_1(sent.as_pointer()) }),
+            it_: ({ base_1(unimplemented!()) }),
+            sent_: ({ base_1(unimplemented!()) }),
         }
     }
 }
@@ -918,12 +908,13 @@ pub struct MinimalRange_bidirectional_iterator_int_ptr___bidirectional_iterator_
     sent_: Ptr<()>,
 }
 impl MinimalRange_bidirectional_iterator_int_ptr___bidirectional_iterator_int_ptr__ {
-    pub fn new(it: bidirectional_iterator_int_ptr_, sent: bidirectional_iterator_int_ptr_) -> Self {
-        let it: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(
+        mut it: bidirectional_iterator_int_ptr_,
+        mut sent: bidirectional_iterator_int_ptr_,
+    ) -> Self {
         Self {
-            it_: ({ base_2(it.as_pointer()) }),
-            sent_: ({ base_2(sent.as_pointer()) }),
+            it_: ({ base_2(unimplemented!()) }),
+            sent_: ({ base_2(unimplemented!()) }),
         }
     }
 }
@@ -938,12 +929,13 @@ pub struct MinimalRange_contiguous_iterator_int_ptr___contiguous_iterator_int_pt
     sent_: Ptr<()>,
 }
 impl MinimalRange_contiguous_iterator_int_ptr___contiguous_iterator_int_ptr__ {
-    pub fn new(it: contiguous_iterator_int_ptr_, sent: contiguous_iterator_int_ptr_) -> Self {
-        let it: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(
+        mut it: contiguous_iterator_int_ptr_,
+        mut sent: contiguous_iterator_int_ptr_,
+    ) -> Self {
         Self {
-            it_: ({ base_4(it.as_pointer()) }),
-            sent_: ({ base_4(sent.as_pointer()) }),
+            it_: ({ base_4(unimplemented!()) }),
+            sent_: ({ base_4(unimplemented!()) }),
         }
     }
 }
@@ -958,12 +950,10 @@ pub struct MinimalRange_int_ptr__int_ptr_ {
     sent_: Ptr<()>,
 }
 impl MinimalRange_int_ptr__int_ptr_ {
-    pub fn new(it: Ptr<()>, sent: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
-        let sent: Value<Ptr<()>> = Rc::new(RefCell::new(sent));
+    pub fn new(mut it: Ptr<()>, mut sent: Ptr<()>) -> Self {
         Self {
-            it_: ({ base_5((*it.borrow()).clone()) }),
-            sent_: ({ base_5((*sent.borrow()).clone()) }),
+            it_: ({ base_5((unimplemented!().read())) }),
+            sent_: ({ base_5((unimplemented!().read())) }),
         }
     }
 }
@@ -978,12 +968,10 @@ pub struct MinimalRange_const_int_ptr__const_int_ptr_ {
     sent_: Ptr<()>,
 }
 impl MinimalRange_const_int_ptr__const_int_ptr_ {
-    pub fn new(it: Ptr<()>, sent: Ptr<()>) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
-        let sent: Value<Ptr<()>> = Rc::new(RefCell::new(sent));
+    pub fn new(mut it: Ptr<()>, mut sent: Ptr<()>) -> Self {
         Self {
-            it_: ({ base_6((*it.borrow()).clone()) }),
-            sent_: ({ base_6((*sent.borrow()).clone()) }),
+            it_: ({ base_6((unimplemented!().read())) }),
+            sent_: ({ base_6((unimplemented!().read())) }),
         }
     }
 }
@@ -998,9 +986,7 @@ pub struct MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper
     #[byte_size(16)]
     sent_: cpp17_input_iterator_int_ptr__int_ptr_,
 }
-impl MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___ { pub fn new ( it : cpp17_input_iterator_int_ptr__int_ptr_  , sent : sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__  , ) -> Self { let it : Value<cpp17_input_iterator_int_ptr__int_ptr_ >  = Rc::new(RefCell::new(it)) ;
- let sent : Value<sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ >  = Rc::new(RefCell::new(sent)) ;
- Self { it_ : ( { base_0 ( it .as_pointer()  , ) } )   , sent_ : ( { base_10 ( sent .as_pointer()  , ) } )   , }  } }
+impl MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___ { pub fn new ( mut it : cpp17_input_iterator_int_ptr__int_ptr_  , mut sent : sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__  , ) -> Self { Self { it_ : ( { base_0 ( unimplemented!()   , ) } )   , sent_ : ( { base_10 ( unimplemented!()   , ) } )   , }  } }
 #[derive(Record, ByteRepr, FnPtrArg, MoveCtor, MoveAssign, Default)]
 #[byte_size(24)]
 pub struct MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___
@@ -1014,15 +1000,12 @@ pub struct MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_in
 }
 impl MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___ {
     pub fn new(
-        it: cpp20_input_iterator_int_ptr_,
-        sent: sentinel_wrapper_cpp20_input_iterator_int_ptr__,
+        mut it: cpp20_input_iterator_int_ptr_,
+        mut sent: sentinel_wrapper_cpp20_input_iterator_int_ptr__,
     ) -> Self {
-        let it: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_cpp20_input_iterator_int_ptr__> =
-            Rc::new(RefCell::new(sent));
         Self {
-            it_: ({ base_7(it.as_pointer()) }),
-            sent_: ({ base_8(sent.as_pointer()) }),
+            it_: ({ base_7(unimplemented!()) }),
+            sent_: ({ base_8(unimplemented!()) }),
         }
     }
     pub fn move_from(
@@ -1046,14 +1029,12 @@ pub struct MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iter
 }
 impl MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ {
     pub fn new(
-        it: forward_iterator_int_ptr_,
-        sent: sentinel_wrapper_forward_iterator_int_ptr__,
+        mut it: forward_iterator_int_ptr_,
+        mut sent: sentinel_wrapper_forward_iterator_int_ptr__,
     ) -> Self {
-        let it: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_forward_iterator_int_ptr__> = Rc::new(RefCell::new(sent));
         Self {
-            it_: ({ base_1(it.as_pointer()) }),
-            sent_: ({ base_9(sent.as_pointer()) }),
+            it_: ({ base_1(unimplemented!()) }),
+            sent_: ({ base_9(unimplemented!()) }),
         }
     }
 }
@@ -1072,15 +1053,12 @@ impl
     MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___
 {
     pub fn new(
-        it: bidirectional_iterator_int_ptr_,
-        sent: sentinel_wrapper_bidirectional_iterator_int_ptr__,
+        mut it: bidirectional_iterator_int_ptr_,
+        mut sent: sentinel_wrapper_bidirectional_iterator_int_ptr__,
     ) -> Self {
-        let it: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_bidirectional_iterator_int_ptr__> =
-            Rc::new(RefCell::new(sent));
         Self {
-            it_: ({ base_2(it.as_pointer()) }),
-            sent_: ({ base_12(sent.as_pointer()) }),
+            it_: ({ base_2(unimplemented!()) }),
+            sent_: ({ base_12(unimplemented!()) }),
         }
     }
 }
@@ -1097,15 +1075,12 @@ pub struct MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguou
 }
 impl MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ {
     pub fn new(
-        it: contiguous_iterator_int_ptr_,
-        sent: sentinel_wrapper_contiguous_iterator_int_ptr__,
+        mut it: contiguous_iterator_int_ptr_,
+        mut sent: sentinel_wrapper_contiguous_iterator_int_ptr__,
     ) -> Self {
-        let it: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_contiguous_iterator_int_ptr__> =
-            Rc::new(RefCell::new(sent));
         Self {
-            it_: ({ base_4(it.as_pointer()) }),
-            sent_: ({ base_13(sent.as_pointer()) }),
+            it_: ({ base_4(unimplemented!()) }),
+            sent_: ({ base_13(unimplemented!()) }),
         }
     }
 }
@@ -1120,12 +1095,10 @@ pub struct MinimalRange_int_ptr__sentinel_wrapper_int_ptr__ {
     sent_: Ptr<()>,
 }
 impl MinimalRange_int_ptr__sentinel_wrapper_int_ptr__ {
-    pub fn new(it: Ptr<()>, sent: sentinel_wrapper_int_ptr_) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(mut it: Ptr<()>, mut sent: sentinel_wrapper_int_ptr_) -> Self {
         Self {
-            it_: ({ base_5((*it.borrow()).clone()) }),
-            sent_: ({ base_14(sent.as_pointer()) }),
+            it_: ({ base_5((unimplemented!().read())) }),
+            sent_: ({ base_14(unimplemented!()) }),
         }
     }
 }
@@ -1140,12 +1113,10 @@ pub struct MinimalRange_const_int_ptr__sentinel_wrapper_const_int_ptr__ {
     sent_: Ptr<()>,
 }
 impl MinimalRange_const_int_ptr__sentinel_wrapper_const_int_ptr__ {
-    pub fn new(it: Ptr<()>, sent: sentinel_wrapper_const_int_ptr_) -> Self {
-        let it: Value<Ptr<()>> = Rc::new(RefCell::new(it));
-        let sent: Value<sentinel_wrapper_const_int_ptr_> = Rc::new(RefCell::new(sent));
+    pub fn new(mut it: Ptr<()>, mut sent: sentinel_wrapper_const_int_ptr_) -> Self {
         Self {
-            it_: ({ base_6((*it.borrow()).clone()) }),
-            sent_: ({ base_15(sent.as_pointer()) }),
+            it_: ({ base_6((unimplemented!().read())) }),
+            sent_: ({ base_15(unimplemented!()) }),
         }
     }
 }
@@ -1157,7 +1128,7 @@ const _: () = assert!(
     true,
     "std::ranges::range<MinimalRange<random_access_iterator<int*>, \n                                              sentinel_wrapper<random_access_iterator<int*>>>>"
 );
-pub fn testBase_with_CommonRange_24() {
+pub fn testBase_with_CommonRange_23() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1180,13 +1151,14 @@ pub fn testBase_with_CommonRange_24() {
         unimplemented!();
     }
     {
-        let resultIt: Value<forward_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_CommonRange_25() {
+pub fn testBase_with_CommonRange_24() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1209,13 +1181,14 @@ pub fn testBase_with_CommonRange_25() {
         unimplemented!();
     }
     {
-        let resultIt: Value<bidirectional_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_CommonRange_26() {
+pub fn testBase_with_CommonRange_25() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1238,13 +1211,14 @@ pub fn testBase_with_CommonRange_26() {
         unimplemented!();
     }
     {
-        let resultIt: Value<random_access_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_CommonRange_27() {
+pub fn testBase_with_CommonRange_26() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1267,13 +1241,14 @@ pub fn testBase_with_CommonRange_27() {
         unimplemented!();
     }
     {
-        let resultIt: Value<contiguous_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_CommonRange_28() {
+pub fn testBase_with_CommonRange_27() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1290,12 +1265,12 @@ pub fn testBase_with_CommonRange_28() {
         unimplemented!();
     }
     {
-        let mut resultIt: Ptr<()> = ({ (*it.borrow()).base_6() });
+        let mut resultIt: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).base_6() });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_CommonRange_29() {
+pub fn testBase_with_CommonRange_28() {
     const _: () = assert!(true, "std::ranges::range<CommonRange>");;
     const _: () = assert!(true, "std::ranges::common_range<CommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
@@ -1312,12 +1287,12 @@ pub fn testBase_with_CommonRange_29() {
         unimplemented!();
     }
     {
-        let mut resultIt: Ptr<()> = ({ (*it.borrow()).base_6() });
+        let mut resultIt: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).base_6() });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_30() {
+pub fn testBase_with_NonCommonRange_29() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___  = MinimalRange_cpp17_input_iterator_int_ptr__int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr___ :: new ( { cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_0 : Value<cpp17_input_iterator_int_ptr__int_ptr_ > = Rc::new(RefCell::new(cpp17_input_iterator_int_ptr__int_ptr_ :: new ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_cpp17_input_iterator_int_ptr__int_ptr__ :: new_1 ( { __tmp_0.as_pointer() } , )  }  } , )   ;
@@ -1331,13 +1306,14 @@ pub fn testBase_with_NonCommonRange_30() {
         unimplemented!();
     }
     {
-        let resultIt: Value<cpp17_input_iterator_int_ptr__int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<cpp17_input_iterator_int_ptr__int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_31() {
+pub fn testBase_with_NonCommonRange_30() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___  = MinimalRange_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr___ :: new ( { cpp20_input_iterator_int_ptr_ :: new ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_1 : Value<cpp20_input_iterator_int_ptr_ > = Rc::new(RefCell::new(cpp20_input_iterator_int_ptr_ :: new ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_cpp20_input_iterator_int_ptr__ :: new_1 ( { __tmp_1.as_pointer() } , )  }  } , )   ;
@@ -1351,13 +1327,14 @@ pub fn testBase_with_NonCommonRange_31() {
         unimplemented!();
     }
     {
-        let resultIt: Value<cpp20_input_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<cpp20_input_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_32() {
+pub fn testBase_with_NonCommonRange_31() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___  = MinimalRange_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr___ :: new ( { forward_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_2 : Value<forward_iterator_int_ptr_ > = Rc::new(RefCell::new(forward_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_forward_iterator_int_ptr__ :: new_1 ( { __tmp_2.as_pointer() } , )  }  } , )   ;
@@ -1371,13 +1348,14 @@ pub fn testBase_with_NonCommonRange_32() {
         unimplemented!();
     }
     {
-        let resultIt: Value<forward_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<forward_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_33() {
+pub fn testBase_with_NonCommonRange_32() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___  = MinimalRange_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr___ :: new ( { bidirectional_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_3 : Value<bidirectional_iterator_int_ptr_ > = Rc::new(RefCell::new(bidirectional_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_bidirectional_iterator_int_ptr__ :: new_1 ( { __tmp_3.as_pointer() } , )  }  } , )   ;
@@ -1391,13 +1369,14 @@ pub fn testBase_with_NonCommonRange_33() {
         unimplemented!();
     }
     {
-        let resultIt: Value<bidirectional_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<bidirectional_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_34() {
+pub fn testBase_with_NonCommonRange_33() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___  = MinimalRange_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr___ :: new ( { random_access_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_4 : Value<random_access_iterator_int_ptr_ > = Rc::new(RefCell::new(random_access_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_random_access_iterator_int_ptr__ :: new_1 ( { __tmp_4.as_pointer() } , )  }  } , )   ;
@@ -1411,13 +1390,14 @@ pub fn testBase_with_NonCommonRange_34() {
         unimplemented!();
     }
     {
-        let resultIt: Value<random_access_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<random_access_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_35() {
+pub fn testBase_with_NonCommonRange_34() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range : MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___  = MinimalRange_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr___ :: new ( { contiguous_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> )  } , )   } , { { let __tmp_5 : Value<contiguous_iterator_int_ptr_ > = Rc::new(RefCell::new(contiguous_iterator_int_ptr_ :: new_2 ( { ( arr .as_pointer()  as Ptr::<()> ) . offset ( ( 4_() ) as isize )  } , )  )); sentinel_wrapper_contiguous_iterator_int_ptr__ :: new_1 ( { __tmp_5.as_pointer() } , )  }  } , )   ;
@@ -1431,13 +1411,14 @@ pub fn testBase_with_NonCommonRange_35() {
         unimplemented!();
     }
     {
-        let resultIt: Value<contiguous_iterator_int_ptr_> =
-            Rc::new(RefCell::new(({ (*it.borrow()).base_6() })));
+        let resultIt: Value<contiguous_iterator_int_ptr_> = Rc::new(RefCell::new(
+            ({ (*unimplemented!().upgrade().deref()).base_6() }),
+        ));
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_36() {
+pub fn testBase_with_NonCommonRange_35() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range: MinimalRange_int_ptr__sentinel_wrapper_int_ptr__ =
@@ -1458,12 +1439,12 @@ pub fn testBase_with_NonCommonRange_36() {
         unimplemented!();
     }
     {
-        let mut resultIt: Ptr<()> = ({ (*it.borrow()).base_6() });
+        let mut resultIt: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).base_6() });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn testBase_with_NonCommonRange_37() {
+pub fn testBase_with_NonCommonRange_36() {
     const _: () = assert!(!(false), "!std::ranges::common_range<NonCommonRange>");;
     let arr: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([94_(), 1_(), 2_(), 82_()])));
     let mut range: MinimalRange_const_int_ptr__sentinel_wrapper_const_int_ptr__ =
@@ -1487,18 +1468,19 @@ pub fn testBase_with_NonCommonRange_37() {
         unimplemented!();
     }
     {
-        let mut resultIt: Ptr<()> = ({ (*it.borrow()).base_6() });
+        let mut resultIt: Ptr<()> = ({ (*unimplemented!().upgrade().deref()).base_6() });
         unimplemented!();
         unimplemented!();
     }
 }
-pub fn test_38() -> () {
+pub fn test_37() -> () {
+    ({ testBase_with_CommonRange_23() });
     ({ testBase_with_CommonRange_24() });
     ({ testBase_with_CommonRange_25() });
     ({ testBase_with_CommonRange_26() });
     ({ testBase_with_CommonRange_27() });
     ({ testBase_with_CommonRange_28() });
-    ({ testBase_with_CommonRange_29() });
+    ({ testBase_with_NonCommonRange_29() });
     ({ testBase_with_NonCommonRange_30() });
     ({ testBase_with_NonCommonRange_31() });
     ({ testBase_with_NonCommonRange_32() });
@@ -1506,7 +1488,6 @@ pub fn test_38() -> () {
     ({ testBase_with_NonCommonRange_34() });
     ({ testBase_with_NonCommonRange_35() });
     ({ testBase_with_NonCommonRange_36() });
-    ({ testBase_with_NonCommonRange_37() });
     return true;
 }
 pub fn main() {
@@ -1529,7 +1510,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
-    ({ test_38() });
+    ({ test_37() });
     const _: () = assert!(true, "test()");;
     return 0_();
 }

@@ -256,25 +256,21 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_6(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -358,7 +354,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -368,7 +364,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -436,7 +432,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn base_10(i: *const simple_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_9(i: *const simple_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
 #[repr(C)]
@@ -453,21 +449,21 @@ impl simple_iterator_int_ptr_ {
         return &mut (*self.it_);
     }
 }
-pub unsafe fn base_11(i: *const comparable_iterator_int_ptr_) -> *mut () {
+pub unsafe fn base_10(i: *const comparable_iterator_int_ptr_) -> *mut () {
     return (*i).it_;
 }
-pub unsafe fn operator_sub_12(
+pub unsafe fn operator_sub_11(
     lhs: *const comparable_iterator_int_ptr_,
     rhs: *const simple_iterator_int_ptr_,
 ) -> () {
-    return (((unsafe { base_11(lhs) }) as usize - (unsafe { base_10(rhs) }) as usize)
+    return (((unsafe { base_10(lhs) }) as usize - (unsafe { base_9(rhs) }) as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
-pub unsafe fn operator_sub_13(
+pub unsafe fn operator_sub_12(
     lhs: *const simple_iterator_int_ptr_,
     rhs: *const comparable_iterator_int_ptr_,
 ) -> () {
-    return (((unsafe { base_10(lhs) }) as usize - (unsafe { base_11(rhs) }) as usize)
+    return (((unsafe { base_9(lhs) }) as usize - (unsafe { base_10(rhs) }) as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
 #[repr(C)]
@@ -484,46 +480,46 @@ impl comparable_iterator_int_ptr_ {
         return &mut (*self.it_);
     }
 }
-pub unsafe fn operator_sub_14(
+pub unsafe fn operator_sub_13(
     lhs: *const sized_sentinel_type_int_ptr_,
     rhs: *const random_access_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_ as usize - (unsafe { base_1(rhs) }) as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
-pub unsafe fn operator_sub_15(
+pub unsafe fn operator_sub_14(
     lhs: *const sized_sentinel_type_int_ptr_,
     rhs: *const simple_iterator_int_ptr_,
+) -> () {
+    return (((*lhs).base_ as usize - (unsafe { base_9(rhs) }) as usize)
+        / ::std::mem::size_of::<()>()) as ();
+}
+pub unsafe fn operator_sub_15(
+    lhs: *const sized_sentinel_type_int_ptr_,
+    rhs: *const comparable_iterator_int_ptr_,
 ) -> () {
     return (((*lhs).base_ as usize - (unsafe { base_10(rhs) }) as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
 pub unsafe fn operator_sub_16(
-    lhs: *const sized_sentinel_type_int_ptr_,
-    rhs: *const comparable_iterator_int_ptr_,
-) -> () {
-    return (((*lhs).base_ as usize - (unsafe { base_11(rhs) }) as usize)
-        / ::std::mem::size_of::<()>()) as ();
-}
-pub unsafe fn operator_sub_17(
     lhs: *const random_access_iterator_int_ptr_,
     rhs: *const sized_sentinel_type_int_ptr_,
 ) -> () {
     return (((unsafe { base_1(lhs) }) as usize - (*rhs).base_ as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
-pub unsafe fn operator_sub_18(
+pub unsafe fn operator_sub_17(
     lhs: *const simple_iterator_int_ptr_,
     rhs: *const sized_sentinel_type_int_ptr_,
 ) -> () {
-    return (((unsafe { base_10(lhs) }) as usize - (*rhs).base_ as usize)
+    return (((unsafe { base_9(lhs) }) as usize - (*rhs).base_ as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
-pub unsafe fn operator_sub_19(
+pub unsafe fn operator_sub_18(
     lhs: *const comparable_iterator_int_ptr_,
     rhs: *const sized_sentinel_type_int_ptr_,
 ) -> () {
-    return (((unsafe { base_11(lhs) }) as usize - (*rhs).base_ as usize)
+    return (((unsafe { base_10(lhs) }) as usize - (*rhs).base_ as usize)
         / ::std::mem::size_of::<()>()) as ();
 }
 #[repr(C)]
@@ -531,7 +527,7 @@ pub unsafe fn operator_sub_19(
 pub struct sized_sentinel_type_int_ptr_ {
     pub base_: *mut (),
 }
-pub unsafe fn test_20() {
+pub unsafe fn test_19() {
     let mut buffer: [(); 8] = [1_(), 2_(), 3_(), 4_(), 5_(), 6_(), 7_(), 8_()];
     {
         let mut iter1: random_access_iterator_int_ptr_ =
@@ -588,7 +584,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_20() });
+    (unsafe { test_19() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

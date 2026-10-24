@@ -599,25 +599,21 @@ pub unsafe fn operator_add_16(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_17(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_18(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_19(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_18(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_19(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_21(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_20(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -701,7 +697,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_21(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_20(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -711,7 +707,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_20(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_19(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -933,56 +929,56 @@ impl minimal_view_int_ptr__sentinel_wrapper_int_ptr__ {
         return sentinel_wrapper_int_ptr_::new_1({ &self.sent_ });
     }
 }
-pub unsafe fn test_22() {
+pub unsafe fn test_21() {
     let mut sent1 : std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_cpp17_input_iterator_int_ptr___sentinel_wrapper_cpp17_input_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_23() {
+pub unsafe fn test_22() {
     let mut sent1 : std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_cpp20_input_iterator_int_ptr___sentinel_wrapper_cpp20_input_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_24() {
+pub unsafe fn test_23() {
     let mut sent1 : std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_forward_iterator_int_ptr___sentinel_wrapper_forward_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_25() {
+pub unsafe fn test_24() {
     let mut sent1 : std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_bidirectional_iterator_int_ptr___sentinel_wrapper_bidirectional_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_26() {
+pub unsafe fn test_25() {
     let mut sent1 : std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_random_access_iterator_int_ptr___sentinel_wrapper_random_access_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_27() {
+pub unsafe fn test_26() {
     let mut sent1 : std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_contiguous_iterator_int_ptr___sentinel_wrapper_contiguous_iterator_int_ptr_____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn test_28() {
+pub unsafe fn test_27() {
     let mut sent1 : std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel >::default() ;
     let mut sent2 : std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel = <std_ranges_filter_view_minimal_view_int_ptr__sentinel_wrapper_int_ptr____AlwaysTrue____sentinel >::default() ;
     unimplemented!();
     const _: () = assert!(true, "noexcept(FilterSentinel())");;
 }
-pub unsafe fn tests_29() -> () {
+pub unsafe fn tests_28() -> () {
+    (unsafe { test_21() });
     (unsafe { test_22() });
     (unsafe { test_23() });
     (unsafe { test_24() });
     (unsafe { test_25() });
     (unsafe { test_26() });
     (unsafe { test_27() });
-    (unsafe { test_28() });
     return true;
 }
 pub fn main() {
@@ -1001,7 +997,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { tests_29() });
+    (unsafe { tests_28() });
     const _: () = assert!(true, "tests()");;
     return 0_();
 }

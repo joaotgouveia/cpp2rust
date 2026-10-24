@@ -262,10 +262,7 @@ pub unsafe fn test01_10() {
     let mut nb_bkts: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while true {
-        (unsafe {
-            let mut ___x: () = unimplemented!();
-            mmap.insert_33_struct_std_pair_int__int_(&mut ___x)
-        });
+        unimplemented!();
         if ((unimplemented!()) != (nb_bkts)) {
             break;
         }

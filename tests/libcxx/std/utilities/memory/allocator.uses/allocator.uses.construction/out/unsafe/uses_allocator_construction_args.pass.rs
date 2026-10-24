@@ -1343,8 +1343,8 @@ pub unsafe fn testOne_136() {
     {
         let mut val: () = 0_();
         let mut ret: () = (unsafe {
-            let _args_1: *mut () = &mut *(&raw mut val).cast::<()>();
-            let _args_2: *mut () = &mut *(&raw mut val).cast::<()>();
+            let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+            let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
             test_uses_allocator_construction_args_28(&mut a, _args_1, _args_2)
         });
         unimplemented!();
@@ -1372,7 +1372,10 @@ pub unsafe fn testOne_136() {
     {
         let mut p: () = unimplemented!();
         let mut ret: () = (unsafe {
-            test_uses_allocator_construction_args_34(&mut a, &mut *(&raw mut p).cast::<()>())
+            test_uses_allocator_construction_args_34(
+                &mut a,
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+            )
         });
         unimplemented!();
         unimplemented!();
@@ -1392,8 +1395,8 @@ pub unsafe fn testOne_136() {
             let mut up: () = 1_();
             let mut vp: () = 2_();
             let mut ret: () = (unsafe {
-                let _args_1: *mut () = &mut *(&raw mut up).cast::<()>();
-                let _args_2: *mut () = &mut *(&raw mut vp).cast::<()>();
+                let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+                let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
                 test_uses_allocator_construction_args_8(&mut a, _args_1, _args_2)
             });
             &(ret);
@@ -1406,13 +1409,17 @@ pub unsafe fn testOne_136() {
         {
             let mut p: () = unimplemented!();
             let mut ret: () = (unsafe {
-                test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
+                test_uses_allocator_construction_args_12(
+                    &mut a,
+                    &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                )
             });
             &(ret);
         }
         {
             let p: () = unimplemented!();
-            let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
+            let mut ret: () =
+                (unsafe { test_uses_allocator_construction_args_14(&mut a, &(*unimplemented!())) });
             &(ret);
         }
     }
@@ -1434,7 +1441,8 @@ pub unsafe fn testOne_136() {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = (unsafe { test_uses_allocator_construction_args_40(&mut a, &mut ctp) });
+        let mut ret: () =
+            (unsafe { test_uses_allocator_construction_args_40(&mut a, &mut (*unimplemented!())) });
         let mut v: () = (unsafe { (*(unsafe { get_139(&mut ret) }))() });
         unimplemented!();
         unimplemented!();
@@ -1504,8 +1512,8 @@ pub unsafe fn testOne_142() {
     {
         let mut val: () = 0_();
         let mut ret: () = (unsafe {
-            let _args_1: *mut () = &mut *(&raw mut val).cast::<()>();
-            let _args_2: *mut () = &mut *(&raw mut val).cast::<()>();
+            let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+            let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
             test_uses_allocator_construction_args_58(&mut a, _args_1, _args_2)
         });
         unimplemented!();
@@ -1533,7 +1541,10 @@ pub unsafe fn testOne_142() {
     {
         let mut p: () = unimplemented!();
         let mut ret: () = (unsafe {
-            test_uses_allocator_construction_args_64(&mut a, &mut *(&raw mut p).cast::<()>())
+            test_uses_allocator_construction_args_64(
+                &mut a,
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+            )
         });
         unimplemented!();
         unimplemented!();
@@ -1553,8 +1564,8 @@ pub unsafe fn testOne_142() {
             let mut up: () = 1_();
             let mut vp: () = 2_();
             let mut ret: () = (unsafe {
-                let _args_1: *mut () = &mut *(&raw mut up).cast::<()>();
-                let _args_2: *mut () = &mut *(&raw mut vp).cast::<()>();
+                let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+                let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
                 test_uses_allocator_construction_args_8(&mut a, _args_1, _args_2)
             });
             &(ret);
@@ -1567,13 +1578,17 @@ pub unsafe fn testOne_142() {
         {
             let mut p: () = unimplemented!();
             let mut ret: () = (unsafe {
-                test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
+                test_uses_allocator_construction_args_12(
+                    &mut a,
+                    &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                )
             });
             &(ret);
         }
         {
             let p: () = unimplemented!();
-            let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
+            let mut ret: () =
+                (unsafe { test_uses_allocator_construction_args_14(&mut a, &(*unimplemented!())) });
             &(ret);
         }
     }
@@ -1595,7 +1610,8 @@ pub unsafe fn testOne_142() {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = (unsafe { test_uses_allocator_construction_args_70(&mut a, &mut ctp) });
+        let mut ret: () =
+            (unsafe { test_uses_allocator_construction_args_70(&mut a, &mut (*unimplemented!())) });
         let mut v: () = (unsafe { (*(unsafe { get_144(&mut ret) }))() });
         unimplemented!();
         unimplemented!();
@@ -1665,8 +1681,8 @@ pub unsafe fn testOne_147() {
     {
         let mut val: () = 0_();
         let mut ret: () = (unsafe {
-            let _args_1: *mut () = &mut *(&raw mut val).cast::<()>();
-            let _args_2: *mut () = &mut *(&raw mut val).cast::<()>();
+            let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+            let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
             test_uses_allocator_construction_args_88(&mut a, _args_1, _args_2)
         });
         unimplemented!();
@@ -1694,7 +1710,10 @@ pub unsafe fn testOne_147() {
     {
         let mut p: () = unimplemented!();
         let mut ret: () = (unsafe {
-            test_uses_allocator_construction_args_94(&mut a, &mut *(&raw mut p).cast::<()>())
+            test_uses_allocator_construction_args_94(
+                &mut a,
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+            )
         });
         unimplemented!();
         unimplemented!();
@@ -1714,8 +1733,8 @@ pub unsafe fn testOne_147() {
             let mut up: () = 1_();
             let mut vp: () = 2_();
             let mut ret: () = (unsafe {
-                let _args_1: *mut () = &mut *(&raw mut up).cast::<()>();
-                let _args_2: *mut () = &mut *(&raw mut vp).cast::<()>();
+                let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+                let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
                 test_uses_allocator_construction_args_8(&mut a, _args_1, _args_2)
             });
             &(ret);
@@ -1728,13 +1747,17 @@ pub unsafe fn testOne_147() {
         {
             let mut p: () = unimplemented!();
             let mut ret: () = (unsafe {
-                test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
+                test_uses_allocator_construction_args_12(
+                    &mut a,
+                    &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                )
             });
             &(ret);
         }
         {
             let p: () = unimplemented!();
-            let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
+            let mut ret: () =
+                (unsafe { test_uses_allocator_construction_args_14(&mut a, &(*unimplemented!())) });
             &(ret);
         }
     }
@@ -1756,7 +1779,9 @@ pub unsafe fn testOne_147() {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = (unsafe { test_uses_allocator_construction_args_100(&mut a, &mut ctp) });
+        let mut ret: () = (unsafe {
+            test_uses_allocator_construction_args_100(&mut a, &mut (*unimplemented!()))
+        });
         let mut v: () = (unsafe { (*(unsafe { get_149(&mut ret) }))() });
         unimplemented!();
         unimplemented!();
@@ -1826,8 +1851,8 @@ pub unsafe fn testOne_152() {
     {
         let mut val: () = 0_();
         let mut ret: () = (unsafe {
-            let _args_1: *mut () = &mut *(&raw mut val).cast::<()>();
-            let _args_2: *mut () = &mut *(&raw mut val).cast::<()>();
+            let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+            let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
             test_uses_allocator_construction_args_118(&mut a, _args_1, _args_2)
         });
         unimplemented!();
@@ -1855,7 +1880,10 @@ pub unsafe fn testOne_152() {
     {
         let mut p: () = unimplemented!();
         let mut ret: () = (unsafe {
-            test_uses_allocator_construction_args_124(&mut a, &mut *(&raw mut p).cast::<()>())
+            test_uses_allocator_construction_args_124(
+                &mut a,
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+            )
         });
         unimplemented!();
         unimplemented!();
@@ -1875,8 +1903,8 @@ pub unsafe fn testOne_152() {
             let mut up: () = 1_();
             let mut vp: () = 2_();
             let mut ret: () = (unsafe {
-                let _args_1: *mut () = &mut *(&raw mut up).cast::<()>();
-                let _args_2: *mut () = &mut *(&raw mut vp).cast::<()>();
+                let _args_1: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
+                let _args_2: *mut () = &mut *(&raw mut (*unimplemented!())).cast::<()>();
                 test_uses_allocator_construction_args_8(&mut a, _args_1, _args_2)
             });
             &(ret);
@@ -1889,13 +1917,17 @@ pub unsafe fn testOne_152() {
         {
             let mut p: () = unimplemented!();
             let mut ret: () = (unsafe {
-                test_uses_allocator_construction_args_12(&mut a, &mut *(&raw mut p).cast::<()>())
+                test_uses_allocator_construction_args_12(
+                    &mut a,
+                    &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                )
             });
             &(ret);
         }
         {
             let p: () = unimplemented!();
-            let mut ret: () = (unsafe { test_uses_allocator_construction_args_14(&mut a, &p) });
+            let mut ret: () =
+                (unsafe { test_uses_allocator_construction_args_14(&mut a, &(*unimplemented!())) });
             &(ret);
         }
     }
@@ -1917,7 +1949,9 @@ pub unsafe fn testOne_152() {
     }
     {
         let mut ctp: ConvertibleToPair = <ConvertibleToPair>::default();
-        let mut ret: () = (unsafe { test_uses_allocator_construction_args_130(&mut a, &mut ctp) });
+        let mut ret: () = (unsafe {
+            test_uses_allocator_construction_args_130(&mut a, &mut (*unimplemented!()))
+        });
         let mut v: () = (unsafe { (*(unsafe { get_154(&mut ret) }))() });
         unimplemented!();
         unimplemented!();

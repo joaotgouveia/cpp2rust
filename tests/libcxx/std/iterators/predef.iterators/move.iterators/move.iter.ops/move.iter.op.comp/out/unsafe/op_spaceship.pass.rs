@@ -302,25 +302,21 @@ pub unsafe fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_6(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_7(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_6(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_7(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_9(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_8(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -404,7 +400,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_9(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_8(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -414,7 +410,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_8(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_7(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -522,7 +518,7 @@ const _: () = assert!(
     !(false),
     "!HasSpaceship<std::move_iterator<three_way_contiguous_iterator<int*>>, std::move_sentinel<three_way_contiguous_iterator<int*>>>"
 );
-pub unsafe fn test_spaceshippable_but_not_three_way_comparable_10() {
+pub unsafe fn test_spaceshippable_but_not_three_way_comparable_9() {
     const _: () = assert!(true, "std::input_iterator<A>");;
     const _: () = assert!(true, "std::input_iterator<B>");;
     const _: () = assert!(true, "HasEquals<A, B>");;
@@ -539,10 +535,25 @@ pub unsafe fn test_spaceshippable_but_not_three_way_comparable_10() {
 }
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct A_11 {}
+pub struct A_10 {}
 #[repr(C)]
 #[derive(Copy, Clone, VaArg, FnPtrArg, Default)]
-pub struct B_12 {}
+pub struct B_11 {}
+pub unsafe fn test_two_12() {
+    let mut a: [(); 3] = [3_(), 1_(), 4_()];
+    let i1: () = unimplemented!();
+    let i2: () = unimplemented!();
+    let j1: () = unimplemented!();
+    let j2: () = unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+    const _: () = assert!(true, "");;
+    unimplemented!();
+    unimplemented!();
+    unimplemented!();
+}
 pub unsafe fn test_two_13() {
     let mut a: [(); 3] = [3_(), 1_(), 4_()];
     let i1: () = unimplemented!();
@@ -603,27 +614,12 @@ pub unsafe fn test_two_16() {
     unimplemented!();
     unimplemented!();
 }
-pub unsafe fn test_two_17() {
-    let mut a: [(); 3] = [3_(), 1_(), 4_()];
-    let i1: () = unimplemented!();
-    let i2: () = unimplemented!();
-    let j1: () = unimplemented!();
-    let j2: () = unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-    const _: () = assert!(true, "");;
-    unimplemented!();
-    unimplemented!();
-    unimplemented!();
-}
-pub unsafe fn test_18() -> () {
+pub unsafe fn test_17() -> () {
+    (unsafe { test_two_12() });
     (unsafe { test_two_13() });
     (unsafe { test_two_14() });
     (unsafe { test_two_15() });
     (unsafe { test_two_16() });
-    (unsafe { test_two_17() });
     return true;
 }
 pub fn main() {

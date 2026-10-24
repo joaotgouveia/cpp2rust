@@ -552,29 +552,23 @@ pub fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_11(_i, n)
     });
 }
-pub fn iter_swap_13(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_14(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_15(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_14(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_15(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_17(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_16(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -620,7 +614,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_17(
+            operator_cmp_16(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -645,7 +639,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_16(
+            operator_eq_15(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -732,7 +726,7 @@ impl util_iterator_error {
 #[derive(Clone, Record, ByteRepr, VaArg, FnPtrArg, Default)]
 #[byte_size(1)]
 pub struct count_equal {}
-pub fn test_constexpr_19() -> () {
+pub fn test_constexpr_18() -> () {
     let mut ia: [(); 3] = [0_(), 1_(), 2_()];
     let mut ib: [(); 3] = [4_(), 5_(), 6_()];
     let ic: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -804,8 +798,77 @@ pub fn test_constexpr_19() -> () {
     });
 }
 thread_local!(
-    pub static count_18: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static count_17: Value<()> = Rc::new(RefCell::new(0_()));
 );
+pub fn test_19() {
+    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        0_(),
+        1_(),
+        2_(),
+        0_(),
+        1_(),
+        0_(),
+    ])));
+    let mut sa: () =
+        (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
+    let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
+        0_(),
+        1_(),
+        2_(),
+        3_(),
+        4_(),
+        5_(),
+        6_(),
+    ])));
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
+    unimplemented!();
+    unimplemented!();
+}
 pub fn test_20() {
     let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
         0_(),
@@ -833,27 +896,27 @@ pub fn test_20() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -865,13 +928,13 @@ pub fn test_20() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -902,27 +965,27 @@ pub fn test_21() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -934,13 +997,13 @@ pub fn test_21() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -971,27 +1034,27 @@ pub fn test_22() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1003,13 +1066,13 @@ pub fn test_22() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1040,27 +1103,27 @@ pub fn test_23() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1072,13 +1135,13 @@ pub fn test_23() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1109,27 +1172,27 @@ pub fn test_24() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1141,13 +1204,13 @@ pub fn test_24() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1178,27 +1241,27 @@ pub fn test_25() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1210,13 +1273,13 @@ pub fn test_25() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1247,27 +1310,27 @@ pub fn test_26() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1279,13 +1342,13 @@ pub fn test_26() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1316,27 +1379,27 @@ pub fn test_27() {
     let mut sa: () =
         (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
     let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
     let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
@@ -1348,82 +1411,13 @@ pub fn test_27() {
         5_(),
         6_(),
     ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-}
-pub fn test_28() {
-    let ia: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        0_(),
-        1_(),
-        2_(),
-        0_(),
-        1_(),
-        0_(),
-    ])));
-    let mut sa: () =
-        (::std::mem::size_of::<[(); 21]>() as ()).wrapping_div((::std::mem::size_of::<()>() as ()));
-    let b: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let c: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let d: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let e: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let f: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let g: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([0_(), 1_(), 2_(), 3_(), 4_(), 5_()])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    let h: Value<Box<[()]>> = Rc::new(RefCell::new(Box::new([
-        0_(),
-        1_(),
-        2_(),
-        3_(),
-        4_(),
-        5_(),
-        6_(),
-    ])));
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
-    unimplemented!();
-    unimplemented!();
-    count_18.with(|rc| *rc.borrow_mut() = 0_());
+    count_17.with(|rc| *rc.borrow_mut() = 0_());
     unimplemented!();
     unimplemented!();
 }
@@ -1447,6 +1441,7 @@ pub fn main() {
     ::std::process::exit(main_0(::std::env::args().len() as i32, argv.as_pointer()));
 }
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
+    ({ test_19() });
     ({ test_20() });
     ({ test_21() });
     ({ test_22() });
@@ -1455,7 +1450,6 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({ test_25() });
     ({ test_26() });
     ({ test_27() });
-    ({ test_28() });
     const _: () = assert!(true, "test_constexpr()");;
     return 0_();
 }
@@ -1584,7 +1578,7 @@ pub trait count_equalImpl {
 }
 impl count_equalImpl for Ptr<count_equal> {
     fn operator_call_1_int(&self, x: Ptr<()>, y: Ptr<()>) -> () {
-        (*count_18.with(Value::clone).borrow_mut()).prefix_inc();
+        (*count_17.with(Value::clone).borrow_mut()).prefix_inc();
         return ({ (x.read()) } == { (y.read()) });
     }
 }
@@ -1892,5 +1886,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = count_18.with(|_| ());
+    let _ = count_17.with(|_| ());
 }

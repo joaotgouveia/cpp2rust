@@ -74,11 +74,11 @@ impl Z {
 pub unsafe fn test_4() -> () {
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_0(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_0(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_0(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     return true;
 }
@@ -102,11 +102,16 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
     (unsafe { test_4() });
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut *(&raw mut rhs).cast::<()>(), None) });
+        (unsafe { test_1(&mut *(&raw mut (*unimplemented!())).cast::<()>(), None) });
     }
     {
         let mut rhs: () = unimplemented!();
-        (unsafe { test_1(&mut *(&raw mut rhs).cast::<()>(), Some(true)) });
+        (unsafe {
+            test_1(
+                &mut *(&raw mut (*unimplemented!())).cast::<()>(),
+                Some(true),
+            )
+        });
     }
     return 0_();
 }

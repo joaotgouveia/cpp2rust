@@ -392,29 +392,23 @@ pub fn operator_add_9(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_8(_i, n)
     });
 }
-pub fn iter_swap_10(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_11(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_10(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_12(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_11(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_12(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_14(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_13(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -460,7 +454,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_14(
+            operator_cmp_13(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -485,7 +479,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_13(
+            operator_eq_12(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -570,13 +564,13 @@ impl util_iterator_error {
     }
 }
 thread_local!(
-    pub static comparison_count_15: Value<()> = Rc::new(RefCell::new(0_()));
+    pub static comparison_count_14: Value<()> = Rc::new(RefCell::new(0_()));
 );
-pub fn counting_equals_16(a: Ptr<()>, b: Ptr<()>) -> () {
-    (*comparison_count_15.with(Value::clone).borrow_mut()).prefix_inc();
+pub fn counting_equals_15(a: Ptr<()>, b: Ptr<()>) -> () {
+    (*comparison_count_14.with(Value::clone).borrow_mut()).prefix_inc();
     return ({ (a.read()) } == { (b.read()) });
 }
-pub fn test_constexpr_17() -> () {
+pub fn test_constexpr_16() -> () {
     let mut ia: [(); 3] = [0_(), 0_(), 0_()];
     let mut ib: [(); 3] = [1_(), 1_(), 0_()];
     let mut ic: [(); 3] = [1_(), 0_(), 1_()];
@@ -946,10 +940,10 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         unimplemented!();
         unimplemented!();
         unimplemented!();
-        comparison_count_15.with(|rc| *rc.borrow_mut() = 0_());
+        comparison_count_14.with(|rc| *rc.borrow_mut() = 0_());
         unimplemented!();
         unimplemented!();
-        comparison_count_15.with(|rc| *rc.borrow_mut() = 0_());
+        comparison_count_14.with(|rc| *rc.borrow_mut() = 0_());
         unimplemented!();
         unimplemented!();
     }
@@ -1339,5 +1333,5 @@ impl support_double_move_trackerImpl for Ptr<support_double_move_tracker> {
     }
 }
 pub fn __cpp2rust_init_globals() {
-    let _ = comparison_count_15.with(|_| ());
+    let _ = comparison_count_14.with(|_| ());
 }

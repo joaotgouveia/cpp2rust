@@ -269,29 +269,23 @@ pub fn operator_add_4(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
         operator_add_3(_i, n)
     });
 }
-pub fn iter_swap_5(a: adl_Iterator, b: adl_Iterator) {
-    let a: Value<adl_Iterator> = Rc::new(RefCell::new(a));
-    let b: Value<adl_Iterator> = Rc::new(RefCell::new(b));
-    ({
-        let ___x: Ptr<Ptr<()>> = field_ptr!(a.as_pointer(), ptr_);
-        let ___y: Ptr<Ptr<()>> = field_ptr!(b.as_pointer(), ptr_);
-        swap_6(___x, ___y)
-    });
-    if !({ (*a.borrow()).iter_swaps_.clone() }).is_null() {
-        { (*a.borrow()).iter_swaps_.clone() }.with_mut(|__v| __v.prefix_inc());
+pub fn iter_swap_5(mut a: adl_Iterator, mut b: adl_Iterator) {
+    unimplemented!();
+    if !(a.iter_swaps_).is_null() {
+        a.iter_swaps_.with_mut(|__v| __v.prefix_inc());
     }
 }
-pub fn iter_move_7(iter: adl_Iterator) -> Ptr<()> {
+pub fn iter_move_6(iter: adl_Iterator) -> Ptr<()> {
     let iter: Value<adl_Iterator> = Rc::new(RefCell::new(iter));
     if !({ (*iter.borrow()).iter_moves_.clone() }).is_null() {
         { (*iter.borrow()).iter_moves_.clone() }.with_mut(|__v| __v.prefix_inc());
     }
-    return ({ adl_IteratorImpl::operator_deref(&iter.as_pointer()) }).reinterpret_cast::<()>();
+    return (unimplemented!()).reinterpret_cast::<()>();
 }
-pub fn operator_eq_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_eq_7(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return ({ lhs.with(|__s| __s.ptr_.clone()) } == { rhs.with(|__s| __s.ptr_.clone()) });
 }
-pub fn operator_cmp_9(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
+pub fn operator_cmp_8(lhs: Ptr<adl_Iterator>, rhs: Ptr<adl_Iterator>) -> () {
     return std::cmp::Ord::cmp(
         &(lhs.with(|__s| __s.ptr_.clone())),
         &(rhs.with(|__s| __s.ptr_.clone())),
@@ -337,7 +331,7 @@ impl adl_Iterator {
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
         {
-            operator_cmp_9(
+            operator_cmp_8(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -362,7 +356,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
         {
-            operator_eq_8(
+            operator_eq_7(
                 Rc::new(RefCell::new(adl_Iterator {
                     ptr_: self.ptr_.clone(),
                     iter_moves_: self.iter_moves_.clone(),
@@ -446,11 +440,11 @@ impl util_iterator_error {
         Self {}
     }
 }
-pub fn test_10(mut A: Ptr<()>, expected: Ptr<()>) {
+pub fn test_9(mut A: Ptr<()>, expected: Ptr<()>) {
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
-pub fn test_11(mut A: Ptr<()>, expected: Ptr<()>) {
+pub fn test_10(mut A: Ptr<()>, expected: Ptr<()>) {
     let t: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     unimplemented!();
 }
@@ -476,308 +470,308 @@ pub fn main() {
 fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"NUL"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"alert"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"backspace"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"tab"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"carriage-return"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"newline"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"vertical-tab"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"form-feed"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"space"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"exclamation-mark"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"quotation-mark"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"number-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"dollar-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"percent-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"ampersand"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"apostrophe"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"left-parenthesis"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"right-parenthesis"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"asterisk"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"plus-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"comma"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"hyphen-minus"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"hyphen"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"full-stop"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"period"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"slash"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"solidus"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"zero"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"one"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"two"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"three"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"four"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"five"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"six"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"seven"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"eight"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"nine"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"colon"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"semicolon"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"less-than-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"equals-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"greater-than-sign"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"question-mark"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"commercial-at"),
             _expected.as_pointer(),
         )
@@ -788,69 +782,69 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
             let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_10(_A, _expected.as_pointer())
+            test_9(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"left-square-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"backslash"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"reverse-solidus"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"right-square-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"circumflex-accent"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"circumflex"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"low-line"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"underscore"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"grave-accent"),
             _expected.as_pointer(),
         )
@@ -861,76 +855,76 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
             let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_10(_A, _expected.as_pointer())
+            test_9(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"left-brace"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"left-curly-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"vertical-line"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"right-brace"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"right-curly-bracket"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"tilde"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"tild"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_10(
+        test_9(
             Ptr::<()>::from_string_literal(b"ch"),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[78 as (), 85 as (), 76 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 108 as (), 101 as (), 114 as (), 116 as (), 0 as (),
             ]),
@@ -939,7 +933,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 112 as (), 97 as (), 99 as (),
                 101 as (), 0 as (),
@@ -949,14 +943,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[116 as (), 97 as (), 98 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 97 as (), 114 as (), 114 as (), 105 as (), 97 as (), 103 as (),
                 101 as (), 45 as (), 114 as (), 101 as (), 116 as (), 117 as (), 114 as (),
@@ -967,7 +961,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 110 as (), 101 as (), 119 as (), 108 as (), 105 as (), 110 as (), 101 as (),
                 0 as (),
@@ -977,7 +971,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
                 108 as (), 45 as (), 116 as (), 97 as (), 98 as (), 0 as (),
@@ -987,7 +981,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 102 as (), 111 as (), 114 as (), 109 as (), 45 as (), 102 as (), 101 as (),
                 101 as (), 100 as (), 0 as (),
@@ -997,7 +991,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 112 as (), 97 as (), 99 as (), 101 as (), 0 as (),
             ]),
@@ -1006,7 +1000,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 101 as (), 120 as (), 99 as (), 108 as (), 97 as (), 109 as (), 97 as (),
                 116 as (), 105 as (), 111 as (), 110 as (), 45 as (), 109 as (), 97 as (),
@@ -1017,7 +1011,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 113 as (), 117 as (), 111 as (), 116 as (), 97 as (), 116 as (), 105 as (),
                 111 as (), 110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
@@ -1027,7 +1021,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 110 as (), 117 as (), 109 as (), 98 as (), 101 as (), 114 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1037,7 +1031,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 100 as (), 111 as (), 108 as (), 108 as (), 97 as (), 114 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1047,7 +1041,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 101 as (), 114 as (), 99 as (), 101 as (), 110 as (), 116 as (),
                 45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1057,7 +1051,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 109 as (), 112 as (), 101 as (), 114 as (), 115 as (), 97 as (),
                 110 as (), 100 as (), 0 as (),
@@ -1067,7 +1061,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 112 as (), 111 as (), 115 as (), 116 as (), 114 as (), 111 as (),
                 112 as (), 104 as (), 101 as (), 0 as (),
@@ -1077,7 +1071,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 112 as (), 97 as (),
                 114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (), 115 as (),
@@ -1088,7 +1082,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 112 as (),
                 97 as (), 114 as (), 101 as (), 110 as (), 116 as (), 104 as (), 101 as (),
@@ -1099,7 +1093,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 97 as (), 115 as (), 116 as (), 101 as (), 114 as (), 105 as (), 115 as (),
                 107 as (), 0 as (),
@@ -1109,7 +1103,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 108 as (), 117 as (), 115 as (), 45 as (), 115 as (), 105 as (),
                 103 as (), 110 as (), 0 as (),
@@ -1119,7 +1113,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 111 as (), 109 as (), 109 as (), 97 as (), 0 as (),
             ]),
@@ -1128,7 +1122,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 45 as (),
                 109 as (), 105 as (), 110 as (), 117 as (), 115 as (), 0 as (),
@@ -1138,7 +1132,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 104 as (), 121 as (), 112 as (), 104 as (), 101 as (), 110 as (), 0 as (),
             ]),
@@ -1147,7 +1141,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 102 as (), 117 as (), 108 as (), 108 as (), 45 as (), 115 as (), 116 as (),
                 111 as (), 112 as (), 0 as (),
@@ -1157,7 +1151,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 112 as (), 101 as (), 114 as (), 105 as (), 111 as (), 100 as (), 0 as (),
             ]),
@@ -1166,7 +1160,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 108 as (), 97 as (), 115 as (), 104 as (), 0 as (),
             ]),
@@ -1175,7 +1169,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (), 115 as (),
                 0 as (),
@@ -1185,28 +1179,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[122 as (), 101 as (), 114 as (), 111 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[111 as (), 110 as (), 101 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[116 as (), 119 as (), 111 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 116 as (), 104 as (), 114 as (), 101 as (), 101 as (), 0 as (),
             ]),
@@ -1215,28 +1209,28 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[102 as (), 111 as (), 117 as (), 114 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[102 as (), 105 as (), 118 as (), 101 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[115 as (), 105 as (), 120 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 101 as (), 118 as (), 101 as (), 110 as (), 0 as (),
             ]),
@@ -1245,7 +1239,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 101 as (), 105 as (), 103 as (), 104 as (), 116 as (), 0 as (),
             ]),
@@ -1254,14 +1248,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[110 as (), 105 as (), 110 as (), 101 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 111 as (), 108 as (), 111 as (), 110 as (), 0 as (),
             ]),
@@ -1270,7 +1264,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 115 as (), 101 as (), 109 as (), 105 as (), 99 as (), 111 as (), 108 as (),
                 111 as (), 110 as (), 0 as (),
@@ -1280,7 +1274,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 101 as (), 115 as (), 115 as (), 45 as (), 116 as (), 104 as (),
                 97 as (), 110 as (), 45 as (), 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1290,7 +1284,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 101 as (), 113 as (), 117 as (), 97 as (), 108 as (), 115 as (), 45 as (),
                 115 as (), 105 as (), 103 as (), 110 as (), 0 as (),
@@ -1300,7 +1294,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 103 as (), 114 as (), 101 as (), 97 as (), 116 as (), 101 as (), 114 as (),
                 45 as (), 116 as (), 104 as (), 97 as (), 110 as (), 45 as (), 115 as (),
@@ -1311,7 +1305,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 113 as (), 117 as (), 101 as (), 115 as (), 116 as (), 105 as (), 111 as (),
                 110 as (), 45 as (), 109 as (), 97 as (), 114 as (), 107 as (), 0 as (),
@@ -1321,7 +1315,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 111 as (), 109 as (), 109 as (), 101 as (), 114 as (), 99 as (),
                 105 as (), 97 as (), 108 as (), 45 as (), 97 as (), 116 as (), 0 as (),
@@ -1335,13 +1329,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
             let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_11(_A, _expected.as_pointer())
+            test_10(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 115 as (), 113 as (),
                 117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (), 114 as (), 97 as (),
@@ -1352,7 +1346,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 98 as (), 97 as (), 99 as (), 107 as (), 115 as (), 108 as (), 97 as (), 115 as (),
                 104 as (), 0 as (),
@@ -1362,7 +1356,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 114 as (), 101 as (), 118 as (), 101 as (), 114 as (), 115 as (), 101 as (),
                 45 as (), 115 as (), 111 as (), 108 as (), 105 as (), 100 as (), 117 as (),
@@ -1373,7 +1367,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 115 as (),
                 113 as (), 117 as (), 97 as (), 114 as (), 101 as (), 45 as (), 98 as (),
@@ -1384,7 +1378,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
                 108 as (), 101 as (), 120 as (), 45 as (), 97 as (), 99 as (), 99 as (), 101 as (),
@@ -1395,7 +1389,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 99 as (), 105 as (), 114 as (), 99 as (), 117 as (), 109 as (), 102 as (),
                 108 as (), 101 as (), 120 as (), 0 as (),
@@ -1405,7 +1399,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 111 as (), 119 as (), 45 as (), 108 as (), 105 as (), 110 as (),
                 101 as (), 0 as (),
@@ -1415,7 +1409,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 117 as (), 110 as (), 100 as (), 101 as (), 114 as (), 115 as (), 99 as (),
                 111 as (), 114 as (), 101 as (), 0 as (),
@@ -1425,7 +1419,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 103 as (), 114 as (), 97 as (), 118 as (), 101 as (), 45 as (), 97 as (), 99 as (),
                 99 as (), 101 as (), 110 as (), 116 as (), 0 as (),
@@ -1439,13 +1433,13 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
         ({
             let _A: Ptr<()> = (a.as_pointer() as Ptr<()>);
             let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            test_11(_A, _expected.as_pointer())
+            test_10(_A, _expected.as_pointer())
         });
         c.prefix_inc();
     }
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 98 as (), 114 as (),
                 97 as (), 99 as (), 101 as (), 0 as (),
@@ -1455,7 +1449,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 108 as (), 101 as (), 102 as (), 116 as (), 45 as (), 99 as (), 117 as (),
                 114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (), 97 as (), 99 as (),
@@ -1466,7 +1460,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 118 as (), 101 as (), 114 as (), 116 as (), 105 as (), 99 as (), 97 as (),
                 108 as (), 45 as (), 108 as (), 105 as (), 110 as (), 101 as (), 0 as (),
@@ -1476,7 +1470,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 98 as (),
                 114 as (), 97 as (), 99 as (), 101 as (), 0 as (),
@@ -1486,7 +1480,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 114 as (), 105 as (), 103 as (), 104 as (), 116 as (), 45 as (), 99 as (),
                 117 as (), 114 as (), 108 as (), 121 as (), 45 as (), 98 as (), 114 as (),
@@ -1497,7 +1491,7 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[
                 116 as (), 105 as (), 108 as (), 100 as (), 101 as (), 0 as (),
             ]),
@@ -1506,14 +1500,14 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[116 as (), 105 as (), 108 as (), 100 as (), 0 as ()]),
             _expected.as_pointer(),
         )
     });
     ({
         let _expected: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        test_11(
+        test_10(
             Ptr::<()>::from_string_literal(&[99 as (), 104 as (), 0 as ()]),
             _expected.as_pointer(),
         )

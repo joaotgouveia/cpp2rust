@@ -261,14 +261,8 @@ pub fn test01_10() {
     let mut bkts: () = unimplemented!();
     let mut i: () = 0_();
     'loop_: while (i != N) {
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-        });
-        ({
-            let ___x: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-            (*m.borrow()).insert_33_struct_std_pair_int__int_(___x.as_pointer())
-        });
+        unimplemented!();
+        unimplemented!();
         let mut __do_while = true;
         'loop_: while __do_while || (false) {
             __do_while = false;

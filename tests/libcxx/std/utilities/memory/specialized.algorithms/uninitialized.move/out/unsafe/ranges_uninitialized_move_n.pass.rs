@@ -1406,25 +1406,21 @@ pub unsafe fn operator_add_30(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_31(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_32(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_33(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_32(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_33(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_35(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_34(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1508,7 +1504,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_35(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_34(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1518,7 +1514,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_34(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_33(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1601,7 +1597,7 @@ const _: () = assert!(
     true,
     "!std::is_invocable_v<decltype(std::ranges::uninitialized_move_n), int*, std::size_t, NotConvertibleFromInt*,\n                                   NotConvertibleFromInt*>"
 );
-pub unsafe fn test_36() -> () {
+pub unsafe fn test_35() -> () {
     let n: () = 3_();
     let mut alloc: () = unimplemented!();
     {
@@ -1615,7 +1611,7 @@ pub unsafe fn test_36() -> () {
             let ___n: () = n;
             let ___ofirst: *mut MutableMove = out;
             let ___olast: *mut MutableMove = out.offset((n) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 ___n,
                 ___ofirst,
@@ -1643,7 +1639,7 @@ pub unsafe fn test_36() -> () {
         let mut result: () = (unsafe {
             let ___ofirst: *mut MutableMove = out;
             let ___olast: *mut MutableMove = out.offset((m) as isize);
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 n,
                 ___ofirst,
@@ -1685,7 +1681,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut result: () = (unsafe {
             let ___ofirst: *mut Counted = (unsafe { Buffer_Counted__1_::begin(&mut out) });
             let ___olast: *mut Counted = (unsafe { Buffer_Counted__1_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 0_(),
                 ___ofirst,
@@ -1713,7 +1709,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut result: () = (unsafe {
             let ___ofirst: *mut Counted = (unsafe { Buffer_Counted__5_::begin(&mut out) });
             let ___olast: *mut Counted = (unsafe { Buffer_Counted__5_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 N,
                 ___ofirst,
@@ -1738,7 +1734,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let ___ofirst: *mut () = (unsafe { Buffer_double__3_::begin(&mut out) });
             let ___olast: *mut () = (unsafe { Buffer_double__3_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 N,
                 ___ofirst,
@@ -1762,7 +1758,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         let mut result: () = (unsafe {
             let ___ofirst: *mut Counted = (unsafe { Buffer_Counted__3_::begin(&mut out) });
             let ___olast: *mut Counted = (unsafe { Buffer_Counted__3_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                 in_.as_mut_ptr(),
                 N,
                 ___ofirst,
@@ -1790,7 +1786,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let ___ofirst: *mut () = (unsafe { Buffer_int__3_::begin(&mut out) });
             let ___olast: *mut () = (unsafe { Buffer_int__3_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_38))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_37))(
                 begin, end, ___ofirst, ___olast,
             )
         });
@@ -1798,7 +1794,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         iter_moves = 0_();
         let mut range: () = unimplemented!();
         (unsafe {
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_38))(
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_37))(
                 &mut range, &mut out,
             )
         });
@@ -1815,8 +1811,8 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
         (unsafe {
             let ___ofirst: *mut () = (unsafe { Buffer_int__3_::begin(&mut out) });
             let ___olast: *mut () = (unsafe { Buffer_int__3_::end(&mut out) });
-            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
-                cpp20_input_iterator_const_int_ptr_::move_from({ &mut in_ }),
+            (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
+                cpp20_input_iterator_const_int_ptr_::move_from({ &mut (*unimplemented!()) }),
                 N,
                 ___ofirst,
                 ___olast,
@@ -1837,7 +1833,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
                 let ___n: () = unimplemented!();
                 let ___ofirst: *mut MoveOnly = unimplemented!();
                 let ___olast: *mut MoveOnly = unimplemented!();
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                     ___ifirst, ___n, ___ofirst, ___olast,
                 )
             });
@@ -1873,7 +1869,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut p_end: *mut () = (pool.as_mut_ptr() as *mut ()).offset((N) as isize);
             let mut array: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
             (unsafe {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                     overload_compare_iterator_int_ptr_::new_1({ array.as_mut_ptr() }),
                     N,
                     p,
@@ -1913,7 +1909,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             let mut p_end: *mut () = (pool.as_mut_ptr() as *mut ()).offset((N) as isize);
             let mut array: [(); 5] = [1_(), 2_(), 3_(), 4_(), 5_()];
             (unsafe {
-                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_37))(
+                (*std::cell::LazyCell::force_mut(&mut *&raw mut uninitialized_move_n_36))(
                     array.as_mut_ptr(),
                     N,
                     overload_compare_iterator_int_ptr_::new_1({ p }),
@@ -1927,7 +1923,7 @@ unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
             }
         }
     }
-    (unsafe { test_36() });
+    (unsafe { test_35() });
     return 0_();
 }
 #[derive(Clone, Copy, Default, VaArg, FnPtrArg)]

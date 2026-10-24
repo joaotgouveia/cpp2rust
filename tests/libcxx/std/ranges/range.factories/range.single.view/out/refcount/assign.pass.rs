@@ -13,7 +13,7 @@ pub fn test_0() -> () {
     let a: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     let b: Value<()> = Rc::new(RefCell::new(unimplemented!()));
     (*b.borrow_mut()) = (*a.borrow()).clone();
-    (*b.borrow_mut()) = (*a.borrow()).clone();
+    (*b.borrow_mut()) = (*unimplemented!().upgrade().deref()).clone();
     return true;
 }
 pub fn main() {

@@ -30,14 +30,14 @@ pub unsafe fn test_0() -> () {
     {
         unimplemented!() = false;
         unimplemented!() = true;
-        ref1 = (ref2).clone();
+        ref1 = (*unimplemented!());
         unimplemented!();
         unimplemented!();
     }
     {
         unimplemented!() = true;
         unimplemented!() = false;
-        ref1 = (ref2).clone();
+        ref1 = (*unimplemented!());
         unimplemented!();
         unimplemented!();
     }

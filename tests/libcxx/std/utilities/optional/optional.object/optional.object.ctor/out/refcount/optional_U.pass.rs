@@ -82,22 +82,22 @@ impl Z {
 pub fn test_all_4() -> () {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0((rhs.as_pointer()).reinterpret_cast::<()>(), None) });
+        ({ test_0((unimplemented!()).reinterpret_cast::<()>(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_0((rhs.as_pointer()).reinterpret_cast::<()>(), None) });
+        ({ test_0((unimplemented!()).reinterpret_cast::<()>(), None) });
     }
     return true;
 }
 pub fn test_all_5() -> () {
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1((rhs.as_pointer()).reinterpret_cast::<()>(), None) });
+        ({ test_1((unimplemented!()).reinterpret_cast::<()>(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_1((rhs.as_pointer()).reinterpret_cast::<()>(), None) });
+        ({ test_1((unimplemented!()).reinterpret_cast::<()>(), None) });
     }
     return true;
 }
@@ -127,11 +127,11 @@ fn main_0(_a0: i32, _a1: Ptr<Ptr<i8>>) -> () {
     const _: () = assert!(true, "test_all<int, X>()");;
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2((rhs.as_pointer()).reinterpret_cast::<()>(), None) });
+        ({ test_2((unimplemented!()).reinterpret_cast::<()>(), None) });
     }
     {
         let rhs: Value<()> = Rc::new(RefCell::new(unimplemented!()));
-        ({ test_2((rhs.as_pointer()).reinterpret_cast::<()>(), Some(true)) });
+        ({ test_2((unimplemented!()).reinterpret_cast::<()>(), Some(true)) });
     }
     const _: () = assert!(
         true,

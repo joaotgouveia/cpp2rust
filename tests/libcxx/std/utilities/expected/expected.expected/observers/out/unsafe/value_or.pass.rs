@@ -189,7 +189,7 @@ pub unsafe fn test_14() -> () {
         let mut e: () = unimplemented!();
         let mut x: MoveOnly = (unsafe {
             let mut ___v: () = 10_();
-            e.value_or(&mut ___v)
+            (*unimplemented!()).value_or(&mut ___v)
         });
         unimplemented!();
     }
@@ -197,7 +197,7 @@ pub unsafe fn test_14() -> () {
         let mut e: () = unimplemented!();
         let mut x: MoveOnly = (unsafe {
             let mut ___v: () = 10_();
-            e.value_or(&mut ___v)
+            (*unimplemented!()).value_or(&mut ___v)
         });
         unimplemented!();
     }

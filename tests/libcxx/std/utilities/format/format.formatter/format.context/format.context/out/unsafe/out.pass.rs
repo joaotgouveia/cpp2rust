@@ -12,7 +12,9 @@ pub unsafe fn test_format_context_create_0(
 ) -> () {
     return (unsafe {
         __format_context_create_1(
-            cpp20_output_iterator_std___wrap_iter_char_ptr__::move_from({ &mut out_it }),
+            cpp20_output_iterator_std___wrap_iter_char_ptr__::move_from({
+                &mut (*unimplemented!())
+            }),
             args.clone(),
             None,
         )
@@ -24,7 +26,9 @@ pub unsafe fn test_format_context_create_2(
 ) -> () {
     return (unsafe {
         __format_context_create_3(
-            cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::move_from({ &mut out_it }),
+            cpp20_output_iterator_std___wrap_iter_wchar_t_ptr__::move_from({
+                &mut (*unimplemented!())
+            }),
             args.clone(),
             None,
         )
@@ -36,7 +40,9 @@ pub unsafe fn test_format_context_create_4(
 ) -> () {
     return (unsafe {
         __format_context_create_5(
-            cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::move_from({ &mut out_it }),
+            cpp20_output_iterator_std___wrap_iter_char8_t_ptr__::move_from({
+                &mut (*unimplemented!())
+            }),
             args.clone(),
             None,
         )
@@ -48,7 +54,9 @@ pub unsafe fn test_format_context_create_6(
 ) -> () {
     return (unsafe {
         __format_context_create_7(
-            cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::move_from({ &mut out_it }),
+            cpp20_output_iterator_std___wrap_iter_char16_t_ptr__::move_from({
+                &mut (*unimplemented!())
+            }),
             args.clone(),
             None,
         )
@@ -60,7 +68,9 @@ pub unsafe fn test_format_context_create_8(
 ) -> () {
     return (unsafe {
         __format_context_create_9(
-            cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::move_from({ &mut out_it }),
+            cpp20_output_iterator_std___wrap_iter_char32_t_ptr__::move_from({
+                &mut (*unimplemented!())
+            }),
             args.clone(),
             None,
         )
@@ -496,25 +506,21 @@ pub unsafe fn operator_add_12(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_13(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_14(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_15(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_14(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_15(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_17(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_16(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -598,7 +604,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_17(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_16(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -608,7 +614,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_16(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_15(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -676,7 +682,7 @@ impl util_iterator_error {
         this
     }
 }
-pub unsafe fn test_18(mut args: ()) {
+pub unsafe fn test_17(mut args: ()) {
     {
         let mut str: () = std_basic_string_char__std_char_traits_char___std_allocator_char__::new_1(
             { 3_() },
@@ -726,7 +732,7 @@ pub unsafe fn test_18(mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_19(mut args: ()) {
+pub unsafe fn test_18(mut args: ()) {
     {
         let mut str: () =
             std_basic_string_wchar_t__std_char_traits_wchar_t___std_allocator_wchar_t__::new_1(
@@ -777,7 +783,7 @@ pub unsafe fn test_19(mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_20(mut args: ()) {
+pub unsafe fn test_19(mut args: ()) {
     {
         let mut str: () =
             std_basic_string_char8_t__std_char_traits_char8_t___std_allocator_char8_t__::new_1(
@@ -828,7 +834,7 @@ pub unsafe fn test_20(mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_21(mut args: ()) {
+pub unsafe fn test_20(mut args: ()) {
     {
         let mut str: () =
             std_basic_string_char16_t__std_char_traits_char16_t___std_allocator_char16_t__::new_1(
@@ -879,7 +885,7 @@ pub unsafe fn test_21(mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_22(mut args: ()) {
+pub unsafe fn test_21(mut args: ()) {
     {
         let mut str: () =
             std_basic_string_char32_t__std_char_traits_char32_t___std_allocator_char32_t__::new_1(
@@ -930,34 +936,34 @@ pub unsafe fn test_22(mut args: ()) {
         unimplemented!();
     }
 }
-pub unsafe fn test_23() {
+pub unsafe fn test_22() {
     (unsafe {
-        test_18({
-            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char_ptr____char__  = ( unsafe { make_format_args_24 ( ) } )  ;
+        test_17({
+            let mut __tmp_0 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char_ptr____char__  = ( unsafe { make_format_args_23 ( ) } )  ;
             std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char_ptr____char__ :: new ( { & mut __tmp_0 } , )
         })
     });
     (unsafe {
-        test_19({
-            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_wchar_t_ptr____wchar_t__  = ( unsafe { make_format_args_25 ( ) } )  ;
+        test_18({
+            let mut __tmp_1 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_wchar_t_ptr____wchar_t__  = ( unsafe { make_format_args_24 ( ) } )  ;
             std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_wchar_t_ptr____wchar_t__ :: new ( { & mut __tmp_1 } , )
         })
     });
     (unsafe {
-        test_20({
-            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char8_t_ptr____char8_t__  = ( unsafe { make_format_args_26 ( ) } )  ;
+        test_19({
+            let mut __tmp_2 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char8_t_ptr____char8_t__  = ( unsafe { make_format_args_25 ( ) } )  ;
             std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char8_t_ptr____char8_t__ :: new ( { & mut __tmp_2 } , )
         })
     });
     (unsafe {
-        test_21({
-            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char16_t_ptr____char16_t__  = ( unsafe { make_format_args_27 ( ) } )  ;
+        test_20({
+            let mut __tmp_3 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char16_t_ptr____char16_t__  = ( unsafe { make_format_args_26 ( ) } )  ;
             std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char16_t_ptr____char16_t__ :: new ( { & mut __tmp_3 } , )
         })
     });
     (unsafe {
-        test_22({
-            let mut __tmp_4 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char32_t_ptr____char32_t__  = ( unsafe { make_format_args_28 ( ) } )  ;
+        test_21({
+            let mut __tmp_4 : std___format_arg_store_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char32_t_ptr____char32_t__  = ( unsafe { make_format_args_27 ( ) } )  ;
             std_basic_format_args_std_basic_format_context_cpp20_output_iterator_std___wrap_iter_char32_t_ptr____char32_t__ :: new ( { & mut __tmp_4 } , )
         })
     });
@@ -978,7 +984,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_23() });
+    (unsafe { test_22() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {}

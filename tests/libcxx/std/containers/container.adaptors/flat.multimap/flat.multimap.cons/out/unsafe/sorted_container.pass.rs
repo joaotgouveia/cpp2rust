@@ -1510,25 +1510,21 @@ pub unsafe fn operator_add_51(mut n: (), mut i: adl_Iterator) -> adl_Iterator {
     });
 }
 pub unsafe fn iter_swap_52(mut a: adl_Iterator, mut b: adl_Iterator) {
-    (unsafe {
-        let ___x: *mut *mut () = &mut a.ptr_;
-        let ___y: *mut *mut () = &mut b.ptr_;
-        swap_53(___x, ___y)
-    });
+    unimplemented!();
     if !(a.iter_swaps_).is_null() {
         (*a.iter_swaps_).prefix_inc();
     }
 }
-pub unsafe fn iter_move_54(mut iter: adl_Iterator) -> *mut () {
+pub unsafe fn iter_move_53(mut iter: adl_Iterator) -> *mut () {
     if !(iter.iter_moves_).is_null() {
         (*iter.iter_moves_).prefix_inc();
     }
-    return &mut *(&raw mut (*(unsafe { adl_Iterator::operator_deref(&iter) }))).cast::<()>();
+    return &mut *(&raw mut (*unimplemented!())).cast::<()>();
 }
-pub unsafe fn operator_eq_55(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_eq_54(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return (((*lhs).ptr_) == ((*rhs).ptr_));
 }
-pub unsafe fn operator_cmp_56(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
+pub unsafe fn operator_cmp_55(lhs: *const adl_Iterator, rhs: *const adl_Iterator) -> () {
     return std::cmp::Ord::cmp(&((*lhs).ptr_), &((*rhs).ptr_));
 }
 #[repr(C)]
@@ -1612,7 +1608,7 @@ impl adl_Iterator {
 }
 impl std::cmp::Ord for adl_Iterator {
     fn cmp(&self, other: &Self) -> std::cmp::Ordering {
-        unsafe { operator_cmp_56(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_cmp_55(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::PartialOrd for adl_Iterator {
@@ -1622,7 +1618,7 @@ impl std::cmp::PartialOrd for adl_Iterator {
 }
 impl std::cmp::PartialEq for adl_Iterator {
     fn eq(&self, other: &Self) -> bool {
-        unsafe { operator_eq_55(self as *const adl_Iterator, other as *const adl_Iterator) }
+        unsafe { operator_eq_54(self as *const adl_Iterator, other as *const adl_Iterator) }
     }
 }
 impl std::cmp::Eq for adl_Iterator {}
@@ -1798,7 +1794,7 @@ impl Default for Moveable {
         unsafe { Moveable::new_1() }
     }
 }
-pub unsafe fn operator_eq_57(a: *const test_less_int_, b: *const test_less_int_) -> () {
+pub unsafe fn operator_eq_56(a: *const test_less_int_, b: *const test_less_int_) -> () {
     return (((*a).data_) == ((*b).data_));
 }
 #[repr(C)]
@@ -1815,7 +1811,7 @@ impl test_less_int_ {
 impl std::cmp::PartialEq for test_less_int_ {
     fn eq(&self, other: &Self) -> bool {
         unsafe {
-            operator_eq_57(
+            operator_eq_56(
                 self as *const test_less_int_,
                 other as *const test_less_int_,
             )
@@ -1823,6 +1819,80 @@ impl std::cmp::PartialEq for test_less_int_ {
     }
 }
 impl std::cmp::Eq for test_less_int_ {}
+pub unsafe fn test_57() {
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut ks2: () = unimplemented!();
+        let mut vs2: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+    {
+        let mut ks: () = unimplemented!();
+        let mut vs: () = unimplemented!();
+        let mut m: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        let mut m2: () = unimplemented!();
+        unimplemented!();
+        unimplemented!();
+        unimplemented!();
+    }
+}
 pub unsafe fn test_58() {
     {
         let mut ks: () = unimplemented!();
@@ -1971,81 +2041,7 @@ pub unsafe fn test_59() {
         unimplemented!();
     }
 }
-pub unsafe fn test_60() {
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut ks2: () = unimplemented!();
-        let mut vs2: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-    {
-        let mut ks: () = unimplemented!();
-        let mut vs: () = unimplemented!();
-        let mut m: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        let mut m2: () = unimplemented!();
-        unimplemented!();
-        unimplemented!();
-        unimplemented!();
-    }
-}
-pub unsafe fn test_61() -> () {
+pub unsafe fn test_60() -> () {
     {
         const _: () = assert!(
             true,
@@ -2080,10 +2076,10 @@ pub unsafe fn test_61() -> () {
             "!std::is_constructible_v<M3, std::sorted_equivalent_t, const V2&, const V1&, const C&, const A2&>"
         );;
     }
-    (unsafe { test_58() });
+    (unsafe { test_57() });
     {
+        (unsafe { test_58() });
         (unsafe { test_59() });
-        (unsafe { test_60() });
     }
     return true;
 }
@@ -2103,7 +2099,7 @@ pub fn main() {
     }
 }
 unsafe fn main_0(mut _a0: (), mut _a1: *mut *mut ()) -> () {
-    (unsafe { test_61() });
+    (unsafe { test_60() });
     return 0_();
 }
 pub unsafe fn __cpp2rust_init_globals() {
