@@ -107,112 +107,138 @@ const T1 &f14(const __gnu_cxx::__normal_iterator<T1, T2> &a0) {
   return a0.base();
 }
 
-template <typename T1> std::back_insert_iterator<T1> f15(T1 &a0) {
+template <typename T1, typename T2>
+auto f15(const __gnu_cxx::__normal_iterator<T1, T2> &a0,
+         const __gnu_cxx::__normal_iterator<T1, T2> &a1)
+    -> decltype(__gnu_cxx::operator- <T1, T2>(a0, a1)) {
+  return __gnu_cxx::operator- <T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+auto f16(const __gnu_cxx::__normal_iterator<T1, T3> &a0,
+         const __gnu_cxx::__normal_iterator<T2, T3> &a1)
+    -> decltype(__gnu_cxx::operator- <T1, T2, T3>(a0, a1)) {
+  return __gnu_cxx::operator- <T1, T2, T3>(a0, a1);
+}
+
+template <typename T1, typename T2>
+bool f17(const __gnu_cxx::__normal_iterator<T1, T2> &a0,
+         const __gnu_cxx::__normal_iterator<T1, T2> &a1) {
+  return __gnu_cxx::operator== <T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2, typename T3>
+bool f18(const __gnu_cxx::__normal_iterator<T1, T3> &a0,
+         const __gnu_cxx::__normal_iterator<T2, T3> &a1) {
+  return __gnu_cxx::operator== <T1, T2, T3>(a0, a1);
+}
+
+template <typename T1> std::back_insert_iterator<T1> f19(T1 &a0) {
   return std::back_inserter<T1>(a0);
 }
 
-template <typename T1> std::front_insert_iterator<T1> f16(T1 &a0) {
+template <typename T1> std::front_insert_iterator<T1> f20(T1 &a0) {
   return std::front_inserter<T1>(a0);
 }
 
-template <typename T1> std::move_iterator<T1> f17(T1 a0) {
+template <typename T1> std::move_iterator<T1> f21(T1 a0) {
   return std::make_move_iterator<T1>(std::move(a0));
 }
 
 template <typename T1, typename T2>
-bool f18(const std::reverse_iterator<T1> &a0,
+bool f22(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
   return std::operator!= <T1, T2>(a0, a1);
 }
 
 template <typename T1>
-std::move_iterator<T1> f19(typename std::move_iterator<T1>::difference_type a0,
+std::move_iterator<T1> f23(typename std::move_iterator<T1>::difference_type a0,
                            const std::move_iterator<T1> &a1) {
   return std::operator+ <T1>(std::move(a0), a1);
 }
 
 template <typename T1>
 std::reverse_iterator<T1>
-f20(typename std::reverse_iterator<T1>::difference_type a0,
+f24(typename std::reverse_iterator<T1>::difference_type a0,
     const std::reverse_iterator<T1> &a1) {
   return std::operator+ <T1>(std::move(a0), a1);
 }
 
 template <typename T1, typename T2>
-auto f21(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1)
+auto f25(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1)
     -> decltype(std::operator- <T1, T2>(a0, a1)) {
   return std::operator- <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-auto f22(const std::reverse_iterator<T1> &a0,
+auto f26(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1)
     -> decltype(std::operator- <T1, T2>(a0, a1)) {
   return std::operator- <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f23(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
+bool f27(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
   return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f24(const std::reverse_iterator<T1> &a0,
-         const std::reverse_iterator<T2> &a1) {
-  return std::operator< <T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2>
-bool f25(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
-}
-
-template <typename T1, typename T2>
-bool f26(const std::reverse_iterator<T1> &a0,
-         const std::reverse_iterator<T2> &a1) {
-  return std::operator<= <T1, T2>(a0, a1);
-}
-
-template <typename T1>
-bool f27(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
-  return std::operator== <T1>(a0, a1);
-}
-
-template <typename T1>
 bool f28(const std::reverse_iterator<T1> &a0,
-         const std::reverse_iterator<T1> &a1) {
-  return std::operator== <T1>(a0, a1);
+         const std::reverse_iterator<T2> &a1) {
+  return std::operator< <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f29(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
-  return std::operator== <T1, T2>(a0, a1);
+  return std::operator<= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
 bool f30(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
+  return std::operator<= <T1, T2>(a0, a1);
+}
+
+template <typename T1>
+bool f31(const std::move_iterator<T1> &a0, const std::move_iterator<T1> &a1) {
+  return std::operator== <T1>(a0, a1);
+}
+
+template <typename T1>
+bool f32(const std::reverse_iterator<T1> &a0,
+         const std::reverse_iterator<T1> &a1) {
+  return std::operator== <T1>(a0, a1);
+}
+
+template <typename T1, typename T2>
+bool f33(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
   return std::operator== <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f31(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
+bool f34(const std::reverse_iterator<T1> &a0,
+         const std::reverse_iterator<T2> &a1) {
+  return std::operator== <T1, T2>(a0, a1);
+}
+
+template <typename T1, typename T2>
+bool f35(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f32(const std::reverse_iterator<T1> &a0,
+bool f36(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
   return std::operator><T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f33(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
+bool f37(const std::move_iterator<T1> &a0, const std::move_iterator<T2> &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }
 
 template <typename T1, typename T2>
-bool f34(const std::reverse_iterator<T1> &a0,
+bool f38(const std::reverse_iterator<T1> &a0,
          const std::reverse_iterator<T2> &a1) {
   return std::operator>= <T1, T2>(a0, a1);
 }

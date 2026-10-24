@@ -181,3 +181,71 @@ decltype(auto) f23(const std::ranges::filter_view<T1, T2> &a0)
 {
   return a0.back();
 }
+
+template <typename T1, typename T2>
+typename std::ranges::filter_view<T1, T2>::_Sentinel f24() {
+  return typename std::ranges::filter_view<T1, T2>::_Sentinel();
+}
+
+template <typename T1, typename T2>
+std::ranges::sentinel_t<T1>
+f25(const typename std::ranges::filter_view<T1, T2>::_Sentinel &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+using t2 =
+    typename std::ranges::filter_view<T1, T2>::_Iterator::iterator_concept;
+
+template <typename T1, typename T2>
+using t3 = typename std::ranges::filter_view<T1, T2>::_Iterator::value_type;
+
+template <typename T1, typename T2>
+using t4 =
+    typename std::ranges::filter_view<T1, T2>::_Iterator::difference_type;
+
+template <typename T1, typename T2>
+typename std::ranges::filter_view<T1, T2>::_Iterator f26() {
+  return typename std::ranges::filter_view<T1, T2>::_Iterator();
+}
+
+template <typename T1, typename T2>
+const std::ranges::iterator_t<T1> &
+f27(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+std::ranges::iterator_t<T1>
+f28(typename std::ranges::filter_view<T1, T2>::_Iterator &&a0) {
+  return std::move(a0).base();
+}
+
+template <typename T1, typename T2>
+std::ranges::range_reference_t<T1>
+f29(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+std::ranges::iterator_t<T1>
+f30(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0) {
+  return a0.operator->();
+}
+
+template <typename T1, typename T2>
+void f31(typename std::ranges::filter_view<T1, T2>::_Iterator &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1, typename T2>
+void f32(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
+         const typename std::ranges::filter_view<T1, T2>::_Iterator &a1) {
+  return iter_swap(a0, a1);
+}
+
+template <typename T1, typename T2>
+bool f33(const typename std::ranges::filter_view<T1, T2>::_Iterator &a0,
+         const typename std::ranges::filter_view<T1, T2>::_Iterator &a1) {
+  return operator==(a0, a1);
+}

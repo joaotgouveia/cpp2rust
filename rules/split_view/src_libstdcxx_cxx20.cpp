@@ -217,3 +217,45 @@ decltype(auto) f23(const std::ranges::split_view<T1, T2> &a0)
 {
   return a0.back();
 }
+
+template <typename T1, typename T2>
+using t2 =
+    typename std::ranges::split_view<T1, T2>::_Iterator::iterator_concept;
+
+template <typename T1, typename T2>
+using t3 =
+    typename std::ranges::split_view<T1, T2>::_Iterator::iterator_category;
+
+template <typename T1, typename T2>
+using t4 = typename std::ranges::split_view<T1, T2>::_Iterator::value_type;
+
+template <typename T1, typename T2>
+using t5 = typename std::ranges::split_view<T1, T2>::_Iterator::difference_type;
+
+template <typename T1, typename T2>
+typename std::ranges::split_view<T1, T2>::_Iterator f24() {
+  return typename std::ranges::split_view<T1, T2>::_Iterator();
+}
+
+template <typename T1, typename T2>
+std::ranges::iterator_t<T1>
+f25(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
+  return a0.base();
+}
+
+template <typename T1, typename T2>
+std::ranges::subrange<std::ranges::iterator_t<T1>>
+f26(const typename std::ranges::split_view<T1, T2>::_Iterator &a0) {
+  return a0.operator*();
+}
+
+template <typename T1, typename T2>
+bool f27(const typename std::ranges::split_view<T1, T2>::_Iterator &a0,
+         const typename std::ranges::split_view<T1, T2>::_Iterator &a1) {
+  return operator==(a0, a1);
+}
+
+template <typename T1, typename T2>
+typename std::ranges::split_view<T1, T2>::_Sentinel f28() {
+  return typename std::ranges::split_view<T1, T2>::_Sentinel();
+}

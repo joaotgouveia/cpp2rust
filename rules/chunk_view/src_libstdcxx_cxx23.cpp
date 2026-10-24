@@ -252,3 +252,160 @@ decltype(auto) f25(const std::ranges::chunk_view<T1> &a0,
 {
   return a0.template operator[]<T2>(std::move(a1));
 }
+
+template <typename T1>
+using t2 = typename std::ranges::chunk_view<T1>::_OuterIter::iterator_concept;
+
+template <typename T1>
+using t3 = typename std::ranges::chunk_view<T1>::_OuterIter::difference_type;
+
+template <typename T1>
+using t4 = typename std::ranges::chunk_view<T1>::_OuterIter::value_type;
+
+template <typename T1>
+typename std::ranges::chunk_view<T1>::_OuterIter
+f26(typename std::ranges::chunk_view<T1>::_OuterIter &&a0) {
+  return typename std::ranges::chunk_view<T1>::_OuterIter(std::move(a0));
+}
+
+template <typename T1>
+void f27(typename std::ranges::chunk_view<T1>::_OuterIter &a0, int a1) {
+  return a0.operator++(a1);
+}
+
+template <typename T1>
+std::ranges::range_difference_t<T1>
+f28(const typename std::ranges::chunk_view<T1>::_OuterIter &a0,
+    std::default_sentinel_t a1) {
+  return operator-(a0, std::move(a1));
+}
+
+template <typename T1>
+std::ranges::range_difference_t<T1>
+f29(std::default_sentinel_t a0,
+    const typename std::ranges::chunk_view<T1>::_OuterIter &a1) {
+  return operator-(std::move(a0), a1);
+}
+
+template <typename T1>
+bool f30(const typename std::ranges::chunk_view<T1>::_OuterIter &a0,
+         std::default_sentinel_t a1) {
+  return operator==(a0, std::move(a1));
+}
+
+template <typename T1>
+auto f31(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.begin();
+}
+
+template <typename T1>
+std::default_sentinel_t
+f32(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.end();
+}
+
+template <typename T1>
+auto f33(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0)
+  requires(std::sized_sentinel_for<std::ranges::sentinel_t<T1>,
+                                   std::ranges::iterator_t<T1>>)
+{
+  return a0.size();
+}
+
+template <typename T1>
+bool f34(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.empty();
+}
+
+template <typename T1>
+bool f35(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.empty();
+}
+
+template <typename T1>
+bool f36(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1>
+bool f37(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return static_cast<bool>(a0);
+}
+
+template <typename T1>
+auto f38(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.data();
+}
+
+template <typename T1>
+auto f39(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.data();
+}
+
+template <typename T1>
+decltype(auto)
+f40(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.front();
+}
+
+template <typename T1>
+decltype(auto)
+f41(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.front();
+}
+
+template <typename T1>
+decltype(auto)
+f42(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.back();
+}
+
+template <typename T1>
+decltype(auto)
+f43(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.back();
+}
+
+template <typename T1>
+auto f44(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1>
+auto f45(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.cbegin();
+}
+
+template <typename T1>
+auto f46(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.cend();
+}
+
+template <typename T1>
+auto f47(
+    const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0) {
+  return a0.cend();
+}
+
+template <typename T1, typename T2>
+decltype(auto)
+f48(typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
+    std::ranges::range_difference_t<T2> a1)
+  requires(std::ranges::random_access_range<T2>)
+{
+  return a0.template operator[]<T2>(std::move(a1));
+}
+
+template <typename T1, typename T2>
+decltype(auto)
+f49(const typename std::ranges::chunk_view<T1>::_OuterIter::value_type &a0,
+    std::ranges::range_difference_t<T2> a1)
+  requires(std::ranges::random_access_range<T2>)
+{
+  return a0.template operator[]<T2>(std::move(a1));
+}

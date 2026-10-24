@@ -270,3 +270,7 @@ decltype(auto) f27(const std::ranges::slide_view<T1> &a0,
 {
   return a0.template operator[]<T2>(std::move(a1));
 }
+
+template <typename T1> typename std::ranges::slide_view<T1>::_Sentinel f28() {
+  return typename std::ranges::slide_view<T1>::_Sentinel();
+}

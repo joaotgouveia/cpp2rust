@@ -155,3 +155,9 @@ bool f21(const std::__key_value_iterator<T1, T2, T3, T4> &a0,
          const std::__key_value_iterator<T1, T2, T3, T4> &a1) {
   return operator==(a0, a1);
 }
+
+template <typename T1, typename T2, typename T3, bool T4>
+auto f22(
+    typename std::__key_value_iterator<T1, T2, T3, T4>::__arrow_proxy &a0) {
+  return a0.operator->();
+}
