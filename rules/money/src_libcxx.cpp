@@ -42,3 +42,13 @@ std::money_base::pattern &f10(std::money_base::pattern &a0,
                               std::money_base::pattern &&a1) {
   return a0.operator=(std::move(a1));
 }
+
+std::money_base::part f11() { return std::money_base::none; }
+
+std::money_base::part f12() { return std::money_base::space; }
+
+std::money_base::part f13() { return std::money_base::symbol; }
+
+std::money_base::part f14() { return std::money_base::sign; }
+
+std::money_base::part f15() { return std::money_base::value; }

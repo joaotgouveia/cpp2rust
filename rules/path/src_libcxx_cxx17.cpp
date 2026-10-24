@@ -325,6 +325,18 @@ std::filesystem::path::value_type f75() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f76(std::filesystem::path &a0, std::filesystem::path &a1) {
+std::filesystem::path::format f76() {
+  return std::filesystem::path::auto_format;
+}
+
+std::filesystem::path::format f77() {
+  return std::filesystem::path::native_format;
+}
+
+std::filesystem::path::format f78() {
+  return std::filesystem::path::generic_format;
+}
+
+void f79(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }

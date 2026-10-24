@@ -5,7 +5,7 @@
 #include <utility>
 
 template <typename T1, typename T2>
-std::compare_three_way_result_t<T1, T2> f404(const std::optional<T1> &a0,
+std::compare_three_way_result_t<T1, T2> f437(const std::optional<T1> &a0,
                                              const T2 &a1)
   requires((!std::__is_derived_from_optional<T2>) &&
            std::three_way_comparable_with<T1, T2>)
@@ -28,7 +28,7 @@ template <
             template __enable_implicit<T2>(),
         int>
         T3 = 0>
-std::optional<T1> f405(T2 &&a0)
+std::optional<T1> f438(T2 &&a0)
   requires(!(std::is_same<T2, const std::optional<T1> &>::value) &&
            !(std::is_same<T2, std::optional<T1>>::value) &&
            !(std::is_same<T2, std::nullopt_t>::value))
@@ -51,7 +51,7 @@ template <
             template __enable_explicit<T2>(),
         int>
         T3 = 0>
-std::optional<T1> f406(T2 &&a0)
+std::optional<T1> f439(T2 &&a0)
   requires(!(std::is_same<T2, const std::optional<T1> &>::value) &&
            !(std::is_same<T2, std::optional<T1>>::value) &&
            !(std::is_same<T2, std::nullopt_t>::value))
@@ -69,7 +69,7 @@ template <typename T1, typename T2,
                   template __enable_implicit<T2>(),
               int>
               T3 = 0>
-std::optional<T1> f407(const std::optional<T2> &a0)
+std::optional<T1> f440(const std::optional<T2> &a0)
   requires(!(std::is_same<T2, T1>::value))
 {
   return std::optional<T1>(a0);
@@ -85,7 +85,7 @@ template <typename T1, typename T2,
                   template __enable_explicit<T2>(),
               int>
               T3 = 0>
-std::optional<T1> f408(const std::optional<T2> &a0)
+std::optional<T1> f441(const std::optional<T2> &a0)
   requires(!(std::is_same<T2, T1>::value))
 {
   return std::optional<T1>(a0);
@@ -101,7 +101,7 @@ template <typename T1, typename T2,
                   template __enable_implicit<T2>(),
               int>
               T3 = 0>
-std::optional<T1> f409(std::optional<T2> &&a0)
+std::optional<T1> f442(std::optional<T2> &&a0)
   requires(!(std::is_same<T2, T1>::value))
 {
   return std::optional<T1>(std::move(a0));
@@ -117,7 +117,7 @@ template <typename T1, typename T2,
                   template __enable_explicit<T2>(),
               int>
               T3 = 0>
-std::optional<T1> f410(std::optional<T2> &&a0)
+std::optional<T1> f443(std::optional<T2> &&a0)
   requires(!(std::is_same<T2, T1>::value))
 {
   return std::optional<T1>(std::move(a0));
@@ -133,7 +133,7 @@ template <
                   std::is_assignable<T1 &, T2>>::value,
         int>
         T3 = 0>
-std::optional<T1> &f411(std::optional<T1> &a0, T2 &&a1)
+std::optional<T1> &f444(std::optional<T1> &a0, T2 &&a1)
   requires(!(std::is_same<T2, std::nullopt_t>::value) &&
            !(std::is_same<T2, const std::optional<T1> &>::value) &&
            !(std::is_same<T2, std::optional<T1>>::value))
@@ -152,7 +152,7 @@ template <typename T1, typename T2,
                   template __enable_assign<T2>(),
               int>
               T3 = 0>
-std::optional<T1> &f412(std::optional<T1> &a0, const std::optional<T2> &a1)
+std::optional<T1> &f445(std::optional<T1> &a0, const std::optional<T2> &a1)
   requires(!(std::is_same<T2, T1>::value))
 {
   return a0.template operator= <T2>(a1);
@@ -168,126 +168,156 @@ template <typename T1, typename T2,
                   template __enable_assign<T2>(),
               int>
               T3 = 0>
-std::optional<T1> &f413(std::optional<T1> &a0, std::optional<T2> &&a1)
+std::optional<T1> &f446(std::optional<T1> &a0, std::optional<T2> &&a1)
   requires(!(std::is_same<T2, T1>::value))
 {
   return a0.template operator= <T2>(std::move(a1));
 }
 
 template <typename T1>
-void f414(std::optional<T1> &a0)
+void f447(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f448(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f449(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true)
 {
   return a0.reset();
 }
 
 template <typename T1>
-bool f415(const std::optional<T1> &a0)
+bool f450(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f416(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f451(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true)
 {
   return a0.operator->();
 }
 
 template <typename T1>
-T1 &f417(const std::optional<T1> &a0)
+T1 &f452(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true)
 {
   return a0.operator*();
 }
 
 template <typename T1>
-T1 &f418(const std::optional<T1> &a0)
+T1 &f453(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true)
 {
   return a0.value();
 }
 
 template <typename T1>
-bool f419(const std::optional<T1> &a0)
+bool f454(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f420(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f455(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.operator->();
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f421(std::optional<T1> &a0)
+std::add_pointer_t<T1> f456(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.operator->();
 }
 
 template <typename T1>
-T1 const &f422(const std::optional<T1> &a0)
+T1 const &f457(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.operator*();
 }
 
 template <typename T1>
-T1 &f423(std::optional<T1> &a0)
+T1 &f458(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.operator*();
 }
 
 template <typename T1>
-T1 &&f424(std::optional<T1> &&a0)
+T1 &&f459(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return std::move(a0).operator*();
 }
 
 template <typename T1>
-T1 const &&f425(const std::optional<T1> &&a0)
+T1 const &&f460(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return std::move(a0).operator*();
 }
 
 template <typename T1>
-T1 const &f426(const std::optional<T1> &a0)
+T1 const &f461(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.value();
 }
 
 template <typename T1>
-T1 &f427(std::optional<T1> &a0)
+T1 &f462(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return a0.value();
 }
 
 template <typename T1>
-T1 &&f428(std::optional<T1> &&a0)
+T1 &&f463(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return std::move(a0).value();
 }
 
 template <typename T1>
-T1 const &&f429(const std::optional<T1> &&a0)
+T1 const &&f464(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false)
 {
   return std::move(a0).value();
 }
 
 template <typename T1>
-void f430(std::optional<T1> &a0)
+void f465(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f466(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f467(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false)
 {
@@ -295,7 +325,7 @@ void f430(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f431(const std::optional<T1> &a0)
+bool f468(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false)
 {
@@ -303,7 +333,7 @@ bool f431(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f432(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f469(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false)
 {
@@ -311,7 +341,7 @@ std::add_pointer_t<T1> f432(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f433(const std::optional<T1> &a0)
+T1 &f470(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false)
 {
@@ -319,7 +349,7 @@ T1 &f433(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f434(const std::optional<T1> &a0)
+T1 &f471(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false)
 {
@@ -327,84 +357,100 @@ T1 &f434(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f435(const std::optional<T1> &a0)
+bool f472(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f436(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f473(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.operator->();
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f437(std::optional<T1> &a0)
+std::add_pointer_t<T1> f474(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.operator->();
 }
 
 template <typename T1>
-T1 const &f438(const std::optional<T1> &a0)
+T1 const &f475(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.operator*();
 }
 
 template <typename T1>
-T1 &f439(std::optional<T1> &a0)
+T1 &f476(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.operator*();
 }
 
 template <typename T1>
-T1 &&f440(std::optional<T1> &&a0)
+T1 &&f477(std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return std::move(a0).operator*();
 }
 
 template <typename T1>
-T1 const &&f441(const std::optional<T1> &&a0)
+T1 const &&f478(const std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return std::move(a0).operator*();
 }
 
 template <typename T1>
-T1 const &f442(const std::optional<T1> &a0)
+T1 const &f479(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.value();
 }
 
 template <typename T1>
-T1 &f443(std::optional<T1> &a0)
+T1 &f480(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return a0.value();
 }
 
 template <typename T1>
-T1 &&f444(std::optional<T1> &&a0)
+T1 &&f481(std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return std::move(a0).value();
 }
 
 template <typename T1>
-T1 const &&f445(const std::optional<T1> &&a0)
+T1 const &&f482(const std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false)
 {
   return std::move(a0).value();
 }
 
 template <typename T1>
-void f446(std::optional<T1> &a0)
+void f483(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f484(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f485(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -412,7 +458,7 @@ void f446(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f447(const std::optional<T1> &a0)
+bool f486(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -420,7 +466,7 @@ bool f447(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f448(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f487(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -428,7 +474,7 @@ std::add_pointer_t<T1> f448(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f449(const std::optional<T1> &a0)
+T1 &f488(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -436,7 +482,7 @@ T1 &f449(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f450(const std::optional<T1> &a0)
+T1 &f489(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -444,7 +490,7 @@ T1 &f450(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f451(const std::optional<T1> &a0)
+bool f490(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -452,7 +498,7 @@ bool f451(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f452(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f491(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -460,7 +506,7 @@ std::add_pointer_t<T1 const> f452(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f453(std::optional<T1> &a0)
+std::add_pointer_t<T1> f492(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -468,7 +514,7 @@ std::add_pointer_t<T1> f453(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f454(const std::optional<T1> &a0)
+T1 const &f493(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -476,7 +522,7 @@ T1 const &f454(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f455(std::optional<T1> &a0)
+T1 &f494(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -484,7 +530,7 @@ T1 &f455(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f456(std::optional<T1> &&a0)
+T1 &&f495(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -492,7 +538,7 @@ T1 &&f456(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f457(const std::optional<T1> &&a0)
+T1 const &&f496(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -500,7 +546,7 @@ T1 const &&f457(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f458(const std::optional<T1> &a0)
+T1 const &f497(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -508,7 +554,7 @@ T1 const &f458(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f459(std::optional<T1> &a0)
+T1 &f498(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -516,7 +562,7 @@ T1 &f459(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f460(std::optional<T1> &&a0)
+T1 &&f499(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -524,7 +570,7 @@ T1 &&f460(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f461(const std::optional<T1> &&a0)
+T1 const &&f500(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
 {
@@ -532,7 +578,25 @@ T1 const &&f461(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f462(std::optional<T1> &a0)
+void f501(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f502(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f503(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
@@ -541,7 +605,7 @@ void f462(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f463(const std::optional<T1> &a0)
+bool f504(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
@@ -550,7 +614,7 @@ bool f463(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f464(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f505(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
@@ -559,7 +623,7 @@ std::add_pointer_t<T1> f464(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f465(const std::optional<T1> &a0)
+T1 &f506(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
@@ -568,7 +632,7 @@ T1 &f465(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f466(const std::optional<T1> &a0)
+T1 &f507(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false)
@@ -577,7 +641,7 @@ T1 &f466(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f467(const std::optional<T1> &a0)
+bool f508(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -586,7 +650,7 @@ bool f467(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f468(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f509(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -595,7 +659,7 @@ std::add_pointer_t<T1 const> f468(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f469(std::optional<T1> &a0)
+std::add_pointer_t<T1> f510(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -604,7 +668,7 @@ std::add_pointer_t<T1> f469(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f470(const std::optional<T1> &a0)
+T1 const &f511(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -613,7 +677,7 @@ T1 const &f470(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f471(std::optional<T1> &a0)
+T1 &f512(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -622,7 +686,7 @@ T1 &f471(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f472(std::optional<T1> &&a0)
+T1 &&f513(std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -631,7 +695,7 @@ T1 &&f472(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f473(const std::optional<T1> &&a0)
+T1 const &&f514(const std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -640,7 +704,7 @@ T1 const &&f473(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f474(const std::optional<T1> &a0)
+T1 const &f515(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -649,7 +713,7 @@ T1 const &f474(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f475(std::optional<T1> &a0)
+T1 &f516(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -658,7 +722,7 @@ T1 &f475(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f476(std::optional<T1> &&a0)
+T1 &&f517(std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -667,7 +731,7 @@ T1 &&f476(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f477(const std::optional<T1> &&a0)
+T1 const &&f518(const std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -676,169 +740,8 @@ T1 const &&f477(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f478(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.reset();
-}
-
-template <typename T1>
-bool f479(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f480(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 &f481(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f482(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-bool f483(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1 const> f484(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f485(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 const &f486(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f487(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &&f488(std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &&f489(const std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &f490(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &f491(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &&f492(std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-T1 const &&f493(const std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-void f494(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
+void f519(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -847,163 +750,8 @@ void f494(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f495(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f496(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 &f497(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f498(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-bool f499(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1 const> f500(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f501(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 const &f502(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f503(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &&f504(std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &&f505(const std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &f506(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &f507(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &&f508(std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-T1 const &&f509(const std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-void f510(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
+void f520(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1012,9 +760,18 @@ void f510(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f511(const std::optional<T1> &a0)
+void f521(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f522(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1023,9 +780,8 @@ bool f511(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f512(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f523(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1034,9 +790,8 @@ std::add_pointer_t<T1> f512(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f513(const std::optional<T1> &a0)
+T1 &f524(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1045,9 +800,8 @@ T1 &f513(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f514(const std::optional<T1> &a0)
+T1 &f525(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1056,9 +810,8 @@ T1 &f514(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f515(const std::optional<T1> &a0)
+bool f526(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1067,9 +820,8 @@ bool f515(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f516(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f527(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1078,9 +830,8 @@ std::add_pointer_t<T1 const> f516(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f517(std::optional<T1> &a0)
+std::add_pointer_t<T1> f528(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1089,9 +840,8 @@ std::add_pointer_t<T1> f517(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f518(const std::optional<T1> &a0)
+T1 const &f529(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1100,9 +850,8 @@ T1 const &f518(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f519(std::optional<T1> &a0)
+T1 &f530(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1111,9 +860,8 @@ T1 &f519(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f520(std::optional<T1> &&a0)
+T1 &&f531(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1122,9 +870,8 @@ T1 &&f520(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f521(const std::optional<T1> &&a0)
+T1 const &&f532(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1133,9 +880,8 @@ T1 const &&f521(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f522(const std::optional<T1> &a0)
+T1 const &f533(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1144,9 +890,8 @@ T1 const &f522(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f523(std::optional<T1> &a0)
+T1 &f534(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1155,9 +900,8 @@ T1 &f523(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f524(std::optional<T1> &&a0)
+T1 &&f535(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1166,9 +910,8 @@ T1 &&f524(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f525(const std::optional<T1> &&a0)
+T1 const &&f536(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
@@ -1177,9 +920,195 @@ T1 const &&f525(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f526(std::optional<T1> &a0)
+void f537(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f538(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f539(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f540(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f541(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 &f542(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f543(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+bool f544(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1 const> f545(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f546(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 const &f547(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f548(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &&f549(std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &&f550(const std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &f551(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &f552(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &&f553(std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+T1 const &&f554(const std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+void f555(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -1189,524 +1118,811 @@ void f526(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f527(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
+void f556(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f528(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 &f529(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f530(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_copy_constructible_v<T1> &&
-            std::is_trivially_copy_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-bool f531(const std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1 const> f532(const std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f533(std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 const &f534(const std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f535(std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &&f536(std::optional<T1> &&a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &&f537(const std::optional<T1> &&a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &f538(const std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &f539(std::optional<T1> &a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &&f540(std::optional<T1> &&a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-T1 const &&f541(const std::optional<T1> &&a0)
-  requires((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-void f542(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
 {
   return a0.reset();
 }
 
 template <typename T1>
-bool f543(const std::optional<T1> &a0)
+void f557(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f544(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 &f545(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f546(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-bool f547(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.has_value();
-}
-
-template <typename T1>
-std::add_pointer_t<T1 const> f548(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f549(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 const &f550(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f551(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &&f552(std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &&f553(const std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &f554(const std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &f555(std::optional<T1> &a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &&f556(std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-T1 const &&f557(const std::optional<T1> &&a0)
-  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-void f558(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.reset();
 }
 
 template <typename T1>
-bool f559(const std::optional<T1> &a0)
+bool f558(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f560(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f559(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.operator->();
+}
+
+template <typename T1>
+T1 &f560(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
 }
 
 template <typename T1>
 T1 &f561(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f562(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_copy_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.value();
 }
 
 template <typename T1>
-bool f563(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+bool f562(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f564(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-std::add_pointer_t<T1> f565(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator->();
-}
-
-template <typename T1>
-T1 const &f566(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &f567(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
-}
-
-template <typename T1>
-T1 &&f568(std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &&f569(const std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).operator*();
-}
-
-template <typename T1>
-T1 const &f570(const std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &f571(std::optional<T1> &a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.value();
-}
-
-template <typename T1>
-T1 &&f572(std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-T1 const &&f573(const std::optional<T1> &&a0)
-  requires(std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return std::move(a0).value();
-}
-
-template <typename T1>
-void f574(std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
+std::add_pointer_t<T1 const> f563(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f564(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 const &f565(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f566(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &&f567(std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &&f568(const std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &f569(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &f570(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &&f571(std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+T1 const &&f572(const std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+void f573(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.reset();
 }
 
 template <typename T1>
-bool f575(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
+void f574(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f575(std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f576(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.has_value();
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f576(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f577(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
 {
   return a0.operator->();
-}
-
-template <typename T1>
-T1 &f577(const std::optional<T1> &a0)
-  requires(std::is_reference<T1>::value == true) &&
-          (std::is_trivially_move_constructible_v<T1> == false) &&
-          ((std::is_trivially_destructible_v<T1> &&
-            std::is_trivially_move_constructible_v<T1> &&
-            std::is_trivially_move_assignable_v<T1>) == false)
-{
-  return a0.operator*();
 }
 
 template <typename T1>
 T1 &f578(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f579(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+bool f580(const std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1 const> f581(const std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f582(std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 const &f583(const std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f584(std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &&f585(std::optional<T1> &&a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &&f586(const std::optional<T1> &&a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &f587(const std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &f588(std::optional<T1> &a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &&f589(std::optional<T1> &&a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+T1 const &&f590(const std::optional<T1> &&a0)
+  requires((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+void f591(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f592(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f593(std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f594(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f595(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 &f596(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f597(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+bool f598(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1 const> f599(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f600(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 const &f601(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f602(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &&f603(std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &&f604(const std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &f605(const std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &f606(std::optional<T1> &a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &&f607(std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+T1 const &&f608(const std::optional<T1> &&a0)
+  requires(std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+void f609(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f610(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f611(std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f612(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f613(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 &f614(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f615(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+bool f616(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1 const> f617(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f618(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 const &f619(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f620(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &&f621(std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &&f622(const std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).operator*();
+}
+
+template <typename T1>
+T1 const &f623(const std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &f624(std::optional<T1> &a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.value();
+}
+
+template <typename T1>
+T1 &&f625(std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+T1 const &&f626(const std::optional<T1> &&a0)
+  requires(std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return std::move(a0).value();
+}
+
+template <typename T1>
+void f627(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f628(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f629(std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+bool f630(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.has_value();
+}
+
+template <typename T1>
+std::add_pointer_t<T1> f631(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator->();
+}
+
+template <typename T1>
+T1 &f632(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.operator*();
+}
+
+template <typename T1>
+T1 &f633(const std::optional<T1> &a0)
+  requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_move_constructible_v<T1> &&
@@ -1716,7 +1932,7 @@ T1 &f578(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f579(const std::optional<T1> &a0)
+bool f634(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1727,7 +1943,7 @@ bool f579(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f580(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f635(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1738,7 +1954,7 @@ std::add_pointer_t<T1 const> f580(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f581(std::optional<T1> &a0)
+std::add_pointer_t<T1> f636(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1749,7 +1965,7 @@ std::add_pointer_t<T1> f581(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f582(const std::optional<T1> &a0)
+T1 const &f637(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1760,7 +1976,7 @@ T1 const &f582(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f583(std::optional<T1> &a0)
+T1 &f638(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1771,7 +1987,7 @@ T1 &f583(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f584(std::optional<T1> &&a0)
+T1 &&f639(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1782,7 +1998,7 @@ T1 &&f584(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f585(const std::optional<T1> &&a0)
+T1 const &&f640(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1793,7 +2009,7 @@ T1 const &&f585(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f586(const std::optional<T1> &a0)
+T1 const &f641(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1804,7 +2020,7 @@ T1 const &f586(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f587(std::optional<T1> &a0)
+T1 &f642(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1815,7 +2031,7 @@ T1 &f587(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f588(std::optional<T1> &&a0)
+T1 &&f643(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1826,7 +2042,7 @@ T1 &&f588(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f589(const std::optional<T1> &&a0)
+T1 const &&f644(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -1837,7 +2053,31 @@ T1 const &&f589(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f590(std::optional<T1> &a0)
+void f645(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f646(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f647(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -1849,7 +2089,7 @@ void f590(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f591(const std::optional<T1> &a0)
+bool f648(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -1861,7 +2101,7 @@ bool f591(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f592(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f649(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -1873,7 +2113,7 @@ std::add_pointer_t<T1> f592(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f593(const std::optional<T1> &a0)
+T1 &f650(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -1885,7 +2125,7 @@ T1 &f593(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f594(const std::optional<T1> &a0)
+T1 &f651(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -1897,7 +2137,7 @@ T1 &f594(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f595(const std::optional<T1> &a0)
+bool f652(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1909,7 +2149,7 @@ bool f595(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f596(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f653(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1921,7 +2161,7 @@ std::add_pointer_t<T1 const> f596(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f597(std::optional<T1> &a0)
+std::add_pointer_t<T1> f654(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1933,7 +2173,7 @@ std::add_pointer_t<T1> f597(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f598(const std::optional<T1> &a0)
+T1 const &f655(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1945,7 +2185,7 @@ T1 const &f598(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f599(std::optional<T1> &a0)
+T1 &f656(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1957,7 +2197,7 @@ T1 &f599(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f600(std::optional<T1> &&a0)
+T1 &&f657(std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1969,7 +2209,7 @@ T1 &&f600(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f601(const std::optional<T1> &&a0)
+T1 const &&f658(const std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1981,7 +2221,7 @@ T1 const &&f601(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f602(const std::optional<T1> &a0)
+T1 const &f659(const std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -1993,7 +2233,7 @@ T1 const &f602(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f603(std::optional<T1> &a0)
+T1 &f660(std::optional<T1> &a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -2005,7 +2245,7 @@ T1 &f603(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f604(std::optional<T1> &&a0)
+T1 &&f661(std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -2017,7 +2257,7 @@ T1 &&f604(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f605(const std::optional<T1> &&a0)
+T1 const &&f662(const std::optional<T1> &&a0)
   requires((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
             std::is_trivially_copy_assignable_v<T1>) == false) &&
@@ -2029,7 +2269,33 @@ T1 const &&f605(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f606(std::optional<T1> &a0)
+void f663(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f664(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f665(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2042,7 +2308,7 @@ void f606(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f607(const std::optional<T1> &a0)
+bool f666(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2055,7 +2321,7 @@ bool f607(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f608(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f667(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2068,7 +2334,7 @@ std::add_pointer_t<T1> f608(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f609(const std::optional<T1> &a0)
+T1 &f668(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2081,7 +2347,7 @@ T1 &f609(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f610(const std::optional<T1> &a0)
+T1 &f669(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2094,7 +2360,7 @@ T1 &f610(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f611(const std::optional<T1> &a0)
+bool f670(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2107,7 +2373,7 @@ bool f611(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f612(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f671(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2120,7 +2386,7 @@ std::add_pointer_t<T1 const> f612(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f613(std::optional<T1> &a0)
+std::add_pointer_t<T1> f672(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2133,7 +2399,7 @@ std::add_pointer_t<T1> f613(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f614(const std::optional<T1> &a0)
+T1 const &f673(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2146,7 +2412,7 @@ T1 const &f614(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f615(std::optional<T1> &a0)
+T1 &f674(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2159,7 +2425,7 @@ T1 &f615(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f616(std::optional<T1> &&a0)
+T1 &&f675(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2172,7 +2438,7 @@ T1 &&f616(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f617(const std::optional<T1> &&a0)
+T1 const &&f676(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2185,7 +2451,7 @@ T1 const &&f617(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f618(const std::optional<T1> &a0)
+T1 const &f677(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2198,7 +2464,7 @@ T1 const &f618(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f619(std::optional<T1> &a0)
+T1 &f678(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2211,7 +2477,7 @@ T1 &f619(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f620(std::optional<T1> &&a0)
+T1 &&f679(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2224,7 +2490,7 @@ T1 &&f620(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f621(const std::optional<T1> &&a0)
+T1 const &&f680(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2237,7 +2503,35 @@ T1 const &&f621(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f622(std::optional<T1> &a0)
+void f681(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f682(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f683(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2251,7 +2545,7 @@ void f622(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f623(const std::optional<T1> &a0)
+bool f684(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2265,7 +2559,7 @@ bool f623(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f624(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f685(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2279,7 +2573,7 @@ std::add_pointer_t<T1> f624(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f625(const std::optional<T1> &a0)
+T1 &f686(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2293,7 +2587,7 @@ T1 &f625(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f626(const std::optional<T1> &a0)
+T1 &f687(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2307,7 +2601,7 @@ T1 &f626(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f627(const std::optional<T1> &a0)
+bool f688(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2320,7 +2614,7 @@ bool f627(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f628(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f689(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2333,7 +2627,7 @@ std::add_pointer_t<T1 const> f628(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f629(std::optional<T1> &a0)
+std::add_pointer_t<T1> f690(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2346,7 +2640,7 @@ std::add_pointer_t<T1> f629(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f630(const std::optional<T1> &a0)
+T1 const &f691(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2359,7 +2653,7 @@ T1 const &f630(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f631(std::optional<T1> &a0)
+T1 &f692(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2372,7 +2666,7 @@ T1 &f631(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f632(std::optional<T1> &&a0)
+T1 &&f693(std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2385,7 +2679,7 @@ T1 &&f632(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f633(const std::optional<T1> &&a0)
+T1 const &&f694(const std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2398,7 +2692,7 @@ T1 const &&f633(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f634(const std::optional<T1> &a0)
+T1 const &f695(const std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2411,7 +2705,7 @@ T1 const &f634(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f635(std::optional<T1> &a0)
+T1 &f696(std::optional<T1> &a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2424,7 +2718,7 @@ T1 &f635(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f636(std::optional<T1> &&a0)
+T1 &&f697(std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2437,7 +2731,7 @@ T1 &&f636(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f637(const std::optional<T1> &&a0)
+T1 const &&f698(const std::optional<T1> &&a0)
   requires(std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
             std::is_trivially_copy_constructible_v<T1> &&
@@ -2450,7 +2744,35 @@ T1 const &&f637(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f638(std::optional<T1> &a0)
+void f699(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f700(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f701(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2464,7 +2786,7 @@ void f638(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f639(const std::optional<T1> &a0)
+bool f702(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2478,7 +2800,7 @@ bool f639(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f640(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f703(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2492,7 +2814,7 @@ std::add_pointer_t<T1> f640(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f641(const std::optional<T1> &a0)
+T1 &f704(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2506,7 +2828,7 @@ T1 &f641(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f642(const std::optional<T1> &a0)
+T1 &f705(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2520,7 +2842,7 @@ T1 &f642(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f643(const std::optional<T1> &a0)
+bool f706(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2534,7 +2856,7 @@ bool f643(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1 const> f644(const std::optional<T1> &a0)
+std::add_pointer_t<T1 const> f707(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2548,7 +2870,7 @@ std::add_pointer_t<T1 const> f644(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f645(std::optional<T1> &a0)
+std::add_pointer_t<T1> f708(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2562,7 +2884,7 @@ std::add_pointer_t<T1> f645(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 const &f646(const std::optional<T1> &a0)
+T1 const &f709(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2576,7 +2898,7 @@ T1 const &f646(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f647(std::optional<T1> &a0)
+T1 &f710(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2590,7 +2912,7 @@ T1 &f647(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f648(std::optional<T1> &&a0)
+T1 &&f711(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2604,7 +2926,7 @@ T1 &&f648(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f649(const std::optional<T1> &&a0)
+T1 const &&f712(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2618,7 +2940,7 @@ T1 const &&f649(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &f650(const std::optional<T1> &a0)
+T1 const &f713(const std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2632,7 +2954,7 @@ T1 const &f650(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f651(std::optional<T1> &a0)
+T1 &f714(std::optional<T1> &a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2646,7 +2968,7 @@ T1 &f651(std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &&f652(std::optional<T1> &&a0)
+T1 &&f715(std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2660,7 +2982,7 @@ T1 &&f652(std::optional<T1> &&a0)
 }
 
 template <typename T1>
-T1 const &&f653(const std::optional<T1> &&a0)
+T1 const &&f716(const std::optional<T1> &&a0)
   requires(std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
           ((std::is_trivially_destructible_v<T1> &&
@@ -2674,7 +2996,37 @@ T1 const &&f653(const std::optional<T1> &&a0)
 }
 
 template <typename T1>
-void f654(std::optional<T1> &a0)
+void f717(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == false) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f718(std::optional<T1> &a0)
+  requires(std::is_trivially_destructible<T1>::value == true) &&
+          (std::is_trivially_copy_constructible_v<T1> == false) &&
+          (std::is_trivially_move_constructible_v<T1> == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_copy_constructible_v<T1> &&
+            std::is_trivially_copy_assignable_v<T1>) == false) &&
+          ((std::is_trivially_destructible_v<T1> &&
+            std::is_trivially_move_constructible_v<T1> &&
+            std::is_trivially_move_assignable_v<T1>) == false)
+{
+  return a0.reset();
+}
+
+template <typename T1>
+void f719(std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -2689,7 +3041,7 @@ void f654(std::optional<T1> &a0)
 }
 
 template <typename T1>
-bool f655(const std::optional<T1> &a0)
+bool f720(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -2704,7 +3056,7 @@ bool f655(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-std::add_pointer_t<T1> f656(const std::optional<T1> &a0)
+std::add_pointer_t<T1> f721(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -2719,7 +3071,7 @@ std::add_pointer_t<T1> f656(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f657(const std::optional<T1> &a0)
+T1 &f722(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&
@@ -2734,7 +3086,7 @@ T1 &f657(const std::optional<T1> &a0)
 }
 
 template <typename T1>
-T1 &f658(const std::optional<T1> &a0)
+T1 &f723(const std::optional<T1> &a0)
   requires(std::is_reference<T1>::value == true) &&
           (std::is_trivially_copy_constructible_v<T1> == false) &&
           (std::is_trivially_move_constructible_v<T1> == false) &&

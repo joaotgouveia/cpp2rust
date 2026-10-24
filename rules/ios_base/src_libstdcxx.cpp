@@ -189,44 +189,50 @@ std::ios_base::Init &f65(std::ios_base::Init &a0,
   return a0.operator=(a1);
 }
 
-const std::error_category &f66() { return std::iostream_category(); }
+std::ios_base::event f66() { return std::ios_base::erase_event; }
 
-std::ios_base &f67(std::ios_base &a0) { return std::left(a0); }
+std::ios_base::event f67() { return std::ios_base::imbue_event; }
 
-std::error_code f68(std::io_errc a0) { return std::make_error_code(a0); }
+std::ios_base::event f68() { return std::ios_base::copyfmt_event; }
 
-std::error_condition f69(std::io_errc a0) {
+const std::error_category &f69() { return std::iostream_category(); }
+
+std::ios_base &f70(std::ios_base &a0) { return std::left(a0); }
+
+std::error_code f71(std::io_errc a0) { return std::make_error_code(a0); }
+
+std::error_condition f72(std::io_errc a0) {
   return std::make_error_condition(a0);
 }
 
-std::ios_base &f70(std::ios_base &a0) { return std::noboolalpha(a0); }
+std::ios_base &f73(std::ios_base &a0) { return std::noboolalpha(a0); }
 
-std::ios_base &f71(std::ios_base &a0) { return std::noshowbase(a0); }
+std::ios_base &f74(std::ios_base &a0) { return std::noshowbase(a0); }
 
-std::ios_base &f72(std::ios_base &a0) { return std::noshowpoint(a0); }
+std::ios_base &f75(std::ios_base &a0) { return std::noshowpoint(a0); }
 
-std::ios_base &f73(std::ios_base &a0) { return std::noshowpos(a0); }
+std::ios_base &f76(std::ios_base &a0) { return std::noshowpos(a0); }
 
-std::ios_base &f74(std::ios_base &a0) { return std::noskipws(a0); }
+std::ios_base &f77(std::ios_base &a0) { return std::noskipws(a0); }
 
-std::ios_base &f75(std::ios_base &a0) { return std::nounitbuf(a0); }
+std::ios_base &f78(std::ios_base &a0) { return std::nounitbuf(a0); }
 
-std::ios_base &f76(std::ios_base &a0) { return std::nouppercase(a0); }
+std::ios_base &f79(std::ios_base &a0) { return std::nouppercase(a0); }
 
-std::ios_base &f77(std::ios_base &a0) { return std::oct(a0); }
+std::ios_base &f80(std::ios_base &a0) { return std::oct(a0); }
 
-std::ios_base &f78(std::ios_base &a0) { return std::right(a0); }
+std::ios_base &f81(std::ios_base &a0) { return std::right(a0); }
 
-std::ios_base &f79(std::ios_base &a0) { return std::scientific(a0); }
+std::ios_base &f82(std::ios_base &a0) { return std::scientific(a0); }
 
-std::ios_base &f80(std::ios_base &a0) { return std::showbase(a0); }
+std::ios_base &f83(std::ios_base &a0) { return std::showbase(a0); }
 
-std::ios_base &f81(std::ios_base &a0) { return std::showpoint(a0); }
+std::ios_base &f84(std::ios_base &a0) { return std::showpoint(a0); }
 
-std::ios_base &f82(std::ios_base &a0) { return std::showpos(a0); }
+std::ios_base &f85(std::ios_base &a0) { return std::showpos(a0); }
 
-std::ios_base &f83(std::ios_base &a0) { return std::skipws(a0); }
+std::ios_base &f86(std::ios_base &a0) { return std::skipws(a0); }
 
-std::ios_base &f84(std::ios_base &a0) { return std::unitbuf(a0); }
+std::ios_base &f87(std::ios_base &a0) { return std::unitbuf(a0); }
 
-std::ios_base &f85(std::ios_base &a0) { return std::uppercase(a0); }
+std::ios_base &f88(std::ios_base &a0) { return std::uppercase(a0); }

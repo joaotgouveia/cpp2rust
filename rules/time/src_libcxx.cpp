@@ -18,3 +18,13 @@ std::time_base &f4(std::time_base &a0, const std::time_base &a1) {
 std::time_base &f5(std::time_base &a0, std::time_base &&a1) {
   return a0.operator=(std::move(a1));
 }
+
+std::time_base::dateorder f6() { return std::time_base::no_order; }
+
+std::time_base::dateorder f7() { return std::time_base::dmy; }
+
+std::time_base::dateorder f8() { return std::time_base::mdy; }
+
+std::time_base::dateorder f9() { return std::time_base::ymd; }
+
+std::time_base::dateorder f10() { return std::time_base::ydm; }

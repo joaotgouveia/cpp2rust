@@ -191,30 +191,26 @@ void f63(std::basic_ofstream<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-typename std::basic_ofstream<T1, T2>::fmtflags
-f64(const std::basic_ofstream<T1, T2> &a0) {
+std::ios_base::fmtflags f64(const std::basic_ofstream<T1, T2> &a0) {
   return a0.flags();
 }
 
 template <typename T1, typename T2>
-typename std::basic_ofstream<T1, T2>::fmtflags
-f65(std::basic_ofstream<T1, T2> &a0,
-    typename std::basic_ofstream<T1, T2>::fmtflags a1) {
+std::ios_base::fmtflags f65(std::basic_ofstream<T1, T2> &a0,
+                            typename std::basic_ofstream<T1, T2>::fmtflags a1) {
   return a0.flags(a1);
 }
 
 template <typename T1, typename T2>
-typename std::basic_ofstream<T1, T2>::fmtflags
-f66(std::basic_ofstream<T1, T2> &a0,
-    typename std::basic_ofstream<T1, T2>::fmtflags a1) {
+std::ios_base::fmtflags f66(std::basic_ofstream<T1, T2> &a0,
+                            typename std::basic_ofstream<T1, T2>::fmtflags a1) {
   return a0.setf(a1);
 }
 
 template <typename T1, typename T2>
-typename std::basic_ofstream<T1, T2>::fmtflags
-f67(std::basic_ofstream<T1, T2> &a0,
-    typename std::basic_ofstream<T1, T2>::fmtflags a1,
-    typename std::basic_ofstream<T1, T2>::fmtflags a2) {
+std::ios_base::fmtflags f67(std::basic_ofstream<T1, T2> &a0,
+                            typename std::basic_ofstream<T1, T2>::fmtflags a1,
+                            typename std::basic_ofstream<T1, T2>::fmtflags a2) {
   return a0.setf(a1, a2);
 }
 

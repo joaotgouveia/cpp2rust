@@ -360,6 +360,10 @@ f56(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
   return a0.template emplace<T3...>(a1, std::forward<T3>(a2)...);
 }
 
+template <typename T1, typename T2> T2 f57(const std::vector<T1, T2> &a0) {
+  return a0.get_allocator();
+}
+
 template <typename T1, typename T2>
 using t27 = typename std::vector<T1, T2>::iterator::iterator_category;
 

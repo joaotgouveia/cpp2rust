@@ -49,12 +49,82 @@ std::size_t f248(const std::hash<T1> &a0, T1 a1) {
 }
 
 template <typename T1,
+          typename std::enable_if<(sizeof(T1) / sizeof(std::size_t) == 2UL),
+                                  int>::type T2 = 0,
+          typename std::enable_if<
+              (std::is_same<void, typename std::enable_if<
+                                      std::is_integral<T1>::value &&
+                                          std::__is_unqualified_v<T1> &&
+                                          (sizeof(T1) > sizeof(std::size_t)),
+                                      void>::type>::value),
+              int>::type T3 = 0>
+std::size_t f249(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1,
+          typename std::enable_if<(sizeof(T1) / sizeof(std::size_t) == 0UL),
+                                  int>::type T2 = 0,
+          typename std::enable_if<
+              (std::is_same<void, typename std::enable_if<
+                                      std::is_integral<T1>::value &&
+                                          std::__is_unqualified_v<T1> &&
+                                          (sizeof(T1) > sizeof(std::size_t)),
+                                      void>::type>::value),
+              int>::type T3 = 0>
+std::size_t f250(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1,
+          typename std::enable_if<(sizeof(T1) / sizeof(std::size_t) == 1UL),
+                                  int>::type T2 = 0,
+          typename std::enable_if<
+              (std::is_same<void, typename std::enable_if<
+                                      std::is_integral<T1>::value &&
+                                          std::__is_unqualified_v<T1> &&
+                                          (sizeof(T1) > sizeof(std::size_t)),
+                                      void>::type>::value),
+              int>::type T3 = 0>
+std::size_t f251(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1,
+          typename std::enable_if<(sizeof(T1) / sizeof(std::size_t) == 3UL),
+                                  int>::type T2 = 0,
+          typename std::enable_if<
+              (std::is_same<void, typename std::enable_if<
+                                      std::is_integral<T1>::value &&
+                                          std::__is_unqualified_v<T1> &&
+                                          (sizeof(T1) > sizeof(std::size_t)),
+                                      void>::type>::value),
+              int>::type T3 = 0>
+std::size_t f252(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1,
+          typename std::enable_if<(sizeof(T1) / sizeof(std::size_t) == 4UL),
+                                  int>::type T2 = 0,
+          typename std::enable_if<
+              (std::is_same<void, typename std::enable_if<
+                                      std::is_integral<T1>::value &&
+                                          std::__is_unqualified_v<T1> &&
+                                          (sizeof(T1) > sizeof(std::size_t)),
+                                      void>::type>::value),
+              int>::type T3 = 0>
+std::size_t f253(const std::hash<T1> &a0, T1 a1) {
+  return a0.operator()(a1);
+}
+
+template <typename T1,
           typename std::enable_if<
               (std::is_same<void, typename std::enable_if<
                                       std::is_floating_point<T1>::value &&
                                           std::__is_unqualified_v<T1>,
                                       void>::type>::value),
               int>::type T2 = 0>
-std::size_t f249(const std::hash<T1> &a0, T1 a1) {
+std::size_t f254(const std::hash<T1> &a0, T1 a1) {
   return a0.operator()(a1);
 }

@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <cstddef>
 #include <flat_map>
 #include <initializer_list>
@@ -57,3 +58,63 @@ using t16 = typename std::flat_multimap<T1, T2, T3, T4, T5>::value_compare;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t17 = typename std::flat_multimap<T1, T2, T3, T4, T5>::containers;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+bool f1(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.empty();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::size_t f2(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.size();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+std::size_t f3(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.max_size();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f4(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
+        std::initializer_list<std::pair<T1, T2>> a1) {
+  return a0.insert(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f5(std::flat_multimap<T1, T2, T3, T4, T5> &a0, std::sorted_equivalent_t a1,
+        std::initializer_list<std::pair<T1, T2>> a2) {
+  return a0.insert(std::move(a1), a2);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_multimap<T1, T2, T3, T4, T5>::containers
+f6(std::flat_multimap<T1, T2, T3, T4, T5> &&a0) {
+  return std::move(a0).extract();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f7(std::flat_multimap<T1, T2, T3, T4, T5> &a0, T4 &&a1, T5 &&a2) {
+  return a0.replace(std::move(a1), std::move(a2));
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f8(std::flat_multimap<T1, T2, T3, T4, T5> &a0,
+        std::flat_multimap<T1, T2, T3, T4, T5> &a1) {
+  return a0.swap(a1);
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+void f9(std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.clear();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+T3 f10(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.key_comp();
+}
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+typename std::flat_multimap<T1, T2, T3, T4, T5>::value_compare
+f11(const std::flat_multimap<T1, T2, T3, T4, T5> &a0) {
+  return a0.value_comp();
+}

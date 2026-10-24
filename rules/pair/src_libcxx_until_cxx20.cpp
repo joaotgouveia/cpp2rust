@@ -3,27 +3,27 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f36(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+bool f40(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator!= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f37(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+bool f41(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator< <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f38(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+bool f42(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator<= <T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f39(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+bool f43(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator><T1, T2, T3, T4>(a0, a1);
 }
 
 template <typename T1, typename T2, typename T3, typename T4>
-bool f40(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+bool f44(const std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return std::operator>= <T1, T2, T3, T4>(a0, a1);
 }
 
@@ -35,7 +35,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
                                      std::is_same<T4, const T2 &>::value)),
                                   int>::type T6 = 0>
-std::pair<T1, T2> f41(T3 &&a0, T4 &&a1) {
+std::pair<T1, T2> f45(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
 
@@ -48,7 +48,7 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                      std::is_same<T4, T2>::value)),
                                   int>::type T6 = 0>
-std::pair<T1, T2> f42(const std::pair<T3, T4> &a0) {
+std::pair<T1, T2> f46(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
 
@@ -60,6 +60,6 @@ template <typename T1, typename T2, typename T3, typename T4,
           typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                      std::is_same<T4, T2>::value)),
                                   int>::type T6 = 0>
-std::pair<T1, T2> f43(std::pair<T3, T4> &&a0) {
+std::pair<T1, T2> f47(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }

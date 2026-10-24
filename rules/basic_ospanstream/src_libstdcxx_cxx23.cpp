@@ -318,27 +318,26 @@ void f51(std::basic_ospanstream<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::fmtflags
-f52(const std::basic_ospanstream<T1, T2> &a0) {
+std::ios_base::fmtflags f52(const std::basic_ospanstream<T1, T2> &a0) {
   return a0.flags();
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::fmtflags
+std::ios_base::fmtflags
 f53(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1) {
   return a0.flags(a1);
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::fmtflags
+std::ios_base::fmtflags
 f54(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1) {
   return a0.setf(a1);
 }
 
 template <typename T1, typename T2>
-typename std::basic_ospanstream<T1, T2>::fmtflags
+std::ios_base::fmtflags
 f55(std::basic_ospanstream<T1, T2> &a0,
     typename std::basic_ospanstream<T1, T2>::fmtflags a1,
     typename std::basic_ospanstream<T1, T2>::fmtflags a2) {

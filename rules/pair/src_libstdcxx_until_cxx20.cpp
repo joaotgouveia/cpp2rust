@@ -76,6 +76,68 @@ std::pair<T1, T2> f10(const std::pair<T3, T4> &a0) {
   return std::pair<T1, T2>(a0);
 }
 
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__and_<std::__not_<std::is_reference<T3>>,
+                          std::is_pointer<T2>, std::is_constructible<T1, T3>,
+                          std::__not_<std::is_constructible<T1, const T3 &>>,
+                          std::is_convertible<T3, T1>>::value,
+              bool>
+              T4 = true,
+          typename... Args>
+std::pair<T1, T2>
+f11(T3 &&a0, typename std::pair<T1, T2>::__zero_as_null_pointer_constant a1,
+    Args... args) {
+  return std::pair<T1, T2>(std::forward<T3>(a0), a1, args...);
+}
+
+template <typename T1, typename T2, typename T3,
+          std::__enable_if_t<
+              std::__and_<std::__not_<std::is_reference<T3>>,
+                          std::is_pointer<T2>, std::is_constructible<T1, T3>,
+                          std::__not_<std::is_constructible<T1, const T3 &>>,
+                          std::__not_<std::is_convertible<T3, T1>>>::value,
+              bool>
+              T4 = false,
+          typename... Args>
+std::pair<T1, T2>
+f12(T3 &&a0, typename std::pair<T1, T2>::__zero_as_null_pointer_constant a1,
+    Args... args) {
+  return std::pair<T1, T2>(std::forward<T3>(a0), a1, args...);
+}
+
+template <
+    typename T1, typename T2, typename T3,
+    std::__enable_if_t<
+        std::__and_<std::is_pointer<T1>, std::__not_<std::is_reference<T3>>,
+                    std::is_constructible<T2, T3>,
+                    std::__not_<std::is_constructible<T2, const T3 &>>,
+                    std::is_convertible<T3, T2>>::value,
+        bool>
+        T4 = true,
+    typename... Args>
+std::pair<T1, T2>
+f13(typename std::pair<T1, T2>::__zero_as_null_pointer_constant a0, T3 &&a1,
+    Args... args) {
+  return std::pair<T1, T2>(a0, std::forward<T3>(a1), args...);
+}
+
+template <
+    typename T1, typename T2, typename T3,
+    std::__enable_if_t<
+        std::__and_<std::is_pointer<T1>, std::__not_<std::is_reference<T3>>,
+                    std::is_constructible<T2, T3>,
+                    std::__not_<std::is_constructible<T2, const T3 &>>,
+                    std::__not_<std::is_convertible<T3, T2>>>::value,
+        bool>
+        T4 = false,
+    typename... Args>
+std::pair<T1, T2>
+f14(typename std::pair<T1, T2>::__zero_as_null_pointer_constant a0, T3 &&a1,
+    Args... args) {
+  return std::pair<T1, T2>(a0, std::forward<T3>(a1), args...);
+}
+
 template <
     typename T1, typename T2, typename T3, typename T4,
     typename std::enable_if<
@@ -86,7 +148,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
                                std::is_same<T4, const T2 &>::value)),
                             int>::type T6 = 0>
-std::pair<T1, T2> f11(T3 &&a0, T4 &&a1) {
+std::pair<T1, T2> f15(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
 
@@ -100,7 +162,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, const T1 &>::value &&
                                std::is_same<T4, const T2 &>::value)),
                             int>::type T6 = 0>
-std::pair<T1, T2> f12(T3 &&a0, T4 &&a1) {
+std::pair<T1, T2> f16(T3 &&a0, T4 &&a1) {
   return std::pair<T1, T2>(std::forward<T3>(a0), std::forward<T4>(a1));
 }
 
@@ -116,7 +178,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                std::is_same<T4, T2>::value)),
                             int>::type T6 = 0>
-std::pair<T1, T2> f13(std::pair<T3, T4> &&a0) {
+std::pair<T1, T2> f17(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }
 
@@ -132,7 +194,7 @@ template <
     typename std::enable_if<(!(std::is_same<T3, T1>::value &&
                                std::is_same<T4, T2>::value)),
                             int>::type T6 = 0>
-std::pair<T1, T2> f14(std::pair<T3, T4> &&a0) {
+std::pair<T1, T2> f18(std::pair<T3, T4> &&a0) {
   return std::pair<T1, T2>(std::move(a0));
 }
 
@@ -141,7 +203,7 @@ typename std::enable_if<
     std::__and_<std::is_assignable<T1 &, const T3 &>,
                 std::is_assignable<T2 &, const T4 &>>::value,
     std::pair<T1, T2> &>::type
-f15(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
+f19(std::pair<T1, T2> &a0, const std::pair<T3, T4> &a1) {
   return a0.template operator= <T3, T4>(a1);
 }
 
@@ -149,6 +211,6 @@ template <typename T1, typename T2, typename T3, typename T4>
 typename std::enable_if<std::__and_<std::is_assignable<T1 &, T3 &&>,
                                     std::is_assignable<T2 &, T4 &&>>::value,
                         std::pair<T1, T2> &>::type
-f16(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
+f20(std::pair<T1, T2> &a0, std::pair<T3, T4> &&a1) {
   return a0.template operator= <T3, T4>(std::move(a1));
 }

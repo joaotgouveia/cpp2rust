@@ -1,5 +1,5 @@
 #include <condition_variable>
-#include <ios>
+#include <stdlib.h>
 #include <utility>
 
 using t1 = std::adopt_lock_t;
@@ -54,7 +54,7 @@ bool f13(std::mutex &a0) { return a0.try_lock(); }
 
 void f14(std::mutex &a0) { return a0.unlock(); }
 
-__gthread_mutex_t *f15(std::mutex &a0) { return a0.native_handle(); }
+pthread_mutex_t *f15(std::mutex &a0) { return a0.native_handle(); }
 
 using t5 = std::try_to_lock_t;
 

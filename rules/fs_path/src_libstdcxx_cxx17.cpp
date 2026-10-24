@@ -391,20 +391,32 @@ std::filesystem::path::value_type f88() {
   return std::filesystem::path::preferred_separator;
 }
 
-void f89(std::filesystem::path &a0, std::filesystem::path &a1) {
+std::filesystem::path::format f89() {
+  return std::filesystem::path::native_format;
+}
+
+std::filesystem::path::format f90() {
+  return std::filesystem::path::generic_format;
+}
+
+std::filesystem::path::format f91() {
+  return std::filesystem::path::auto_format;
+}
+
+void f92(std::filesystem::path &a0, std::filesystem::path &a1) {
   return std::filesystem::swap(a0, a1);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f90(const T1 &a0) {
+std::filesystem::path f93(const T1 &a0) {
   return std::filesystem::u8path<T1>(a0);
 }
 
 template <typename T1, typename T2 = std::filesystem::__detail::_Path2<T1>,
           typename T3 =
               std::filesystem::__detail::__value_type_is_char_or_char8_t<T1>>
-std::filesystem::path f91(T1 a0, T1 a1) {
+std::filesystem::path f94(T1 a0, T1 a1) {
   return std::filesystem::u8path<T1>(a0, a1);
 }

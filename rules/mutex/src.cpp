@@ -1,7 +1,7 @@
 #include <atomic>
 #include <chrono>
-#include <ios>
 #include <mutex>
+#include <stdlib.h>
 #include <utility>
 
 using t1 = std::recursive_mutex;
@@ -16,44 +16,46 @@ bool f3(std::recursive_mutex &a0) { return a0.try_lock(); }
 
 void f4(std::recursive_mutex &a0) { return a0.unlock(); }
 
+pthread_mutex_t *f5(std::recursive_mutex &a0) { return a0.native_handle(); }
+
 using t3 = std::recursive_timed_mutex;
 
-std::recursive_timed_mutex f5() { return {}; }
+std::recursive_timed_mutex f6() { return {}; }
 
-void f6(std::recursive_timed_mutex &a0) { return a0.lock(); }
+void f7(std::recursive_timed_mutex &a0) { return a0.lock(); }
 
-bool f7(std::recursive_timed_mutex &a0) { return a0.try_lock(); }
+bool f8(std::recursive_timed_mutex &a0) { return a0.try_lock(); }
 
-void f8(std::recursive_timed_mutex &a0) { return a0.unlock(); }
+void f9(std::recursive_timed_mutex &a0) { return a0.unlock(); }
 
 template <typename T1, typename T2>
-bool f9(std::recursive_timed_mutex &a0,
-        const std::chrono::duration<T1, T2> &a1) {
+bool f10(std::recursive_timed_mutex &a0,
+         const std::chrono::duration<T1, T2> &a1) {
   return a0.template try_lock_for<T1, T2>(a1);
 }
 
 template <typename T1, typename T2>
-bool f10(std::recursive_timed_mutex &a0,
+bool f11(std::recursive_timed_mutex &a0,
          const std::chrono::time_point<T1, T2> &a1) {
   return a0.template try_lock_until<T1, T2>(a1);
 }
 
 using t4 = std::timed_mutex;
 
-std::timed_mutex f11() { return {}; }
+std::timed_mutex f12() { return {}; }
 
-void f12(std::timed_mutex &a0) { return a0.lock(); }
+void f13(std::timed_mutex &a0) { return a0.lock(); }
 
-bool f13(std::timed_mutex &a0) { return a0.try_lock(); }
+bool f14(std::timed_mutex &a0) { return a0.try_lock(); }
 
-void f14(std::timed_mutex &a0) { return a0.unlock(); }
+void f15(std::timed_mutex &a0) { return a0.unlock(); }
 
 template <typename T1, typename T2>
-bool f15(std::timed_mutex &a0, const std::chrono::duration<T1, T2> &a1) {
+bool f16(std::timed_mutex &a0, const std::chrono::duration<T1, T2> &a1) {
   return a0.template try_lock_for<T1, T2>(a1);
 }
 
 template <typename T1, typename T2>
-bool f16(std::timed_mutex &a0, const std::chrono::time_point<T1, T2> &a1) {
+bool f17(std::timed_mutex &a0, const std::chrono::time_point<T1, T2> &a1) {
   return a0.template try_lock_until<T1, T2>(a1);
 }

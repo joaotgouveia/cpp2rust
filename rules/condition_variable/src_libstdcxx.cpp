@@ -1,11 +1,7 @@
 #include <chrono>
 #include <condition_variable>
-#include <ios>
+#include <stdlib.h>
 #include <utility>
-
-__gthread_cond_t *f25(std::condition_variable &a0) {
-  return a0.native_handle();
-}
 
 template <typename T1>
 std::cv_status

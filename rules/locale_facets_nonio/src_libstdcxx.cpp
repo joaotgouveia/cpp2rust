@@ -66,22 +66,42 @@ std::money_base::pattern &f15(std::money_base::pattern &a0,
   return a0.operator=(std::move(a1));
 }
 
+std::money_base::part f16() { return std::money_base::none; }
+
+std::money_base::part f17() { return std::money_base::space; }
+
+std::money_base::part f18() { return std::money_base::symbol; }
+
+std::money_base::part f19() { return std::money_base::sign; }
+
+std::money_base::part f20() { return std::money_base::value; }
+
 using t6 = std::time_base;
 
 using t7 = std::time_base::dateorder;
 
-std::time_base f16() { return std::time_base(); }
+std::time_base f21() { return std::time_base(); }
 
-std::time_base f17(const std::time_base &a0) { return std::time_base(a0); }
+std::time_base f22(const std::time_base &a0) { return std::time_base(a0); }
 
-std::time_base f18(std::time_base &&a0) {
+std::time_base f23(std::time_base &&a0) {
   return std::time_base(std::move(a0));
 }
 
-std::time_base &f19(std::time_base &a0, const std::time_base &a1) {
+std::time_base &f24(std::time_base &a0, const std::time_base &a1) {
   return a0.operator=(a1);
 }
 
-std::time_base &f20(std::time_base &a0, std::time_base &&a1) {
+std::time_base &f25(std::time_base &a0, std::time_base &&a1) {
   return a0.operator=(std::move(a1));
 }
+
+std::time_base::dateorder f26() { return std::time_base::no_order; }
+
+std::time_base::dateorder f27() { return std::time_base::dmy; }
+
+std::time_base::dateorder f28() { return std::time_base::mdy; }
+
+std::time_base::dateorder f29() { return std::time_base::ymd; }
+
+std::time_base::dateorder f30() { return std::time_base::ydm; }

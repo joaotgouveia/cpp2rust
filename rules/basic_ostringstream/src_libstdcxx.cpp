@@ -187,27 +187,26 @@ void f64(std::basic_ostringstream<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_ostringstream<T1, T2, T3>::fmtflags
-f65(const std::basic_ostringstream<T1, T2, T3> &a0) {
+std::ios_base::fmtflags f65(const std::basic_ostringstream<T1, T2, T3> &a0) {
   return a0.flags();
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_ostringstream<T1, T2, T3>::fmtflags
+std::ios_base::fmtflags
 f66(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1) {
   return a0.flags(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_ostringstream<T1, T2, T3>::fmtflags
+std::ios_base::fmtflags
 f67(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1) {
   return a0.setf(a1);
 }
 
 template <typename T1, typename T2, typename T3>
-typename std::basic_ostringstream<T1, T2, T3>::fmtflags
+std::ios_base::fmtflags
 f68(std::basic_ostringstream<T1, T2, T3> &a0,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a1,
     typename std::basic_ostringstream<T1, T2, T3>::fmtflags a2) {
