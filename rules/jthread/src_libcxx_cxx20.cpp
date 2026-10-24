@@ -46,21 +46,3 @@ std::jthread f14(T1 &&a0, T2 &&...a1)
 }
 
 void f15(std::jthread &a0, std::jthread &a1) { return swap(a0, a1); }
-
-std::jthread::id f16() { return std::jthread::id(); }
-
-std::jthread::id f17(const std::jthread::id &a0) {
-  return std::jthread::id(a0);
-}
-
-std::jthread::id f18(std::jthread::id &&a0) {
-  return std::jthread::id(std::move(a0));
-}
-
-std::jthread::id &f19(std::jthread::id &a0, const std::jthread::id &a1) {
-  return a0.operator=(a1);
-}
-
-std::jthread::id &f20(std::jthread::id &a0, std::jthread::id &&a1) {
-  return a0.operator=(std::move(a1));
-}

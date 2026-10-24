@@ -13,6 +13,9 @@ template <typename T1> using t3 = typename std::regex_traits<T1>::string_type;
 
 template <typename T1> using t4 = typename std::regex_traits<T1>::locale_type;
 
+template <typename T1>
+using t5 = typename std::regex_traits<T1>::char_class_type;
+
 template <typename T1> std::regex_traits<T1> f1() {
   return std::regex_traits<T1>();
 }

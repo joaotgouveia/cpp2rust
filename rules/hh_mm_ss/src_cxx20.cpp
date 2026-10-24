@@ -3,6 +3,8 @@
 
 template <typename T1> using t1 = std::chrono::hh_mm_ss<T1>;
 
+template <typename T1> using t2 = typename std::chrono::hh_mm_ss<T1>::precision;
+
 template <typename T1> std::chrono::hh_mm_ss<T1> f1() {
   return std::chrono::hh_mm_ss<T1>();
 }

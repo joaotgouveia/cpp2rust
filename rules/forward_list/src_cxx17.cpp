@@ -8,4 +8,4 @@ T1 &f61(std::forward_list<T1, T2> &a0, T3 &&...a1) {
   return a0.template emplace_front<T3...>(std::forward<T3>(a1)...);
 }
 
-template <typename T1> using t10 = std::pmr::forward_list<T1>;
+template <typename T1> using t12 = std::pmr::forward_list<T1>;

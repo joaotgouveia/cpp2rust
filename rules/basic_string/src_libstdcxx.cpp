@@ -130,10 +130,10 @@ f162(std::basic_string<T1, T2, T3> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t23 = typename std::basic_string<T1, T2, T3>::iterator::iterator_type;
+using t27 = typename std::basic_string<T1, T2, T3>::iterator::iterator_type;
 
 template <typename T1, typename T2, typename T3>
-using t24 =
+using t28 =
     typename std::basic_string<T1, T2, T3>::const_iterator::iterator_type;
 
 template <typename T1, typename T2, typename T3>

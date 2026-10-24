@@ -122,31 +122,31 @@ f112(std::list<T1, T2> &a0, typename std::list<T1, T2>::const_iterator a1,
 }
 
 template <typename T1, typename T2>
-using t11 = typename std::list<T1, T2>::iterator::iterator_category;
+using t15 = typename std::list<T1, T2>::iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t12 = typename std::list<T1, T2>::iterator::value_type;
+using t16 = typename std::list<T1, T2>::iterator::value_type;
 
 template <typename T1, typename T2>
-using t13 = typename std::list<T1, T2>::iterator::reference;
+using t17 = typename std::list<T1, T2>::iterator::reference;
 
 template <typename T1, typename T2>
-using t14 = typename std::list<T1, T2>::iterator::pointer;
+using t18 = typename std::list<T1, T2>::iterator::pointer;
 
 template <typename T1, typename T2>
-using t15 = typename std::list<T1, T2>::iterator::difference_type;
+using t19 = typename std::list<T1, T2>::iterator::difference_type;
 
 template <typename T1, typename T2>
-using t16 = typename std::list<T1, T2>::const_iterator::iterator_category;
+using t20 = typename std::list<T1, T2>::const_iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t17 = typename std::list<T1, T2>::const_iterator::value_type;
+using t21 = typename std::list<T1, T2>::const_iterator::value_type;
 
 template <typename T1, typename T2>
-using t18 = typename std::list<T1, T2>::const_iterator::reference;
+using t22 = typename std::list<T1, T2>::const_iterator::reference;
 
 template <typename T1, typename T2>
-using t19 = typename std::list<T1, T2>::const_iterator::pointer;
+using t23 = typename std::list<T1, T2>::const_iterator::pointer;
 
 template <typename T1, typename T2>
-using t20 = typename std::list<T1, T2>::const_iterator::difference_type;
+using t24 = typename std::list<T1, T2>::const_iterator::difference_type;

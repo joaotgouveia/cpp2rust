@@ -4,6 +4,9 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
+using t17 = typename std::multiset<T1, T2, T3>::node_type;
+
+template <typename T1, typename T2, typename T3>
 typename std::multiset<T1, T2, T3>::node_type
 f43(std::multiset<T1, T2, T3> &a0,
     typename std::multiset<T1, T2, T3>::const_iterator a1) {

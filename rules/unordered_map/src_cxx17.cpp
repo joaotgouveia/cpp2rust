@@ -4,10 +4,16 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t14 = std::pmr::unordered_map<T1, T2, T3, T4>;
+using t18 = std::pmr::unordered_map<T1, T2, T3, T4>;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t15 = std::pmr::unordered_multimap<T1, T2, T3, T4>;
+using t19 = std::pmr::unordered_multimap<T1, T2, T3, T4>;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t20 = typename std::unordered_map<T1, T2, T3, T4, T5>::node_type;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t21 = typename std::unordered_map<T1, T2, T3, T4, T5>::insert_return_type;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_map<T1, T2, T3, T4, T5>::node_type

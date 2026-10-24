@@ -61,10 +61,23 @@ template <typename T1, typename T2, typename T3, typename T4, typename T5>
 using t11 = typename std::unordered_map<T1, T2, T3, T4, T5>::const_reference;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-using t12 = typename std::unordered_map<T1, T2, T3, T4, T5>::size_type;
+using t12 = typename std::unordered_map<T1, T2, T3, T4, T5>::iterator;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
-using t13 = typename std::unordered_map<T1, T2, T3, T4, T5>::difference_type;
+using t13 = typename std::unordered_map<T1, T2, T3, T4, T5>::const_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t14 = typename std::unordered_map<T1, T2, T3, T4, T5>::local_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t15 =
+    typename std::unordered_map<T1, T2, T3, T4, T5>::const_local_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t16 = typename std::unordered_map<T1, T2, T3, T4, T5>::size_type;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t17 = typename std::unordered_map<T1, T2, T3, T4, T5>::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
 std::unordered_map<T1, T2, T3, T4, T5> f7() {

@@ -1,5 +1,7 @@
 #include <algorithm>
+#include <bitset>
 #include <initializer_list>
+#include <iterator>
 #include <utility>
 #include <vector>
 
@@ -12,26 +14,28 @@ template <typename T1> using t3 = typename std::vector<bool, T1>::size_type;
 template <typename T1>
 using t4 = typename std::vector<bool, T1>::difference_type;
 
-template <typename T1>
-using t5 = typename std::vector<bool, T1>::const_reference;
-
-template <typename T1> using t6 = typename std::vector<bool, T1>::pointer;
-
-template <typename T1> using t7 = typename std::vector<bool, T1>::const_pointer;
-
-template <typename T1> using t8 = typename std::vector<bool, T1>::iterator;
+template <typename T1> using t5 = typename std::vector<bool, T1>::reference;
 
 template <typename T1>
-using t9 = typename std::vector<bool, T1>::const_iterator;
+using t6 = typename std::vector<bool, T1>::const_reference;
+
+template <typename T1> using t7 = typename std::vector<bool, T1>::pointer;
+
+template <typename T1> using t8 = typename std::vector<bool, T1>::const_pointer;
+
+template <typename T1> using t9 = typename std::vector<bool, T1>::iterator;
 
 template <typename T1>
-using t10 = typename std::vector<bool, T1>::const_reverse_iterator;
+using t10 = typename std::vector<bool, T1>::const_iterator;
 
 template <typename T1>
-using t11 = typename std::vector<bool, T1>::reverse_iterator;
+using t11 = typename std::vector<bool, T1>::const_reverse_iterator;
 
 template <typename T1>
-using t12 = typename std::vector<bool, T1>::allocator_type;
+using t12 = typename std::vector<bool, T1>::reverse_iterator;
+
+template <typename T1>
+using t13 = typename std::vector<bool, T1>::allocator_type;
 
 template <typename T1> T1 f1(const std::vector<bool, T1> &a0) {
   return a0.get_allocator();
@@ -115,40 +119,43 @@ template <typename T1> void f18(std::vector<bool, T1> &a0) {
   return a0.clear();
 }
 
-template <typename T1>
-using t13 = typename std::vector<bool, T1>::iterator::pointer;
-
-template <typename T1>
-using t14 = typename std::vector<bool, T1>::const_iterator::reference;
-
-template <typename T1>
-using t15 = typename std::vector<bool, T1>::const_iterator::pointer;
-
-template <typename T1, typename T2> using t16 = std::vector<T1, T2>;
+template <typename T1, typename T2> using t14 = std::vector<T1, T2>;
 
 template <typename T1, typename T2>
-using t17 = typename std::vector<T1, T2>::value_type;
+using t15 = typename std::vector<T1, T2>::value_type;
 
 template <typename T1, typename T2>
-using t18 = typename std::vector<T1, T2>::pointer;
+using t16 = typename std::vector<T1, T2>::pointer;
 
 template <typename T1, typename T2>
-using t19 = typename std::vector<T1, T2>::const_pointer;
+using t17 = typename std::vector<T1, T2>::const_pointer;
 
 template <typename T1, typename T2>
-using t20 = typename std::vector<T1, T2>::reference;
+using t18 = typename std::vector<T1, T2>::reference;
 
 template <typename T1, typename T2>
-using t21 = typename std::vector<T1, T2>::const_reference;
+using t19 = typename std::vector<T1, T2>::const_reference;
 
 template <typename T1, typename T2>
-using t22 = typename std::vector<T1, T2>::size_type;
+using t20 = typename std::vector<T1, T2>::iterator;
 
 template <typename T1, typename T2>
-using t23 = typename std::vector<T1, T2>::difference_type;
+using t21 = typename std::vector<T1, T2>::const_iterator;
 
 template <typename T1, typename T2>
-using t24 = typename std::vector<T1, T2>::allocator_type;
+using t22 = typename std::vector<T1, T2>::const_reverse_iterator;
+
+template <typename T1, typename T2>
+using t23 = typename std::vector<T1, T2>::reverse_iterator;
+
+template <typename T1, typename T2>
+using t24 = typename std::vector<T1, T2>::size_type;
+
+template <typename T1, typename T2>
+using t25 = typename std::vector<T1, T2>::difference_type;
+
+template <typename T1, typename T2>
+using t26 = typename std::vector<T1, T2>::allocator_type;
 
 template <typename T1, typename T2> std::vector<T1, T2> f19() {
   return std::vector<T1, T2>();
@@ -354,31 +361,31 @@ f56(std::vector<T1, T2> &a0, typename std::vector<T1, T2>::const_iterator a1,
 }
 
 template <typename T1, typename T2>
-using t25 = typename std::vector<T1, T2>::iterator::iterator_category;
+using t27 = typename std::vector<T1, T2>::iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t26 = typename std::vector<T1, T2>::iterator::value_type;
+using t28 = typename std::vector<T1, T2>::iterator::value_type;
 
 template <typename T1, typename T2>
-using t27 = typename std::vector<T1, T2>::iterator::difference_type;
+using t29 = typename std::vector<T1, T2>::iterator::difference_type;
 
 template <typename T1, typename T2>
-using t28 = typename std::vector<T1, T2>::iterator::reference;
+using t30 = typename std::vector<T1, T2>::iterator::reference;
 
 template <typename T1, typename T2>
-using t29 = typename std::vector<T1, T2>::iterator::pointer;
+using t31 = typename std::vector<T1, T2>::iterator::pointer;
 
 template <typename T1, typename T2>
-using t30 = typename std::vector<T1, T2>::const_iterator::iterator_category;
+using t32 = typename std::vector<T1, T2>::const_iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t31 = typename std::vector<T1, T2>::const_iterator::value_type;
+using t33 = typename std::vector<T1, T2>::const_iterator::value_type;
 
 template <typename T1, typename T2>
-using t32 = typename std::vector<T1, T2>::const_iterator::difference_type;
+using t34 = typename std::vector<T1, T2>::const_iterator::difference_type;
 
 template <typename T1, typename T2>
-using t33 = typename std::vector<T1, T2>::const_iterator::reference;
+using t35 = typename std::vector<T1, T2>::const_iterator::reference;
 
 template <typename T1, typename T2>
-using t34 = typename std::vector<T1, T2>::const_iterator::pointer;
+using t36 = typename std::vector<T1, T2>::const_iterator::pointer;

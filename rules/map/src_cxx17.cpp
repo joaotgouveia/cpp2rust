@@ -4,6 +4,12 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
+using t18 = typename std::map<T1, T2, T3, T4>::node_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t19 = typename std::map<T1, T2, T3, T4>::insert_return_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
 typename std::map<T1, T2, T3, T4>::node_type
 f60(std::map<T1, T2, T3, T4> &a0,
     typename std::map<T1, T2, T3, T4>::const_iterator a1) {
@@ -108,7 +114,7 @@ f75(std::map<T1, T2, T3, T4> &a0,
 }
 
 template <typename T1, typename T2, typename T3>
-using t14 = std::pmr::map<T1, T2, T3>;
+using t20 = std::pmr::map<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
-using t15 = std::pmr::multimap<T1, T2, T3>;
+using t21 = std::pmr::multimap<T1, T2, T3>;

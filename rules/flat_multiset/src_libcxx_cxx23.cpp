@@ -720,18 +720,3 @@ using t17 = typename std::flat_multiset<T1, T2, T3>::iterator::value_type;
 
 template <typename T1, typename T2, typename T3>
 using t18 = typename std::flat_multiset<T1, T2, T3>::iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t19 =
-    typename std::flat_multiset<T1, T2, T3>::const_iterator::iterator_concept;
-
-template <typename T1, typename T2, typename T3>
-using t20 =
-    typename std::flat_multiset<T1, T2, T3>::const_iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t21 = typename std::flat_multiset<T1, T2, T3>::const_iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t22 =
-    typename std::flat_multiset<T1, T2, T3>::const_iterator::difference_type;

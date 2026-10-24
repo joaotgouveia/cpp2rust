@@ -58,10 +58,22 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t10 = typename std::unordered_set<T1, T2, T3, T4>::const_reference;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t11 = typename std::unordered_set<T1, T2, T3, T4>::size_type;
+using t11 = typename std::unordered_set<T1, T2, T3, T4>::iterator;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t12 = typename std::unordered_set<T1, T2, T3, T4>::difference_type;
+using t12 = typename std::unordered_set<T1, T2, T3, T4>::const_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t13 = typename std::unordered_set<T1, T2, T3, T4>::local_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t14 = typename std::unordered_set<T1, T2, T3, T4>::const_local_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t15 = typename std::unordered_set<T1, T2, T3, T4>::size_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t16 = typename std::unordered_set<T1, T2, T3, T4>::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::unordered_set<T1, T2, T3, T4> f7() {

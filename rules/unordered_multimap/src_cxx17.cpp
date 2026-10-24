@@ -4,6 +4,9 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5>
+using t18 = typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type;
+
+template <typename T1, typename T2, typename T3, typename T4, typename T5>
 typename std::unordered_multimap<T1, T2, T3, T4, T5>::node_type
 f37(std::unordered_multimap<T1, T2, T3, T4, T5> &a0,
     typename std::unordered_multimap<T1, T2, T3, T4, T5>::const_iterator a1) {

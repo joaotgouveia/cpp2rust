@@ -4,18 +4,6 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-using t25 = typename std::basic_string<T1, T2, T3>::iterator;
-
-template <typename T1, typename T2, typename T3>
-using t26 = typename std::basic_string<T1, T2, T3>::const_iterator;
-
-template <typename T1, typename T2, typename T3>
-using t27 = typename std::basic_string<T1, T2, T3>::reverse_iterator;
-
-template <typename T1, typename T2, typename T3>
-using t28 = typename std::basic_string<T1, T2, T3>::const_reverse_iterator;
-
-template <typename T1, typename T2, typename T3>
 std::basic_string<T1, T2, T3> f279() {
   return std::basic_string<T1, T2, T3>();
 }

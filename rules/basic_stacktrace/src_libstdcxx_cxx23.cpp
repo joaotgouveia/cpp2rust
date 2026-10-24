@@ -13,12 +13,24 @@ using t3 = typename std::basic_stacktrace<T1>::const_reference;
 template <typename T1> using t4 = typename std::basic_stacktrace<T1>::reference;
 
 template <typename T1>
-using t5 = typename std::basic_stacktrace<T1>::difference_type;
+using t5 = typename std::basic_stacktrace<T1>::const_iterator;
 
-template <typename T1> using t6 = typename std::basic_stacktrace<T1>::size_type;
+template <typename T1> using t6 = typename std::basic_stacktrace<T1>::iterator;
 
 template <typename T1>
-using t7 = typename std::basic_stacktrace<T1>::allocator_type;
+using t7 = typename std::basic_stacktrace<T1>::reverse_iterator;
+
+template <typename T1>
+using t8 = typename std::basic_stacktrace<T1>::const_reverse_iterator;
+
+template <typename T1>
+using t9 = typename std::basic_stacktrace<T1>::difference_type;
+
+template <typename T1>
+using t10 = typename std::basic_stacktrace<T1>::size_type;
+
+template <typename T1>
+using t11 = typename std::basic_stacktrace<T1>::allocator_type;
 
 template <typename T1> std::basic_stacktrace<T1> f1(const T1 &a0) {
   return std::basic_stacktrace<T1>::current(a0);

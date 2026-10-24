@@ -4,6 +4,8 @@
 
 template <std::size_t T1> using t1 = std::bitset<T1>;
 
+template <std::size_t T1> using t2 = typename std::bitset<T1>::reference;
+
 template <std::size_t T1> std::bitset<T1> f1() { return std::bitset<T1>(); }
 
 template <std::size_t T1> std::bitset<T1> f2(unsigned long long a0) {

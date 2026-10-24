@@ -14,19 +14,25 @@ template <typename T1, typename T2>
 using t4 = typename std::match_results<T1, T2>::reference;
 
 template <typename T1, typename T2>
-using t5 = typename std::match_results<T1, T2>::difference_type;
+using t5 = typename std::match_results<T1, T2>::const_iterator;
 
 template <typename T1, typename T2>
-using t6 = typename std::match_results<T1, T2>::size_type;
+using t6 = typename std::match_results<T1, T2>::iterator;
 
 template <typename T1, typename T2>
-using t7 = typename std::match_results<T1, T2>::allocator_type;
+using t7 = typename std::match_results<T1, T2>::difference_type;
 
 template <typename T1, typename T2>
-using t8 = typename std::match_results<T1, T2>::char_type;
+using t8 = typename std::match_results<T1, T2>::size_type;
 
 template <typename T1, typename T2>
-using t9 = typename std::match_results<T1, T2>::string_type;
+using t9 = typename std::match_results<T1, T2>::allocator_type;
+
+template <typename T1, typename T2>
+using t10 = typename std::match_results<T1, T2>::char_type;
+
+template <typename T1, typename T2>
+using t11 = typename std::match_results<T1, T2>::string_type;
 
 template <typename T1, typename T2> std::match_results<T1, T2> f1() {
   return std::match_results<T1, T2>();
@@ -165,33 +171,18 @@ f22(const std::match_results<T1, T2> &a0,
 }
 
 template <typename T1, typename T2>
-using t10 =
+using t12 =
     typename std::match_results<T1, T2>::const_iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t11 = typename std::match_results<T1, T2>::const_iterator::value_type;
+using t13 = typename std::match_results<T1, T2>::const_iterator::value_type;
 
 template <typename T1, typename T2>
-using t12 =
+using t14 =
     typename std::match_results<T1, T2>::const_iterator::difference_type;
 
 template <typename T1, typename T2>
-using t13 = typename std::match_results<T1, T2>::const_iterator::reference;
+using t15 = typename std::match_results<T1, T2>::const_iterator::reference;
 
 template <typename T1, typename T2>
-using t14 = typename std::match_results<T1, T2>::const_iterator::pointer;
-
-template <typename T1, typename T2>
-using t15 = typename std::match_results<T1, T2>::iterator::iterator_category;
-
-template <typename T1, typename T2>
-using t16 = typename std::match_results<T1, T2>::iterator::value_type;
-
-template <typename T1, typename T2>
-using t17 = typename std::match_results<T1, T2>::iterator::difference_type;
-
-template <typename T1, typename T2>
-using t18 = typename std::match_results<T1, T2>::iterator::reference;
-
-template <typename T1, typename T2>
-using t19 = typename std::match_results<T1, T2>::iterator::pointer;
+using t16 = typename std::match_results<T1, T2>::const_iterator::pointer;

@@ -21,13 +21,25 @@ template <typename T1, typename T2>
 using t6 = typename std::list<T1, T2>::const_reference;
 
 template <typename T1, typename T2>
-using t7 = typename std::list<T1, T2>::size_type;
+using t7 = typename std::list<T1, T2>::iterator;
 
 template <typename T1, typename T2>
-using t8 = typename std::list<T1, T2>::difference_type;
+using t8 = typename std::list<T1, T2>::const_iterator;
 
 template <typename T1, typename T2>
-using t9 = typename std::list<T1, T2>::allocator_type;
+using t9 = typename std::list<T1, T2>::const_reverse_iterator;
+
+template <typename T1, typename T2>
+using t10 = typename std::list<T1, T2>::reverse_iterator;
+
+template <typename T1, typename T2>
+using t11 = typename std::list<T1, T2>::size_type;
+
+template <typename T1, typename T2>
+using t12 = typename std::list<T1, T2>::difference_type;
+
+template <typename T1, typename T2>
+using t13 = typename std::list<T1, T2>::allocator_type;
 
 template <typename T1, typename T2> std::list<T1, T2> f1() {
   return std::list<T1, T2>();

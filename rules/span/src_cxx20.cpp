@@ -32,6 +32,12 @@ template <typename T1, std::size_t T2>
 using t9 = typename std::span<T1, T2>::const_reference;
 
 template <typename T1, std::size_t T2>
+using t10 = typename std::span<T1, T2>::iterator;
+
+template <typename T1, std::size_t T2>
+using t11 = typename std::span<T1, T2>::reverse_iterator;
+
+template <typename T1, std::size_t T2>
 std::span<T1, T2> f1(const std::span<T1, T2> &a0) {
   return std::span<T1, T2>(a0);
 }

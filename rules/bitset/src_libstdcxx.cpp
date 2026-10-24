@@ -2,8 +2,6 @@
 #include <bitset>
 #include <utility>
 
-template <std::size_t T1> using t2 = typename std::bitset<T1>::reference;
-
 template <std::size_t T1>
 std::basic_string<char, std::char_traits<char>, std::allocator<char>>
 f37(const std::bitset<T1> &a0) {

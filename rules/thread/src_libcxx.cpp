@@ -47,19 +47,3 @@ template <typename T1, typename... T2,
 std::thread f35(T1 &&a0, T2 &&...a1) {
   return std::thread(std::forward<T1>(a0), std::forward<T2>(a1)...);
 }
-
-std::thread::id f36() { return std::thread::id(); }
-
-std::thread::id f37(const std::thread::id &a0) { return std::thread::id(a0); }
-
-std::thread::id f38(std::thread::id &&a0) {
-  return std::thread::id(std::move(a0));
-}
-
-std::thread::id &f39(std::thread::id &a0, const std::thread::id &a1) {
-  return a0.operator=(a1);
-}
-
-std::thread::id &f40(std::thread::id &a0, std::thread::id &&a1) {
-  return a0.operator=(std::move(a1));
-}

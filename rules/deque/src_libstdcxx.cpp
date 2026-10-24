@@ -109,7 +109,19 @@ f63(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
 }
 
 template <typename T1, typename T2>
-using t21 = typename std::deque<T1, T2>::iterator::size_type;
+using t25 = typename std::deque<T1, T2>::iterator::iterator;
 
 template <typename T1, typename T2>
-using t22 = typename std::deque<T1, T2>::const_iterator::size_type;
+using t26 = typename std::deque<T1, T2>::iterator::const_iterator;
+
+template <typename T1, typename T2>
+using t27 = typename std::deque<T1, T2>::iterator::size_type;
+
+template <typename T1, typename T2>
+using t28 = typename std::deque<T1, T2>::const_iterator::iterator;
+
+template <typename T1, typename T2>
+using t29 = typename std::deque<T1, T2>::const_iterator::const_iterator;
+
+template <typename T1, typename T2>
+using t30 = typename std::deque<T1, T2>::const_iterator::size_type;

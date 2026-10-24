@@ -14,29 +14,29 @@ void f82(std::deque<T1, T2> &a0, std::deque<T1, T2> &a1) {
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t23 = std::__deque_iterator<T1, T2, T3, T4, T5, T6>;
+using t31 = std::__deque_iterator<T1, T2, T3, T4, T5, T6>;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t24 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::pointer;
+using t32 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::pointer;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t25 =
+using t33 =
     typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::difference_type;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t26 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::value_type;
+using t34 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::value_type;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t27 =
+using t35 =
     typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::iterator_category;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>
-using t28 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::reference;
+using t36 = typename std::__deque_iterator<T1, T2, T3, T4, T5, T6>::reference;
 
 template <typename T1, typename T2, typename T3, typename T4, typename T5,
           T5 T6>

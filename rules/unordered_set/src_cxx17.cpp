@@ -4,10 +4,16 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3>
-using t13 = std::pmr::unordered_multiset<T1, T2, T3>;
+using t17 = std::pmr::unordered_multiset<T1, T2, T3>;
 
 template <typename T1, typename T2, typename T3>
-using t14 = std::pmr::unordered_set<T1, T2, T3>;
+using t18 = std::pmr::unordered_set<T1, T2, T3>;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t19 = typename std::unordered_set<T1, T2, T3, T4>::node_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t20 = typename std::unordered_set<T1, T2, T3, T4>::insert_return_type;
 
 template <typename T1, typename T2, typename T3, typename T4>
 typename std::unordered_set<T1, T2, T3, T4>::node_type

@@ -21,13 +21,25 @@ template <typename T1, typename T2>
 using t6 = typename std::deque<T1, T2>::const_reference;
 
 template <typename T1, typename T2>
-using t7 = typename std::deque<T1, T2>::size_type;
+using t7 = typename std::deque<T1, T2>::iterator;
 
 template <typename T1, typename T2>
-using t8 = typename std::deque<T1, T2>::difference_type;
+using t8 = typename std::deque<T1, T2>::const_iterator;
 
 template <typename T1, typename T2>
-using t9 = typename std::deque<T1, T2>::allocator_type;
+using t9 = typename std::deque<T1, T2>::const_reverse_iterator;
+
+template <typename T1, typename T2>
+using t10 = typename std::deque<T1, T2>::reverse_iterator;
+
+template <typename T1, typename T2>
+using t11 = typename std::deque<T1, T2>::size_type;
+
+template <typename T1, typename T2>
+using t12 = typename std::deque<T1, T2>::difference_type;
+
+template <typename T1, typename T2>
+using t13 = typename std::deque<T1, T2>::allocator_type;
 
 template <typename T1, typename T2> std::deque<T1, T2> f1() {
   return std::deque<T1, T2>();
@@ -235,31 +247,31 @@ f40(std::deque<T1, T2> &a0, typename std::deque<T1, T2>::const_iterator a1,
 }
 
 template <typename T1, typename T2>
-using t10 = typename std::deque<T1, T2>::iterator::iterator_category;
+using t14 = typename std::deque<T1, T2>::iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t11 = typename std::deque<T1, T2>::iterator::value_type;
+using t15 = typename std::deque<T1, T2>::iterator::value_type;
 
 template <typename T1, typename T2>
-using t12 = typename std::deque<T1, T2>::iterator::pointer;
+using t16 = typename std::deque<T1, T2>::iterator::pointer;
 
 template <typename T1, typename T2>
-using t13 = typename std::deque<T1, T2>::iterator::reference;
+using t17 = typename std::deque<T1, T2>::iterator::reference;
 
 template <typename T1, typename T2>
-using t14 = typename std::deque<T1, T2>::iterator::difference_type;
+using t18 = typename std::deque<T1, T2>::iterator::difference_type;
 
 template <typename T1, typename T2>
-using t15 = typename std::deque<T1, T2>::const_iterator::iterator_category;
+using t19 = typename std::deque<T1, T2>::const_iterator::iterator_category;
 
 template <typename T1, typename T2>
-using t16 = typename std::deque<T1, T2>::const_iterator::value_type;
+using t20 = typename std::deque<T1, T2>::const_iterator::value_type;
 
 template <typename T1, typename T2>
-using t17 = typename std::deque<T1, T2>::const_iterator::pointer;
+using t21 = typename std::deque<T1, T2>::const_iterator::pointer;
 
 template <typename T1, typename T2>
-using t18 = typename std::deque<T1, T2>::const_iterator::reference;
+using t22 = typename std::deque<T1, T2>::const_iterator::reference;
 
 template <typename T1, typename T2>
-using t19 = typename std::deque<T1, T2>::const_iterator::difference_type;
+using t23 = typename std::deque<T1, T2>::const_iterator::difference_type;

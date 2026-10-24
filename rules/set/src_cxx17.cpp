@@ -3,9 +3,15 @@
 #include <set>
 #include <utility>
 
-template <typename T1, typename T2> using t13 = std::pmr::multiset<T1, T2>;
+template <typename T1, typename T2> using t17 = std::pmr::multiset<T1, T2>;
 
-template <typename T1, typename T2> using t14 = std::pmr::set<T1, T2>;
+template <typename T1, typename T2> using t18 = std::pmr::set<T1, T2>;
+
+template <typename T1, typename T2, typename T3>
+using t19 = typename std::set<T1, T2, T3>::node_type;
+
+template <typename T1, typename T2, typename T3>
+using t20 = typename std::set<T1, T2, T3>::insert_return_type;
 
 template <typename T1, typename T2, typename T3>
 typename std::set<T1, T2, T3>::node_type

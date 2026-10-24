@@ -53,31 +53,16 @@ std::set<T1, T2, T3> f62(T4 a0, T4 a1) {
 }
 
 template <typename T1, typename T2, typename T3>
-using t15 = typename std::set<T1, T2, T3>::iterator::value_type;
+using t21 = typename std::set<T1, T2, T3>::iterator::value_type;
 
 template <typename T1, typename T2, typename T3>
-using t16 = typename std::set<T1, T2, T3>::iterator::reference;
+using t22 = typename std::set<T1, T2, T3>::iterator::reference;
 
 template <typename T1, typename T2, typename T3>
-using t17 = typename std::set<T1, T2, T3>::iterator::pointer;
+using t23 = typename std::set<T1, T2, T3>::iterator::pointer;
 
 template <typename T1, typename T2, typename T3>
-using t18 = typename std::set<T1, T2, T3>::iterator::iterator_category;
+using t24 = typename std::set<T1, T2, T3>::iterator::iterator_category;
 
 template <typename T1, typename T2, typename T3>
-using t19 = typename std::set<T1, T2, T3>::iterator::difference_type;
-
-template <typename T1, typename T2, typename T3>
-using t20 = typename std::set<T1, T2, T3>::const_iterator::value_type;
-
-template <typename T1, typename T2, typename T3>
-using t21 = typename std::set<T1, T2, T3>::const_iterator::reference;
-
-template <typename T1, typename T2, typename T3>
-using t22 = typename std::set<T1, T2, T3>::const_iterator::pointer;
-
-template <typename T1, typename T2, typename T3>
-using t23 = typename std::set<T1, T2, T3>::const_iterator::iterator_category;
-
-template <typename T1, typename T2, typename T3>
-using t24 = typename std::set<T1, T2, T3>::const_iterator::difference_type;
+using t25 = typename std::set<T1, T2, T3>::iterator::difference_type;

@@ -4,6 +4,9 @@
 #include <utility>
 
 template <typename T1, typename T2, typename T3, typename T4>
+using t18 = typename std::multimap<T1, T2, T3, T4>::node_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
 typename std::multimap<T1, T2, T3, T4>::node_type
 f56(std::multimap<T1, T2, T3, T4> &a0,
     typename std::multimap<T1, T2, T3, T4>::const_iterator a1) {

@@ -1,3 +1,4 @@
+#include <array>
 #include <mdspan>
 #include <utility>
 
@@ -37,7 +38,10 @@ template <typename T1> const T1 &f4(const std::layout_stride::mapping<T1> &a0) {
   return a0.extents();
 }
 
-template <typename T1> auto f5(const std::layout_stride::mapping<T1> &a0) {
+template <typename T1>
+std::array<typename std::layout_stride::mapping<T1>::index_type,
+           std::layout_stride::mapping<T1>::extents_type::rank()>
+f5(const std::layout_stride::mapping<T1> &a0) {
   return a0.strides();
 }
 
@@ -79,7 +83,34 @@ f13(const std::layout_stride::mapping<T1> &a0,
 }
 
 template <typename T1, typename T2>
-std::layout_stride::mapping<T1> f14(const T2 &a0)
+std::layout_stride::mapping<T1>
+f14(const T1 &a0,
+    std::span<T2, std::layout_stride::mapping<T1>::extents_type::rank()> a1)
+  requires(
+      (std::is_convertible_v<
+           const T2 &, typename std::layout_stride::mapping<T1>::index_type> &&
+       std::is_nothrow_constructible_v<
+           typename std::layout_stride::mapping<T1>::index_type, const T2 &>))
+{
+  return std::layout_stride::mapping<T1>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::layout_stride::mapping<T1>
+f15(const T1 &a0,
+    const std::array<T2, std::layout_stride::mapping<T1>::extents_type::rank()>
+        &a1)
+  requires(
+      (std::is_convertible_v<
+           const T2 &, typename std::layout_stride::mapping<T1>::index_type> &&
+       std::is_nothrow_constructible_v<
+           typename std::layout_stride::mapping<T1>::index_type, const T2 &>))
+{
+  return std::layout_stride::mapping<T1>(a0, a1);
+}
+
+template <typename T1, typename T2>
+std::layout_stride::mapping<T1> f16(const T2 &a0)
   requires((std::__mdspan_detail::__layout_mapping_alike<T2> &&
             std::is_constructible_v<
                 typename std::layout_stride::mapping<T1>::extents_type,
@@ -92,7 +123,7 @@ std::layout_stride::mapping<T1> f14(const T2 &a0)
 
 template <typename T1, typename... T2>
 typename std::layout_stride::mapping<T1>::index_type
-f15(const std::layout_stride::mapping<T1> &a0, T2... a1)
+f17(const std::layout_stride::mapping<T1> &a0, T2... a1)
   requires(((sizeof...(T2) == std::layout_stride::mapping<T1>::__rank_) &&
             (std::is_convertible_v<
                  T2, typename std::layout_stride::mapping<T1>::index_type> &&
@@ -105,7 +136,7 @@ f15(const std::layout_stride::mapping<T1> &a0, T2... a1)
 }
 
 template <typename T1, typename T2>
-bool f16(const std::layout_stride::mapping<T1> &a0, const T2 &a1)
+bool f18(const std::layout_stride::mapping<T1> &a0, const T2 &a1)
   requires((std::__mdspan_detail::__layout_mapping_alike<T2> &&
             (T2::extents_type::rank() ==
              std::layout_stride::mapping<T1>::__rank_) &&

@@ -37,10 +37,22 @@ template <typename T1, typename T2, typename T3, typename T4>
 using t11 = typename std::multimap<T1, T2, T3, T4>::const_reference;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t12 = typename std::multimap<T1, T2, T3, T4>::size_type;
+using t12 = typename std::multimap<T1, T2, T3, T4>::iterator;
 
 template <typename T1, typename T2, typename T3, typename T4>
-using t13 = typename std::multimap<T1, T2, T3, T4>::difference_type;
+using t13 = typename std::multimap<T1, T2, T3, T4>::const_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t14 = typename std::multimap<T1, T2, T3, T4>::size_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t15 = typename std::multimap<T1, T2, T3, T4>::difference_type;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t16 = typename std::multimap<T1, T2, T3, T4>::reverse_iterator;
+
+template <typename T1, typename T2, typename T3, typename T4>
+using t17 = typename std::multimap<T1, T2, T3, T4>::const_reverse_iterator;
 
 template <typename T1, typename T2, typename T3, typename T4>
 std::multimap<T1, T2, T3, T4> f1() {
