@@ -195,7 +195,8 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
 
 bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
                      const clang::Expr *returned, unsigned arity) {
-  if (!llvm::isa<clang::CallExpr>(RuleDecls::SkipImplicit(use)) ||
+  auto use_call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
+  if (!use_call ||
       !llvm::isa<clang::CallExpr>(RuleDecls::SkipImplicit(returned))) {
     return true;
   }
@@ -204,7 +205,11 @@ bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
   if (use_operands.size() != rule_operands.size()) {
     return false;
   }
-  for (unsigned i = 0; i < use_operands.size(); ++i) {
+  // Both call the same member, the object of the use may be of a derived class
+  auto method =
+      llvm::dyn_cast_or_null<clang::CXXMethodDecl>(use_call->getDirectCallee());
+  unsigned first = method && !method->isStatic() ? 1 : 0;
+  for (unsigned i = first; i < use_operands.size(); ++i) {
     if (!ctx.hasSameUnqualifiedType(use_operands[i]->getType(),
                                     rule_operands[i]->getType())) {
       return false;
