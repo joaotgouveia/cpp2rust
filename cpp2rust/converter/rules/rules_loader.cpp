@@ -351,7 +351,9 @@ unsigned CxxStandard(const clang::LangOptions &opts) {
 
 // Whether a qualified name (std::__is_val_expr) is declared in the TU. A class
 // must be defined: rules name its members (std::_Bit_iterator::difference_type)
-// and some headers only declare it.
+// and some headers only declare it. A class template counts as defined when
+// one of its specializations is (libc++ declares only ctype<_CharT> and
+// defines ctype<char>).
 bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
   clang::DeclContext *scope = sema.Context.getTranslationUnitDecl();
   llvm::SmallVector<llvm::StringRef, 4> parts;
@@ -369,7 +371,10 @@ bool IsDeclared(clang::Sema &sema, llvm::StringRef name) {
       return llvm::all_of(result, [](clang::NamedDecl *found) {
         auto decl = found->getUnderlyingDecl();
         if (auto tmpl = llvm::dyn_cast<clang::ClassTemplateDecl>(decl)) {
-          decl = tmpl->getTemplatedDecl();
+          return tmpl->getTemplatedDecl()->hasDefinition() ||
+                 llvm::any_of(tmpl->specializations(),
+                              [](const clang::ClassTemplateSpecializationDecl
+                                     *spec) { return spec->hasDefinition(); });
         }
         auto record = llvm::dyn_cast<clang::CXXRecordDecl>(decl);
         return !record || record->hasDefinition();
