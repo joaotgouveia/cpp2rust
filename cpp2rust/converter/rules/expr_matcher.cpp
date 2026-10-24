@@ -193,6 +193,30 @@ std::vector<clang::Expr *> getOperands(clang::ASTContext &ctx,
   return operands;
 }
 
+// The operands a rule deduces from, as the use's callee was chosen: a
+// function template deduced from the arguments as written (string_view == "ab"
+// deduces from const char[3], which picks the type_identity_t overload), any
+// other callee takes them converted to its parameters.
+std::vector<clang::Expr *> deducedOperands(clang::ASTContext &ctx,
+                                           const clang::Expr *use,
+                                           unsigned arity) {
+  auto operands = getOperands(ctx, use, arity);
+  auto expr = RuleDecls::SkipImplicit(use);
+  const clang::FunctionDecl *callee = nullptr;
+  if (auto call = llvm::dyn_cast<clang::CallExpr>(expr)) {
+    callee = call->getDirectCallee();
+  } else if (auto construct = llvm::dyn_cast<clang::CXXConstructExpr>(expr)) {
+    callee = construct->getConstructor();
+  }
+  if (!callee || !callee->isFunctionTemplateSpecialization()) {
+    return operands;
+  }
+  for (auto &operand : operands) {
+    operand = operand->IgnoreUnlessSpelledInSource();
+  }
+  return operands;
+}
+
 bool hasSameArgTypes(clang::ASTContext &ctx, const clang::Expr *use,
                      const clang::Expr *returned, unsigned arity) {
   auto use_call = llvm::dyn_cast<clang::CallExpr>(RuleDecls::SkipImplicit(use));
@@ -403,7 +427,9 @@ void checkCallable(clang::Sema &sema, const clang::Expr *use,
   }
   RuleDecls::Trial trial(sema);
   auto loc = use->getBeginLoc();
-  auto operands = getOperands(sema.Context, use, rule->getNumParams());
+  auto operands = rule->getDescribedFunctionTemplate()
+                      ? deducedOperands(sema.Context, use, rule->getNumParams())
+                      : getOperands(sema.Context, use, rule->getNumParams());
   clang::OverloadCandidateSet set(loc, clang::OverloadCandidateSet::CSK_Normal);
   auto found = clang::DeclAccessPair::make(rule, clang::AS_public);
   if (auto tmpl = rule->getDescribedFunctionTemplate()) {
@@ -507,9 +533,9 @@ MatchResult matchTemplate(clang::Sema &sema, const clang::Expr *use,
                           clang::FunctionTemplateDecl *rule) {
   auto &ctx = sema.Context;
   auto explicit_args = getResultArgs(sema, rule, use);
-  auto specialization =
-      deduce(sema, rule, explicit_args,
-             getOperands(ctx, use, rule->getTemplatedDecl()->getNumParams()));
+  auto specialization = deduce(
+      sema, rule, explicit_args,
+      deducedOperands(ctx, use, rule->getTemplatedDecl()->getNumParams()));
   if (!specialization) {
     return std::nullopt;
   }
