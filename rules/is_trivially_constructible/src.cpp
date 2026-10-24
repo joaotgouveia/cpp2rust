@@ -3,3 +3,8 @@
 
 template <typename T1, typename... T2>
 using t1 = std::is_trivially_constructible<T1, T2...>;
+
+template <typename T1, typename... T2>
+bool f1(const std::is_trivially_constructible<T1, T2...> &a0) {
+  return static_cast<bool>(a0);
+}

@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <flat_map>
 #include <initializer_list>
+#include <iterator>
 #include <ranges>
 #include <utility>
 
